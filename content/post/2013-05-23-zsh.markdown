@@ -1,0 +1,107 @@
+---
+layout: post
+title: "bashからzshに乗り換えた"
+date: 2013-05-23 12:30
+comments: true
+categories: 
+- Mac OS X
+- zsh
+- iTerm2
+---
+
+特に理由はなかったのですが、便利という噂を聞いてbashからzshに乗り換えました。
+
+{% img /images/posts/2013-05-23-zsh.png iTerm2 + zsh %}
+
+# zshを試す
+
+Macでは標準でzshが入っているので、ターミナルで`$ zsh`とすれば試せます。
+
+飽きたら、`$ exit`で終了です。
+
+<!--more-->
+
+# ログインシェルを変更
+
+シェルの一覧は`/etc/shells`から確認できます。
+
+``` bash シェルの一覧を確認
+$ cat /etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+```
+
+確認したら、zshにログインシェルを変更しましょう。
+
+``` bash ログインシェルをzshにする
+$ chsh -s /bin/zsh
+```
+
+# zshの設定
+
+zshの設定をしようと思ったのですが、自分でゴリゴリ`.zshrc`を書くのが大変そうだったので、
+`oh-my-zsh`というzshの設定を管理するフレームワークを利用してみました。
+
+## oh-my-zshのsetup
+
+GitHubのページに従ってインストールすればいいと思います。
+
+* [robbyrussell/oh-my-zsh(GitHub)](https://github.com/robbyrussell/oh-my-zsh)
+
+特に拘りがなければ、これで良さそうです。
+
+``` bash oh-my-zshの自動インストール
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
+
+## oh-my-zshの設定
+
+まずはプロンプトを見やすくしましょう。
+
+私は[oh-my-zshのテーマの一覧](https://github.com/robbyrussell/oh-my-zsh/wiki/themes)から、
+`gallois`というthemeを導入しました。
+
+導入の方法は簡単で、`~/.zshrc`の環境変数`ZSH_THEME`を変更して、`source ~/.zshrc`するだけです。
+
+``` bash .zshrc
+ZSH_THEME="gallois"
+```
+
+<!--
+なぜか、zshにしてからなぜかターミナルで新規タブを開くと、
+カレントディレクトリではなくホームディレクトリで開かれるようになってしまいました。
+この問題は、oh-my-zshの`osx`というプラグインを利用すれば解決しました。
+-->
+
+また、[プラグインの一覧](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)から、
+`git`と`osx`pluginを導入しました。
+
+最終的には、`~/.zshrc` の2行を次のように変更しました。
+
+``` bash .zshrc
+ZSH_THEME="gallois"
+plugins=(git osx)
+```
+
+# iTerm2の導入
+
+ペインの分割とかが便利そうだったので、[iTerm2](http://www.iterm2.com/#/section/home)を入れてみました。
+
+以下の2点だけ気になったので設定を変えました。
+
+ウィンドウを透過する
+: * まず、メニューバーの`iTerm > Prefernces` で `Prefernces`ウィンドウを開く。
+: * `Profiles`タブを選択する。
+: * `Window`タブがあるので、`Transparency`を適当に設定する。
+
+新しいタブをカレントディレクトリで開く
+: * `Window`タブではなく、`General`タブを選択する。
+: * `Working Directory`のラジオボックスから`Reuse previous sesson's directory`を選択する。

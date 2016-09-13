@@ -1,0 +1,77 @@
+---
+layout: post
+title: "Rubyのgemのメモ"
+date: 2013-12-26 10:46
+comments: true
+categories: 
+- Ruby
+- Gem
+---
+
+gem関連に関してメモを残します。
+
+# .gem ファイルを展開してパッケージの中身を見る
+
+.gem ファイルを展開してパッケージの中身を見る方法を紹介します。
+
+`gem unpack`はgemをインストールしたくないけど、単に中身を見たいときなどに役に立ちます。
+
+`gem unpack xxx.gem` のように使います。
+
+```bash gem unpack
+[~/Downloads]$ gem unpack unicode_math-1.2.0.gem
+Unpacked gem: '/Users/gam0022/Downloads/unicode_math-1.2.0'
+[~/Downloads]$
+[~/Downloads]$ tree unicode_math-1.2.0
+unicode_math-1.2.0
+├── Gemfile
+├── LICENSE.txt
+├── README.md
+├── Rakefile
+├── lib
+│   ├── unicode_math
+│   │   ├── constants.rb
+│   │   ├── division.rb
+│   │   ├── exponents.rb
+│   │   ├── fractions.rb
+│   │   ├── multiplication.rb
+│   │   ├── roots.rb
+│   │   ├── set.rb
+│   │   ├── sigma.rb
+│   │   └── trigonometry.rb
+│   └── unicode_math.rb
+├── spec
+│   ├── spec_helper.rb
+│   ├── support
+│   │   └── random.rb
+│   └── unicode_math
+│       ├── constants_spec.rb
+│       ├── division_spec.rb
+│       ├── exponents_spec.rb
+│       ├── fractions_spec.rb
+│       ├── multiplication_spec.rb
+│       ├── root_spec.rb
+│       ├── set_spec.rb
+│       ├── sigma_spec.rb
+│       └── trigonometry_spec.rb
+└── unicode_math.gemspec
+
+5 directories, 26 files
+```
+
+# .gem ファイルから gem をインストールする
+
+.gem ファイルから gem をインストールする方法を紹介します。
+
+RubyGems でリンク切れを起こしたgemを無理やりインストールしたいときに使いました。
+
+`gem install -l xxx.gem` のように使います。
+
+``` bash gem install -l
+[~/Downloads]$ gem install -l unicode_math-1.2.0.gem
+
+Successfully installed unicode_math-1.2.0
+Parsing documentation for unicode_math-1.2.0
+Installing ri documentation for unicode_math-1.2.0
+1 gem installed
+```

@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Rubyのgitリポジトリ"
+date: 2013-08-04 11:39
+comments: true
+categories: 
+- Ruby
+- git
+- GitHub
+---
+
+RubyってSubversionで開発してるというイメージしか無かったのですが、GitHubでも最新のソースコードをCloneできました。
+
+``` bash
+git clone https://github.com/ruby/ruby.git
+```
+
+公式にリポジトリガイドなるページがあるので、最新のRubyのソースコードを読んでみたい人は参考にしたらいいと思います。
+
+[レポジトリガイド](http://www.ruby-lang.org/ja/documentation/repository-guide/)

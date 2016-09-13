@@ -1,0 +1,47 @@
+---
+layout: post
+title: "CODE FESTIVAL2014 本戦に参加"
+date: 2014-11-13 17:25
+comments: true
+categories: 
+- 競技プログラミング
+- Event
+---
+
+土日(11/8-9)に開催された [CODE FESTIVAL2014](http://recruit-jinji.jp/code_fes2014/) 本戦に参加しました。
+
+[予選B](http://code-festival-2014-qualb.contest.atcoder.jp/)で3完しかできなかったので、
+参加はムリだろうと思っていたのですが、なぜか本戦に出場できてしまいました。
+3完でも行けなかった人がいるみたいなので、本当に運ですね。
+
+順位的には残念な感じになってしまって悔しかったですが、豪華な企画が盛りだくさんで(リンク先のタイムテーブルを参照)、
+chokudaiさんの生コーディングが見れたり、iwiwiさんのサインが貰えたり、美味しいご飯が食べれて良かったです。
+また、本戦上位5人によるエキシビジョンマッチを観戦しましたが、実況が分かりやすくて私のような初心者でも十分に楽しむことができました。
+あと、なぜかDDRや太鼓の達人の筐体が用意されていて、遊び放題でした。
+
+良いイベントだと思うので、リクルートさんには来年以降もやって欲しいと思います。
+
+<!--more-->
+
+以下、Twitter のツイートまとめです。
+
+<blockquote class="twitter-tweet" lang="ja"><p>CODE FESIVAL頑張る <a href="http://t.co/LaJUGJUJyY">pic.twitter.com/LaJUGJUJyY</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/530903464147034113">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>賞金圏内だった!(下から数えて) <a href="https://twitter.com/hashtag/codefes?src=hash">#codefes</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/530965409185280000">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>目の前にちょくだいさんが！！！ <a href="http://t.co/kWydwCCuRo">pic.twitter.com/kWydwCCuRo</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/530998840367644672">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>アルゴリズムを擬人化できる人がレッドコーダ <a href="https://twitter.com/hashtag/codefes?src=hash">#codefes</a> <a href="http://t.co/pYh31XKoyd">pic.twitter.com/pYh31XKoyd</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/530999728079532033">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>ブルートフォース君　<a href="https://twitter.com/hashtag/%E8%9F%BB%E6%9C%AC%E3%82%92%E9%88%8D%E5%99%A8%E3%81%A8%E3%81%97%E3%81%A6%E5%88%A9%E7%94%A8?src=hash">#蟻本を鈍器として利用</a> <a href="https://twitter.com/hashtag/codefes?src=hash">#codefes</a> <a href="http://t.co/m8MxqtmSLI">pic.twitter.com/m8MxqtmSLI</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/531000327785304064">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>生iwiwiさんです <a href="http://t.co/OUCujO4cXm">pic.twitter.com/OUCujO4cXm</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/531012725774639105">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>生notさんだ！ <a href="http://t.co/UL1gzvclxV">pic.twitter.com/UL1gzvclxV</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/531026320008835072">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>雑魚なのでD問題が超簡単だと気がつくのに1時間以上かかった。制約はよくよーく確認しましょうということか… <a href="https://twitter.com/hashtag/codefes?src=hash">#codefes</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/531079190934601729">2014, 11月 8</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>幾何ライブラリの写経をしました <a href="https://twitter.com/hashtag/codefes?src=hash">#codefes</a> <a href="http://t.co/t2FZxgLDHV">pic.twitter.com/t2FZxgLDHV</a></p>&mdash; not(305) (@not_522) <a href="https://twitter.com/not_522/status/531298971784720384">2014, 11月 9</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="ja"><p>iwiwiさんのサインです <a href="https://twitter.com/hashtag/codefes?src=hash">#codefes</a> <a href="http://t.co/QMyHyUPV9V">pic.twitter.com/QMyHyUPV9V</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/532142274008715264">2014, 11月 11</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,93 @@
+---
+layout: post
+title: "Octopressで定義リストを使う"
+date: 2013-05-27 22:40
+comments: true
+categories: 
+- Octopress
+- kramdown
+- Markdown
+---
+
+# 定義リストを使いたい
+
+Markdownは楽で便利なのですが、残念なことに標準ではMarkdownは定義リスト`<dl>`を使えません。
+
+Markdownでは、HTMLを埋め込めるので、手打ちでHTMLを書くことで対処できますが、
+それだと負けた気分になってしまいます。
+
+Octopress(というか、Jekyll)では、標準のMarkdownのパーサを変更できるので、
+定義リストを使えるParserに変更して対処しました。
+
+<!--more-->
+
+調べたところOctopressでサポートされていて、
+定義リストを扱えるパーサは次の2つでした。
+
+* kramdown
+* maruku
+
+両方使ってみたのですが、
+marukuの方は既存のmarkdownをうまく解釈してくれなかったので、
+kramdownを使うことにしました。
+
+# Markdownのパーサの変更方法
+
+## _config.yml の 変更
+
+ `_config.yml` の `markdown` を `kramdown`に変更します。
+
+``` diff _config.yml
+code_dir: downloads/code
+ category_dir: blog/categories
+ category_title_prefix: "Category: "
+-markdown: rdiscount
++#markdown: rdiscount
++markdown: kramdown
+ paginate: 10          # Posts per page on the blog index
+ pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+```
+
+## Gemfile の変更
+
+まず、`Gemfile`に`gem 'kramdown'`を付け足します。
+
+``` diff Gemfile
+   gem 'rack', '~> 1.4.1'
+   gem 'jekyll', '~> 0.11.2'
+   gem 'rdiscount', '~> 1.6.8'
++  gem 'kramdown'
+   gem 'pygments.rb', '~> 0.2.12'
+   gem 'RedCloth', '~> 4.2.9'
+   gem 'haml', '~> 3.1.6'
+```
+
+次に、`bundle install` します。
+
+## 確認
+
+最後に、`rake generate`と`rake preview`で確認しましょう。
+
+ちなみに、`kramdown`の定義リストは次のように書きます。
+
+### 例
+
+``` text 定義リストの例
+名前
+: がむ
+: gam0022
+
+HOGE
+: * aaa
+: * bbb
+```
+
+### プレビュー
+
+名前
+: がむ
+: gam0022
+
+HOGE
+: * aaa
+: * bbb

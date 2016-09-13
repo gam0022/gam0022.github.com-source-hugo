@@ -1,0 +1,80 @@
+---
+layout: post
+title: "Keynoteで綺麗な数式を使う"
+date: 2014-04-21 09:01
+comments: true
+categories: 
+- LaTex
+- Keynote
+- Mac OS X
+---
+
+研究室が始まって、輪講用のスライドをヒイヒイ言いながら作っていた時のことです。
+
+Keynote には、PowerPointの数式エディタ的な機能が無いらしいのです。
+
+どうにかして数式を埋め込みたかったので、方法を調べました。
+
+{% img /images/posts/2014-04-21-latexit/keynote-1.png 600 keynoteに数式 %}
+
+<!--more-->
+
+# Keynote で数式を埋め込むまで
+
+結論から言うと、[LaTeXiT](http://www.chachatelier.fr/latexit/) というアプリケーションを利用することにしました。
+
+## LaTeXiT を導入
+
+[LaTexiT の最新版](http://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en)をダウンロード + インストールする。
+
+
+## LaTeXiT の設定
+
+`which`コマンドを使って、各コマンドのパスを調べて設定します。
+
+私の場合はこうしました。
+
+{% img /images/posts/2014-04-21-latexit/latexit-config.png 600 LaTexiTの設定 %}
+
+## LaTeXiT で数式を生成
+
+LaTeXiT では、普通に LaTex と全く同じように数式が扱えます。
+
+式を入力したら、右下の`LaTex it!`ボタンでコンパイル(画像化)してくれます。
+
+{% img /images/posts/2014-04-21-latexit/latexit-usage.png 600 LaTexiTの使い方 %}
+
+## Keynote に貼り付ける
+
+様々な形式に出力(クリップボードにコピー)できるのですが、Keynote で使いたい場合は PDF 形式がベクトル画像になるので良さそうです。
+
+クリップボードにコピーしたら、Keynote から `Command-V` で画像と同じように貼り付けることができます。
+
+また、数式を Keynote にドラッグ・アンド・ドロップすることでも貼り付けることができます。
+
+{% img /images/posts/2014-04-21-latexit/latexit-copy.png 600 数式のコピー %}
+
+ちなみに、デフォルトフォーマットは、`LaTeXit> 環境設定 > 一般タブ` から指定できます。
+
+
+# Tips
+
+## 数式番号を任意に指定したい
+
+数式番号を任意に指定したいなら、`setcounter`を使うと良いです。
+
+```latex 数式番号を指定する
+\setcounter{equation}{5} %数式番号を(6)としたいなら、5(指定したい番号 - 1)を指定
+\begin{equation}
+  M(T) = \sum_{e \in T,e \not\in P}m(e)
+\end{equation}
+```
+
+無事に数式番号を指定できました。
+
+{% img /images/posts/2014-04-21-latexit/latexit-setcounter.png 600 数式番号を指定する %}
+
+
+# 参考
+
+* [Keynoteとかで数式を綺麗に表示したいーLaTeXiT : macでの研究に便利なものたち](http://mac-physics.ldblog.jp/archives/51932383.html)

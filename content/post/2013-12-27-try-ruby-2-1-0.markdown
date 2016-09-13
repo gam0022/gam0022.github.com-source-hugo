@@ -1,0 +1,327 @@
+---
+layout: post
+title: "Ruby 2.1.0 を自力でビルドする"
+date: 2013-12-27 20:16
+comments: true
+categories: 
+- Ruby
+---
+
+# Ruby 2.1.0 がリリース
+
+Ruby 2.1.0 がついにリリースされましたね！！！
+
+なんと嬉しいクリスマスプレゼントなんでしょう！
+
+* [Ruby 2.1.0 is released](http://www.ruby-lang.org/en/news/2013/12/25/ruby-2-1-0-is-released/)
+* [Ruby 2.1.0 リリース](https://www.ruby-lang.org/ja/news/2013/12/25/ruby-2-1-0-is-released/)
+
+<!--more-->
+
+# 早速、試してみる
+
+MBAを買い替えた時に、Rubyのバージョン管理システムを`rvm`から`rbenv`に乗り換えました。
+
+というわけで、`rbenv(ruby-build)` で Ruby を入れようと思いました。
+
+```bash ruby-build で Ruby 2.1.0 をインストール!?
+[~/Downloads]$ brew upgrade ruby-build
+Error: ruby-build-20131220.1 already installed
+[~/Downloads]$ rbenv install -l
+Available versions:
+  1.8.6-p383
+  1.8.6-p420
+  1.8.7-p249
+  1.8.7-p302
+  1.8.7-p334
+  1.8.7-p352
+  1.8.7-p357
+  1.8.7-p358
+  1.8.7-p370
+  1.8.7-p371
+  1.8.7-p374
+  1.9.1-p378
+  1.9.1-p430
+  1.9.2-p0
+  1.9.2-p180
+  1.9.2-p290
+  1.9.2-p318
+  1.9.2-p320
+  1.9.3-dev
+  1.9.3-p0
+  1.9.3-p125
+  1.9.3-p194
+  1.9.3-p286
+  1.9.3-p327
+  1.9.3-p362
+  1.9.3-p374
+  1.9.3-p385
+  1.9.3-p392
+  1.9.3-p429
+  1.9.3-p448
+  1.9.3-p484
+  1.9.3-preview1
+  1.9.3-rc1
+  2.0.0-dev
+  2.0.0-p0
+  2.0.0-p195
+  2.0.0-p247
+  2.0.0-p353
+  2.0.0-preview1
+  2.0.0-preview2
+  2.0.0-rc1
+  2.0.0-rc2
+  2.1.0-dev
+  2.1.0-preview1
+  2.1.0-preview2
+  2.1.0-rc1
+  heroku-1.8.7-p375
+  jruby-1.5.6
+  jruby-1.6.3
+  jruby-1.6.4
+  jruby-1.6.5
+  jruby-1.6.5.1
+  jruby-1.6.6
+  jruby-1.6.7
+  jruby-1.6.7.2
+  jruby-1.6.8
+  jruby-1.7.0
+  jruby-1.7.0-preview1
+  jruby-1.7.0-preview2
+  jruby-1.7.0-rc1
+  jruby-1.7.0-rc2
+  jruby-1.7.1
+  jruby-1.7.2
+  jruby-1.7.3
+  jruby-1.7.4
+  jruby-1.7.5
+  jruby-1.7.6
+  jruby-1.7.7
+  jruby-1.7.8
+  jruby-1.7.9
+  maglev-1.0.0
+  maglev-1.1.0-dev
+  maglev-2.0.0-dev
+  mruby-dev
+  rbx-1.2.4
+  rbx-2.0.0
+  rbx-2.0.0-dev
+  rbx-2.0.0-rc1
+  rbx-2.1.0
+  rbx-2.1.1
+  rbx-2.2.0
+  rbx-2.2.1
+  ree-1.8.6-2009.06
+  ree-1.8.7-2009.09
+  ree-1.8.7-2009.10
+  ree-1.8.7-2010.01
+  ree-1.8.7-2010.02
+  ree-1.8.7-2011.03
+  ree-1.8.7-2011.12
+  ree-1.8.7-2012.01
+  ree-1.8.7-2012.02
+  topaz-dev
+```
+
+なんと、2.1.0 が無いotz
+
+
+# 自力でビルド
+
+仕方がないので、ソースコードから自力でビルドします。
+
+## ソースコードをダウンロード
+
+GitHub などから clone しても良いですが、今回は公式ページにあるURLからソースコードを入手します。
+
+```bash get-ruby-source-code
+[~/tmp]$ wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.bz2 .
+[~/tmp]$ tar zxvf ruby-2.1.0.tar.bz2
+```
+
+## ビルドする
+
+まあ普通にビルドします。
+
+今回はちょっと試してみるだけなので、インストール先を `/Users/gam0022/ruby-2.1.0/` にしてみました。
+
+イントール先は、`./configure --prefix={絶対パス}`のようにやると良いです。
+
+存在しないパスを指定すると、勝手にディレクトリを作ってくれるようです。
+
+```bash build-ruby
+[~/tmp]$ cd ruby-2.1.0
+[~/tmp/ruby-2.1.0]$ autoconf
+[~/tmp/ruby-2.1.0]$ ./configure --prefix=/Users/gam0022/ruby-2.1.0/
+[~/tmp/ruby-2.1.0]$ make
+[~/tmp/ruby-2.1.0]$ make install
+```
+
+## 試してみる
+
+とりあえず、バージョンを確認してみます。お、ちゃんと2.1.0になってますね。
+
+```bash check-ruby-version
+[~/tmp/ruby-2.1.0]$ cd ~/ruby-2.1.0
+[~/ruby-2.1.0/bin]$ ./ruby -v
+ruby 2.1.0p0 (2013-12-25 revision 44422) [x86_64-darwin13.0]
+```
+
+`irb`で確認すると、2.1.0 から導入された 分数と虚数のリテラルもちゃんと使えます。
+
+```bash test-ruby
+[~/ruby-2.1.0/bin]$ ./irb
+irb(main):001:0> 1/3r
+=> (1/3)
+irb(main):002:0> 42i
+=> (0+42i)
+irb(main):003:0> exit
+```
+
+RGenGCなど、他にも気になる変更はたくさんあるので、色々と実験してみたいですね!!
+
+# 追記: ruby-build を GitHub から clone して最新にする
+
+ruby-build が Ruby最新版に対応してないのは良くあることのようです。
+
+参考: [rbenvで最新のRubyがインストール出来ない時の対処](http://9ensan.com/blog/programming/ruby/rbenv-plugins-ruby-build/)
+
+ruby-build の最新版を GitHub から clone することで解決しました。
+
+```bash upgrade-ruby-build
+[~]$ brew uninstall ruby-build
+Uninstalling /usr/local/Cellar/ruby-build/20131220.1...
+[~]$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+Cloning into '/Users/gam0022/.rbenv/plugins/ruby-build'...
+remote: Reusing existing pack: 2715, done.
+remote: Counting objects: 47, done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 2762 (delta 22), reused 27 (delta 3)
+Receiving objects: 100% (2762/2762), 468.96 KiB | 98.00 KiB/s, done.
+Resolving deltas: 100% (1191/1191), done.
+Checking connectivity... done
+[~]$ rbenv install -l
+Available versions:
+  1.8.6-p383
+  1.8.6-p420
+  1.8.7-p249
+  1.8.7-p302
+  1.8.7-p334
+  1.8.7-p352
+  1.8.7-p357
+  1.8.7-p358
+  1.8.7-p370
+  1.8.7-p371
+  1.8.7-p374
+  1.8.7-p375
+  1.9.1-p378
+  1.9.1-p430
+  1.9.2-p0
+  1.9.2-p180
+  1.9.2-p290
+  1.9.2-p318
+  1.9.2-p320
+  1.9.2-p326
+  1.9.3-dev
+  1.9.3-p0
+  1.9.3-p125
+  1.9.3-p194
+  1.9.3-p286
+  1.9.3-p327
+  1.9.3-p362
+  1.9.3-p374
+  1.9.3-p385
+  1.9.3-p392
+  1.9.3-p429
+  1.9.3-p448
+  1.9.3-p484
+  1.9.3-preview1
+  1.9.3-rc1
+  2.0.0-dev
+  2.0.0-p0
+  2.0.0-p195
+  2.0.0-p247
+  2.0.0-p353
+  2.0.0-preview1
+  2.0.0-preview2
+  2.0.0-rc1
+  2.0.0-rc2
+  2.1.0
+  2.1.0-dev
+  2.1.0-preview1
+  2.1.0-preview2
+  2.1.0-rc1
+  2.2.0-dev
+  jruby-1.5.6
+  jruby-1.6.3
+  jruby-1.6.4
+  jruby-1.6.5
+  jruby-1.6.5.1
+  jruby-1.6.6
+  jruby-1.6.7
+  jruby-1.6.7.2
+  jruby-1.6.8
+  jruby-1.7.0
+  jruby-1.7.0-preview1
+  jruby-1.7.0-preview2
+  jruby-1.7.0-rc1
+  jruby-1.7.0-rc2
+  jruby-1.7.1
+  jruby-1.7.2
+  jruby-1.7.3
+  jruby-1.7.4
+  jruby-1.7.5
+  jruby-1.7.6
+  jruby-1.7.7
+  jruby-1.7.8
+  jruby-1.7.9
+  maglev-1.0.0
+  maglev-1.1.0-dev
+  maglev-2.0.0-dev
+  mruby-dev
+  rbx-1.2.4
+  rbx-2.0.0
+  rbx-2.0.0-dev
+  rbx-2.0.0-rc1
+  rbx-2.1.0
+  rbx-2.1.1
+  rbx-2.2.0
+  rbx-2.2.1
+  rbx-2.2.2
+  ree-1.8.6-2009.06
+  ree-1.8.7-2009.09
+  ree-1.8.7-2009.10
+  ree-1.8.7-2010.01
+  ree-1.8.7-2010.02
+  ree-1.8.7-2011.03
+  ree-1.8.7-2011.12
+  ree-1.8.7-2012.01
+  ree-1.8.7-2012.02
+  topaz-dev
+[~]$ rbenv install 2.1.0
+Downloading ruby-2.1.0.tar.gz...
+-> http://dqw8nmjcqpjn7.cloudfront.net/9e6386d53f5200a3e7069107405b93f7
+Installing ruby-2.1.0...
+^@^@^@Installed ruby-2.1.0 to /Users/gam0022/.rbenv/versions/2.1.0
+```
+
+無事に、rbenv から 2.1.0 をインストールできました!!
+
+```bash rbenv-versions
+[~]$ rbenv versions
+  system
+  1.9.3-p484
+* 2.0.0-p353 (set by /Users/gam0022/.rbenv/version)
+  2.1.0
+```
+
+## 今後、ruby-build をアップデートする方法
+
+今後、ruby-build をアップデートしたくなったらこうします。
+
+```bash ruby-build-update
+cd ~/.rbenv/plugins/ruby-build
+git pull
+```
+
+ruby-build が homebrew の Formula への反映するのが遅いみたいですね。最新のRubyを使いたくて待ちきれないような方はどうぞ。

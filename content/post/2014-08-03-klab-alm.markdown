@@ -1,0 +1,17 @@
+---
+layout: post
+title: "KLab社内勉強会 ALM で発表しました"
+date: 2014-08-03 11:10
+comments: true
+categories: 
+- 勉強会
+- Ruby
+---
+
+KLab の社内勉強会 ALM で LT をしました。
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/37458922" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
+
+内容としては、もう2回くらいLTをしている、immutable list gem についての話をしました。
+
+前回からの違いとしては、クイックソートのベンチマーク結果を盛り込んで、実用性をアピールした内容にしました。

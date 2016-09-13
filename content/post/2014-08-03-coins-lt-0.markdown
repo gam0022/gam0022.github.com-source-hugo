@@ -1,0 +1,21 @@
+---
+layout: post
+title: "coinsLT #0 で発表しました"
+date: 2014-08-03 11:03
+comments: true
+categories: 
+- 勉強会
+- JavaScript
+---
+
+[coinsLT #0](https://atnd.org/events/51236) で three.js についてのLTをしました。
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/35917660" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/threejs-35917660" title="three.js の紹介" target="_blank">three.js の紹介</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
+
+<!--more-->
+
+three.js は、卒業研究で開発しているアプリケーションで使用しているのですが、
+思ったより使いやすかったので紹介することにしました。
+
+当日に参加することになって、直前の数時間でスライドを作ったので、
+雑な感じになってしまったので準備をしっかりすればと良かったなと反省しています。

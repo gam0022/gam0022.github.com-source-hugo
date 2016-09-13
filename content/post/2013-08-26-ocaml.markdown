@@ -1,0 +1,13 @@
+---
+layout: post
+title: "OCamlの匿名関数とカリー化"
+date: 2013-08-26 21:31
+comments: true
+categories: 
+- OCaml
+---
+
+OCamlの匿名関数とカリー化について記事を書こうと想ったのですが、
+そのままの記事が既に存在したのでリンクを貼っておきます。
+
+[OCaml入門(2)](http://ocaml.jp/OCaml%E5%85%A5%E9%96%80%282%29)
