@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "RubyでLinkedListを使うためのC拡張を作った"
-date: 2013-08-19 21:25
+date: 2013-08-19T21:25:00+09:00
 comments: true
 categories: 
 - Ruby

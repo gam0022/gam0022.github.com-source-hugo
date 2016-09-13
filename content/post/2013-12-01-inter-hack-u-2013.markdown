@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Inter Hack U 2013 に参加"
-date: 2013-12-01 21:24
+date: 2013-12-01T21:24:00+09:00
 comments: true
 categories: 
 - Event

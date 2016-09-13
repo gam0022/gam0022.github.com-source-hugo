@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ServersMan@VPSでRubyのCGIを実行するまでのメモ"
-date: 2012-07-26 00:11
+date: 2012-07-26T00:11:00+09:00
 comments: true
 categories:
 - Apache

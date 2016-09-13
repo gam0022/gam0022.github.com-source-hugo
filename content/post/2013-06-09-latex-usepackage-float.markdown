@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "LaTexで図をその場に配置する"
-date: 2013-06-09 22:58
+date: 2013-06-09T22:58:00+09:00
 comments: true
 categories: 
 - LaTex

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "コンピューグラフィックス基礎の成果報告"
-date: 2013-03-12 23:28
+date: 2013-03-12T23:28:00+09:00
 comments: true
 categories: 
 - study

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Octopressのテーマをカスタマイズする
-date: 2012-07-21 23:51
+date: 2012-07-21T23:51:00+09:00
 comments: true
 categories: 
 - Octopress

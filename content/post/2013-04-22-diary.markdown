@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "近状報告"
-date: 2013-04-22 22:13
+date: 2013-04-22T22:13:00+09:00
 comments: true
 categories: 
 - Diary

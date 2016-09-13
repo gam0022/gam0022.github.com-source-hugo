@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "大五郎botがTwitterで凍結された"
-date: 2013-11-14 21:29
+date: 2013-11-14T21:29:00+09:00
 comments: true
 categories: 
 - Twitter

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "bashからzshに乗り換えた"
-date: 2013-05-23 12:30
+date: 2013-05-23T12:30:00+09:00
 comments: true
 categories: 
 - Mac OS X

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BetterTouchToolが便利"
-date: 2013-05-23 11:14
+date: 2013-05-23T11:14:00+09:00
 comments: true
 categories: 
 - Mac OS X

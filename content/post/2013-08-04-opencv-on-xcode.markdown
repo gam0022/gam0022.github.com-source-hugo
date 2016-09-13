@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "XcodeでopenCVを使う"
-date: 2013-08-04 12:40
+date: 2013-08-04T12:40:00+09:00
 comments: true
 categories: 
 - Mac OS X

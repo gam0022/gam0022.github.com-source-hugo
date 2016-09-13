@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rubyのgemのメモ"
-date: 2013-12-26 10:46
+date: 2013-12-26T10:46:00+09:00
 comments: true
 categories: 
 - Ruby

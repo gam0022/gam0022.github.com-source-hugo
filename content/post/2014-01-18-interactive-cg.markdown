@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "インタラクティブCGの成果報告"
-date: 2014-01-18 16:54
+date: 2014-01-18T16:54:00+09:00
 comments: true
 categories: 
 - study

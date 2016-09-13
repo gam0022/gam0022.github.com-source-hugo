@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JavaScriptとCoffeeScriptのメモ"
-date: 2014-06-15 06:50
+date: 2014-06-15T06:50:00+09:00
 comments: true
 categories: 
 - JavaScript

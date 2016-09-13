@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "EnumeratorとEnumerator::Lazyの違い"
-date: 2014-05-08 08:51
+date: 2014-05-08T08:51:00+09:00
 comments: true
 categories: 
 - Ruby

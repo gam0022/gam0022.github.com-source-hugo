@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JavaScriptのメモ"
-date: 2013-07-11 05:58
+date: 2013-07-11T05:58:00+09:00
 comments: true
 categories: 
 - JavaScript

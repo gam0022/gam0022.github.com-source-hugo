@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHubのMarkdownでListをNest"
-date: 2013-08-01 22:31
+date: 2013-08-01T22:31:00+09:00
 comments: true
 categories: 
 - GitHub

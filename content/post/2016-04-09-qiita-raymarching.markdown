@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GPUをつかったリアルタイムなレイトレーシング"
-date: 2016-04-09 18:03
+date: 2016-04-09T18:03:00+09:00
 comments: true
 categories: 
 - WebGL

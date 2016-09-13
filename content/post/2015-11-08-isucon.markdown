@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "全くの素人がISUCON5本戦に参加しました"
-date: 2015-11-08 18:21
+date: 2015-11-08T18:21:00+09:00
 comments: true
 categories:
 - ISUCON

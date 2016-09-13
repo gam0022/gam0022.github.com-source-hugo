@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octopressの見出しにアンカーリンクをつけるように改造"
-date: 2013-02-05 14:30
+date: 2013-02-05T14:30:00+09:00
 comments: true
 categories: 
 - Octopress

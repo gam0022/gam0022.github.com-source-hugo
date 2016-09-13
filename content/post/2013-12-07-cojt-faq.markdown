@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "COJTを受講しようと考えている人へ"
-date: 2013-12-07 00:20
+date: 2013-12-07T00:20:00+09:00
 comments: true
 categories: 
 - COJT

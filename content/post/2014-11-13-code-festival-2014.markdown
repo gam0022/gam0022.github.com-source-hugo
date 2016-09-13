@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CODE FESTIVAL2014 本戦に参加"
-date: 2014-11-13 17:25
+date: 2014-11-13T17:25:00+09:00
 comments: true
 categories: 
 - 競技プログラミング

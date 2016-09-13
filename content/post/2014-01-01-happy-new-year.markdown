@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "今年もよろしくお願いします"
-date: 2014-01-01 10:30
+date: 2014-01-01T10:30:00+09:00
 comments: true
 categories: 
 - Diary

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rails4のアプリをHerokuで動かす"
-date: 2013-09-17 22:09
+date: 2013-09-17T22:09:00+09:00
 comments: true
 categories: 
 - Ruby

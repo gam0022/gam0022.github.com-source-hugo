@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "近状報告"
-date: 2013-10-14 10:15
+date: 2013-10-14T10:15:00+09:00
 comments: true
 categories: 
 - Event

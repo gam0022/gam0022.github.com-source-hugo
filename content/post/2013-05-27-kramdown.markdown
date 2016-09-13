@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octopressで定義リストを使う"
-date: 2013-05-27 22:40
+date: 2013-05-27T22:40:00+09:00
 comments: true
 categories: 
 - Octopress

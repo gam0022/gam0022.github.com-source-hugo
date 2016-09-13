@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eclipseのコンソール(Console)の出力が文字化けする"
-date: 2013-01-23 10:58
+date: 2013-01-23T10:58:00+09:00
 comments: true
 categories: 
 - Java

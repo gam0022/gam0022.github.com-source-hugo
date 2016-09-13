@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Programming Challenges 1"
-date: 2013-06-06 09:14
+date: 2013-06-06T09:14:00+09:00
 comments: true
 categories: 
 - 競技プログラミング

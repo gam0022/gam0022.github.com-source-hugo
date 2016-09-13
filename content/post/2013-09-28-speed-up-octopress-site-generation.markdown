@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octopressのpreviewを高速化する"
-date: 2013-09-28 16:04
+date: 2013-09-28T16:04:00+09:00
 comments: true
 categories: 
 - Octopress

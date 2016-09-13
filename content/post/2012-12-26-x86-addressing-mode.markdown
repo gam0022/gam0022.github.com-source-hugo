@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "x86のアドレッシングモードでハマった"
-date: 2012-12-26 23:05
+date: 2012-12-26T23:05:00+09:00
 comments: true
 categories: 
 - X86

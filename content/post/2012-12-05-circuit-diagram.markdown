@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "タイミングチャートと回路図を比較的楽につくる方法"
-date: 2012-12-05 09:08
+date: 2012-12-05T09:08:00+09:00
 comments: true
 categories: 
 - coins

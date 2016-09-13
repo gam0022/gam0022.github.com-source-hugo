@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eclipseのコード補完のショートカットを変更する"
-date: 2013-04-23 17:31
+date: 2013-04-23T17:31:00+09:00
 comments: true
 categories: 
 - Eclipse

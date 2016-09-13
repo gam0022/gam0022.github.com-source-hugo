@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C88のTechBooster本にthree.js(WebGL)の入門記事を書きました"
-date: 2015-08-18 09:08
+date: 2015-08-18T09:08:00+09:00
 comments: true
 categories:
 - コミケ

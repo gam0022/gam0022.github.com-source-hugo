@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "学生のためのアプリ開発コンテストに参加"
-date: 2013-12-14 11:33
+date: 2013-12-14T11:33:00+09:00
 comments: true
 categories: 
 - Event

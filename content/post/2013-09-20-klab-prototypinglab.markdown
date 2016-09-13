@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "KLabプロトタイピングラボに参加"
-date: 2013-09-20 09:25
+date: 2013-09-20T09:25:00+09:00
 comments: true
 categories: 
 - Event

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Twinsに登録した時間割をGoogleカレンダーやiCalにインポートするWebサービス「TwinCal」を作った"
-date: 2012-08-22 12:47
+date: 2012-08-22T12:47:00+09:00
 comments: true
 categories: 
 - Ruby

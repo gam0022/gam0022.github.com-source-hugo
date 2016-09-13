@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rails4をPassengerで動かす"
-date: 2013-10-18 00:13
+date: 2013-10-18T00:13:00+09:00
 comments: true
 categories: 
 - Rails

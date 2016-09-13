@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GNU Octave を Mac OS Xにインストールする"
-date: 2012-09-06 19:27
+date: 2012-09-06T19:27:00+09:00
 comments: true
 categories: 
 - Mac OS X

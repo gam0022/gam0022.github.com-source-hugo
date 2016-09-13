@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Programming Challenges 2"
-date: 2013-07-09 07:00
+date: 2013-07-09T07:00:00+09:00
 comments: true
 categories: 
 categories: 

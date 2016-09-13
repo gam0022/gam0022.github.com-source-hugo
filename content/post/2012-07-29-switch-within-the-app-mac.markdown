@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mac(Lion)でアプリケーション内でウィンドウを切り替える方法"
-date: 2012-07-29 23:21
+date: 2012-07-29T23:21:00+09:00
 comments: true
 categories: 
 - Mac OS X

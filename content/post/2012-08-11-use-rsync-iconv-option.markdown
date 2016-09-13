@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)"
-date: 2012-08-11 10:38
+date: 2012-08-11T10:38:00+09:00
 comments: true
 categories: 
 - Octopress

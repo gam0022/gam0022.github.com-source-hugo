@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1.0 を自力でビルドする"
-date: 2013-12-27 20:16
+date: 2013-12-27T20:16:00+09:00
 comments: true
 categories: 
 - Ruby

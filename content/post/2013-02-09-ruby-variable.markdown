@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "初心者が混乱しやすいRubyの変数"
-date: 2013-02-09 19:07
+date: 2013-02-09T19:07:00+09:00
 comments: true
 categories: 
 - Ruby

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SQLite3でハマった点まとめ"
-date: 2013-09-16 14:05
+date: 2013-09-16T14:05:00+09:00
 comments: true
 categories: 
 - Ruby

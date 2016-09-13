@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rubyの改造してThread#joinのTimeoutで例外を発生させる"
-date: 2013-08-18 17:15
+date: 2013-08-18T17:15:00+09:00
 comments: true
 categories: 
 - Ruby

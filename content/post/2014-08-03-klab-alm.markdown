@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "KLab社内勉強会 ALM で発表しました"
-date: 2014-08-03 11:10
+date: 2014-08-03T11:10:00+09:00
 comments: true
 categories: 
 - 勉強会

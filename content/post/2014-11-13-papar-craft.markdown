@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "卒業研究の紹介をしていだだきました"
-date: 2014-11-13 17:52
+date: 2014-11-13T17:52:00+09:00
 comments: true
 categories: 
 - 研究

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rubyのgitリポジトリ"
-date: 2013-08-04 11:39
+date: 2013-08-04T11:39:00+09:00
 comments: true
 categories: 
 - Ruby

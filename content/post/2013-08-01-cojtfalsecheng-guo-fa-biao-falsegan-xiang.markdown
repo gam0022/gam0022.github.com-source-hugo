@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "COJTの成果発表の感想"
-date: 2013-08-01 22:44
+date: 2013-08-01T22:44:00+09:00
 comments: true
 categories: 
 - COJT

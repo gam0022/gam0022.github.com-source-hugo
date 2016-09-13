@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octopressでカテゴリーの一覧みたいのを実装する"
-date: 2012-08-10 12:24
+date: 2012-08-10T12:24:00+09:00
 comments: true
 categories: 
 - Octopress

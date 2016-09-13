@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Macを使い始めて最初に入れたアプリケーションたち"
-date: 2012-08-01 11:17
+date: 2012-08-01T11:17:00+09:00
 comments: true
 categories: 
 - Mac OS X

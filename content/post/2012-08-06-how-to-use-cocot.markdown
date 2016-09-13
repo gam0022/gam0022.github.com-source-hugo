@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "cocotで文字コードが異なるマシンにsshする"
-date: 2012-08-06 11:18
+date: 2012-08-06T11:18:00+09:00
 comments: true
 categories: 
 - ssh

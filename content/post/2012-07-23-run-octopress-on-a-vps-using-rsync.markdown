@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Rsyncを使ってOctopressをVPS上で公開する"
-date: 2012-07-23 10:02
+date: 2012-07-23T10:02:00+09:00
 comments: true
 categories: 
 - Octopress

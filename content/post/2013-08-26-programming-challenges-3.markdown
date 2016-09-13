@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Programming Challenges 3"
-date: 2013-08-26 21:34
+date: 2013-08-26T21:34:00+09:00
 comments: true
 categories: 
 - Uva Online Judge

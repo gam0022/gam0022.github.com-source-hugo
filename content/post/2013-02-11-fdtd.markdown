@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OctopressでMathJax.rbの導入"
-date: 2013-02-11 16:23
+date: 2013-02-11T16:23:00+09:00
 comments: true
 categories: 
 - Octopress
