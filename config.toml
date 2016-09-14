@@ -1,7 +1,7 @@
 baseurl = "http://replace-this-with-your-website-url.com/"
-title = "Academic Theme"
-copyright = "&copy; 2016 Your Name"
-languageCode = "en-us"
+title = "gam0022.net"
+copyright = "&copy; 2016 gam0022"
+languageCode = "jp"
 theme = "academic"
 
 # Enable comments by entering your Disqus shortname
@@ -12,13 +12,13 @@ googleAnalytics = ""
 
 
 [params]
-  name = "Lena Smith"
-  role = "Professor of Artificial Intelligence"
-  organization = "Stanford University"
+  name = "Sho Hosoda / 細田 翔"
+  role = "ソフトウェアエンジニア"
+  organization = "KLab株式会社"
   avatar = "portrait.jpg"
-  email = "test@example.org"
-  address = "Stanford AI Lab, Stanford University, California, 90210, USA."
-  phone = "888 888 88 88"
+  email = "gam0022@gmail.com"
+  address = "東京都"
+  # phone = "888 888 88 88"
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
@@ -40,11 +40,13 @@ googleAnalytics = ""
   #   Section will only be displayed if `content/home/about.md` exists.
   [params.about]
     interests = [
-      "Artificial Intelligence",
-      "Computational Linguistics",
-      "Information Retrieval"
+      "コンピュータグラフィックス",
+      "WebGL",
+      "three.js",
+      "GLSL",
+      "Ruby on Rails"
     ]
-    str_interests = "Interests"
+    str_interests = "Interests / 興味"
     str_education = "Education"
 
     [[params.about.education]]
