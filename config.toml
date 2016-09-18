@@ -1,4 +1,4 @@
-baseurl = "http://replace-this-with-your-website-url.com/"
+baseurl = "http://gam0022.net/"
 title = "gam0022.net"
 copyright = "&copy; 2016 gam0022"
 languageCode = "jp"
@@ -15,14 +15,14 @@ googleAnalytics = ""
   name = "細田 翔 / Sho Hosoda"
   role = "ソフトウェアエンジニア"
   organization = "KLab株式会社"
-  avatar = "portrait.jpg"
+  avatar = "gam0022_splash.png"
   email = "gam0022@gmail.com"
   address = "東京都"
   # phone = "888 888 88 88"
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
-  date_format = "Mon, Jan 2, 2006"
+  date_format = "2006-01-02"
 
   # Enable global LaTeX math rendering? If false, you can enable it locally
   #   on a per page basis.
@@ -45,32 +45,34 @@ googleAnalytics = ""
       "three.js",
       "GLSL",
       "Ruby on Rails",
-    ]
-
-    careers = [
-      "情報基盤研究所, ソフトウェアエンジニア(学生アルバイト) C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理などを担当 2011/9〜2015/3",
-      "BearTail, サーバサイドエンジニア(学生アルバイト), Ruby on Railsによるスマートフォンアプリのバックエンドを担当 2014/4〜2015/3",
-      "KLab, ソフトウェアエンジニア, 某人気スクールアイドルアプリの運営とクライアント開発 2015/4〜現在"
+      "JavaScript",
     ]
 
     str_interests = "興味 / Interests"
-    str_education = "Education"
-    str_career = "経歴 / Careers"
+    str_education = "学歴 / Education"
+    str_career = "職歴 / Career"
 
-    [[params.about.education]]
-      course = "PhD in Artificial Intelligence"
-      institution = "Stanford University"
-      year = 2012
+  [[params.about.career]]
+    company = "情報基盤研究所"
+    position = "ソフトウェアエンジニア(学生アルバイト)"
+    year = "2011-09 〜 2015-03"
+    detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
 
-    [[params.about.education]]
-      course = "MEng in Artificial Intelligence"
-      institution = "Massachusetts Institute of Technology"
-      year = 2009
+  [[params.about.career]]
+    company = "BearTail"
+    position = "ソフトウェアエンジニア(学生アルバイト)"
+    year = "2011-09 〜 2015-03"
+    detail = " Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当"
+  [[params.about.career]]
+    company = "KLab"
+    position = "ソフトウェアエンジニア(正社員)"
+    year = "2015-04 〜 現在"
+    detail = "スクールアイドルの某人気  ソーシャルゲームの運営とクライアント開発を担当"
 
-    [[params.about.education]]
-      course = "BSc in Artificial Intelligence"
-      institution = "Massachusetts Institute of Technology"
-      year = 2008
+  [[params.about.education]]
+    course = "ソフトウェアサイエンス専攻, 非数値処理アルゴリズム研究室"
+    institution = "筑波大学 情報学群 情報科学類"
+    year = "2011-04 〜 2015-03"
 
   # Selected Publications section.
   #   Section will only be displayed if there are publications with
@@ -131,26 +133,35 @@ googleAnalytics = ""
   #
   #   Full list: https://jpswalsh.github.io/academicons/
 
-  [[params.social]]
-    icon = "envelope"
-    icon_pack = "fa"
-    link = "mailto:test@example.org"
+  # [[params.social]]
+  #   icon = "envelope"
+  #   icon_pack = "fa"
+  #   link = "mailto:gam0022@gmail.com"
 
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
-    link = "//twitter.com/GeorgeCushen"
-
-  [[params.social]]
-    icon = "google-scholar"
-    icon_pack = "ai"
-    link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+    link = "//twitter.com/gam0022"
 
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "//github.com/gcushen"
+    link = "//github.com/gam0022"
 
+  [[params.social]]
+    icon = "qiita"
+    icon_pack = "img"
+    link = "//qiita.com/gam0022"
+
+  [[params.social]]
+    icon = "hatena-blog"
+    icon_pack = "img"
+    link = "//gam0022.hatenablog.com"
+
+  [[params.social]]
+    icon = "facebook-official"
+    icon_pack = "fa"
+    link = "//www.facebook.com/sho.hosoda.9"
 
 # Navigation Links
 #   The weight parameter defines the order that the links will appear in.

@@ -16,8 +16,10 @@
                     <a href="{{ .link }}">
                     {{ if eq .icon_pack "ai" }}
                         <i class="ai ai-{{ .icon }} big-icon" aria-hidden="true"></i>
-                    {{ else }}
+                    {{ else if eq .icon_pack "fa" }}
                         <i class="fa fa-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ else }}
+                        <div style="width: 38px; height: 38px; background-size: cover; background-image: url('{{ .Site.BaseURL }}img/icons/{{ .icon }}.png');"></div>
                     {{ end }}
                     </a>
                 </li>
@@ -36,26 +38,26 @@
         <div class="row">
 
             {{ if isset .Site.Params.about "interests" }}
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <h3>{{ with .Site.Params.about.str_interests }}{{ . | markdownify }}{{ end }}</h3>
-                <ul>
+                <ul class="fa-ul">
                     {{ range .Site.Params.about.interests }}
-                    <li>{{ . }}</li>
+                    <li><i class="fa-li fa fa-tag"></i>{{ . }}</li>
                     {{ end }}
                 </ul>
             </div>
             {{ end }}
 
             {{ if isset .Site.Params.about "education" }}
-            <div class="col-sm-7">
+            <div class="col-sm-8">
                 <h3>{{ with .Site.Params.about.str_education }}{{ . | markdownify }}{{ end }}</h3>
                 <ul class="ul-edu fa-ul">
                     {{ range .Site.Params.about.education }}
                     <li>
                         <i class="fa-li fa fa-graduation-cap"></i>
                         <div class="description">
-                            <p class="course">{{ .course }}, {{ .year }}</p>
-                            <p class="institution">{{ .institution }}</p>
+                            <p class="course">{{ .institution }}, {{ .year }}</p>
+                            <p class="institution">{{ .course}}</p>
                         </div>
                     </li>
                     {{ end }}
@@ -63,15 +65,16 @@
             </div>
             {{ end }}
 
-            {{ if isset .Site.Params.about "careers" }}
+            {{ if isset .Site.Params.about "career" }}
             <div class="col-sm-12">
                 <h3>{{ with .Site.Params.about.str_career }}{{ . | markdownify }}{{ end }}</h3>
-                <ul class="ul-edu fa-ul">
-                    {{ range .Site.Params.about.careers }}
+                <ul class="fa-ul">
+                    {{ range .Site.Params.about.career }}
                     <li>
-                        <i class="fa-li fa fa-graduation-cap"></i>
+                        <i class="fa-li fa fa-briefcase"></i>
                         <div class="description">
-                        <p>{{ . }}</p>
+                            <p class="course">{{ .company }}, {{ .position }}, {{ .year }}</p>
+                            <p class="institution">{{ .detail }}</p>
                         </div>
                     </li>
                     {{ end }}
