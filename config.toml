@@ -12,7 +12,7 @@ googleAnalytics = ""
 
 
 [params]
-  name = "Sho Hosoda / 細田 翔"
+  name = "細田 翔 / Sho Hosoda"
   role = "ソフトウェアエンジニア"
   organization = "KLab株式会社"
   avatar = "portrait.jpg"
@@ -40,14 +40,22 @@ googleAnalytics = ""
   #   Section will only be displayed if `content/home/about.md` exists.
   [params.about]
     interests = [
-      "コンピュータグラフィックス",
+      "Computer Graphics",
       "WebGL",
       "three.js",
       "GLSL",
-      "Ruby on Rails"
+      "Ruby on Rails",
     ]
-    str_interests = "Interests / 興味"
+
+    careers = [
+      "情報基盤研究所, ソフトウェアエンジニア(学生アルバイト) C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理などを担当 2011/9〜2015/3",
+      "BearTail, サーバサイドエンジニア(学生アルバイト), Ruby on Railsによるスマートフォンアプリのバックエンドを担当 2014/4〜2015/3",
+      "KLab, ソフトウェアエンジニア, 某人気スクールアイドルアプリの運営とクライアント開発 2015/4〜現在"
+    ]
+
+    str_interests = "興味 / Interests"
     str_education = "Education"
+    str_career = "経歴 / Careers"
 
     [[params.about.education]]
       course = "PhD in Artificial Intelligence"
