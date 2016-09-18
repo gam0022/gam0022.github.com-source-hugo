@@ -63,6 +63,22 @@
             </div>
             {{ end }}
 
+            {{ if isset .Site.Params.about "careers" }}
+            <div class="col-sm-12">
+                <h3>{{ with .Site.Params.about.str_career }}{{ . | markdownify }}{{ end }}</h3>
+                <ul class="ul-edu fa-ul">
+                    {{ range .Site.Params.about.careers }}
+                    <li>
+                        <i class="fa-li fa fa-graduation-cap"></i>
+                        <div class="description">
+                        <p>{{ . }}</p>
+                        </div>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
         </div>
 
     </div>
