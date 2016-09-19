@@ -4,6 +4,7 @@ title: "Programming Challenges 3"
 slug: programming-challenges-3
 date: 2013-08-26T21:34:00+09:00
 comments: true
+math: true
 tags:
 - Uva Online Judge
 - 競技プログラミング
@@ -17,8 +18,8 @@ Uva Online Judgeで解いた問題を適当に解説します。
 
 [10018 - Reverse and Add](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=959)
 
-{%m %} n = 入力 + reverse(入力) {% em %} を計算、回文だったらその値を返す。
-回分でなければ、{% m %} 入力 = n  {% em %} として回文になるまえ繰り返す問題だった。
+$n = 入力 + reverse(入力)$ を計算、回文だったらその値を返す。
+回分でなければ、$ 入力 = n $ として回文になるまえ繰り返す問題だった。
 
 ここで言う回分というのは、`12321`のような整数のこと。
 
@@ -33,8 +34,8 @@ Uva Online Judgeで解いた問題を適当に解説します。
 
 [701 - The Archeologists' Dilemma](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=33&page=show_problem&problem=642)
 
-{% m %} N {% em %} を入力として、{% m %}2^E{% em %}が10進数として{% m %}N{% em %}のprefixとなる、
-最小の{% m %}E{% em %}を求める問題だった。
+$ N $ を入力として、$2^E$が10進数として$N$のprefixとなる、
+最小の$E$を求める問題だった。
 
 注意点としては、
 
@@ -42,29 +43,29 @@ Uva Online Judgeで解いた問題を適当に解説します。
 
 とあるので、例えば、入力が10のときは、出力は20になる。
 
-* これでは、桁の半分以上がprefixとなっているからダメ 
-  * {% m %} 2^{10} = 10\_24 {% em %} 
+* これでは、桁の半分以上がprefixとなっているからダメ
+  * $ 2^{10} = 10\_24 $
 * 桁の半分未満がprefixとなっているから答え。
-  * {% m %} 2^{20} = 10\_48576 {% em %} 
+  * $ 2^{20} = 10\_48576 $
 
-結論から言うと、{% m %}2^E{% em %}の桁数を{% m %}i{% em %}と仮定したとき、
+結論から言うと、$2^E$の桁数を$i$と仮定したとき、
 
-{% math %}
+$$
 E = ceil( log2( n \times 10^i ) ) = floor( log2( (n+1) \times 10^i) )
-{% endmath %}
+$$
 
 となることを利用して、問題を解いた。(iを上の式を満たすまで変化させれて求めれば良い)
 
 ここで、対数の公式より、以下のように上の式を変形して計算量を減らした。
 
-- {% m %} log2(A \times B) = log2(A) + log2(B) {% em %}
-- {% m %} log2(10^i) = log2(10) \times i {% em %}
+- $ log2(A \times B) = log2(A) + log2(B) $
+- $ log2(10^i) = log2(10) \times i $
 
 # 10127 Ones
 
 [10127 - Ones](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=33&page=show_problem&problem=1068)
 
-入力を`N`として、1の連続で表現される10進数 
+入力を`N`として、1の連続で表現される10進数
 となる最小の`N`の倍数の桁数を求める問題だった。
 
 1の連続で表現される10進数 を `i` とすると、`i % N = 0` となるまで、
@@ -84,7 +85,7 @@ E = ceil( log2( n \times 10^i ) ) = floor( log2( (n+1) \times 10^i) )
 
 両方が最善を尽くした場合、Satanは常に2を掛け、Oliieは常に9を掛けると分かる。
 
-{% m %}1 < n < 4294967295{% em %} だと分かっているので、nとpに `unsigned long long int` 型を使えば、
+$1 < n < 4294967295$ だと分かっているので、nとpに `unsigned long long int` 型を使えば、
 オーバーフローをせずに、計算できるので、素朴にシュミュレーションをした。
 
 # 10198 Counting
@@ -99,14 +100,10 @@ E = ceil( log2( n \times 10^i ) ) = floor( log2( (n+1) \times 10^i) )
 この問題は、動的計画法で解くことができ、
 求めるnの表し方の通りf(n)は、次の漸化式で求めることができた。
 
-{% math %}
-\begin{eqnarray*}
-f(0) &=& 2\\
-f(1) &=& 5\\
-f(2) &=& 13\\
-f(n) &=& 2 \times f(n-1) + f(n - 2) + f(n - 3)
-\end{eqnarray*}
-{% endmath %}
+- $f(0) = 2$
+- $f(1) = 5$
+- $f(2) = 13$
+- $f(n) = 2 \times f(n-1) + f(n - 2) + f(n - 3)$
 
 問題とは関係ないが、Javaで提出するときはClass名をMainにしないと
 Runtime Errorになってしまったので苦労した。
@@ -122,22 +119,18 @@ Runtime Errorになってしまったので苦労した。
 要素数が2000000000個となってしまってメモリが足りなくなる点だ。
 
 そこで、`f(n)`の値は同じ値が何個か連続して並ぶことを利用して、
-{% m %}f(i) = f(i + 1) = ... = f(j) = n{% em %} となっていたら、
-{% m %}nums(n) = i{% em %} となる numsの配列だけを記録するようにした。
+$f(i) = f(i + 1) = ... = f(j) = n$ となっていたら、
+$nums(n) = i$ となる numsの配列だけを記録するようにした。
 
 こうすれば、`f(n)`の値を知りたいときには、
-{% m %}nums(i) \le n {% em %} となる`nums`を見つけて、{% m %} f(n) = i {% em %} とすれば求まる。
+$nums(i) \le n $ となる`nums`を見つけて、$ f(n) = i $ とすれば求まる。
 
 `nums(n)` は次の式を計算して求めた。
 
-{% math %}
-\begin{eqnarray*}
-nums(0) &=& 1\\
-nums(1) &=& 2\\
-nums(3) &=& 4\\
-nums(j) &=& nums(j) + i + 1 (だだし、nums(i) \le j < nums(i+1))
-\end{eqnarray*}
-{% endmath %}
+- $nums(0) = 1$
+- $nums(1) = 2$
+- $nums(3) = 4$
+- $nums(j) = nums(j) + i + 1 (だだし、nums(i) \le j < nums(i+1))$
 
 # 10001 Garden of Eden
 
@@ -213,15 +206,15 @@ Dijkstra法を使って解いた。
 
 ## 問題の概要
 
-入力は、像の体重{% m %} W {% em %} と賢さ {% m %}S{% em %} のペア。
+入力は、像の体重$ W $ と賢さ $S$ のペア。
 
 以下のように、体重が軽い象の方がより賢くなるsequenceが最大になるような、
 象の番号の順番a を求める。
 
-{% math %}
+$$
 W[a[i]] < W[a[i+1]] < W[a[i+2]] < ... < W[a[i+n]]\\
 S[a[i]] > S[a[i+1]] < S[a[i+2]] < ... < W[a[i+n]]\\
-{% endmath %}
+$$
 
 ## 解説
 
@@ -235,7 +228,7 @@ DPの大きさは、1次元で象の数と同じで、各要素にはsequenceの
 また、sequenceの順番を記録するために、nextという配列に、前の添字を記録するようにした。
 
 
-# 10154	Weights and Measures 
+# 10154	Weights and Measures
 
 [10154 - Weights and Measures](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=39&page=show_problem&problem=1095)
 
@@ -289,9 +282,9 @@ MAPを最短経路を求めるような問題。
 全ての穴について、犬と穴、ネズミと穴の距離を比較して、
 以下のような関係を満たす穴が1つでも存在すれば、ネズミは穴に逃げることができるとすれば解けた。
 
-{% math %}
+$$
 |犬 - 穴| \times 2 \ge |ネズミ - 穴|
-{% endmath %}
+$$
 
 
 # 10167 Birthday Cake
@@ -304,9 +297,9 @@ MAPを最短経路を求めるような問題。
 
 ## 解説
 
-この問題では、切り方を {% m %}Ax + Ay = 0{% em %} となるような直線で表現する。
+この問題では、切り方を $Ax + Ay = 0$ となるような直線で表現する。
 
-{% m %} -500 \le A \le 500, -500 \le B \le 500 {% em %}という制約があるので、
-{% m %}A, B{% em %} の全ての組みわせでも、高々{% m %} 1000 \times 1000 {% em %}通りしか無い。
+$ -500 \le A \le 500, -500 \le B \le 500 $という制約があるので、
+$A, B$ の全ての組みわせでも、高々$ 1000 \times 1000 $通りしか無い。
 
-よって、総当りで、{% m %}A, B{% em %} の組み合わせを求めれば解けた。
+よって、総当りで、$A, B$ の組み合わせを求めれば解けた。
