@@ -87,10 +87,19 @@ HOGE
 
 ### プレビュー
 
-名前
-: がむ
-: gam0022
-
-HOGE
-: * aaa
-: * bbb
+<dl>
+  <dt>名前</dt>
+  <dd>がむ</dd>
+  <dd>gam0022</dd>
+  <dt>HOGE</dt>
+  <dd>
+    <ul>
+      <li>aaa</li>
+    </ul>
+  </dd>
+  <dd>
+    <ul>
+      <li>bbb</li>
+    </ul>
+  </dd>
+</dl>
