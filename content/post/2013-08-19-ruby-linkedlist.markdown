@@ -88,7 +88,8 @@ p l3[100] #=> nil
 
 せっかくなので、`LinkedList`を使って関数型言語風にクイックソートを書いてみました。
 
-```ruby qsort_sample.rb
+```ruby
+# qsort_sample.rb
 require 'linkedlist'
 
 def divide(a, l, lt, ge)
@@ -104,7 +105,7 @@ end
 def qsort(l)
   if l.empty?
     LinkedList.new
-  else 
+  else
     lt, ge = divide(l.head, l.tail, LinkedList.new, LinkedList.new)
     qsort(lt) + qsort(ge).cons(l.head)
   end

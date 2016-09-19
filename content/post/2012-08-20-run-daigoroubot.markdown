@@ -17,7 +17,7 @@ tags:
 
 とりあえず、バージョンは次のような感じで。インストール方法は[これ](/blog/2012/07/27/getting-started-with-ruby-on-rails-on-mac/)を参考にしてください。
 
-* ruby 1.9.3p194 
+* ruby 1.9.3p194
 * gem 1.8.24
 
 ## required gems
@@ -59,7 +59,8 @@ dyld: Symbol not found: __ZN5MeCab12getLastErrorEv
 
 `extconf.rb` に次のように`$LDFLAGS`を追加します。
 
-```diff extconf.rb
+```diff
+# extconf.rb
 require 'mkmf'
 
 mecab_config = with_config('mecab-config', 'mecab-config')

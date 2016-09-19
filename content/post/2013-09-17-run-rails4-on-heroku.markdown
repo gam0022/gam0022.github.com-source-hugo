@@ -41,7 +41,8 @@ Mac OS X でやりました。
 
 Heroku では SQLite3 に対応してないので、production用のデータベースに PostgreSQL(pg) を使うために `Gemfile`と`config/databae.yml`を編集します。
 
-``` diff Gemfile の diff
+Gemfile の diff
+```diff
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
@@ -53,7 +54,8 @@ gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 ```
 
-``` diff config/database.yml の diff
+config/database.yml の diff
+``` diff
   timeout: 5000
 
 production:
@@ -93,7 +95,7 @@ error: failed to push some refs to 'git@heroku.com:pacific-waters-7608.git'
 
 普通に Git リポジトリを作ります。
 
-``` bash 普通に Git リポジトリを作る
+```bash
 git init
 git add .
 git commit -m "first commit"
@@ -102,7 +104,7 @@ git commit -m "first commit"
 
 # 5. Heroku に deploy する
 
-``` bash
+```bash
 heroku create # このとき、`heroku create アプリ名` で、任意のアプリ名にもできる。
 git push heroku # Heroku への deploy は git の commit で行うよう。時間がかかる。
 heroku open # ブラウザで確認できる。
@@ -114,7 +116,7 @@ heroku open # ブラウザで確認できる。
 [heroku dashbord](https://dashboard.heroku.com/apps) からアプリを消していたら、
 push 先の heroku(リモートリポジトリ) が無いとかいうエラーになってしまいました。
 
-``` bash No such app as pacific-waters-7608.
+``` bash
 git push heroku
 
  !  No such app as pacific-waters-7608.
@@ -136,7 +138,7 @@ and the repository exists.
 
 なので、Heroku で rake db:migrate します。
 
-``` bash 、Heroku で rake db:migrate する。
+``` bash
 heroku run rake db:migrate
 ```
 
@@ -150,13 +152,15 @@ localでは動くのに、Herokuだとそのままだと上手くいかない場
 
 `config/environments/production.rb` 内で `config.assets.compile = true`にします。
 
-```diff config/environments/production.rb
+`config/environments/production.rb`
+
+```diff
    # config.assets.css_compressor = :sass
- 
+
    # Do not fallback to assets pipeline if a precompiled asset is missed.
 -  config.assets.compile = false
 +  config.assets.compile = true
- 
+
    # Generate digests for assets URLs.
    config.assets.digest = true
 
@@ -166,13 +170,15 @@ localでは動くのに、Herokuだとそのままだと上手くいかない場
 
 `config/environments/production.rb` 内で `config.serve_static_assets = true`にします。
 
-```diff config/environments/production.rb
+`config/environments/production.rb`
+
+```diff
    # config.action_dispatch.rack_cache = true
- 
+
    # Disable Rails's static asset server (Apache or nginx will already do this).
 -  config.serve_static_assets = false
 +  config.serve_static_assets = true
- 
+
    # Compress JavaScripts and CSS.
    config.assets.js_compressor = :uglifier
 ```

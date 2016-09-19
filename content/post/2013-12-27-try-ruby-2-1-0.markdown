@@ -25,7 +25,9 @@ MBAを買い替えた時に、Rubyのバージョン管理システムを`rvm`�
 
 というわけで、`rbenv(ruby-build)` で Ruby を入れようと思いました。
 
-```bash ruby-build で Ruby 2.1.0 をインストール!?
+ruby-build で Ruby 2.1.0 をインストール!?
+
+```bash
 [~/Downloads]$ brew upgrade ruby-build
 Error: ruby-build-20131220.1 already installed
 [~/Downloads]$ rbenv install -l
@@ -135,7 +137,7 @@ Available versions:
 
 GitHub などから clone しても良いですが、今回は公式ページにあるURLからソースコードを入手します。
 
-```bash get-ruby-source-code
+```bash
 [~/tmp]$ wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.bz2 .
 [~/tmp]$ tar zxvf ruby-2.1.0.tar.bz2
 ```
@@ -150,7 +152,7 @@ GitHub などから clone しても良いですが、今回は公式ページに
 
 存在しないパスを指定すると、勝手にディレクトリを作ってくれるようです。
 
-```bash build-ruby
+```bash
 [~/tmp]$ cd ruby-2.1.0
 [~/tmp/ruby-2.1.0]$ autoconf
 [~/tmp/ruby-2.1.0]$ ./configure --prefix=/Users/gam0022/ruby-2.1.0/
@@ -162,7 +164,7 @@ GitHub などから clone しても良いですが、今回は公式ページに
 
 とりあえず、バージョンを確認してみます。お、ちゃんと2.1.0になってますね。
 
-```bash check-ruby-version
+```bash
 [~/tmp/ruby-2.1.0]$ cd ~/ruby-2.1.0
 [~/ruby-2.1.0/bin]$ ./ruby -v
 ruby 2.1.0p0 (2013-12-25 revision 44422) [x86_64-darwin13.0]
@@ -170,7 +172,7 @@ ruby 2.1.0p0 (2013-12-25 revision 44422) [x86_64-darwin13.0]
 
 `irb`で確認すると、2.1.0 から導入された 分数と虚数のリテラルもちゃんと使えます。
 
-```bash test-ruby
+```bash
 [~/ruby-2.1.0/bin]$ ./irb
 irb(main):001:0> 1/3r
 => (1/3)
@@ -189,7 +191,9 @@ ruby-build が Ruby最新版に対応してないのは良くあることのよ�
 
 ruby-build の最新版を GitHub から clone することで解決しました。
 
-```bash upgrade-ruby-build
+upgrade-ruby-build
+
+```bash
 [~]$ brew uninstall ruby-build
 Uninstalling /usr/local/Cellar/ruby-build/20131220.1...
 [~]$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -308,7 +312,8 @@ Installing ruby-2.1.0...
 
 無事に、rbenv から 2.1.0 をインストールできました!!
 
-```bash rbenv-versions
+`rbenv-versions`でカレントのrubyのバージョンを確認できます。
+```bash
 [~]$ rbenv versions
   system
   1.9.3-p484
@@ -320,7 +325,7 @@ Installing ruby-2.1.0...
 
 今後、ruby-build をアップデートしたくなったらこうします。
 
-```bash ruby-build-update
+```bash
 cd ~/.rbenv/plugins/ruby-build
 git pull
 ```
