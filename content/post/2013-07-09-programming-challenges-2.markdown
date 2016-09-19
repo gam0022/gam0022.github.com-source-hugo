@@ -4,8 +4,8 @@ title: "Programming Challenges 2"
 slug: programming-challenges-2
 date: 2013-07-09T07:00:00+09:00
 comments: true
-categories: 
-categories: 
+tags:
+tags:
 - 競技プログラミング
 - Uva Online Judge
 ---

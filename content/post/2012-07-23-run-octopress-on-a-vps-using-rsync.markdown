@@ -4,7 +4,7 @@ title: "Rsyncを使ってOctopressをVPS上で公開する"
 slug: run-octopress-on-a-vps-using-rsync
 date: 2012-07-23T10:02:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - VPS
 - Rsync

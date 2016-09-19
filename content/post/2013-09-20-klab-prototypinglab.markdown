@@ -4,7 +4,7 @@ title: "KLabプロトタイピングラボに参加"
 slug: klab-prototypinglab
 date: 2013-09-20T09:25:00+09:00
 comments: true
-categories: 
+tags:
 - Event
 - 勉強会
 ---

@@ -4,7 +4,7 @@ title: "Octopressで定義リストを使う"
 slug: kramdown
 date: 2013-05-27T22:40:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - kramdown
 - Markdown

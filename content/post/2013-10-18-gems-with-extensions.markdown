@@ -4,7 +4,7 @@ title: "BundlerでC拡張を含んだgemを公開する"
 slug: gems-with-extensions
 date: 2013-10-18T01:22:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 - Gem
 ---

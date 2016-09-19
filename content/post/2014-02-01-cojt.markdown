@@ -4,7 +4,7 @@ title: "COJTの成果発表を終えて"
 slug: cojt
 date: 2014-02-01T13:55:00+09:00
 comments: true
-categories: 
+tags:
 - study
 - contest
 ---

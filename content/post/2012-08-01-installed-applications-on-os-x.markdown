@@ -4,7 +4,7 @@ title: "Macを使い始めて最初に入れたアプリケーションたち"
 slug: installed-applications-on-os-x
 date: 2012-08-01T11:17:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - Lion
 ---

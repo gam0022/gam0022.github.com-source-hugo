@@ -4,7 +4,7 @@ title: "XcodeでopenCVを使う"
 slug: opencv-on-xcode
 date: 2013-08-04T12:40:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - OpenCV
 - Xcode

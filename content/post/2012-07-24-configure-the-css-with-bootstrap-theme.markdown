@@ -4,7 +4,7 @@ title: "Octopressでbootstrap-themeにしたとき、sass/custom/_styles.scssが
 slug: configure-the-css-with-bootstrap-theme
 date: 2012-07-24T22:50:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - CSS
 - SASS/SCSS

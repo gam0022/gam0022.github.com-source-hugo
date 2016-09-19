@@ -4,7 +4,7 @@ title: "OCamlの匿名関数とカリー化"
 slug: ocaml
 date: 2013-08-26T21:31:00+09:00
 comments: true
-categories: 
+tags:
 - OCaml
 ---
 

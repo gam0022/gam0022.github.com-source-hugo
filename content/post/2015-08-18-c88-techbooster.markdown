@@ -4,7 +4,7 @@ title: "C88のTechBooster本にthree.js(WebGL)の入門記事を書きました"
 slug: c88-techbooster
 date: 2015-08-18T09:08:00+09:00
 comments: true
-categories:
+tags:
 - コミケ
 - 本
 - WebGL

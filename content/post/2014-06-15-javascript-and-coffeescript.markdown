@@ -4,7 +4,7 @@ title: "JavaScriptとCoffeeScriptのメモ"
 slug: javascript-and-coffeescript
 date: 2014-06-15T06:50:00+09:00
 comments: true
-categories: 
+tags:
 - JavaScript
 - CoffeeScript
 - Rails

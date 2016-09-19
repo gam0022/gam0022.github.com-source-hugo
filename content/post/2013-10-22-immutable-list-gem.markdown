@@ -4,7 +4,7 @@ title: "Rubyで関数型プログラミングをするための ImmutableList ge
 slug: immutable-list-gem
 date: 2013-10-22T14:17:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 - RubyGems
 - Ruby C-Extension

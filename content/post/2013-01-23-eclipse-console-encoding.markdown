@@ -4,7 +4,7 @@ title: "Eclipseのコンソール(Console)の出力が文字化けする"
 slug: eclipse-console-encoding
 date: 2013-01-23T10:58:00+09:00
 comments: true
-categories: 
+tags:
 - Java
 - Eclipse
 - Mac OS X

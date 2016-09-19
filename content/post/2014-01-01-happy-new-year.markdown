@@ -4,7 +4,7 @@ title: "今年もよろしくお願いします"
 slug: happy-new-year
 date: 2014-01-01T10:30:00+09:00
 comments: true
-categories: 
+tags:
 - Diary
 ---
 

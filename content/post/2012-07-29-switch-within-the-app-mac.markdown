@@ -4,7 +4,7 @@ title: "Mac(Lion)でアプリケーション内でウィンドウを切り替え
 slug: switch-within-the-app-mac
 date: 2012-07-29T23:21:00+09:00
 comments: true
-categories:
+tags:
 - Mac OS X
 - Lion
 ---

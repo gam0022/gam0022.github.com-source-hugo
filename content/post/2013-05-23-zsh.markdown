@@ -4,7 +4,7 @@ title: "bashからzshに乗り換えた"
 slug: zsh
 date: 2013-05-23T12:30:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - zsh
 - iTerm2

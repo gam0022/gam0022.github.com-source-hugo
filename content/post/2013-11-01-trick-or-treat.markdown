@@ -4,7 +4,7 @@ title: "いろんな言語で Trick or Treat"
 slug: trick-or-treat
 date: 2013-10-31T23:59:00+09:00
 comments: true
-categories: 
+tags:
 - ネタ
 - Programming
 - Ruby

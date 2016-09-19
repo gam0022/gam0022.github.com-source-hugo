@@ -4,7 +4,7 @@ title: "Rubyの改造してThread#joinのTimeoutで例外を発生させる"
 slug: ruby-thread-join
 date: 2013-08-18T17:15:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 - Ruby C Extension
 ---

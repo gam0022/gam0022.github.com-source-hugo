@@ -4,7 +4,7 @@ title: "カテゴリー名に濁点を含んだ日本語が使えない問題を
 slug: use-rsync-iconv-option
 date: 2012-08-11T10:38:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - Rsync
 - Mac OS X

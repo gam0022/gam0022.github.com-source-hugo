@@ -4,7 +4,7 @@ title: "Octopressで最後に編集した記事だけをgenerate"
 slug: octopress-rake-generate-only
 date: 2014-12-07T12:15:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 ---
 

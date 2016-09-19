@@ -4,7 +4,7 @@ title: "Octopressの見出しにアンカーリンクをつけるように改造
 slug: header-anchor
 date: 2013-02-05T14:30:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 ---
 

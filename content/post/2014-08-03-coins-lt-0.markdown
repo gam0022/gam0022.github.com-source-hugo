@@ -4,7 +4,7 @@ title: "coinsLT #0 で発表しました"
 slug: coins-lt-0
 date: 2014-08-03T11:03:00+09:00
 comments: true
-categories: 
+tags:
 - 勉強会
 - JavaScript
 ---

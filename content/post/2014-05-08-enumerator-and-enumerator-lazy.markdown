@@ -4,7 +4,7 @@ title: "EnumeratorとEnumerator::Lazyの違い"
 slug: enumerator-and-enumerator-lazy
 date: 2014-05-08T08:51:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 ---
 

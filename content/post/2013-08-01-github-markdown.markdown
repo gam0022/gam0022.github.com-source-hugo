@@ -4,7 +4,7 @@ title: "GitHubのMarkdownでListをNest"
 slug: github-markdown
 date: 2013-08-01T22:31:00+09:00
 comments: true
-categories: 
+tags:
 - GitHub
 - Markdown
 ---

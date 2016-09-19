@@ -4,7 +4,7 @@ title: "GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました
 slug: glsl-tech
 date: 2016-02-16T09:46:00+09:00
 comments: true
-categories: 
+tags:
 - GLSL
 - WebGL
 - JavaScript
