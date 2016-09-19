@@ -11,7 +11,7 @@ disqusShortname = "spf13"
 googleAnalytics = ""
 
 [permalinks]
-  post = "/:year/:month/:day/:slug"
+  post = "/blog/:year/:month/:day/:slug"
 
 [params]
   name = "細田 翔 / Sho Hosoda"

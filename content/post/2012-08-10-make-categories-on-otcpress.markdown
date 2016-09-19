@@ -4,7 +4,7 @@ title: "Octopressでカテゴリーの一覧みたいのを実装する"
 slug: make-categories-on-otcpress
 date: 2012-08-10T12:24:00+09:00
 comments: true
-categories: 
+categories:
 - Octopress
 - 日本語
 - ゴ
@@ -16,7 +16,7 @@ Octopressはそれなりに高機能なのにも関わらず、なぜかカテ�
 
 今回の記事は、次の画像のようなカテゴリーの一覧をサイドバーに表示するまでのメモです。
 
-{% img /images/120810-0001.png カテゴリーの一覧 %}
+![カテゴリーの一覧](/images/posts/2012-08-10-make-categories-on-otcpress.png)
 
 前提知識として、Octopressのサイドバーをカスタマイズするためには、次の2つの作業が必要です。
 ここでは、categoriesという名前のサイドバーを追加します。
@@ -42,26 +42,26 @@ JekyllのLiquidテンプレートエンジンの文法がよくわからない�
 最終的に、`_config.yml`を編集後、
 `source/_includes/asides/categories.html`と`plugins/category_generator.rb`を次のようにしたら、うまくいきました。
 
-### source/_includes/asides/categories.html
+### source/\_includes/asides/categories.html
 
-`source/_includes/asides/categories.html`はこれだけです。
+`source/_includes/asides/categories.html` はこれだけです。
 
 `{.{` の`.`は消してください。
 
-{% codeblock lang:html %}
+```html
 <section class="well">
   <ul id="categorys" class="nav nav-list">
     <li class="nav-header">Categorys</li>
     {.{ site.categories | site_categories_links }}
   </ul>
 </section>
-{% endcodeblock %}
+```
 
 ### plugins/category_generator.rb
 
 `plugins/category_generator.rb`の`Jekyll::Filters`に`site_categories_links`というメソッドを追加します。
 
-{% codeblock lang:ruby %}
+```ruby
 module Jekyll
   module Filters
     # Outputs a list of categories as comma-separated <a> links. This is used
@@ -72,16 +72,16 @@ module Jekyll
     def site_categories_links(categories)
       def adjust_fontsize(size)
         [20, size*2 + 8].min
-      end 
+      end
       dir = @context.registers[:site].config['category_dir']
       categories = categories.to_a.sort.map do |key, val|
         "<a class='category' style='font-size:#{adjust_fontsize(val.size)}px;' href='/#{dir}/#{key.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'>#{key}(#{val.size})</a>"
-      end 
+      end
       categories.join(' / ')
-    end 
-  end 
+    end
+  end
 
 end
-{% endcodeblock %}
+```
 
 とりあえず、これでカテゴリーの一覧を表示することができました。
