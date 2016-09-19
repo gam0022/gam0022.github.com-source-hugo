@@ -10,4 +10,4 @@ tags:
 
 Eclipseのformatterの設定は、`Java > Code Style > Formatter`から。
 
-{% img /images/posts/2013.1.24_eclipse_formatter.png Eclipseのformatterの設定 %}
+![Eclipseのformatterの設定](/images/posts/2013.1.24_eclipse_formatter.png)

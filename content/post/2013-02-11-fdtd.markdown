@@ -104,4 +104,4 @@ v = 1.0, \Delta x = 1, \Delta t = 1
 
 上の式を元に計算すると、次のような波形を得られます。
 
-{% img /images/posts/2013.02.11_ftdt.png FTDTで計算した波動関数 %}
+![FTDTで計算した波動関数](/images/posts/2013.02.11_ftdt.png)

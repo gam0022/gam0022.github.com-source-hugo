@@ -140,7 +140,7 @@ Enumerable#lazy を作った [Yutaka HARA](https://bugs.ruby-lang.org/issues/489
 
 `Enumerator::Lazy`や`Enumerator`、`Enumerable`などの継承関係が複雑なので、図にまとめました。
 
-{% img /images/posts/2014-05-08-enumerator-and-enumerator-lazy.png 600 クラスの継承関係 %}
+![600 クラスの継承関係](/images/posts/2014-05-08-enumerator-and-enumerator-lazy.png)
 
 ## 遅延リストが使える場面
 

@@ -10,7 +10,7 @@ tags:
 
 アカリク主催の[学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/)の最終選考プレゼンに参加してきました。
 
-{% img /images/posts/2014-01-01-studentappcontest2013.jpg 集合写真 %}
+![集合写真](/images/posts/2014-01-01-studentappcontest2013.jpg)
 
 <!--more-->
 

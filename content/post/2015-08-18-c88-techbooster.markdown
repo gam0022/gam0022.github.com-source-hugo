@@ -14,7 +14,7 @@ tags:
 先日の夏コミ C88 に TechBooster というサークルとして参加しました。
 これによって、コミケ初参加がサークル参加という実績を得ました。
 
-{% img /images/posts/2015-08-18-c88-techbooster-javascriptoon.png JavaScriptoon %}
+![JavaScriptoon](/images/posts/2015-08-18-c88-techbooster-javascriptoon.png)
 
 私はJavaScriptoon という本の three.js(WebGL)の記事を書きました。
 タイトルは「three.js でお手軽 3DCG 入門」です。

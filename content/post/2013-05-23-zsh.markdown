@@ -12,7 +12,7 @@ tags:
 
 特に理由はなかったのですが、便利という噂を聞いてbashからzshに乗り換えました。
 
-{% img /images/posts/2013-05-23-zsh.png iTerm2 + zsh %}
+![iTerm2 + zsh](/images/posts/2013-05-23-zsh.png)
 
 # zshを試す
 

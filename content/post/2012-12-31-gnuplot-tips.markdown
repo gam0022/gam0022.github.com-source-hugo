@@ -74,4 +74,4 @@ replot
 
 出力画像
 
-{% img /images/posts/2012.12.31_gnuplot.png gnuplot_test %}
+![gnuplot_test](/images/posts/2012.12.31_gnuplot.png)

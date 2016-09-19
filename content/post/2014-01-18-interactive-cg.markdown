@@ -53,7 +53,7 @@ tags:
 星型のブラシを実装して、2匹のトラの画像を加工して、こんな画像を作りました。
 
 
-{% img /images/posts/2014-01-18-interactive-cg/impressionist.png Impressionist - Tiger %}
+![Impressionist - Tiger](/images/posts/2014-01-18-interactive-cg/impressionist.png)
 
 
 ### コンテスト結果
@@ -83,7 +83,7 @@ tags:
 
 実は、足の部分は回転体になっているのですが、楕円球で十分だったような気がします。
 
-{% img /images/posts/2014-01-18-interactive-cg/modeler.gif Modeler - Lion %}
+![Modeler - Lion](/images/posts/2014-01-18-interactive-cg/modeler.gif)
 
 ### コンテスト結果
 
@@ -121,7 +121,7 @@ Xファイル パースして POV-Ray の trimesh に変換しつつ、うまい
 
 下の画像は、アンチエイリアスするために、2倍で描画して、Macのプレビューで縮小したものです。
 
-{% img /images/posts/2014-01-18-interactive-cg/raytracer.png RayTracer - Ruby %}
+![RayTracer - Ruby](/images/posts/2014-01-18-interactive-cg/raytracer.png)
 
 ### コンテスト結果
 
