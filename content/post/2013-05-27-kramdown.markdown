@@ -34,11 +34,12 @@ kramdownを使うことにしました。
 
 # Markdownのパーサの変更方法
 
-## _config.yml の 変更
+## \_config.yml の 変更
 
- `_config.yml` の `markdown` を `kramdown`に変更します。
+ `_config.yml` の `markdown` を `kramdown` に変更します。
 
-``` diff _config.yml
+```diff
+# _config.yml
 code_dir: downloads/code
  category_dir: blog/categories
  category_title_prefix: "Category: "
@@ -53,7 +54,8 @@ code_dir: downloads/code
 
 まず、`Gemfile`に`gem 'kramdown'`を付け足します。
 
-``` diff Gemfile
+```diff
+#  Gemfile
    gem 'rack', '~> 1.4.1'
    gem 'jekyll', '~> 0.11.2'
    gem 'rdiscount', '~> 1.6.8'
@@ -71,9 +73,9 @@ code_dir: downloads/code
 
 ちなみに、`kramdown`の定義リストは次のように書きます。
 
-### 例
+### 定義リストの例
 
-``` text 定義リストの例
+```
 名前
 : がむ
 : gam0022

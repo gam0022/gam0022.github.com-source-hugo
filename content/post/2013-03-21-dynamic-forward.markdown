@@ -24,7 +24,8 @@ DynamicForwardの方が汎用性が高くて便利なのに、使っている人
 
 まず、`~/.ssh/config`を次のようにします。
 
-``` bash .ssh/config
+``` bash
+# .ssh/config
 Host coins coins-p
 HostName www.coins.tsukuba.ac.jp
 User sxxxxxxx

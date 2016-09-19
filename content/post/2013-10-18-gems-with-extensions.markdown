@@ -79,7 +79,7 @@ C拡張を含むgemを作りたい場合は、ちょっと面倒です。
 
 ## 1. 雛形を作る
 
-``` bash
+```bash
 $ bundle gem immutable_list
       create  immutable_list/Gemfile
       create  immutable_list/Rakefile
@@ -97,15 +97,17 @@ Initializating git repo in /Users/gam0022/git/gem/t/immutable_list
 
 C拡張を自動でコンパイルするようにするために、書き加えないといけないことが多いです。
 
-``` diff Gemfile
+Gemfile
+```diff
  source 'https://rubygems.org'
- 
+
  # Specify your gem's dependencies in immutable_list.gemspec
  gemspec
 +gem "rake-compiler"
 ```
 
-``` diff Rakefile
+Rakefile
+```diff
  require "bundler/gem_tasks"
 +require "rake/extensiontask"
 +
@@ -114,12 +116,13 @@ C拡張を自動でコンパイルするようにするために、書き加え�
 +end
 ```
 
-``` diff immutable_list.gemspec
+immutable_list.gemspec
+```diff
 # coding: utf-8
  lib = File.expand_path('../lib', __FILE__)
  $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
  require 'immutable_list/version'
- 
+
  Gem::Specification.new do |spec|
    spec.name          = "immutable_list"
    spec.version       = ImmutableList::VERSION
@@ -132,12 +135,12 @@ C拡張を自動でコンパイルするようにするために、書き加え�
    spec.homepage      = ""
    spec.license       = "MIT"
 +  spec.extensions    = %w[ext/immutable_list/extconf.rb]
- 
+
    spec.files         = `git ls-files`.split($/)
    spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
    spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
    spec.require_paths = ["lib"]
- 
+
    spec.add_development_dependency "bundler", "~> 1.3"
    spec.add_development_dependency "rake"
  end
@@ -149,7 +152,8 @@ C拡張のライブラリ本体は、`ext/`に置きます。
 
 `ext/` は無いので、新規で作ります。
 
-``` text tree ext/
+```bash
+$ tree ext/
 ext
 └── immutable_list
     ├── extconf.rb
@@ -159,12 +163,14 @@ ext
 `immutable_list/immutable_list`のようなファイル名の指定がテクニックなので注目してください。
 `<gemname>/<gemname>`にすることで、require をするときに名前が衝突することを防いでいます。
 
-``` rb ext/immutable_list/extconf.rb
+ext/immutable_list/extconf.rb
+```ruby
 require "mkmf"
 create_makefile("immutable_list/immutable_list")
 ```
 
-``` c ext/immutable_list/immutable_list.c
+ext/immutable_list/immutable_list.c
+```c
 #include <stdio.h>
 #include <ruby.h>
 
@@ -189,31 +195,32 @@ immutable_list_mark(struct immutable_list *ptr)
 // https://github.com/gam0022/immutable_list/blob/master/ext/immutable_list/immutable_list.c
 ```
 
-
 ## lib/
 
 通常のgemであれば、`lib/immutable_list.rb` に本体を実装しますが、
 今回はC拡張で実装されたもの require するようにします。
 
-``` text tree lib/
+```bash
+$ tree lib/
 lib
 ├── immutable_list
 │   └── version.rb
 └── immutable_list.rb
 ```
 
-
-``` diff lib/immutable_list.rb
+lib/immutable_list.rb
+```diff
  require "immutable_list/version"
 +require "immutable_list/immutable_list"
- 
+
 -module ImmutableList
 +class ImmutableList
    # Your code goes here...
  end
 ```
 
-``` diff lib/immutable_list/version.rb
+lib/immutable_list/version.rb
+```diff
 -module ImmutableList
 +class ImmutableList
   VERSION = "0.0.1"

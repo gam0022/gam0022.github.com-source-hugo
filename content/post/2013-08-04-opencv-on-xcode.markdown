@@ -25,7 +25,7 @@ openCV
 
 まず、普通にhomebrewでopenCVを入れます。
 
-``` bash homebrewでopenCVをインストールする
+```bash
 brew tap homebrew/science
 brew install opencv
 ```

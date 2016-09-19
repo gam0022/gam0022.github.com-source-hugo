@@ -56,14 +56,16 @@ SQLite3(というか、ActiveRecordの問題なのだろうか。要検証。) �
 Ruby で `sqlite3 gem` を使ってtableにプレースホルダを使って`insert` した時、
 `can't prepare Time`とかいうエラーが発生するときは、値を文字列に変換してやると解消するかもしれません。
 
-``` ruby Timeクラスを直接渡すと、can't prepare Time とか言われる例
+```ruby
+# Timeクラスを直接渡すと、can't prepare Time とか言われる例
 h = {:time => Time.now, :data = "なんとかかんとか"}
 db.execute("insert into table(time, data) values (:time, :data)", h)
 ```
 
 次のように、Time クラスを直接渡さずに、明示的に文字列に変換してから渡すと解消するかもしれません。
 
-``` ruby Timeクラスを文字列に変換して渡すと解消するかも
+```ruby
+# Timeクラスを文字列に変換して渡すと解消するかも
 h = {:time => Time.now.to_s, :data = "なんとかかんとか"}
 db.execute("insert into table(time, data) values (:time, :data)", h)
 ```
@@ -85,7 +87,8 @@ ActiveRecord で実装した部分を SQLite3 で再実装するとき、変更�
 (ActiveRecordの結果はクラスだが、SQLite3の結果は `db.results_as_hash = ture`した場合、
 Hash なので、なんとか既存のコードを変更せずに対応させたかった。)
 
-``` ruby Hash の中身を ドット演算子 で参照したい(キーがString)
+```ruby
+# Hash の中身を ドット演算子 で参照したい(キーがString)
 class Hash
   def method_missing(n)
     self[n.to_s]
@@ -100,7 +103,8 @@ puts h.b    # => 2
 
 ちなみに、ハッシュのキーがシンボルのときは、次のようにすればOKです。
 
-``` ruby Hash の中身を ドット演算子 で参照したい(キーがSymbol)
+```ruby
+# Hash の中身を ドット演算子 で参照したい(キーがSymbol)
 class Hash
   def method_missing(n)
     self[n.to_sym]
