@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Eclipseのformatterの設定の方法をいつも忘れてしまうので"
+slug: eclipse-formatter
 date: 2013-01-24T14:55:00+09:00
 comments: true
 categories: 

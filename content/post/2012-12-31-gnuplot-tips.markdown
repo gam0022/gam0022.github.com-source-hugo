@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "gnuplotでCSVファイルを読み込む方法とmultiplotの注意点"
+slug: gnuplot-tips
 date: 2012-12-31T17:02:00+09:00
 comments: true
 categories: 

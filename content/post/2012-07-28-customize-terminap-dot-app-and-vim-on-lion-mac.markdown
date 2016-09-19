@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linux(Ubuntu)からOS Xへ開発環境を移すときにしたこと"
+slug: customize-terminap-dot-app-and-vim-on-lion-mac
 date: 2012-07-28T00:01:00+09:00
 comments: true
 categories: 

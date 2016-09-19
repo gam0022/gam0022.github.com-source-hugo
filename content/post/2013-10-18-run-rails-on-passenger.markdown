@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Rails4をPassengerで動かす"
+slug: run-rails-on-passenger
 date: 2013-10-18T00:13:00+09:00
 comments: true
 categories: 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "LaTexで図をその場に配置する"
+slug: latex-usepackage-float
 date: 2013-06-09T22:58:00+09:00
 comments: true
 categories: 

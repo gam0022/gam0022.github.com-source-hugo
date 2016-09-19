@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Keynoteで綺麗な数式を使う"
+slug: latexit
 date: 2014-04-21T09:01:00+09:00
 comments: true
 categories: 

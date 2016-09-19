@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MacでRuby on Railsの開発環境を作るまで"
+slug: getting-started-with-ruby-on-rails-on-mac
 date: 2012-07-27T06:34:00+09:00
 comments: true
 categories: 

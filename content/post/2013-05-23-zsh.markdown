@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "bashからzshに乗り換えた"
+slug: zsh
 date: 2013-05-23T12:30:00+09:00
 comments: true
 categories: 

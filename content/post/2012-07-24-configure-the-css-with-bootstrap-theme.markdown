@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Octopressでbootstrap-themeにしたとき、sass/custom/_styles.scssが反映されなくなった件について"
+slug: configure-the-css-with-bootstrap-theme
 date: 2012-07-24T22:50:00+09:00
 comments: true
 categories: 

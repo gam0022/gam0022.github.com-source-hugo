@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "インタラクティブCGの成果報告"
+slug: interactive-cg
 date: 2014-01-18T16:54:00+09:00
 comments: true
 categories: 

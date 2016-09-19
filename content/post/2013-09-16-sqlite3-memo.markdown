@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "SQLite3でハマった点まとめ"
+slug: sqlite3-memo
 date: 2013-09-16T14:05:00+09:00
 comments: true
 categories: 

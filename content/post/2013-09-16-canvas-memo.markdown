@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Canvasでハマった点まとめ"
+slug: canvas-memo
 date: 2013-09-16T14:05:00+09:00
 comments: true
 categories: 

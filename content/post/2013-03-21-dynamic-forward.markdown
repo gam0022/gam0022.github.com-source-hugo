@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "coinsの環境を使ってDynamic Forward"
+slug: dynamic-forward
 date: 2013-03-21T11:17:00+09:00
 comments: true
 categories: 

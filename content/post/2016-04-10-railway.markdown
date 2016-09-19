@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "三谷先生の鉄道模型コースシミュレータにパーマリンク機能を実装"
+slug: railway
 date: 2016-04-10T10:37:00+09:00
 comments: true
 categories: 

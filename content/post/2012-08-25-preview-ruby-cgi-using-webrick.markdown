@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "WEBrickを使って、RubyCGIをローカル上でテストする"
+slug: preview-ruby-cgi-using-webrick
 date: 2012-08-25T11:19:00+09:00
 comments: true
 categories: 

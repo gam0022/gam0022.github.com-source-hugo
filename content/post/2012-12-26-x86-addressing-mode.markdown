@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "x86のアドレッシングモードでハマった"
+slug: x86-addressing-mode
 date: 2012-12-26T23:05:00+09:00
 comments: true
 categories: 

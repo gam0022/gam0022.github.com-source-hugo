@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Mountain Lionにアップデートしたら、X11が消えた件"
+slug: x11-is-not-bundled-on-mountain-lion
 date: 2012-08-04T15:32:00+09:00
 comments: true
 categories: 

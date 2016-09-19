@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "cocotで文字コードが異なるマシンにsshする"
+slug: how-to-use-cocot
 date: 2012-08-06T11:18:00+09:00
 comments: true
 categories: 

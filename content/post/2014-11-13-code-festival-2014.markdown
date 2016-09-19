@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "CODE FESTIVAL2014 本戦に参加"
+slug: code-festival-2014
 date: 2014-11-13T17:25:00+09:00
 comments: true
 categories: 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Octopressはじめました!"
+slug: hello
 date: 2012-07-21T17:39:00+09:00
 comments: true
 categories: 

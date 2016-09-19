@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Octopressのpreviewを高速化する"
+slug: speed-up-octopress-site-generation
 date: 2013-09-28T16:04:00+09:00
 comments: true
 categories: 

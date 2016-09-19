@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Octopressのテーマをカスタマイズする
+slug: use-bootstrap-theme
 date: 2012-07-21T23:51:00+09:00
 comments: true
 categories: 

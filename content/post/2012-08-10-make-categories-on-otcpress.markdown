@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Octopressでカテゴリーの一覧みたいのを実装する"
+slug: make-categories-on-otcpress
 date: 2012-08-10T12:24:00+09:00
 comments: true
 categories: 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "大五郎bot(@daigoroubot)を動かすためのメモ"
+slug: run-daigoroubot
 date: 2012-08-20T13:28:00+09:00
 comments: true
 categories: 

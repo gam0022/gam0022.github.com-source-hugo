@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "2015年の振り返り（駄文）"
+slug: looking-back-on-this-year
 date: 2015-12-31T17:40:00+09:00
 comments: true
 categories: 

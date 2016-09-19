@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "BetterTouchToolが便利"
+slug: bettertouchtool
 date: 2013-05-23T11:14:00+09:00
 comments: true
 categories: 

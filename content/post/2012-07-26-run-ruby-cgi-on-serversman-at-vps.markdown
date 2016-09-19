@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "ServersMan@VPSでRubyのCGIを実行するまでのメモ"
+slug: run-ruby-cgi-on-serversman-at-vps
 date: 2012-07-26T00:11:00+09:00
 comments: true
 categories:
