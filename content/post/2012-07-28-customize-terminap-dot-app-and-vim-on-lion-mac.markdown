@@ -145,10 +145,10 @@ Ubuntuでは特に設定をしなくてもvimに色がついてたんですが�
 1. `desert.vim`をダウンロードする。
 2. `~/.vim/colors`に`mv`する。
 3. 以下を`~/.vimrc`に書き加える。
-{% codeblock lang:vim %}
+```vim
 syntax on
 colorscheme desert
-{% endcodeblock %}
+```
 
 
 これで最低限文化的なMac環境ができました。

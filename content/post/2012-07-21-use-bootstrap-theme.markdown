@@ -21,13 +21,13 @@ Ocpressの標準のデザインは悪くはないのですが、個人的には�
 
 (ちなみに、シェルのコマンドを貼り付けるときはlangをbashにすると良いみたいです。)
 
-{% codeblock lang:bash %}
+```bash
 cd ~/git/octpress #octpressのディレクトリ
 git clone https://github.com/bkutil/bootstrap-theme.git .themes/bootstrap-theme
 rake install["bootstrap-theme"]
 rake generate
 rake deploy #公開
-{% endcodeblock %}
+```
 
 テーマを変えることで、一気にモダンな感じになりました!
 

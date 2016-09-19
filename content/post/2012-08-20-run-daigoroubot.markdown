@@ -22,9 +22,9 @@ categories:
 
 ## required gems
 
-{% codeblock lang:bash %}
+```bash
 gem install oauth json sqlite3 twitter tweetstream unicode_math
-{% endcodeblock %}
+```
 
 ## MeCabを使えるようにしておく
 
@@ -32,9 +32,9 @@ homebrewを導入しているなら、これでok。
 
 Mac用のメモですが、Ubuntuなら`brew`の代わりに`apt-get`など、環境に合わせた適当なパッケージ管理システムにすれば普通に動くと思います。
 
-{% codeblock lang:bash %}
+```bash
 brew install mecab mecab-ipadic
-{% endcodeblock %}
+```
 
 ## MeCabのRubyバインディングをする
 
@@ -84,22 +84,22 @@ have_header('mecab.h') && create_makefile('MeCab')
 2. 1.を解凍して、cd。
 3. `extconf.rb`を編集する。
   `$LDFLAGS = '-L/usr/local/lib'`という行を、`$CFLAGS〜`の次の行に加える。
-4. {% codeblock lang:bash %}
+4. ```bash
 ruby extconf.rb
 make
 sudo make install
-{% endcodeblock %}
+```
 
 ちなみに、`extconf.eb`を編集せずにバインディングしたときにRubyからmecabを使うと、次のようなエラーになってしまう。
 
-{% codeblock lang:bash %}
+```bash
 dyld: NSLinkModule() error
 dyld: Symbol not found: __ZN5MeCab6Tagger6createEiPPc
   Referenced from: /Users/gam0022/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/x86_64-darwin11.4.0/MeCab.bundle
   Expected in: flat namespace
 
 Trace/BPT trap
-{% endcodeblock %}
+```
 
 -->
 
