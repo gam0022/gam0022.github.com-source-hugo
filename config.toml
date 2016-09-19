@@ -10,6 +10,8 @@ disqusShortname = "spf13"
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
 
+[permalinks]
+  post = "/:year/:month/:day/:slug"
 
 [params]
   name = "細田 翔 / Sho Hosoda"
@@ -41,6 +43,8 @@ googleAnalytics = ""
   [params.about]
     interests = [
       "Computer Graphics",
+      "Raymarching",
+      "Realtime Rendering",
       "WebGL",
       "three.js",
       "GLSL",
