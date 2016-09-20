@@ -191,8 +191,8 @@ googleAnalytics = "UA-84469205-1"
   weight = 4
 
 [[menu.main]]
-  name = "Teaching"
-  url = "#teaching"
+  name = "Works"
+  url = "#works"
   weight = 5
 
 [[menu.main]]
