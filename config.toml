@@ -19,7 +19,7 @@ googleAnalytics = "UA-84469205-1"
   organization = "KLab株式会社"
   avatar = "gam0022_splash.png"
   email = "gam0022@gmail.com"
-  address = "東京都"
+  # address = "東京都"
   # phone = "888 888 88 88"
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
