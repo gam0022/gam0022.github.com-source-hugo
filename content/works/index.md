@@ -74,7 +74,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 詳細は[ブログの記事](/blog/2016/02/16/glsl-tech/)にまとめました。
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="\_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="\_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
 
 ## 2016 Gem
 
@@ -185,7 +185,7 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 * [README(GitHub)](https://github.com/gam0022/immutable_list/blob/master/README.md)
 * [RubyでLinkedListを使うためのC拡張を作った - gam0022.net](http://gam0022.net/blog/2013/08/19/ruby-linkedlist/)
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/29144855" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/immutable-list-29144855" title="Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)" target="_blank">Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/29144855" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/immutable-list-29144855" title="Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)" target="\_blank">Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="\_blank">Sho Hosoda</a></strong> </div>
 
 # Web
 
@@ -236,7 +236,7 @@ Googleカレンダー・iCalへのインポートをサポートするWebサー�
 
 つくば市の天気予報機能、電卓機能、n進数変換器、全学教室検察など便利な機能を搭載しています。
 
-[&raquo; More](/works/daigoroubot.html)
+[&raquo; More](/works/daigoroubot/)
 
 [&raquo; @daigoroubot - Twitter](https://twitter.com/daigoroubot)
 
@@ -273,7 +273,7 @@ HSPプログラミングコンテスト用に作ったゲーム達です。
 * 作成記録
   * [GAM-22のメモ](http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-%E9%9B%B2/)
 
-<div class="clear"></div>
+<div style="clear: both;"></div>
 
 [<img alt="config画面" src="/images/works/sky2.png" class="right">](/images/works/sky2_original.png)
 
