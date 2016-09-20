@@ -5,10 +5,10 @@ languageCode = "jp"
 theme = "academic"
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = "spf13"
+disqusShortname = "gam0022-net"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = ""
+googleAnalytics = "UA-84469205-1"
 
 [permalinks]
   post = "/blog/:year/:month/:day/:slug"
