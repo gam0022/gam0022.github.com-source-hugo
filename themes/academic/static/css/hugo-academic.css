@@ -57,6 +57,7 @@ h6,
     font-weight: 400;
     line-height: 1.25;
     text-rendering: optimizeLegibility;
+    clear: both;
 }
 
 h1 {
@@ -373,6 +374,15 @@ h3.article-title a {
     margin-bottom: 0;
 }
 
+.article-style img.right {
+    float: right;
+    margin: 20px;
+}
+
+.article-style dd {
+  padding-left: 20px;
+}
+
 #comments {
     padding: 20px;
 }
@@ -684,8 +694,4 @@ table > tbody > tr:nth-child(odd) > th {
 table > tbody > tr:hover > td,
 table > tbody > tr:hover > th {
     background-color: #e5e5e5;
-}
-
-dd {
-  padding-left: 20px;
 }

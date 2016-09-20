@@ -16,7 +16,7 @@ section = 100
 
 ## 2015冬 JavaScriptoon2
 
-[{% img right /images/works/javascriptoon2.jpg JavaScriptoon2 %}](/images/works/javascriptoon2_original.jpg)
+[<img alt="JavaScriptoon2" src="/images/works/javascriptoon2.jpg" class="right">](/images/works/javascriptoon2_original.jpg)
 
 TechBooster というサークルに参加し、「JavaScriptoon2」というWebフロントエンド本を執筆しました。
 
@@ -32,7 +32,7 @@ TechBooster というサークルに参加し、「JavaScriptoon2」というWeb
 
 ## 2015夏 JavaScriptoon
 
-[{% img right /images/works/javascriptoon.png JavaScriptoon %}](/images/works/javascriptoon_original.png)
+[<img alt="JavaScriptoon" src="/images/works/javascriptoon.png" class="right">](/images/works/javascriptoon_original.png)
 
 TechBooster というサークルに参加し、「JavaScriptoon」というWebフロントエンド本を執筆しました。
 
@@ -53,7 +53,7 @@ WebGLで作成した映像作品と活動を紹介します。
 
 ## 2016 Carbon
 
-[{% img right /images/works/carbon.png Carbon %}](/images/works/carbon_original.png)
+[<img alt="Carbon" src="/images/works/carbon.png" class="right">](/images/works/carbon_original.png)
 
 TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞した、レイマーチングによる映像作品です。
 
@@ -78,7 +78,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 ## 2016 Gem
 
-[{% img right /images/works/gem.png Gem %}](/images/works/gem_original.png)
+[<img alt="Gem" src="/images/works/gem.png" class="right">](/images/works/gem_original.png)
 
 光の屈折をシミュレートすることで、輝く宝石をWebGLでレンダリングする「gem」という作品（技術デモ）をつくりました。
 レイトレーシングをGLSLのフラグメントシェーダで実装することで、GPUの並列計算を利用したリアルタイムな描画を実現しています。
@@ -91,7 +91,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 ## 2015 Reflect
 
-[{% img right /images/works/reflect.png Gem %}](/images/works/reflect_original.png)
+[<img alt="Gem" src="/images/works/reflect.png" class="right">](/images/works/reflect_original.png)
 
 レイマーチングで鏡面反射する球体を無限に並べたシーンをリアルタイムに描画するデモです。
 three.js 公式サンプルにも取り込まれています。
@@ -105,7 +105,7 @@ three.js 公式サンプルにも取り込まれています。
 
 ## 2015 Steal Frame
 
-[{% img right /images/works/steel_frame.png Steel Frame %}](/images/works/steel_frame_original.png)
+[<img alt="Steel Frame" src="/images/works/steel_frame.png" class="right">](/images/works/steel_frame_original.png)
 
 鉄筋をモチーフにしたレイマーチングによる作品です。
 
@@ -119,7 +119,7 @@ Goole Chrome の拡張機能を紹介します。
 
 ## 2016 Slack 返信引用ボタン
 
-{% img right /images/works/slack-reply-button.png Slack Reply Button %}
+<img alt="Slack Reply Button" src="/images/works/slack-reply-button.png" class="right">
 
 Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
@@ -132,7 +132,7 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 ## 2014-2015 非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築
 
-[{% img right /images/works/paper_craft_dolphin.jpg Paper Craft -  dolphin %}](/images/works/paper_craft_dolphin_original.jpg)
+[<img alt="Paper Craft -  dolphin" src="/images/works/paper_craft_dolphin.jpg" class="right">](/images/works/paper_craft_dolphin_original.jpg)
 
 曲面を利用したペーパークラフト（画像奥）をインタラクティブに設計するシステムを提案しました。
 
@@ -149,7 +149,7 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 ## 2013 カメラで商品検索 C2search
 
-[{% img right /images/works/C2search_tmb.png C2search %}](/images/works/C2search.png)
+[<img alt="C2search" src="/images/works/C2search_tmb.png" class="right">](/images/works/C2search.png)
 
 
 「カメラで商品検索」という画像によって商品の横断検索ができるiOSアプリを開発しました。
@@ -173,7 +173,7 @@ Ruby 向けのライブラリの紹介です。
 
 ## 2013 ImmutableList
 
-{% img right /images/works/immutable_list.png immutable_list %}
+<img alt="immutable_list" src="/images/works/immutable_list.png" class="right">
 
 RubyGemsとして、ImmutableなLinkedListを公開しました。
 
@@ -191,7 +191,7 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 
 ## 2013 Twitter名刺ジェネレーター
 
-[{% img right /images/works/tmg_tmb.png Twitter名刺ジェネレーター %}](/images/works/tmg.png)
+[<img alt="Twitter名刺ジェネレーター" src="/images/works/tmg_tmb.png" class="right">](/images/works/tmg.png)
 
 TwitterIDを入力するだけで簡単に名刺が作れるサービスです。
 
@@ -204,7 +204,7 @@ TwitterIDを入力するだけで簡単に名刺が作れるサービスです�
 
 ## 2013 Shelf
 
-[{% img right /images/works/shelf.png Shelf %}](/images/works/shelf_original.png)
+[<img alt="Shelf" src="/images/works/shelf.png" class="right">](/images/works/shelf_original.png)
 
 3Dで描画された回転する棚にカバンを展示することで、実際の店舗でショッピングをしている感覚を体験できるというコンセプトのWeb通販サイトのプロトタイプです。
 
@@ -219,7 +219,7 @@ COJTソフトウェアコース2013の前期の準優勝/技術賞受賞作品�
 
 ## 2012-2013 TwinCal
 
-{% img right /images/works/twincal.png twincal %}
+<img alt="twincal" src="/images/works/twincal.png" class="right">
 
 TwinCalとは、Twinsの時間割をiCalendar形式に変換し、
 Googleカレンダー・iCalへのインポートをサポートするWebサービスです。
@@ -230,7 +230,7 @@ Googleカレンダー・iCalへのインポートをサポートするWebサー�
 
 ## 2011-2013 @daigoroubot
 
-{% img right /images/works/daigoroubot.png 大五郎Bot %}
+<img alt="大五郎Bot" src="/images/works/daigoroubot.png" class="right">
 
 マルコフ連鎖で学習する人工無能のTwitterのBOTです。
 
@@ -247,7 +247,7 @@ HSPプログラミングコンテスト用に作ったゲーム達です。
 
 ## 2012 Soar(ソアー)
 
-[{% img right /images/works/soar.png soar %}](/images/works/soar_original.png)
+[<img alt="soar" src="/images/works/soar.png" class="right">](/images/works/soar_original.png)
 
 女の子を落下しないように操作して、ひたすら上を目指すアクションゲーム
 
@@ -262,7 +262,7 @@ HSPプログラミングコンテスト用に作ったゲーム達です。
 
 ## 2010 雲(sky)
 
-[{% img right /images/works/sky1.png 雲 %}](/images/works/sky1_original.png)
+[<img alt="雲" src="/images/works/sky1.png" class="right">](/images/works/sky1_original.png)
 
 パーリンノイズを使ったリアルな雲画像のリアルタイムレンダリング実験。
 
@@ -275,12 +275,12 @@ HSPプログラミングコンテスト用に作ったゲーム達です。
 
 <div class="clear"></div>
 
-[{% img right /images/works/sky2.png config画面 %}](/images/works/sky2_original.png)
+[<img alt="config画面" src="/images/works/sky2.png" class="right">](/images/works/sky2_original.png)
 
 
 ## 2009 ボウリング(笑) (bowling(w))
 
-[{% img right /images/works/bowling.png ボウリング(笑) %}](/images/works/bowling_original.png)
+[<img alt="ボウリング(笑)" src="/images/works/bowling.png" class="right">](/images/works/bowling_original.png)
 
 OBAQによる物理演算とランキング機能によるステージ投稿が特徴のボウリング風ゲーム。
 
@@ -302,7 +302,7 @@ OBAQによる物理演算とランキング機能によるステージ投稿が�
 
 蟲を切断して遊ぶゲーム。ドラッグでレーザーを照射。
 
-{% img right /images/works/worms.png 蟲 %}
+<img alt="蟲" src="/images/works/worms.png" class="right">
 
 よく考えてみるとマジキチ。複雑系に興味を持って作ったらしい。
 
@@ -321,7 +321,7 @@ HSPで作ったWindows向けゲーム達です。
 
 ## 2007 Battle Armor
 
-[{% img right /images/works/battle_armor.png Battle Armor %}](/images/works/battle_armor_original.png)
+[<img alt="Battle Armor" src="/images/works/battle_armor.png" class="right">](/images/works/battle_armor_original.png)
 
 厨二の時に作ったタンクシューティング。
 
@@ -340,7 +340,7 @@ HSPで作ったWindows向けゲーム達です。
 
 ## 2006 ASTEROIDS
 
-{% img right /images/works/asteroids.jpg ASTEROIDS %}
+<img alt="ASTEROIDS" src="/images/works/asteroids.jpg" class="right">
 
 中1の時に作った、アーケードゲームの"ASTEROIDS"風の全方向シューティングゲーム。
 
