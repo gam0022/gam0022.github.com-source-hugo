@@ -8,6 +8,7 @@ math: true
 tags:
 - Uva Online Judge
 - 競技プログラミング
+toc: true
 ---
 
 Uva Online Judgeで解いた問題を適当に解説します。

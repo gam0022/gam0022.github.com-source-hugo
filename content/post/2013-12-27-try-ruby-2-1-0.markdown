@@ -1,5 +1,6 @@
 ---
 layout: post
+toc: true
 title: "Ruby 2.1.0 を自力でビルドする"
 slug: try-ruby-2-1-0
 date: 2013-12-27T20:16:00+09:00

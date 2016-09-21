@@ -1,5 +1,6 @@
 ---
 layout: post
+toc: true
 title: "Programming Challenges 1"
 slug: programming-challenges-1
 date: 2013-06-06T09:14:00+09:00

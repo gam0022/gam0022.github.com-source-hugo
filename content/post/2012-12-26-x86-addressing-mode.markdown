@@ -1,5 +1,6 @@
 ---
 layout: post
+toc: true
 title: "x86のアドレッシングモードでハマった"
 slug: x86-addressing-mode
 date: 2012-12-26T23:05:00+09:00

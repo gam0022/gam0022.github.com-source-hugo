@@ -1,5 +1,6 @@
 ---
 layout: post
+toc: true
 title: "タイミングチャートと回路図を比較的楽につくる方法"
 slug: circuit-diagram
 date: 2012-12-05T09:08:00+09:00
