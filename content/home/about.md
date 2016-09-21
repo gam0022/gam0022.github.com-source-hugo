@@ -8,7 +8,7 @@ weight = 0
 
 # 略歴 / Biography
 
-群馬県出身24歳。WebとCGの両方に自信あり。
+群馬県出身、東京在住、社会人2年目の24歳。WebとCGの両方に自信あり。
 
 中学生時代（2007年頃）にHSPに出会いゲームプログラミングに熱中する。
 中学生ながら開発したゲームが2度も[Windows100%](http://win100.jp/)に掲載される[(1)](http://gmr.blog.shinobi.jp/-%E7%A7%81%E3%81%AE%E3%83%A1%E3%83%A2-%E8%87%AA%E6%85%A2/windows100-%2012%E6%9C%88%E5%8F%B7%E3%80%80%E6%8E%B2%E8%BC%89)[(2)](http://gmr.blog.shinobi.jp/-%E7%A7%81%E3%81%AE%E3%83%A1%E3%83%A2-%E8%87%AA%E6%85%A2/windows100-%205%E6%9C%88%E5%8F%B7%E3%80%80%E6%8E%B2%E8%BC%89)。
