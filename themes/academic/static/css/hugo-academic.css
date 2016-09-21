@@ -757,3 +757,9 @@ table > tbody > tr:hover > th {
 .bs-docs-sidebar .nav>.active>ul.nav {
     display: block;
 }
+
+img.icon {
+    display: inline;
+    width: 34px;
+    margin: 5px;
+}
