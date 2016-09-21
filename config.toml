@@ -15,6 +15,7 @@ googleAnalytics = "UA-84469205-1"
 
 [params]
   name = "細田 翔 / Sho Hosoda"
+  screen_name = "@gam0022"
   role = "ソフトウェアエンジニア"
   organization = "KLab株式会社"
   avatar = "gam0022_splash.png"

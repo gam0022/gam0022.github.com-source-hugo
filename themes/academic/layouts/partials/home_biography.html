@@ -6,6 +6,7 @@
 
             <div class="portrait-title">
                 <h2 itemprop="name">{{ .Site.Params.name }}</h2>
+                <h4 itemprop="screen_name">{{ .Site.Params.screen_name }}</h2>
                 <h3 itemprop="jobTitle">{{ .Site.Params.role }}</h3>
                 {{ with .Site.Params.organization }}<h3 itemprop="worksFor">{{ . }}</h3>{{ end }}
             </div>
