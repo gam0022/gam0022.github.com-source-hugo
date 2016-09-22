@@ -44,33 +44,43 @@ googleAnalytics = "UA-84469205-1"
   [params.about]
     interests = [
       "Computer Graphics",
-      "Raymarching",
+      "Raymarching using GPU",
+      "Raytracing",
       "Realtime Rendering",
       "WebGL",
-      "three.js",
+    ]
+
+    skills = [
+      "three.js / WebGL",
       "GLSL",
+      "C++/C",
+      "C#",
+      "Unity",
       "Ruby on Rails",
+      "HTML/CSS",
       "JavaScript",
+      "CoffeeScript",
     ]
 
     str_interests = "興味 / Interests"
+    str_skills = "技術 / Skills"
     str_education = "学歴 / Education"
     str_career = "職歴 / Career"
 
   [[params.about.career]]
     company = "情報基盤研究所"
-    position = "ソフトウェアエンジニア(学生アルバイト)"
+    position = "エンジニア(学生アルバイト)"
     year = "2011-09 〜 2015-03"
     detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
 
   [[params.about.career]]
     company = "BearTail"
-    position = "ソフトウェアエンジニア(学生アルバイト)"
+    position = "エンジニア(学生アルバイト)"
     year = "2011-09 〜 2015-03"
     detail = " Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当"
   [[params.about.career]]
     company = "KLab"
-    position = "ソフトウェアエンジニア(正社員)"
+    position = "エンジニア(正社員)"
     year = "2015-04 〜 現在"
     detail = "某人気スクールアイドルのソーシャルゲームの運営とクライアント開発を担当"
 

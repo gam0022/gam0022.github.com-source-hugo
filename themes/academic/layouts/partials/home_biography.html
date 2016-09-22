@@ -38,19 +38,29 @@
 
         <div class="row">
 
-            {{ if isset .Site.Params.about "interests" }}
+
             <div class="col-sm-4">
+                {{ if isset .Site.Params.about "interests" }}
                 <h3>{{ with .Site.Params.about.str_interests }}{{ . | markdownify }}{{ end }}</h3>
                 <ul class="fa-ul">
                     {{ range .Site.Params.about.interests }}
                     <li><i class="fa-li fa fa-tag"></i>{{ . }}</li>
                     {{ end }}
                 </ul>
-            </div>
-            {{ end }}
+                {{ end }}
 
-            {{ if isset .Site.Params.about "education" }}
+                {{ if isset .Site.Params.about "skills" }}
+                <h3>{{ with .Site.Params.about.str_skills }}{{ . | markdownify }}{{ end }}</h3>
+                <ul class="fa-ul">
+                    {{ range .Site.Params.about.skills }}
+                    <li><i class="fa-li fa fa-wrench"></i>{{ . }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+
             <div class="col-sm-8">
+                {{ if isset .Site.Params.about "education" }}
                 <h3>{{ with .Site.Params.about.str_education }}{{ . | markdownify }}{{ end }}</h3>
                 <ul class="ul-edu fa-ul">
                     {{ range .Site.Params.about.education }}
@@ -63,11 +73,9 @@
                     </li>
                     {{ end }}
                 </ul>
-            </div>
-            {{ end }}
+                {{ end }}
 
-            {{ if isset .Site.Params.about "career" }}
-            <div class="col-sm-12">
+                {{ if isset .Site.Params.about "career" }}
                 <h3>{{ with .Site.Params.about.str_career }}{{ . | markdownify }}{{ end }}</h3>
                 <ul class="fa-ul">
                     {{ range .Site.Params.about.career }}
@@ -80,8 +88,8 @@
                     </li>
                     {{ end }}
                 </ul>
+                {{ end }}
             </div>
-            {{ end }}
 
         </div>
 
