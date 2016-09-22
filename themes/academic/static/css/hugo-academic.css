@@ -233,26 +233,37 @@ pre {
     font-size: 40px;
 }
 
-ul.ul-edu {
+ul.ul-edu,
+ul.ul-career {
     list-style: none;
 }
 
-ul.ul-edu li {
+ul.ul-edu li,
+ul.ul-career li {
     position: relative;
     padding: 0px 15px 4px 3px;
     color: #333333;
 }
 
-ul.ul-edu li .description p {
+ul.ul-edu li .description p,
+ul.ul-career li .description p {
     margin: 0;
 }
 
-ul.ul-edu li .description p.course {
-    font-size: 1em;
+ul.ul-edu li .description p.institution {
+    font-size: 1.00em;
 }
 
-ul.ul-edu li .description p.institution {
+ul.ul-edu li .description p.course {
     font-size: 0.88em;
+}
+
+ul.ul-career li .description p.company {
+    font-size: 1.0em;
+}
+
+ul.ul-career li .description p.detail {
+    font-size: 0.9em;
 }
 
 /*************************************************

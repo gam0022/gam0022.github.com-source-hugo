@@ -68,21 +68,22 @@ googleAnalytics = "UA-84469205-1"
     str_career = "職歴 / Career"
 
   [[params.about.career]]
-    company = "情報基盤研究所"
-    position = "エンジニア(学生アルバイト)"
-    year = "2011-09 〜 2015-03"
-    detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
+    company = "KLab"
+    position = "エンジニア(正社員)"
+    year = "2015-04 〜 現在"
+    detail = "某人気スクールアイドルのソーシャルゲームの運営とクライアント開発を担当"
 
   [[params.about.career]]
     company = "BearTail"
     position = "エンジニア(学生アルバイト)"
     year = "2011-09 〜 2015-03"
     detail = " Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当"
+
   [[params.about.career]]
-    company = "KLab"
-    position = "エンジニア(正社員)"
-    year = "2015-04 〜 現在"
-    detail = "某人気スクールアイドルのソーシャルゲームの運営とクライアント開発を担当"
+    company = "情報基盤研究所"
+    position = "エンジニア(学生アルバイト)"
+    year = "2011-09 〜 2015-03"
+    detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
 
   [[params.about.education]]
     course = "ソフトウェアサイエンス専攻, 非数値処理アルゴリズム研究室"

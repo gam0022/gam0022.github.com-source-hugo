@@ -67,8 +67,8 @@
                     <li>
                         <i class="fa-li fa fa-graduation-cap"></i>
                         <div class="description">
-                            <p class="course">{{ .institution }}, {{ .year }}</p>
-                            <p class="institution">{{ .course}}</p>
+                            <p class="institution">{{ .institution }}, {{ .year }}</p>
+                            <p class="course">{{ .course}}</p>
                         </div>
                     </li>
                     {{ end }}
@@ -77,13 +77,13 @@
 
                 {{ if isset .Site.Params.about "career" }}
                 <h3>{{ with .Site.Params.about.str_career }}{{ . | markdownify }}{{ end }}</h3>
-                <ul class="fa-ul">
+                <ul class="ul-career fa-ul">
                     {{ range .Site.Params.about.career }}
                     <li>
                         <i class="fa-li fa fa-briefcase"></i>
                         <div class="description">
-                            <p class="course">{{ .company }}, {{ .position }}, {{ .year }}</p>
-                            <p class="institution">{{ .detail }}</p>
+                            <p class="company">{{ .company }}, {{ .position }}, {{ .year }}</p>
+                            <p class="detail">{{ .detail }}</p>
                         </div>
                     </li>
                     {{ end }}
