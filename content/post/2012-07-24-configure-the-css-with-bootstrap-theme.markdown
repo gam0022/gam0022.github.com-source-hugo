@@ -17,11 +17,9 @@ tags:
 前回、[Octopressのテーマをカスタマイズする](http://gam0022.net/blog/2012/07/21/use-bootstrap-theme/)という記事で、
 Octopressに[bootstrap-theme](https://github.com/bkutil/bootstrap-theme)を導入しました。
 
-{% blockquote Overriding Styles http://octopress.org/docs/theme/styles/ %}
-If you want to add or override styles, edit sass/custom/_styles.scss. This stylesheet is imported last, so you can override styles with the cascade.
-{% endblockquote %}
+> If you want to add or override styles, edit sass/custom/_styles.scss. This stylesheet is imported last, so you can override styles with the cascade.
 
-上の文はOctopressの公式からの引用で、本来であれば`sass/custom/_styles.scss`
+上の文は[Octopressの公式](http://octopress.org/docs/theme/styles/)からの引用で、本来であれば`sass/custom/_styles.scss`
 に書いたSCSSが最終的にオーバーライドされて適用されるはずです。
 
 しかし、このテーマを導入してから、`sass/custom/_styles.scss`に書いたSCSS(CSS)が反映されなくなってしまいました。
@@ -38,7 +36,7 @@ SCSSとは、CSSメタ言語のことで、要するにCSSを生成するため�
 
 というわけで、`sass/bootstrap/bootstrap.scss`の最終行に次のような感じでimport文を追加することで解決します。
 
-```scss
+```css
 // Custom
 @import "custom/colors";
 @import "custom/fonts";
@@ -48,7 +46,7 @@ SCSSとは、CSSメタ言語のことで、要するにCSSを生成するため�
 
 後は、`sass/custom/_styles.scs`に好きな設定を書けばOKです。ひとまず、こんな感じにしました。
 
-```scss
+```css
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
