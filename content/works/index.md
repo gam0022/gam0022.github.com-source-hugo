@@ -1,5 +1,5 @@
 +++
-date = "2016-09-21T00:00:00"
+date = "2016-09-22T00:00:00"
 draft = false
 title = "Works"
 subtitle = ""
@@ -9,11 +9,27 @@ section = 100
 toc = true
 +++
 
-成果物の紹介（最終更新: 2016/03/13）。
-
-# Book
+# Publications
 
 執筆した書籍を紹介します。
+
+## 2016年夏 AZ異本 grimoire of web
+
+[<img alt="JavaScriptoon2" src="/images/works/tbf1.gif" width="300px" class="right">](/images/works/tbf1.gif)
+
+AZ異本という技術書の「レイマーチングの世界でミクが踊る！『レイマーチング×ラスタライザ』ハイブリッド描画 with three.js」という記事をかきました。
+three.jsによるレイマーチングとラスタライザのハイブリッド手法について解説しました。
+
+レイマーチングはフラクタル図形などの幾何学的なシーンの描画が得意な一方、人物などの有機的な形状の表現は苦手とします。
+そこで、人物などの有機的な箇所のみをラスタライザで描画し、背景などの幾何学的な形状はレイマーチングで描画する手法の考案と実装をしました。 本手法によって、レイマーチングとラスタライザの短所を補い合いながら、ハイブリッドに組み合わせることができます！
+
+- [AZ異本 grimoire of web - TechBooster in 技術書典](https://techbooster.github.io/tbf1/#web)
+- [AZ異本 grimoire of web - BOOTH](https://techbooster.booth.pm/items/275301)
+
+関連情報
+
+- [6/25の技術書典で、AZ異本（アツイホン）を出します！](http://gam0022.hatenablog.com/entry/2016/06/22/tbf1)
+- [webgl raymarching hybrid example - WebGL sandbox](http://gam0022.net/webgl/#raymarching_hybrid)
 
 ## 2015冬 JavaScriptoon2
 
@@ -136,15 +152,34 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 [<img alt="Paper Craft -  dolphin" src="/images/works/paper_craft_dolphin.jpg" class="right">](/images/works/paper_craft_dolphin_original.jpg)
 
 曲面を利用したペーパークラフト（画像奥）をインタラクティブに設計するシステムを提案しました。
-
 市販ソフトウェアで作成したペーパークラフト（画像手前）と比較すると、
 曲線による滑らかな表現、ヒレの部分の1枚の紙の構造（非多様体構造）を許容できる、組立の手間が少ないなどのメリットがあります。
 
 - [学位論文(PDF)](http://www.npal.cs.tsukuba.ac.jp/thesis/2014/thesis2014b_hosoda.pdf)
-- [動画](https://www.dropbox.com/s/8ucnj04gq7zw3uy/vc2015.mp4?dl=0)
-- 学外表彰
-  - [GCAD賞](http://www.ipsj-gcad.sakura.ne.jp/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#q23e1b1c), Visual Computing / [グラフィクスと CAD 合同シンポジウム 2015](http://ipsj-gcad.sakura.ne.jp/vc2015/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/06/28,29
-  - 学生奨励賞, [情報処理学会第77回全国大会](http://www.ipsj.or.jp/event/taikai/77/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/03/23
+- [動画(DropBox)](https://www.dropbox.com/s/8ucnj04gq7zw3uy/vc2015.mp4?dl=0)
+
+表彰
+
+- [GCAD賞](http://www.ipsj-gcad.sakura.ne.jp/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#q23e1b1c), Visual Computing / [グラフィクスと CAD 合同シンポジウム 2015](http://ipsj-gcad.sakura.ne.jp/vc2015/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/06/28,29
+- 学生奨励賞, [情報処理学会第77回全国大会](http://www.ipsj.or.jp/event/taikai/77/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/03/23
+
+指導教官である三谷先生のブログでも紹介していただきました。
+
+- [イルカの紙模型 - みたにっき＠はてな](http://d.hatena.ne.jp/JunMitani/20141112)
+
+# Windows
+
+## 2016 Tsukihi
+
+<div style="width: 300px;" class="right">
+<script async class="speakerdeck-embed" data-slide="1" data-id="3e8b7d83dd0e4b19891d6c8321431d47" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
+
+距離関数によって表現されたオブジェクトをレイマーチングでレンダリングするCPUレンダラーです。
+パストレーシングによるレンダラーの実装と擬似表現によるレンダラーの両方の実装があります。
+
+- [レイトレ合宿4!? に参加しました！ - gam0022のブログ](http://gam0022.hatenablog.com/entry/raytracingcamp4)
+- [レイトレ合宿4!?](https://sites.google.com/site/raytracingcamp4/)
 
 # iOS App
 
@@ -324,7 +359,7 @@ HSPで作ったWindows向けゲーム達です。
 
 [<img alt="Battle Armor" src="/images/works/battle_armor.png" class="right">](/images/works/battle_armor_original.png)
 
-厨二の時に作ったタンクシューティング。
+中2の時に作ったタンクシューティング。
 
 バランスがおかしいですが、クリアは出来ます。
 
