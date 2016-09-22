@@ -14,11 +14,9 @@
     {{ with .Site.Params.email }}
     <li>
         <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
-        {{ if and (isset $.Site.Params.contact "autolink") (eq $.Site.Params.contact.autolink false) }}
-        <span>{{ . }}</span>
-        {{ else }}
-        <span><a href="mailto:{{ . }}">{{ . }}</a></span>
-        {{ end }}
+        <script>
+            function converter(M){var str="", str_as=""; for(var i=0;i<M.length;i++){ str_as = M.charCodeAt(i); str += String.fromCharCode(str_as + 1); } return str; } var ad = converter(String.fromCharCode(102,96,108,47,47,49,49,63,102,108)+String.fromCharCode(96,104,107,45,98,110,108)); document.write("<a href=\"mai"+"lto:"+ad+"\">"+ad+"<\/a>");
+        </script>
     </li>
     {{ end }}
 
