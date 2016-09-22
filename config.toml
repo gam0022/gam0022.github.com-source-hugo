@@ -195,3 +195,8 @@ googleAnalytics = "UA-84469205-1"
   name = "Contact"
   url = "#contact"
   weight = 5
+
+[[menu.sub]]
+  name = "WebGL sandbox"
+  url = "/webgl"
+  weight = 1
