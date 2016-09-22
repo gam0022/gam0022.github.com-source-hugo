@@ -87,13 +87,6 @@ a:hover {
     color: #005181;
 }
 
-img,
-video {
-    //height: auto;
-    max-width: 100%;
-    //display: block;
-}
-
 body {
     counter-reset: captions;
 }
@@ -368,23 +361,14 @@ h3.article-title a {
 
 .article-style img,
 .article-style video {
+    max-width: 100%;
     box-shadow: 1px 1px 0px #edefed,-1px -1px 0px #edefed,1px -1px 0px #edefed,-1px 1px 0px #edefed;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-left: 0;
     padding-right: 0;
-}
-
-.article-style figure {
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-.article-style figure img {
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .article-style dd {
