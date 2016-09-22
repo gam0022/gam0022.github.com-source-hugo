@@ -4,9 +4,26 @@
 
     {{ $paginator := .Paginate .Data.Pages }}
     {{ range $paginator.Pages }}
-    <div>
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <div class="article-style"><p>{{ .Summary }}</p></div>
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        {{ if .Params.image }}
+        <a href="{{ .Permalink }}">
+            <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
+        </a>
+        {{end}}
+        <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">AA {{ .Title }}</a></h3>
+        {{ partial "article_metadata" (dict "content" . "is_list" 1) }}
+        <p class="article-style" itemprop="articleBody">
+            {{ if .Truncated }}
+                {{ printf "%s" .Summary | markdownify }}
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+        </p>
+        <p class="read-more">
+            <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
+                {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
+            </a>
+        </p>
     </div>
     {{ end }}
 

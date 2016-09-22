@@ -763,3 +763,9 @@ img.icon {
     width: 34px;
     margin: 5px;
 }
+
+div.social-icon {
+    width: 38px;
+    height: 38px;
+    background-size: cover;
+}
