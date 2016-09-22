@@ -4,6 +4,7 @@ title: "Rails4のアプリをHerokuで動かす"
 slug: run-rails4-on-heroku
 date: 2013-09-17T22:09:00+09:00
 comments: true
+toc: true
 tags:
 - Ruby
 - Rails4
