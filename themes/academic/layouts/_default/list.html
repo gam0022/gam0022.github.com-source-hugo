@@ -5,11 +5,13 @@
     {{ $paginator := .Paginate .Data.Pages }}
     {{ range $paginator.Pages }}
     <div class="article-list-item" itemscope itemprop="blogPost">
+        <!--
         {{ if .Params.image }}
         <a href="{{ .Permalink }}">
-            <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
+            <img src="{{ .Params.image }}" class="article-banner" itemprop="image">
         </a>
         {{end}}
+        -->
         <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
         {{ partial "article_metadata" (dict "content" . "is_list" 1) }}
         <p class="article-style" itemprop="articleBody">
