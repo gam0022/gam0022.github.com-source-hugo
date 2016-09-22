@@ -778,9 +778,13 @@ div.social-icon {
 .share_button {
     display: table-cell;
     vertical-align: top;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
 .fb_iframe_widget > span {
-  vertical-align: baseline !important;
+    vertical-align: baseline !important;
+}
+
+.pocket-btn > iframe {
+    width: 90px;
 }
