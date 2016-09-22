@@ -770,3 +770,17 @@ div.social-icon {
         margin: 20px;
     }
 }
+
+.share_wrap {
+    display: table;
+}
+
+.share_button {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.fb_iframe_widget > span {
+  vertical-align: baseline !important;
+}
