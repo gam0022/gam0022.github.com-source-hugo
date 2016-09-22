@@ -72,7 +72,7 @@ googleAnalytics = "UA-84469205-1"
     company = "KLab"
     position = "ソフトウェアエンジニア(正社員)"
     year = "2015-04 〜 現在"
-    detail = "スクールアイドルの某人気  ソーシャルゲームの運営とクライアント開発を担当"
+    detail = "某人気スクールアイドルのソーシャルゲームの運営とクライアント開発を担当"
 
   [[params.about.education]]
     course = "ソフトウェアサイエンス専攻, 非数値処理アルゴリズム研究室"
