@@ -20,7 +20,7 @@
                     {{ else if eq .icon_pack "fa" }}
                         <i class="fa fa-{{ .icon }} big-icon" aria-hidden="true"></i>
                     {{ else }}
-                        <div style="width: 38px; height: 38px; background-size: cover; background-image: url('{{ .Site.BaseURL }}img/icons/{{ .icon }}.png');"></div>
+                        <div class="social-icon" style="background-image: url('{{ .Site.BaseURL }}img/icons/{{ .icon }}.png');"></div>
                     {{ end }}
                     </a>
                 </li>
