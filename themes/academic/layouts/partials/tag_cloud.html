@@ -1,0 +1,7 @@
+<ul class="category-list">
+    <div class="widget tagcloud">
+        {{ range $name, $items := .Site.Taxonomies.tags }}
+        <a href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower  }}" style="font-size: 12px;">{{ $name }}({{ len $items }})</a>
+        {{ end }}
+    </div>
+</ul>
