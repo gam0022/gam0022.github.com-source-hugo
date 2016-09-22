@@ -29,5 +29,19 @@
 
     <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
+    {{ if .IsHome }}
+        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+    {{ else }}
+        <meta property="og:description" content="{{ .Summary }}">
+    {{ end }}
+
+    {{ if .Params.image }}
+      <meta property="og:image" content="{{ .Params.image }}">
+    {{ else }}
+      <meta property="og:image" content="{{ .Site.BaseURL }}img/gam0022_splash.png">
+    {{ end }}
+    <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+
+    <meta property="og:url" content="{{ .Permalink }}">
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents">

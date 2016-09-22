@@ -1,6 +1,7 @@
 ---
 layout: post
 toc: true
+image: "/images/posts/2016-02-24-tokyo-demo-fest/carbon-neo-blue.png"
 title: "#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！"
 slug: tokyo-demo-fest
 date: 2016-02-24T08:19:00+09:00
