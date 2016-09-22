@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Rubyの改造してThread#joinのTimeoutで例外を発生させる"
+slug: ruby-thread-join
 date: 2013-08-18T17:15:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 - Ruby C Extension
 ---
@@ -36,7 +37,7 @@ limit を指定して、limit 秒過ぎても自身が終了しない場合、ni
 `Thread#join`の返り値が `nil`のときにタイムアウトしたと分かるので、
 このように書けると思います。
 
-``` ruby Timeout Handling Before
+```ruby
 begin
   t = Thread.start {
     # 1秒で終わらない処理
@@ -60,7 +61,7 @@ end
 
 今回の改造によって、次のようにRubyのコードをスッキリさせることができます。
 
-``` ruby Timeout Handling After
+```ruby
 begin
   t = Thread.start {
     # 1秒で終わらない処理
@@ -84,7 +85,7 @@ end
 
 # 変更箇所
 
-``` diff git diff include/ruby/ruby.h
+```diff
 diff --git a/include/ruby/ruby.h b/include/ruby/ruby.h
 index 575a2b6..79e4289 100644
 --- a/include/ruby/ruby.h
@@ -100,7 +101,7 @@ index 575a2b6..79e4289 100644
 ```
 
 
-``` diff git diff eval.c
+```diff
 diff --git a/eval.c b/eval.c
 index 0bf8337..1304ad0 100644
 --- a/eval.c
@@ -117,7 +118,7 @@ index 0bf8337..1304ad0 100644
 ```
 
 
-``` diff git diff thread.c
+```diff
 diff --git a/thread.c b/thread.c
 index 4f1f409..1bdd657 100644
 --- a/thread.c

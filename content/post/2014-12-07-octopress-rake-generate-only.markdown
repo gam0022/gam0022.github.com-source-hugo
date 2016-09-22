@@ -1,9 +1,11 @@
 ---
 layout: post
+toc: true
 title: "Octopressで最後に編集した記事だけをgenerate"
+slug: octopress-rake-generate-only
 date: 2014-12-07T12:15:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 ---
 
@@ -27,7 +29,7 @@ categories:
 使い方は、`rake generate_only [filename]` という形式で使います。
 `filename`を省略すると、最後に保存されたファイルが自動的に設定されます。
 
-```rb Rakefile
+```rb
 # usage rake generate_only[my-post]
 # thanks to http://rcmdnk.github.io/blog/2013/12/06/blog-octopress-rake/
 desc "Generate only the specified post (much faster)"

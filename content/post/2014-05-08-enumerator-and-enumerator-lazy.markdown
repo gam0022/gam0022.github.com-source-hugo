@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "EnumeratorとEnumerator::Lazyの違い"
+slug: enumerator-and-enumerator-lazy
 date: 2014-05-08T08:51:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 ---
 
@@ -31,7 +32,7 @@ Ruby 2.0では、`Enumerable#lazy` というメソッドと、その返り値で
 
 この式は実行が終わりません。
 
-```ruby 無限リストをmapすると、実行が終わらない
+```ruby
 [1] pry(main)> (1..Float::INFINITY).map{|n| n*2}.first(5)
 # => (実行が終わらない...)
 ```
@@ -45,7 +46,7 @@ Ruby 2.0では、`Enumerable#lazy` というメソッドと、その返り値で
 
 `Enumerable#lazy` を使って、次の式[2]ように無限リストを `map` によって処理することができます。
 
-```ruby Enumerable#lazy によって、無限リストを扱うことができる。
+```ruby
 [2] pry(main)> (1..Float::INFINITY).lazy.map{|n| n*2}.first(5)
 # => [2, 4, 6, 8, 10]
 ```
@@ -69,7 +70,7 @@ Ruby 2.0では、`Enumerable#lazy` というメソッドと、その返り値で
 
 特に、[2]では、結果を即座に配列にしないで、遅延リストとして保持しているという点が重要です。
 
-* [1]のmap: `Enumerable#map` -> `Array` 
+* [1]のmap: `Enumerable#map` -> `Array`
 * [2]のmap: `Enumerator::Lazy#map` -> `Enumerator::Lazy`
 
 
@@ -80,8 +81,9 @@ Ruby2.0 から新しく遅延リストが登場したかのように誤解して
 例えば、`IO#each_line` はブロックを省略すると、ファイルの各行を順に `yield` するような `Enumerator` を返します。
 
 次のような例では、ファイルを全て読み込まずに、最初の10行だけを処理することができます。
+つまり、`IO#each_line` はファイル全てを読み込みません。
 
-```ruby IO#each_line はファイル全てを読み込まない
+```ruby
 File.open("log.txt") do |f|
   puts f.each_line.first(10)
 end
@@ -90,8 +92,9 @@ end
 驚くかもしれませんが、`Enumerator::Lazy` と `Enumerator` はどちらも遅延リストです。
 
 すこし工夫すれば、`Enumerator` でも無限リストを処理することもできます。これは最初の例と全く同じ結果になります。
+つまり、`Enumerator` でも無限リストを処理できます。
 
-```ruby Enumerator でも無限リストを処理できる
+```ruby
 Enumerator.new{|y|
   (1..Float::INFINITY).each{|n|
     y << n*2
@@ -113,14 +116,14 @@ map によって直感的で読みやすく短いコードで表現できます�
 言い方を変えれば、`Enumerator::Lazy` の真の目的は lazy版の`map` や `select` を再定義することにあります。
 
 
-# lazyを付けるとmapの動作が変わる不思議な仕様 
+# lazyを付けるとmapの動作が変わる不思議な仕様
 
 なぜ、lazy を付けると map や select の動作が変わる不思議な動作にしたのか？ と疑問に思った人もいると思います。
 
 Enumerable#lazy を作った [Yutaka HARA](https://bugs.ruby-lang.org/issues/4890) さんが、[るびま](http://magazine.rubyist.net/?0041-200Special-lazy)で答えていました。
 
-* `Enumerable` モジュールには、lazy 版がほしくなるようなメソッドが `map`、`select`、`reject`、`drop`、... とたくさんある。 
-* 全部追加すると、`Enumerable` モジュールのメソッドが増えすぎる。 
+* `Enumerable` モジュールには、lazy 版がほしくなるようなメソッドが `map`、`select`、`reject`、`drop`、... とたくさんある。
+* 全部追加すると、`Enumerable` モジュールのメソッドが増えすぎる。
 * `Enumerator::Lazy` 名前空間を提供することによって、「lazy」という メソッド名をひとつ追加するだけで lazy 版の `map` や `select` などが使えるようにした。
 
 リンク先の記事でも、`Enumerable#lazy`は「`map` や `select` などの lazy 版を提供するための名前空間を提供するメソッド」というのがより正確な説明になると述べられています。
@@ -139,7 +142,7 @@ Enumerable#lazy を作った [Yutaka HARA](https://bugs.ruby-lang.org/issues/489
 
 `Enumerator::Lazy`や`Enumerator`、`Enumerable`などの継承関係が複雑なので、図にまとめました。
 
-{% img /images/posts/2014-05-08-enumerator-and-enumerator-lazy.png 600 クラスの継承関係 %}
+![600 クラスの継承関係](/images/posts/2014-05-08-enumerator-and-enumerator-lazy.png)
 
 ## 遅延リストが使える場面
 

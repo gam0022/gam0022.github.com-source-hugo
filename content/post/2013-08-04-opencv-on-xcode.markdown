@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "XcodeでopenCVを使う"
+slug: opencv-on-xcode
 date: 2013-08-04T12:40:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - OpenCV
 - Xcode
@@ -24,7 +25,7 @@ openCV
 
 まず、普通にhomebrewでopenCVを入れます。
 
-``` bash homebrewでopenCVをインストールする
+```bash
 brew tap homebrew/science
 brew install opencv
 ```

@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "ServersMan@VPSでRubyのCGIを実行するまでのメモ"
+slug: run-ruby-cgi-on-serversman-at-vps
 date: 2012-07-26T00:11:00+09:00
 comments: true
-categories:
+tags:
 - Apache
 - ServersMan@VPS
 - Ruby
@@ -16,9 +17,9 @@ ServersMan@VPS(Ubuntu)でRubyのCGIを実行するまでのメモです。
 
 apt-getかaptitudeでインストールすればいいと思います。
 
-{% codeblock lang:bash %}
+```bash
 sudo aptitude install apache2	
-{% endcodeblock %}
+```
 
 ## AddHandlerを設定する
 
@@ -27,15 +28,15 @@ sudo aptitude install apache2
 `#AddHandler cgi-script .cgi`という行があるので、
 見つけてコメントアウトを解除して、次のように書き換えればいいと思います。
 
-{% codeblock %}
+```
 AddHandler cgi-script .cgi .rb
-{% endcodeblock %}
+```
 
 ## Options +ExecCGIを設定する
 
 `/etc/apache2/sites-available/default`でOptions +ExecCGIを設定します。
 
-{% codeblock %}
+```
 <Directory /var/www/html/>
 	#Options Indexes FollowSymLinks MultiViews 
 	Options Indexes FollowSymLinks MultiViews ExecCGI
@@ -43,23 +44,23 @@ AddHandler cgi-script .cgi .rb
 	Order allow,deny
 	allow from all
 </Directory>
-{% endcodeblock %}
+```
 
 
 ## apache2を再起動する
 
 上の2つのファイルを編集したら、apacheを再起動して設定を反映させます。
 
-{% codeblock lang:bash %}
+```bash
 sudo /etc/init.d/apache2 restart	
-{% endcodeblock %}
+```
 
 ## Ruby CGIのパーミッションを755にする
 
-{% codeblock lang:bash %}
+```bash
 cd /var/www/html
 chmod 755 test.rb
-{% endcodeblock %}
+```
 
 これでたぶん動くようになります。
 

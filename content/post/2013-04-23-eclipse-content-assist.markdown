@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Eclipseのコード補完のショートカットを変更する"
+slug: eclipse-content-assist
 date: 2013-04-23T17:31:00+09:00
 comments: true
-categories: 
+tags:
 - Eclipse
 - Mac OS X
 ---
@@ -13,7 +14,7 @@ Macで使うとSpotlightと干渉して使えません。
 
 だったら、ショートカットのキーバインドを変更しましょう!
 
-{% img /images/posts/2013-04-23-eclipse-content-assist.png %}
+![Eclipseの設定画面](/images/posts/2013-04-23-eclipse-content-assist.png)
 
 設定方法はメニューバーから`Eclipse/環境設定/General/Keys`です。
 

@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "JavaScriptのメモ"
+slug: javascript-memo
 date: 2013-07-11T05:58:00+09:00
 comments: true
-categories: 
+tags:
 - JavaScript
 - COJT
 ---
@@ -61,7 +62,7 @@ JavaScriptには、spinrfがないので、自分で実装するか、誰かが�
 
 [連載：jQuery逆引きリファレンス：第5回 コア編 (11/13) @IT](http://www.atmarkit.co.jp/ait/articles/1003/12/news088_11.html) より
 
-``` javascript sprintf.js
+```js
 // sprintf('{0}は{1}', '猫', 'うろうろ'); => '猫はうろうろ'
 sprintf = function(format) {
 
@@ -84,7 +85,7 @@ sprintf = function(format) {
 Android からアクセスされたときだけ、JavaScriptで別の処理をしたい場合があったのですが、
 userAgentを使うことで判定できました。
 
-``` javascript judge_android.js
+```js
 var agent = navigator.userAgent;
 this.is_android = false;
 if(agent.search(/Android/) != -1){

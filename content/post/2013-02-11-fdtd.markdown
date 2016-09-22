@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "OctopressでMathJax.rbの導入"
+slug: fdtd
 date: 2013-02-11T16:23:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - latex
+math: true
 ---
 
 [数値シュミレーション](http://www.coins.tsukuba.ac.jp/syllabus/GB22201.html)という授業で波動関数をシュミレーションする課題がありました。
@@ -19,7 +21,8 @@ categories:
 1. [MathJax.rb](https://gist.github.com/jessykate/834610)をダウンロードして、`/plugins/`にコピーする。
 2. octopressの場合、`_layouts/layout.html`ではなくて、`source/_includes/custom/head.html`に次の行を追加する。
 
-``` html source/_includes/custom/head.html
+``` html
+# source/_includes/custom/head.html
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
 
@@ -29,15 +32,15 @@ categories:
 
 ブロックの場合、`math`と`endmath`タグで囲む
 
-``` latex 
+``` latex
 {% math %}
 
 Simple\ FDTD\ Algorithm\ and\ Devils\ in\ the\ Details \\
 
 \begin{eqnarray}
 \psi(x,t + \Delta t) &=& -\psi(x, t - \Delta t) + [2 + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2] \psi(x,t) \\
-                       &=& -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2 \psi(x,t) \\
-                       &=& -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2}
+$$ -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2 \psi(x,t) \\
+$$ -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2}
                        [ \psi(x - \Delta x, t) + \psi(x + \Delta x, t) - 2 \psi(x, t) ] \\
 \end{eqnarray}
 
@@ -52,25 +55,20 @@ Simple\ FDTD\ Algorithm\ and\ Devils\ in\ the\ Details \\
 
 # FDTD
 
-私も詳細はちゃんと理解していませんが、1次元の波を {% m %} \psi(x,t) {% em %} という
+私も詳細はちゃんと理解していませんが、1次元の波を $\psi(x,t)$ という
 座標と時間をパラメータとした関数を使って表すとします。
 
 このとき、FDTDというアルゴリズムを当てはまれば、漸化式によって波動関数をシュミレーションできます。
 
 実際に計算してみると面白いと思います。
 
-{% math %}
+Simple FDTD Algorithm and Devils in the Details
 
-Simple\ FDTD\ Algorithm\ and\ Devils\ in\ the\ Details \\
 
-\begin{eqnarray}
-\psi(x,t + \Delta t) &=& -\psi(x, t - \Delta t) + [2 + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2] \psi(x,t) \\
-                       &=& -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2 \psi(x,t) \\
-                       &=& -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2}
-                       [ \psi(x - \Delta x, t) + \psi(x + \Delta x, t) - 2 \psi(x, t) ] \\
-\end{eqnarray}
-
-{% endmath %}
+$$\psi(x,t + \Delta t) $$
+$$ = -\psi(x, t - \Delta t) + [2 + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2] \psi(x,t)$$
+$$ = -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2 \psi(x,t) $$
+$$ = -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} [ \psi(x - \Delta x, t) + \psi(x + \Delta x, t) - 2 \psi(x, t) ] $$
 
 # FTDTでシュミレーションした例
 
@@ -78,29 +76,26 @@ Simple\ FDTD\ Algorithm\ and\ Devils\ in\ the\ Details \\
 
 問題の条件はこれ。
 
-{% math %}
-\psi(0,0) = \psi(1,0) = 0, \psi(2,0) = sin(\frac{1}{4}\pi), \psi(3,0) = sin(\frac{2}{4}\pi), \psi(4,0) = sin(\frac{3}{4}\pi), \psi(j,0) = 0 for j = 5,6,..,10\\
-\psi(0,1) = \psi(1,1) = \psi(2,1) = 0, \psi(3,1) = sin(\frac{1}{4}\pi), \psi(4,1) = sin(\frac{2}{4}\pi), \psi(5,1) = sin(\frac{3}{4}\pi), \psi(j,0) = 0 for j = 6,7,..,10\\
-v = 1.0, \Delta x = 1, \Delta t = 1
-{% endmath %}
+$$\psi(0,0) = \psi(1,0) = 0, \psi(2,0) = sin(\frac{1}{4}\pi), \psi(3,0) = sin(\frac{2}{4}\pi), \psi(4,0) = sin(\frac{3}{4}\pi), \psi(j,0) = 0 for j = 5,6,..,10$$
+
+$$\psi(0,1) = \psi(1,1) = \psi(2,1) = 0, \psi(3,1) = sin(\frac{1}{4}\pi), \psi(4,1) = sin(\frac{2}{4}\pi), \psi(5,1) = sin(\frac{3}{4}\pi), \psi(j,0) = 0 for j = 6,7,..,10$$
+
+$$v = 1.0, \Delta x = 1, \Delta t = 1$$
 
 条件を元に、FTDTの式を整理してみます。
 
-{% math %}
-\begin{eqnarray}
-  \psi(x,t + \Delta t) &=& -\psi(x, t - \Delta t) + [2 + \frac{v^2(\Delta t)^2}{\Delta x ^2}d_x^2] \psi(x,t) \\
-                       &=& -\psi(x,t-1) + 2\psi(x,t) + d_x^2 \psi(x,t) \\
-                       &=& -\psi(x,t-1) + 2\psi(x,t) + \psi(x-1,t) + \psi(x+1,t) - 2\psi(x,t) \\
-                       &=& -\psi(x,t-1) + \psi(x-1,t) + \psi(x+1,t)
-\end{eqnarray}
-{% endmath %}
+$$\psi(x,t + \Delta t)$$
+$$ = -\psi(x, t - \Delta t) + [2 + \frac{v^2(\Delta t)^2}{\Delta x ^2}d_x^2] \psi(x,t)$$
+$$ = -\psi(x,t-1) + 2\psi(x,t) + d_x^2 \psi(x,t)$$
+$$ = -\psi(x,t-1) + 2\psi(x,t) + \psi(x-1,t) + \psi(x+1,t) - 2\psi(x,t)$$
+$$ = -\psi(x,t-1) + \psi(x-1,t) + \psi(x+1,t)$$
 
 最終的に、こんなシンプルな漸化式になります。
 
-{% math %}
+$$
 \psi(x,t) = -\psi(x,t-2) + \psi(x-1,t-1) + \psi(x+1,t-1)
-{% endmath %}
+$$
 
 上の式を元に計算すると、次のような波形を得られます。
 
-{% img /images/posts/2013.02.11_ftdt.png FTDTで計算した波動関数 %}
+![FTDTで計算した波動関数](/images/posts/2013.02.11_ftdt.png)

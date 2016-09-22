@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "GNU Octave を Mac OS Xにインストールする"
+slug: install-octave-on-mac-os-x
 date: 2012-09-06T19:27:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - Moutain Lion
 - homebrew
@@ -33,7 +34,7 @@ Mountain Lion にしたら、Homebrewがおかしくなった人は、まず次�
 
 ## HomebrewでOctaveを入れる
 
-``` bash how to install octave
+```bash
 # リポジトリ追加
 brew tap free/open
 # updateしないとうまくいかなかった
@@ -48,20 +49,21 @@ brew install octave
 
 Octave自体には、グラフの描画機能はなく、gnuplotに依存しているのでgnuplotを入れます。
 
-``` bash
+```bash
 brew install gnuplot
 ```
 
 次に、`GNUTERM`という環境変数を設定します。
 
-``` bash ~/.bash_profile
+``` bash
+# ~/.bash_profile
 export GNUTERM=x11
 ```
 次に`source ~/.bash_profile`をするかログインし直せばOctaveでplotなどからグラフを描画できるようになります。
 
 ちなみに、`GNUTERM`を設定しないとこういう感じのエラーになります。
 
-``` matlab octave error
+```matlab
 octave :1> plot(x)
 gnuplot> set terminal aqua enhanced title "Figure 1" size 560 420  font "*,6"
                       ^

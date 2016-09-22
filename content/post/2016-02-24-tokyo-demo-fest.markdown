@@ -1,9 +1,11 @@
 ---
 layout: post
+toc: true
 title: "#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！"
+slug: tokyo-demo-fest
 date: 2016-02-24T08:19:00+09:00
 comments: true
-categories: 
+tags:
 - event
 - demo
 - CG
@@ -14,7 +16,7 @@ categories:
 
 Tokyo Demo Festとは、このようなイベントです（公式ページからの引用）。
 
-> Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに 興味のある人々が日本中、世界中から一堂に会し、 デモ作品のコンペティションやセミナーなどを行います。 また、イベント開催中は集まった様々な人たちとの交流が深められます。 
+> Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに 興味のある人々が日本中、世界中から一堂に会し、 デモ作品のコンペティションやセミナーなどを行います。 また、イベント開催中は集まった様々な人たちとの交流が深められます。
 
 私は"Carbon"という作品をGLSL Graphics Compoに提出して、3位入賞してきました！
 
@@ -93,7 +95,7 @@ Mandelboxで何か作品を作るということ、完成図のイメージは�
 
 `Intersect`の定義はこうしました。
 
-```c struct Intersect
+```c
 struct Intersect {
 	bool isHit;
 

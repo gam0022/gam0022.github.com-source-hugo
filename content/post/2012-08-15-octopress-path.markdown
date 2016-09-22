@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Octopressでパスを指定するときのテクニック"
+slug: octopress-path
 date: 2012-08-15T09:34:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 ---
 

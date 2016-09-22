@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "GPUをつかったリアルタイムなレイトレーシング"
+slug: qiita-raymarching
 date: 2016-04-09T18:03:00+09:00
 comments: true
-categories: 
+tags:
 - WebGL
 - CG
 - レイマーチング

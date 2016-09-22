@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "COJTを受講しようと考えている人へ"
+slug: cojt-faq
 date: 2013-12-07T00:20:00+09:00
 comments: true
-categories: 
+tags:
 - COJT
 ---
 

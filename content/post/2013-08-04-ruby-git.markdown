@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Rubyのgitリポジトリ"
+slug: ruby-git
 date: 2013-08-04T11:39:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 - git
 - GitHub

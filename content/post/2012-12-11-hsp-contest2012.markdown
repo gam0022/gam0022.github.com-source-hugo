@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "HSPプログラミングコンテスト2012で秀和システム賞を受賞"
+slug: hsp-contest2012
 date: 2012-12-11T12:42:00+09:00
 comments: true
-categories: 
+tags:
 - HSP
 ---
 

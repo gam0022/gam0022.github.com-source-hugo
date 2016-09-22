@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)"
+slug: use-rsync-iconv-option
 date: 2012-08-11T10:38:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - Rsync
 - Mac OS X
@@ -35,23 +36,23 @@ UTF-8-MAC問題について詳しく知りたい人は、[こちら](http://d.ha
 
 Rsyncの`--iconv`オプションが使えるのは、Rsync3からなのでアップデートします。
 
-{% codeblock lang:bash %}
+```bash
 brew tap homebrew/dupes #リポジトリを追加
 brew install libiconv #iconvオプションを使うために必須のよう
 brew install rsync
-{% endcodeblock %}
+```
 
 念のため、サーバ側(Ubuntu)のrsync3にします。
 
-{% codeblock lang:bash %}
+```bash
 aptitude install rsync
-{% endcodeblock %}
+```
 
 ### Rakefileを修正する
 
 `Rakefile`の`ok_failed system...`の行を書き換えます。
 
-{% codeblock lang:bash %}
+```bash
 desc "Deploy website via rsync"
 task :rsync do
   exclude = ""
@@ -62,13 +63,13 @@ task :rsync do
   #ok_failed system("rsync -avze 'ssh -p #{ssh_port}' #{exclude} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
   ok_failed system("rsync --iconv=UTF-8-MAC,UTF-8 -avze 'ssh -p #{ssh_port}' #{exclude} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
 end
-{% endcodeblock %}
+```
 
 ### 完。
 
 これでうまくいきました。
 
-{% codeblock lang:bash %}
+```bash
 [gam0022@starlight:~/git/gam0022.net] $ rake deploy
 ## Deploying website via Rsync
 sending incremental file list
@@ -82,6 +83,6 @@ blog/categories/ゴ/index.html
 sent 11206 bytes  received 138 bytes  7562.67 bytes/sec
 total size is 2309599  speedup is 203.60
 OK
-{% endcodeblock %}
+```
 
 「ゴゴゴゴ…」

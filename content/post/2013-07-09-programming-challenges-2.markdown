@@ -1,10 +1,12 @@
 ---
 layout: post
+toc: true
 title: "Programming Challenges 2"
+slug: programming-challenges-2
 date: 2013-07-09T07:00:00+09:00
 comments: true
-categories: 
-categories: 
+tags:
+tags:
 - 競技プログラミング
 - Uva Online Judge
 ---
@@ -50,7 +52,7 @@ Uva Online Judgeで解いた問題を適当に解説します。
 
 解読のヒントは暗号文を平文にしたときに、次の1行が含まれていることだった。
 
-"the quick brown fox jumps over the lazy dog" 
+"the quick brown fox jumps over the lazy dog"
 
 
 ## 解説

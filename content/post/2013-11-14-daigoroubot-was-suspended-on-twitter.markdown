@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "大五郎botがTwitterで凍結された"
+slug: daigoroubot-was-suspended-on-twitter
 date: 2013-11-14T21:29:00+09:00
 comments: true
-categories: 
+tags:
 - Twitter
 - 大五郎bot
 ---

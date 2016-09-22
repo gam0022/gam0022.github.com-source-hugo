@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "つくばC#勉強会(tkbcsmt)に参加"
+slug: tkbcsmt
 date: 2013-06-22T23:23:00+09:00
 comments: true
-categories: 
+tags:
 - C#
 - 勉強会
 ---

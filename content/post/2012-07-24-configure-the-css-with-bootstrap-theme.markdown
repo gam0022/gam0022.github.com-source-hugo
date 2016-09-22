@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Octopressでbootstrap-themeにしたとき、sass/custom/_styles.scssが反映されなくなった件について"
+slug: configure-the-css-with-bootstrap-theme
 date: 2012-07-24T22:50:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 - CSS
 - SASS/SCSS
@@ -37,17 +38,17 @@ SCSSとは、CSSメタ言語のことで、要するにCSSを生成するため�
 
 というわけで、`sass/bootstrap/bootstrap.scss`の最終行に次のような感じでimport文を追加することで解決します。
 
-{% codeblock lang:scss %}
+```scss
 // Custom
 @import "custom/colors";
 @import "custom/fonts";
 @import "custom/layout";
 @import "custom/styles";
-{% endcodeblock %}
+```
 
 後は、`sass/custom/_styles.scs`に好きな設定を書けばOKです。ひとまず、こんな感じにしました。
 
-{% codeblock lang:scss %}
+```scss
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
@@ -89,7 +90,7 @@ div.entry-content {
 		font-size: 11px;
 	}
 }
-{% endcodeblock %}
+```
 
 まあ、せいぜいsubsubsectionくらいまでしか使いませんよね…
 

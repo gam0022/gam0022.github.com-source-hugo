@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "coinsの環境を使ってDynamic Forward"
+slug: dynamic-forward
 date: 2013-03-21T11:17:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - coins
 ---
@@ -23,7 +24,8 @@ DynamicForwardの方が汎用性が高くて便利なのに、使っている人
 
 まず、`~/.ssh/config`を次のようにします。
 
-``` bash .ssh/config
+``` bash
+# .ssh/config
 Host coins coins-p
 HostName www.coins.tsukuba.ac.jp
 User sxxxxxxx
@@ -51,7 +53,7 @@ SOKCSプロキシの設定は Mac OS X (山ライオン)ならば、`ネット�
 
 他の環境の人はググって調べてください。
 
-{% img /images/posts/2013-03-21-dynamic-forward.png SOKCSプロキシの設定 %}
+![SOKCSプロキシの設定](/images/posts/2013-03-21-dynamic-forward.png)
 
 # 切断するとき
 

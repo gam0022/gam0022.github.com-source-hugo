@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "COJTの成果発表の感想"
+slug: cojtfalsecheng-guo-fa-biao-falsegan-xiang
 date: 2013-08-01T22:44:00+09:00
 comments: true
-categories: 
+tags:
 - COJT
 - HTML5
 - WebGL

@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Mac(Lion)でアプリケーション内でウィンドウを切り替える方法"
+slug: switch-within-the-app-mac
 date: 2012-07-29T23:21:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - Lion
 ---
@@ -14,7 +15,7 @@ Macでは、Comand + tabなどで、アプリケーション単位の切り替�
 
 調べてみると、OSの標準機能で同一アプリケーション内のウィンドウを切り替える機能がありました。
 
-{% img http://gam0022.net/images/2012.7.29_toggle_windows.png %}
+![次のウィンドウを操作対象にする](/images/posts/2012.7.29_toggle_windows.png)
 
 `環境設定 > キーボード > キーボードとショートカット > キーボードと文字入力 > 次のウィンドウを操作対象にする`
 

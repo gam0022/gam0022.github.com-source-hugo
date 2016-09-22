@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "卒業研究の紹介をしていだだきました"
+slug: papar-craft
 date: 2014-11-13T17:52:00+09:00
 comments: true
-categories: 
+tags:
 - 研究
 - ペーパークラフト
 ---

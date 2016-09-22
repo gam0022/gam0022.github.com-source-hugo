@@ -1,18 +1,20 @@
 ---
 layout: post
 title: "Octopressの見出しにアンカーリンクをつけるように改造"
+slug: header-anchor
 date: 2013-02-05T14:30:00+09:00
 comments: true
-categories: 
+tags:
 - Octopress
 ---
 
 タイトルの通りなのですが、h1レベルの見出しにアンカーリンクをつけるようにOctopressを改造しました。
 
-`plugins/octopress_filters.rb`の19行目を次のように修正して、
+``の19行目を次のように修正して、
 h1レベルの見出しに正規表現でアンカーリンクをつけるようにしました。
 
-``` diff octopress_filters.diff https://gist.github.com/gam0022/4712560 4712560
+``` diff
+# plugins/octopress_filters.rb
 @@ -16,7 +16,7 @@ module OctopressFilters
    end
    def post_filter(input)

@@ -1,9 +1,11 @@
 ---
 layout: post
+toc: true
 title: "Keynoteで綺麗な数式を使う"
+slug: latexit
 date: 2014-04-21T09:01:00+09:00
 comments: true
-categories: 
+tags:
 - LaTex
 - Keynote
 - Mac OS X
@@ -15,7 +17,7 @@ Keynote には、PowerPointの数式エディタ的な機能が無いらしい�
 
 どうにかして数式を埋め込みたかったので、方法を調べました。
 
-{% img /images/posts/2014-04-21-latexit/keynote-1.png 600 keynoteに数式 %}
+![600 keynoteに数式](/images/posts/2014-04-21-latexit/keynote-1.png)
 
 <!--more-->
 
@@ -34,7 +36,7 @@ Keynote には、PowerPointの数式エディタ的な機能が無いらしい�
 
 私の場合はこうしました。
 
-{% img /images/posts/2014-04-21-latexit/latexit-config.png 600 LaTexiTの設定 %}
+![600 LaTexiTの設定](/images/posts/2014-04-21-latexit/latexit-config.png)
 
 ## LaTeXiT で数式を生成
 
@@ -42,7 +44,7 @@ LaTeXiT では、普通に LaTex と全く同じように数式が扱えます�
 
 式を入力したら、右下の`LaTex it!`ボタンでコンパイル(画像化)してくれます。
 
-{% img /images/posts/2014-04-21-latexit/latexit-usage.png 600 LaTexiTの使い方 %}
+![600 LaTexiTの使い方](/images/posts/2014-04-21-latexit/latexit-usage.png)
 
 ## Keynote に貼り付ける
 
@@ -52,7 +54,7 @@ LaTeXiT では、普通に LaTex と全く同じように数式が扱えます�
 
 また、数式を Keynote にドラッグ・アンド・ドロップすることでも貼り付けることができます。
 
-{% img /images/posts/2014-04-21-latexit/latexit-copy.png 600 数式のコピー %}
+![600 数式のコピー](/images/posts/2014-04-21-latexit/latexit-copy.png)
 
 ちなみに、デフォルトフォーマットは、`LaTeXit> 環境設定 > 一般タブ` から指定できます。
 
@@ -72,7 +74,7 @@ LaTeXiT では、普通に LaTex と全く同じように数式が扱えます�
 
 無事に数式番号を指定できました。
 
-{% img /images/posts/2014-04-21-latexit/latexit-setcounter.png 600 数式番号を指定する %}
+![600 数式番号を指定する](/images/posts/2014-04-21-latexit/latexit-setcounter.png)
 
 
 # 参考

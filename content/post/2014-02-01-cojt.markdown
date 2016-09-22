@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "COJTの成果発表を終えて"
+slug: cojt
 date: 2014-02-01T13:55:00+09:00
 comments: true
-categories: 
+tags:
 - study
 - contest
 ---
@@ -74,7 +75,7 @@ COJTには、ソフトウェアコースとハードウェアコースがあり�
 
 この音声収録ができただけでも、この授業を受けた価値があったなと思いました。
 
-{% img /images/posts/2014-02-01-cojt/voice.jpg 音声収録風景 %}
+![音声収録風景](/images/posts/2014-02-01-cojt/voice.jpg)
 
 
 ## 技術的なこと

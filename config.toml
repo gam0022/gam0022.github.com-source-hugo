@@ -1,5 +1,197 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseurl = "http://gam0022.net/"
+title = "gam0022.net"
+copyright = "&copy; 2016 gam0022"
+languageCode = "jp"
+theme = "academic"
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "gam0022-net"
+
+# Enable analytics by entering your Google Analytics tracking ID
+googleAnalytics = "UA-84469205-1"
+
 [permalinks]
-    post = "/:year/:month/:day/:filename/"
+  post = "/blog/:year/:month/:day/:slug"
+
+[params]
+  name = "細田 翔 / Sho Hosoda"
+  screen_name = "@gam0022"
+  role = "ソフトウェアエンジニア"
+  organization = "KLab株式会社"
+  avatar = "gam0022_splash.png"
+  email = "gam0022@gmail.com"
+  # address = "東京都"
+  # phone = "888 888 88 88"
+
+  # Date format (refer to Go's date format: http://flippinggodateformat.com )
+  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+  date_format = "2006-01-02"
+
+  # Enable global LaTeX math rendering? If false, you can enable it locally
+  #   on a per page basis.
+  math = false
+
+  # Enable native social sharing buttons?
+  sharing = true
+
+  # Link custom CSS and JS assets (relative to /static/css and
+  #   /static/js respectively)
+  custom_css = []
+  custom_js  = []
+
+  # Biography section.
+  #   Section will only be displayed if `content/home/about.md` exists.
+  [params.about]
+    interests = [
+      "Computer Graphics",
+      "Raymarching",
+      "Realtime Rendering",
+      "WebGL",
+      "three.js",
+      "GLSL",
+      "Ruby on Rails",
+      "JavaScript",
+    ]
+
+    str_interests = "興味 / Interests"
+    str_education = "学歴 / Education"
+    str_career = "職歴 / Career"
+
+  [[params.about.career]]
+    company = "情報基盤研究所"
+    position = "ソフトウェアエンジニア(学生アルバイト)"
+    year = "2011-09 〜 2015-03"
+    detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
+
+  [[params.about.career]]
+    company = "BearTail"
+    position = "ソフトウェアエンジニア(学生アルバイト)"
+    year = "2011-09 〜 2015-03"
+    detail = " Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当"
+  [[params.about.career]]
+    company = "KLab"
+    position = "ソフトウェアエンジニア(正社員)"
+    year = "2015-04 〜 現在"
+    detail = "スクールアイドルの某人気  ソーシャルゲームの運営とクライアント開発を担当"
+
+  [[params.about.education]]
+    course = "ソフトウェアサイエンス専攻, 非数値処理アルゴリズム研究室"
+    institution = "筑波大学 情報学群 情報科学類"
+    year = "2011-04 〜 2015-03"
+
+  # Selected Publications section.
+  #   Section will only be displayed if there are publications with
+  #   `selected = true` in their `+++` preamble.
+  [params.publications_selected]
+    detailed_list = true
+    title = "Selected Publications"
+    subtitle = ""
+
+  # Publications section.
+  #   Section will only be displayed if there are publications in
+  #   `content/publication/`.
+  [params.publications]
+    count = 10
+    detailed_list = false
+    title = "Recent Publications"
+    subtitle = ""
+    str_all = "More Publications"
+
+  # Posts section.
+  #   Section will only be displayed if there are posts in `content/post/`.
+  [params.posts]
+    count = 5
+    title = "Recent Posts"
+    subtitle = ""
+    str_all = "More Posts"
+    str_read_more = "Read more"
+
+  # Projects section.
+  #   Section will only be displayed if there are projects in
+  #   `content/project/`.
+  [params.projects]
+    title = "Projects"
+    subtitle = ""
+
+  # Contact section.
+  [params.contact]
+    enable = true
+    title = "Contact"
+    subtitle = ""
+    autolink = true  # Automatically link email and phone?
+
+  # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
+  #   youtube, instagram, soundcloud
+  #
+  #   For email icon, use "fa" icon pack, "envelope" icon, and
+  #   "mailto:your@email.com" as the link.
+  #
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #
+  #   Full list: https://jpswalsh.github.io/academicons/
+
+  # [[params.social]]
+  #   icon = "envelope"
+  #   icon_pack = "fa"
+  #   link = "mailto:gam0022@gmail.com"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/gam0022"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "//github.com/gam0022"
+
+  [[params.social]]
+    icon = "qiita"
+    icon_pack = "img"
+    link = "//qiita.com/gam0022"
+
+  [[params.social]]
+    icon = "hatena-blog"
+    icon_pack = "img"
+    link = "//gam0022.hatenablog.com"
+
+  [[params.social]]
+    icon = "facebook-official"
+    icon_pack = "fa"
+    link = "//www.facebook.com/sho.hosoda.9"
+
+# Navigation Links
+#   The weight parameter defines the order that the links will appear in.
+
+[[menu.main]]
+  name = "Home"
+  url = "#top"
+  weight = 1
+
+[[menu.main]]
+  name = "Hot"
+  url = "#hot"
+  weight = 2
+
+[[menu.main]]
+  name = "Recent"
+  url = "#recent"
+  weight = 3
+
+[[menu.main]]
+  name = "Works"
+  url = "#works"
+  weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 5

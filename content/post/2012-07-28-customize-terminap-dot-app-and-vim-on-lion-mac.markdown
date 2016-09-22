@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Linux(Ubuntu)からOS Xへ開発環境を移すときにしたこと"
+slug: customize-terminap-dot-app-and-vim-on-lion-mac
 date: 2012-07-28T00:01:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - Lion
 - Terminal.app
@@ -31,7 +32,7 @@ Terminal.appはMacOSに標準で入っている端末です。
 
 最終的にはこんな感じになりました。
 
-{% img http://gam0022.net/images/2012.7.28&#95;terminal.png Terminal.app %}
+![Terminal.app](/images/posts/2012.7.28_terminal.png)
 
 ### 外観を変える
 
@@ -51,7 +52,7 @@ macの場合は`~/.bashrc`は無効になっており、ログイン時だけ`~/
 
 前の環境の`.bashrc`は禍々しくて見せられませんが、`.bash_profile`をこんな感じで書いていきます。
 
-{% codeblock lang:bash %}
+```bash
 # パスの設定とか
 export PATH=$PATH:$HOME/bin
 
@@ -66,7 +67,7 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 
 # プロンプトも色を付ける
 PS1='\[\033[36m\][\u@\h:\[\033[33m\]\w\[\033[36m\]]\[\033[0m\] \$ '
-{% endcodeblock %}
+```
 
 ### exitでタブやウィンドウを閉じるようにする
 
@@ -107,9 +108,9 @@ gccがないとパッケージ管理システムでコンパイルができな�
 
 [公式](https://github.com/mxcl/homebrew/wiki/installation)のコピペですが、これを叩けばhomebrewをインストールできます。
 
-{% codeblock lang:bash %}
+```bash
 $ ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
-{% endcodeblock %}
+```
 
 MacにはRuby1.8が最初から入っているので、心配は不要です。(しかし1.8かよ)
 
@@ -144,10 +145,10 @@ Ubuntuでは特に設定をしなくてもvimに色がついてたんですが�
 1. `desert.vim`をダウンロードする。
 2. `~/.vim/colors`に`mv`する。
 3. 以下を`~/.vimrc`に書き加える。
-{% codeblock lang:vim %}
+```vim
 syntax on
 colorscheme desert
-{% endcodeblock %}
+```
 
 
 これで最低限文化的なMac環境ができました。

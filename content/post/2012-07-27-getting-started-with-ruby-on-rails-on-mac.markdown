@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "MacでRuby on Railsの開発環境を作るまで"
+slug: getting-started-with-ruby-on-rails-on-mac
 date: 2012-07-27T06:34:00+09:00
 comments: true
-categories: 
+tags:
 - Mac OS X
 - Ruby on Rails
 - rvm
@@ -71,7 +72,7 @@ Ruby1.9.2が欲しければ、`$ rvm install 1.9.2`をします。
 
 `rvm list`でインストールしたrubyの一覧を表示します。
 
-{% codeblock lang:bash %}
+```bash
 $ rvm list
 
 rvm rubies
@@ -82,23 +83,23 @@ ruby-1.9.2-p320 [ x86_64 ]
 # => - current
 # =* - current && default
 #  * - default
-{% endcodeblock %}
+```
 
 `rvm use [version]`で指定したバージョンのRubyを使います。
 
-{% codeblock lang:bash %}
+```bash
 $ rvm use 1.9.2
 Using /Users/gam0022/.rvm/gems/ruby-1.9.2-p320
-{% endcodeblock %}
+```
 
 ### rvmで適当にgemsetを作って使う
 
 ここでは、rails3というgemsetを作って使います。
 
-{% codeblock lang:bash %}
+```bash
 rvm gemset create rails3
 rvm gemset use rails3 --default
-{% endcodeblock %}
+```
 
 ### 作ったgemsetにgemでrailsをインストールする
 
@@ -110,9 +111,9 @@ rvm gemset use rails3 --default
 
 `-v`オプションでバージョンを確認できます。
 
-{% codeblock lang:bash %}
+```bash
 $ ruby -v
 ruby 1.9.2p320 (2012-04-20 revision 35421) [x86_64-darwin11.4.0]
 $ rails -v
 Rails 3.2.6
-{% endcodeblock %}
+```

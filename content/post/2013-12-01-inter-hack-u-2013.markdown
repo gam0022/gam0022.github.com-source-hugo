@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Inter Hack U 2013 に参加"
+slug: inter-hack-u-2013
 date: 2013-12-01T21:24:00+09:00
 comments: true
-categories: 
+tags:
 - Event
 - 勉強会
 ---

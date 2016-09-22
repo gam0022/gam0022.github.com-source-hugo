@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "近状報告"
+slug: diary
 date: 2013-10-14T10:15:00+09:00
 comments: true
-categories: 
+tags:
 - Event
 - 勉強会
 - 日記

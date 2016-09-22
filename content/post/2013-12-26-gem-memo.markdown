@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Rubyのgemのメモ"
+slug: gem-memo
 date: 2013-12-26T10:46:00+09:00
 comments: true
-categories: 
+tags:
 - Ruby
 - Gem
 ---
@@ -18,7 +19,7 @@ gem関連に関してメモを残します。
 
 `gem unpack xxx.gem` のように使います。
 
-```bash gem unpack
+```bash
 [~/Downloads]$ gem unpack unicode_math-1.2.0.gem
 Unpacked gem: '/Users/gam0022/Downloads/unicode_math-1.2.0'
 [~/Downloads]$
@@ -67,7 +68,7 @@ RubyGems でリンク切れを起こしたgemを無理やりインストール�
 
 `gem install -l xxx.gem` のように使います。
 
-``` bash gem install -l
+``` bash
 [~/Downloads]$ gem install -l unicode_math-1.2.0.gem
 
 Successfully installed unicode_math-1.2.0
