@@ -1,20 +1,20 @@
 <div class="col-md-4">
     <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
-    {{ partial "feed_mikle.html" (dict "content" . "url" "http://gam0022.net/post/index.xml" "title" "gam0022.net" ) }}
+    {{ partial "feed_mikle.html" (dict "content" . "url" "http://gam0022.net/post/index.xml" "title" "gam0022.net" "target" "_top" ) }}
     <div class="read-more">
       <a href="/post" class="btn btn-primary btn-outline">Read more</a>
     </div>
 </div>
 <div class="col-md-4">
     <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
-    {{ partial "feed_mikle.html" (dict "content" . "url" "http://qiita.com/gam0022/feed" "title" "Qiita" ) }}
+    {{ partial "feed_mikle.html" (dict "content" . "url" "http://qiita.com/gam0022/feed" "title" "Qiita" "target" "_blank" ) }}
     <div class="read-more">
       <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
     </div>
 </div>
 <div class="col-md-4">
     <h4 class="blog-title"><img src="/img/icons/hatena-blog.png" class="icon"> Hatena Blog</h4>
-    {{ partial "feed_mikle.html" (dict "content" . "url" "http://gam0022.hatenablog.com/feed" "title" "Hatena Blog" ) }}
+    {{ partial "feed_mikle.html" (dict "content" . "url" "http://gam0022.hatenablog.com/feed" "title" "Hatena Blog" "target" "_blank" ) }}
     <div class="read-more">
       <a href="http://gam0022.hatenablog.com/" class="btn btn-primary btn-outline">Read more</a>
     </div>
