@@ -14,13 +14,13 @@
         -->
         <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
         {{ partial "article_metadata" (dict "content" . "is_list" 1) }}
-        <p class="article-style" itemprop="articleBody">
+        <div class="article-style" itemprop="articleBody">
             {{ if .Truncated }}
                 {{ printf "%s" .Summary | markdownify }}
             {{ else }}
                 {{ .Content }}
             {{ end }}
-        </p>
+        </div>
         <p class="read-more">
             <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
                 {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
