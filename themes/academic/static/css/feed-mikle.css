@@ -8,7 +8,7 @@ img{border:none;}
 #header .feed_title a:visited{color:#FFFFFF;text-decoration:none;}
 #header .feed_title a:hover{color:#FFFFFF;text-decoration:underline;}
 #header .feed_title a:active{color:#FFFFFF;text-decoration:none;}
-#content{width: 100%;overflow:hidden;margin:0 20px 0 0;padding:5px 0px 0px 0px;background-color:#FFFFFF;background-image:none;}
+#content{overflow:hidden;margin:0 20px 0 0;padding:5px 0px 0px 0px;background-color:#FFFFFF;background-image:none;}
 #content .feed_item{margin:0 0 7px 0;padding:0 0 7px 0;border-bottom: 1px solid #ddd;clear:both;}
 #content .feed_item_title{margin:1px 0 1px 3px;padding:1px 2px 1px 3px;color:#666666;font-weight:bold;}
 #content .feed_item_title a:link{color:#666666;text-decoration:none;}
@@ -26,4 +26,4 @@ img{border:none;}
 #content .feed_item_thumbnail{width:110px; height:100px; float:left; margin:5px; overflow:hidden;}
 #footer{display:none;height:0px;margin:0px;padding:0px;color:#FFFFFF;background-color:#FFFFFF;background-image:none;}
 .scroll-pane{width: 100%;overflow:auto;}
-#content .jspPane {width: 100%;}
+#content, #content .jspContainer, #content .jspPane, #content .feed_item {width: 100%;}
