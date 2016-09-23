@@ -47,8 +47,10 @@ TechBooster というサークルに参加し、「JavaScriptoon2」というWeb
 - [JavaScriptoon2 - TechBooster in C89](https://techbooster.github.io/c89/#scriptoon2)
 - [JavaScriptoon2 - BOOTH](https://techbooster.booth.pm/items/178227/)
 
-<hr>
+## まだまだあります
 
-<p class="read-more">
-  <a href="/works" class="btn btn-primary btn-outline">Read more</a>
-</p>
+詳しくはこちら。
+
+<div class="read-more">
+  <a href="/works" class="btn btn-primary btn-outline btn-lg">Read more</a>
+</div>
