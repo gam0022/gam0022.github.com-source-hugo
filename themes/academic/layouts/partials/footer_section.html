@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-12">
-        <h4><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
         {{ partial "tag_cloud.html" . }}
     </div>
 
     <div class="col-md-4">
-        <h4><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
         <script language="javascript" type="text/javascript" src="http://b.hatena.ne.jp/js/widget.js" charset="utf-8"></script>
         <script language="javascript" type="text/javascript">
         Hatena.BookmarkWidget.url   = "gam0022.net";
@@ -13,13 +13,16 @@
         Hatena.BookmarkWidget.sort  = "count";
         Hatena.BookmarkWidget.width = "auto";
         Hatena.BookmarkWidget.num   = 5;
-        Hatena.BookmarkWidget.theme = "default";// notheme
+        Hatena.BookmarkWidget.theme = "default";
         Hatena.BookmarkWidget.load();
         </script>
+        <div class="read-more">
+          <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+        </div>
     </div>
 
     <div class="col-md-4">
-        <h4><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+        <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
         <script language="javascript" type="text/javascript">
         Hatena.BookmarkWidget.url   = "http://qiita.com/gam0022";
         Hatena.BookmarkWidget.title = "Qiita 人気記事";
@@ -29,10 +32,13 @@
         Hatena.BookmarkWidget.theme = "default";
         Hatena.BookmarkWidget.load();
         </script>
+        <div class="read-more">
+          <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+        </div>
     </div>
 
     <div class="col-md-4">
-        <h4><img src="/img/icons/hatena-blog.png" class="icon"> Hatena Blog</h4>
+        <h4 class="blog-title"><img src="/img/icons/hatena-blog.png" class="icon"> Hatena Blog</h4>
         <script language="javascript" type="text/javascript">
         Hatena.BookmarkWidget.url   = "http://gam0022.hatenablog.com/";
         Hatena.BookmarkWidget.title = "Hatena Blog 人気記事";
@@ -42,5 +48,8 @@
         Hatena.BookmarkWidget.theme = "default";
         Hatena.BookmarkWidget.load();
         </script>
+        <div class="read-more">
+          <a href="http://gam0022.hatenablog.com/" class="btn btn-primary btn-outline">Read more</a>
+        </div>
     </div>
 </div>

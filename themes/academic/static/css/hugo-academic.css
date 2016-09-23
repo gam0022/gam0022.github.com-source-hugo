@@ -771,6 +771,7 @@ div.social-icon {
     }
 }
 
+/* Share Buttons */
 .share_wrap {
     display: table;
 }
@@ -787,4 +788,45 @@ div.social-icon {
 
 .pocket-btn > iframe {
     //width: 100px;
+}
+
+/* Hatena Bookmark Widget */
+.hatena-bookmark-widget {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+.hatena-bookmark-widget-title,
+.hatena-bookmark-widget-footer {
+    display: none;
+}
+
+.hatena-bookmark-widget-body ul {
+    background: none repeat scroll 0 0 transparent !important;
+    border: medium none !important;
+}
+
+.hatena-bookmark-widget-body ul li {
+    //border: medium none !important;
+    list-style: none !important;
+}
+
+a.hatena-bookmark-entrytitle, a.entrytitle {
+    font-size: 16px !important;
+}
+
+.hatena-bookmark-widget span.hatena-bookmark-count {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+}
+
+/* Other */
+.read-more {
+    margin-bottom: 10px;
+}
+
+h4.blog-title {
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
