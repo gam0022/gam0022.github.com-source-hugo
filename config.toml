@@ -128,7 +128,7 @@ googleAnalytics = "UA-84469205-1"
   [params.contact]
     enable = true
     title = "Contact"
-    subtitle = ""
+    subtitle = "連絡先"
     autolink = true  # Automatically link email and phone?
 
   # Social/Academic Networking
