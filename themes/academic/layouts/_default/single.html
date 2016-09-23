@@ -21,6 +21,7 @@
 
             </article>
 
+            {{ partial "article_metadata" (dict "content" . "is_list" 0) }}
             {{ partial "section_pager.html" . }}
             {{ partial "comments.html" . }}
             {{ partial "footer_section.html" . }}
@@ -50,6 +51,7 @@
 
     </article>
 
+    {{ partial "article_metadata" (dict "content" . "is_list" 0) }}
     {{ partial "section_pager.html" . }}
     {{ partial "comments.html" . }}
     {{ partial "footer_section.html" . }}
