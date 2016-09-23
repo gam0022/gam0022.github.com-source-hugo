@@ -63,9 +63,9 @@ LaTeXiT では、普通に LaTex と全く同じように数式が扱えます�
 
 ## 数式番号を任意に指定したい
 
-数式番号を任意に指定したいなら、`setcounter`を使うと良いです。
+数式番号を任意に指定したいなら、`setcounter` 環境を使うと良いです。
 
-```latex 数式番号を指定する
+```latex
 \setcounter{equation}{5} %数式番号を(6)としたいなら、5(指定したい番号 - 1)を指定
 \begin{equation}
   M(T) = \sum_{e \in T,e \not\in P}m(e)
