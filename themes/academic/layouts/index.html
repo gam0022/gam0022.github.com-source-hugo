@@ -177,6 +177,20 @@
 {{ end }}
 
 
+<section id="hot" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3 section-heading">
+                <h1>Hot Posts</h1>
+                <p>人気記事</p>
+            </div>
+            <div class="col-xs-12 col-md-9 row">
+                {{ partial "hot_posts.html" . }}
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Custom Sections -->
 {{ range $index, $page := where .Data.Pages "Type" "home" }}
 {{ if and (isset .Params "section_id") (not (eq .Params.section_id 0)) }}
