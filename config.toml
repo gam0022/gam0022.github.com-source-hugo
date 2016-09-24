@@ -185,29 +185,35 @@ googleAnalytics = "UA-84469205-1"
 [[menu.main]]
   name = "Home"
   url = "#top"
+  pre = "<i class='fa fa-home'></i>"
   weight = 1
 
 [[menu.main]]
   name = "Hot"
   url = "#hot"
+  pre = "<i class='fa fa-star'></i>"
   weight = 2
 
 [[menu.main]]
   name = "Recent"
   url = "#recent"
+  pre = "<i class='fa fa-bell'></i>"
   weight = 3
 
 [[menu.main]]
   name = "Works"
   url = "#works"
+  pre = "<i class='fa fa-photo'></i>"
   weight = 4
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
+  pre = "<i class='fa fa-envelope'></i>"
   weight = 5
 
 [[menu.sub]]
   name = "WebGL sandbox"
   url = "/webgl"
+  pre = "<i class='fa fa-flask'></i>"
   weight = 1

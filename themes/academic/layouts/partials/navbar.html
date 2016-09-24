@@ -19,14 +19,14 @@
             <!-- Left Nav Bar -->
             <ul class="nav navbar-nav navbar-left">
                 {{ range .Site.Menus.main }}
-                <li class="nav-item"><a href="{{ $baseUrl }}{{ .URL }}">{{ .Name }}</a></li>
+                <li class="nav-item"><a href="{{ $baseUrl }}{{ .URL }}">{{ .Pre }} {{ .Name }}</a></li>
                 {{ end }}
             </ul>
 
             <!-- Light Nav Bar -->
             <ul class="nav navbar-nav navbar-right">
                 {{ range .Site.Menus.sub }}
-                <li class="nav-item"><a href="{{ $baseUrl }}{{ .URL }}">{{ .Name }}</a></li>
+                <li class="nav-item"><a href="{{ $baseUrl }}{{ .URL }}">{{ .Pre }} {{ .Name }}</a></li>
                 {{ end }}
             </ul>
 
