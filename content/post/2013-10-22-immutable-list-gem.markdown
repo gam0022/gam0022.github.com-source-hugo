@@ -22,7 +22,9 @@ Ruby の `Array` は 配列で実装されているため、
 
 用途としては、Rubyで再帰を使って関数型言語風にプログラムを組むことを想定しています。
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/29144855" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/immutable-list-29144855" title="Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)" target="_blank">Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
+<!--iframe src="http://www.slideshare.net/slideshow/embed_code/29144855" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/immutable-list-29144855" title="Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)" target="_blank">Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div-->
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
 
 ## 導入方法
 
@@ -90,7 +92,7 @@ end
 def qsort(l)
   if l.empty?
     ImmutableList.new
-  else 
+  else
     lt, ge = partition(l.head, l.tail, ImmutableList.new, ImmutableList.new)
     qsort(lt) + qsort(ge).cons(l.head)
   end
