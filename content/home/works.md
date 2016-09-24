@@ -35,9 +35,7 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 [<img alt="JavaScriptoon2" src="/images/works/javascriptoon2.jpg" class="right">](/images/works/javascriptoon2_original.jpg)
 
-TechBooster というサークルに参加し、「JavaScriptoon2」というWebフロントエンド本を執筆しました。
-
-「シェーダだけで世界を創る！Three.jsによるレイマーチング」という章を担当しました。
+「JavaScriptoon2」というWebフロントエンド本の「シェーダだけで世界を創る！Three.jsによるレイマーチング」という章を担当しました。
 
 レイマーチングはレイトレーシングの1種です。
 レイトレーシングやレイトレーシングは膨大な計算が必要ですが、フラグメントシェーダで実装することで、GPUの力を利用したリアルタイムに描画する方法を紹介しています。
