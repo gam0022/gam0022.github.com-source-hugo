@@ -1,5 +1,5 @@
 +++
-date = "2016-09-21T00:00:00"
+date = "2016-09-24T00:00:00"
 draft = false
 title = "works"
 subtitle = "成果物・作品"
@@ -7,20 +7,20 @@ section_id = 10
 weight = 10
 +++
 
-## 2016 Carbon
+## 2016 Gem
 
-[<img alt="Carbon" src="/images/works/carbon.png" class="right">](/images/works/carbon_original.png)
+[<img alt="Gem" src="/images/works/gem.png" class="right">](/images/works/gem_original.png)
 
-TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞した、レイマーチングによる映像作品です。
+光の屈折をシミュレートすることで、輝く宝石をWebGLでレンダリングする「gem」という作品（技術デモ）をつくりました。
+レイトレーシングをGLSLのフラグメントシェーダで実装することで、GPUの並列計算を利用したリアルタイムな描画を実現しています。
 
-Mandelbox というフラクタル図形を mod で無限にループさせています。
+関連記事
 
-- [Shadertoy - Carbon \[TDF2016\] - Final Version](https://www.shadertoy.com/view/MsG3Wy)
-- [GLSL Sandbox - Carbon - TDF Submited Version](http://glslsandbox.com/e#30972.0)
+- [これがGPUの力！three.jsによる“リアルタイム”なレイトレーシング 〜宝石編〜 - Qiita](http://qiita.com/gam0022/items/9875480d33e03fe2113c)
 
-解説記事はこちらです。
-
-- [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！ - gam0022.net](/blog/2016/02/24/tokyo-demo-fest/)
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raytracing_gem" class="btn btn-primary btn-outline">Gem - gam0022.net</a>
+</div>
 
 ## 2016 Slack 返信引用ボタン
 

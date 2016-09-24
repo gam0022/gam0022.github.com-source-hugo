@@ -14,6 +14,8 @@ toc = true
 
 つくば市の天気予報機能、電卓機能、n進数変換器など便利な機能を搭載しています。
 
+<a href="https://twitter.com/daigoroubot" class="twitter-follow-button" data-show-count="false">Follow @daigoroubot</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 [大五郎（Ｕ＾ω＾）BOT (@daigoroubot)](https://twitter.com/daigoroubot)
 
 

@@ -1,5 +1,5 @@
 +++
-date = "2016-09-22T00:00:00"
+date = "2016-09-24T00:00:00"
 draft = false
 title = "Works"
 subtitle = ""
@@ -29,15 +29,14 @@ three.jsによるレイマーチングとラスタライザのハイブリッド
 関連情報
 
 - [6/25の技術書典で、AZ異本（アツイホン）を出します！](http://gam0022.hatenablog.com/entry/2016/06/22/tbf1)
-- [webgl raymarching hybrid example - WebGL sandbox](http://gam0022.net/webgl/#raymarching_hybrid)
+- [hybrid - gam0022.net](http://gam0022.net/webgl/#raymarching_hybrid)
+- [live](#2016-live)
 
 ## 2015冬 JavaScriptoon2
 
 [<img alt="JavaScriptoon2" src="/images/works/javascriptoon2.jpg" class="right">](/images/works/javascriptoon2_original.jpg)
 
-TechBooster というサークルに参加し、「JavaScriptoon2」というWebフロントエンド本を執筆しました。
-
-「シェーダだけで世界を創る！Three.jsによるレイマーチング」という章を担当しました。
+「JavaScriptoon2」というWebフロントエンド本の「シェーダだけで世界を創る！Three.jsによるレイマーチング」という章を担当しました。
 
 レイマーチングはレイトレーシングの1種です。
 レイトレーシングやレイトレーシングは膨大な計算が必要ですが、フラグメントシェーダで実装することで、GPUの力を利用したリアルタイムに描画する方法を紹介しています。
@@ -51,9 +50,7 @@ TechBooster というサークルに参加し、「JavaScriptoon2」というWeb
 
 [<img alt="JavaScriptoon" src="/images/works/javascriptoon.png" class="right">](/images/works/javascriptoon_original.png)
 
-TechBooster というサークルに参加し、「JavaScriptoon」というWebフロントエンド本を執筆しました。
-
-「three.js でお手軽 3DCG 入門」という章を担当しました。
+「JavaScriptoon」というWebフロントエンド本の「three.js でお手軽 3DCG 入門」という章を担当しました。
 
 three.js はWebGLを手軽に使うためのJavaScriptのライブラリです。
 
@@ -68,6 +65,29 @@ WebGLで作成した映像作品と活動を紹介します。
 
 動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
 
+## 2016 Live
+
+[<img alt="Live" src="/images/works/live.gif" width="300px" class="right">](/images/works/live.gif)
+
+WebGLのフォワードレンダリングでレイマーチングとラスラライザをハイブリッドに組み合わせる技術デモです。
+WebGLの深度バッファを書き込む拡張(`EXT_frag_depth`)を利用しています。
+レイマーチングによる無数のサイリウムのステージ上でMMDの初音ミクが踊ります。
+
+[AZ異本](#2016年夏-az異本-grimoire-of-web)のサンプル用に作成しました。
+
+<!--div class="read-more">
+  <a href="http://gam0022.net/webgl/#raymarching_hybrid" class="btn btn-primary btn-outline">Hybrid</a>
+</div-->
+
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raymarching_hybrid_live" class="btn btn-primary btn-outline">Live - gam0022.net（※音が出ます）</a>
+</div>
+
+関連情報
+
+- [AZ異本 grimoire of web](#2016年夏-az異本-grimoire-of-web)
+- [6/25の技術書典で、AZ異本（アツイホン）を出します！](http://gam0022.hatenablog.com/entry/2016/06/22/tbf1)
+
 ## 2016 Carbon
 
 [<img alt="Carbon" src="/images/works/carbon.png" class="right">](/images/works/carbon_original.png)
@@ -79,7 +99,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 - [Shadertoy - Carbon \[TDF2016\] - Final Version](https://www.shadertoy.com/view/MsG3Wy)
 - [GLSL Sandbox - Carbon - TDF Submited Version](http://glslsandbox.com/e#30972.0)
 
-解説記事はこちらです。
+関連記事
 
 - [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！ - gam0022.net](/blog/2016/02/24/tokyo-demo-fest/)
 
@@ -100,11 +120,13 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 光の屈折をシミュレートすることで、輝く宝石をWebGLでレンダリングする「gem」という作品（技術デモ）をつくりました。
 レイトレーシングをGLSLのフラグメントシェーダで実装することで、GPUの並列計算を利用したリアルタイムな描画を実現しています。
 
-- [Gem - gam0022.net](http://gam0022.net/webgl/gem.html)
-
-解説記事はこちらです。
+関連記事
 
 - [これがGPUの力！three.jsによる“リアルタイム”なレイトレーシング 〜宝石編〜 - Qiita](http://qiita.com/gam0022/items/9875480d33e03fe2113c)
+
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raytracing_gem" class="btn btn-primary btn-outline">Gem - gam0022.net</a>
+</div>
 
 ## 2015 Reflect
 
@@ -114,11 +136,15 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 three.js 公式サンプルにも取り込まれています。
 
 - [Reflect - gam0022.net](http://gam0022.net/misc/raymarching/reflect.html)
-- [three.js 公式サンプル](http://threejs.org/examples/#webgl_raymarching_reflect)
+- [Reflect - three.js 公式サンプル](http://threejs.org/examples/#webgl_raymarching_reflect)
 
-解説記事はこちらです。
+関連記事
 
 - [これがGPUの力！Three.jsによる“リアルタイム”なレイトレーシング - Qiita](http://qiita.com/gam0022/items/03699a07e4a4b5f2d41f)
+
+<div class="read-more">
+  <a href="http://threejs.org/examples/#webgl_raymarching_reflect" class="btn btn-primary btn-outline">Reflect - threejs.org</a>
+</div>
 
 ## 2015 Steal Frame
 
@@ -126,9 +152,11 @@ three.js 公式サンプルにも取り込まれています。
 
 鉄筋をモチーフにしたレイマーチングによる作品です。
 
-距離関数の解説用につくったので、わずか20行ほどのコードでシーンを定義しています。
+[JavaScriptoon2](#2015冬-javascriptoon2)の解説用につくったので、わずか20行ほどのコードでシーンを定義しています。
 
-- [Steal Frame - gam0022.net](http://gam0022.net/misc/raymarching/steel_frame.html)
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raymarching_steel-frame" class="btn btn-primary btn-outline">Steal Frame - gam0022.net</a>
+</div>
 
 # Google Chrome Extention
 
@@ -178,8 +206,11 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 距離関数によって表現されたオブジェクトをレイマーチングでレンダリングするCPUレンダラーです。
 パストレーシングによるレンダラーの実装と擬似表現によるレンダラーの両方の実装があります。
 
+関連記事
+
 - [レイトレ合宿4!? に参加しました！ - gam0022のブログ](http://gam0022.hatenablog.com/entry/raytracingcamp4)
 - [レイトレ合宿4!?](https://sites.google.com/site/raytracingcamp4/)
+- [GitHub](https://github.com/gam0022/tsukihi)
 
 # iOS App
 
@@ -187,21 +218,20 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 [<img alt="C2search" src="/images/works/C2search_tmb.png" class="right">](/images/works/C2search.png)
 
-
 「カメラで商品検索」という画像によって商品の横断検索ができるiOSアプリを開発しました。
+[Yahoo Inter Hack U 2013](http://hacku.yahoo.co.jp/inter2013/) 参加作品です。
 
-画像認識によって、タイトルが長い本、名前を忘れてしまった商品も簡単に検索できます。
+- 画像認識によって、タイトルが長い本、名前を忘れてしまった商品も簡単に検索できます。
+- Yahoo!ショッピングと楽天市場の両方の結果を同じテーブルビューに表示します。
+- 検索結果を色によってソートする機能もあります。
 
-Yahoo!ショッピングと楽天市場の両方の結果を同じテーブルビューに表示します。
+関連記事
 
-検索結果を色によってソートする機能もあります。
+- [ヤフー主催のアプリ開発イベント「Inter Hack U」 - 学生15団体が熱戦](http://news.mynavi.jp/articles/2013/12/06/yahoo_inter_hack_u/001.html)
 
-Yahoo Inter Hack U 2013 参加作品です。
-
-* [公式ページ](http://c2search.gam0022.net/)
-* [Hack ID: 2 カメラで商品検索](http://yhacks.jp/hacku/inter2013/works/2)
-* [マイナビさんによる紹介](http://news.mynavi.jp/articles/2013/12/06/yahoo_inter_hack_u/001.html)
-
+<div class="read-more">
+  <a href="http://c2search.gam0022.net/" class="btn btn-primary btn-outline">Read More</a>
+</div>
 
 # RubyGems
 
@@ -235,7 +265,13 @@ TwitterIDを入力するだけで簡単に名刺が作れるサービスです�
 
 さらに、マルコフ連鎖によってあなたを適当に自己紹介してくれます！
 
-* [Twitter名刺ジェネレーター](http://gam0022.net/app/tmg/)
+紹介スライド
+
+- [Twitter名刺ジェネレータ - SlideShare](http://www.slideshare.net/shohosoda9/twitter-26428486)
+
+<div class="read-more">
+  <a href="http://gam0022.net/app/tmg/" class="btn btn-primary btn-outline">Twitter名刺ジェネレーター</a>
+</div>
 
 
 ## 2013 Shelf
@@ -250,19 +286,22 @@ WebGL(Canvas)で描画しています。
 
 COJTソフトウェアコース2013の前期の準優勝/技術賞受賞作品です。
 
-[&raquo; Shelf](http://gam0022.net/app/shelf/)
+<div class="read-more">
+  <a href="http://gam0022.net/app/shelf/" class="btn btn-primary btn-outline">Shelf デモ</a>
+</div>
 
 
 ## 2012-2013 TwinCal
 
 <img alt="twincal" src="/images/works/twincal.png" class="right">
 
-TwinCalとは、Twinsの時間割をiCalendar形式に変換し、
-Googleカレンダー・iCalへのインポートをサポートするWebサービスです。
+TwinCalとは、Twinsの時間割をiCalendar形式に変換し、Googleカレンダー・iCalへのインポートをサポートするWebサービスです。
 
-* [&raquo; TwinCal](http://gam0022.net/app/twincal/)
-* [アカリクVALUATOR主催 学生のためのアプリ開発コンテスト 最終選考プレゼン](http://tech-tokyo.com/?p=8594)で発表しました。
+[アカリクVALUATOR主催 学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/)のファイナリストに採択されました。
 
+<div class="read-more">
+  <a href="http://gam0022.net/app/twincal/" class="btn btn-primary btn-outline">TwinCal 公式サイト</a>
+</div>
 
 ## 2011-2013 @daigoroubot
 
@@ -272,10 +311,13 @@ Googleカレンダー・iCalへのインポートをサポートするWebサー�
 
 つくば市の天気予報機能、電卓機能、n進数変換器、全学教室検察など便利な機能を搭載しています。
 
-[&raquo; More](/works/daigoroubot/)
+<a href="https://twitter.com/daigoroubot" class="twitter-follow-button" data-show-count="false">Follow @daigoroubot</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-[&raquo; @daigoroubot - Twitter](https://twitter.com/daigoroubot)
+[大五郎（Ｕ＾ω＾）BOT (@daigoroubot)](https://twitter.com/daigoroubot)
 
+<div class="read-more">
+  <a href="/works/daigoroubot/" class="btn btn-primary btn-outline">Read More</a>
+</div>
 
 # HSPTV Games
 

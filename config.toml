@@ -55,11 +55,11 @@ googleAnalytics = "UA-84469205-1"
       "GLSL",
       "C++/C",
       "C#",
-      "Unity",
+      #"Unity",
       "Ruby on Rails",
       "HTML/CSS",
       "JavaScript",
-      "CoffeeScript",
+      #"CoffeeScript",
     ]
 
     str_interests = "興味 / Interests"
