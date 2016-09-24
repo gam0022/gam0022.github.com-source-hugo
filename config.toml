@@ -214,6 +214,6 @@ googleAnalytics = "UA-84469205-1"
 
 [[menu.sub]]
   name = "WebGL sandbox"
-  url = "/webgl"
+  url = "/webgl/#raymarching_reflect"
   pre = "<i class='fa fa-flask'></i>"
   weight = 1
