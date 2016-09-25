@@ -68,18 +68,27 @@ hugo server --theme=hugo_theme_robust --buildDrafts
 
 # Hugo記事へ記事の移行する
 
-Octpress の記事を Hugo に移植する大まかな手順は次の3つです。
+Octopress の記事を Hugo に移植する大まかな手順は次の4つです。
 
 1. Markdownの記事のコピー
-2. Octopressの独自記法をPure Markdownに置換
-3. Octopressと同一のパーマリンクにする（オプション）
+2. 画像のコピー
+3. Octopressの独自記法をPure Markdownに置換
+4. Octopressと同一のパーマリンクにする（オプション）
 
 ## Markdownの記事のコピー
 
 Octopressでは、`source/_posts`に記事を配置しましたが、Hugoでは`content/post`に配置します。
 
 ```
-cp ocopress-site/source/_posts/* hugo-site/content/post/
+cp octopress-site/source/_posts/* hugo-site/content/post/
+```
+
+## 画像のコピー
+
+Octopressでは画像ファイルを、`source/images/`に配置しましたが、Hugoでは`static/images/`に配置します。
+
+```
+cp -r octopress-site/source/images/* hugo-site/static/images/
 ```
 
 ## Octopressの独自タグをPure Markdownに置換
@@ -91,7 +100,7 @@ Octopressのみでしか使えない独自記法を、Hugoでも扱えるようM
 cd content/post/
 
 # 記事のタイムスタンプの形式を変える
-# Hugoでは、2016-09-25T15:09:57 のような形式のタイムスタンプでないとパースに失敗します
+# Hugoでは、"2016-09-25T15:09:57"のような形式のタイムスタンプでないとパースに失敗します
 find . -type f -exec sed -i "" -e 's/date: \([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\) \([0-9]\{2\}:[0-9]\{2\}\)$/date: \1T\2:00+09:00/g' {} \;
 
 # コードブロック
@@ -134,7 +143,7 @@ Hugoのデフォルト設定では`/post/2016-09-25-migrated-from-octopress-to-h
 ```ruby
 dir = 'content/post/'
 Dir::foreach(dir) do |filename|
-  if filename =~ /.markdown$/
+  if filename =~ /\.markdown$/
     slug = filename.gsub(/\d{4}-\d{2}-\d{2}-/, '').sub('.markdown', '')
     puts "#{filename} : #{slug}"
 
