@@ -30,8 +30,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="450.00918"
-     inkscape:cy="-175.35092"
+     inkscape:cx="462.86632"
+     inkscape:cy="53.220509"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -64,28 +64,30 @@
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 9;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4335"
-       width="1494.2858"
-       height="837.14288"
-       x="-224.00458"
-       y="90.927155" />
+       width="900.00006"
+       height="900.00006"
+       x="21.709721"
+       y="25.212904"
+       inkscape:export-xdpi="74.101257"
+       inkscape:export-ydpi="74.101257" />
     <image
        sodipodi:absref="/Users/gam0022/git/gam0022.net-hugo/static/images/posts/2016-09-25-migrated-from-octopress-to-hugo/octopress.png"
        xlink:href="octopress.png"
-       width="400"
-       height="300"
-       preserveAspectRatio="none"
-       id="image4249"
+       y="332.63693"
        x="-5.2315849e-05"
-       y="332.63693" />
+       id="image4249"
+       preserveAspectRatio="none"
+       height="300"
+       width="400" />
     <image
        sodipodi:absref="/Users/gam0022/git/gam0022.net-hugo/static/images/posts/2016-09-25-migrated-from-octopress-to-hugo/hugo.png"
        xlink:href="hugo.png"
-       width="265.13443"
-       height="300"
-       preserveAspectRatio="none"
-       id="image4327"
+       y="332.63693"
        x="635.64282"
-       y="332.63693" />
+       id="image4327"
+       preserveAspectRatio="none"
+       height="300"
+       width="265.13443" />
     <path
        style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 9;stroke-dashoffset:0;stroke-opacity:1"
        d="m 460.32896,399.77492 0.029,165.72405 82.82065,-80.75221 z"
