@@ -1,6 +1,6 @@
 +++
 date = "2016-09-25T12:45:18+09:00"
-image = "/images/posts/2016-09-25-migrated-from-octopress-to-hugo/migrated-from-octopress-to-hugo.png"
+image = "/images/posts/2016-09-25-migrated-from-octopress-to-hugo/migrated-from-octopress-to-hugo-square.png"
 toc = true
 math = false
 draft = false
