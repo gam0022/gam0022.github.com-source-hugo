@@ -164,12 +164,16 @@ Goole Chrome の拡張機能を紹介します。
 
 ## 2016 Slack 返信引用ボタン
 
-<img alt="Slack Reply Button" src="/images/works/slack-reply-button.png" class="right">
+<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
 
 Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 - [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
 - [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
+
+<div class="read-more">
+  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
+</div>
 
 # Research
 
