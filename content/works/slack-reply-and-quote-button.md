@@ -13,7 +13,7 @@ toc = true
 Slackを使っていて、こんな不便を感じたことはありませんか？
 
 - 特定のメッセージに対して返信したいのに、返信ボタンが無い…
-- いくら補完があるとは言え、`@user_name`を打ち込むのが大変
+- いくら補完があるとは言え、`@user-name`を打ち込むのが大変
 - 素早く引用ができない
 
 これらの問題を解決するGoogle Chromeの拡張を開発しました！
@@ -25,29 +25,43 @@ Chromeウェブストアから簡単に導入できます。
 
 # 機能紹介
 
-## Replayボタン
+以下の3種類のボタンがあります。
 
-Replyボタンを使うと、特定のメッセージに対しての引用と返信を素早くできます。
+2. Mentionボタンを使うと、返信ができます。
+1. Replyボタンを使うと、引用+返信を素早くできます。
+3. Quoteボタンを使うと、引用のみができます。
 
-![Replyボタンを使うと、特定のメッセージに対しての引用と返信を素早くできます](/images/works/slack-reply-button/replay.gif)
+また、文字を選択した状態でReplay・Quoteボタンを押すと、部分引用ができます。
 
-## Mentionボタン
+## 返信ボタン / Mention Button
 
-Mentionボタンを使うと、引用はせずに返信のみができます。
+Mentionボタンを使うと、返信ができます。
 
 ![Mentionボタンを使うと、引用はせずに返信のみができます](/images/works/slack-reply-button/mention.gif)
 
-## Quoteボタン
+## 返信+引用ボタン / Replay Button
 
-Quoteボタンを使うと、相手に通知を飛ばさずに引用のみができます。
+Replyボタンを使うと、引用+返信を素早くできます。
+
+![Replyボタンを使うと、特定のメッセージに対しての引用と返信を素早くできます](/images/works/slack-reply-button/replay.gif)
+
+## 引用ボタン / Quote Button
+
+Quoteボタンを使うと、引用のみができます。
 
 ![Quoteボタンを使うと、相手に通知を飛ばさずに引用のみができます](/images/works/slack-reply-button/quote.gif)
 
-# 部分引用
+## 部分引用
 
 文字を選択した状態でReplay・Quoteボタンを押すと、部分引用ができます。
 
 ![文字を選択した状態でReplayやQuoteボタンを押すと、部分引用ができます](/images/works/slack-reply-button/quote-sub.gif)
+
+## Tips
+
+- Replyボタンの引用は、> による引用となります
+- Replyボタンの引用は、4行以上または装飾のあるメッセージに対してはURLでの引用になります
+- Quoteボタンの引用は、URLでの引用になります
 
 # ソースコード
 
