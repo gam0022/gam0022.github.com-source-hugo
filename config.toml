@@ -76,13 +76,13 @@ googleAnalytics = "UA-84469205-1"
   [[params.about.career]]
     company = "BearTail"
     position = "エンジニア(学生アルバイト)"
-    year = "2011-09 〜 2015-03"
+    year = "2014-04 〜 2015-03"
     detail = " Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当"
 
   [[params.about.career]]
     company = "情報基盤研究所"
     position = "エンジニア(学生アルバイト)"
-    year = "2011-09 〜 2015-03"
+    year = "2011-09 〜 2015-02"
     detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
 
   [[params.about.education]]
