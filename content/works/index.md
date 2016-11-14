@@ -135,7 +135,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 レイマーチングで鏡面反射する球体を無限に並べたシーンをリアルタイムに描画するデモです。
 three.js 公式サンプルにも取り込まれています。
 
-- [Reflect - gam0022.net](http://gam0022.net/misc/raymarching/reflect.html)
+- [Reflect - gam0022.net](http://gam0022.net/webgl/#raymarching_reflect)
 - [Reflect - three.js 公式サンプル](http://threejs.org/examples/#webgl_raymarching_reflect)
 
 関連記事
