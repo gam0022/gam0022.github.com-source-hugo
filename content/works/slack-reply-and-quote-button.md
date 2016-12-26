@@ -8,6 +8,8 @@ title = "Slackに返信・引用ボタンを追加するChrome拡張"
 toc = true
 +++
 
+2016/12/26追記: [Qiitaに記事を書きました](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
+
 <img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
 
 Slackを使っていて、こんな不便を感じたことはありませんか？

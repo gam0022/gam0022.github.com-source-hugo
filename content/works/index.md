@@ -170,6 +170,7 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 - [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
 - [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
+- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
 
 <div class="read-more">
   <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
