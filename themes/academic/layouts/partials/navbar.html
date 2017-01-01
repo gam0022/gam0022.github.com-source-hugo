@@ -25,6 +25,7 @@
 
             <!-- Light Nav Bar -->
             <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item">{{ partial "google_search" . }}</li>
                 {{ range .Site.Menus.sub }}
                 <li class="nav-item"><a href="{{ $baseUrl }}{{ .URL }}">{{ .Pre }} {{ .Name }}</a></li>
                 {{ end }}

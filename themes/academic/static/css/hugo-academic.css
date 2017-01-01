@@ -631,65 +631,6 @@ nav#navbar-main li {
 }
 
 /*************************************************
- *  Tables
- **************************************************/
-
-table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-    font-size: 0.93rem;
-}
-
-table > thead > tr > th,
-table > tbody > tr > th,
-table > tfoot > tr > th,
-table > thead > tr > td,
-table > tbody > tr > td,
-table > tfoot > tr > td {
-    padding: 8px;
-    line-height: 1.43;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-}
-
-table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
-}
-
-table > caption + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > th,
-table > thead:first-child > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > td {
-    border-top: 0;
-}
-
-table > tbody + tbody {
-    border-top: 2px solid #ddd;
-}
-
-table table {
-    background-color: #fff;
-}
-
-
-/* Table Striped */
-table > tbody > tr:nth-child(odd) > td,
-table > tbody > tr:nth-child(odd) > th {
-    background-color: #f9f9f9;
-}
-
-/* Table Hover */
-table > tbody > tr:hover > td,
-table > tbody > tr:hover > th {
-    background-color: #e5e5e5;
-}
-
-
-/*************************************************
  *  Sidebar thanks to http://fiddle.jshell.net/KyleMit/v6zhz/53/?utm_source=website&utm_medium=embed&utm_campaign=v6zhz
  **************************************************/
 
@@ -829,4 +770,18 @@ a.hatena-bookmark-entrytitle, a.entrytitle {
 h4.blog-title {
     margin-top: 20px;
     margin-bottom: 5px;
+}
+
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button {
+    box-sizing: content-box;
+    line-height: normal;
+}
+
+.google-search-item {
+    width: 250px;
+    margin-top: 20px;
 }
