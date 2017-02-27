@@ -1,0 +1,296 @@
++++
+date = "2017-02-24T10:13:11+09:00"
+draft = false
+image = ""
+math = false
+slug = "tdf2017"
+tags = ["event", "demo", "CG"]
+title = "#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！"
+toc = true
+
++++
+
+2017年2月18日(土)〜19日(日)の2日間開催された[Tokyo Demo Fest 2017](http://tokyodemofest.jp/2017/)に参加しました。
+
+Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトからの引用）。
+
+> Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに興味のある人々が日本中、世界中から一堂に会し、デモ作品のコンペティション(コンポ)やセミナーなどを行います。また、イベント開催中は集まった様々な人たちとの交流が深められます。
+
+去年に引き続き、2回目の参加でした。去年の記事はこちらです。
+
+- [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！](http://gam0022.net/blog/2016/02/24/tokyo-demo-fest/)
+
+「Fusioned Bismuth」という作品でGLSL Graphics Compoにエントリーして、3位を頂くことができました！嬉しいです！！
+（去年と全く同じ部門で全く同じ順位だったので、順位を上げられなかったのは残念ではあります）
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて、昨年に引き続き3位をいただきました！嬉しいです！<br>せっかくなのでトロフィーを並べました（左が今年、右が去年）。 <a href="https://t.co/In8QqliO1L">pic.twitter.com/In8QqliO1L</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833340442578071552">2017年2月19日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!--more-->
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて3位をいただいた作品を個人サイト上に公開しました！上部のGLSL sandbox/Shadertoyボタンからフラグメントシェーダをご覧になれます。<a href="https://t.co/ptqNTT73o3">https://t.co/ptqNTT73o3</a> <a href="https://t.co/0gUwjLO9W1">pic.twitter.com/0gUwjLO9W1</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833703821935120384">2017年2月20日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+また、私の勤め先である[KLab株式会社](http://www.klab.com/jp/)も今年はTDFにパートナーという形で参加させていただきました！
+
+去年は完全に個人の趣味での参加でしたが、徐々に社内でもデモシーンに興味を持ってくださる方が増えてきて、着実に社内での理解が得られてることを感じられて嬉しいです。
+
+この記事では、「Fusioned Bismuth」で使ったテクニックや手法などを紹介したいと思います。
+
+# 作品紹介
+
+投稿した作品のスクリーンショットです。
+
+![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)
+
+![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)
+
+コンセプトは金属の生命体です。次のリンクから、実際に作品をWebブラウザ上で動かすこともできます。
+
+- [Fusioned Bismuth | gam0022.net](http://gam0022.net/webgl/#raymarching_tdf2017)
+- [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
+
+負荷の高い処理を多用した作品なので、GPUを搭載したPCじゃないと、フルスクリーンで動作させるのは厳しいです。
+目安としては、自宅のGTX1070を積んだPCだと、快適に動作します。
+
+# Fusioned Bismuthを支える技術
+
+簡単に「Fusioned Bismuth」で使った工夫やテクニック・手法などを紹介したいと思います。
+
+## レイマーチング
+
+レイマーチング(Sphere Tracing)という手法によって、フラグメントシェーダ上でレイトレを行うことで絵を出しています。
+
+距離関数と呼ばれる数式で定義したシーンに対して、レイの衝突判定を行って絵を出すのがレイマーチングです。
+レイマーチングの詳細は、こちらを参照いただけると幸いです。
+
+- [シェーダだけで世界を創る！three.jsによるレイマーチング](https://www.slideshare.net/shohosoda9/threejs-58238484)
+
+余談ですが、今ではレイマーチングはすっかりデモシーン界隈で定着された手法になってしまって、GLSL Compoの参加者のほとんどが利用されていました。
+たぶん10人中8人はレイマーチングだったのではないでしょうか。
+
+そんな状況の中、[@soma_arc](https://twitter.com/soma_arc)さんは[「Schottky Waltz」](https://www.shadertoy.com/view/XslyzH)という作品において、
+レイマーチングに頼らない2Dで勝負し、見事にGLSL Graphics Compo1位を獲得されていたので、本当に頭を殴られたような衝撃を受けました。
+レイマーチングはとても面白い手法だけですが、レイマーチング一辺倒にならずに、バランスが大切だなと思いました。
+
+## 距離関数
+
+fold（折りたたみ）というテクニックを活用して、少し凝った距離関数を設計しました。
+
+このfoldは去年のTDFで、[gaziya5](https://twitter.com/gaziya5)さんに教えていただきました。
+
+### 2Dのfold
+
+foldの一番分かりやすい例は鏡だと思います。
+
+![Gの鏡文字](/images/posts/2017-02-24-tdf2017/mirror.png)
+
+これはアルファベットのGをY軸中心に折りたたんだ画像です。いわゆる鏡文字です。
+
+このようなY軸中心のfoldをGLSLの関数にすると、こうなります。単純にxを絶対値することにより実現できます。
+
+```c
+float foldX(vec2 p) {
+  p.x = abs(p.x);
+  return p;
+}
+```
+
+### foldの実例(3D)
+
+![YZ平面にfoldしたBox](/images/posts/2017-02-24-tdf2017/fold-1.png)
+
+最初に箱を置いて、その箱をZ軸に時計回りに回転させたものをYZ平面にfoldすると、このような感じの形状になります。
+
+前の例では2DだったのでY軸に対するfoldでしたが、今回は3DなのでYZ平面に対するfoldになっています。
+
+実際にGLSLとして動作する距離関数はこんな感じです。
+
+```c
+vec3 foldX(vec3 p) {
+  p.x = abs(p.x);
+  return p;
+}
+
+mat2 rotate(float a) {
+  float s = sin(a),c=cos(a);
+  return mat2(c, s, -s, c);
+}
+
+float dTree(vec3 p) {
+  vec3 size = vec3(0.1, 1.0, 0.1);
+  float d = sdBox(p, size);
+  p = foldX(p);
+  p.y -= 0.1;
+  p.xy *= rotate(-1.2);
+  d = min(d, sdBox(p, size));
+  return d;
+}
+```
+
+### 再帰的なfold
+
+このfoldを再帰的に適用すると、フラクタル図形ができます。
+
+![再帰的なfold](/images/posts/2017-02-24-tdf2017/fold-2.png)
+
+これがGLSLの距離関数です。
+
+ループの末尾でpを更新することで、再帰的にfoldを適用しています。
+
+```c
+float dTree(vec3 p) {
+  float scale = 0.8;
+  vec3 size = vec3(0.1, 1.0, 0.1);
+  float d = sdBox(p, size);
+  for (int i = 0; i < 7; i++) {
+    vec3 q = foldX(p);
+    q.y -= size.y;
+    q.xy *= rotate(-0.5);
+    d = min(d, sdBox(p, size));
+    p = q;
+    size *= scale;
+  }
+  return d;
+}
+```
+非常に興味深いポイントしては、通常、フラクタル図形を表現するためには、再帰関数が必要ですが、距離関数を用いればループで十分表現できるという点ですね。
+
+`dTree`の中には、たった2回しか`sdBox`が登場していませんが、再帰的にfoldXを適用することで、無数にBoxを複製しています。
+
+### 回転のfold
+
+これまでは面に対するfoldを扱いましたが、特定の軸を中心に回転させたfoldも考えられます。
+
+回転のfoldはgazさんの[DE used folding](https://www.shadertoy.com/view/Mlf3Wj)から拝借させていただきました。
+
+dTreeの木のような形をうまく調整し、Z軸方向に6回回転させるfoldを適用すると「Fusioned Bismuth」に登場した雪の結晶のような形状を得られます。
+
+![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)
+
+```c
+mat2 rotate(in float a) {
+  float s=sin(a),c=cos(a);
+  return mat2(c,s,-s,c);
+}
+
+// https://www.shadertoy.com/view/Mlf3Wj
+vec2 fold(in vec2 p, in float s) {
+  float a = PI / s - atan(p.x, p.y);
+  float n = PI2 / s;
+  a = floor(a / n) * n;
+  p *= rotate(a);
+  return p;
+}
+
+float dTree(vec3 p) {
+  float scale = 0.6 * saturate(1.5 * sin(0.05 * (lTime - UFO_SCENE_END_TIME - 2.0)));
+  float width = mix(0.3 * scale, 0.0, saturate(p.y));
+  vec3 size = vec3(width, 1.0, width);
+  float d = sdBox(p, size);
+  for (int i = 0; i < 10; i++) {
+    vec3 q = p;
+    q.x = abs(q.x);
+    q.y -= 0.5 * size.y;
+    q.xy *= rotate(-1.2);
+    d = min(d, sdBox(p, size));
+    p = q;
+    size *= scale;
+  }
+  return d;
+}
+
+float dSnowCrystal(inout vec3 p) {
+  p.xy = fold(p.xy, 6.0);
+  return dTree(p);
+}
+```
+
+### 一般化されたfold
+
+また、任意の法線を持った面に対する一般化されたfoldがSyntopiaに紹介されています。興味のある方は、見てみると良いでしょう。
+
+- [Distance Estimated 3D Fractals (III): Folding Space](http://blog.hvidtfeldts.net/index.php/2011/08/distance-estimated-3d-fractals-iii-folding-space/)
+
+```c
+z-=2.0 * min(0.0, dot(z, n1)) * n1;
+```
+
+### foldまとめ
+
+foldは面白いテクニックですが、使いこなすのも大変でした。
+参考になる資料がほとんど無いので、トライ・アンド・エラーを繰り返して、なんとか欲しい形に持っていきました。
+しかし、苦労に見合うだけの強力なテクニックだと思うので、もっと使いこなせるようになりたいですね。
+
+## シェーディング
+
+そこそこ綺麗にシェーディングを行うために、使えそうなテクニックは全部詰め込みました。
+
+- ソフトシャドウ
+- Ambient Occlusion
+- 環境マップ
+- ハーフランバート
+- ノーマルマップ
+
+ソフトシャドウは昔に覚えた方法を使いました。良ければ[スライド](https://speakerdeck.com/gam0022/reimatingudesohutosiyadou)を見て下さい。
+
+Ambient Occlusionは、[レイトレ合宿で覚えた方法](http://gam0022.hatenablog.com/entry/raytracingcamp4)をそのまま流用しました。
+
+[昨年度末にパストレーサーを開発した時](http://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)、IBLを入れた途端に急激に雰囲気が良くなったことに味をしめて、環境マップを取り入れました。2Dのパーリンノイズをうまく3Dにマッピングすることで、空の環境マップを表現しています。これにはmorgan3d氏の[Sky and Ground](https://www.shadertoy.com/view/4sKGWt)のコードを借用させていただきました。
+
+そのままランバートシェーディングを行うと、陰影がはっきりしすぎるので、`0.5 * diffuse + 0.5` という式で補正しました。
+このテクニックはハーフランバートという名前が付いているそうですね。
+
+生肉のような気持ち悪い質感のマテリアルにの表面の凹凸には、衝突判定用とシェーディング用で距離関数を使い分ける軽量化の工夫を行いました。
+
+![ノーマルマップを使ったマテリアル](/images/posts/2017-02-24-tdf2017/normal.png)
+
+レイマーチングでは、マーチングループの回数だけ距離関数を評価する必要があります。
+マーチングループは数百回必要になってくるので、この距離関数が複雑だと簡単にパフォーマンスが悪化します。
+細かな凹凸のために、雲と同じノイズを重ねたパーリンノイズを距離関数を組み込んだところ、耐えられない重さになってしまいました。
+
+そこで、レイマーチングで使用する距離関数は凹凸の無い処理の軽い距離関数を使用し、
+1回しか評価しないシェーディング用の距離関数は凹凸のある重たい距離関数を利用するという、距離関数の使い分けによる軽量化をしました。
+
+この方法は[@\_Pheema\_](https://twitter.com/_Pheema_)さんに教えていただきました。
+
+## デバッグ用のGLSL Sandbox互換システム
+
+GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出します。
+直接GLSL Sandbox上で開発することも可能ですが、ローカル環境で動くGLSL Sandbox互換システムを用意しました。
+
+開発中のデバッグを支援するために、再生位置のシーク機能や自由カメラモードを付けました。
+
+非常に雑な実装ですが、GLSL Sandbox/Shadertoy 用に加工した状態でシェーダをエクスポートする機能も実装しました。
+去年は作品の提出の直前にコードをGLSL Sandboxで動作するように修正する作業があったのですが、今年は自動化できました。
+
+- [Fusioned Bismuth (TokyoDemoFest GLSL Graphics Compo 3rd place)](https://github.com/gam0022/webgl-sandbox/pull/11)
+
+## カメラワーク
+
+カメラワークはゴリゴリとハードコーディングしました。
+複数の頂点をシーン上に配置して、時間軸をパラメータにしてブレンドしました。
+なかなか思った通りにカメラを動かせず、時間や手間がかかってしまいました…
+
+ところで、Combined PC Demo Compoで1位の「Shift」を生み出した[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。カメラの動きもGUI上で制御できるような仕組みのようです。流石ですよね。
+逆に言えば、カメラワークはツールから開発するくらい、コストをかける必要がある部分なのかもしれませんね。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">The Automaton playground! You can try Automaton Experience here!<a href="https://t.co/1A3UaoJ0P6">https://t.co/1A3UaoJ0P6</a> <a href="https://t.co/5pmk0VEUsq">pic.twitter.com/5pmk0VEUsq</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/834037276921384960">2017年2月21日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## 反省
+
+テクニック的な面では、色々な手法を試すことができて、楽しく作品作りができたと思います。
+一方で、今回の作品はカメラワークがゆっくりで、かなり冗長で退屈な印象の作品となってしまい、全体的な完成度は低かったと思います。
+デモシーンに不可欠なノリと勢いが足りずに、観客を飽きさせない配慮が足りなかったと反省しています。
+来年は見せ方を見据えて作品を作りたいと思います！頑張ります！！
+
+# まとめ
+
+TDFについて、他にも書きたいことはたくさんあるのですが、まとめきれないので自分の作品の紹介のみに留めさせていただきます。
+
+とにかくTDFは最高のイベントでした。
+
+どのCompoを見ても新しい発見だらけでしたし、普段は絶対にできないレイマーチングについての深い議論もできました。
+
+デモシーンは面白い文化だと思うので、もっとたくさんの人が興味を持って欲しいと思いますね。
