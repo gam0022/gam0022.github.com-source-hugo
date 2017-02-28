@@ -4,7 +4,7 @@ draft = false
 image = ""
 math = false
 slug = "tdf2017"
-tags = ["event", "demo", "CG"]
+tags = ["event", "demo", "CG", "レイマーチング"]
 title = "#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！"
 toc = true
 
@@ -20,6 +20,9 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 
 - [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！](http://gam0022.net/blog/2016/02/24/tokyo-demo-fest/)
 
+今年は私の勤め先である[KLab株式会社](http://www.klab.com/jp/)も今年はTDFにパートナーという形で参加させていただきました！
+去年の様子を紹介したことをきっかけに、着実に弊社内でデモシーンへの関心が高まりつつあり、非常に嬉しいです。
+
 「Fusioned Bismuth」という作品でGLSL Graphics Compoにエントリーして、3位を頂くことができました！嬉しいです！！
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて、昨年に引き続き3位をいただきました！嬉しいです！<br>せっかくなのでトロフィーを並べました（左が今年、右が去年）。 <a href="https://t.co/In8QqliO1L">pic.twitter.com/In8QqliO1L</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833340442578071552">2017年2月19日</a></blockquote>
@@ -30,10 +33,7 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて3位をいただいた作品を個人サイト上に公開しました！上部のGLSL sandbox/Shadertoyボタンからフラグメントシェーダをご覧になれます。<a href="https://t.co/ptqNTT73o3">https://t.co/ptqNTT73o3</a> <a href="https://t.co/0gUwjLO9W1">pic.twitter.com/0gUwjLO9W1</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833703821935120384">2017年2月20日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-また、私の勤め先である[KLab株式会社](http://www.klab.com/jp/)も今年はTDFにパートナーという形で参加させていただきました！
-去年は完全に個人の趣味での参加でしたが、徐々に社内でもデモシーンに興味を持ってくださる方が増えてきて、着実に社内での理解が得られてることを感じられて嬉しいです。
-
-この記事では、「Fusioned Bismuth」で使ったテクニックや手法などを紹介したいと思います。
+この記事では、「Fusioned Bismuth」で使ったテクニックを紹介したいと思います。
 
 # 作品紹介
 
@@ -43,33 +43,35 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 
 ![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)
 
-コンセプトは金属の生命体です。次のリンクから、実際に作品をWebブラウザ上で動かすこともできます。
+コンセプトは金属の生命体です。
+
+次のリンクから、実際に作品をWebブラウザ上で動かすこともできます。
+
+ただ、本作品は負荷の高い処理を多用しているため、専用のGPUを搭載したPCでないと、フルスクリーンで動作させるのは厳しいです……。
 
 - [Fusioned Bismuth | gam0022.net](http://gam0022.net/webgl/#raymarching_tdf2017)
 - [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
 
-負荷の高い処理を多用した作品なので、専用GPUを搭載したPCでないとフルスクリーンで動作させるのは厳しいです。
-自宅のGTX1070を積んだPCだと、快適に動作しますが、ノートPCだと厳しいでしょう。
-
 # Fusioned Bismuthを支える技術
 
-簡単に「Fusioned Bismuth」で使った工夫やテクニック・手法などを紹介したいと思います。
+「Fusioned Bismuth」で使ったテクニックを紹介したいと思います。
 
 ## レイマーチング
 
-レイマーチング(Sphere Tracing)という手法によって、フラグメントシェーダ上でレイトレを行うことで絵を出しています。
-
-距離関数と呼ばれる数式で定義したシーンに対して、レイの衝突判定を行って絵を出すのがレイマーチングです。
+距離関数と呼ばれる数式で定義したシーンに対して、レイの衝突判定を行って絵を出す手法がレイマーチング（別名 Sphere Tracing）です。
 レイマーチングの詳細は、こちらを参照いただけると幸いです。
 
 - [シェーダだけで世界を創る！three.jsによるレイマーチング](https://www.slideshare.net/shohosoda9/threejs-58238484)
 
-余談ですが、今ではレイマーチングはすっかりデモシーン界隈で定着された手法になってしまって、GLSL Compoの参加者のほとんどが利用していました。
+レイマーチングは、デモシーン界隈ではすっかり定着していて、GLSL Compoでも多く利用されていましたね。
 おそらく10人中8人はレイマーチングだったのではないでしょうか。
 
-そんな状況の中、[@soma_arc](https://twitter.com/soma_arc)さんは[「Schottky Waltz」](https://www.shadertoy.com/view/XslyzH)という作品において、
-レイマーチングに頼らない2Dで勝負し、見事にGLSL Graphics Compo1位を獲得されていたので、本当に頭を殴られたような衝撃を受けました。
-レイマーチングはとても面白い手法だけですが、レイマーチング一辺倒にならずに、バランスが大切だなと思いました。
+そんなレイマーチングが主流の中、
+[@soma_arc](https://twitter.com/soma_arc)さんはレイマーチングを全く使わない[「Schottky Waltz」](https://www.shadertoy.com/view/XslyzH)という2Dの作品を投稿し、見事にGLSL Graphics Compo1位を獲得されていました！
+
+レイマーチングや3Dに頼らずとも、魅せ方を工夫すれば、ここまでクールにできるのか！と頭を殴られたような衝撃を受けました。
+
+レイマーチングはとても面白い手法だけですが、一辺倒にならずに、バランスが大切だなと思いました。
 
 ## fold（折りたたみ）を使った形状設計
 
@@ -79,7 +81,7 @@ fold（折りたたみ）というテクニックを活用して、少し凝っ�
 
 ### 2Dのfold
 
-foldの分かりやすい例は、「鏡」です。
+foldの分かりやすい例は「鏡文字」です。
 
 これはアルファベットのGをY軸中心に折りたたんだ画像です。いわゆる鏡文字です。
 
@@ -120,7 +122,7 @@ float dTree(vec3 p) {
   float d = sdBox(p, size);
   p = foldX(p);
   p.y -= 0.1;
-  p.xy *= rotate(-1.2);
+  p.xy \*= rotate(-1.2);
   d = min(d, sdBox(p, size));
   return d;
 }
@@ -152,9 +154,9 @@ float dTree(vec3 p) {
   return d;
 }
 ```
-非常に興味深いポイントしては、通常、フラクタル図形を表現するためには、再帰関数が必要ですが、距離関数を用いればループで十分表現できるという点ですね。
 
-`dTree`の中には、たった2回しか`sdBox`が登場していませんが、再帰的にfoldXを適用することで、無数にBoxを複製しています。
+通常、フラクタル図形を表現するためには再帰関数が必要ですが、距離関数を用いればループで十分表現できるというのが興味深いポイントですね。
+たとえば、`dTree` の中には、sdBoxがたったの2回しか登場していません。再帰的に `foldX` を適用することで、Boxを無数に複製しています。
 
 ### 回転のfold
 
@@ -247,16 +249,16 @@ Ambient Occlusionは、[レイトレ合宿で覚えた方法](http://gam0022.hat
 
 ### 環境マップ
 
-[昨年度末にパストレーサーを開発した時](http://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)、IBLを入れた途端に急激に雰囲気が良くなったことに味をしめて、環境マップを取り入れました。2Dのパーリンノイズをうまく3Dにマッピングすることで、空の環境マップを表現しています。これにはmorgan3d氏の[Sky and Ground](https://www.shadertoy.com/view/4sKGWt)のコードを借用させていただきました。
+[昨年度末にパストレーサーを開発した時](http://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)、IBLを入れた途端に急激に雰囲気が良くなったことに味をしめて、環境マップを取り入れました。2Dのパーリンノイズをうまく3Dにマッピングすることで、空の環境マップを表現しています。これにはmorgan3d氏の[Sky and Ground](https://www.shadertoy.com/view/4sKGWt)のコードをお借りしました。
 
 ### ハーフランバート
 
 普通にランバートシェーディングを行うと、陰影がはっきりしすぎるので、`0.5 * diffuse + 0.5` という式で補正しました。
-すごい単純な手法ですが、ハーフランバートという名前が付いていて、処理が簡単なのに、見た目はかなり良くなります。
+この手法はハーフランバートと呼ばれます。実装が簡単で処理も軽量なのに、ぐっと見た目が良くなります。
 
 ### ノーマルマップ（衝突判定とシェーディングで距離関数を使い分け）
 
-生肉のような気持ち悪い質感のマテリアルにの表面の凹凸には、衝突判定用とシェーディング用で距離関数を使い分ける軽量化の工夫を行いました。
+生肉のような気持ち悪い質感のマテリアルの表面の凹凸には、衝突判定用とシェーディング用で距離関数を使い分ける軽量化の工夫を行いました。
 
 ![ノーマルマップを使ったマテリアル](/images/posts/2017-02-24-tdf2017/normal.png)
 
@@ -272,8 +274,7 @@ Ambient Occlusionは、[レイトレ合宿で覚えた方法](http://gam0022.hat
 ### 雪のポストエフェクト
 
 後半で雪が降るシーンは、スクリーンスペースのポストエフェクトで実現しました。そのため、実はカメラの動きに雪が追従していません。
-
-雪のポストエフェクトは[baldand](https://www.shadertoy.com/view/ldsGDn)さんのコードを借用させていただきました。ありがとうございます。
+このポストエフェクトは[baldand](https://www.shadertoy.com/view/ldsGDn)さんのコードをお借りしました。ありがとうございます。
 
 ## デバッグ用のGLSL Sandbox互換システム
 
@@ -292,12 +293,14 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 カメラワークはゴリゴリとハードコーディングしました。
 複数の頂点をシーン上に配置して、時間軸をパラメータにしてブレンドして、それをカメラ座標とカメラのターゲットとして利用しました。
 なかなか思った通りにカメラを動かせず、時間や手間がかかってしまいました…
+今回カメラワークをコード制御してみて、難しさを痛感しました。
 
 [cameraControl](https://github.com/gam0022/webgl-sandbox/blob/1a3f626ed4c5cfb6fedd69ea0feb93a4ea5324bb/raymarching_tdf2017.html#L529-L584)
 という関数でカメラ制御は行っているので、興味のある方は見て下さい（反面教師として）。
 
-ところで、Combined PC Demo Compoで1位の[「Shift」](https://www.youtube.com/watch?v=aLLiiPTfSBo)を生み出した[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。カメラの動きもGUI上で制御できるような仕組みのようです。流石ですよね。
-逆に言えば、カメラワークはツールから開発するくらい、コストをかける必要がある部分なのかもしれませんね。
+カメラワークと言えば、Combined PC Demo Compoで1位の[「Shift」](https://www.youtube.com/watch?v=aLLiiPTfSBo)を生み出した[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。
+カメラを含めた様々な「動き」をGUI上で定義して、WebGLで扱いやすいJSONで書き出す仕組みのようです。
+本気で作品を作ろうと思ったら、カメラワークの制御はツールから開発するような大きなコストを払って当然かもしれませんね。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">The Automaton playground! You can try Automaton Experience here!<a href="https://t.co/1A3UaoJ0P6">https://t.co/1A3UaoJ0P6</a> <a href="https://t.co/5pmk0VEUsq">pic.twitter.com/5pmk0VEUsq</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/834037276921384960">2017年2月21日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -311,12 +314,14 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 
 # まとめ
 
-とにかくTDFは最高のイベントでした。Compoやセミナー、参加者との交流を含めて、非常に楽しむことができました。
+とにかくTDFは最高のイベントでした！
+
+Compoやセミナー、参加者との交流を含めて、非常に楽しむことができました。
 どのCompoも新しい発見ばかりでしたし、普段は絶対にできないレイマーチングについての深い議論もできました。
 
 TDFについて書きたいことはたくさんあるのですが、長くなるので、この記事では自分の作品の紹介のみに留めさせていただきました。
 
-デモシーンは面白い文化だと思うので、もっとたくさんの人が興味を持って欲しいと願っています。
+デモシーンは面白い文化だと思うので、もっと多くの人が興味を持ってくださると嬉しいです。
 
 来年はどんなフレンズの作品に会えるかな？
 
