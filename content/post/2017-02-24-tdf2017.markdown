@@ -48,9 +48,9 @@ TDFについて書きたいことはたくさんあるのですが、この記�
 
 作品のスクリーンショットです。
 
-![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-19-tdf2017/ufo.png)
+[![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-19-tdf2017/ufo.png)](/images/posts/2017-02-19-tdf2017/ufo.png)
 
-![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-19-tdf2017/snow.png)
+[![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-19-tdf2017/snow.png)](/images/posts/2017-02-19-tdf2017/snow.png)
 
 「金属の生命体」をコンセプトに作成しました。
 
@@ -185,12 +185,10 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">The Automaton playground! You can try Automaton Experience here!<a href="https://t.co/1A3UaoJ0P6">https://t.co/1A3UaoJ0P6</a> <a href="https://t.co/5pmk0VEUsq">pic.twitter.com/5pmk0VEUsq</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/834037276921384960">2017年2月21日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 Automaton
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Shift by FMS_Cat<br>WebGL Demo<br>1st Place on <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017<a href="https://twitter.com/hashtag/Demoscene?src=hash">#Demoscene</a> <a href="https://twitter.com/hashtag/WebGL?src=hash">#WebGL</a><a href="https://t.co/MI2Rpc7MfG">https://t.co/MI2Rpc7MfG</a> <a href="https://t.co/4tXLIjHiVj">pic.twitter.com/4tXLIjHiVj</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/835300414794784768">2017年2月25日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 Combined PC Demo Compo 1位の「Shift」
 
 ## 反省
@@ -213,5 +211,4 @@ TDFを支えてくださったオーガナイサーの方々と参加者の方�
 来年はどんなフレンズの作品に会えるかな？
 
 ![どんなフレンズの作品に会えるかな？](/images/posts/2017-02-19-tdf2017/friends.png)
-
-※この画像はオープニングセレモニーの様子です。
+TDFのオープニングセレモニーの様子
