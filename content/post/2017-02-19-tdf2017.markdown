@@ -41,9 +41,9 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 
 作品のスクリーンショットです。
 
-![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)
+![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-19-tdf2017/ufo.png)
 
-![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)
+![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-19-tdf2017/snow.png)
 
 「金属の生命体」をコンセプトに作成しました。
 
@@ -122,7 +122,7 @@ Ambient Occlusionは、[レイトレ合宿で覚えた方法](http://gam0022.hat
 
 生肉のような気持ち悪い質感のマテリアルの表面の凹凸には、衝突判定用とシェーディング用で距離関数を使い分ける軽量化の工夫を行いました。
 
-![ノーマルマップを使ったマテリアル](/images/posts/2017-02-24-tdf2017/normal.png)
+![ノーマルマップを使ったマテリアル](/images/posts/2017-02-19-tdf2017/normal.png)
 
 レイマーチングでは通常数百回程度のマーチングループが必要で、マーチングループのたびに距離関数を評価しなければなりません。
 そのため、距離関数が少しでも複雑になると、パフォーマンスが極端に悪化してしまいます。
@@ -192,4 +192,4 @@ TDFについて書きたいことはたくさんあるのですが、長くな�
 
 来年はどんなフレンズの作品に会えるかな？
 
-![どんなフレンズの作品に会えるかな？](/images/posts/2017-02-24-tdf2017/friends.png)
+![どんなフレンズの作品に会えるかな？](/images/posts/2017-02-19-tdf2017/friends.png)

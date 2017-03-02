@@ -16,7 +16,7 @@ foldの分かりやすい例は「鏡文字」です。
 
 これはアルファベットのGをY軸中心に折りたたんだ、いわゆる鏡文字です。
 
-![Gの鏡文字](/images/posts/2017-02-24-tdf2017/mirror.png)
+![Gの鏡文字](/images/posts/2017-02-19-tdf2017/mirror.png)
 
 このようなY軸中心のfoldをGLSLの関数にすると、単純にxを絶対値することにより実現できます。
 
@@ -33,7 +33,7 @@ float foldX(vec2 p) {
 
 箱をZ軸に時計回りに回転させたものをYZ平面にfoldすると、距離関数としては1つの箱なのに、左右2つに枝分かれさせることができます。
 
-![YZ平面にfoldしたBox](/images/posts/2017-02-24-tdf2017/fold-1.png)
+![YZ平面にfoldしたBox](/images/posts/2017-02-19-tdf2017/fold-1.png)
 
 前の例では2DだったのでY軸に対するfoldでしたが、今回は3DなのでYZ平面に対するfoldになっています。
 
@@ -65,7 +65,7 @@ float dTree(vec3 p) {
 
 このfoldを再帰的に適用すると、フラクタル図形ができます。
 
-![再帰的なfold](/images/posts/2017-02-24-tdf2017/fold-2.png)
+![再帰的なfold](/images/posts/2017-02-19-tdf2017/fold-2.png)
 
 これがGLSLの距離関数です。
 
@@ -99,7 +99,7 @@ float dTree(vec3 p) {
 
 dTreeの木のような形をうまく調整し、Z軸方向に6回転させるfoldを適用すると「Fusioned Bismuth」に登場した雪の結晶のような形状を得られます。
 
-![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)
+![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-19-tdf2017/snow.png)
 
 ```c
 mat2 rotate(in float a) {
@@ -144,7 +144,7 @@ float dSnowCrystal(inout vec3 p) {
 この `foldRotate` はUFO風の形状にも利用しています。
 たった4つのBoxに`mod` や `foldRotate` を適用しただけなのに、それなりに雰囲気を出すことができたと思っています。
 
-![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)
+![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-19-tdf2017/ufo.png)
 
 ```
 #define opRep(p, interval) (mod(p, interval) - 0.5 * interval)
