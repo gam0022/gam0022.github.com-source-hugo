@@ -17,6 +17,8 @@ toc = true
 先日のTokyoDemoFest2017でも、このfoldを用いた作品を投稿しました。
 
 - [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net](/blog/2017/02/24/tdf2017/)
+- [Fusioned Bismuth | gam0022.net](http://gam0022.net/webgl/#raymarching_tdf2017)
+- [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
 
 この記事では、距離関数のfoldについて、解説していきます。
 
