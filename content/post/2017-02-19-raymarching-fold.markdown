@@ -20,6 +20,8 @@ toc = true
 
 この記事では、距離関数のfoldについて、解説していきます。
 
+<!--more-->
+
 # 2Dのfold
 
 foldの一番簡単な例は「鏡文字」です。
@@ -36,8 +38,6 @@ float foldX(vec2 p) {
     return p;
 }
 ```
-
-<!--more-->
 
 # 3Dのfold
 
