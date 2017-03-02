@@ -111,7 +111,7 @@ float dTree(vec3 p) {
 
 dTreeの木のような形をうまく調整し、Z軸方向に6回転させるfoldを適用すると「Fusioned Bismuth」に登場した雪の結晶のような形状を得られます。
 
-[![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)](/images/posts/2017-02-19-tdf2017/snow.png)
+[![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)](/images/posts/2017-02-24-tdf2017/snow.png)
 
 ```c
 mat2 rotate(in float a) {
@@ -156,7 +156,7 @@ float dSnowCrystal(inout vec3 p) {
 この `foldRotate` はUFO風の形状にも利用しています。
 たった4つのBoxに`mod` や `foldRotate` を適用しただけなのに、それなりに雰囲気を出すことができたと思っています。
 
-[![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)](/images/posts/2017-02-19-tdf2017/ufo.png)
+[![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)](/images/posts/2017-02-24-tdf2017/ufo.png)
 
 ```
 #define opRep(p, interval) (mod(p, interval) - 0.5 * interval)

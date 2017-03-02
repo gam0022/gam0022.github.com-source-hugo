@@ -48,9 +48,11 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 
 作品のスクリーンショットです。
 
-[![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)](/images/posts/2017-02-19-tdf2017/ufo.png)
+[![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)](/images/posts/2017-02-24-tdf2017/ufo.png)
 
-[![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)](/images/posts/2017-02-19-tdf2017/snow.png)
+[![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)](/images/posts/2017-02-24-tdf2017/snow.png)
+
+[![Fusioned Bismuth - 金属と生肉の融解](/images/posts/2017-02-24-tdf2017/flesh.png)](/images/posts/2017-02-24-tdf2017/flesh.png)
 
 「金属の生命体」をコンセプトに作成しました。
 
@@ -60,6 +62,10 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 
 - [Fusioned Bismuth | gam0022.net](http://gam0022.net/webgl/#raymarching_tdf2017)
 - [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
+
+当日の動画はこちらです。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o3e7YFspIJ0?list=PLV3h8Uj9GgDPTzaXoD-Zkvf7VYVhVjMFM" frameborder="0" allowfullscreen></iframe>
 
 # Fusioned Bismuth に使った技術・テクニック
 
@@ -180,7 +186,7 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 
 ### 「Shift」 by @FMS_Cat
 
-カメラワークと言えば、Combined PC Demo Compoで1位を獲得された[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。GUIもフルスクラッチで開発されたそうですが、すごい完成度の高さですよね。
+カメラワークと言えば、Combined PC Demo Compoで1位を獲得された[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。GUIもフルスクラッチで開発されたそうで、完成度の高さに驚きます。
 本格的にカメラワークを作り込むなら、このような土台となるツール作成が重要だなと改めて思いました。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">The Automaton playground! You can try Automaton Experience here!<a href="https://t.co/1A3UaoJ0P6">https://t.co/1A3UaoJ0P6</a> <a href="https://t.co/5pmk0VEUsq">pic.twitter.com/5pmk0VEUsq</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/834037276921384960">2017年2月21日</a></blockquote>
