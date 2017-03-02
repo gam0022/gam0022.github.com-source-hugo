@@ -1,10 +1,10 @@
 +++
 date = "2017-02-24T10:13:11+09:00"
 draft = false
-image = ""
+image = "/images/posts/2017-02-19-tdf2017/ufo.png"
 math = false
 slug = "tdf2017"
-tags = ["event", "demo", "CG", "レイマーチング"]
+tags = ["event", "CG", "レイマーチング"]
 title = "#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！"
 toc = true
 
@@ -12,20 +12,22 @@ toc = true
 
 2017年2月18日(土)・19日(日)の2日間に開催された[Tokyo Demo Fest 2017](http://tokyodemofest.jp/2017/)に参加しました。
 
-Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトからの引用）。
-
-> Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに興味のある人々が日本中、世界中から一堂に会し、デモ作品のコンペティション(コンポ)やセミナーなどを行います。また、イベント開催中は集まった様々な人たちとの交流が深められます。
-
 去年に引き続き、2回目の参加でした。去年の記事はこちらです。
 
 - [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！](http://gam0022.net/blog/2016/02/24/tokyo-demo-fest/)
 
+Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトからの引用）。
+
+> Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに興味のある人々が日本中、世界中から一堂に会し、デモ作品のコンペティション(コンポ)やセミナーなどを行います。また、イベント開催中は集まった様々な人たちとの交流が深められます。
+
 今年は、なんと私の勤め先である[KLab株式会社](http://www.klab.com/jp/)もTDFにパートナーという形で参加させていただきました！
 去年の様子を紹介したことをきっかけに、弊社内でデモシーンへの関心が高まりつつあり非常に嬉しいです。
 
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">エナジータワー <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> <a href="https://t.co/O6dXOFwGXq">pic.twitter.com/O6dXOFwGXq</a></p>&mdash; kemas_Ti(ｶﾌｪｲﾝファイター (@kemas306) <a href="https://twitter.com/kemas306/status/832810497628004352">2017年2月18日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 また、個人としては「Fusioned Bismuth」という作品でGLSL Graphics Compoで3位を頂くことができました！
-自分の作品を多くの方に評価していただけて、大変嬉しいです！！
-投票してくださった方々に、この場をお借りして感謝申し上げます。ありがとうございました。
+自分の作品を多くの方に評価していただけて、大変嬉しいです！！ありがとうございました！
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて、昨年に引き続き3位をいただきました！嬉しいです！<br>せっかくなのでトロフィーを並べました（左が今年、右が去年）。 <a href="https://t.co/In8QqliO1L">pic.twitter.com/In8QqliO1L</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833340442578071552">2017年2月19日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -35,7 +37,12 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて3位をいただいた作品を個人サイト上に公開しました！上部のGLSL sandbox/Shadertoyボタンからフラグメントシェーダをご覧になれます。<a href="https://t.co/ptqNTT73o3">https://t.co/ptqNTT73o3</a> <a href="https://t.co/0gUwjLO9W1">pic.twitter.com/0gUwjLO9W1</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833703821935120384">2017年2月20日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-この記事では、「Fusioned Bismuth」の紹介と、本作品に使った技術やテクニックを紹介したいと思います。
+今年のTDFも最高に楽しかったので、今から来年のTDFが待ちきれません。
+まず、どのコンポも粒ぞろいの作品ばかりで、良い刺激を受けました。
+セミナーでは、尊敬している東京大学の蜂須賀先生のお話を聞くことができました。
+さらに他の参加者とレイマーチングなどのCG技術について深い議論ができました。
+
+TDFについて書きたいことはたくさんあるのですが、この記事では自分の作品の解説を中心に紹介していきます。
 
 # 作品紹介
 
@@ -55,10 +62,8 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 - [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
 
 # Fusioned Bismuth に使った技術・テクニック
-<!--
-「Fusioned Bismuth」で使ったテクニックを紹介したいと思います。
-（数行前に同じこと言ってるので省略）
--->
+
+「Fusioned Bismuth」で使ったテクニックを紹介します。
 
 ## レイマーチング
 
@@ -66,6 +71,8 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 技術的な詳細は、こちらの記事に書いてあります。
 
 - [シェーダだけで世界を創る！three.jsによるレイマーチング](https://www.slideshare.net/shohosoda9/threejs-58238484)
+
+### 「Schottky Waltz」 by @soma_arc
 
 レイマーチングは、デモシーン界隈ではすっかり定着していて、GLSL Graphics Compoでも多く見かけられました。
 おそらく10人中8人はレイマーチングを使っていたのではないでしょうか。
@@ -77,10 +84,19 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 
 レイマーチングはとても面白い手法ですが、一辺倒にならずにバランスが大切だなと痛感しました。
 
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Schottky Waltz by soma_arc <br>GLSL Graphics Compo 1st Place on <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017 <a href="https://t.co/X99zb8uGuA">https://t.co/X99zb8uGuA</a> <a href="https://t.co/xhMf6hKtOJ">pic.twitter.com/xhMf6hKtOJ</a></p>&mdash; 蘇摩 (@soma_arc) <a href="https://twitter.com/soma_arc/status/835468934040055808">2017年2月25日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+GLSL Graphics Compo 1位の「Schottky Waltz」
+
 ## fold（折りたたみ）を使った形状設計
 
 本作品では、foldというテクニックを活用して、少し凝った距離関数を設計しています。
 foldについては、去年のTDFで[gaziya5](https://twitter.com/gaziya5)さんに教えていただきました。
+
+foldの詳細は別の記事としてまとめましたので、興味があればご覧ください。
+
+- [距離関数のfold（折りたたみ）による形状設計 | gam0022.net](/blog/2017/03/02/raymarching-fold/)
 
 foldは面白いテクニックですが、使いこなすのが大変でした。
 参考になる資料がほとんど無かったので、トライ・アンド・エラーを繰り返して、なんとか欲しい形に持っていきました。
@@ -147,9 +163,6 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 このシステムには、再生位置のシーク機能や自由カメラモードが付いています。
 
 また、非常に雑な実装ですが、GLSL Sandbox/Shadertoy 用に加工した状態でシェーダをエクスポートする機能も実装しました。
-<!--
-去年は作品の提出直前にコードをGLSL Sandboxで動作するように修正する作業があったのですが、今年は自動化できました。
--->
 
 - [Fusioned Bismuth (TokyoDemoFest GLSL Graphics Compo 3rd place)](https://github.com/gam0022/webgl-sandbox/pull/11)
 
@@ -160,17 +173,25 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 カメラの座標とターゲットでカメラの動きを定義し、キーフレームで制御するようにしました。
 シーン中に複数の頂点を配置し、頂点間を時間で補完しています。
 
-カメラワークをコード制御するのは初めてで、なかなか思った通りにカメラを動かせず苦労しました……。
+カメラワークをコード制御するのは初めてで、なかなか思った通りにカメラを動かせず苦労しました…。
 
 [cameraControl](https://github.com/gam0022/webgl-sandbox/blob/1a3f626ed4c5cfb6fedd69ea0feb93a4ea5324bb/raymarching_tdf2017.html#L529-L584)
 関数でカメラ制御を行っているので、興味のある方はどうぞ（反面教師として）。
 
-カメラワークと言えば、Combined PC Demo Compoで1位を獲得された[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。
-カメラを含めた様々な「動き」をGUI上で定義して、WebGLで扱いやすいJSON形式で書き出す仕組みのようです。
-本気で作品を作ろうと思ったら、カメラワークの制御はツールから開発するような大きなコストを払って当然かもしれませんね。
+### 「Shift」 by @FMS_Cat
+
+カメラワークと言えば、Combined PC Demo Compoで1位を獲得された[@FMS_Cat](https://twitter.com/FMS_Cat)さんは、TDFのためにAutomatonというツールを開発されていました。GUIもフルスクラッチで開発されたそうですが、すごい完成度の高さですよね。
+本格的にカメラワークを作り込むなら、このような土台となるツール作成が重要だなと改めて思いました。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">The Automaton playground! You can try Automaton Experience here!<a href="https://t.co/1A3UaoJ0P6">https://t.co/1A3UaoJ0P6</a> <a href="https://t.co/5pmk0VEUsq">pic.twitter.com/5pmk0VEUsq</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/834037276921384960">2017年2月21日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Automaton
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Shift by FMS_Cat<br>WebGL Demo<br>1st Place on <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017<a href="https://twitter.com/hashtag/Demoscene?src=hash">#Demoscene</a> <a href="https://twitter.com/hashtag/WebGL?src=hash">#WebGL</a><a href="https://t.co/MI2Rpc7MfG">https://t.co/MI2Rpc7MfG</a> <a href="https://t.co/4tXLIjHiVj">pic.twitter.com/4tXLIjHiVj</a></p>&mdash; FM Synthesis Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/835300414794784768">2017年2月25日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Combined PC Demo Compo 1位の「Shift」
 
 ## 反省
 
@@ -183,13 +204,14 @@ GLSL Graphics Compoでは、GLSL Sandbox上で動作する作品を提出しま�
 
 とにかくTDFは最高のイベントでした！
 
-<!--Compoやセミナー、参加者との交流を含めて、どれも非常に楽しかったです！（↓言ってること同じ）-->
-Compoやセミナーを通して新しい発見を多く得られたのはもちろんのこと、他の参加者とレイマーチングなどのCG技術について深い議論ができました。
+Compoやセミナー、参加者との交流を含めて、どれも非常に楽しかったです！
 
-TDFについて書きたいことはたくさんあるのですが、長くなるので、この記事では自分の作品の紹介のみに留めさせていただきました。
+TDFを支えてくださったオーガナイサーの方々と参加者の方々に、この場をお借りして感謝申し上げます。ありがとうございました。
 
 デモシーンは面白い文化だと思うので、もっと多くの人が興味を持ってくださると嬉しいです。
 
 来年はどんなフレンズの作品に会えるかな？
 
 ![どんなフレンズの作品に会えるかな？](/images/posts/2017-02-19-tdf2017/friends.png)
+
+※この画像はオープニングセレモニーの様子です。
