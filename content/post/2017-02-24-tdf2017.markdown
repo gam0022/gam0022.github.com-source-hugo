@@ -63,7 +63,7 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 - [Fusioned Bismuth | gam0022.net](http://gam0022.net/webgl/#raymarching_tdf2017)
 - [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
 
-当日の動画はこちらです。
+当日の動画はこちらです(自分の作品は10:40頃から開始します)。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o3e7YFspIJ0?list=PLV3h8Uj9GgDPTzaXoD-Zkvf7VYVhVjMFM" frameborder="0" allowfullscreen></iframe>
 
