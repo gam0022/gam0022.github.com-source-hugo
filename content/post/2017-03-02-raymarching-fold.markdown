@@ -107,7 +107,7 @@ float dTree(vec3 p) {
 
 これまでは面に対するfoldを扱いましたが、特定の軸を中心に回転させたfoldも考えられます。
 
-回転のfoldは[gaz](https://twitter.com/gaziya5)さんの[DE used folding](https://www.shadertoy.com/view/Mlf3Wj)からお借りしました。
+回転のfoldは[@gaziya5](https://twitter.com/gaziya5)さんの[DE used folding](https://www.shadertoy.com/view/Mlf3Wj)からお借りしました。
 
 dTreeの木のような形をうまく調整し、Z軸方向に6回転させるfoldを適用すると「Fusioned Bismuth」に登場した雪の結晶のような形状を得られます。
 
@@ -199,7 +199,9 @@ float dUfo(inout vec3 p) {
 
 # 一般化されたfold
 
-また、任意の法線 `n` を持った面に対する一般化されたfoldがSyntopiaに紹介されています。興味のある方は、見てみると良いでしょう。
+任意の法線 `n` を持った面に対する一般化されたfoldがSyntopiaに紹介されています。興味のある方は、見てみると良いでしょう。
+
+始めに紹介したabsでは、座標軸に垂直な特殊な平面にしか折りたためませんが、これで自由な向きにfoldができます！
 
 - [Distance Estimated 3D Fractals (III): Folding Space](http://blog.hvidtfeldts.net/index.php/2011/08/distance-estimated-3d-fractals-iii-folding-space/)
 

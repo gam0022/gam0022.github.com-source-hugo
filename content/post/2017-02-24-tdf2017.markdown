@@ -63,9 +63,13 @@ Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトから
 - [Fusioned Bismuth | gam0022.net](http://gam0022.net/webgl/#raymarching_tdf2017)
 - [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
 
-当日の動画はこちらです(自分の作品は10:40頃から開始します)。
+GLSL Graphics Compoの当日の動画はこちらです(私の作品は10:45頃から開始します)。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o3e7YFspIJ0?list=PLV3h8Uj9GgDPTzaXoD-Zkvf7VYVhVjMFM" frameborder="0" allowfullscreen></iframe>
+
+GLSL Graphics Compoは[GLSL Sandbox](http://glslsandbox.com/)上で動作する作品の部門です。
+信じられないかもしれませんが、私の作品を含め、GLSLのフラグメントシェーダのみで実装されています。
+使用しているテクスチャやモデルはすべてプロシージャルに生成しています。
 
 # Fusioned Bismuth に使った技術・テクニック
 
@@ -98,7 +102,7 @@ GLSL Graphics Compo 1位の「Schottky Waltz」
 ## fold（折りたたみ）を使った形状設計
 
 本作品では、foldというテクニックを活用して、少し凝った距離関数を設計しています。
-foldについては、去年のTDFで[gaziya5](https://twitter.com/gaziya5)さんに教えていただきました。
+foldについては、去年のTDFで[@gaziya5](https://twitter.com/gaziya5)さんに教えていただきました。
 
 foldの詳細は別の記事としてまとめましたので、興味があればご覧ください。
 
