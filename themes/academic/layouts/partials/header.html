@@ -31,7 +31,7 @@
 
     {{ if .IsNode }}
         <meta property="og:type" content="blog">
-        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+        <meta property="og:description" content="{{ .Site.Params.description }}">
     {{ else }}
         <meta property="og:type" content="article">
         <meta property="og:description" content="{{ .Summary }}">
@@ -41,7 +41,7 @@
         <meta property="og:image" content="{{ substr .Site.BaseURL 0 -1 }}{{ .Params.image }}">
         <meta name="twitter:card" content="summary_large_image">
     {{ else }}
-        <meta property="og:image" content="{{ .Site.BaseURL }}img/gam0022_splash.png">
+        <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.default_image }}">
         <meta name="twitter:card" content="summary">
     {{ end }}
 
