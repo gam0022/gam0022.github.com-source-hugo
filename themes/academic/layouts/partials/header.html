@@ -45,6 +45,7 @@
         <meta name="twitter:card" content="summary">
     {{ end }}
 
+    <meta property="fb:app_id" content="{{ .Site.Params.facebook_app_id }}">
     <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
     <meta property="og:url" content="{{ .Permalink }}">
 
