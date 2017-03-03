@@ -34,6 +34,9 @@ googleAnalytics = "UA-84469205-1"
   # Enable native social sharing buttons?
   sharing = true
 
+  # Facebook App ID
+  facebook_app_id = "413045302370371"
+
   # Link custom CSS and JS assets (relative to /static/css and
   #   /static/js respectively)
   custom_css = []
