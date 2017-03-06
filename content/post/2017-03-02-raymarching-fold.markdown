@@ -1,7 +1,7 @@
 +++
 date = "2017-03-02T23:24:26+09:00"
 draft = false
-image = "/images/posts/2017-02-24-tdf2017/fold-2.png"
+image = "/images/posts/2017-02-24-tdf2017/snow.png"
 math = false
 slug = "raymarching-fold"
 tags = ["CG", "レイマーチング"]
