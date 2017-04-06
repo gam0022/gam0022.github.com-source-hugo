@@ -1,16 +1,14 @@
 +++
-date = "2017-04-03T10:00:00+09:00"
+date = "2017-04-06T12:00:00+09:00"
 draft = false
-image = "/images/posts/2017-04-03-webgl-pathtracing/app-night.png"
+image = "/images/posts/2017-04-06-webgl-pathtracing/app-night.png"
 math = false
 slug = "webgl-pathtracing-tbf2"
-tags = ["CG", "WebGL", "パストレーシング"]
+tags = ["CG", "WebGL", "パストレーシング", "宣伝", "技術書典", "TechBooster"]
 title = "WebGLパストレーシングを技術書典2のためにブラッシュアップ"
 toc = true
 
 +++
-
-# はじめに
 
 4/9（日）にアキバ・スクエアで開催される[技術書典2](https://techbookfest.org/event/tbf02)に参加します。
 技術書典は技術書のみを扱うのコミケようなイベントです。
@@ -19,17 +17,17 @@ toc = true
 
 今回は『Think Web』の『第6章 まるで実写！？GPUパストレーシングのWebGL実装』を担当しました。
 
-- [Think Web | TechBooster in TBF02 技術書典２（2017/4/9） あ-01,02](https://techbooster.github.io/tbf02/index.html#think)
+- [Think Web | TechBooster in TBF02 技術書典２（2017/4/9） あ-01,02](https://techbooster.github.io/tbf02/#think)
 
-[![Think Webの表紙](/images/posts/2017-04-03-webgl-pathtracing/info_think.png)](https://techbooster.github.io/tbf02/index.html#think)
+[![Think Webの表紙](/images/posts/2017-04-06-webgl-pathtracing/info_think.png)](https://techbooster.github.io/tbf02/#think)
 
-## パストレーシングとは？
+# パストレーシングとは？
 
 近年のハリウッド映画などに用いられる写実的なCGのほとんどは、パストレーシングと呼ばれるレンダリング手法（描画手法）によって生み出されています。
 パストレーシングは現実世界における光の振る舞いをシミュレートすることで、正確なレンダリングを可能にします。
 その反面、処理時間が膨大にかかるという弱点があります。
 
-## 本の内容
+# 本の内容
 
 私の章ではパストレーシングのGPU実装による高速化について紹介します。
 しかも単純な高速化ではなく、ブラウザ上で3DCGを扱うWebAPIであるWebGLによりGPU実装することで、
@@ -43,7 +41,9 @@ Qiitaには書ききれなかったパストレーシングの基礎や原理の
 なるべく敷居を下げるために専門用語を解説しつつ、説明が長く過ぎず短すぎず丁度いい分量になるように意識して執筆しました。
 読者ターゲットは、単純なレイトレーシングは分かっているけれども、パストレーシングは難しい…という人を想定しています。
 
-## WebGLパストレーシングのデモ
+<!--more-->
+
+# WebGLパストレーシングのデモ
 
 開発したWebGLパストレーサ（パストレーシングのプログラム）はブラウザ上で動かせるので、良ければ触っていただけると嬉しいです。
 
@@ -53,7 +53,7 @@ Qiitaには書ききれなかったパストレーシングの基礎や原理の
 マテリアルのBRDFとしては完全鏡面反射・完全拡散反射・GGX・屈折面に対応しています。
 マテリアルのColor / Roughness / Emissionにはテクスチャを指定することもできます。
 
-# バグとの闘い、品質の改善
+# 技術書典2のためのブラッシュアップ
 
 執筆にあたってコードを見返したところ、様々なバグを見つけたので、原稿と平行してバグ修正に取り組んでいました。
 睡眠時間と引き換えにして、なんとかバグを取り除き、レンダリングの品質を大きく改善できました！
@@ -61,8 +61,6 @@ Qiitaには書ききれなかったパストレーシングの基礎や原理の
 この記事では、本の宣伝もかねて「どのようなミスがあり、どのように修正をしたのか」を簡単に紹介します。
 
 原稿を書くのは大変ですが、思考とコードを整理できたので、個人的に得るものが大きかったと感じます。
-
-<!--more-->
 
 ## 修正箇所一覧
 
@@ -90,7 +88,7 @@ Qiitaには書ききれなかったパストレーシングの基礎や原理の
 
 ブラッシュアップしたパストレーサのレンダリング結果を紹介します。
 
-[![世界地図の光源](/images/posts/2017-04-03-webgl-pathtracing/app-night.png)](/images/posts/2017-04-03-webgl-pathtracing/app-night.png)
+[![世界地図の光源](/images/posts/2017-04-06-webgl-pathtracing/app-night.png)](/images/posts/2017-04-06-webgl-pathtracing/app-night.png)
 
 暗いシーンの背後に照明を置いてコーティクス（集光模様）を観察しました。
 IBLよりも背後の光源の影響が強いシーンですが、ノイズが消えてコーティクスなども鮮明にレンダリングできています。
@@ -98,13 +96,13 @@ IBLよりも背後の光源の影響が強いシーンですが、ノイズが�
 
 屈折面では反射と屈折の両方をトレースするようになったので、ガラス面も薄っすらと鏡面反射するようになりました。
 
-[![マテリアルのテスト](/images/posts/2017-04-03-webgl-pathtracing/examples.png)](/images/posts/2017-04-03-webgl-pathtracing/examples.png)
+[![マテリアルのテスト](/images/posts/2017-04-06-webgl-pathtracing/examples.png)](/images/posts/2017-04-06-webgl-pathtracing/examples.png)
 
 同じ色（白）・同じ大きさで材質だけが異なる4つの球体を配置したシーンです。
 左から順に（１）完全拡散反射面、（２）完全鏡面反射面、（３）屈折面（ガラス面）、（４）微小な凹凸のある鏡面（GGX）です。
 シーンの上部の白い球体が光源です。
 
-[![コーネルボックス](/images/posts/2017-04-03-webgl-pathtracing/cornellbox.png)](/images/posts/2017-04-03-webgl-pathtracing/cornellbox.png)
+[![コーネルボックス](/images/posts/2017-04-06-webgl-pathtracing/cornellbox.png)](/images/posts/2017-04-06-webgl-pathtracing/cornellbox.png)
 
 コーネルボックス風のプリセットシーンを追加しました。
 残念なことに、現在の実装ではコーネルボックスのような光源が小さくIBLができないシーンのレンダリングは苦手で、ノイズが消えるまで数分間かかります。
@@ -112,11 +110,11 @@ IBLよりも背後の光源の影響が強いシーンですが、ノイズが�
 小さな光源しかないシーンを高速にレンダリングするためには，まだまだ課題が残っています…
 （とはいえ、もちろん時間をかければスクリーンショットのように綺麗な結果になります！）
 
-[![テーブル](/images/posts/2017-04-03-webgl-pathtracing/table.png)](/images/posts/2017-04-03-webgl-pathtracing/table.png)
+[![テーブル](/images/posts/2017-04-06-webgl-pathtracing/table.png)](/images/posts/2017-04-06-webgl-pathtracing/table.png)
 
 箱を積み重ねたテーブルのシーンです。前回と同じシーンですがノイズが完全に無くなりました。
 
-# 今後やりたいこと
+## 今後やりたいこと
 
 - コーネルボックスのような光源が小さいシーンの収束が遅すぎるので、[Next Event Estimation](http://rayspace.xyz/CG/contents/path_tracing.html)をする
 - 準モンテカルロ法
@@ -128,12 +126,12 @@ IBLよりも背後の光源の影響が強いシーンですが、ノイズが�
 
 技術書典2と『Think Web』を宜しくお願いします！
 
-自分の章はニッチすぎると思いますが、明らかに1000円以上の量と質のあるお得な本になっていると思います！
-
 以下のようなテーマについて、各技術のスペシャリストが全力で執筆しています。
 
 - Rust+WebAssembly、Flutter などマルチプラットフォーム技術
 - Vue.js、GopherJS、WebGL など最新フロントエンド技術の解説
 - Google Cloud Datastore などデータベース関連技術
+
+自分の章はニッチすぎると思いますが、明らかに1000円以上の量と質のあるお得な本になっていると思います！
 
 お時間がありましたら、ぜひいらしてください！
