@@ -11,7 +11,7 @@ toc = true
 +++
 
 4/9（日）にアキバ・スクエアで開催される[技術書典2](https://techbookfest.org/event/tbf02)に参加します。
-技術書典は技術書のみを扱うのコミケようなイベントです。
+技術書典は技術書のみを扱うコミケようなイベントです。
 
 [去年](http://gam0022.hatenablog.com/entry/2016/06/22/tbf1)に引き続き、技術サークルTechBoosterのWeb本の著者のひとりとして参加します。
 
