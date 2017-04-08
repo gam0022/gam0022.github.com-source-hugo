@@ -323,6 +323,7 @@ h3.article-title a {
 
 .article-metadata {
     margin-bottom: 20px;
+    padding-bottom: 20px;
     line-height: 30px; /* Match share bar line height. */
     font-size: 14px;
     letter-spacing: 0.03em;
