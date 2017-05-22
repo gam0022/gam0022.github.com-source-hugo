@@ -1,6 +1,6 @@
 #!/bin/sh
 rm -rf public
-hugo
+hugo017
 
 dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 echo "dir: $dir"
