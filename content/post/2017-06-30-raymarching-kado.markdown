@@ -26,15 +26,19 @@ toc = true
 
 次のリンクからブラウザ上から動かすこともできます。
 
-- [レイマーチングによるカドの描画デモ](http://gam0022.net/webgl/#raymarching_kado)
+- [http://gam0022.net/webgl/#raymarching_kado](http://gam0022.net/webgl/#raymarching_kado)
+
+<!--more-->
 
 # 解説
 
-ざっくりと制作のメモを紹介します。
+制作における工夫点や参考資料を紹介していきます。
 
 ## カドのレンダリング
 
 アニメの「カド」はMandebBoxと呼ばれるフラクタル図形をベースに改造したもののようです。
+
+- [謎に満ちたアニメCGプロジェクト『正解するカド』（総監督：村田和也）に迫る 〜 mystery 01：3Dフラクタル 〜](https://cgworld.jp/feature/201602-kado01-cgw211.html)
 
 今回はベーシックなMandelBoxをレイマーチングで普通に描画しました。
 
@@ -66,7 +70,7 @@ IBL(Image Based Lighting)やAO(Ambient Occlusion)でシェーディングの品�
 
 この記事を読んで、今まで「パーリンノイズ」だと思い込んでいたものが、「バリューノイズ」だと知りました。
 
-本当のパーリンノイズの実装は今回が初めてだったので、勉強になりました。
+勾配を使った本物のパーリンノイズの実装は今回が初めてだったので、勉強になりました。
 
 ### 水面のアニメーション
 
@@ -90,7 +94,7 @@ IBL(Image Based Lighting)やAO(Ambient Occlusion)でシェーディングの品�
 
 ちなみに、今回のシーンように水面がXZ平面になっていれば、レイとの衝突判定は非常に低コストに行うことができます。
 
-`GROUND_BASE` を地面の高さとして、次の `t` を計算し、`t > 0.0` であればレイと平面が交差しています。
+`GROUND_BASE` を水面の高さとして、次の `t` を計算し、`t > 0.0` であればレイと平面が交差しています。
 
 ```c
 float t = -(ray.origin.y - GROUND_BASE) / ray.direction.y;
@@ -116,17 +120,17 @@ float f0 = 0.7;// 垂直に入射した時の反射率。かなり大きめな�
 intersection.reflectance = f0 + (1.0 - f0) * pow(1.0 + ray.direction.y, 5.0);
 ```
 
-## プロトタイプ
+# 試作
 
-最終的には海の上にカドが浮かんでいるシーンとしましたが、試作段階ではビルにしていました。せっかくなので画像を残しておきます。
+最終的には海の上にカドが浮かんでいるシーンとしましたが、ビルのシーンも試作しました。せっかくなので画像を残しておきます。
 
 [![ビルの試作段階](/images/posts/2017-06-30-raymarching-kado/proto.png)](/images/posts/2017-06-30-raymarching-kado/proto.png)
 
 # 余談
 
-最後に余談なのですが、作品の重要な要素であるカドとワムのどちらとも知り合いが関わっていて、あまりの偶然にびっくりしました。
+最後に余談なのですが、作品の重要な要素であるカドとワムのどちらとも知り合いが関わっていて、あまりの世間の狭さに驚きました。
 
-カドのレンダリングはレイトレ合宿での知り合いの[Pheemaさん](https://twitter.com/_Pheema_/)のUnityのレイマーチングによるものでした。
+カドのレンダリングはレイトレ合宿などで一緒になった[Pheemaさん](https://twitter.com/_Pheema_/)のUnityのレイマーチングによるものでした。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">先程TOKYOMXで放送された『正解するカド』で、「カド」などの3Dフラクタル描画に関わりましたー。Unityでゴリゴリとレイマーチングしております！よろしくお願いいたしますー！ / <a href="https://t.co/8J8e3Yrff8">https://t.co/8J8e3Yrff8</a></p>&mdash; Pheema (@_Pheema_) <a href="https://twitter.com/_Pheema_/status/850347680039489536">2017年4月7日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
