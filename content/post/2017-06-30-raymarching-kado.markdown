@@ -130,7 +130,7 @@ intersection.reflectance = f0 + (1.0 - f0) * pow(1.0 + ray.direction.y, 5.0);
 
 最後に余談なのですが、作品の重要な要素であるカドとワムのどちらとも知り合いが関わっていて、あまりの世間の狭さに驚きました。
 
-カドのレンダリングはレイトレ合宿などで一緒になった[Pheemaさん](https://twitter.com/_Pheema_/)のUnityのレイマーチングによるものでした。
+カドのレンダリングはレイトレ合宿などで繋がりのある[Pheemaさん](https://twitter.com/_Pheema_/)のUnityのレイマーチングによるものでした。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">先程TOKYOMXで放送された『正解するカド』で、「カド」などの3Dフラクタル描画に関わりましたー。Unityでゴリゴリとレイマーチングしております！よろしくお願いいたしますー！ / <a href="https://t.co/8J8e3Yrff8">https://t.co/8J8e3Yrff8</a></p>&mdash; Pheema (@_Pheema_) <a href="https://twitter.com/_Pheema_/status/850347680039489536">2017年4月7日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
