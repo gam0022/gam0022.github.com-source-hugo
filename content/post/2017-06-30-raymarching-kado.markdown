@@ -22,7 +22,7 @@ toc = true
 
 [![カド](/images/posts/2017-06-30-raymarching-kado/kado.png)](/images/posts/2017-06-30-raymarching-kado/kado.png)
 
-レイマーチングでカド(MandebBox)を描画した結果です。
+レイマーチングでカド(MandelBox)を描画した結果です。
 
 次のリンクからブラウザ上から動かすこともできます。
 
@@ -36,7 +36,7 @@ toc = true
 
 ## カドのレンダリング
 
-アニメの「カド」はMandebBoxと呼ばれるフラクタル図形をベースに改造したもののようです。
+アニメの「カド」はMandelBoxと呼ばれるフラクタル図形をベースに改造したもののようです。
 
 - [謎に満ちたアニメCGプロジェクト『正解するカド』（総監督：村田和也）に迫る 〜 mystery 01：3Dフラクタル 〜](https://cgworld.jp/feature/201602-kado01-cgw211.html)
 
