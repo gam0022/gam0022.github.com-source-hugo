@@ -28,6 +28,10 @@ toc = true
 
 - [http://gam0022.net/webgl/#raymarching_kado](http://gam0022.net/webgl/#raymarching_kado)
 
+Pixel Ratioを2xにすると、綺麗な結果になりますが、描画の負荷が4倍になります。
+
+2xにする場合は、PauseをONにするのがオススメです。カメラを動かさない限り再描画が行われなくなり、描画の負荷が下がります。
+
 <!--more-->
 
 # 解説
