@@ -28,9 +28,17 @@ toc = true
 
 - [http://gam0022.net/webgl/#raymarching_kado](http://gam0022.net/webgl/#raymarching_kado)
 
+PauseをOFFにすると、カドがアニメーションします（負荷注意）。
+
+描画の負荷が重たすぎる場合には、Pixel Ratioを1/2xか1/4xにしてください。
+
+<!--
+
 Pixel Ratioを2xにすると、綺麗な結果になりますが、描画の負荷が4倍になります。
 
 2xにする場合は、PauseをONにするのがオススメです。カメラを動かさない限り再描画が行われなくなり、描画の負荷が下がります。
+
+-->
 
 <!--more-->
 
@@ -154,3 +162,26 @@ intersection.reflectance = f0 + (1.0 - f0) * pow(1.0 + ray.direction.y, 5.0);
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 こんなことってあるんですね…！
+
+# アニメ版のカドの再現（2017/07/03追記）
+
+notargsさんがアニメ版のカドの再現のヒントをくださったので、自分もチャンジしました。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">- カドの内部に入った光は全て吸収する（レイが通り抜けた場合は出力を黒にする）<br>- ２つのMandelboxを重ねる<br>- zに掛けるScaleの値をマイナスにする<br>あたりがカドっぽくするコツだった</p>&mdash; !args(のたぐす) (@notargs) <a href="https://twitter.com/notargs/status/881448613993267201">2017年7月2日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+こちらは[CGWORLDの記事](https://cgworld.jp/feature/201602-kado01-cgw211.html)の画像の転載です。これをリファレンスとします。
+
+![CGWORLDの記事のリファレンス画像](/images/posts/2017-06-30-raymarching-kado/reference.jpg)
+
+Scaleをマイナスにして、大小の違う2つのMandelBoxを重ねてみました。
+内部に入った光を吸収させる替わりにAOを強めにしました。
+すると、本当にアニメ版のカドにかなり近い結果になりました！！これは面白いですね！
+
+[![アニメ版のカドの再現](/images/posts/2017-06-30-raymarching-kado/anime.png)](/images/posts/2017-06-30-raymarching-kado/anime.png)
+
+[![アニメ版のカドの再現2](/images/posts/2017-06-30-raymarching-kado/anime2.png)](/images/posts/2017-06-30-raymarching-kado/anime2.png)
+
+こちらからアニメ版に近いカドを動かすことができます。MandelBoxを2つ重ねたことで、負荷が約2倍になりました。
+
+- [http://gam0022.net/webgl/#raymarching_kado_anime](http://gam0022.net/webgl/#raymarching_kado_anime)
