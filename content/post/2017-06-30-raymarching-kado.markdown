@@ -185,3 +185,22 @@ Scaleをマイナスにして、大小の違う2つのMandelBoxを重ねてみ�
 こちらからアニメ版に近いカドを動かすことができます。MandelBoxを2つ重ねたことで、負荷が約2倍になりました。
 
 - [http://gam0022.net/webgl/#raymarching_kado_anime](http://gam0022.net/webgl/#raymarching_kado_anime)
+
+# カドを再現する人たち（2017/07/03追記）
+
+カドのレンダリングに挑戦している方が自分以外にも現れたので、観測範囲内でまとめました。
+
+notargsさん
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">カドをほぼ再現できました！ <a href="https://t.co/nXFYvFRN9w">pic.twitter.com/nXFYvFRN9w</a></p>&mdash; !args(のたぐす) (@notargs) <a href="https://twitter.com/notargs/status/881444119666491392">2017年7月2日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+cx20さん
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">[WebGL] Grimoire.js で <a href="https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash">#正解するカド</a> っぽいものを表現してみるテスト <a href="https://twitter.com/hashtag/jsdoit?src=hash">#jsdoit</a> <a href="https://t.co/OORNMSemzo">https://t.co/OORNMSemzo</a></p>&mdash; cx20 (@cx20) <a href="https://twitter.com/cx20/status/881121051186417664">2017年7月1日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+自分
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash">#正解するカド</a> の「カド」を <a href="https://twitter.com/hashtag/WebGL?src=hash">#WebGL</a> のレイマーチングでリアルタイムに描画しました！いい感じに仕上がったので、徹夜した甲斐がありました！今晩の最終話が楽しみです！ <a href="https://twitter.com/hashtag/threejs?src=hash">#threejs</a><a href="https://t.co/pMRREywdyy">https://t.co/pMRREywdyy</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/880562345990275072">2017年6月29日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
