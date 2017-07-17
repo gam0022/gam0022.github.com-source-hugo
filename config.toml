@@ -53,22 +53,22 @@ googleAnalytics = "UA-84469205-1"
   [params.about]
     interests = [
       "Computer Graphics",
-      "Raymarching using GPU",
-      "Raytracing",
+      "GPU Programming",
       "Realtime Rendering",
-      "WebGL",
+      "Offline Rendering",
+      "Demoscene",
     ]
 
     skills = [
       "three.js / WebGL",
+      "Unity",
       "GLSL",
       "C++/C",
       "C#",
-      #"Unity",
       "Ruby on Rails",
-      "HTML/CSS",
+      "PHP",
       "JavaScript",
-      #"CoffeeScript",
+      "HTML/CSS",
     ]
 
     str_interests = "興味 / Interests"
