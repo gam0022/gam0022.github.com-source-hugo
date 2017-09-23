@@ -1,0 +1,143 @@
++++
+draft = false
+tags = [
+  "CG", "レイトレーシング", "パストレーシング"
+]
+title = "レイトレ合宿5‽に参加しました！"
+slug = "rtcamp5"
+date = "2017-09-18T19:29:40+09:00"
+image = "/images/posts/2017-09-18-rtcamp5/result.png"
+toc = true
+math = false
+
++++
+
+9月9日(土)～9月10日(日)に諏訪湖で開催された[レイトレ合宿5‽](https://sites.google.com/site/raytracingcamp5/)に参加しました！
+
+去年に初参加させていただき、今年で2回目の参加になります。去年の参加報告は[こちら](http://gam0022.hatenablog.com/entry/raytracingcamp4)です。
+
+今年もレンダリング分野の最先端でご活躍されている方々がたくさん参加されていました。
+Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラーの開発に携わっている大垣真二さん、
+[SIGGRAPH 2017にレンダリングの論文がアクセプト](http://lightmetrica.org/h-otsu/project/inverse/)された研究者のHisanari Otsuさんなどが参加されていました。
+
+猛者ばかり中、私はRustでパストレーサ（hanamaru-renderer）を実装して、なんとか9位をいただきました！
+
+こんな感じの画像をレンダリングしました。
+
+[![result](/images/posts/2017-09-18-rtcamp5/result.png)](/images/posts/2017-09-18-rtcamp5/result.png)
+
+この記事では自作のパストレーサの解説を中心に紹介します。
+
+ソースコードはGitHubに公開しています。
+
+- [https://github.com/gam0022/hanamaru-renderer/](https://github.com/gam0022/hanamaru-renderer/)
+
+こちらは合宿当日のプレゼン資料です。
+
+<script async class="speakerdeck-embed" data-slide="1" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+# 主な仕様
+
+- ポリゴンメッシュに対応
+    - obj ファイルの読み込み
+    - BVHで衝突判定を高速化
+- albedo / roughness / emission をテクスチャで指定可能
+    - PBR用のテクスチャ素材などを使える
+- 薄レンズモデルによる被写界深度（レンズのピンぼけ）
+- Image Based Lighting
+    - CubeMapに対応
+
+# パストレーシングの高速化
+
+今年の合宿では4分33秒以内にレンダリングするルールがあったため、最低限の高速化には取り組みました。
+
+出力画像の解像度についてはルールは決まっていませんでしたが、1980x1080を採用しました。
+
+パストレーシングの高速化のアプローチには主に2通りあります。
+
+1. 衝突判定の高速化
+2. モンテカルロ積分のサンプリングの効率化
+
+それぞれ何を行ったのか簡単に紹介します。
+
+## 衝突判定の高速化
+
+衝突判定の高速化としてはBVH（Bounding Volume Hierarchy）を実装しました。
+
+シーン内のすべてのオブジェクトを総当りで衝突判定せずに、空間分割によって衝突判定の回数を減らします。
+
+具体的な実装などについては、[お餅](https://twitter.com/omochi64)さんの記事を参考にしました。
+
+- [Bounding Volume Hierarchy (BVH) の実装 - 構築編](http://qiita.com/omochi64/items/9336f57118ba918f82ec)
+- [Bounding Volume Hierarchy (BVH) の実装 - 交差判定編](http://qiita.com/omochi64/items/c2bbe92d707b280896fd)
+
+お餅さんの記事では、Surface Area Heuristicsという手法で評価関数をつかった領域分割をしていましたが、
+今回は実装の時間が無かったので、領域の最長辺を軸に選んで要素数で2分割する実装にしました。
+単純な分割方法ではありますが、総当りと比較すれば十分に高速化できました。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">全探索だと251.251 sec<br>軸をランダムに選んでポリゴンを2等分するBVHだと 36.28 sec<br>AABBの最長辺を軸に選んでポリゴンを2等分するBVHだと 28.424 sec</p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/896963950947975168">2017年8月14日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## モンテカルロ積分のサンプリングの効率化
+
+サンプリングの効率化のための手法としては、重点的サンプリング、多重重点的サンプリング、Next Event Estimationなどがあります。
+
+詳しくは[Shocker](https://twitter.com/Shocker_0x15)さんの資料を参照してください。
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/aoZ5RhsL8f6NPC" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shocker_0x15/ss-52688052" title="パストレーシング" target="\_blank">パストレーシング</a> </strong> from <strong><a href="https://www.slideshare.net/shocker_0x15" target="\_blank">Shin Watanabe</a></strong> </div>
+
+今回はレンダリング方程式のcos項に比例した重点的サンプリングのみ行いました。
+
+レンダリング方程式のcos項に比例した重点的サンプリングを行うと、
+確率密度関数で除算する処理でレンダリング方程式のcos項を打ち消すことができ、パストレーシング実装をシンプルにできます。
+
+今回のシーンではIBL光源が支配的なため、cos項に比例した重点的サンプリングのみで十分な速度でレンダリングの収束しましたが、
+光源が小さいシーンだと分散が大きくなりすぎて収束が遅くなるはずです。
+
+来年までにはNext Event Estimationに挑戦してみたいです。
+
+# 開発中の振り返り
+
+## Rustについて
+
+去年はC++で開発したのですが、新しい言語を触ってみたいというモチベーションが高まっていたので、Rustで0から開発することにしました。
+
+Rustについて何も知らなかったので、まずは通勤中に[プログラミング言語Rust](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/README.html)を読んでRustの思想を学びました。
+
+Rustにはcargoというビルドツール兼パッケージ管理システムが標準搭載されていて、便利そうだと思ったのですが、実際に本当に便利でした。
+
+開発前半は通勤中にMacで開発して、開発後半は高スペックなWindowsデスクトップに開発環境を移行したのですが、
+cargoのおかげでMacもWindowsも `cargo run`を叩くだけでパッケージの依存関係を解決してビルドできるので、
+開発環境を行き来するコストは全くありませんでした。
+
+一方でRustの学習コストはやはり高いと感じました。
+Rustの予習に1週間かけましたが、いざコードを書いてみると所有権や型のサイズが不定などのコンパイルエラーに阻まれて、心が折れそうになりました。
+特に所有権やライフタイムは自分には全く馴染みの無い概念で理解するのに苦労させられました。
+
+最初は大変でしたが、慣れてくると、コンパイルエラーに阻まれることはなくりました。
+所有権を意識することでコードもスッキリしました。
+
+Rustは所有権という仕組みによってデータ競合を排除し、デフォルトでスタック領域にメモリを確保してGCを不要にしているので、
+この辺は「学習コスト」対「安全性＋実行時パフォーマンス」のトレードオフだろうと感じました。
+
+dead code
+
+リスト処理
+
+並列化
+
+enum
+
+## 制作の過程
+
+モチベーション維持のために進捗を細かくTwitterにアップロードするようにしました。
+
+徐々にステップアップしていく様子を自分でも振り返ることができたので、便利でした。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">土日はRustを頑張っていた。<br>鬼門と噂の所有権や借用については、予習してきたので、思ったより苦労せずに済んだ。<br>Rustはスタック領域にメモリ確保するので、structのサイズが事前に分かってないとコンパイルできない仕様に悩まされた(Box&lt;T&gt;で解決)。</p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891665053644054529">2017年7月30日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">Rustで生成した最初の画像<br>image crateが超便利だった。 <a href="https://t.co/ZCZrg05ms6">pic.twitter.com/ZCZrg05ms6</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891665290659889153">2017年7月30日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+# まとめ
