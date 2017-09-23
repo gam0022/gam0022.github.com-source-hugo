@@ -1,7 +1,7 @@
 +++
 draft = false
 tags = [
-  "CG", "レイトレーシング", "パストレーシング"
+  "CG", "レイトレーシング", "パストレーシング", "Rust"
 ]
 title = "レイトレ合宿5‽に参加しました！"
 slug = "rtcamp5"
@@ -46,6 +46,10 @@ Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラー�
 - 薄レンズモデルによる被写界深度（レンズのピンぼけ）
 - Image Based Lighting
     - CubeMapに対応
+
+# シーンの解説
+
+
 
 # パストレーシングの高速化
 
@@ -104,29 +108,52 @@ Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラー�
 
 Rustについて何も知らなかったので、まずは通勤中に[プログラミング言語Rust](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/README.html)を読んでRustの思想を学びました。
 
-Rustにはcargoというビルドツール兼パッケージ管理システムが標準搭載されていて、便利そうだと思ったのですが、実際に本当に便利でした。
+Rustにはcargoというビルドツール兼パッケージ管理システムが標準搭載されていて、これはとても便利でした。
+`cargo run`を叩くだけで、自動的にパッケージをフェッチし、依存関係を解決してビルドと実行ができます。
 
-開発前半は通勤中にMacで開発して、開発後半は高スペックなWindowsデスクトップに開発環境を移行したのですが、
-cargoのおかげでMacもWindowsも `cargo run`を叩くだけでパッケージの依存関係を解決してビルドできるので、
-開発環境を行き来するコストは全くありませんでした。
+開発前半は通勤中にMacで開発して、開発後半は高スペックなWindowsデスクトップに開発環境を移行しました。
+cargoのおかげでMacもWindowsも同じようにビルドができるので、開発環境を行き来するコストが全くありませんでした。
 
 一方でRustの学習コストはやはり高いと感じました。
 Rustの予習に1週間かけましたが、いざコードを書いてみると所有権や型のサイズが不定などのコンパイルエラーに阻まれて、心が折れそうになりました。
 特に所有権やライフタイムは自分には全く馴染みの無い概念で理解するのに苦労させられました。
 
-最初は大変でしたが、慣れてくると、コンパイルエラーに阻まれることはなくりました。
+最初は大変でしたが、慣れてくればコンパイルエラーに阻まれることはなくりました。
 所有権を意識することでコードもスッキリしました。
 
-Rustは所有権という仕組みによってデータ競合を排除し、デフォルトでスタック領域にメモリを確保してGCを不要にしているので、
+Rustは所有権という仕組みによってデータ競合を排除したり、ガーベジコレクタなしを実現しているので、
 この辺は「学習コスト」対「安全性＋実行時パフォーマンス」のトレードオフだろうと感じました。
 
-dead code
+C++の経験がある人は[Rustは何が新しいのか（基本的な言語機能の紹介） - いもす研 (imos laboratory)](https://imoz.jp/note/rust-functions.html)という記事を読むとRustがどういう言語なのか雰囲気を掴めると思いました。
 
-リスト処理
+細かい話になりますが、[列挙型](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/enums.html)は良いと思いました。
+Cのenumとは違って、構造体やタプルのような各ヴァリアントに関連するデータを持たせることができるので、マテリアルのタイプの定義に便利でした。
 
-並列化
+```rust
+#[derive(Clone, Debug)]
+pub enum SurfaceType {
+    Diffuse,
+    Specular,
+    Refraction { refractive_index: f64 },
+    GGX { roughness: f64 },
+    GGXReflection { roughness: f64, refractive_index: f64 },
+}
+```
 
-enum
+https://github.com/gam0022/hanamaru-renderer/blob/d4eb5320fbe9ed18de152496c6e3aa070e947dfb/src/material.rs
+
+他にも[リスト処理](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/iterators.html)も充実していて好感が持てました。
+
+Rustの開発環境は[IntelliJにRustのプラグイン](https://intellij-rust.github.io/)をインストールするのが最強だと思いました。
+関数定義にジャンプできるのはもちろん、メソッド名の補完やリファクタリングなども普通に使えます。
+
+## デバッグ機能
+
+後半になるとシーンの編集作業がメインになってくるのですが、シーンの確認のために何分も待機するのは大変です。
+そこで高速にレンダリングするモードを開発初期から準備しました。
+それ以外にも法線や深度値、焦点面からの距離などを表示するモードを実装して、シーン編集の効率を向上させました。
+
+![debug](/images/posts/2017-09-18-rtcamp5/debug.jpg)
 
 ## 制作の過程
 
@@ -138,6 +165,33 @@ enum
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">Rustで生成した最初の画像<br>image crateが超便利だった。 <a href="https://t.co/ZCZrg05ms6">pic.twitter.com/ZCZrg05ms6</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891665290659889153">2017年7月30日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">なんとかレイを飛ばすことに成功した図<br>Rust、慣れるまでがやっぱり大変だった...<br>実装1割、コンパイル通すの9割みたいな時間配分ｗ <a href="https://t.co/bmD8pwaWRR">pic.twitter.com/bmD8pwaWRR</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891665866089091072">2017年7月30日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">Planeを実装。<br>スクリーン上のY軸を反転させるのを忘れていて、座標系が何もかもバグってたのを修正。<br>ずっと床が無い状態だったので気がつけなかった…ｗ<br>影もつけた。 <a href="https://t.co/MKtlNsBHyB">pic.twitter.com/MKtlNsBHyB</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891723700139024384">2017年7月30日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">パストレができるようになった。<br>Rayonで並列処理も実現できた。<br>Macでコード書いていたけど、rustupでWindowsにRustインストールしたら、手直し0でcargo buildでWindows用バイナリ生成できた。Rust良いね。 <a href="https://t.co/VhIqlu1bqe">pic.twitter.com/VhIqlu1bqe</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/893725960180187137">2017年8月5日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">SuperSampling + IBL実装<br>フルスクラッチでCubeTexture実装したことなかったので、画像の向きが滅茶苦茶になるのを治すのに苦労した。<br>Bilinearフィルター実装しないとジャギがやばいね… <a href="https://t.co/zZIl36eXEV">pic.twitter.com/zZIl36eXEV</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/893889557027987456">2017年8月5日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">Bilinearフィルターできた。<br>一度もバグらせることなく実装できたので良かった。 <a href="https://t.co/462rdPWGjP">pic.twitter.com/462rdPWGjP</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/894090372707606528">2017年8月6日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">GGXと屈折できた〜<br>右の紫はGGX+屈折の磨りガラスにしているけど、床が単色だから普通の屈折面と区別がつかないw <a href="https://t.co/jlNaPeWRI6">pic.twitter.com/jlNaPeWRI6</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/894204969674391552">2017年8月6日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">テクスチャ対応とガンマ補正した。<br>エイリアシングが酷すぎるが、Mipmapの実装は今回は見送ろうかな <a href="https://t.co/XMGUbfJ3Ab">pic.twitter.com/XMGUbfJ3Ab</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/895954424656388097">2017年8月11日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">ポリゴンの衝突判定とobjファイルのローダを実装した。<br>モデルは1000ポリゴンに削ったスタンフォードバニー。<br>ついでに簡単なBVHも実装してポリゴンの衝突判定を高速化してみた。 <a href="https://t.co/7yWJQnnpyR">pic.twitter.com/7yWJQnnpyR</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/896963739412340736">2017年8月14日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">被写界深度（レンズのピンぼけ）をシミュレーションした。<br>薄レンズモデルで、絞り羽根は円形。<br>時間があれば、星型とか六角形とか、面白い絞り羽根も試してみたい。 <a href="https://t.co/YAkiJwF0WA">pic.twitter.com/YAkiJwF0WA</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/897685643672920064">2017年8月16日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 # まとめ
