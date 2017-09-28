@@ -17,16 +17,17 @@ math = false
 去年に初参加させていただき、今年で2回目の参加になります。去年の参加報告は[こちら](http://gam0022.hatenablog.com/entry/raytracingcamp4)です。
 
 今年もレンダリング分野の最先端でご活躍されている方々がたくさん参加されていました。
-Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラーの開発に携わっている大垣真二さん、
-[SIGGRAPH 2017にレンダリングの論文がアクセプト](http://lightmetrica.org/h-otsu/project/inverse/)された研究者のHisanari Otsuさんなどが参加されていました。
+Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラーの開発に携わっている[大垣真二](https://twitter.com/redqueenrender)さん、
+[ファーストオーサーの論文がSIGGRAPH 2017にアクセプトされた](http://lightmetrica.org/h-otsu/project/inverse/)研究者の[Hisanari Otsu](https://twitter.com/hi2p_perim)さんなどが参加されていました。
+他にも[t-pot.com](http://t-pot.com/)の[今給黎隆](https://twitter.com/Imagire)さん、
+[project-asura.com](http://project-asura.com/)の[Pocol](https://twitter.com/projectasura)さんなど、
+CGの勉強をした人なら必ずお世話になるような有名なサイトの管理人たちも参加されていました。
 
 猛者ばかり中、私はRustでパストレーサ（hanamaru-renderer）を実装して、なんとか9位をいただきました！
 
 こんな感じの画像をレンダリングしました。
 
 [![result](/images/posts/2017-09-18-rtcamp5/result.png)](/images/posts/2017-09-18-rtcamp5/result.png)
-
-この記事では自作のパストレーサの解説を中心に紹介します。
 
 ソースコードはGitHubに公開しています。
 
@@ -36,20 +37,43 @@ Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラー�
 
 <script async class="speakerdeck-embed" data-slide="1" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-# 主な仕様
+この記事では自作のパストレーサの解説を中心に紹介します。
+
+当日の様子は[Pentan](https://twitter.com/c5h12)さんの[記事](http://c5h12.hatenablog.com/entry/2017/09/17/184007)にまとめられいます。
+
+# 主な特徴
+
+BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズモデルによる被写界深度を入れたり、IBLしたりしました。
 
 - ポリゴンメッシュに対応
-    - obj ファイルの読み込み
+    - objファイルの読み込みに対応
     - BVHで衝突判定を高速化
-- albedo / roughness / emission をテクスチャで指定可能
+- albedo / roughness / emissionをテクスチャで指定可能
     - PBR用のテクスチャ素材などを使える
 - 薄レンズモデルによる被写界深度（レンズのピンぼけ）
-- Image Based Lighting
+- Image Based Lighting（IBL）
     - CubeMapに対応
+- 対応マテリアル
+    - 完全拡散反射
+    - 完全鏡面反射
+    - 金属面（GGX）
+    - ガラス面（GGX）
 
 # シーンの解説
 
+宝石をプロシージャル（？）に配置してシーンを作りました。
 
+- うさぎのモデル
+    - [Stanford Bunny](http://graphics.stanford.edu/data/3Dscanrep/)を[MeshLab](http://www.meshlab.net/)で1000ポリゴンにリダクション
+- 宝石のモデル
+    - 同期の3Dクリエイターに作っていただいた
+    - 拡大・平行移動・回転の行列を実装（頂点変換を実装）
+    - 重ねて置けない制約をつけつつ、乱数でいい感じに配置（43個）
+    - seed値を変えればシーンも変化する（ランタイム時にプロシージャルに配置）
+- 床はPBR用のテクスチャを拝借
+    - [Marble Floor Tiles Substance 2 (Customizable)](https://www.textures.com/download/substance0010/125790)
+- CubeMap用のテクスチャも拝借
+    - [Humus - Textures](http://www.humus.name/index.php?page=Textures)
 
 # パストレーシングの高速化
 
@@ -96,15 +120,29 @@ Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラー�
 確率密度関数で除算する処理でレンダリング方程式のcos項を打ち消すことができ、パストレーシング実装をシンプルにできます。
 
 今回のシーンではIBL光源が支配的なため、cos項に比例した重点的サンプリングのみで十分な速度でレンダリングの収束しましたが、
-光源が小さいシーンだと分散が大きくなりすぎて収束が遅くなるはずです。
+光源が小さいシーンだと分散が大きいために収束が遅くなってしまいます。
 
 来年までにはNext Event Estimationに挑戦してみたいです。
 
 # 開発中の振り返り
 
+開発期間は約1ヶ月ちょっとでした。7/30くらいに開発を開始して9/8の締め切りギリギリまで開発していました。
+
+最低限のパストレが動くまでは1週間くらい、ポリゴンに対応してBVHで高速化までは2週間くらいで実装できました。
+シーン調整していくうちに、気づきにくいバグが見つかったので、後半はシーン構築のための機能を追加しつつ、バグ修正をしていました。
+
 ## Rustについて
 
-去年はC++で開発したのですが、新しい言語を触ってみたいというモチベーションが高まっていたので、Rustで0から開発することにしました。
+去年はC++で開発したのですが、今年はRustでフルスクラッチで書き直しました。
+
+こんな感じの理由でRustを採用しました。
+
+- 実行時のパフォーマンスを重視している（並列処理が簡単にできて、実行時のオーバヘッドが低いことはレイトレには必須条件）
+- 高いポータビリティ（MacでもWindowsでも使える）
+- Mollizaが開発していることもあり、WebAssemblyに出力ができて、Webブラウザ上にポートできる
+- 社内でRustが流行する兆しがあった（KLab社員が2人もRustでレイトレしていた！）
+  - [Rust でレイトレーシング入門しました](https://qiita.com/kiritex/items/786dbed4b7a2a22cbb89) by [@trigott](https://twitter.com/trigott)さん
+  - [hhatto/ray-tracing-in-one-weekend-in-rust](https://github.com/hhatto/ray-tracing-in-one-weekend-in-rust) by [@hhatto](https://twitter.com/hhatto)さん
 
 Rustについて何も知らなかったので、まずは通勤中に[プログラミング言語Rust](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/README.html)を読んでRustの思想を学びました。
 
@@ -124,9 +162,9 @@ Rustの予習に1週間かけましたが、いざコードを書いてみると
 Rustは所有権という仕組みによってデータ競合を排除したり、ガーベジコレクタなしを実現しているので、
 この辺は「学習コスト」対「安全性＋実行時パフォーマンス」のトレードオフだろうと感じました。
 
-C++の経験がある人は[Rustは何が新しいのか（基本的な言語機能の紹介） - いもす研 (imos laboratory)](https://imoz.jp/note/rust-functions.html)という記事を読むとRustがどういう言語なのか雰囲気を掴めると思いました。
+C++の経験がある人は[Rustは何が新しいのか（基本的な言語機能の紹介） - いもす研 (imos laboratory)](https://imoz.jp/note/rust-functions.html)という記事を読むとRustの所有権の雰囲気を掴めると思いました。
 
-細かい話になりますが、[列挙型](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/enums.html)は良いと思いました。
+Rustの特徴はたくさんあるのですが、[列挙型](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/enums.html)は良いと思いました。
 Cのenumとは違って、構造体やタプルのような各ヴァリアントに関連するデータを持たせることができるので、マテリアルのタイプの定義に便利でした。
 
 ```rust
@@ -142,24 +180,50 @@ pub enum SurfaceType {
 
 https://github.com/gam0022/hanamaru-renderer/blob/d4eb5320fbe9ed18de152496c6e3aa070e947dfb/src/material.rs
 
+null許容型（[Option](https://doc.rust-lang.org/std/option/enum.Option.html)）もenumで実装されていました。
+`Option<T>`を`Some(T)`または`None`をとるenumにすることでnullチェック漏れをコンパイル時の型のチェックでエラーにできるのは賢いと思いました。
+
+```rust
+pub enum Option<T> {
+    None,
+    Some(T),
+}
+```
+
+HaskellのMaybeモナドと全く同じ概念なので、関数型言語の良いところも取り入れているのかなと思いました。
+
 他にも[リスト処理](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/iterators.html)も充実していて好感が持てました。
 
-Rustの開発環境は[IntelliJにRustのプラグイン](https://intellij-rust.github.io/)をインストールするのが最強だと思いました。
-関数定義にジャンプできるのはもちろん、メソッド名の補完やリファクタリングなども普通に使えます。
+あと個人的にRustの開発環境は[IntelliJにRustのプラグイン](https://intellij-rust.github.io/)をインストールするのが最強だと思いました。
+関数定義にジャンプできるのはもちろん、メソッド名の補完やリファクタリングなども普通に使えます。Vimを卒業しました。
 
 ## デバッグ機能
 
-後半になるとシーンの編集作業がメインになってくるのですが、シーンの確認のために何分も待機するのは大変です。
+レンダラーがある程度完成したら、シーンの編集作業がメインになっていきますが、シーンの確認のために何分も待つのは大変です。
+
 そこで高速にレンダリングするモードを開発初期から準備しました。
-それ以外にも法線や深度値、焦点面からの距離などを表示するモードを実装して、シーン編集の効率を向上させました。
+
+その他、法線や深度値、焦点面からの距離などを表示するモードを実装して、シーン編集の効率を向上させました。
 
 ![debug](/images/posts/2017-09-18-rtcamp5/debug.jpg)
 
-## 制作の過程
+# まとめ
+
+締め切り駆動開発でしたが、前から試したかったBVHなどを実装できたので良かったです。
+Rustも手ごわかったですが、気合でなんとか習得することができました。
+
+セミナーでは大垣さんの20年間レンダラーを開発しているうちに考えたこと、うしおさんのファーのレンダリング、Otsuさんの最新のPM/MCMC系手法のまとめのお話を聞きました。
+また、他の参加者からにNext Event Estimationの疑問点、双方向パストレーシングについてを教えていただき、レイトレへのモチベーションが高まりました。
+レンダリング分野で活躍されているエンジニアや研究者からレイトレを教えていただく貴重な体験ができました。
+宿の料理や温泉から見える夕暮れの諏訪湖も最高でした。
+
+運営・企画してくださった[q](https://twitter.com/q_cinnamon)さん[hole](https://twitter.com/h013)さん本当にありがとうございました。
+
+# おまけ：制作の過程
 
 モチベーション維持のために進捗を細かくTwitterにアップロードするようにしました。
 
-徐々にステップアップしていく様子を自分でも振り返ることができたので、便利でした。
+徐々にステップアップしていく様子を自分でも振り返ることができたので、やってよかったと思います。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">土日はRustを頑張っていた。<br>鬼門と噂の所有権や借用については、予習してきたので、思ったより苦労せずに済んだ。<br>Rustはスタック領域にメモリ確保するので、structのサイズが事前に分かってないとコンパイルできない仕様に悩まされた(Box&lt;T&gt;で解決)。</p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891665053644054529">2017年7月30日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -194,4 +258,12 @@ Rustの開発環境は[IntelliJにRustのプラグイン](https://intellij-rust.
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">被写界深度（レンズのピンぼけ）をシミュレーションした。<br>薄レンズモデルで、絞り羽根は円形。<br>時間があれば、星型とか六角形とか、面白い絞り羽根も試してみたい。 <a href="https://t.co/YAkiJwF0WA">pic.twitter.com/YAkiJwF0WA</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/897685643672920064">2017年8月16日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-# まとめ
+賞品もいただいたときのツイートです。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">入賞商品の「つかめる水」をいただいました😂<br>来年のシーンは決まりましたね <a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash">#レイトレ合宿</a> <a href="https://t.co/VihgAITecy">pic.twitter.com/VihgAITecy</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/906670183867080704">2017年9月10日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+資料公開したときのツイートです。
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash">#レイトレ合宿</a> のためにRustで開発したパストレーサの紹介スライドです。 BVHによるポリゴンとの衝突判定を高速化、薄レンズモデルによる被写界深度などしました😆<a href="https://t.co/itDLyWNpFx">https://t.co/itDLyWNpFx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/906817610246848512">2017年9月10日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
