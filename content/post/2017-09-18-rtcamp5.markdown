@@ -14,14 +14,16 @@ math = false
 
 9月9日(土)～9月10日(日)に諏訪湖で開催された[レイトレ合宿5‽](https://sites.google.com/site/raytracingcamp5/)に参加しました！
 
+レイトレ合宿は完全自作のレイトレーサーを走らせて画像の美しさを競うイベントです。
+
 去年に初参加させていただき、今年で2回目の参加になります。去年の参加報告は[こちら](http://gam0022.hatenablog.com/entry/raytracingcamp4)です。
 
 今年もレンダリング分野の最先端でご活躍されている方々がたくさん参加されていました。
-Redqueenレンダラーの開発者で現在はAutodeskでArnoldレンダラーの開発に携わっている[大垣真二](https://twitter.com/redqueenrender)さん、
+個人でRedqueenレンダラーを開発し、本職でAutodeskでArnoldレンダラーを開発されている[大垣真二](https://twitter.com/redqueenrender)さん、
 [ファーストオーサーの論文がSIGGRAPH 2017にアクセプトされた](http://lightmetrica.org/h-otsu/project/inverse/)研究者の[Hisanari Otsu](https://twitter.com/hi2p_perim)さんなどが参加されていました。
 他にも[t-pot.com](http://t-pot.com/)の[今給黎隆](https://twitter.com/Imagire)さん、
 [project-asura.com](http://project-asura.com/)の[Pocol](https://twitter.com/projectasura)さんなど、
-CGの勉強をした人なら必ずお世話になるような有名なサイトの管理人たちも参加されていました。
+CGの勉強をしたことがあればお世話になるような有名なサイトの管理人たちも参加されていました。
 
 猛者ばかりの中、私はRustでパストレーサ（hanamaru-renderer）を実装して、なんとか9位をいただきました！
 
@@ -66,7 +68,7 @@ BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズ�
 - うさぎのモデル
     - [Stanford Bunny](http://graphics.stanford.edu/data/3Dscanrep/)を[MeshLab](http://www.meshlab.net/)で1000ポリゴンにリダクション
 - 宝石のモデル
-    - 同期の3Dクリエイターに作っていただいた
+    - 同期の3Dクリエイターに依頼
     - 拡大・平行移動・回転の行列を実装（頂点変換を実装）
     - 重ねて置けない制約をつけつつ、乱数でいい感じに配置（43個）
     - seed値を変えればシーンも変化する（ランタイム時にプロシージャルに配置）
