@@ -18,20 +18,13 @@ math = false
 
 去年に初参加させていただき、今年で2回目の参加になります。去年の参加報告は[こちら](http://gam0022.hatenablog.com/entry/raytracingcamp4)です。
 
-今年もレンダリング分野の最先端でご活躍されている方々がたくさん参加されていました。
-個人でRedqueenレンダラーを開発し、本職でAutodeskでArnoldレンダラーを開発されている[大垣真二](https://twitter.com/redqueenrender)さん、
-[ファーストオーサーの論文がSIGGRAPH 2017にアクセプトされた](http://lightmetrica.org/h-otsu/project/inverse/)研究者の[Hisanari Otsu](https://twitter.com/hi2p_perim)さんなどが参加されていました。
-他にも[t-pot.com](http://t-pot.com/)の[今給黎隆](https://twitter.com/Imagire)さん、
-[project-asura.com](http://project-asura.com/)の[Pocol](https://twitter.com/projectasura)さんなど、
-CGの勉強をしたことがあればお世話になるような有名なサイトの管理人たちも参加されていました。
+私はRustでパストレーサ（Hanamaruレンダラー）を実装して、こんな感じの画像をレンダリングしました。
 
-猛者ばかりの中、私はRustでパストレーサ（hanamaru-renderer）を実装して、なんとか9位をいただきました！
-
-こんな感じの画像をレンダリングしました。
+今年は16人中9位だったので、去年の13人中10位よりは進歩しました！
 
 [![result](/images/posts/2017-09-18-rtcamp5/result.png)](/images/posts/2017-09-18-rtcamp5/result.png)
 
-ソースコードはGitHubに公開しています。
+ソースコードはGitHubに公開しています（スターください）。
 
 - [https://github.com/gam0022/hanamaru-renderer/](https://github.com/gam0022/hanamaru-renderer/)
 
@@ -39,11 +32,20 @@ CGの勉強をしたことがあればお世話になるような有名なサイ
 
 <script async class="speakerdeck-embed" data-slide="1" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-この記事では自作のパストレーサの解説を中心に紹介します。
+今年もレンダリング分野の最先端で活躍されている方々がたくさん参加されていました。
 
-当日の様子は[Pentan](https://twitter.com/c5h12)さんの[記事](http://c5h12.hatenablog.com/entry/2017/09/17/184007)にまとめられいます。
+趣味でRedqueenレンダラーを開発し、仕事でAutodeskのArnoldレンダラーを開発されている[大垣真二](https://twitter.com/redqueenrender)さん、
+[ファーストオーサーの論文がSIGGRAPH 2017にアクセプトされた](http://lightmetrica.org/h-otsu/project/inverse/)研究者の[Hisanari Otsu](https://twitter.com/hi2p_perim)さんなどが参加されていました。
+他にも[t-pot.com](http://t-pot.com/)の[今給黎隆](https://twitter.com/Imagire)さん、
+[project-asura.com](http://project-asura.com/)の[Pocol](https://twitter.com/projectasura)さんなど、
+CGの勉強をしたことがあれば必ずお世話になるような有名なサイトの管理人たちも参加されていました。
 
-# 主な特徴
+この記事では自作のパストレーサの解説をします。
+
+当日の様子は[Pentan](https://twitter.com/c5h12)さんの[記事](http://c5h12.hatenablog.com/entry/2017/09/17/184007)にまとめられています。
+興味がある方はこちらをあわせて読むと良いでしょう。
+
+# Hanamaruレンダラーの主な仕様
 
 BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズモデルによる被写界深度を入れたり、IBLしたりしました。
 
@@ -63,13 +65,13 @@ BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズ�
 
 # シーンの解説
 
-宝石をプロシージャル（？）に配置してシーンを作りました。
+宝石をランタイム時にプロシージャルに配置してシーンを作りました。
 
 - うさぎのモデル
     - [Stanford Bunny](http://graphics.stanford.edu/data/3Dscanrep/)を[MeshLab](http://www.meshlab.net/)で1000ポリゴンにリダクション
 - 宝石のモデル
     - 同期の3Dクリエイターに依頼
-    - 拡大・平行移動・回転の行列を実装（頂点変換を実装）
+    - 拡大・平行移動・回転の変換行列を実装
     - 重ねて置けない制約をつけつつ、乱数でいい感じに配置（43個）
     - seed値を変えればシーンも変化する（ランタイム時にプロシージャルに配置）
 - 床はPBR用のテクスチャを拝借
@@ -77,20 +79,23 @@ BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズ�
 - CubeMap用のテクスチャも拝借
     - [Humus - Textures](http://www.humus.name/index.php?page=Textures)
 
-# パストレーシングの高速化
+# 高速化の取り組み
 
-今年の合宿では4分33秒以内にレンダリングするルールがあったため、最低限の高速化には取り組みました。
+今年の合宿では4分33秒以内にレンダリングするルールでしたので、いくつかの高速化に取り組みました。
 
-出力画像の解像度についてはルールは決まっていませんでしたが、1980x1080を採用しました。
+ちなみに出力画像の解像度についてはルールはありませんが、目標を高くするために1980x1080を採用しました。
 
-パストレーシングの高速化のアプローチには主に2通りあります。
+パストレーシング・レイトレーシングの高速化のアプローチはいくつかあります。
 
 1. 衝突判定の高速化
 2. モンテカルロ積分のサンプリングの効率化
+3. 並列処理
 
 それぞれ何を行ったのか簡単に紹介します。
 
 ## 衝突判定の高速化
+
+レイトレの実行時間のほとんどは衝突判定が占めるので、これを高速化するのは効果的です。
 
 衝突判定の高速化としてはBVH（Bounding Volume Hierarchy）を実装しました。
 
@@ -110,6 +115,10 @@ BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズ�
 
 ## モンテカルロ積分のサンプリングの効率化
 
+パストレーシングはレンダリング方程式をモンテカルロ積分する手法でしたね。
+
+つまり、モンテカルロ積分のサンプリングを効率化すれば、より少ないサンプリング数でノイズの少ない収束した結果を得ることができます。
+
 サンプリングの効率化のための手法としては、重点的サンプリング、多重重点的サンプリング、Next Event Estimationなどがあります。
 
 詳しくは[Shocker](https://twitter.com/Shocker_0x15)さんの資料を参照してください。
@@ -121,32 +130,136 @@ BVHなどでポリゴンとの衝突判定を高速化したり、薄レンズ�
 レンダリング方程式のcos項に比例した重点的サンプリングを行うと、
 確率密度関数で除算する処理でレンダリング方程式のcos項を打ち消すことができ、パストレーシング実装をシンプルにできます。
 
-今回のシーンではIBL光源が支配的なため、cos項に比例した重点的サンプリングのみで十分な速度でレンダリングの収束しましたが、
+今回のシーンではIBL光源が支配的なため、cos項に比例した重点的サンプリングのみで少ないサンプリング数でレンダリング結果が収束しましたが、
 光源が小さいシーンだと分散が大きいために収束が遅くなってしまいます。
 
 来年までにはNext Event Estimationに挑戦してみたいです。
 
-# 開発中の振り返り
+## 並列処理
 
-開発期間は約1ヶ月ちょっとでした。7/30くらいに開発を開始して9/8の締め切りギリギリまで開発していました。
+並列処理もレイトレにおいては超重要です。
 
-最低限のパストレが動くまでは1週間くらい、ポリゴンに対応してBVHで高速化までは2週間くらいで実装できました。
-シーン調整していくうちに、気づきにくいバグが見つかったので、後半はシーン構築のための機能を追加しつつ、バグ修正をしていました。
+今回の実行環境は64コアのCPUなので、並列処理しないと計算リソースを全体の1/64しか使うことができません。
+
+Rustの標準ライブラリの`std::thread`でも並列化はできるのですが、
+CPUのコア数に応じてスレッドプールを作ったり、適切にスケジューリングする部分はプログラマーが頑張る必要がありました。
+
+[Rayon](https://github.com/nikomatsakis/rayon)という並列処理のライブラリを利用すれば、面倒なスケジューリングを自動でやってくれそうだったので、これを採用しました。
+
+### 並列化の戦略
+
+並列化の戦略を2通り試しました。
+
+![並列化の戦略](/images/posts/2017-09-18-rtcamp5/pararell.jpg)
+
+#### サンプリング数を固定化した並列化
+
+まずは開発初期の並列化の戦略を説明します。
+
+図の左のように時系列で行(y方向)ごとに処理し、列(x方向)の各ピクセルの計算を並列で行うようにしました。
+各スレッド内で全サンプリングの計算して、最終的な画素値まで決定しました。
+
+この戦略はサンプリング数を事前に決定する必要があるため、サンプリング数の調整が必要でした。
+サンプリング数を大きくしすぎると4:33の制限時間をオーバーしすぎる心配があり、
+逆に小さくしすぎると計算リソースを使い切れなくなってしまいます。
+
+今回のようにレンダリング時間がルールで決まっている場合は、あまり良い戦略ではありません。
+
+#### サンプリング数を動的に変更できる並列化
+
+そこで、開発後半では並列化の戦略を変更しました。
+
+図の右のように時系列でサンプリングごとに処理し、全ピクセルの計算を並列で行うようにしました。
+直前の1サンプリングの所要時間から次のサンプリングで時間切れになることを予想したら、その時点でのサンプリング数の結果を出力して終了します。
+
+これでサンプリング数をスペックに応じて動的に調整できるようになりました。
+
+しかし、この変更によって5%くらいパフォーマンスが低下しました。
+同じサンプリング数で比較すると、計算時間が5%程度増加しました。
+テクスチャをたくさん使ったシーンなので、キャッシュのヒット率が低下したのかなと思っています。
+
+### Rayonによる並列化をしたレンダリングの関数
+
+これが実際のサンプリング数を動的に変更できる並列化をしたレンダリングの関数です。
+
+Rayonでは、`iter_mut()`の代わりに`par_iter_mut()`でイテレーターを作ると並列処理ができます。
+
+元のコードをほとんど変更せずに並列化できるのは素晴らしいですね。
+
+同じことを`std::thread`で書こうとすると、かなりコードが複雑になると思います。
+
+```
+fn render(&mut self, scene: &SceneTrait, camera: &Camera, imgbuf: &mut ImageBuffer<Rgb<u8>, Vec<u8>>) -> u32 {
+    let resolution = Vector2::new(imgbuf.width() as f64, imgbuf.height() as f64);
+    let num_of_pixel = imgbuf.width() * imgbuf.height();
+    let mut accumulation_buf = vec![Vector3::zero(); num_of_pixel as usize];
+
+    // NOTICE: sampling is 1 origin
+    for sampling in 1..(self.max_sampling() + 1) {
+        accumulation_buf.par_iter_mut().enumerate().for_each(|(i, pixel)| {
+            let y = i as u32 / imgbuf.width();
+            let x = i as u32 - y * imgbuf.width();
+            let frag_coord = Vector2::new(x as f64, (imgbuf.height() - y) as f64);
+            *pixel += self.supersampling(scene, camera, &frag_coord, &resolution, sampling);
+        });
+
+        if self.report_progress(&accumulation_buf, sampling, imgbuf) {
+            return sampling;
+        }
+    }
+
+    self.max_sampling()
+}
+```
+
+[https://github.com/gam0022/hanamaru-renderer/blob/57041bcdd84d44ce9a0ea4aa0a9c94756ed835ee/src/renderer.rs#L27-L47](https://github.com/gam0022/hanamaru-renderer/blob/57041bcdd84d44ce9a0ea4aa0a9c94756ed835ee/src/renderer.rs#L27-L47)
+
+# 開発の振り返り
+
+開発期間は1ヶ月弱でした。7/30くらいに着手して9/8の締め切りギリギリまで開発していました。
+
+最低限のパストレが動くまでは1週間くらい、並列化やポリゴンの衝突判定のBVHによる高速化までは2週間くらいかかりました。
+
+シーン調整していくうちに、バグや不具合が見つかったので、後半はシーン構築のための機能を追加しつつ、バグ修正をしていました。
 
 ## Rustについて
 
 去年はC++で開発したのですが、今年はRustでフルスクラッチで書き直しました。
 
+Rustの所有権に慣れるまでは大変でしたが、トータルで見ればC++ではなくRustで開発して良かったと思います。
+
+### Rustの採用理由
+
 こんな感じの理由でRustを採用しました。
 
-- 実行時のパフォーマンスを重視している（並列処理が簡単にできて、実行時のオーバヘッドが低いことはレイトレには必須条件）
-- 高いポータビリティ（MacでもWindowsでも使える）
-- Mollizaが開発していることもあり、WebAssemblyに出力ができて、Webブラウザ上にポートできる
-- 社内でRustが流行する兆しがあった（KLab社員が2人もRustでレイトレしていた！）
+- 実行時のパフォーマンスを重視している
+  - 並列処理が簡単にできて、実行時のオーバヘッドが低いことはレイトレには必須条件
+- 高いポータビリティ
+  - MacでもWindowsでも、コードの変更なしに動かせる
+- Webブラウザ上でも動かせる
+  - Mollizaが開発していることもあり、C++を除いて唯一のWebAssemblyの出力をサポートする言語
+- 弊社(KLab)の社員が2人もRustでレイトレしており、困ったら教えてもらおうと思った
   - [Rust でレイトレーシング入門しました](https://qiita.com/kiritex/items/786dbed4b7a2a22cbb89) by [@trigott](https://twitter.com/trigott)さん
   - [hhatto/ray-tracing-in-one-weekend-in-rust](https://github.com/hhatto/ray-tracing-in-one-weekend-in-rust) by [@hhatto](https://twitter.com/hhatto)さん
 
+### Rustの学習方法
+
 Rustについて何も知らなかったので、まずは通勤中に[プログラミング言語Rust](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/README.html)を読んでRustの思想を学びました。
+
+[Rust Playground](https://play.rust-lang.org/)でブラウザ上でRustのコードを書いて実行できるので、
+よく分からないところは実際に短いコードを書いて理解を深めました。
+
+正直に言うと、はじめはRustの学習コストは高いと感じました。
+Rustの予習に1週間かけましたが、いざコードを書いてみると所有権や型のサイズが不定などのコンパイルエラーに阻まれて、心が折れそうになりました。
+特に所有権やライフタイムは自分には全く馴染みの無い概念で理解するのに苦労させられました。
+
+はじめは大変でしたが、慣れてくればコンパイルエラーに阻まれることはなくりました。
+所有権を意識することでコードもスッキリしました。
+
+Rustは所有権という仕組みによってデータ競合を排除したり、ガーベジコレクタなしを実現しているので、
+この辺は「学習コスト」対「安全性＋実行時パフォーマンス」のトレードオフだろうと感じました。
+
+C++の経験がある人は[Rustは何が新しいのか（基本的な言語機能の紹介） - いもす研 (imos laboratory)](https://imoz.jp/note/rust-functions.html)という記事を読むとRustの所有権の雰囲気を掴めると思いました。
 
 Rustにはcargoというビルドツール兼パッケージ管理システムが標準搭載されていて、これはとても便利でした。
 `cargo run`を叩くだけで、自動的にパッケージをフェッチし、依存関係を解決してビルドと実行ができます。
@@ -154,17 +267,7 @@ Rustにはcargoというビルドツール兼パッケージ管理システム�
 開発前半は通勤中にMacで開発して、開発後半は高スペックなWindowsデスクトップに開発環境を移行しました。
 cargoのおかげでMacもWindowsも同じようにビルドができるので、開発環境を行き来するコストが全くありませんでした。
 
-一方でRustの学習コストはやはり高いと感じました。
-Rustの予習に1週間かけましたが、いざコードを書いてみると所有権や型のサイズが不定などのコンパイルエラーに阻まれて、心が折れそうになりました。
-特に所有権やライフタイムは自分には全く馴染みの無い概念で理解するのに苦労させられました。
-
-最初は大変でしたが、慣れてくればコンパイルエラーに阻まれることはなくりました。
-所有権を意識することでコードもスッキリしました。
-
-Rustは所有権という仕組みによってデータ競合を排除したり、ガーベジコレクタなしを実現しているので、
-この辺は「学習コスト」対「安全性＋実行時パフォーマンス」のトレードオフだろうと感じました。
-
-C++の経験がある人は[Rustは何が新しいのか（基本的な言語機能の紹介） - いもす研 (imos laboratory)](https://imoz.jp/note/rust-functions.html)という記事を読むとRustの所有権の雰囲気を掴めると思いました。
+### Rustのenum
 
 Rustの特徴はたくさんあるのですが、[列挙型](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/enums.html)は良いと思いました。
 Cのenumとは違って、構造体やタプルのような各ヴァリアントに関連するデータを持たせることができるので、マテリアルのタイプの定義に便利でした。
@@ -183,7 +286,8 @@ pub enum SurfaceType {
 https://github.com/gam0022/hanamaru-renderer/blob/d4eb5320fbe9ed18de152496c6e3aa070e947dfb/src/material.rs
 
 null許容型（[Option](https://doc.rust-lang.org/std/option/enum.Option.html)）もenumで実装されていました。
-`Option<T>`を`Some(T)`または`None`をとるenumにすることでnullチェック漏れをコンパイル時の型のチェックでエラーにできるのは賢いと思いました。
+`Option<T>`を`Some(T)`または`None`をとるenumにすることでnullチェック漏れをコンパイル時の型のチェックでエラーとして検出できます。
+この仕組はとても賢いですね。
 
 ```rust
 pub enum Option<T> {
@@ -192,12 +296,14 @@ pub enum Option<T> {
 }
 ```
 
-HaskellのMaybeモナドと全く同じ概念なので、関数型言語の良いところも取り入れているのかなと思いました。
+HaskellのMaybeモナドと全く同じ仕組みなので、関数型言語の良いところも取り入れているのかなと思いました。
 
 他にも[リスト処理](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/iterators.html)も充実していて好感が持てました。
 
+### RustのオススメIDE
+
 あと個人的にRustの開発環境は[IntelliJにRustのプラグイン](https://intellij-rust.github.io/)をインストールするのが最強だと思いました。
-関数定義にジャンプできるのはもちろん、メソッド名の補完やリファクタリングなども普通に使えます。Vimを卒業しました。
+関数定義にジャンプできるのはもちろん、メソッド名の補完やリファクタリングなども普通に使えます。Vimは卒業しました。
 
 ## デバッグ機能
 
@@ -214,19 +320,31 @@ HaskellのMaybeモナドと全く同じ概念なので、関数型言語の良�
 締め切り駆動開発でしたが、前から試したかったBVHなどを実装できたので良かったです。
 Rustも手ごわかったですが、気合でなんとか習得することができました。
 
-セミナーでは大垣さんの20年間レンダラーを開発しているうちに考えたこと、うしおさんのファーのレンダリング、Otsuさんの最新のPM/MCMC系手法のまとめのお話を聞きました。
-また、他の参加者にもNext Event Estimationの疑問点、双方向パストレーシングについてを教えていただき、レイトレへのモチベーションが高まりました。
-レンダリング分野で活躍されているエンジニアや研究者からレイトレを教えていただく貴重な体験ができました。
-宿の料理や温泉から見える夕暮れの諏訪湖も最高でした。
+合宿のセミナーや雑談などでレンダリング分野の最先端で活躍されている方々にレイトレの知見をもらってモチベーションが高まりました。
+セミナーでは大垣さんの20年間レンダラーを開発しているうちに考えたこと、
+うしおさんのファーのレンダリング、Otsuさんの最新のPM/MCMC系手法のまとめについて聞きました。
+また、他の参加者にもNext Event Estimationの疑問点、双方向パストレーシングについてを教えていただきました。
 
-運営・企画してくださった[q](https://twitter.com/q_cinnamon)さん[hole](https://twitter.com/h013)さん本当にありがとうございました。
+宿の料理は美味しかったですし、温泉から見える夕暮れの諏訪湖も綺麗だったので、観光としても良かったです。
+
+運営・企画してくださった[q](https://twitter.com/q_cinnamon)さん、[hole](https://twitter.com/h013)さん、本当にありがとうございました。
 
 # おまけ：制作の過程
 
-モチベーション維持のために進捗を細かくTwitterにアップロードするようにしました。
+モチベーション維持のために進捗をTwitterにアップロードするようにしました。
 
 徐々にステップアップしていく様子を自分でも振り返ることができたので、やってよかったと思います。
 
+これまでTwitterのモーメント機能を活用していませんでしたが、ツイートをブログにまとめるときには便利ですね。
+
+<a class="twitter-moment" href="https://twitter.com/i/moments/913798905455718401?ref_src=twsrc%5Etfw">レイトレ合宿5‽</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+資料公開したときのツイートです。
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash">#レイトレ合宿</a> のためにRustで開発したパストレーサの紹介スライドです。 BVHによるポリゴンとの衝突判定を高速化、薄レンズモデルによる被写界深度などしました😆<a href="https://t.co/itDLyWNpFx">https://t.co/itDLyWNpFx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/906817610246848512">2017年9月10日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!--
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">土日はRustを頑張っていた。<br>鬼門と噂の所有権や借用については、予習してきたので、思ったより苦労せずに済んだ。<br>Rustはスタック領域にメモリ確保するので、structのサイズが事前に分かってないとコンパイルできない仕様に悩まされた(Box&lt;T&gt;で解決)。</p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/891665053644054529">2017年7月30日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -264,8 +382,4 @@ Rustも手ごわかったですが、気合でなんとか習得することが�
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">入賞商品の「つかめる水」をいただいました😂<br>来年のシーンは決まりましたね <a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash">#レイトレ合宿</a> <a href="https://t.co/VihgAITecy">pic.twitter.com/VihgAITecy</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/906670183867080704">2017年9月10日</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-資料公開したときのツイートです。
-
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash">#レイトレ合宿</a> のためにRustで開発したパストレーサの紹介スライドです。 BVHによるポリゴンとの衝突判定を高速化、薄レンズモデルによる被写界深度などしました😆<a href="https://t.co/itDLyWNpFx">https://t.co/itDLyWNpFx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/906817610246848512">2017年9月10日</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+-->
