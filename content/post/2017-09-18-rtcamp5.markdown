@@ -5,7 +5,7 @@ tags = [
 ]
 title = "レイトレ合宿5‽に参加しました！"
 slug = "rtcamp5"
-date = "2017-09-18T19:29:40+09:00"
+date = "2017-10-02T09:00:00+09:00"
 image = "/images/posts/2017-09-18-rtcamp5/result.png"
 toc = true
 math = false
@@ -20,7 +20,7 @@ math = false
 
 私はRustでパストレーサ（Hanamaruレンダラー）を実装して、こんな感じの画像をレンダリングしました。
 
-今年は16人中9位だったので、去年の13人中10位よりは進歩しました！
+今年は16人中9位なので、去年の13人中10位よりは進歩しました！
 
 [![result](/images/posts/2017-09-18-rtcamp5/result.png)](/images/posts/2017-09-18-rtcamp5/result.png)
 
