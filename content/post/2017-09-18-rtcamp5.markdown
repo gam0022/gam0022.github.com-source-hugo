@@ -22,11 +22,15 @@ math = false
 
 今年は16人中9位なので、去年の13人中10位よりは進歩しました！
 
-[![result](/images/posts/2017-09-18-rtcamp5/result.png)](/images/posts/2017-09-18-rtcamp5/result.png)
+[![result](/images/posts/2017-09-18-rtcamp5/result.jpg)](/images/posts/2017-09-18-rtcamp5/result.png)
+
+↑リンクをクリックするとオリジナルの可逆圧縮の画像になります。
 
 ソースコードはGitHubに公開しています（スターください）。
 
 - [https://github.com/gam0022/hanamaru-renderer/](https://github.com/gam0022/hanamaru-renderer/)
+
+<!--more-->
 
 こちらは合宿当日のプレゼン資料です。
 
