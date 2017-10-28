@@ -1,0 +1,282 @@
++++
+image = ""
+toc = true
+math = false
+draft = false
+tags = [
+"ISUCON", "イベント"
+]
+title = "ISUCON7予選で81位でした"
+slug = "isucon7q"
+date = "2017-10-23T22:05:05+09:00"
+
++++
+
+ISUCONはお題となるWebサービスを決められたレギュレーションの中で限界まで高速化を図るチューニングバトルです。
+
+会社の同期と2人チーム「アロマゲドン」を結成して、ISUCON7予選に参加しました。
+ちなみに「アロマゲドン」は、プリパラというアニメに出てくるアイドルユニットです。
+白玉みかんは私（[@gam0022](https://twitter.com/gam0022)）で、黒須あろまは[@kanetaaaaa](https://twitter.com/kanetaaaaa)でした。
+
+[407チーム中81位で、最終スコアは46,461](http://isucon.net/archives/50961437.html)でした。
+
+~~上位18位まで本戦出場だったので、数字をひっくり返せば81が18になって本戦出場できたかもしれません。~~
+
+アプリのチューニングはある程度はできたのですが、`GET /icons`の帯域問題に対処できなかったのが敗因でした。
+
+敗者の記事を読む人はいないでしょうが、来年の自分に向けて感想を残そうと思います。
+
+![score遷移](/images/posts/2017-10-23-isucon7q/score.png)
+
+<!--more-->
+
+# 事前準備
+
+私は過去に1度だけISUCONに参加した経験はあったのですが、あろまはISUCONの経験はありませんでした。
+
+あろまには、ISUCON5の本戦用に私が用意したチートシートや[ISUCON夏期講習](http://isucon.net/archives/50648750.html)のスライドを読んで勉強してもらいました。
+
+私は技術書典の原稿執筆と重なってしまい、ほとんど練習時間を確保できずに当日を迎えました。
+
+## 過去問の対策
+
+休日に会社で集まって、役割分担を意識しながらチームで問題を解く練習をしました。
+[pixiv ISUCON](https://github.com/catatsuy/private-isu)がEC2のAMIが公開されており、環境構築が簡単だったので、これを使って練習しました。
+
+私はISUCON5の予選に参加した経験があり、ISUCON4の予選も練習したことがあったので、今回は初見のpixiv ISUCONしか練習しませんでした。
+
+あろまはGoの経験があったので、はじめはGoで練習したのですが、私がGoの経験が無さすぎたので、
+最終的には2人ともある程度読み書きができるRubyで問題を解くことにしました。
+
+pixiv ISUCONとISUCON7の予選は非常に似ていまいた。
+どちらも初期実装ではアップロードされた画像をMySQLのDBに書き込んでおり、
+この画像をDBから切り離してファイルに保存するようにして、nginx等で配信すれば、ぐっとスコアが伸びるような問題になっていました。
+
+予選前に公開された[レギュレーション](http://isucon.net/archives/50927022.html)に「複数台あるサーバーの役割の変更」という文言があり、
+複数台構成は予想できていたので、pixiv ISUCONを2台のサーバにする練習もしました。
+練習の構成では、1台のサーバに画像のアップロードと配信を行わせ、もう1台のサーバでその他の処理をさせるようにしました。
+しかし、この構成は微妙らしく、1台のときよりスコアが下がりました。
+
+今思えば、この時に複数台構成の練習をちゃんとしていれば、予選のスコアはもっと伸びただろうという後悔しかありません。
+予選では帯域がボトルネックだったので、複数のサーバで画像を配信する構成で練習するべきでした。
+練習の方向性は間違っていなかったので、詰が甘かったことを本当に後悔しています。
+
+## ツールの整備
+
+- [myprofiler](https://github.com/KLab/myprofiler): MySQLのプロファイラ
+- [lltsv](https://github.com/sonots/lltsv): ステータスコードごとのアクセスログの集計用
+- [netdata](https://github.com/firehol/netdata): リソースモニタリング
+- nginxのアクセスログをサマライズするスクリプト
+
+最後のアクセスログのサマライズは、あろまがいい感じにHTML出力とソート対応をしてくれました。
+
+<iframe src="/images/posts/2017-10-23-isucon7q/summary_log_init.html" style="width: 100%; height: 400px;"></iframe>
+
+ISUCON用のslackのグループを作って、上記のサマライズの結果をslackに投稿する仕組みを作りました。
+
+## 環境整備の仕込み
+
+当日の環境構築は私が担当することにしました。
+まず最初にsshの設定をすることは明らかだったので、事前にあろまの公開鍵を教えてもらいました。
+
+環境設定用のリポジトリを作って、.bashrc や .vimrc を入れておきました。
+本番環境の .bashrc や .vimrc からincludeする手順も確立しておきました。
+
+.bashrc には便利なaliasを仕込んでおきました。
+
+- アプリとMySQLとNginxを一発で再起動するスクリプト
+- プロファイリングツールを起動するコマンド
+
+ツール整備で紹介したmyprofilerやlltsvについては、
+事前にバイナリをダウンロードして、環境設定用のリポジトリに突っ込んでおきました。
+
+最後に当日やることのリストの整備しておいて、当日の役割分担を打ち合わせしました。
+
+## チームビルディング
+
+プリパラのアニメや曲を鑑賞することで、チームの結束力を高めました。
+
+# 予選当日
+
+当日の流れを振り返ります。
+
+## 初回ベンチマークまでの動き
+
+- みかん : 環境設定
+  - sshの設定
+  - GitHubへの公開鍵設定
+  - `.bashrc` と `.vimrc`の仕込み
+- サーバ構成を把握
+  - 3台のサーバのうち、mysqlのある3台目のサーバだけを使う1台構成に決定
+      - 今思うと致命的な判断ミス。ここで負けが決まってしまった
+  - 1台目の2台目のサーバにPythonのアプリがあったので、それらを落とす
+  - 3台目のサーバでRubyのアプリとnginxを起動
+- みかん : `/home/isucon/isubata/webapp` と `/etc` をGit管理、リポジトリ作成
+- あろま : MySQLのユーザ名とパスワードを調査
+  - 事前に用意していたMySQL関係のaliasでは、ユーザ名をrootでパスワードなしを前提としていて、動かずに困っていたが、これで解決
+- あろま : apt-get update
+- あろま : vimやnetdataのインストール
+- あろま : MySQLのバックアップ
+
+初期ベンチマークのスコアは6134でした。
+
+### 重たいページ
+
+初期状態だとユーザのプロフィール画像の `GET /icons` がボトルネックになっていました。
+
+![summay_log_init](/images/posts/2017-10-23-isucon7q/summay_log_init.png)
+
+### 重たいMySQLのクエリ
+
+`GET /icons` はimageテーブルの画像データを取り出すようになっており、それが反映されていました。
+
+```
+ 209 SELECT * FROM image WHERE name = ?
+  41 SELECT COUNT(*) as cnt FROM message WHERE channel_id = ?
+  14 SELECT name, display_name, avatar_icon FROM user WHERE id = ?
+   3 SELECT * FROM haveread WHERE user_id = ? AND channel_id = ?
+   1 INSERT INTO haveread (user_id, channel_id, message_id, updated_at, created_at) VALUES (?, ?, ?, NOW(), NOW()) ON DUPLICATE KEY UPDATE message_id = ?, updated_at = NOW()
+```
+
+## 前半のチューニング
+
+- みかん : MySQLのインデックス追加
+  - `ALTER TABLE message ADD INDEX channel_id(channel_id);`
+- みかん : imageテーブルの画像をファイルとして読み書きしてnginxで配信するように変更
+  - pixiv ISUCONで予習済みだったため、すんなりとできた
+- あろま : imageテーブルをDrop
+- あろま : cssやjsなどの静的ファイルをnginxで配信。さらにgzip_staticで帯域の節約
+- あろま : `GET /icons`で304を返せるようにnginxのCache-Controlの設定
+  - 多くのチームが付けずに苦しめられた `Cache-Control: public` をつけてくれた（超絶ナイス）
+- あろま : stackprofというRubyのプロファイラを導入
+- みかん : nginxのworker_connections 1024 にしたら、スコアが6000→3000に下がったので、リバート
+- みかん : `GET /message`が時々9秒など異常に遅いときがあるのに気がつく
+  - N+1問題を解消
+  - パラメータのlast_message_idより新しい最新の100件のmessageを返していた
+    - MySQLで最新の100件を取得し、last_message_idによるフィルタリングはアプリ側で行うように修正
+
+```
+root@app2483:/etc$ cat /var/log/nginx/access.log | grep "/message" | lltsv -k reqtime,request,in,out | sort -n -r | head
+reqtime:9.686    request:GET /message?channel_id=2&last_message_id=0 HTTP/1.1    in:673    out:52306
+reqtime:4.825    request:GET /message?channel_id=2&last_message_id=0 HTTP/1.1    in:673    out:52306
+reqtime:4.590    request:GET /message?channel_id=3&last_message_id=0 HTTP/1.1    in:677    out:50090
+reqtime:3.017    request:GET /message?channel_id=10&last_message_id=11918 HTTP/1.1    in:678    out:18771
+reqtime:3.000    request:POST /message HTTP/1.1    in:2904    out:0
+reqtime:3.000    request:POST /message HTTP/1.1    in:1571    out:0
+reqtime:2.964    request:POST /message HTTP/1.1    in:1502    out:152
+reqtime:2.962    request:POST /message HTTP/1.1    in:1547    out:152
+reqtime:2.960    request:POST /message HTTP/1.1    in:2113    out:152
+reqtime:2.855    request:POST /message HTTP/1.1    in:1563    out:152
+```
+
+### 重たいページ
+
+nginxで画像を返すようにしても相変わらず `GET /icons` がボトルネックになっていました。
+キャッシュコントロールもしているのに、どうしてだろうと頭を抱えました。
+
+![summary_log_final](/images/posts/2017-10-23-isucon7q/summary_log_final.png)
+
+### 重たいMySQLのクエリ
+
+imageテーブルを排除し、明らかに危険なN+1は解消したので、メッセージ数のカウント等のクエリが上位になりました。
+
+既読を管理している`haveread`はMySQLから離して、memcached等のメモリキャッシュシステムに載せることも考えましたが、練習してこなかったので諦めました。
+
+```
+40 SELECT COUNT(*) as cnt FROM message WHERE channel_id = ?
+37 SELECT * FROM haveread WHERE user_id = ? AND channel_id = ?
+ 4 INSERT INTO message (channel_id, user_id, content, created_at) VALUES (?, ?, ?, NOW())
+ 3 INSERT INTO haveread (user_id, channel_id, message_id, updated_at, created_at) VALUES (?, ?, ?, NOW(), NOW()) ON DUPLICATE KEY UPDATE message_id = ?, updated_at = NOW()
+ 1 SELECT id FROM channel
+ ```
+
+### netdata
+
+CPUの使用率が100%となっており、CPUを使い切っていることが分かりました。
+ようやくCPUが1コアしかないことに気が付きました。
+
+```
+isucon@app2483:~/isubata/webapp/ruby$  cat /proc/cpuinfo | grep processor
+processor    : 0
+```
+
+最初はアプリ側のチューニングができた証拠のだろうと楽観的な解釈したのですが、
+サーバ1台あたりのスペックがとても低く、複数台構成でないと勝てないのではないかという疑念が湧きはじめました。
+
+次に帯域に注目しました。
+当日マニュアルによると「グローバルIP側の帯域は100Mbps」となっており、帯域も使い切っていることが分かりました。
+
+![netdata_final](/images/posts/2017-10-23-isucon7q/netdata_final.png)
+
+## 後半のチューニング
+
+残念ながら、ボトルネックの帯域に対する対策が何もできず、スコアに貢献できるアクションは何一つできずに終わりました。
+
+私のオペレーションミスでMySQLのデータを壊してしまい、
+ベンチマークが通らなくなるなどのトラブルもありましたが、あろまにリストアして助けてもらいました。
+
+試合終了1時間前にベンチマーク対象のサーバを複数選択すると、並列にアクセスされることに気が付きましたが、
+残り1時間で複数台構成への変更は危険だと判断して、最後まで1台構成にすることにしました。
+
+早い段階で複数台構成を考えていればと後悔ばかりです。
+
+<!--
+- みかん : `statement.close`をコメントアウト（致命的ミス）
+  - Rubyのmysql2に使い慣れておらず、`statement.close`を明示するのに見慣れていなかった
+  - N+1問題が残っている状態だったら、毎回コネクションをクローズするのは良くないのかもと思っていた
+  - これによってMySQLのコネクションが足りなくなる
+  - Rubyの初期実装では `statement.close`が抜けている部分があったので、これを補うのか、mysql2-cs-bindに置き換えるのが正しい対処だった模様
+-->
+
+他のチームがスコアを伸ばす中、スコアが全く伸びないという焦燥感から冷静な判断力を失い、お互いの作業内容も把握できなくなっていました。
+
+私は`GET /history`の中でレコード数の多いmessageに対して、`SELECT id FROM message WHERE channel_id = ? ORDER BY id DESC LIMIT ? OFFSET ?`していて、大量のレコードを走査していそうだったので、これの対処を試みるもうまくいかずに時間を無駄にしただけでした。
+
+## 提出30分前
+
+試合終了30分前を目処に再起動のテストを行いました。
+
+不要なサービスをdisableして、nginxのアクセスログをOFFにしました。
+
+再起動テストを時間に余裕をもって取り組めたのは良かった点だと思います。
+
+# 感想
+
+事前の練習や準備は限られた時間にしては頑張ったと思うのですが、残念な結果に終わってしまいました。
+
+他にもレギュレーションをちゃんと読まなかった点も反省です。
+スコアに関して、かなり重大なポイントを見落としていました。
+
+> スコアは基本的に以下のルールで算出されます。
+>
+> 成功したGETリクエスト数＋成功したPOSTリクエスト数×3＋受信したメッセージ件数
+>
+> 「受信したメッセージ件数」とは、 GET /message が返したJSON内のメッセージ数です。
+
+[ISUCON7 予選問題の公開と解説](http://isucon.net/archives/50961706.html)に以下のようにあります。
+
+> クライアントはGET /fetchをポーリングしていて、閲覧中のチャンネルに新着メッセージがある場合にはGET /messageを呼んで新着メッセージを受信します。GET /fetchのレスポンスをどんなに改善しても、新着メッセージがなければスコアは上がりません。閲覧中のチャンネルに新着メッセージが1件ある状態ですぐに返しても、GET /messageで1点とそこに含まれる1メッセージ分の1点で、2リクエストで2点しか稼ぐことができません。
+>
+> しかしGET /fetchをタイムアウトにならない範囲で遅くしてやると、GET /messageは1リクエストで数十件のメッセージを取得することができるので2リクエストで数十点を稼ぐ事ができます。
+
+通常の1回のGETリクエストで1点しか稼げませんが、`GET /fetch`を適切に遅くしてやると、1回の`GET /message`で最大100点稼ぐことができました。
+
+我々のチームはこれに気が付きませんでした。
+`GET /message`のレスポンスサイズに注目すると、初期状態の46989.50877 byteから、チューニング後は9451.1263 byteに下がっていました。
+初期状態で何件のメッセージを返せていたのか不明ですが、1回の`GET /message`の点数はおよそ1/5に落ちていたようです。
+
+ただし、検証した範囲内ではsleepを消したほうがスコアが上がりました。
+Rubyのようにprefork型だとsleepでworkerが専有されてしまうからでしょうか。
+ISUCONの問題は言語によって差が出ないものが多いですが、sleepに関しては言語による差があるように感じました。
+
+今年の問題はアプリのチューニングだけでは完結せずに、帯域の制約も対処する必要があって、インフラ側の知識や経験も要求されました。
+言い訳っぽいですが、自分のようにクライアントがメインでサーバは片手間に触っているようなエンジニアだと厳しいものを感じました。
+
+これは超個人的な意見ですが、複数台構成や帯域制限のある構成は再現が困難で、試合後の復習ができないのでやめて欲しいと思いました。
+希望を言えば、EC2のAMIが公開されていて特定のインスタンプタイプがサーバを立てれば環境を再現できるような問題が嬉しいです。
+
+愚痴っぽくなってしまいましたが、スコアを競うゲームとして純粋に楽しめました。
+ISUCONの練習や予選を通して得たものは多かったので、来年も是非参加したいです。
+
+運営の方々、楽しいイベントをありがとうございました。
+今は本戦の準備で大忙しだと思いますが、頑張ってください！
