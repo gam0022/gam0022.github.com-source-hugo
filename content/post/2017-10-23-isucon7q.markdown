@@ -134,7 +134,7 @@ ISUCON用にslackのグループを作って、上記のサマライズの結果
   - `ALTER TABLE message ADD INDEX channel_id(channel_id);`
 - imageテーブルの画像をファイルとして読み書きしてnginxで配信するように変更（担当：みかん）
   - pixiv ISUCONで予習済みだったため、すんなりとできた
-- mageテーブルをDrop（担当：あろま）
+- imageテーブルをDrop（担当：あろま）
 - cssやjsなどの静的ファイルをnginxで配信。さらにgzip_staticで帯域の節約（担当：あろま）
 - `GET /icons`で304を返せるようにnginxのCache-Controlの設定（担当：あろま）
   - 多くのチームが付けずに苦しめられた `Cache-Control: public` をつけてくれた（超絶ナイス）
@@ -165,6 +165,26 @@ nginxで画像を返すようにしても相変わらず `GET /icons` がボト�
 キャッシュコントロールもしているのに、どうしてだろうと頭を抱えました。
 
 ![summary_log_final](/images/posts/2017-10-23-isucon7q/summary_log_final.png)
+
+ステータスコードごとによる集計によると304が最多でしたので、キャッシュコントロールは正しく効いていそうでした。
+
+```
+lltsv -k status access.log.2017-10-22_20-42-27 | sort | uniq -c
+5673 status:200
+  91 status:204
+6554 status:303
+24765 status:304
+  26 status:400
+  52 status:403
+   1 status:404
+  13 status:409
+   3 status:499
+ 108 status:500
+ ```
+
+ 試合後に気がついたのですが、画像の中身のハッシュ値からファイル名を決定していたので、同じファイル名の画像は更新されない仕様でした。
+ 反省点としては、同じ画像がアップロードされたら無視するようにするべきでした。
+ そうすれば、画像のアップロード直後に304を返せるので、さらに`/icons`の帯域を節約できたのではないかと思います。
 
 ### 重たいMySQLのクエリ
 
