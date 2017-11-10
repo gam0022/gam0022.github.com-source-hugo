@@ -256,7 +256,7 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 * [README(GitHub)](https://github.com/gam0022/immutable_list/blob/master/README.md)
 * [RubyでLinkedListを使うためのC拡張を作った - gam0022.net](http://gam0022.net/blog/2013/08/19/ruby-linkedlist/)
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/29144855" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/shohosoda9/immutable-list-29144855" title="Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)" target="\_blank">Rubyで連結リスト使うためのgemを作った(tsukuba.rb版)</a> </strong> from <strong><a href="http://www.slideshare.net/shohosoda9" target="\_blank">Sho Hosoda</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a href="https://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
 
 # Web
 

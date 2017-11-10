@@ -1,4 +1,4 @@
-baseurl = "http://gam0022.net/"
+baseurl = "https://gam0022.net/"
 title = "gam0022.net"
 copyright = "&copy; 2016 gam0022"
 languageCode = "jp"
@@ -211,6 +211,6 @@ googleAnalytics = "UA-84469205-1"
 
 [[menu.sub]]
   name = "WebGL"
-  url = "/webgl/#raymarching_reflect"
+  url = "webgl/#raymarching_reflect"
   pre = "<i class='fa fa-flask'></i>"
   weight = 1
