@@ -100,7 +100,10 @@ tcpsndbuf                  222624              1737856              1720320     
 ブログの他にも、過去に作った[Ruby製のWebアプリ](https://gam0022.net/app/tmg/)や[Ruby製のTwitterのBot](https://twitter.com/daigoroubot)なども引っ越しました。
 
 新サーバで旧サーバ（6年前）の環境を再現しようとしたものの、旧サーバのRubyのバージョンが古すぎてセキュリティ的に危険なのに加えて、C拡張のgemのビルドが失敗したりして、断念しました。
+
 最終的にはRubyと依存gemのバージョンを最新版に上げて、コードも修正をして、なんとか新サーバで動かせるようにしました。
+またnginxでCGIを使うには[FCGI Wrapの設定](https://qiita.com/gam0022/items/d16cc83a32c5c2efdefc)が必要でした。
+
 ついでにGemfileを書いて、依存gemを管理するようにしました。
 
 # まとめ（自戒）
