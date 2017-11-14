@@ -6,7 +6,8 @@ draft = false
 tags = [
 "VPS",
 "ServersMan@VPS",
-"ConoHa"
+"ConoHa",
+"Ubuntu",
 ]
 title = "ServersMan@VPSからConoHaに引っ越しました"
 slug = "move-from-serversman-to-conoha"
