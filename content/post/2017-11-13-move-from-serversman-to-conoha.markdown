@@ -63,7 +63,7 @@ Version: 2.5
 ```
 
 tcpsndbufのfailcntが127242887となっており、TCPの送信バッファのサイズ制限に引っかかっていました。
-tcpsndbufのlimitは2703360byteで、通常の使用範囲でもすぐに制限に引っかかるような設定でした。
+tcpsndbufのlimitは2703360byte = 約2MBで、通常の使用範囲でもすぐに制限に引っかかるような設定でした。
 
 ```
 resource                     held              maxheld              barrier                limit              failcnt
