@@ -16,7 +16,7 @@ toc = true
 
 +++
 
-当サイト（[gam0022.net](https://gam0022.net/)）をLet's EncryptでHTTPS対応しました。
+当サイト（[gam0022.net](https://gam0022.net/)）を[Let's Encrypt](https://letsencrypt.org/)でHTTPS対応しました。
 
 ![HTTP対応](/images/posts/2017-11-15-https-support.png)
 
@@ -27,6 +27,20 @@ nginxの設定変更でHTTP/2対応もできました。
 はてなブックマークの数が0にリセットされてしまいましたが、仕方がないので諦めました。
 
 <!--more-->
+
+# なぜHTTPS対応するのか？
+
+先月リリースのChrome 62からすべてのHTTPページに「Not secure」と表示されるようになりました。
+
+- [グーグル、HTTPページへの警告表示を強化へ--10月リリース予定の「Chrome 62」から](https://japan.cnet.com/article/35100589/)
+
+Qiitaも9月末にHTTPS対応をしていました。
+
+- [QiitaをHTTPS化しました](http://blog.qiita.com/post/165860481859/qiita-https)
+
+当サイトはブログという形態なので、利用者が個人情報を入力することはほとんど考えられません。
+
+しかし、少なくともGoogleは常時SSLを重要視しており、主要サイトもHTTPS化を進めているみたいなので、個人的な勉強を兼ねてHTTPSの設定に挑戦しました。
 
 # Let's EncryptでHTTPS対応
 
@@ -143,6 +157,11 @@ crontabで毎月1日の5時にSSL証明書の自動更新するようにしま�
 ```
 
 # HTTP/2対応
+
+HTTPSのついでにHTTP/2も対応しました。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">HTTP/2対応はあっさりできた / <a href="https://t.co/IrODakXG9W">https://t.co/IrODakXG9W</a> supports HTTP/2. Tested by <a href="https://t.co/RtMlmm7glD">https://t.co/RtMlmm7glD</a> <a href="https://twitter.com/hashtag/http2?src=hash&amp;ref_src=twsrc%5Etfw">#http2</a> <a href="https://twitter.com/hashtag/webperf?src=hash&amp;ref_src=twsrc%5Etfw">#webperf</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/927588898850533376?ref_src=twsrc%5Etfw">2017年11月6日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## nginxのバージョン確認
 
