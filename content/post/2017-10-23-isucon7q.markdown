@@ -57,7 +57,7 @@ pixiv ISUCONとISUCON7の予選問題は非常に似ていまいた。
 
 最後のアクセスログのサマライズは、あろまがいい感じにHTML出力とソート対応をしてくれました。
 
-<iframe src="/images/posts/2017-10-23-isucon7q/summary_log_init.html"></iframe>
+<iframe style="width: 100%;height: 400px;" src="/images/posts/2017-10-23-isucon7q/summary_log_init.html"></iframe>
 
 ISUCON用にslackのグループを作って、上記のサマライズの結果をslackに投稿する仕組みを作りました。
 

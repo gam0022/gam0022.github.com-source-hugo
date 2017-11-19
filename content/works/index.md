@@ -9,9 +9,48 @@ section = 100
 toc = true
 +++
 
+最終更新: 2017-11-19
+
 # Publications
 
 執筆した書籍を紹介します。
+
+## 2017年10月 KLab Tech Book
+
+[<img alt="KLab Tech Book" src="/images/works/tbf3.jpg" width="200px" class="right">](/images/works/tbf3.jpg)
+
+『KLab Tech Book』の表紙絵と『第1章 物理ベースレンダラーを Rust 実装して、表紙絵をレンダリングした話』を担当しました。
+
+Rustで自作したパストレーシングによる物理ベースレンダラーを解説しました。
+
+まず基礎的な3DCGの描画方法について触れた後、パストレーシングの原理について簡単に説明しました。
+続いて筆者自作のHanamaruレンダラーを紹介し、レイトレーシングやパストレーシングの高速化の取り組みについて触れました。
+
+- [サークル詳細 | KLab 株式会社 | 技術書典3](https://techbookfest.org/event/tbf03/circle/5644572721938432)
+
+関連情報
+
+- [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
+
+## 2017年4月 Think Web
+
+[<img alt="Think Web" src="/images/works/tbf2.png" width="200px" class="right">](/images/works/tbf2.png)
+
+『Think Web』の『第6章 まるで実写！？GPUパストレーシングのWebGL実装』を担当しました。
+
+パストレーシングは3Dの描画手法のひとつで、現実世界に近い光の振る舞いをシミュレートすることで、大域照明を考慮した写実的なレンダリングを可能にします。
+写実的なレンダリングができる反面、処理時間が膨大にかかるという弱点があります。
+私の章ではパストレーシングのGPU実装による高速化について紹介します。
+しかも単純な高速化ではなく、ブラウザ上で3DCGを扱うWebAPIであるWebGLによりGPU実装することで、ブラウザ上で動作するインタラクティブなパストレーシングを実現します。
+
+- [Think Web | TechBooster in 技術書典2](https://techbooster.github.io/tbf02/#think)
+- [Think Web | BOOTH](https://techbooster.booth.pm/items/488347)
+
+関連情報
+
+- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
+- [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
+- [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
 
 ## 2016年夏 AZ異本 grimoire of web
 
@@ -65,6 +104,38 @@ WebGLで作成した映像作品と活動を紹介します。
 
 動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
 
+## 2017 正解するカド
+
+[<img alt="正解するカド" src="/images/works/kado.jpg" width="300px" class="right">](/images/posts/2017-06-30-raymarching-kado/kado.png)
+
+アニメ[『正解するカド』](http://seikaisuru-kado.com/)に登場するフラクタル図形（カド）のレイマーチングによるレンダリングに挑戦しました。
+
+レイマーチング（スフィアトレーシング）は「カド」のようなフラクタル図形の描画がとても得意なので、
+その特徴を活かせたと思います。
+
+- [https://gam0022.net/webgl/#raymarching_kado](https://gam0022.net/webgl/#raymarching_kado)
+
+関連情報
+
+- [正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net
+](http://localhost:1313/blog/2017/06/30/raymarching-kado/)
+
+## 2017 Realtime Pathtracing
+
+<div style="width: 400px;" class="right">
+<iframe width="400" height="315" src="https://www.youtube.com/embed/FUb5U3ttmZE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+WebGL(three.js)でリアルタイムなパストレーシングを実装しました。
+
+- [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
+
+関連情報
+
+- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
+- [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
+- [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
+
 ## 2016 Live
 
 [<img alt="Live" src="/images/works/live.gif" width="300px" class="right">](/images/works/live.gif)
@@ -105,13 +176,15 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 ## 2016 #GLSLTech 発表資料
 
+<div style="width: 340px;" class="right">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="\_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="\_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
+</div>
+
 「シェーダだけで世界を創る！three.jsによるレイマーチング」という発表資料です。
 
 2/14のバレンタインデーに開催された「GPU の熱でチョコも溶けちゃう！？ GLSL シェーダテクニック勉強会（#GLSLTech）」で登壇したときのものです。
 
 詳細は[ブログの記事](/blog/2016/02/16/glsl-tech/)にまとめました。
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="\_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="\_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
 
 ## 2016 Gem
 
@@ -201,6 +274,16 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 - [イルカの紙模型 - みたにっき＠はてな](http://d.hatena.ne.jp/JunMitani/20141112)
 
 # Windows
+
+## 2016 Hanamaru Renderer
+
+<script async class="speakerdeck-embed" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+Rustで開発したパストレーシングによる物理ベースレンダラーです。
+
+関連情報
+
+- [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
 
 ## 2016 Tsukihi
 
