@@ -1,7 +1,7 @@
 ---
 layout: post
 toc: true
-title: "コンピューグラフィックス基礎の成果報告"
+title: "コンピュータグラフィックス基礎の成果報告"
 slug: computer-graphics
 date: 2013-03-12T23:28:00+09:00
 comments: true
@@ -13,7 +13,7 @@ tags:
 
 早いもので大学2年の授業が終わって春休みになってしまいました。
 
-3学期には、[コンピューグラフィックス基礎](http://www.coins.tsukuba.ac.jp/syllabus/GB13704.html)という授業を履修したのですが、
+3学期には、[コンピュータグラフィックス基礎](http://www.coins.tsukuba.ac.jp/syllabus/GB13704.html)という授業を履修したのですが、
 今学期で一番楽しい授業だったなーと思うので振り返ってみます。
 
 基本的にはOpenGLを使って色々しました。
