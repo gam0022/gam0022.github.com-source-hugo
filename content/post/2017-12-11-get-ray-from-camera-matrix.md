@@ -75,14 +75,16 @@ vec2 p = ( gl_FragCoord.xy * 2.0 - resolution ) / min( resolution.x, resolution.
 // camera and ray
 vec3 cPos  = vec3( mouse.x - 0.5, mouse.y * 4.0 - 0.2, time );
 vec3 cDir  = normalize( vec3( 0.0, -0.3, 1.0 ) );
-vec3 cUp   = cross( cDir, vec3( 1.0, 0.0 ,0.0 ) );
-vec3 cSide = cross( cDir, cUp );
+vec3 cSide = cross( cDir, vec3( 0.0, 1.0 ,0.0 ) );
+vec3 cUp   = cross( cSide, cDir );
 float targetDepth = 1.3;
 vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
 ```
 
+※オリジナルのコードではY-upの扱いが間違っていたので、記事用に修正を加えています。
+
 `cPos`はカメラのワールド座標、`ray`はカメラのレイの方向をそれぞれ表します。
-また、カメラのY-upに対応する `vec3( 1.0, 0.0 ,0.0 )` とカメラのFOVに対応する `float targetDepth = 1.3;` はコード上に埋め混んだ、いわゆるマジックナンバーとしました。
+また、カメラのY-upに対応する `vec3( 0.0, 1.0 ,0.0 )` とカメラのFOVに対応する `float targetDepth = 1.3;` はコード上に埋め混んだ、いわゆるマジックナンバーとしました。
 
 ## 方法2: カメラの座標と向きを渡す
 
@@ -116,8 +118,8 @@ vec2 p = ( gl_FragCoord.xy * 2.0 - resolution ) / min( resolution.x, resolution.
 // camera and ray
 vec3 cPos  = cameraPos;
 vec3 cDir  = cameraDir;
-vec3 cUp   = cross( cDir, vec3( 1.0, 0.0 ,0.0 ) );
-vec3 cSide = cross( cDir, cUp );
+vec3 cSide = cross( cDir, vec3( 0.0, 1.0 ,0.0 ) );
+vec3 cUp   = cross( cSide, cDir );
 float targetDepth = 1.3;
 vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
 ```
@@ -222,7 +224,7 @@ cameraProjectionMatrixInverse: { value: new THREE.Matrix4().getInverse( camera.p
 
 ![カメラ行列の分解](/images/posts/2017-12-11-get-ray-from-camera-matrix/cedec.png)
 
-`up` がY-upに対応し、 `focal_length` がFOVに対応しているので、完全にカメラを同期することもできます。
+Y-upとFOV（`focal_length`）も同期できています。
 
 今思うと、mrdoobは “decompose the camera matrix” という言葉を使っていたので、この方法を意図していたのかもしれません。
 
