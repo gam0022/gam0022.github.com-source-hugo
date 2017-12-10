@@ -260,7 +260,7 @@ three.jsにコントリビュートして良かったことを紹介します。
 
 ### コードの添削
 
-mrdoobにコードをリファクタリングしていました！
+mrdoobにコードをリファクタリングしてもらいました！
 
 - [More improvements to raymarching example.](https://github.com/mrdoob/three.js/commit/0e12847099cbc4f9597496ce7367771430183d7c#diff-fd09ca29c011c0e4ab932acf6021fdb7)
   - 毎フレーム実行される処理で `camera.lookAt` を使うと `Vector3` のインスタンスが大量に作られるので、代わりに `camera.rotation.set` を利用
