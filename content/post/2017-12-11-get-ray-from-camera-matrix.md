@@ -16,43 +16,31 @@ draft = false
 
 # はじめに
 
-こんにちは[gam0022](https://twitter.com/gam0022)です。
-KLabではUnityのエンジニアとして主に描画周りを担当しています。
+こんにちは、[gam0022](https://twitter.com/gam0022)です。
 
-先日、three.jsに2つのPRを投げてマージされました。
+先日、[three.js / examples（公式サンプル集）](https://threejs.org/examples)で紹介されている[raymarching / reflect](https://threejs.org/examples/#webgl_raymarching_reflect)という作品に関して、2つのPRを投げてマージされました。
 
 - [Improve raymarching example by gam0022 · Pull Request #12792 · mrdoob/three.js](https://github.com/mrdoob/three.js/pull/12792)
 - [Improve raymarching example v2 by gam0022 · Pull Request #12801 · mrdoob/three.js](https://github.com/mrdoob/three.js/pull/12801)
 
-ザックリと言うと、three.jsの公式サンプル集の作品を改良をしました。
-
-2年前に[three.jsのexamples（公式サンプル集）](https://threejs.org/examples/#webgl_raymarching_reflect)にレイマーチングの作品を追加する[PR](https://github.com/mrdoob/three.js/pull/7860)を投げて、
-無事にマージされたのですが、レイの生成方法がイケていなかったので、今回のPRで改善しました。
-カメラ行列（モデル行列 + プロジェクション行列の逆行列）から、レイの方向を生成するようにしました。
-
-ちなみに、追加したレイマーチングの作品の[解説記事](https://qiita.com/gam0022/items/03699a07e4a4b5f2d41f)は2015年のWebGLアドベントカレンダーに寄稿しているので、興味があれば合わせてお読み下さい。
+これらのPRでは、カメラ行列（モデル行列 + プロジェクション行列の逆行列）を利用することでレイの生成方法を改良しました。
+レイの生成方法というのは実に奥深いテーマで、いくらでも実装を考えられます。
+この記事では、今回のPRに至るまでの試行錯誤をまとめたいと思います。
 
 <!--more-->
 
-# レイ生成の実装の遷移
+# レイの生成方法の試行錯誤
 
-レイの生成の方法だけでも実は奥深いテーマで、実装はいくらでも考えられます。
+## 方法1: GLSLで全てのカメラ制御を行う
 
-この作品だけでもかなり試行錯誤しました。実装した順番に紹介していきます。
+まず、マウス座標と経過時間から、フラグメントシェーダ（GLSL）の中でカメラのレイを生成する方法です。
 
-## 1番初期の実装（GLSLで全部頑張る）
-
-1番初期の実装では、マウス座標と経過時間から、フラグメントシェーダ（GLSL）の中でカメラのレイを生成していました。
-
-シェーダに渡すuniformsは以下の2つです。
+シェーダに渡すuniformsは、マウス座標`mouse`と、経過時間`time`の2つです。
 
 - `uniform vec2 mouse;`
-  - マウス座標
 - `uniform float time;`
-  - 経過時間
 
-次が実際のGLSLコードです。`cPps`がカメラのワールド座標。`ray`がカメラのレイの方向です。
-
+以下のGLSLのコードを書きました。レイマーチング（デモシーン）の界隈では最もメジャーな実装かと思います。
 コード1 [カメラ制御をすべて行うGLSLのコード](https://github.com/gam0022/three.js/blob/1048d6751b11fa7c0caf7e480fa2682312716516/examples/webgl_raymarching_reflect.html#L199-L208)
 
 ```cpp
@@ -68,26 +56,20 @@ float targetDepth = 1.3;
 vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
 ```
 
-このようなレイの生成の実装は、レイマーチング（デモシーン）の界隈では最もメジャーだと思います。
+`cPos`はカメラのワールド座標、`ray`はカメラのレイの方向をそれぞれ表します。
+また、カメラのy-upに対応する `vec3( 1.0, 0.0 ,0.0 )` とカメラのFOVに対応する `float targetDepth = 1.3;` はコード上に埋め混んだ、いわゆるマジックナンバーとしました。
 
-カメラのy-upに対応する `vec3( 1.0, 0.0 ,0.0 )` とカメラのFOVに対応する `float targetDepth = 1.3;` はコード上に埋め混んだ、いわゆるマジックナンバーとしました。
+## 方法2: カメラの座標と向きを渡す
 
-## 2番目の実装（カメラの座標と向きを渡す）
-
-最初の実装でPRを出したところ、[PRのコメント](https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299)で、three.jsの作者である[@mrdoob](https://twitter.com/mrdoob)に
+上記の実装でPRを出したところ、three.jsの作者である[@mrdoob](https://twitter.com/mrdoob)から[コメント](https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299)をいただきました。
+以下に一部を抜粋します。
 
 > However... I think it would be cool if, instead of passing mouse and time to the shader we would simply pass the camera. I guess for that we have to decompose the camera matrix into position and direction?
->
-> しかし... シェーダに mouse と time を渡すのではなく、カメラを単に渡すだけでいいですね。カメラの行列を位置と方向に分解するのはどうですか？（雑な翻訳）
 
-と言われてしまったので、ひとまず `mouse` と `time` をシェーダに渡す実装は改めました。
-
-シェーダに渡すuniformsは以下の2つです。カメラのワールド座標と向きをシェーダに渡すようにしました。
+そこでシェーダに渡すuniformsを、カメラのワールド座標`cameraPos`と、カメラの向き`cameraDir`に改めました。
 
 - `uniform vec3 cameraPos;`
-  - カメラのワールド座標
 - `uniform vec3 cameraDir;`
-  - カメラの向き
 
 シェーダにカメラの情報を渡すことで、three.jsの世界とレイマーチングの世界を統合できます。
 
@@ -126,29 +108,21 @@ material.uniforms.cameraDir.value = camera.getWorldDirection();
 
 ワールド空間でのカメラの座標と方向を取得するメソッドはthree.jsに定義されています。便利ですね。
 
-## 3番目の実装（カメラ行列からレイを生成する）
+## 方法3: カメラ行列からレイを生成する
 
 ようやく本題です。最終的にはカメラ行列（モデル行列 + プロジェクション行列の逆行列）から、レイの向きを生成するようにしました。
 
-シェーダに渡すuniformsは以下の2つです。
+シェーダに渡すuniformsは、カメラのモデル行列（ビュー行列の逆行列）`cameraWorldMatrix`と、プロジェクション変換行列の逆行列`cameraProjectionMatrixInverse`の2つです。
 
 - `uniform mat4 cameraWorldMatrix;`
-  - カメラのモデル行列（ビュー行列の逆行列）
 - `uniform mat4 cameraProjectionMatrixInverse;`
-  - プロジェクション変換行列の逆行列
 
 これまでの実装ではy-upとFOVが固定でしたが、カメラ行列を渡すことでthree.jsのカメラのy-upとFOVも完全に同期できるようになりました。
 `cameraWorldMatrix`にy-upが、`cameraProjectionMatrixInverse`がFOVの情報が含まれています。
 
-mrdoobの[2年前のリクエスト](https://github.com/mrdoob/three.js/pull/7860#issuecomment-167802451)をようやく実現することができました。
-
-> The idea was to pass a camera into the shader, so the three world is more integrated with the raymarcher world. Ideally we could pass camera.matrixWorld and camera.projectionMatrix and decompose inside the shader.
->
-> three.jsの世界とレイマーチングの世界をもっと統合するためのアイデアがシェーダにカメラを渡すことでした。
-> 理想的には、camera.matrixWorld と camera.projectionMatrix を渡してシェーダー内で分解できました。（雑な翻訳）
-
-行列変換によってスクリーン座標からワールド座標系のレイの向きを求めています。
-2年前は行列変換の理解が不足していて実装できませんでしたが、最終的にはとてもシンプルに実現できました。
+コード3.1では、行列変換によってスクリーン座標からワールド座標系のレイの向きを求めています。
+まずスクリーン座標から正規化デバイス座標系のレイの方向`ndcRay`を求め、
+行列変換によってワールド座標系のレイの方向`ray`に変換しています。
 
 コード3.1 [カメラ行列からレイを生成するGLSLのコード](https://github.com/mrdoob/three.js/blob/6d9c22a3bc346f34ad779bada397db6f5c691760/examples/webgl_raymarching_reflect.html#L204-L215)
 
@@ -167,10 +141,7 @@ ray = normalize( ray );
 vec3 cPos = cameraPosition;
 ```
 
-上のコードでは、まずはスクリーン座標から正規化デバイス座標系のレイの方向（`ndcRay`）を求め、
-行列変換によってワールド座標系のレイの方向（`ray`）に変換しています。
-
-次はワールド座標からクリップ座標に座標を変換するコードです。
+ここで、ワールド座標からクリッピング座標への座標変換について考えます。
 
 コード3.2 ワールド座標 => クリッピング座標 の変換 を行うGLSLのコード
 
@@ -190,13 +161,13 @@ $$
 
 
 つまり、コード3.1では、`cameraViewMatrix` と `cameraProjectionMatrix` の逆行列である
-`cameraWorldMatrix` と `cameraProjectionMatrixInverse` を乗算することで、逆変換をしていたのですね。
+`cameraWorldMatrix` と `cameraProjectionMatrixInverse` を乗算することで、逆変換（クリッピング座標 => ワールド座標への変換）をしていたのですね。
 
 余談ですが、 `クリッピング座標系 => 正規化デバイス座標系` の変換はwによる同次除算です。
 今回は`ndcRay.w = 1.0`で定義できるため、`正規化デバイス座標系 => クリッピング座標系` の変換は省略できます。
 
 JavaScriptからシェーダにuniformを渡すコードはこんな感じです。
-逆行列の計算はCPU（JavaScript）側で事前に行うようにしました。
+逆行列の計算はJavaScript（CPU）側で事前に行うようにしました。
 
 コード3.3 [シェーダにuniformを渡すJavaScriptのコード](https://github.com/mrdoob/three.js/blob/6d9c22a3bc346f34ad779bada397db6f5c691760/examples/webgl_raymarching_reflect.html#L302-L303)
 
@@ -205,9 +176,9 @@ cameraWorldMatrix: { value: camera.matrixWorld },
 cameraProjectionMatrixInverse: { value: new THREE.Matrix4().getInverse( camera.projectionMatrix ) }
 ```
 
-## 4番目の実装（逆行列を使わない方法）
+## 方法4: 逆行列を使わない方法
 
-3番目の実装ではJavaScript（CPU）でプロジェクション行列の逆行列を計算していますが、
+方法3ではJavaScript（CPU）でプロジェクション行列の逆行列を計算していますが、
 シェーダ内でカメラ行列を分解すれば、この処理すら省けそうです。
 
 次のコードはCEDECの[デモシーンへようこそ
@@ -218,11 +189,11 @@ cameraProjectionMatrixInverse: { value: new THREE.Matrix4().getInverse( camera.p
 
 `up` がy-upに対応し、 `focal_length` がFOVに対応しているので、完全にカメラを同期することもできます。
 
-今思うと “decompose the camera matrix” という言葉を使っていたので、mrdoobが意図していたのは、この方法だった気もしますね。
-
+今思うと、mrdoobは “decompose the camera matrix” という言葉を使っていたので、この方法を意図していたのかもしれません。
 とはいえ、今回の例ですと、プロジェクション行列が更新が必要なのは画面のアスペクト比が変わった時だけですし、
-シェーダ内の処理はなるべく単純にしたいので、3番目の実装で十分だと私は思っています。
+シェーダ内の処理はなるべく単純にしたいので、方法3の実装で十分だと考えています。
 
+<!--
 # three.jsへのコントリビュートのすゝめ
 
 最後に「three.jsにOSSコントリビュータしたいなぁ」という人へ向けた文章を残しておきます。
@@ -290,13 +261,17 @@ mrdoobだけでなく、WestLangleyさんとIteeさんにもコードを修正�
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="en" dir="ltr">I am glad to have a signature written by mrdoob on my MacBook! <a href="https://t.co/phPyU7JUj6">pic.twitter.com/phPyU7JUj6</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938077812719624192?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+-->
+
 # まとめ
 
-レイトレのレイを生成する方法は様々ですが、three.jsの `Control` クラス等の資産を利用したいのであれば、
+レイを生成する方法は様々ありますが、three.jsの `Control` クラス等の資産を利用したいのであれば、
 カメラ行列からレイを生成する方法をオススメします。
 
+<!--
 three.jsに限らず、勇気を出してOSSにコントリビュートすると、良いきっかけが生まれるかもしれません。
 OSSにPRを出すときには、GitHubのWikiやドキュメントから開発マニュアル等を熟読しておくと、スムーズにマージしてもらえる可能性が高まります。
+-->
 
 ---
 
