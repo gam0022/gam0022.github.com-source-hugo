@@ -24,7 +24,7 @@ KLabではUnityのエンジニアとして主に描画周りを担当してい�
 - [Improve raymarching example by gam0022 · Pull Request #12792 · mrdoob/three.js](https://github.com/mrdoob/three.js/pull/12792)
 - [Improve raymarching example v2 by gam0022 · Pull Request #12801 · mrdoob/three.js](https://github.com/mrdoob/three.js/pull/12801)
 
-ザックリと言うと、three.jsの公式サンプル集の作品の改良をしました。
+ザックリと言うと、three.jsの公式サンプル集の作品を改良をしました。
 
 2年前に[three.jsのexamples（公式サンプル集）](https://threejs.org/examples/#webgl_raymarching_reflect)にレイマーチングの作品を追加する[PR](https://github.com/mrdoob/three.js/pull/7860)を投げて、
 無事にマージされたのですが、レイの生成方法がイケていなかったので、今回のPRで改善しました。
@@ -274,15 +274,15 @@ mrdoobだけでなく、WestLangleyさんとIteeさんにもコードを修正�
 
 ### mrdoobを囲んだ飲み会
 
-先日、mrdoobが日本に旅行しており、日本のthree.js界隈のエンジニアとmrdoobを囲んだ飲み会に呼ばれたので、私も参加しました。
+先日、日本に旅行中のmrdoobを囲んだ、three.js界隈の人たちとの飲み会に呼ばれたので、私も参加しました。
 
-私は英語は全然話せないのですが、上のレイマーチングのexamplesをテーマに少しはmrdoobとコミュニケーションを図ることができました！
+私は英語を話せないのですが、上のレイマーチングのexamplesについてmrdoobに話を振ったら、少しは英語でコミュニケーションできました！
 いつかは普通に英語を話せるようになりたい...！
 
-これは自慢なのですが、MacBook Airにサインしてもらって、ツーショト写真も撮ってもらえました。
-
 たぶんPRを送っていなければ、mrdoobに認識されず、そもそも飲み会にも呼ばれなかった可能性が高いので、
-あの時に勇気を出してPRを出して良かったと本当に思います！
+2年前に勇気を出してPRを出して良かったと本当に思います！
+
+これは自慢なのですが、MacBook Airにサインしてもらって、ツーショト写真も撮ってもらえました。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Photo with <a href="https://twitter.com/mrdoob?ref_src=twsrc%5Etfw">@mrdoob</a> 🤗 <a href="https://t.co/hIQC6iLbZS">pic.twitter.com/hIQC6iLbZS</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938075608197636096?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
