@@ -48,6 +48,8 @@ draft = false
 
 - [これがGPUの力！Three.jsによる“リアルタイム”なレイトレーシング](https://qiita.com/gam0022/items/03699a07e4a4b5f2d41f)
 
+要するに、2年前に自分で作った作品を今になって改良しました。
+
 <!--more-->
 
 # レイの生成方法の試行錯誤
@@ -194,6 +196,8 @@ $$
 
 つまり、コード3.1では、`cameraViewMatrix` と `cameraProjectionMatrix` の逆行列である
 $V^{-1}$（`cameraWorldMatrix`）と$P^{-1}$（`cameraProjectionMatrixInverse`）を乗算することで、逆変換（クリッピング座標 => ワールド座標への変換）をしていたのですね。
+
+補足しておくと、ビュー行列(`cameraViewMatrix`)とカメラのモデル行列(`cameraWorldMatrix`)はお互いに逆行列の関係にあります（[その72 ビュー・射影変換行列が持つ情報を抜き出そう](http://marupeke296.com/DXG_No72_ViewProjInfo.html)）。
 
 クリッピング座標系を同次座標のwで除算すると、正規化デバイス座標系に変換できます。
 `ndcRay.w = 1.0` と定義すると、クリッピング座標系と正規化デバイス座標系が一致するため、
