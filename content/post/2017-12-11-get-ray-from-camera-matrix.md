@@ -43,6 +43,7 @@ draft = false
 私が2年前に実装して、three.jsのexamplesに取り込んでいただきました。その時のPRはこちらです。
 
 - [Added raymarching reflect example. by gam0022 · Pull Request #7860 · mrdoob/three.js](https://github.com/mrdoob/three.js/pull/7860)
+- [[WIP] Fix raymarching reflect by gam0022 · Pull Request #7863 · mrdoob/three.js](https://github.com/mrdoob/three.js/pull/7863)
 
 解説記事もあるので、もしご興味があればあわせてお読みください。
 
@@ -59,7 +60,7 @@ draft = false
 
 ## 方法1: GLSLで全てのカメラ制御を行う
 
-最初に実装したのは、マウス座標と経過時間から、フラグメントシェーダ（GLSL）の中でカメラのレイを生成する方法です。
+2年前の初PR [#7860](https://github.com/mrdoob/three.js/pull/7860) で実装したのは、マウス座標と経過時間から、フラグメントシェーダ（GLSL）の中でカメラのレイを生成する方法です。
 
 シェーダに渡すuniformsは、マウス座標`mouse`と、経過時間`time`の2つです。
 
@@ -89,6 +90,8 @@ vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
 また、カメラのY-upに対応する `vec3( 0.0, 1.0 ,0.0 )` とカメラのFOVに対応する `float targetDepth = 1.3;` はコード上に埋め混んだ、いわゆるマジックナンバーとしました。
 
 ## 方法2: カメラの座標と向きを渡す
+
+この方法は2年前の2つ目のPR [#7863](https://github.com/mrdoob/three.js/pull/7863) で対応しました。
 
 上記の実装でPRを出したところ、three.jsの作者である[@mrdoob](https://twitter.com/mrdoob)から[コメント](https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299)をいただきました。
 以下に一部を抜粋します。
@@ -146,7 +149,9 @@ material.uniforms.cameraDir.value = camera.getWorldDirection();
 
 ## 方法3: カメラ行列の逆行列を渡す
 
-ようやく本題です。最終的にはカメラ行列（モデル行列 + プロジェクション行列の逆行列）から、レイの向きを生成するようにしました。
+ようやく本題です。今回の2つのPR [#12792](https://github.com/mrdoob/three.js/pull/12792) と [#12801](https://github.com/mrdoob/three.js/pull/12801) で対応しました。
+
+カメラ行列（モデル行列 + プロジェクション行列の逆行列）から、レイの向きを生成するようにしました。
 
 シェーダに渡すuniformsは、カメラのモデル行列（ビュー行列の逆行列）`cameraWorldMatrix`と、プロジェクション変換行列の逆行列`cameraProjectionMatrixInverse`の2つです。
 
@@ -187,8 +192,8 @@ vec4 clipPos = cameraProjectionMatrix * cameraViewMatrix * vec4( worldPos, 1.0 )
 
 行列Aの逆行列を利用すると、Aの行列による行列変換の逆変換ができます。
 
-逆行列の性質から、$V$をビュー行列（`cameraViewMatrix`）、$P$をプロジェクション行列（`cameraProjectionMatrix`）とすると、
-$PV$（ワールド座標 => 視点系座標 => クリッピング座標）の逆変換は、$V^{-1}P^{-1}$となります。
+$V$をビュー行列（`cameraViewMatrix`）、$P$をプロジェクション行列（`cameraProjectionMatrix`）とすると、
+逆行列の性質から、$PV$（ワールド座標 => 視点系座標 => クリッピング座標）の逆変換は、$V^{-1}P^{-1}$となります。
 
 $$
 (PV)^{-1} = V^{-1}P^{-1}
@@ -197,7 +202,7 @@ $$
 つまり、コード3.1では、`cameraViewMatrix` と `cameraProjectionMatrix` の逆行列である
 $V^{-1}$（`cameraWorldMatrix`）と$P^{-1}$（`cameraProjectionMatrixInverse`）を乗算することで、逆変換（クリッピング座標 => ワールド座標への変換）をしていたのですね。
 
-補足しておくと、ビュー行列(`cameraViewMatrix`)とカメラのモデル行列(`cameraWorldMatrix`)はお互いに逆行列の関係にあります（[その72 ビュー・射影変換行列が持つ情報を抜き出そう](http://marupeke296.com/DXG_No72_ViewProjInfo.html)）。
+補足しますと、ビュー行列(`cameraViewMatrix`)とカメラのモデル行列(`cameraWorldMatrix`)はお互いに逆行列の関係にあります（[その72 ビュー・射影変換行列が持つ情報を抜き出そう](http://marupeke296.com/DXG_No72_ViewProjInfo.html)）。
 
 クリッピング座標系を同次座標のwで除算すると、正規化デバイス座標系に変換できます。
 `ndcRay.w = 1.0` と定義すると、クリッピング座標系と正規化デバイス座標系が一致するため、
@@ -233,7 +238,8 @@ Y-upとFOV（`focal_length`）も同期できています。
 今思うと、mrdoobは “decompose the camera matrix” という言葉を使っていたので、この方法を意図していたのかもしれません。
 
 今回の例ですと、プロジェクション行列が更新が必要なのは画面のアスペクト比が変わった時だけですし、
-シェーダ内の処理はなるべく単純にしたいので、今回であれば方法3で十分かなと思います。
+シェーダ内の処理はなるべく単純にしたいので、今回であれば方法3で十分かなと感じています。
+まだ実装していないので、実装したら書き味やパフォーマンスを比較したいです。
 
 <!--
 # three.jsへのコントリビュートのすゝめ
@@ -317,17 +323,16 @@ OSSにPRを出すときには、GitHubのWikiやドキュメントから開発�
 
 # おまけ
 
-先日、日本に旅行中のmrdoobを囲んだthree.js界隈の人たちとの飲み会に呼ばれたので、私も参加しました。
+今回のPRを送った直後に、日本に旅行中のmrdoobを囲んだthree.js界隈の人たちとの飲み会があったので、参加させていただきました。
 
-英語はとても苦手なのですが、上のレイマーチングのexamplesについてmrdoobに話を振ったら、少しはコミュニケーションできました！
-勇気を出してPRを送って良かったなと思いました。サインまでいただけたので、大満足です🤗
+英語はとても苦手なのですが、作品やPRについてmrdoobと少しお話しすることができました。サインまでいただけて大満足です🤗
+勇気を出してPRを送って良かったなと思いました。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Photo with <a href="https://twitter.com/mrdoob?ref_src=twsrc%5Etfw">@mrdoob</a> 🤗 <a href="https://t.co/hIQC6iLbZS">pic.twitter.com/hIQC6iLbZS</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938075608197636096?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="en" dir="ltr">I am glad to have a signature written by mrdoob on my MacBook! <a href="https://t.co/phPyU7JUj6">pic.twitter.com/phPyU7JUj6</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938077812719624192?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 ---
 
