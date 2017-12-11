@@ -99,7 +99,7 @@ vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
 > However... I think it would be cool if, instead of passing mouse and time to the shader we would simply pass the camera. I guess for that we have to decompose the camera matrix into position and direction?
 
 要約すると、GLSL側でカメラの位置や方向を決めずに、three.js側（JavaScript側）でカメラの操作を行うのはどうかという提案でした。
-カメラ操作はthree.jsで行い、シェーダはカメラの情報を受取るようにすれば、three.jsの世界とレイマーチングの世界を統合できます。
+カメラ操作はthree.jsで行い、シェーダはカメラの情報を受取るようにすれば、three.jsの世界とレイマーチングの世界をより統合できます。
 
 そこでシェーダに渡すuniformsを、カメラのワールド座標`cameraPos`と、カメラの方向`cameraDir`に改めました。
 
@@ -324,6 +324,7 @@ OSSにPRを出すときには、GitHubのWikiやドキュメントから開発�
 # おまけ
 
 今回のPRを送った直後に、日本に旅行中のmrdoobを囲んだthree.js界隈の人たちとの飲み会があったので、参加させていただきました。
+参加者のみなさんありがとうございました。
 
 英語はとても苦手なのですが、作品やPRについてmrdoobと少しお話しすることができました。サインまでいただけて大満足です🤗
 勇気を出してPRを送って良かったなと思いました。
