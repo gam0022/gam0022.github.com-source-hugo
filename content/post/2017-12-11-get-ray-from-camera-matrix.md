@@ -93,7 +93,7 @@ vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
 
 この方法は2年前の2つ目のPR [#7863](https://github.com/mrdoob/three.js/pull/7863) で対応しました。
 
-上記の実装でPRを出したところ、three.jsの作者である[@mrdoob](https://twitter.com/mrdoob)から[コメント](https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299)をいただきました。
+方法1でPRを送ったところ、three.jsの作者である[@mrdoob](https://twitter.com/mrdoob)から[コメント](https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299)をいただきました。
 以下に一部を抜粋します。
 
 > However... I think it would be cool if, instead of passing mouse and time to the shader we would simply pass the camera. I guess for that we have to decompose the camera matrix into position and direction?
