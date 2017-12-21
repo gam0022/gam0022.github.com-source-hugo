@@ -1,6 +1,6 @@
 +++
 date = "2017-12-21T22:30:11+09:00"
-image = ""
+image = "/images/posts/2017-12-21-unity-demoscene/unity-demoscene-1.jpg"
 toc = true
 math = false
 draft = false
@@ -14,6 +14,14 @@ slug = "unity-demoscene"
 
 +++
 
+これは [Unity #2 Advent Calendar 2017](https://qiita.com/advent-calendar/2017/unity2) 21日目の記事です。
+
+----
+
+Unityを使って、メガデモ（デモシーン）の制作に挑戦しました。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jU_0bFDOnR4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
 # メガデモ（デモシーン）とは
 
 デモシーンはヨーロッパを起源としたコンピュータを使った音と映像の作品を作成し、みんなに見せ合うというカルチャーです。
@@ -24,7 +32,7 @@ slug = "unity-demoscene"
 
 - [デモシーンの歴史 | DEMOSCENE.JP](http://www.demoscene.jp/?page_id=50)
 
-日本でもTokyo Demo Festというデモシーンの大会が毎年開催されています。
+日本でもTokyo Demo Fest（以下、TDF）というデモシーンの大会が毎年開催されています。
 私も2016年と2017年の大会にGLSL Graphics Compo部門で参加しました。
 
 - [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！](https://gam0022.net/blog/2017/02/24/tdf2017/)
@@ -32,21 +40,78 @@ slug = "unity-demoscene"
 
 # 今回のテーマ
 
-これまでは[GLSL Sandbox](http://glslsandbox.com/)上で動かすGLSL Graphics Compo部門用の作品だけを作ってきました。
-
-しかし、最近は仕事でUnityを触る機会も増えてきたので、Unityの勉強を兼ねてUnityでデモシーン作成に挑戦することにしました。
-
 通常、デモシーンでは厳しい制限の中で競うことが多いです。
 例えば、GLSL Graphics Compo部門ではGLSLのシェーダーのみで作品を作らなければなりませんし、
 4k intro部門であれば実行ファイルの容量をわずか4KBに収めなければいけません。
 
-Unityを使うとなると、容量を小さく抑えることはまず無理なので、今回はそのような制約は無視することにします。
+Unityを使うとなると、容量を小さく抑えることは困難なので、今回はそのような制約は無視することにします。
 
-ひとまずプログラムから映像を作るという点にフォーカスして、
-Unityの便利なAssetをじゃぶじゃぶ使って、何かを作ろうという趣旨でやっていきたいと思います。
+ひとまずプログラムからプロシージャルに映像を作るという点にフォーカスして、
+Unityの便利なAssetをじゃぶじゃぶ使って、何かを作ろうという趣旨でやっていきます。
 
-# 使用したアセット
+## 今回の目的
 
-- [uRaymarching](https://github.com/hecomi/uRaymarching)
-- [Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)
-- [Default Playables](https://www.assetstore.unity3d.com/jp/#!/content/95266)
+これまでの個人のTDFの参加経験の中では、GLSL Graphics Compo部門のエントリーしかしたことがありませんでした。
+
+次回のTDFではPC Demo Compoで挑戦したいと考えており、
+そのツールとしてUnityは有力な選択肢だったので、Unityでデモシーンを作る検証をしてみたいと思いました。
+
+さらに、最近では仕事でUnityを触る機会も増えてきたので、Unityの勉強を兼ねてUnityでデモシーン作成に挑戦することにしました。
+
+# 作品の解説
+
+レイマーチングにより空間を描画しつつ、画面の中央のロボットはラスタライズによる描画をする、
+レイマーチングとラスタライザのハイブリッドな描画を試みた作品です。
+
+レイマーチングの結果をGバッファに書き込むディファードシェーディングを採用しています。
+これによって、レイマーチングもラスタライザも一貫したシェーディングを実現しています。
+
+また、BloomやAOのポストエフェクトを使用して、見た目の品質を向上させました。
+
+全体の進行の制御はUnity2017のTimelineを使いました。
+
+## 使用したアセット
+
+今回の目的は「検証」なので、色々と試してみました。
+
+uRaymarchingを除くと、すべてUnity Technologiesの公式Assetです。
+
+- プロシージャル系
+    - [uRaymarching](https://github.com/hecomi/uRaymarching)
+    - [Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)
+    - [Default Playables](https://www.assetstore.unity3d.com/jp/#!/content/95266)
+    - [TextMesh Pro](https://www.assetstore.unity3d.com/jp/#!/content/84126)
+- Asset系
+    - [Space Robot Kyle](https://www.assetstore.unity3d.com/jp/#!/content/4696)
+    - [ユニティちゃん 3Dモデルデータ](http://unity-chan.com/download/releaseNote.php?id=UnityChan)のモーション
+    - [Unity Particle Pack](https://www.assetstore.unity3d.com/jp/#!/content/73777)
+- ツール系
+    - [Unity Recorder](https://github.com/Unity-Technologies/GenericFrameRecorder)
+
+### uRaymarching
+
+神Assetでした。
+
+### Post-processing Stack v2
+
+### Timeline + Default Playables
+
+### TextMesh Pro
+
+### Unity Particle Pack
+
+### Unity Recorder
+
+Unityの画面を録画して動画に保存するAssetです。
+
+冒頭のYouTubeの動画もこのAssetを使って撮影しました。
+
+固定フレームレートに対応しているので、非力なPCでも撮影できます。
+
+Timelineとの連携もあって、Recorder trackをタイムラインに追加すると、エディター再生すると自動で録画ができて便利です。
+
+Unity Asset Storeで公開されている[v0.1ではUIが録画できないという不具合](https://github.com/Unity-Technologies/GenericFrameRecorder/issues/11)があって、悩まされました。
+
+[GitHubのReleases](https://github.com/Unity-Technologies/GenericFrameRecorder/releases)から現時点の最新版のv0.2をダウンロードしたところ、解決しました。
+
+# まとめ
