@@ -38,7 +38,9 @@ Unityを使って、メガデモ（デモシーン）の制作に挑戦しまし
 - [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！](https://gam0022.net/blog/2017/02/24/tdf2017/)
 - [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/)
 
-# 今回のテーマ
+# 今回のテーマと目的
+
+## 今回のテーマ
 
 通常、デモシーンでは厳しい制限の中で競うことが多いです。
 例えば、GLSL Graphics Compo部門ではGLSLのシェーダーのみで作品を作らなければなりませんし、
@@ -90,15 +92,33 @@ uRaymarchingを除くと、すべてUnity Technologiesの公式Assetです。
 
 ### uRaymarching
 
-神Assetでした。
+TODO:
 
 ### Post-processing Stack v2
 
+TODO:
+
 ### Timeline + Default Playables
+
+TODO:
+
+![timeline](/images/posts/2017-12-21-unity-demoscene/timeline.jpg)
 
 ### TextMesh Pro
 
+後半のタイトル文字に使用しました。
+
+Timelineとの連携については、ひとまずActivation Trackを使うことで実現できました。
+
+TextMesh Proのサンプルの[TextConsoleSimulator](https://github.com/gam0022/unity-demoscene/blob/master/Assets/TextMesh%20Pro/Examples%20%26%20Extras/Scripts/TextConsoleSimulator.cs)というクラスで一文字ずつ表示する制御をしているのですが、通常再生時より録画時の方がスピードが速くなる問題がありました。
+
+これはTimeline用にTextConsoleSimulatorを改修する必要があるかもしれません。
+
 ### Unity Particle Pack
+
+ロボットの足元の火花に"ElectricalSparksEffect"を使用しました。
+
+Timelineとの連携については、ひとまずActivation Trackを使うことで実現できました。
 
 ### Unity Recorder
 
@@ -108,10 +128,9 @@ Unityの画面を録画して動画に保存するAssetです。
 
 固定フレームレートに対応しているので、非力なPCでも撮影できます。
 
-Timelineとの連携もあって、Recorder trackをタイムラインに追加すると、エディター再生すると自動で録画ができて便利です。
+さらにTimelineとの連携機能もありました。
+Recorder trackをタイムラインに追加すると、エディター再生時に自動で録画ができます。
 
-Unity Asset Storeで公開されている[v0.1ではUIが録画できないという不具合](https://github.com/Unity-Technologies/GenericFrameRecorder/issues/11)があって、悩まされました。
-
-[GitHubのReleases](https://github.com/Unity-Technologies/GenericFrameRecorder/releases)から現時点の最新版のv0.2をダウンロードしたところ、解決しました。
+注意点としては、Unity Asset Storeで公開されている[v0.1ではUIが録画できないという不具合](https://github.com/Unity-Technologies/GenericFrameRecorder/issues/11)がありました。[GitHubのReleases](https://github.com/Unity-Technologies/GenericFrameRecorder/releases)から現時点の最新版のv0.2をダウンロードしたところ、解決しました。
 
 # まとめ
