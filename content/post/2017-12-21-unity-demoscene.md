@@ -56,18 +56,23 @@ uRaymarchingではDefferedシェーディングを採用しており、レイマ
 ### 距離関数の設計
 
 Boxの組み合わせだけでシーンを構成しました。
-床はBoxを敷き詰めているのは見た目通りだと思いますが、なんと柱もBoxの組み合わせで作っています。
+床はBoxを敷き詰めているのは見た目通りだと思いますが、柱もBoxの組み合わせで作っています！
+
+[距離関数のfoldの記事](https://gam0022.net/blog/2017/03/02/raymarching-fold/)で紹介した回転のfoldを利用して、
+Boxから上から見たときに多角形になる柱を生成しました。
+
+単純なBoxの形状だけでも、それなりに面白い形ができたと思っています。
 
 ### 床がランダムな順番に光る演出
 
 床をJubeat（音ゲー）風にランダムに光らせる演出は自分でも気に入っています。
 
-この演出の実装方法はとてもお手軽なので、紹介します！
+この演出のとてもお手軽な方法で実装できました！
 
 まずは、Y座標に応じて光るように、Gバッファに書き出すemissionを設定します。
 光らせるY座標の位置は時間でアニメーションさせます。
 
-```hlsl
+```cpp
 inline void PostEffect(RaymarchInfo ray, inout PostEffectOutput o)
 {
     o.emission = half4(2.0, 2.0, 5.0, 1.0) * abs(sin(PI * 12.0 * _Time.x)) * step(frac(ray.endPos.y - 4.0 * _Time.x), 0.02);
@@ -76,7 +81,7 @@ inline void PostEffect(RaymarchInfo ray, inout PostEffectOutput o)
 
 次に、床のブロックの高さの動きをランダムに設定します。
 
-```hlsl
+```cpp
 float dFloor(float3 pos)
 {
     float3 p = pos;
@@ -99,23 +104,21 @@ float dFloor(float3 pos)
 2. プロジェクトの設定で `metalEditorSupport: 0` にしないと、Macで動作しない
     - [修正のコミット](https://github.com/gam0022/unity-demoscene/commit/47f19613bbc032bef1b8b35b9b972f3f9983debc)
 
-## Post-processing Stack v2によるポストエフェクト
-
-- [Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)
-
-TODO
-
 ## Timelineとの連携
+
+Unity2017のTimeline機能でカメラワークやロボットの動き、UI上のテキストなどの演出の制御をしました。
 
 ![timeline](/images/posts/2017-12-21-unity-demoscene/timeline.jpg)
 
-TODO
-
 ### カメラワーク
 
-[Default Playables](https://www.assetstore.unity3d.com/jp/#!/content/95266)
+独自のPlayablesを作成して、カメラワークを制御しようと思ったのですが、
+思ったよりもPlayablesの実装は面倒そうだったので、断念しました。
 
-TODO
+[Default Playables](https://www.assetstore.unity3d.com/jp/#!/content/95266)
+に含まれているTimeline Playable Wizardを使えば、
+
+TODO: まだ途中
 
 ### テキスト
 
@@ -129,6 +132,14 @@ Timelineとの連携は、Activation Trackを使って実現しています。
 ロボットの足元の火花には、[Unity Particle Pack](https://www.assetstore.unity3d.com/jp/#!/content/73777)
 に含まれている「ElectricalSparksEffect」を使用しました。
 Timelineとの連携は、Activation Trackを使って実現しています。
+
+## ポストエフェクト
+
+BloomとAmbient Occlusion、Fogのポストエフェクトには、[Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)を利用しました。
+
+ポストエフェクトによって、ぐっと見た目を向上できました。
+
+TODO: 比較画像
 
 ## 3D素材
 
@@ -150,7 +161,5 @@ Recorder trackをタイムラインに追加すると、エディター再生時
 
 
 # 感想
-
-## WebGLとUnityを比較して
 
 TODO
