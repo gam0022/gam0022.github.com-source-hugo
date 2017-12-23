@@ -1,5 +1,5 @@
 +++
-date = "2017-12-21T22:30:11+09:00"
+date = "2017-12-25T09:30:11+09:00"
 image = "/images/posts/2017-12-21-unity-demoscene/unity-demoscene-1.jpg"
 toc = true
 math = false
@@ -15,11 +15,14 @@ slug = "unity-demoscene"
 +++
 
 これは [Unity #2 Advent Calendar 2017](https://qiita.com/advent-calendar/2017/unity2) 21日目の記事です。
+投稿が遅れたことをお詫びします。
 
 ----
 
-美しいCGアニメーションをリアルタイムに生成するプログラムを「デモ」と呼びます。
-今回は、Unityを使ったデモの制作に初挑戦しました。
+美しいCGアニメーションをリアルタイムに生成するプログラムを「デモ」と呼ぶ文化（[デモシーン](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A2%E3%82%B7%E3%83%BC%E3%83%B3)）があります。
+
+今回はUnityを使ったデモの制作に初挑戦しました。
+動画を用意しました。音はありません。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jU_0bFDOnR4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
@@ -51,7 +54,7 @@ uRaymarchingはレイマーチングのシェーダの作成をサポートす�
 
 uRaymarchingではDefferedシェーディングを採用しており、レイマーチングのシェーダはGバッファに対して結果を書き込みます。
 そのため、今回のようにレイマーチングとポリゴンのモデルが混在したシーンであっても、一貫したシェーディングを実現できました！
-個人的に、とっても魅力的なポイントでした！
+一貫したシェーディングができるのが個人的にとても魅力的な点でした。
 
 ### 距離関数の設計
 
@@ -91,7 +94,7 @@ float dFloor(float3 pos)
 }
 ```
 
-これだけで、床をJubeat（音ゲー）風にランダムに光らせる演出の完成です！
+これだけで、床をにランダムに光らせる演出の完成です！
 
 床の高さがバラバラになっているので、等高線で光らせるとタイミングが微妙にずれて、いい感じにバラバラのタイミングで光ります！
 
@@ -112,20 +115,38 @@ Unity2017のTimeline機能でカメラワークやロボットの動き、UI上�
 
 ### カメラワーク
 
-独自のPlayablesを作成して、カメラワークを制御しようと思ったのですが、
-思ったよりもPlayablesの実装は面倒そうだったので、断念しました。
+Timelineからゲームオブジェクトを操作する2つの方法があります。
 
-[Default Playables](https://www.assetstore.unity3d.com/jp/#!/content/95266)
-に含まれているTimeline Playable Wizardを使えば、
+1. `Playables`を実装・利用する方法
+  - APIは複雑で、気軽に使うのは難しい
+  - 作り込めば何でもできる
+2. `ITimeControl`を継承したコンポーネントを実装・利用する方法
+  - APIは単純で、気軽に使える
+  - できることが少ない（クリップの現在時間しか受け取れない）
 
-TODO: まだ途中
+カメラワークの制御をどちらで行うのか悩みましたが、最終的には以下の理由で`ITimeControl`に決めました。
+
+- とりあえずカメラを動かすだけなら、`ITimeControl`が手っ取り早いと感じた
+- カメラワークを汎用的な`Playables`に落とし込む時間もスキルも足りなかった
+
+とりあえずカメラワークを`ITimeControl`で実装することはできましたが、
+`ITimeControl`では再生時間の情報しか受け取れず、クリップごとにパラメータを持たすことすらできません。
+三角関数などを駆使してカメラのtransformを操作して、無理やりカメラワークを実装しましたが、
+職人芸すぎてメンテナンスが困難なコードになりました。
+
+今回は満足するものはできなかったので、次回はこれらの方法でカメラワークに再挑戦したいです。
+
+- [Default Playables](https://www.assetstore.unity3d.com/jp/#!/content/95266)
+に含まれているTimeline Playable Wizardを使えば、`Playables`の雛形コードを作成できるそうなので、これを利用して独自`Playables`の実装に再挑戦する
+- [Cinemachine](http://tsubakit1.hateblo.jp/entry/2017/06/15/225504)というUnity公式のカメラワークを作るための`Playables`を利用する
 
 ### テキスト
 
 後半のタイトル文字には[TextMesh Pro](https://www.assetstore.unity3d.com/jp/#!/content/84126)を使用しました。
 Timelineとの連携は、Activation Trackを使って実現しています。
 1文字ずつ表示する部分は、TextMesh ProのサンプルのTextConsoleSimulatorクラスを使って制御しています。
-しかし、通常再生時と録画時とで表示速度が異なるという問題があるため、Timeline用に改修すべきかもしれません。
+しかし、このクラスはTimelineは考慮されておらず、通常再生時と録画時とで表示速度がずれる問題が残りました。
+将来的には独自の`Playables`を実装して、これらの問題を解決したいです。
 
 ### パーティクル
 
@@ -133,7 +154,9 @@ Timelineとの連携は、Activation Trackを使って実現しています。
 に含まれている「ElectricalSparksEffect」を使用しました。
 Timelineとの連携は、Activation Trackを使って実現しています。
 
-## ポストエフェクト
+## その他
+
+### ポストエフェクト
 
 BloomとAmbient Occlusion、Fogのポストエフェクトには、[Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)を利用しました。
 
@@ -141,13 +164,13 @@ BloomとAmbient Occlusion、Fogのポストエフェクトには、[Post-process
 
 TODO: 比較画像
 
-## 3D素材
+### 3D素材
 
 ロボットの3Dモデルは[Space Robot Kyle](https://www.assetstore.unity3d.com/jp/#!/content/4696)を使わせていただきました。
 
 モーションは[ユニティちゃん 3Dモデルデータ](http://unity-chan.com/download/releaseNote.php?id=UnityChan)を利用しました。
 
-## 動画撮影
+### 動画撮影
 
 冒頭のYouTubeの動画は、[Unity Recorder](https://github.com/Unity-Technologies/GenericFrameRecorder)を使って撮影しました。
 このアセットは、Unityの画面を録画し、動画として保存してくれます。
@@ -159,7 +182,18 @@ Recorder trackをタイムラインに追加すると、エディター再生時
 注意点として、[v0.1ではUIが録画できないという不具合](https://github.com/Unity-Technologies/GenericFrameRecorder/issues/11)がありました。
 [GitHubのReleases](https://github.com/Unity-Technologies/GenericFrameRecorder/releases)から、v0.2（現時点の最新版）をダウンロードすることで解決できました。
 
+# Unityでデモを作った感想
 
-# 感想
+これまでWebGLでデモを作った経験はありましたが、Unityでデモを作るのは初めてでした。
+総合的に考えると、Unityでデモを作るのは良い選択肢だと感じました。
 
-TODO
+まず、WebGLと比較するとUnityの方が作業効率は高いと思いました。
+例えば、Unityだとシェーダ（ShaderLab）に数行コードを足すだけで、インスペクタにパラメータを露出できるので、
+リアルタイムに見た目を確認しながらパラメータを調整できます。
+WebGLでも同様のことはできますが、シェーダの編集だけでなく、JavaScript側の修正が必要です。
+
+またシーンの再生中にシェーダを編集した時にホットリロードができるのも便利でした。
+WebGLでもホットリロードは実現はできるとは思いますが、何もしなくても標準で対応しているUnityは凄いと思います。
+
+しかし、まったく使ったことのないAssetを複数組み合わせたということもあり、試行錯誤で時間を使ってしまいました。
+今までそんなにUnityは使ってこなかったのですが、今後は趣味でUnityをどんどん触って経験値を高めたいです。
