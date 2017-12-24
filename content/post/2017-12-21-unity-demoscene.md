@@ -3,7 +3,7 @@ date = "2017-12-25T09:30:11+09:00"
 image = "/images/posts/2017-12-21-unity-demoscene/cut1.jpg"
 toc = true
 math = false
-draft = false
+draft = true
 tags = [
 "Unity",
 "CG",
