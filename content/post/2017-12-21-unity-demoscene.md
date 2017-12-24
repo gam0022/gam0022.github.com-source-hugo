@@ -21,16 +21,20 @@ slug = "unity-demoscene"
 [デモシーン](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A2%E3%82%B7%E3%83%BC%E3%83%B3)界隈では、美しいCGアニメーションをリアルタイムに生成するプログラムを「デモ」と呼びます。
 
 今回はUnityを使ったデモの制作に初挑戦しました。
-12秒長さの短い無音の動画です。
+13秒の短い無音の動画です。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3x9p9tqagJw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BZGO5xXuPj8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+<!--
+[![THE GLOW](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)
+-->
 
 # 作品の解説
 
 「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させた作品です。
 ロボットは通常の3Dモデルですが、床や柱のモデルはレイマーチングでプロシージャルに生成しました。
 
-レイマーチングについてはuRaymarchingというAssetを利用しました。
+レイマーチングにはuRaymarchingというAssetを利用しました。
 
 映像作品と相性が良さそうなので、Unity2017のTimelineも利用しました。
 
@@ -43,7 +47,7 @@ Unityのバージョンは執筆時点の最新版である2017.2.1f1を用い�
 
 ## uRaymarchingによるレイマーチング
 
-uRaymarchingはレイマーチングのシェーダの作成をサポートするエディタ拡張です。
+uRaymarchingはレイマーチングのシェーダの作成をサポートするシェーダ群とエディタ拡張です。
 開発者は[@hecomi](https://twitter.com/hecomi)さんです。
 
 - [uRaymarching | GitHub](https://github.com/hecomi/uRaymarching)
@@ -88,7 +92,7 @@ float4 _SlideEmission;
 inline void PostEffect(RaymarchInfo ray, inout PostEffectOutput o)
 {
     float a = frac(4.0 * ray.endPos.y - 2.0 * _Time.x - 0.5);
-    float width = 0.02;
+    float width = 0.04;
     o.emission = _SlideEmission * abs(sin(PI * 12.0 * _Time.x)) * step(a, width) * ((a + 0.5 * width) / width);
 }
 ```
@@ -235,6 +239,8 @@ Unityを上手に利用すれば効率的にデモ作成できると感じまし
 
 # ソースコード
 
-UnityのプロジェクトをGitHubで公開しています。スターをください。
+UnityのプロジェクトをGitHubで公開しています。スターが欲しいです。
 
 - [Unity Demoscene | GitHub](https://github.com/gam0022/unity-demoscene)
+
+今回のデモ用のファイルは[`Assets/Demoscene/TheGlow`](https://github.com/gam0022/unity-demoscene/tree/master/Assets/Demoscene/TheGlow)のディレクトリにあります。
