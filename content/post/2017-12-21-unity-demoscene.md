@@ -3,28 +3,27 @@ date = "2017-12-25T09:30:11+09:00"
 image = "/images/posts/2017-12-21-unity-demoscene/cut1.jpg"
 toc = true
 math = false
-draft = true
+draft = false
 tags = [
 "Unity",
 "CG",
 "レイマーチング"
 ]
-title = "Unityでデモ制作に挑戦（uRaymarchingとTimelineを試す）"
+title = "Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す）"
 slug = "unity-demoscene"
 
 +++
 
 これは [Unity #2 Advent Calendar 2017](https://qiita.com/advent-calendar/2017/unity2) 21日目の記事です。
-投稿が遅れたことをお詫びします。
 
 ----
 
 [デモシーン](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A2%E3%82%B7%E3%83%BC%E3%83%B3)界隈では、美しいCGアニメーションをリアルタイムに生成するプログラムを「デモ」と呼びます。
 
 今回はUnityを使ったデモの制作に初挑戦しました。
-動画を用意しました。音はありません。
+12秒長さの短い無音の動画です。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jU_0bFDOnR4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3x9p9tqagJw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
 # 作品の解説
 
@@ -76,7 +75,7 @@ Boxから上から見たときに多角形になる柱を生成しました。
 
 ### 床がランダムな順番に光る演出
 
-床をJubeat（音ゲー）風にランダムに光らせる演出は自分でも気に入っています。
+床をランダムに光らせる演出は自分でも気に入っています。
 
 この演出はお手軽な方法で実装できました！
 
@@ -84,9 +83,13 @@ Boxから上から見たときに多角形になる柱を生成しました。
 光らせるY座標の位置は時間でアニメーションさせます。
 
 ```cpp
+float4 _SlideEmission;
+
 inline void PostEffect(RaymarchInfo ray, inout PostEffectOutput o)
 {
-    o.emission = half4(2.0, 2.0, 5.0, 1.0) * abs(sin(PI * 12.0 * _Time.x)) * step(frac(ray.endPos.y - 4.0 * _Time.x), 0.02);
+    float a = frac(4.0 * ray.endPos.y - 2.0 * _Time.x - 0.5);
+    float width = 0.02;
+    o.emission = _SlideEmission * abs(sin(PI * 12.0 * _Time.x)) * step(a, width) * ((a + 0.5 * width) / width);
 }
 ```
 
@@ -226,4 +229,12 @@ Unityを上手に利用すれば効率的にデモ作成できると感じまし
 - リアルタイムに見た目を確認しながら、シェーダやスクリプトを編集できる
     - Unityに標準搭載されているホットリロード機能によって、シーンの再生中でもシェーダやスクリプトの変更が反映できる
 
+<!--
 まだUnityを使いこなせていない感があるので、もっとUnityの経験値を貯めたいです。
+-->
+
+# ソースコード
+
+UnityのプロジェクトをGitHubで公開しています。スターをください。
+
+- [Unity Demoscene | GitHub](https://github.com/gam0022/unity-demoscene)
