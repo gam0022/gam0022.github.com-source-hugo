@@ -23,7 +23,7 @@ slug = "unity-demoscene"
 今回はUnityを使ったデモの制作に初挑戦しました。
 13秒の短い無音の動画です。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BZGO5xXuPj8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe width="720" height="405" src="https://www.youtube.com/embed/BZGO5xXuPj8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
 <!--
 [![THE GLOW](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)
@@ -64,6 +64,10 @@ uRaymarchingの利用者は、レイマーチングの距離関数の定義とG�
 
 1. 距離関数の定義を`DistanceFunction`関数に記述
 2. Gバッファへの書き込み処理を`PostEffect`関数に記述
+
+uRaymarchingのチュートリアル動画です。
+
+<iframe width="720" height="540" src="//www.youtube.com/embed/AppyVflAagc?wmode=transparent" frameborder="0" allowfullscreen></iframe>
 
 ### 距離関数の設計
 
@@ -147,7 +151,7 @@ Timelineからゲームオブジェクトを操作する2つの方法があり�
 とりあえずカメラワークを`ITimeControl`で実装することはできましたが、
 `ITimeControl`では再生時間の情報しか受け取れず、クリップごとにパラメータを持たすことすらできません。
 三角関数などを駆使してカメラのtransformを操作して、無理やりカメラワークを実装しましたが、
-職人芸すぎてメンテナンスが困難なコードになりました。
+[職人芸すぎてメンテナンスが困難なコード](https://github.com/gam0022/unity-demoscene/blob/bdb84d7517b812f742363c971174d9435cea0cb2/Assets/Demoscene/TheGlow/TheGlowCameraWork.cs)になりました。
 
 今回は満足するものはできなかったので、次回はこれらの方法でカメラワークに再挑戦したいです。
 
