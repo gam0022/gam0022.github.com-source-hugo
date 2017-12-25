@@ -189,7 +189,7 @@ Timelineとの連携は、Activation Trackを使って実現しています。
 
 ### ポストエフェクト
 
-BloomとAmbient Occlusion、Fogのポストエフェクトには、[Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)を利用しました。
+ポストエフェクトには、[Post-processing Stack v2](https://github.com/Unity-Technologies/PostProcessing)を利用しました。
 
 以下のポストエフェクトを利用しました。
 
