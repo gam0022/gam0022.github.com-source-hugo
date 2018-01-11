@@ -42,7 +42,7 @@
         {{end}}
         -->
 
-        <h3 itemprop="name">{{ .Title }}</h3>
+        <h3 class="article-title" itemprop="name">{{ .Title }}</h3>
         {{ partial "article_metadata" (dict "content" . "is_list" 0) }}
 
         <div class="article-style" itemprop="articleBody">
