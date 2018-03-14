@@ -20,6 +20,8 @@ date = "2018-03-12T10:14:35+09:00"
 
 <script async class="speakerdeck-embed" data-id="74ea75d0686849238368f73150a7adba" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+<!--more-->
+
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">本日の発表資料です😇 <a href="https://twitter.com/hashtag/%E3%83%A1%E3%82%AC%E3%83%87%E3%83%A2%E5%8B%89%E5%BC%B7%E4%BC%9A?src=hash&amp;ref_src=twsrc%5Etfw">#メガデモ勉強会</a><a href="https://t.co/pxqSbH3DPl">https://t.co/pxqSbH3DPl</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/972340970892111874?ref_src=twsrc%5Etfw">2018年3月10日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -42,9 +44,9 @@ date = "2018-03-12T10:14:35+09:00"
 
 以前にブログで紹介した[距離関数のfold](/blog/2017/03/02/raymarching-fold/)に近いものを感じました。
 
-foldでは平面の鏡を使いましたが、この発表では円の鏡を使うイメージだと理解しました。
+foldでは平面の鏡を使いましたが、この発表では円形の鏡を使うイメージだと理解しました。
 
-円の鏡映ではまず円の鏡を配置します。鏡同士で相互に反射するので、合わせ鏡のように、映り込んだ円がさらに再帰的に別の円の鏡に映り込むのですが、その再帰の深度に応じて色をつけると、単純な円から美しい模様が生成できると理解しました。
+円の鏡映では、まず円形の鏡を配置します。すると鏡同士で相互に反射するので、合わせ鏡のように、映り込んだ円がさらに再帰的に別の円の鏡に映り込みます。反射の再帰の深度に応じて色をつけると、単純な円から美しい模様が生成できると理解しました。
 
 円の外にテクスチャを置いた例や、2D -> 3D に拡張した球の鏡による例も紹介されていました。
 
@@ -70,4 +72,21 @@ sin波や矩形波といった単純な波形をベースにして、本物の�
 
 音楽は諦めかけていましたが、この発表のおかげで自分で音楽を制作する道筋が見えました。
 今はFMS_Catさんの読みやすいコードをShadertoyに写経して理解を深めています。
-素敵なありがとうございました！
+素敵な発表ありがとうございました！
+
+---
+
+勉強会から帰宅した後、FMS_Catさんの発表でオススメされていた「Moleman 2」という動画を家で見ました。
+メガデモの起源から現在に至るまで、メガデモの歴史を1時間30分に凝縮された動画になっていて、デモシーナー必見の内容でした。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iRkZcTg1JWU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+# 感想
+
+ほとんどの発表者は自分よりも若いのに、資料もプレゼンもめちゃくちゃ上手で理解しやすかったのが印象的でした。
+ずっと知りたかった内容を聞けたので、大満足でした。
+
+勉強会の懇親会で、自分の発表でレイマーチングに出会い、卒業制作にもレイマーチングを使ったという専門学生とお話しました。
+地道な活動も無駄じゃなかったんだ！他人には影響を与えることができたんだ！とすごい嬉しくなりました。
+
+メガデモ制作のモチベーションが高まってきたので、今年の10〜11月のTDFに向けて頑張るぞ！
