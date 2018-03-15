@@ -8,7 +8,7 @@ tags = [
 ]
 title = "メガデモ勉強会!2018で発表しました"
 slug = "demoscene-study-session"
-date = "2018-03-12T10:14:35+09:00"
+date = "2018-03-15T10:14:35+09:00"
 
 +++
 
@@ -37,7 +37,7 @@ AOがどういう意味を持つのか、大域照明にどんな関係にある
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-# その他の発表まとめ
+# 発表の紹介と感想
 
 自分以外の発表について、自分の感想を混じえながら紹介します。
 
@@ -104,10 +104,10 @@ sin波や矩形波といった単純な波形をベースにして、本物の�
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iRkZcTg1JWU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-# 感想
+# さいごに
 
 ずっと気になっていた内容を聞けて大満足でした。どの発表も資料も説明も分かりやすくて素晴らしかったです。
 懇親会では、以前の自分の発表でレイマーチングを知って、卒業制作にレイマーチングを使ったという学生とお話しました。
-自分の活動を通して何かを得た人もいるということにすごい喜びを感じました。
+自分の活動を通して何かを得た人もいるということに嬉しくなりました。
 
 メガデモ制作のモチベーションが高まってきたので、今年の10〜11月のTDFに向けて頑張りたいです！
