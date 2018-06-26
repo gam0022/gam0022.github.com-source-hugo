@@ -9,7 +9,7 @@ section = 100
 toc = true
 +++
 
-最終更新: 2017-11-19
+最終更新: 2018-06-27
 
 # Publications
 
@@ -98,11 +98,47 @@ three.js はWebGLを手軽に使うためのJavaScriptのライブラリです�
 - [JavaScriptoon - TechBooster in C88](https://techbooster.github.io/c88/#scriptoon)
 - [JavaScriptoon - BOOTH](https://techbooster.booth.pm/items/126683/)
 
+# Unity Wokrs
+
+Unityで作成した映像作品と活動を紹介します。
+
+## 2018 uRaymarchingとReflectionProbeによる反射
+
+ReflectionProbeによって「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させたシーンで破綻のない反射を計算する検証です。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">uRaymarchingとReflectionProbeによる反射と組み合わせる検証<br>中<br><br>毎フレームCubemapを生成するくらいならレイトレで反射を計算したほうが速いと思っていたが、この例ならCubemapの解像度は16x16でも十分だし、Cubemapの方がポリゴンとの混在が容易なので、現実的な方法だと思う。 <a href="https://t.co/sSX7WmVCEd">pic.twitter.com/sSX7WmVCEd</a></p>&mdash; がむ🌷🌴 (@gam0022) <a href="https://twitter.com/gam0022/status/1003274796895895554?ref_src=twsrc%5Etfw">2018年6月3日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## 2017 uRaymarchingとTimelineによる映像作品
+
+「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させた作品です。 ロボットは通常の3Dモデルですが、床や柱のモデルはレイマーチングでプロシージャルに生成しました。
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">Unityで映像作品（デモ）の試作をしました。<br>uRaymarchingとTimelineを使っています <a href="https://t.co/QbvItqc2Bs">pic.twitter.com/QbvItqc2Bs</a></p>&mdash; がむ🌷🌴 (@gam0022) <a href="https://twitter.com/gam0022/status/945455918816174080?ref_src=twsrc%5Etfw">2017年12月26日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+関連記事
+
+- [Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） | gam0022.net](https://gam0022.net/blog/2017/12/25/unity-demoscene/)
+
 # WebGL Works
 
 WebGLで作成した映像作品と活動を紹介します。
 
 動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
+
+## 2018 メガデモ勉強会
+
+<div style="width:400px; margin:0; padding:0;" class="right">
+<script async class="speakerdeck-embed" data-slide="1" data-id="74ea75d0686849238368f73150a7adba" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
+
+3/10に開催された[メガデモ勉強会! 2018](https://atnd.org/events/93843)に登壇しました。
+
+発表タイトルは「もっと綺麗で写実的な絵作りをしたい！レイマーチング向けのシェーディング技術」です。
+
+関連記事
+
+- [メガデモ勉強会!2018で発表しました | gam0022.net](/blog/2018/03/16/demoscene-study-session/)
 
 ## 2017 正解するカド
 
@@ -120,9 +156,24 @@ WebGLで作成した映像作品と活動を紹介します。
 - [正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net
 ](http://localhost:1313/blog/2017/06/30/raymarching-kado/)
 
+## 2017 Fusioned Bismuth
+
+[<img alt="Fusioned Bismuth" src="/images/works/tdf2017.jpg" width="300px" class="right">](/images/works/tdf2017.jpg)
+
+TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞した、レイマーチングによる映像作品です。
+
+- [Fusioned Bismuth | gam0022.net](https://gam0022.net/webgl/#raymarching_tdf2017)
+- [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
+- [Tokyo Demo Fest 2017 - GLSL Graphics Compo | Youtube](https://youtu.be/o3e7YFspIJ0?t=10m34s)
+
+関連情報
+
+- [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net](https://gam0022.net/blog/2017/02/24/tdf2017/)
+- [距離関数のfold（折りたたみ）による形状設計 | gam0022.net](https://gam0022.net/blog/2017/03/02/raymarching-fold/)
+
 ## 2017 Realtime Pathtracing
 
-<div style="width: 400px;" class="right">
+<div style="width:400px; margin:0; padding:0;" class="right">
 <iframe width="400" height="315" src="https://www.youtube.com/embed/FUb5U3ttmZE" frameborder="0" allowfullscreen></iframe>
 </div>
 
@@ -176,7 +227,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 ## 2016 #GLSLTech 発表資料
 
-<div style="width: 340px;" class="right">
+<div style="width:340px; margin:0; padding:0;" class="right">
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="\_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="\_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
 </div>
 
@@ -184,7 +235,9 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 2/14のバレンタインデーに開催された「GPU の熱でチョコも溶けちゃう！？ GLSL シェーダテクニック勉強会（#GLSLTech）」で登壇したときのものです。
 
-詳細は[ブログの記事](/blog/2016/02/16/glsl-tech/)にまとめました。
+関連記事
+
+- [GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました | gam0022.net](/blog/2016/02/16/glsl-tech/)
 
 ## 2016 Gem
 
