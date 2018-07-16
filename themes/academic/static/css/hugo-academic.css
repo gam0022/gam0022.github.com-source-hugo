@@ -39,7 +39,7 @@ body {
     padding-top: 0;
     position: relative;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     body {
         /* Offset body content by navbar height. */
         margin-top: 51px;
@@ -136,7 +136,7 @@ pre {
 .space-below {
     margin-bottom: 50px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .space-below {
         margin-bottom: 10px;
     }
@@ -150,7 +150,7 @@ pre {
     background-color: rgb(255, 255, 255);
     padding: 110px 0 110px 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .home-section {
         padding: 60px 0 60px 0;
     }
@@ -617,7 +617,7 @@ nav#navbar-main li {
     color: #2b2b2b;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .navbar {
         min-height: 50px !important;
     }
