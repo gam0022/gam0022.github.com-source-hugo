@@ -84,11 +84,11 @@ Last Update: 2018-07-16
 
 ## Summary
 
-- He lectured on GLSL and WebGL at the [GLSL workshop](https://gam0022.net/blog/2016/02/16/glsl-tech/) (more than 100 attendees) and the [WebGL School 2016](https://webgl.souhonzan.org/entry/?v=0703) (paid seminar).
-- He [contributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, over 43.1k GitHub Stars).
-- He won the 3rd prise in the GLSL Graphics Compo at Tokyo Demo Fest. [2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [2017](https://gam0022.net/blog/2017/02/24/tdf2017/).
-- He developed a [physical base renderer by pathtracing with Rust](https://gam0022.net/blog/2017/10/02/rtcamp5/).
-- He developed shaders optimized for mobile and formulated Asset specifications in business.
+- Lectured on GLSL and WebGL at the [GLSL workshop](https://gam0022.net/blog/2016/02/16/glsl-tech/) (more than 100 attendees) and the [WebGL School 2016](https://webgl.souhonzan.org/entry/?v=0703) (paid seminar).
+- [Ccontributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, over 43.1k GitHub Stars).
+- Won the 3rd prise in the GLSL Graphics Compo at Tokyo Demo Fest. [2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [2017](https://gam0022.net/blog/2017/02/24/tdf2017/).
+- Developed a [physical base renderer by pathtracing with Rust](https://gam0022.net/blog/2017/10/02/rtcamp5/).
+- Developed shaders optimized for mobile and formulated Asset specifications in business.
 - Skills
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
