@@ -22,7 +22,7 @@ Last Update: 2018-07-16
 - [three.js](https://github.com/mrdoob/three.js/)（JavaScriptの3DライブラリのOSS、GitHubのスター数は43.1k）に[コントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)
 - [Tokyo Demo Fest](http://tokyodemofest.jp)のGLSL Graphics Compo部門に2年連続で3位入賞（[2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/), [2017](https://gam0022.net/blog/2017/02/24/tdf2017/)）
 - [パストレーシングによる物理ベースレンダラー](https://gam0022.net/blog/2017/10/02/rtcamp5/)をRustにより開発
-- Unityによるモバイルゲームのクライアントアプリ・モバイル向けに最適化したシェーダーを業務で開発中
+- 現職ではUnityによるモバイルゲームのクライアントアプリやモバイル向けに最適化したシェーダーを開発中
 - スキル
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
@@ -88,7 +88,7 @@ Last Update: 2018-07-16
 - [Ccontributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, over 43.1k GitHub Stars).
 - Won the 3rd prise in the GLSL Graphics Compo at Tokyo Demo Fest for 2 consecutive years ([2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [2017](https://gam0022.net/blog/2017/02/24/tdf2017/)).
 - Developed a [physical base renderer by pathtracing with Rust](https://gam0022.net/blog/2017/10/02/rtcamp5/).
-- Developing a mobile game Cliant application with Unity and Optimized shaders for mobile in business.
+- Currently Developing a mobile game Cliant application with Unity and Optimized shaders for mobile.
 - Skills
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
