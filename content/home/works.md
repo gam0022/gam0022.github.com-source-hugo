@@ -7,6 +7,22 @@ section_id = 10
 weight = 10
 +++
 
+## 2017 Realtime Pathtracing
+
+<div style="width:400px; margin:0; padding:0;" class="right">
+<iframe width="400" height="315" src="https://www.youtube.com/embed/FUb5U3ttmZE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+WebGL(three.js)でリアルタイムなパストレーシングを実装しました。
+
+- [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
+
+関連情報
+
+- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
+- [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
+- [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
+
 ## 2016 Gem
 
 [<img alt="Gem" src="/images/works/gem.png" class="right">](/images/works/gem_original.png)
@@ -20,19 +36,6 @@ weight = 10
 
 <div class="read-more">
   <a href="http://gam0022.net/webgl/#raytracing_gem" class="btn btn-primary btn-outline">Gem - gam0022.net</a>
-</div>
-
-## 2016 Slack 返信引用ボタン
-
-<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
-
-Slack に返信と引用ボタンをつけるChrome拡張機能です。
-
-- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
-- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
-
-<div class="read-more">
-  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
 </div>
 
 ## 2015冬 JavaScriptoon2
