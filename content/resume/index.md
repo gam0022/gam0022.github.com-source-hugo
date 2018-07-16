@@ -31,12 +31,12 @@ Last Update: 2018-07-16
 
 ## 職歴
 
-- 2015-04〜現在. [KLab 株式会社](http://www.klab.com/jp/), エンジニア（正社員）
+- 2015-04〜現在. [KLab 株式会社](http://www.klab.com/jp/) エンジニア（正社員）
   - 3Dのモバイルゲームのクライアント（Unity）の新規開発を担当
   - 2Dのモバイルゲームの運営・クライアント（自社エンジン）開発・サーバ（PHP）の開発を担当
-- 2014-04〜2015-03. [BearTail](https://beartail.jp/), エンジニア（学生アルバイト）
+- 2014-04〜2015-03. [BearTail](https://beartail.jp/) エンジニア（学生アルバイト）
   - Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当
-- 2011-09〜2015-02. [情報基盤研究所](http://www.iil-inc.com/index-j.html), エンジニア（学生アルバイト）
+- 2011-09〜2015-02. [情報基盤研究所](http://www.iil-inc.com/index-j.html) エンジニア（学生アルバイト）
   - C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を担当
 
 ## 学歴
@@ -63,11 +63,11 @@ Last Update: 2018-07-16
 
 ## 出版
 
-- 2017 KLab Tech Book
-- 2017 Think Web
-- 2016 AZ異本 grimoire of web
-- 2015 JavaScriptoon2
-- 2015 JavaScriptoon
+- 2017. KLab Tech Book
+- 2017. Think Web
+- 2016. AZ異本 grimoire of web
+- 2015. JavaScriptoon2
+- 2015. JavaScriptoon
 
 詳細は [/works/#publications](/works/#publications) を参照。
 
@@ -97,12 +97,12 @@ Last Update: 2018-07-16
 
 ## Work Experience
 
-- 2015-04〜current. [KLab Inc.](http://www.klab.com/jp/), Engineer (Regular employee)
+- 2015-04〜current. [KLab Inc.](http://www.klab.com/jp/) Engineer (Regular employee)
     - Developing a 3D mobile game Client with Unity
     - Developed Client (in-house engine) and Server (PHP) of a 2D mobile game
-- 2014-04〜2015-03. [BearTail Inc.](https://beartail.jp/), Engineer (Student part-time job)
+- 2014-04〜2015-03. [BearTail Inc.](https://beartail.jp/) Engineer (Student part-time job)
     - Developed Server (Ruby on Rails) of a mobile application
-- 2011-09〜2015-02. [Information Infrastructure Laboratory, Inc.](http://www.iil-inc.com/index-e.html), Engineer (Student part-time job)
+- 2011-09〜2015-02. [Information Infrastructure Laboratory, Inc.](http://www.iil-inc.com/index-e.html) Engineer (Student part-time job)
     - Developed Windows applications (C# and WPF)
     - Developed a image processing system (C++ and OpenCV)
 
@@ -130,11 +130,11 @@ Last Update: 2018-07-16
 
 ## Publications
 
-- 2017 KLab Tech Book
-- 2017 Think Web
-- 2016 AZ異本 grimoire of web
-- 2015 JavaScriptoon2
-- 2015 JavaScriptoon
+- 2017. KLab Tech Book
+- 2017. Think Web
+- 2016. AZ異本 grimoire of web
+- 2015. JavaScriptoon2
+- 2015. JavaScriptoon
 
 See [/works/#publications](/works/#publications) for details.
 
