@@ -27,7 +27,7 @@ Last Update: 2018-07-16
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
     - Web Programming
-        - Ruby on Rails, PHP, JavaScript, HTML
+        - Ruby on Rails, PHP, JavaScript
 
 ## 職歴
 
@@ -93,7 +93,7 @@ Last Update: 2018-07-16
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
     - Web Programming
-        - Ruby on Rails, PHP, JavaScript, HTML
+        - Ruby on Rails, PHP, JavaScript
 
 ## Work Experience
 
