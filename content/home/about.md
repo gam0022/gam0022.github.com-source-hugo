@@ -8,13 +8,13 @@ weight = 0
 
 # 略歴 / Biography
 
-群馬県出身、東京在住、社会人3年目の25歳。WebとCGの両方に自信あり。
+群馬県出身、東京在住、社会人4年目の26歳。WebとCGの両方に自信あり。
 
 中学生時代（2007年頃）にHSPに出会いゲームプログラミングに熱中する。
 中学生ながら開発したゲームが[2度もWindows100%に掲載される](/works/#windows-games)。
 
 2011年に筑波大学 情報学群 情報科学類に入学。
-在学中には[TwinCal](http://gam0022.net/app/twincal/)という筑波大学に特化した時間割のWebアプリケーションを開発する。TwinCalは在学生に広く利用され、[学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/)のファイナリストにも採択される（後輩に運用を引き継ぎ、現在も運用されている！）。[非数値処理アルゴリズム研究室](http://www.npal.cs.tsukuba.ac.jp/)に所属し[紙模型に特化したCADに関する研究](/works/#research)を行い、その業績を評価され[筑波大学 情報学群長表彰](https://twitter.com/gam0022/status/580638093226692608)を受賞する。
+在学中には[TwinCal](http://gam0022.net/app/twincal/)という筑波大学に特化した時間割のWebアプリケーションを開発する。TwinCalは在学生に広く利用され、[学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/)のファイナリストにも採択される（後輩に運用を引き継ぎ、現在も運用されている！）。[計算幾何学とグラフィックス研究室](http://www.cgg.cs.tsukuba.ac.jp/)に所属し[紙模型に特化したCADに関する研究](/works/#research)を行い、その業績を評価され[筑波大学 情報学群長表彰](https://twitter.com/gam0022/status/580638093226692608)を受賞する。
 さらにグラフィクスと CAD 合同シンポジウム 2015にて[GCAD賞を受賞](http://cgvi.jp/info/2017/06/05/bestpapers/#qd40ba36)する。
 
 2014年にブラウザ上でハードウェアアクセラレータされた3DCG表現を可能にするWebGLに強い関心を持つ。
@@ -26,4 +26,7 @@ weight = 0
 2016年には[TokyoDemoFestのGLSL Graphics Compoで3位入賞](http://gam0022.net/blog/2016/02/24/tokyo-demo-fest/)する。
 翌年2017の[TokyoDemoFestでもGLSL Graphics Compoで3位入賞](/blog/2017/02/24/tdf2017/)し、2年連続入賞を果たす。
 
-最終更新: 2017-07-18
+KLab（2015〜）ではUnity製のモバイルゲームの3Dグラフィックス開発を担当し、モバイル向けに最適化したシェーダー開発・アセット仕様の策定・テクニカルアーティストとして組織横断活動を行う。
+
+- Last Update: 2018-07-16
+- Read More: [Resume](/resume)

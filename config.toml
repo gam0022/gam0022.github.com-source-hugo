@@ -95,7 +95,7 @@ googleAnalytics = "UA-84469205-1"
     detail = "C#とWPFによるWindowsアプリケーション開発、C++とOpenCVによる画像処理を主に担当"
 
   [[params.about.education]]
-    course = "ソフトウェアサイエンス専攻, 非数値処理アルゴリズム研究室"
+    course = "ソフトウェアサイエンス専攻, 計算幾何学とグラフィックス研究室"
     institution = "筑波大学 情報学群 情報科学類"
     year = "2011-04 〜 2015-03"
 

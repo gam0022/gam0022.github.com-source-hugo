@@ -19,7 +19,7 @@ Last Update: 2018-07-16
 ## 要約
 
 - GLSLとWebGLについて[参加者100人以上の勉強会](https://gam0022.net/blog/2016/02/16/glsl-tech/)での登壇や[有償セミナー](https://webgl.souhonzan.org/entry/?v=0703)での講師経験あり
-- WebGLのデファクトライブラリである[three.js](https://github.com/mrdoob/three.js/)（GitHubのスター数は43.1k）に[OSSコントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)
+- [three.js](https://github.com/mrdoob/three.js/)（JavaScriptの3DライブラリのOSS、GitHubのスター数は43.1k）に[コントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)
 - [Tokyo Demo Fest](http://tokyodemofest.jp)のGLSL Graphics Compo部門に2年連続で3位入賞（[2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/), [2017](https://gam0022.net/blog/2017/02/24/tdf2017/)）
 - [パストレーシングによる物理ベースレンダラー](https://gam0022.net/blog/2017/10/02/rtcamp5/)をRustにより開発
 - 業務でモバイル向けに最適化したシェーダー開発・アセット仕様の策定
@@ -73,7 +73,7 @@ Last Update: 2018-07-16
 
 ## プロジェクト
 
-[works](/works)を参照。
+[/works](/works) を参照。
 
 ## 連絡先
 
@@ -88,7 +88,7 @@ Last Update: 2018-07-16
 - He [contributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, over 43.1k GitHub Stars).
 - He won the 3rd prise in the GLSL Graphics Compo at Tokyo Demo Fest. [2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [2017](https://gam0022.net/blog/2017/02/24/tdf2017/).
 - He developed a [physical base renderer by pathtracing with Rust](https://gam0022.net/blog/2017/10/02/rtcamp5/).
-- He developed mobile optimized shaders and formulated Asset specifications in business.
+- He developed shaders optimized for mobile and formulated Asset specifications in business.
 - Skills
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
@@ -140,7 +140,7 @@ See [/works/#publications](/works/#publications) for details.
 
 ## Projects
 
-See [works](/works).
+See [/works](/works).
 
 ## Contact
 
