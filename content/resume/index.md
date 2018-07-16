@@ -84,7 +84,7 @@ Last Update: 2018-07-16
 ## Summary
 
 - He gave a presentation at [a study group where more than 100 people participated](https://gam0022.net/blog/2016/02/16/glsl-tech/) and gave a lecturer at [a paid seminar](https://webgl.souhonzan.org/entry/?v=0703) about GLSL and WebGL.
-- He [contributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, GitHub's Stars is over 43.1k).
+- He [contributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, GitHub's Star is over 43.1k).
 - He won 3rd place in the GLSL Graphics Compo at Tokyo Demo Fest [2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [2017](https://gam0022.net/blog/2017/02/24/tdf2017/).
 - He personally developed a [physical base renderer by pathtracing with Rust](https://gam0022.net/blog/2017/10/02/rtcamp5/).
 - He developed mobile shaders and formulated Asset specifications in business.
