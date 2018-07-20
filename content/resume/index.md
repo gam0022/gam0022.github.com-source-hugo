@@ -9,7 +9,7 @@ slug = ""
 
 +++
 
-Last Update: 2018-07-16
+Last Update: 2018-07-21
 
 - [日本語版](#ja)
 - [English Version](#en)
@@ -69,13 +69,24 @@ Last Update: 2018-07-16
 - 2015. JavaScriptoon2
 - 2015. JavaScriptoon
 
-詳細は [/works/#publications](/works/#publications) を参照。
+詳細は [gam0022.net/works/#publications](https://gam0022.net/works/#publications) を参照。
 
 ## プロジェクト
 
-[/works](/works) を参照。
+[gam0022.net/works/](https://gam0022.net/works/) を参照。
 
 ## 連絡先
+
+<ul>
+  <li>
+    <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+    <script>
+    function converter(M){var str="", str_as=""; for(var i=0;i<M.length;i++){ str_as = M.charCodeAt(i); str += String.fromCharCode(str_as + 1); } return str; } var ad = converter(String.fromCharCode(102,96,108,47,47,49,49,63,102,108)+String.fromCharCode(96,104,107,45,98,110,108)); document.write("<a href=\"mai"+"lto:"+ad+"\">"+ad+"<\/a>");
+    </script>
+  </li>
+</ul>
+
+## SNSアカウント
 
 - [Twitter](https://twitter.com/gam0022)
 - [GitHub](http://github.com/gam0022)
@@ -136,13 +147,24 @@ Last Update: 2018-07-16
 - 2015. JavaScriptoon2
 - 2015. JavaScriptoon
 
-See [/works/#publications](/works/#publications) for details.
+See [gam0022.net/works/#publications](https://gam0022.net/works/#publications) for details.
 
 ## Projects
 
-See [/works](/works).
+See [gam0022.net/works/](https://gam0022.net/works/).
 
-## Contact
+## SNS Accoutns
 
 - [Twitter](https://twitter.com/gam0022)
 - [GitHub](http://github.com/gam0022)
+
+## Contact
+
+<ul>
+  <li>
+    <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+    <script>
+    function converter(M){var str="", str_as=""; for(var i=0;i<M.length;i++){ str_as = M.charCodeAt(i); str += String.fromCharCode(str_as + 1); } return str; } var ad = converter(String.fromCharCode(102,96,108,47,47,49,49,63,102,108)+String.fromCharCode(96,104,107,45,98,110,108)); document.write("<a href=\"mai"+"lto:"+ad+"\">"+ad+"<\/a>");
+    </script>
+  </li>
+</ul>
