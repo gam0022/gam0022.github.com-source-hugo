@@ -154,7 +154,7 @@ WebGLで作成した映像作品と活動を紹介します。
 関連情報
 
 - [正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net
-](http://localhost:1313/blog/2017/06/30/raymarching-kado/)
+](/blog/2017/06/30/raymarching-kado/)
 
 ## 2017 Fusioned Bismuth
 
