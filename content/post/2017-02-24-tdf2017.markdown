@@ -4,7 +4,7 @@ draft = false
 image = "/images/posts/2017-02-24-tdf2017/ufo.png"
 math = false
 slug = "tdf2017"
-tags = ["event", "CG", "レイマーチング"]
+tags = ["event", "CG", "レイマーチング", "TokyoDemoFest", "GLSL"]
 title = "#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！"
 toc = true
 
