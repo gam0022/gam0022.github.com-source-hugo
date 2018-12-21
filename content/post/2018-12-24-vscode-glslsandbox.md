@@ -72,4 +72,12 @@ Tokyo Demo FestのGLSL Compoの優勝者と準優勝者のお役に立てたよ�
 
 # おまけ: ShadertoyとGLSL Sandboxのマウスの扱いの違い
 
-開発する中でShadertoyとGLSL Sandboxのマウスの扱いの違いにハマったので、後学のためにメモを残します。少しでもみなさまのお役に立てれば幸いです。
+開発する中でShadertoyとGLSL Sandboxのマウスの扱いの違いにハマったので、後学のためにメモを残します。
+
+少しでもみなさまのお役に立てれば幸いです。
+
+| | Shadertoy | GLSL Sandbox |
+|:--|:--|:--|
+| uniform名 | uniform vec4 iMouse | uniform vec2 mouse; |
+| 解説 | mouse pixel coords. <br>xy: current (if MLB down), <br>zw: click | mouse normalized coords. <br>xy: current |
+| 値域 | 0〜解像度 | 0〜1 |
