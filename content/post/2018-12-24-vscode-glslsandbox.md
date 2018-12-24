@@ -1,5 +1,5 @@
 +++
-title = "GLSL Compo必勝法！？GLSL Sandbox互換のVSCode拡張「Shader Toy」の紹介"
+title = "GLSL Compo必勝法！？GLSL Sandbox互換のVSCode拡張『Shader Toy』の紹介"
 slug = "vscode-glslsandbox"
 date = "2018-12-24T23:59:59+09:00"
 image = "/images/posts/2018-12-24-vscode-glslsandbox/traveler2-win.jpg"
@@ -16,7 +16,7 @@ tags = ["event", "CG", "レイマーチング", "TokyoDemoFest","GLSL", "VSCode"
 
 みなさんはGLSL Sandboxのシェーダーをローカルで編集したりgitで管理したいと思ったことはありませんか？
 
-VSCodeの拡張機能の「Shader Toy」をインストールすれば簡単に実現できます。
+VSCodeの拡張機能の『Shader Toy』をインストールすれば簡単に実現できます。
 
 - [Shader Toy - Visual Studio Marketplace
 ](https://marketplace.visualstudio.com/items?itemName=stevensona.shader-toy)
@@ -56,7 +56,7 @@ GLSLのコードを認識しないときは、「Shader Toy: GLSL Preview」を�
 
 # GLSL Sandbox互換の理由
 
-ところで、「Shader Toy」という名前なのに、なぜGLSL Sandboxにも対応しているのでしょうか？
+ところで、『Shader Toy』という名前なのに、なぜGLSL Sandboxにも対応しているのでしょうか？
 
 元々は Shadertoy互換の拡張だったのですが、次のPull Requestで私がGLSL Sandbox互換を追加しました💪
 
