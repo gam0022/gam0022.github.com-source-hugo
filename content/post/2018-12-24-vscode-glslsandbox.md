@@ -22,7 +22,9 @@ VSCodeの拡張機能の「Shader Toy」をインストールすれば簡単に�
 ](https://marketplace.visualstudio.com/items?itemName=stevensona.shader-toy)
 
 本拡張は[Shadertoy](https://www.shadertoy.com/)と[GLSL Sandbox](http://glslsandbox.com/)の互換性を備えており、
-コードでも修正なしにそのまま動作できます！
+どちらのコードも修正なしにそのまま動作できます！
+
+WindowsとMacの両方に対応しています。
 
 次の画像は[Traveler2](https://nanka.hateblo.jp/entry/2018/12/13/080322) by [kaneta](https://twitter.com/kanetaaaaa)（[Tokyo Demo Fest 2018](http://tokyodemofest.jp/2018/) GLSL Compo優勝作品）をVSCode上で動作させた様子です。
 
@@ -37,7 +39,7 @@ VSCodeの拡張機能の「Shader Toy」をインストールすれば簡単に�
 ![install](/images/posts/2018-12-24-vscode-glslsandbox/install.png)
 
 1. 拡張機能のウィンドウを開く
-2. 「shadertoy」という単語を検索
+2. 「shadertoy」で検索
 3. インストールボタンを押す
 
 ## 使い方
@@ -50,17 +52,17 @@ GLSLのコードを認識しないときは、「Shader Toy: GLSL Preview」を�
 
 ---
 
-※以降の内容はポエム・個人的なメモです。有益な情報は無いので、読み飛ばしていただいて構いません。
+※以降の内容はポエム・個人的なメモです。あまり有益な情報はありませんのでご注意ください。
 
 # GLSL Sandbox互換の理由
 
 ところで、「Shader Toy」という名前なのに、なぜGLSL Sandboxにも対応しているのでしょうか？
 
-元々は Shadertoy互換の拡張だったのですが、次のPRで私がGLSL Sandbox互換を追加しました💪
+元々は Shadertoy互換の拡張だったのですが、次のPull Requestで私がGLSL Sandbox互換を追加しました💪
 
 - [GLSLsandbox support by gam0022 · Pull Request #37 · stevensona/shader-toy](https://github.com/stevensona/shader-toy/pull/37)
 
-拡張の名前からして、GLSL Sandbox互換を追加する機能追加が受け入れられるか心配でしたが、爆速でマージしていただけました！
+拡張の名前から考えて、GLSL Sandbox互換の機能追加が受け入れられるか心配でしたが、爆速でマージしていただけました！
 stevensonaさんありがとうございます🙏
 
 # 開発動機
@@ -69,7 +71,7 @@ Tokyo Demo Fest 2018のライブコーディングバトルの練習のために
 ローカル上で他人に見られないようにglslfanのコードを書きたいというのが開発の動機でした。
 
 ライブコーディングというのは、その場でコーディングを行うということです。
-今回のライブコーディングバトルでは、4人の競技者が40分の制限時間内でGLSLのシェーダーで作品をつくりあげました。
+今回のライブコーディングバトルでは、4人の競技者が40分の制限時間内で、glslfan上でGLSLのシェーダーによる作品をつくりあげました。
 
 [glslfan.com](https://glslfan.com/)はdoxasさんが開発されているGLSL Sandbox互換のライブコーディングをリアルタイム配信するサイトです。
 他人のシェーダコーディングをある程度リアルタイムに覗き見できることを特徴としています。
@@ -78,7 +80,7 @@ Tokyo Demo Fest 2018のライブコーディングバトルの練習のために
 
 # GLSL Compo優勝者と準優勝者のお役に立てた
 
-[公式にPRを送る前に改造版の拡張のインストール手順](https://gist.github.com/gam0022/910bef95310f52995477dcb7bcc0467a)をTwitterで公開していました。
+本家にPull Requestを送る前に[改造版の拡張のインストール手順](https://gist.github.com/gam0022/910bef95310f52995477dcb7bcc0467a)をTwitterで公開していました。
 
 その結果、GLSL Compoの1位と2位の方々に利用していただき、お役に立てたようで嬉しいです😆
 
@@ -119,6 +121,8 @@ IGN JAPAN様にライブコーディングバトルを含めたTDFの1日目の�
 開発する中でShadertoyとGLSL Sandboxのマウスの扱いの違いに苦しめられたので、後学のためにメモを残します。
 
 少しでもみなさまのお役に立てれば幸いです。
+
+本拡張では以下のマウスの扱いの違いを考慮して実装しました。
 
 | | Shadertoy | GLSL Sandbox |
 |:--|:--|:--|
