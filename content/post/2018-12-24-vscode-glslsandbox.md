@@ -1,5 +1,5 @@
 +++
-title = "GLSL Compo参加者は必見！？GLSL Sandbox互換のVSCode拡張「Shader Toy」の紹介"
+title = "GLSL Compo必勝法！？GLSL Sandbox互換のVSCode拡張「Shader Toy」の紹介"
 slug = "vscode-glslsandbox"
 date = "2018-12-24T23:59:59+09:00"
 image = "/images/posts/2018-12-24-vscode-glslsandbox/traveler2-win.jpg"
