@@ -71,7 +71,7 @@ Tokyo Demo Fest 2018のライブコーディングバトルの練習のために
 ローカル上で他人に見られないようにglslfanのコードを書きたいというのが開発の動機でした。
 
 ライブコーディングというのは、その場でコーディングを行うということです。
-今回のライブコーディングバトルでは、4人の競技者が40分の制限時間内で、glslfan上でGLSLのシェーダーによる作品をつくりあげました。
+今回のライブコーディングバトルでは、4人の競技者（[@FMS_Cat](https://twitter.com/FMS_Cat)さん, [@notargs](https://twitter.com/notargs)さん、[@gyabo](https://twitter.com/gyabo)さん、そして私[@gam0022](https://twitter.com/gam0022)）が40分の制限時間内で、glslfan上でGLSLのシェーダーによる作品をつくりあげました。
 
 [glslfan.com](https://glslfan.com/)はdoxasさんが開発されているGLSL Sandbox互換のライブコーディングをリアルタイム配信するサイトです。
 他人のシェーダコーディングをある程度リアルタイムに覗き見できることを特徴としています。
@@ -108,9 +108,14 @@ GLSL Compo2位のsetchiさんのツイート
 （本当はを大会前日まで[PC Demo Compoの作品制作をしていたので](https://gam0022.net/blog/2018/12/12/tdf2018/)、ライブコーディングの練習はほとんどできませんでした😇）
 
 競技中に私の画面が真っ白になってしまい、
-実況者に「仕込んでますよ」「隠してますよ」「いやらしいですね」
+実況者（[@h_doxas](https://twitter.com/h_doxas)さん、[@amagitakayosi](https://twitter.com/amagitakayosi)さん）に「仕込んでますよ」「隠してますよ」「いやらしいですね」
 と解説されていたのですが、本当は原因不明のバグで苦しんでいて頭も真っ白でした😨 
 終盤にバグの原因を突き止めてなんとか逆転優勝できました。
+
+参加者4人の作品を並べた動画はこちらです。どの作品もレベルが高くて、みんな凄すぎますね👏
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ライブコーティングバトルの最終成果物 <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://t.co/CpIWIhcqoH">pic.twitter.com/CpIWIhcqoH</a></p>&mdash; kaiware style🌱 (@kaiware007) <a href="https://twitter.com/kaiware007/status/1068777639333126144?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 IGN JAPAN様にライブコーディングバトルを含めたTDFの1日目の様子をご紹介いただきました。興味がある方は是非ご覧ください。
 
