@@ -11,7 +11,7 @@ disqusShortname = "gam0022-net"
 googleAnalytics = "UA-84469205-1"
 
 [permalinks]
-  post = "/blog/:year/:month/:day/:slug"
+  post = "/blog/:year/:month/:day/:slug/"
 
 [params]
   name = "細田 翔 / Sho Hosoda"
