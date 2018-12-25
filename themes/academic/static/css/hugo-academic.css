@@ -85,26 +85,26 @@ h4 {
     color: #666;
 }
 
-table, th, td {
+.article table, .article th, .article td {
     border-collapse: collapse;
     border: 1px solid #ccc;
     line-height: 1.5;
     font-size: 15px;
 }
   
-table th {
+.article table th {
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
     background: #3f3f3f;
     color: #ffffff;
 }
-table td {
+.article table td {
     padding: 10px;
     vertical-align: top;
 }
 
-tr:nth-child(even) {
+.article tr:nth-child(even) {
     background: #d9d9d9;
 }
 
