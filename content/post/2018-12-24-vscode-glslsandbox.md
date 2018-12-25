@@ -113,7 +113,7 @@ GLSL Compo2位のsetchiさんのツイート
 終盤にバグの原因を突き止めてなんとか逆転優勝できました。
 
 参加者4人の作品を並べた動画はこちらです。
-左上が[@FMS_Cat](https://twitter.com/FMS_Cat)さん, 右上が[@gyabo](https://twitter.com/gyabo)さん、左下が[@notargs](https://twitter.com/notargs)さん、そして右下が私[@gam0022](https://twitter.com/gam0022)の作品です。
+左上が[@FMS_Cat](https://twitter.com/FMS_Cat)さん、右上が[@gyabo](https://twitter.com/gyabo)さん、左下が[@notargs](https://twitter.com/notargs)さん、そして右下が私[@gam0022](https://twitter.com/gam0022)の作品です。
 どの作品もレベルが高くて、みんな凄すぎますね👏
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ライブコーティングバトルの最終成果物 <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://t.co/CpIWIhcqoH">pic.twitter.com/CpIWIhcqoH</a></p>&mdash; kaiware style🌱 (@kaiware007) <a href="https://twitter.com/kaiware007/status/1068777639333126144?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
