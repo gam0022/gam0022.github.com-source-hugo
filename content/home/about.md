@@ -15,7 +15,7 @@ weight = 0
 
 2011年に筑波大学 情報学群 情報科学類に入学。
 在学中には[TwinCal](http://gam0022.net/app/twincal/)という筑波大学に特化した時間割のWebアプリケーションを開発する。TwinCalは在学生に広く利用され、[学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/)のファイナリストにも採択される（後輩に運用を引き継ぎ、現在も運用されている！）。[計算幾何学とグラフィックス研究室](http://www.cgg.cs.tsukuba.ac.jp/)に所属し[紙模型に特化したCADに関する研究](/works/#research)を行い、その業績を評価され[筑波大学 情報学群長表彰](https://twitter.com/gam0022/status/580638093226692608)を受賞する。
-さらにグラフィクスと CAD 合同シンポジウム 2015にて[GCAD賞を受賞](http://cgvi.jp/info/2017/06/05/bestpapers/#qd40ba36)する。
+さらにグラフィクスとCAD／Visual Computing 合同シンポジウム 2015（**査読付き国内会議**）にて[GCAD賞](http://cgvi.jp/gcad/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#qd40ba36)（**発表36件中4人**）を受賞する。
 
 2014年にブラウザ上でハードウェアアクセラレータされた3DCG表現を可能にするWebGLに強い関心を持つ。
 先のCADの研究でもWebGLを用いて試作アプリを開発する。
@@ -23,10 +23,14 @@ weight = 0
 得られた知見を[three.jsへのOSSコントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)や
 [Qiita](http://qiita.com/gam0022/items/9875480d33e03fe2113c)、
 [GLSL勉強会](http://gam0022.net/blog/2016/02/16/glsl-tech/)や[GLSLスクール](https://webgl.souhonzan.org/entry/?v=0703)の講師として登壇し技術共有を行う。
-2016年には[TokyoDemoFestのGLSL Graphics Compoで3位入賞](http://gam0022.net/blog/2016/02/24/tokyo-demo-fest/)する。
-翌年2017の[TokyoDemoFestでもGLSL Graphics Compoで3位入賞](/blog/2017/02/24/tdf2017/)し、2年連続入賞を果たす。
+
+[Tokyo Demo Fest](http://tokyodemofest.jp)では2016年から2018年まで3年連続で上位入賞を果たす。
+
+- Tokyo Demo Fest 2016 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2016/02/24/tokyo-demo-fest/)）
+- Tokyo Demo Fest 2017 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2017/02/24/tdf2017/)）
+- Tokyo Demo Fest 2017 Combined Demo Compo **1位優勝**（[解説記事](/blog/2018/12/12/tdf2018/)）
 
 KLab（2015〜）ではUnity製のモバイルゲームの3Dグラフィックス開発を担当し、モバイル向けに最適化したシェーダー開発・アセット仕様の策定・テクニカルアーティストとして組織横断活動を行う。
 
-- Last Update: 2018-07-16
+- Last Update: 2019-01-04
 - Read More: [Resume](/resume)

@@ -9,7 +9,7 @@ slug = ""
 
 +++
 
-Last Update: 2018-07-21
+Last Update: 2019-01-04
 
 - [日本語版](#ja)
 - [English Version](#en)
@@ -20,8 +20,8 @@ Last Update: 2018-07-21
 
 - GLSLとWebGLについて[参加者100人以上の勉強会](https://gam0022.net/blog/2016/02/16/glsl-tech/)での登壇や[有償セミナー](https://webgl.souhonzan.org/entry/?v=0703)での講師経験あり
 - [three.js](https://github.com/mrdoob/three.js/)（JavaScriptの3DライブラリのOSS、GitHubのスター数は43.1k）に[コントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)
-- [Tokyo Demo Fest](http://tokyodemofest.jp)のGLSL Graphics Compo部門に2年連続で3位入賞（[2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/), [2017](https://gam0022.net/blog/2017/02/24/tdf2017/)）
-- [パストレーシングによる物理ベースレンダラー](https://gam0022.net/blog/2017/10/02/rtcamp5/)をRustにより開発
+- [Tokyo Demo Fest](http://tokyodemofest.jp)に3年連続で上位入賞（[2016 GLSL Compo 3位](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/), [2017 GLSL Compo 3位](https://gam0022.net/blog/2017/02/24/tdf2017/), [2018 Demo Compo 1位](https://gam0022.net/blog/2018/12/12/tdf2018/)）
+- [パストレーシングによる物理ベースレンダラー](https://github.com/gam0022/hanamaru-renderer/)をRustにより開発
 - 現職ではUnityによるモバイルゲームのクライアントアプリやモバイル向けに最適化したシェーダーを開発中
 - スキル
     - Computer Graphics
@@ -48,10 +48,11 @@ Last Update: 2018-07-21
 
 ## 受賞
 
+- 2018-12-02. [TokyoDemoFest 2018](http://tokyodemofest.jp/2018/) Combined Demo Compo 1位
 - 2017-02-19. [TokyoDemoFest 2017](http://tokyodemofest.jp/2017/?lang=ja) GLSL Graphics Compo 3位
 - 2015-10-31. ISUCON5 本戦出場（271チーム中25チームが本戦出場）
 - 2016-02-21. [TokyoDemoFest 2016](http://tokyodemofest.jp/2016/) GLSL Graphics Compo 3位
-- 2015-06-28. [グラフィクスとCAD／Visual Computing 合同シンポジウム 2015](http://cgvi.jp/gcad/vc2015/)（**査読付き国内会議**）[GCAD賞](http://cgvi.jp/info/2017/06/05/bestpapers/#qd40ba36)（**36件中4件**）
+- 2015-06-28. [グラフィクスとCAD／Visual Computing 合同シンポジウム 2015](http://cgvi.jp/gcad/vc2015/)（**査読付き国内会議**）[GCAD賞](http://cgvi.jp/gcad/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#qd40ba36)（**36件中4件**）
 - 2015-03-24. 筑波大学 情報学群長表彰
 - 2013-09-17. [学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/) ファイナリストに採択
 - 2013-07-31. 筑波大学情報学群 [組み込み技術キャンパスOJT](http://inf.tsukuba.ac.jp/ET-COJT/) 前期課題 新たな形のインタラクティブな商品展示用のWebページを作成する課題（株式会社千趣会との共同企画）準優勝及び技術賞受賞
@@ -63,7 +64,8 @@ Last Update: 2018-07-21
 
 ## 出版
 
-- 2017. KLab Tech Book
+- 2018. KLab Tech Book Vol.3
+- 2017. KLab Tech Book Vol.1
 - 2017. Think Web
 - 2016. AZ異本 grimoire of web
 - 2015. JavaScriptoon2
@@ -97,8 +99,8 @@ Last Update: 2018-07-21
 
 - Lectured on GLSL and WebGL at the [GLSL workshop](https://gam0022.net/blog/2016/02/16/glsl-tech/) (more than 100 attendees) and the [WebGL School 2016](https://webgl.souhonzan.org/entry/?v=0703) (paid seminar).
 - [Ccontributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, over 43.1k GitHub Stars).
-- Won the 3rd prise in the GLSL Graphics Compo at Tokyo Demo Fest for 2 consecutive years ([2016](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [2017](https://gam0022.net/blog/2017/02/24/tdf2017/)).
-- Developed a [physical base renderer by pathtracing with Rust](https://gam0022.net/blog/2017/10/02/rtcamp5/).
+- Won the prise at Tokyo Demo Fest for 3 consecutive years ([3rd prize at 2016 GLSL Compo](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [3rd prize at 2017 GLSL Compo](https://gam0022.net/blog/2017/02/24/tdf2017/), [1st prize at 2018 Demo Compo](https://gam0022.net/blog/2018/12/12/tdf2018/)).
+- Developed a [physical base renderer by pathtracing with Rust](https://github.com/gam0022/hanamaru-renderer/).
 - Currently Developing a mobile game Cliant application with Unity and Optimized shaders for mobile.
 - Skills
     - Computer Graphics
@@ -126,10 +128,11 @@ Last Update: 2018-07-21
 
 ## Awards
 
+- 2018-12-02. [TokyoDemoFest 2018](http://tokyodemofest.jp/2018/) Combined Demo Compo 1st prize
 - 2017-02-19. [TokyoDemoFest 2017](http://tokyodemofest.jp/2017/?lang=en) GLSL Graphics Compo 3rd prize
 - 2015-10-31. Participated in the final competition of ISUCON 5 (25 teams out of 271 teams)
 - 2016-02-21. [TokyoDemoFest 2016](http://tokyodemofest.jp/2016/?lang=en) GLSL Graphics Compo 3rd prize
-- 2015-06-28. [グラフィクスとCAD／Visual Computing 合同シンポジウム 2015](http://cgvi.jp/gcad/vc2015/)（**Domestic Concerence Proceedings, Peer reviewed Full paper**）[GCAD賞](http://cgvi.jp/info/2017/06/05/bestpapers/#qd40ba36)（**4 out of 36 presentations**）
+- 2015-06-28. [グラフィクスとCAD／Visual Computing 合同シンポジウム 2015](http://cgvi.jp/gcad/vc2015/)（**Domestic Concerence Proceedings, Peer reviewed Full paper**）[GCAD賞](http://cgvi.jp/gcad/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#qd40ba36)（**4 out of 36 presentations**）
 - 2015-03-24. College of Information Science, University of Tsukuba President's Award
 - 2013-09-17. Adopted as a finalist at [学生のためのアプリ開発コンテスト](http://acaric-valuator.com/event/studentappcontest2013/)
 - 2013-07-31. Challenges to create a Web page of interactive products for the exhibition of a new form (Collaborative project with SENSHUKAI Co.,Ltd.), [Campus OJT next decade, College of Information Science, University of Tsukuba](http://inf.tsukuba.ac.jp/ET-COJT/). 2nd prize and Technical award
@@ -141,7 +144,8 @@ Last Update: 2018-07-21
 
 ## Publications
 
-- 2017. KLab Tech Book
+- 2018. KLab Tech Book Vol.3
+- 2017. KLab Tech Book Vol.1
 - 2017. Think Web
 - 2016. AZ異本 grimoire of web
 - 2015. JavaScriptoon2

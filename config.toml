@@ -204,7 +204,7 @@ googleAnalytics = "UA-84469205-1"
   weight = 2
 
 [[menu.main]]
-  name = "Works"
+  name = "Work"
   url = "works"
   pre = "<i class='fa fa-photo'></i>"
   weight = 3

@@ -1,7 +1,7 @@
 +++
 date = "2016-09-24T00:00:00"
 draft = false
-title = "Works"
+title = "Work"
 subtitle = ""
 section_id = 10
 weight = 10
@@ -9,28 +9,44 @@ section = 100
 toc = true
 +++
 
-最終更新: 2018-06-27
+最終更新: 2019-01-04
 
 # Publications
 
 執筆した書籍を紹介します。
 
-## 2017年10月 KLab Tech Book
+## 2018年10月 KLab Tech Book Vol.3
 
-[<img alt="KLab Tech Book" src="/images/works/tbf3.jpg" width="200px" class="right">](/images/works/tbf3.jpg)
+[<img alt="KLab Tech Book Vol.3" src="/images/works/tbf5.jpg" width="200px" class="right">](/images/works/tbf5.png)
 
-『KLab Tech Book』の表紙絵と『第1章 物理ベースレンダラーを Rust 実装して、表紙絵をレンダリングした話』を担当しました。
+『KLab Tech Book Vol.3』の『第7章 物理ベースレンダラーをRust実装して、ちょっと高速化した話』を担当しました。
+
+技術書典3の『KLab Tech Book Vol. 1』の第一章『物理ベースレンダラーをRust実装して、表紙絵をレンダリングした話』の続編です。
+
+筆者自作の物理ベースレンダラを題材にして、パストレーシングの高速化の手法を紹介します。
+BVHによる衝突判定の高速化、式を整理して不要な計算を省く高速化、Next Event Estimation（NEE）、デノイズによるノイズの除去、Rust開発環境の最新化について紹介しました。
+
+関連情報
+
+- [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](/blog/2018/09/18/rtcamp6-part1/)
+- [技術書典5で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/tbf05pre.html)
+
+## 2017年10月 KLab Tech Book Vol.1
+
+[<img alt="KLab Tech Book Vol.1" src="/images/works/tbf3.jpg" width="200px" class="right">](/images/works/tbf3.jpg)
+
+『KLab Tech Book Vol.1』の表紙絵と『第1章 物理ベースレンダラーを Rust 実装して、表紙絵をレンダリングした話』を担当しました。
 
 Rustで自作したパストレーシングによる物理ベースレンダラーを解説しました。
 
 まず基礎的な3DCGの描画方法について触れた後、パストレーシングの原理について簡単に説明しました。
 続いて筆者自作のHanamaruレンダラーを紹介し、レイトレーシングやパストレーシングの高速化の取り組みについて触れました。
 
-- [サークル詳細 | KLab 株式会社 | 技術書典3](https://techbookfest.org/event/tbf03/circle/5644572721938432)
-
 関連情報
 
 - [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
+- [技術書典3で同人誌を頒布しました : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/20171210ac.html)
+- [サークル詳細 | KLab 株式会社 | 技術書典3](https://techbookfest.org/event/tbf03/circle/5644572721938432)
 
 ## 2017年4月 Think Web
 
@@ -102,6 +118,63 @@ three.js はWebGLを手軽に使うためのJavaScriptのライブラリです�
 
 Unityで作成した映像作品と活動を紹介します。
 
+## 2018 Tokyo Demo Fest 2018 優勝作品 WORMHOLE
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/k5MotEfghjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Tokyo Demo Fest 2018にさだきちさん（[@sadakkey](https://twitter.com/sadakkey)）とチームを組み、『WORMHOLE』（映像：gam0022 / サウンド：sadakkey）という作品を発表しました。
+
+「ワームホールによる空間移動」をコンセプトとして、 不思議な球体がワームホールを介して非現実なデジタル空間と水平線の広がる自然空間を行き来する映像作品です。
+
+Windows実行ファイル形式のデモ作品のコンペティションであるCombined Demo Compoにて、[本作品が1位](http://tokyodemofest.jp/2018/results.txt)に選ばれました！
+実行ファイル形式なので、リアルタイムレンダリングです。さらに言えばリアルタイムレイトレです！
+
+Unityの新機能（Timeline・TextMeshPro・Chinemachine・PostProcessingStack）を活用し、効率的に開発と制作を行いました。
+また、レイマーチングとラスタライザのハイブリッドなレンダリング方式を採用しました。
+
+関連記事
+
+- [Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net](/blog/2018/12/12/tdf2018/)
+- [Tokyo Demo Fest2018のDemo Compo優勝作品の解説〜サウンド編〜 : KLabGames Creative Blog](http://klabgames.creative.blog.jp.klab.com/archives/14415590.html)
+- [「Tokyo Demo Fest 2018」参加レポート : KLab広報ブログ](http://pr.blog.klab.jp/archives/51697543.html)
+
+関連情報
+
+- [https://github.com/gam0022/unity-demoscene](https://github.com/gam0022/unity-demoscene)
+- [Windowsの実行ファイル](https://files.scene.org/view/parties/2018/tokyodemofest18/demo/wormhole.zip)（GTX1070以上のGPU推奨）
+- [動画ファイル](https://drive.google.com/file/d/1GxyxjOyGBRcofMVKILmJtlmYaMZ5XoGx/view)（ブラウザ上だとエンコードされた状態で再生されるのでダウンロードしてください）
+- [pouet.net内の『WORMHOLE』のページ](https://www.pouet.net/prod.php?which=79380)
+
+## 2018 カスタムシェーダーでTextMeshProに独創的な演出を加える
+
+<!--img width="100%" alt="※画像が読み込まれるまでお待ちください WORMHOLE" src="https://media.giphy.com/media/fHouJLi9ipkpXxVPki/giphy.gif"-->
+
+『WORMHOLE』のオープニング部分のタイトルの文字をパラパラと出現させたり消失させたりする演出は、TextMeshProとカスタムシェーダーを組み合わせて実装しました。
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">『カスタムシェーダーでTextMeshProに独創的な演出を加える』という記事を書きました！<br><br>▶️<a href="https://t.co/JGP53ciQ9D">https://t.co/JGP53ciQ9D</a> …<br><br>『WORMHOLE』（<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> 2018のPC Demo Compo 優勝作品）でも活用しています。<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://twitter.com/hashtag/shader?src=hash&amp;ref_src=twsrc%5Etfw">#shader</a> <a href="https://t.co/bvBT95RxZX">pic.twitter.com/bvBT95RxZX</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1075173575424798720?ref_src=twsrc%5Etfw">2018年12月18日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+モーフィング
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">TextMeshPro は SDF をつかってフォントレンダリングしていることを思い出し、もしかしてモーフィーングできるのでは？と思って挑戦してみたらできた！ <a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/nCx7xBwGGv">pic.twitter.com/nCx7xBwGGv</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1053969654165585920?ref_src=twsrc%5Etfw">2018年10月21日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+ブラウン管風のエフェクト
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">TextMeshPro に適当なシェーダーを適用する実験。<br>TextMeshPro 用のシェーダーの書き方が分かってきた気がする。<a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/BPUoH83nrA">pic.twitter.com/BPUoH83nrA</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1053989356384354304?ref_src=twsrc%5Etfw">2018年10月21日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+出現と消失アニメーション
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">TextMeshPro シェーダー遊び その3<a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/bUJvfyDhBr">pic.twitter.com/bUJvfyDhBr</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1056398353569697792?ref_src=twsrc%5Etfw">2018年10月28日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+TextMeshProの文字描画に独創的な演出を加えるためのカスタムシェーダーの実装方法をQiitaで解説しました。
+
+- [[Unity] カスタムシェーダーでTextMeshProに独創的な演出を加える - Qiita](https://qiita.com/gam0022/items/f3b7a3e9821a67a5b0f3)
+
 ## 2018 uRaymarchingとReflectionProbeによる反射
 
 ReflectionProbeによって「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させたシーンで破綻のない反射を計算する検証です。
@@ -125,6 +198,17 @@ ReflectionProbeによって「レイマーチングで動的に生成したモ�
 WebGLで作成した映像作品と活動を紹介します。
 
 動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
+
+## 2018 シェーダーコーディングバトル優勝
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーライブコーディングバトルの優勝作品です！<br>ありがとうございました！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://twitter.com/hashtag/tdf2018?src=hash&amp;ref_src=twsrc%5Etfw">#tdf2018</a><a href="https://t.co/MJwbIWFOMl">https://t.co/MJwbIWFOMl</a> <a href="https://t.co/LVr2LYvUgi">pic.twitter.com/LVr2LYvUgi</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1068782247711465472?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+GLSLのシェーダーのみで上記のような作品をつくりました。
+
+関連記事
+
+- [GLSL Compoに役立つ！GLSL Sandbox互換のVSCode拡張『Shader Toy』の紹介 | gam0022.net](/blog/2018/12/24/vscode-glslsandbox/#ライブコーディングバトルで優勝できた)
 
 ## 2018 メガデモ勉強会
 
@@ -328,7 +412,17 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 # Windows
 
-## 2016 Hanamaru Renderer
+## 2018 Hanamaru Renderer v2
+
+<script async class="speakerdeck-embed" data-id="3ea604f4f30248709e316a1cb487f1cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Hanamaru Rendererを高速化しました。
+
+関連情報
+
+- [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](https://gam0022.net/blog/2018/09/18/rtcamp6-part1/)
+
+## 2017 Hanamaru Renderer
 
 <script async class="speakerdeck-embed" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
