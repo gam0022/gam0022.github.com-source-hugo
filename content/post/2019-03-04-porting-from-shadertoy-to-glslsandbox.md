@@ -5,7 +5,7 @@ math = false
 draft = false
 tags = [
 ]
-title = "Shadertoyのコードの先頭にコピペするだけで、GLSL SandboxやNEORTに移植できるヘッダーコード"
+title = "先頭にコピペするだけ！Shadertoy → GLSL Sandbox / NEORT の移植用ヘッダーコードの紹介"
 slug = "porting-from-shadertoy-to-glslsandbox"
 date = "2019-03-04T09:01:07+09:00"
 
@@ -37,17 +37,17 @@ void main(void) {
 // END: shadertoy porting template
 ```
 
-Shaderotyのマルチパスやテクスチャ機能をつかったShaderの移植はできませんが、普通の1パスのShaderなら移植できると思います。
+Shadertoyのマルチパスやテクスチャ機能をつかったShaderの移植はできませんが、普通の1パスのShaderなら移植できると思います。
 
 ぜひ使ってみてください！
 
 <!--more-->
 
-## Shadertoy -> NEORT の移植事例
+## Shadertoy → NEORT の移植事例
 
 最近、[NEORT](https://neort.io/)という国内産Shadertoyのようなサイトが登場しました。
 
-NEORTはGLSL Sandbox互換があるので、ご紹介した方法で一発でShaderotyから移植できました。
+NEORTはGLSL Sandbox互換があるので、ご紹介した方法で一発でShadertoyから移植できました。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">NEORTはじめました⛩️<a href="https://twitter.com/hashtag/GLSL?src=hash&amp;ref_src=twsrc%5Etfw">#GLSL</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/acKyzwIU8S">https://t.co/acKyzwIU8S</a> <a href="https://t.co/1AqphUQ5jv">pic.twitter.com/1AqphUQ5jv</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1100564853985501184?ref_src=twsrc%5Etfw">2019年2月27日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -58,7 +58,7 @@ NEORTはGLSL Sandbox互換があるので、ご紹介した方法で一発でSha
 
 ### uniform名の違いの吸収
 
-まず以下のコードでShaderotyとGLSL Sandboxのuniform名の違いの吸収しています。
+まず以下のコードでShadertoyとGLSL Sandboxのuniform名の違いの吸収しています。
 
 単純に `#define` のプリプロセッサで置換しているだけなので、特に不思議なことは無いと思います。
 
@@ -74,11 +74,11 @@ uniform vec2 mouse;
 
 ### エントリーポイント名の違いの吸収
 
-Shadertoyのエントリポイントは `mainImage` で、GLSL Sandboxは `mian` です。
+Shadertoyのエントリポイントは `mainImage` で、GLSL Sandboxは `main` です。
 
 が、よく考えてみると、ShadertoyもWebGLで実装されているからにはGLSLのルールに従って `main` が定義されているはずです。
 
-Shaderotyのソースコードを眺めてみると、`mainImage` を呼び出す `main` 関数をヘッダーとして挿入する実装になっています。
+Shadertoyのソースコードを眺めてみると、`mainImage` を呼び出す `main` 関数をヘッダーとして挿入する実装になっています。
 
 ```cpp
 void main(void) {
