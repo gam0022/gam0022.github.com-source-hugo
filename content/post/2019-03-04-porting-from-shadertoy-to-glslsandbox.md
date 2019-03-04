@@ -4,6 +4,7 @@ toc = false
 math = false
 draft = false
 tags = [
+    "GLSL", "小ネタ", "レイマーチング", "Shadertoy", "GLSL Snadbox", "NEORT"
 ]
 title = "先頭にコピペするだけ！Shadertoy → GLSL Sandbox / NEORT の移植用ヘッダーコードの紹介"
 slug = "porting-from-shadertoy-to-glslsandbox"
