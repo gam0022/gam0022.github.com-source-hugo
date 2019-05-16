@@ -30,7 +30,9 @@ weight = 0
 - Tokyo Demo Fest 2017 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2017/02/24/tdf2017/)）
 - Tokyo Demo Fest 2018 Combined Demo Compo **1位優勝**（[解説記事](/blog/2018/12/12/tdf2018/)）
 
-KLab（2015〜）ではUnity製のモバイルゲームの3Dグラフィックス開発を担当し、モバイル向けに最適化したシェーダー開発・アセット仕様の策定・テクニカルアーティストとして組織横断活動を行う。
+KLab（2015〜）では、Unity製のモバイルゲームの3Dグラフィックス開発を担当し、モバイル向けに最適化したシェーダー開発、アセット仕様の策定、テクニカルアーティストとして組織横断活動を行う。
 
-- Last Update: 2019-01-04
+サンフランシスコで開催された[GDC2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表を行う（[セッション情報](https://schedule.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)、[関連記事](https://gam0022.net/blog/2019/03/28/gdc2019/)）。
+
+- Last Update: 2019-05-16
 - Read More: [Resume](/resume)
