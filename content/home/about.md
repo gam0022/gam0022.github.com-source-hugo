@@ -28,7 +28,7 @@ weight = 0
 
 - Tokyo Demo Fest 2016 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2016/02/24/tokyo-demo-fest/)）
 - Tokyo Demo Fest 2017 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2017/02/24/tdf2017/)）
-- Tokyo Demo Fest 2017 Combined Demo Compo **1位優勝**（[解説記事](/blog/2018/12/12/tdf2018/)）
+- Tokyo Demo Fest 2018 Combined Demo Compo **1位優勝**（[解説記事](/blog/2018/12/12/tdf2018/)）
 
 KLab（2015〜）ではUnity製のモバイルゲームの3Dグラフィックス開発を担当し、モバイル向けに最適化したシェーダー開発・アセット仕様の策定・テクニカルアーティストとして組織横断活動を行う。
 
