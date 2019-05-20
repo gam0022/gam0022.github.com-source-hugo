@@ -9,11 +9,24 @@ section = 100
 toc = true
 +++
 
-最終更新: 2019-01-04
+最終更新: 2019-05-20
 
 # Publications
 
 執筆した書籍を紹介します。
+
+## 2019年4月 KLab Tech Book Vol.4
+
+[<img alt="KLab Tech Book Vol.4" src="/images/works/tbf6.jpg" width="200px" class="right">](/images/works/tbf6.png)
+
+『KLab Tech Book Vol.4』の『第4章 Unity×レイマーチングによる映像制作の実践手法』を担当しました。
+
+[Tokyo Demo Fest 2018](http://tokyodemofest.jp/2018/)で発表したリアルタイムCG作品[『WORMHOLE』](https://www.youtube.com/watch?v=k5MotEfghjQ)を題材にして、Unityとレイマーチングを組み合わせた映像制作技術を解説しました。
+
+関連記事
+
+- [Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net](https://gam0022.net/blog/2018/12/12/tdf2018/)
+- [技術書典6で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/tbf06.html)
 
 ## 2018年10月 KLab Tech Book Vol.3
 
@@ -26,7 +39,7 @@ toc = true
 筆者自作の物理ベースレンダラを題材にして、パストレーシングの高速化の手法を紹介します。
 BVHによる衝突判定の高速化、式を整理して不要な計算を省く高速化、Next Event Estimation（NEE）、デノイズによるノイズの除去、Rust開発環境の最新化について紹介しました。
 
-関連情報
+関連記事
 
 - [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](/blog/2018/09/18/rtcamp6-part1/)
 - [技術書典5で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/tbf05pre.html)
@@ -42,7 +55,7 @@ Rustで自作したパストレーシングによる物理ベースレンダラ�
 まず基礎的な3DCGの描画方法について触れた後、パストレーシングの原理について簡単に説明しました。
 続いて筆者自作のHanamaruレンダラーを紹介し、レイトレーシングやパストレーシングの高速化の取り組みについて触れました。
 
-関連情報
+関連記事
 
 - [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
 - [技術書典3で同人誌を頒布しました : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/20171210ac.html)
@@ -62,7 +75,7 @@ Rustで自作したパストレーシングによる物理ベースレンダラ�
 - [Think Web | TechBooster in 技術書典2](https://techbooster.github.io/tbf02/#think)
 - [Think Web | BOOTH](https://techbooster.booth.pm/items/488347)
 
-関連情報
+関連記事
 
 - [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
 - [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
@@ -81,7 +94,7 @@ three.jsによるレイマーチングとラスタライザのハイブリッド
 - [AZ異本 grimoire of web - TechBooster in 技術書典](https://techbooster.github.io/tbf1/#web)
 - [AZ異本 grimoire of web - BOOTH](https://techbooster.booth.pm/items/275301)
 
-関連情報
+関連記事
 
 - [6/25の技術書典で、AZ異本（アツイホン）を出します！](http://gam0022.hatenablog.com/entry/2016/06/22/tbf1)
 - [hybrid - gam0022.net](http://gam0022.net/webgl/#raymarching_hybrid)
@@ -140,7 +153,7 @@ Unityの新機能（Timeline・TextMeshPro・Chinemachine・PostProcessingStack�
 - [Tokyo Demo Fest2018のDemo Compo優勝作品の解説〜サウンド編〜 : KLabGames Creative Blog](http://klabgames.creative.blog.jp.klab.com/archives/14415590.html)
 - [「Tokyo Demo Fest 2018」参加レポート : KLab広報ブログ](http://pr.blog.klab.jp/archives/51697543.html)
 
-関連情報
+関連記事
 
 - [https://github.com/gam0022/unity-demoscene](https://github.com/gam0022/unity-demoscene)
 - [Windowsの実行ファイル](https://files.scene.org/view/parties/2018/tokyodemofest18/demo/wormhole.zip)（GTX1070以上のGPU推奨）
@@ -199,6 +212,16 @@ WebGLで作成した映像作品と活動を紹介します。
 
 動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
 
+## 2019 Morphing: Hisei -> Reiwa
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーで &quot;平成&quot; と &quot;令和&quot; をモーフィング<br>Morphing &quot;Heisei&quot; and &quot;Reiwa&quot;<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://twitter.com/hashtag/TextMeshPro?src=hash&amp;ref_src=twsrc%5Etfw">#TextMeshPro</a> <a href="https://twitter.com/hashtag/CreativeCoding?src=hash&amp;ref_src=twsrc%5Etfw">#CreativeCoding</a> <a href="https://t.co/t71W0b5Ex4">pic.twitter.com/t71W0b5Ex4</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1123253864008863744?ref_src=twsrc%5Etfw">2019年4月30日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## 2019 Dot Matrix PostProcessing
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Posted on <a href="https://twitter.com/hashtag/Shadertoy?src=hash&amp;ref_src=twsrc%5Etfw">#Shadertoy</a>: &quot;Dot Matrix PostProcessing&quot;<br>This is a 2D only shader work.<a href="https://t.co/xCi3jyL9WG">https://t.co/xCi3jyL9WG</a><a href="https://twitter.com/hashtag/glsl?src=hash&amp;ref_src=twsrc%5Etfw">#glsl</a> <a href="https://twitter.com/hashtag/raymarching?src=hash&amp;ref_src=twsrc%5Etfw">#raymarching</a> <a href="https://t.co/PNlZ0VuSMs">pic.twitter.com/PNlZ0VuSMs</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1122521979473371137?ref_src=twsrc%5Etfw">2019年4月28日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## 2018 シェーダーコーディングバトル優勝
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーライブコーディングバトルの優勝作品です！<br>ありがとうございました！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://twitter.com/hashtag/tdf2018?src=hash&amp;ref_src=twsrc%5Etfw">#tdf2018</a><a href="https://t.co/MJwbIWFOMl">https://t.co/MJwbIWFOMl</a> <a href="https://t.co/LVr2LYvUgi">pic.twitter.com/LVr2LYvUgi</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1068782247711465472?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
@@ -235,7 +258,7 @@ GLSLのシェーダーのみで上記のような作品をつくりました。
 
 - [https://gam0022.net/webgl/#raymarching_kado](https://gam0022.net/webgl/#raymarching_kado)
 
-関連情報
+関連記事
 
 - [正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net
 ](/blog/2017/06/30/raymarching-kado/)
@@ -250,7 +273,7 @@ TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞した、レイマーチ
 - [Fusioned Bismuth | Shadertoy](https://www.shadertoy.com/view/Msscz7)
 - [Tokyo Demo Fest 2017 - GLSL Graphics Compo | Youtube](https://youtu.be/o3e7YFspIJ0?t=10m34s)
 
-関連情報
+関連記事
 
 - [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net](https://gam0022.net/blog/2017/02/24/tdf2017/)
 - [距離関数のfold（折りたたみ）による形状設計 | gam0022.net](https://gam0022.net/blog/2017/03/02/raymarching-fold/)
@@ -265,7 +288,7 @@ WebGL(three.js)でリアルタイムなパストレーシングを実装しま�
 
 - [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
 
-関連情報
+関連記事
 
 - [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
 - [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
@@ -289,7 +312,7 @@ WebGLの深度バッファを書き込む拡張(`EXT_frag_depth`)を利用して
   <a href="http://gam0022.net/webgl/#raymarching_hybrid_live" class="btn btn-primary btn-outline">Live - gam0022.net（※音が出ます）</a>
 </div>
 
-関連情報
+関連記事
 
 - [AZ異本 grimoire of web](#2016年夏-az異本-grimoire-of-web)
 - [6/25の技術書典で、AZ異本（アツイホン）を出します！](http://gam0022.hatenablog.com/entry/2016/06/22/tbf1)
@@ -418,7 +441,7 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 Hanamaru Rendererを高速化しました。
 
-関連情報
+関連記事
 
 - [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](https://gam0022.net/blog/2018/09/18/rtcamp6-part1/)
 
@@ -428,7 +451,7 @@ Hanamaru Rendererを高速化しました。
 
 Rustで開発したパストレーシングによる物理ベースレンダラーです。
 
-関連情報
+関連記事
 
 - [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
 
