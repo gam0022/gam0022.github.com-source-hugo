@@ -9,7 +9,7 @@ slug = ""
 
 +++
 
-Last Update: 2019-05-20
+Last Update: 2019-05-26
 
 - [日本語版](#ja)
 - [English Version](#en)
@@ -22,7 +22,7 @@ Last Update: 2019-05-20
 - [three.js](https://github.com/mrdoob/three.js/)（JavaScriptの3DライブラリのOSS、GitHubのスター数は43.1k）に[コントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)
 - [Tokyo Demo Fest](http://tokyodemofest.jp)に3年連続で上位入賞（[2016 GLSL Compo 3位](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/), [2017 GLSL Compo 3位](https://gam0022.net/blog/2017/02/24/tdf2017/), [2018 Demo Compo 1位](https://gam0022.net/blog/2018/12/12/tdf2018/)）
 - [パストレーシングによる物理ベースレンダラー](https://github.com/gam0022/hanamaru-renderer/)をRustにより開発
-- 現職ではUnityによるモバイルゲームのクライアントアプリやモバイル向けに最適化したシェーダーを開発中
+- KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計、モバイル向けに最適化したシェーダー開発、テクニカルアーティストとしてプロジェクト横断のサポート活動等を行う
 - [GDC2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表（[セッション情報](https://schedule.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)、[関連記事](https://gam0022.net/blog/2019/03/28/gdc2019/)）
 - スキル
     - Computer Graphics

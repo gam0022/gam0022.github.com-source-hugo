@@ -63,10 +63,10 @@ googleAnalytics = "UA-84469205-1"
       "three.js / WebGL",
       "Unity",
       "GLSL",
+      "HLSL",
       "C++/C",
       "C#",
       "Ruby on Rails",
-      "PHP",
       "JavaScript",
       "HTML/CSS",
     ]
