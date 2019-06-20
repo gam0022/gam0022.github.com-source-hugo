@@ -12,7 +12,7 @@ tags = [
 
 +++
 
-[UnityエンジニアによるShader勉強会！](https://techplay.jp/event/733454)に「Unity×レイマーチングによる映像制作の実践手法」というタイトルで発表をしました。
+[UnityエンジニアによるShader勉強会！](https://techplay.jp/event/733454)で「Unity×レイマーチングによる映像制作の実践手法」という発表をしました。
 
 <script async class="speakerdeck-embed" data-id="daf8218b7458460087137b6f23e938b3" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
