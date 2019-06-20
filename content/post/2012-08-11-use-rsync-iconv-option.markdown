@@ -37,7 +37,7 @@ UTF-8-MAC問題について詳しく知りたい人は、[こちら](http://d.ha
 Rsyncの`--iconv`オプションが使えるのは、Rsync3からなのでアップデートします。
 
 ```bash
-brew tap homebrew/dupes #リポジトリを追加
+# brew tap homebrew/dupes #リポジトリを追加（2019/06/20追記。この手順は不要になりました。）
 brew install libiconv #iconvオプションを使うために必須のよう
 brew install rsync
 ```
