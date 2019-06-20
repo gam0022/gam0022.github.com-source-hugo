@@ -2,11 +2,12 @@
 title = "UnityエンジニアによるShader勉強会！に登壇しました"
 slug = "klab-tech-meetup4"
 date = "2019-06-20T10:04:11+09:00"
-image = ""
+image = "/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.001.jpeg"
 toc = true
 math = false
 draft = false
 tags = [
+    "event", "CG", "Slide", "レイマーチング", "TokyoDemoFest", "Unity"
 ]
 
 +++
