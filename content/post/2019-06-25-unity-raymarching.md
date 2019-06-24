@@ -20,9 +20,9 @@ draft = false
 
 # はじめに
 
-この記事は、発表内容をブログ向けに編集・要約したものになります。
+この記事は、発表内容をブログ向けに編集・要約したものになります。スライドだけでは伝わりにくい箇所を文章でフォローしました。
 
-発表当日の様子はこちらの別記事にまとめました。
+発表当日の様子は前回の記事にまとめました。
 
 - [UnityエンジニアによるShader勉強会！に登壇しました | gam0022.net](https://gam0022.net/blog/2019/06/20/klab-tech-meetup4/)
 
@@ -64,14 +64,14 @@ foldの部分はかなり難解なので、1行ずつコメントアウトしな
 
 この関数では平行移動はOffset、拡大縮小はScaleという名前のパラメータにしました。
 
-引数のOffsetとScaleを変化させることで、フラクタル図形をアレンジできます。
+このOffsetとScaleを変化させることで、フラクタル図形をアレンジできます。
 
 ![foldRotateとは](/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.014.jpeg)
 
 **foldRotate** （別名: **polarMod** ）はある軸を中心として一定の角度で回転しながら空間を折りたたみする操作です。
-回転の角度をパラメータとすると、任意の図形を多角形の柱のような形に変形できます。
+この回転の角度を変化させると、任意の図形を多角形の柱のような形に変形できます。
 
-- 三角柱を作りたいときは、360度を3で割った120度ずつ回転します。
+- 三角柱を作りたいときは、360° を N = 3 で割った θ = 120° ずつ回転します。
 - 元の形が立方体なので、N = 4 のときは変化がありませんが、元の図形の4分の1が繰り返されています。
 - N = 6 にすれば6角柱ができます。
 - N = 8 にすれば8角柱になります。
@@ -132,6 +132,8 @@ inline float DistanceFunction(float3 pos) {
     return dMenger(pos, _MengerOffset, _MengerScale);
 }
 ```
+
+シェーダー全体: [Tunel.shader](https://github.com/gam0022/unity-demoscene/blob/master/Assets/Demoscene/Projects/2019-06-02-KLabTechMeetup4/Tunel.shader)
 
 距離関数のfoldについてブログ記事を書いたので、もっと詳しく知りたい方はご覧ください。
 
@@ -253,7 +255,7 @@ TextMeshProとカスタムシェーダーを組み合わせる方法について
 
 番外編のテキスト以外の演出の話として、Unity Timelineの活用についても紹介しました。
 
-シェーダーだけでなくUnity Timelineも利用することで、演出制作の効率性を高めました。
+シェーダーだけでなくUnity Timelineも利用することで、演出制作の効率を高めました。
 
 ![Unity Timelineの活用](/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.037.jpeg)
 

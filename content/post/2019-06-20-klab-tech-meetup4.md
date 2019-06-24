@@ -18,7 +18,8 @@ tags = [
 
 <!--more-->
 
-（06/25追記）発表内容のブログ版を別記事に分離しました。
+**（06/25追記）** 発表内容をブログ向けに編集・要約して別記事にまとめました。
+スライドだけでは伝わりにくい箇所を文章でフォローしました。
 
 - [Unity×レイマーチングによる映像制作の実践手法 | gam0022.net](https://gam0022.net/blog/2019/06/25/unity-raymarching/)
 
@@ -39,6 +40,9 @@ tags = [
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">本日の発表資料です！<br>モデリングと演出とライティングを全部シェーダーで実装しました！<a href="https://t.co/lwg0xVcm3J">https://t.co/lwg0xVcm3J</a><a href="https://twitter.com/hashtag/klab_meetup?src=hash&amp;ref_src=twsrc%5Etfw">#klab_meetup</a> <a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/Shader?src=hash&amp;ref_src=twsrc%5Etfw">#Shader</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1141307844999778304?ref_src=twsrc%5Etfw">2019年6月19日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">ブログも更新しました🙏<br>全員の発表資料をまとめ！もあります。<a href="https://t.co/TdiHF5jILF">https://t.co/TdiHF5jILF</a><a href="https://twitter.com/hashtag/klab_meetup?src=hash&amp;ref_src=twsrc%5Etfw">#klab_meetup</a> <a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/Shader?src=hash&amp;ref_src=twsrc%5Etfw">#Shader</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1141541272877850624?ref_src=twsrc%5Etfw">2019年6月20日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## @archeleeds「Unityで遊べる背景シェーダーを作る」
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">KLab Tech Meetup #4<br>「Unityで遊べる背景シェーダーを作る」のスライドです<a href="https://t.co/YyVB6gEhVk">https://t.co/YyVB6gEhVk</a><br>拙いですが何かの参考になれば 🙇‍♂️<a href="https://twitter.com/hashtag/klab_meetup?src=hash&amp;ref_src=twsrc%5Etfw">#klab_meetup</a></p>&mdash; リゼ (@archeleeds) <a href="https://twitter.com/archeleeds/status/1141376228558983168?ref_src=twsrc%5Etfw">2019年6月19日</a></blockquote>
@@ -47,6 +51,9 @@ tags = [
 ## @setchi「FancyScrollView x Shader」
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">スクロールビューでもシェーダー芸がしたい！<br>KLab TECH Meetup ＃4 で発表したスライドおよびサンプルコードです。<br><br>GitHub: <a href="https://t.co/WFqznn2vVM">https://t.co/WFqznn2vVM</a><br>Google Slides: <a href="https://t.co/TR5KBVmDUJ">https://t.co/TR5KBVmDUJ</a><a href="https://twitter.com/hashtag/klab_meetup?src=hash&amp;ref_src=twsrc%5Etfw">#klab_meetup</a> <a href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/zqECmup7Qi">pic.twitter.com/zqECmup7Qi</a></p>&mdash; setchi (@setchi) <a href="https://twitter.com/setchi/status/1141313091134562304?ref_src=twsrc%5Etfw">2019年6月19日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ブログ更新しました &gt; スクロールビューでもシェーダー芸がしたい！<a href="https://t.co/5bNo2FlQqe">https://t.co/5bNo2FlQqe</a><a href="https://twitter.com/hashtag/klab_meetup?src=hash&amp;ref_src=twsrc%5Etfw">#klab_meetup</a> <a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a></p>&mdash; setchi (@setchi) <a href="https://twitter.com/setchi/status/1142779645751783425?ref_src=twsrc%5Etfw">2019年6月23日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 20分シェーダーライブコーディング by @kanetaaaaa
