@@ -18,6 +18,7 @@ date = "2019-03-04T09:01:07+09:00"
 
 ```cpp
 // BEGIN: shadertoy porting template
+// https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/
 precision highp float;
 
 uniform vec2 resolution;
