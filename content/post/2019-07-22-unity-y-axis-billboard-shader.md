@@ -96,7 +96,7 @@ Shader "Unlit/Billboard"
                     // View変換をスキップする場合は明示的にZを反転する必要がある
                     viewPos += float3(scaleRotatePos.xy, -scaleRotatePos.z);
                     
-                    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1.0));
+                    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
                 }
                 #elif _BILLBOARD_Y_AXIS
                 {
@@ -114,7 +114,7 @@ Shader "Unlit/Billboard"
                     );
                     viewPos += mul(ViewRotateY, scaleRotatePos);
                     
-                    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1.0));
+                    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
                 }
                 #endif
 
@@ -177,7 +177,7 @@ Shader "Unlit/Billboard"
     viewPos += float3(scaleRotatePos.xy, -scaleRotatePos.z);
     
     // ④最後にプロジェクション変換
-    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1.0));
+    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
 }
 ```
 
@@ -245,7 +245,7 @@ Y軸のビルボードの頂点シェーダーの処理を抜粋しました。
     viewPos += mul(ViewRotateY, scaleRotatePos);
     
     // ④最後にプロジェクション変換
-    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1.0));
+    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
 }
 #endif
 ```
