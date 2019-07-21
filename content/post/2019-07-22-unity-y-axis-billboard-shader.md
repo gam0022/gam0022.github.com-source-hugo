@@ -16,6 +16,8 @@ title = "[Unity]Y軸ビルボードのシェーダー実装の徹底解説"
 
 ![Y軸ビルボード](/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif)
 
+GitHubリポジトリ: [gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard](https://github.com/gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard/Billboard.shader#L51-L82)
+
 # この記事の要約
 
 この記事で伝えたいことはこの3点です。
@@ -150,6 +152,7 @@ Shader "Unlit/Billboard"
 | OFF: ビルボードなし | ALL_AXIS: 通常のビルボード | Y_AXIS: Y軸のビルボード |
 |:---:|:---:|:---:|
 | ![ビルボードなし](/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_off.gif) | ![ビルボードあり](/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_all_axis.gif) | ![Y軸ビルボード](/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif) |
+| 通常の描画 | 上から見たときの違和感が大きい | 上から見たときの違和感を緩和できる |
 
 # コードの解説
 
@@ -182,7 +185,7 @@ Shader "Unlit/Billboard"
 
 記事の冒頭で
 
-> 1. 頂点シェーダーでView変換（カメラの姿勢に応じた回転）をスキップすれば、ビルボードができる
+> 1.頂点シェーダーでView変換（カメラの姿勢に応じた回転）をスキップすれば、ビルボードができる
 
 と言いましたが、厳密にはMeshの原点だけはView変換を行います。
 
@@ -191,8 +194,10 @@ Shader "Unlit/Billboard"
 ### ②について
 
 Model行列よる平行移動は①で処理しているので、スケールと回転だけを各頂点に適応します。
-`(float3x3)unity_ObjectToWorld` のように `float3x3` でキャストすることで、平行移動の行列の成分を捨てます。
-列ベクトルの場合、4行目に平行移動の情報が入っていますが、キャストによって4列目を捨てて、結果的に平行移動の成分が消えます。
+
+`(float3x3)unity_ObjectToWorld` のように `float3x3` でキャストすることで、平行移動の行列の成分を捨てることができます。
+
+列ベクトルの場合は4行目に平行移動の情報が入っていますが、キャストによって4列目の成分が消えるため、平行移動の成分が消えます。
 
 ### ③について
 
@@ -200,13 +205,19 @@ Model行列よる平行移動は①で処理しているので、スケールと
 
 `float3(scaleRotatePos.xy, -scaleRotatePos.z)` のようにZ成分だけ符号を反転しているのは、冒頭の
 
-> 2. Unityは左手系座標だが、 **View空間では右手系座標** なので、View変換をスキップするときにはZの符号を反転する必要がある
+> 2.Unityは左手系座標だが、 **View空間では右手系座標** なので、View変換をスキップするときにはZの符号を反転する必要がある
 
 という理由によるものです。
 
 私はこのUnityの仕様を知らずに、かなり悩んでしまいました…
 
-私がネットで見つけたUnityのビルボードのシェーダーの実装の多くはZを反転する処理が抜けており、Cullingが反転する不具合がありました。
+私がネットで見つけたUnityのビルボードのシェーダーの実装の多くはZを反転する処理が抜けており、
+Box等の厚みのあるMeshを指定したときにCullingが反転して背面ポリゴンが描画される不具合がありました。
+
+| Z反転なし | Z反転あり |
+|:---:|:---:|
+| ![Z反転なし](/images/posts/2019-07-22-unity-y-axis-billboard-shader/z_reverse_off.png) | ![Z反転あり](/images/posts/2019-07-22-unity-y-axis-billboard-shader/z_reverse_on.png) |
+| NG: Cullingが反転して背面ポリゴンが描画されている | OK: 正常に表面ポリゴンが描画されている |
 
 ### ④について
 
@@ -247,7 +258,7 @@ Y軸のビルボードの頂点シェーダーの処理を抜粋しました。
 
 ③の `ViewRotateY` は冒頭で説明したこの行列です。
 
-> 3. Y軸のビルボードが必要なら、View行列からY軸の回転だけ抽出した行列を作れば良い
+> 3.Y軸のビルボードが必要なら、View行列からY軸の回転だけ抽出した行列を作れば良い
 
 View行列からY軸の回転だけ抽出して、X軸とZ軸は変換しないようにしています。
 
@@ -255,7 +266,7 @@ View行列からY軸の回転だけ抽出して、X軸とZ軸は変換しない�
 
 # 最後に
 
-ビルボードのシェーダー実装は普通に使われると思うのですが、なぜかちゃんと原理まで解説した日本語の記事が見つからなかったので、筆を執らせていただきました。
+ビルボードのシェーダーは頻繁に使われると思うのですが、なぜか動作原理を解説した日本語の記事が見つからなかったので、筆を執らせていただきました。
 
 なるべく丁寧に解説したつもりでしたが、もし分かりにくい点があれば教えてください。
 
