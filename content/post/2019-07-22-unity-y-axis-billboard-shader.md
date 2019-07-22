@@ -1,6 +1,6 @@
 +++
 slug = "unity-y-axis-billboard-shader"
-date = "2019-07-22T09:30:09+09:00"
+date = "2019-07-23T09:30:09+09:00"
 image = "/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif"
 toc = true
 math = false
@@ -8,30 +8,43 @@ draft = false
 tags = [
     "Unity", "Shader"
 ]
-title = "[Unity]Y軸ビルボードのシェーダー実装の徹底解説"
+title = "[Unity]Y軸ビルボードシェーダーの実装と解説"
 
 +++
 
-こんな感じのY軸のビルボードをC#のスクリプトを使わずに、シェーダーだけで実装しました（Unity 2018.3.12f1）。
+こんな感じのY軸のビルボードをC#スクリプトを使わずに、シェーダーだけで実装しました（Unity 2018.3.12f1）。
 
 ![Y軸ビルボード](/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif)
 
 GitHubリポジトリ: [gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard](https://github.com/gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard/Billboard.shader#L51-L82)
+
+<!--more-->
 
 # この記事の要約
 
 この記事で伝えたいことはこの3点です。
 
 1. 頂点シェーダーでView変換（カメラの姿勢に応じた回転）をスキップすれば、ビルボードができる
-2. Unityは左手系座標だが、 **View空間では右手系座標** なので、View変換をスキップするときにはZの符号を反転する必要がある
+2. Unityは左手系座標だが、 **View空間では右手系座標** なので、View変換をスキップするときには自分でZの符号を反転する必要がある
 3. Y軸のビルボードが必要なら、View行列からY軸の回転だけ抽出した行列を作れば良い
 
-# シェーダーのコード
+# シェーダーで実装するメリット
+
+シェーダーでビルボードを計算するメリットはたくさんあります。
+
+- VRChatなどユーザのC#スクリプトが使えない環境でも動作する
+- シーンビューのカメラでもビルボードが動作する
+- GPUでビルボード計算するため、ビルボード計算のCPU負荷が0
+    - 板ポリの頂点数は4なので、頂点シェーダーで多少重い処理をしても、GPU負荷への影響はわずか
+    - 今回の方法だとダイナミックバッチングができないので、次回はドローコールを減らす解決策も紹介します
+
+# シェーダーのコード（全体）
 
 最終的なシェーダーのコードはこちらです。コピペでも使えるように単体で動作するように実装しました。
 
 ```cpp
-// https://gam0022.net/blog/2019/07/22/unity-y-axis-billboard-shader/
+// Unity Y-Axis Billboard Shader by @gam0022
+// https://gam0022.net/blog/2019/07/23/unity-y-axis-billboard-shader/
 Shader "Unlit/Billboard"
 {
     Properties
@@ -156,7 +169,7 @@ Shader "Unlit/Billboard"
 
 # コードの解説
 
-ここからが本来のシェーダーのコードの解説を行います。
+ここから、本題であるシェーダーの解説を行います。
 
 ## 通常のビルボード
 
@@ -209,6 +222,8 @@ Model行列よる平行移動は①で処理しているので、スケールと
 
 という理由によるものです。
 
+左手系座標ではZ軸とカメラのforwardベクトルが同じ向きですが、右手系座標では反対向きになります。
+
 私はこのUnityの仕様を知らずに、かなり悩んでしまいました…
 
 私がネットで見つけたUnityのビルボードのシェーダーの実装の多くはZを反転する処理が抜けており、
@@ -221,7 +236,7 @@ Box等の厚みのあるMeshを指定したときにCullingが反転して背面
 
 ### ④について
 
-特に説明することもないですが、View空間の座標にプロジェクション変換することで最終的なクリッピング座標を計算できます。
+View座標にプロジェクション行列を乗算すると、最終的なクリッピング座標を計算できます（定形処理）。
 
 ## Y軸のビルボード
 
@@ -264,11 +279,15 @@ View行列からY軸の回転だけ抽出して、X軸とZ軸は変換しない�
 
 通常のビルボードと同様に、View空間では右手系座標とするために、3行3列目には -1 を指定しています。
 
-# 最後に
+# 感想
 
 ビルボードのシェーダーは頻繁に使われると思うのですが、なぜか動作原理を解説した日本語の記事が見つからなかったので、筆を執らせていただきました。
 
-なるべく丁寧に解説したつもりでしたが、もし分かりにくい点があれば教えてください。
+なるべく丁寧に解説したつもりでしたが、もし分かりにくい点や間違いがあればコメントやTwitterで教えてください。
+
+ビルボードくらいならサクッと実装できると思いきや、View空間が右手系座標になっているとは夢に思わずに、ちょっと悩んでしまいました。
+
+Unityへの理解がさらに深まったので、結果オーライということにします。
 
 # 参考資料
 
@@ -290,3 +309,6 @@ View行列からY軸の回転だけ抽出して、X軸とZ軸は変換しない�
         - NOTE: Cullingの不具合あり
     - [A billboard sprite shader in only one axis](https://www.reddit.com/r/Unity3D/comments/ahqbod/a_billboard_sprite_shader_in_only_one_axis/eeieb6q/)
         - NOTE: 逆行列（転置行列）でViewのXZの回転を打ち消すアプローチなので、計算に無駄がある
+- 利用したテクスチャ素材
+    - [Tree PNG Clipart Background](http://www.pngall.com/tree-png/download/23754)
+    - [Dirt/Ground Texture [Tileable | 2048x2048]](https://www.deviantart.com/fabooguy/art/Dirt-Ground-Texture-Tileable-2048x2048-441212191)
