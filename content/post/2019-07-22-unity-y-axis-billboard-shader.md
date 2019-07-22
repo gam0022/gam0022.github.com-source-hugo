@@ -1,7 +1,7 @@
 +++
 slug = "unity-y-axis-billboard-shader"
 date = "2019-07-23T09:30:09+09:00"
-image = "/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif"
+image = "/images/posts/2019-07-22-unity-y-axis-billboard-shader/thumbnail_up.jpg"
 toc = true
 math = false
 draft = false
