@@ -11,9 +11,11 @@ image = ""
 
 +++
 
-これはレイトレ合宿7アドベントカレンダーの記事です。
+これは[レイトレ合宿7](https://sites.google.com/site/raytracingcamp7/)アドベントカレンダーの記事です。
 
 NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを開発しました。
+
+レイとオブジェクトの交差判定をレイマーチングで行い、ライティングをパストレーシングをするという、レイマーチングとパストレーシングのハイブリッドなレンダリングを実現しました。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NVIDIA® OptiX上で<br>『レイマーチング×パストレーシング』<br>を実装できた😉 <a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash&amp;ref_src=twsrc%5Etfw">#レイトレ合宿</a> <a href="https://t.co/FKbuHiXqmP">pic.twitter.com/FKbuHiXqmP</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1155489034354843649?ref_src=twsrc%5Etfw">July 28, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -21,9 +23,7 @@ NVIDIA® OptiX上で『レイマーチング×パストレーシング』によ�
 
 # 実装の方針
 
-TODO: Optixの簡単な説明
-
-レイとオブジェクトの交差判定をレイマーチングで行い、ライティングをパストレーシングで行いました。
+OptixはNVIDIAが開発・提供しているGPUレイトレーシング用のフレームワークでCUDA基盤上で動作します。
 
 Optixではユーザ独自のプリミティブを定義できるため、この機能をつかってレイマーチングで衝突判定を行う距離関数でプリミティブを定義しました。
 
@@ -99,11 +99,13 @@ RT_PROGRAM void intersect(int primIdx)
 ### 法線計算
 
 法線計算は四面体によるアプローチを用いました。
+
 通常は6回の距離関数の評価が必要なところ、4回の評価だけで法線を計算できます。
 
-TODO: setchiブログ
+- [normals for an SDF | http://iquilezles.org](http://iquilezles.org/www/articles/normalsSDF/normalsSDF.htm)
+- [#TokyoDemoFest 2018 の GLSL Graphics Compo で2位入賞しました - setchi’s blog](https://setchi.hatenablog.com/entry/2018/12/17/095532)
 
-map関数を差し替え可能にするためにマクロで実装しました。
+map関数を差し替え可能にするためにマクロをつかって実装しました。
 
 ```cpp
 const float EPS_N = 1e-4;
@@ -234,21 +236,27 @@ void loadGeometry()
 }
 ```
 
-# Optixの環境構築
+# Optixの環境構築（Windows）
 
-基本的には必要なツールを事前にインストールして、CamkeでVisualStudioのソリューションファイルを生成する感じでした（Windows環境）。
+OptixのWindows用の環境構築の流れは
+
+- 必要なツールを事前にインストール
+- CamkeでVisualStudioのソリューションファイルを生成
+- VisualStudioでビルド
+
+という感じでした。
 
 morishigeさんのQiitaの記事が大変参考になりました。
 
 - [Nvidia OptiX 入門（環境構築編）](https://qiita.com/morishige/items/d4a99c88b925ac31ff3d)
 
-Cmakeのバージョンの組み合わせによってはCmakeがエラーになってしまって苦労しましたが、このような組み合わせでCmakeビルドに成功しました。
+CmakeとOptixとCUDAのバージョンの組み合わせが肝のようで、Cmakeのバージョンを変えながら何回かトライしたところ、この組み合わせでCmakeビルドに成功しました。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">✍️ <br>CUDA 10.1<br>OptiX SDK 6.0.0<br>Visual Studio 2017<br>Cmake 3.8.2<br><br>freeglut / GLFW / GLEW は Nuget の最新版をインストール<a href="https://t.co/OtsR6bnxmk">https://t.co/OtsR6bnxmk</a><br><br>Cmakeの設定はスクショ通り <a href="https://t.co/cpBM4y2Vy1">pic.twitter.com/cpBM4y2Vy1</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1150906026528391168?ref_src=twsrc%5Etfw">July 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Cmakeで最初にVisualStudioのバージョンを選択できるのですが、64bit版ではなく32bit版を選択してしまい、Cmakeは成功するのにソリューションがビルドできないことがありました。
 
-Cmakeの過去のバージョンはGitHubからインストールできました。
+Cmakeの過去のバージョンはGitHubからインストールできます。
 
 - [Releases · Kitware/CMake](https://github.com/Kitware/CMake/releases)
 
