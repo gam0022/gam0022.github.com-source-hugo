@@ -3,12 +3,12 @@ toc = true
 math = false
 draft = false
 tags = [
-    "CG", "レイトレーシング", "パストレーシング", "レイトレ合宿", "Optix"
+    "CG", "レイトレーシング", "パストレーシング", "レイマーチング", "レイトレ合宿", "Optix"
 ]
 title = "NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを実装した"
 slug = "optix-raymarching-pathtracing"
-date = "2019-08-06T10:09:23+09:00"
-image = "/images/posts/2019-07-30-optix-raymarching-pathtracing/menger.png"
+date = "2019-08-05T12:10:23+09:00"
+image = "/images/posts/2019-07-30-optix-raymarching-pathtracing/menger_settchi.png"
 
 +++
 
@@ -24,16 +24,16 @@ NVIDIA® OptiX上で『レイマーチング×パストレーシング』によ�
 
 # 実装の方針
 
-OptixはNVIDIAが開発・提供しているGPUレイトレーシング用のフレームワークで、CUDA基盤上で動作します。
+Optixは、CUDA基盤上で動作する、NVIDIA製のGPUレイトレーシング用フレームワークです。
 
-Optixではユーザ独自のプリミティブを定義できるため、この機能をつかってレイマーチングで衝突判定を行う距離関数でプリミティブを定義しました。
+Optixではユーザ独自のプリミティブを定義できるため、この機能をつかってレイマーチングで衝突判定を行う距離関数のプリミティブを定義しました。
 
 独自のプリミティブの定義に必要なProgram（Optix用語でPTXアセンブリにコンパイルされたCUDA C関数を指す）は次の2つです。
 
 - Intersection
 - Bounding Box
 
-Optixの公式サンプルプロジェクトに optixPathtracing があったので、これにレイマーチングのプリミティブを追加する形で実装しました。
+Optixの公式サンプルプロジェクトに optixPathtracing（パストレーシングの実装例）があったので、これにレイマーチングのプリミティブを追加する形で実装しました。
 
 パストレーシングの処理はサンプルコードの実装そのまま利用させていただきました。
 
