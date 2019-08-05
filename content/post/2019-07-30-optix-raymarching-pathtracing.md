@@ -3,11 +3,12 @@ toc = true
 math = false
 draft = false
 tags = [
+    "CG", "レイトレーシング", "パストレーシング", "レイトレ合宿", "Optix"
 ]
 title = "NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを実装した"
 slug = "optix-raymarching-pathtracing"
-date = "2019-07-30T10:09:23+09:00"
-image = ""
+date = "2019-08-06T10:09:23+09:00"
+image = "/images/posts/2019-07-30-optix-raymarching-pathtracing/menger.png"
 
 +++
 
@@ -23,7 +24,7 @@ NVIDIA® OptiX上で『レイマーチング×パストレーシング』によ�
 
 # 実装の方針
 
-OptixはNVIDIAが開発・提供しているGPUレイトレーシング用のフレームワークでCUDA基盤上で動作します。
+OptixはNVIDIAが開発・提供しているGPUレイトレーシング用のフレームワークで、CUDA基盤上で動作します。
 
 Optixではユーザ独自のプリミティブを定義できるため、この機能をつかってレイマーチングで衝突判定を行う距離関数でプリミティブを定義しました。
 
@@ -240,9 +241,9 @@ void loadGeometry()
 
 OptixのWindows用の環境構築の流れは
 
-- 必要なツールを事前にインストール
-- CamkeでVisualStudioのソリューションファイルを生成
-- VisualStudioでビルド
+1. 必要なツールを事前にインストール
+2. CamkeでVisualStudioのソリューションファイルを生成
+3. VisualStudioでビルド
 
 という感じでした。
 
@@ -254,7 +255,7 @@ CmakeとOptixとCUDAのバージョンの組み合わせが肝のようで、Cma
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">✍️ <br>CUDA 10.1<br>OptiX SDK 6.0.0<br>Visual Studio 2017<br>Cmake 3.8.2<br><br>freeglut / GLFW / GLEW は Nuget の最新版をインストール<a href="https://t.co/OtsR6bnxmk">https://t.co/OtsR6bnxmk</a><br><br>Cmakeの設定はスクショ通り <a href="https://t.co/cpBM4y2Vy1">pic.twitter.com/cpBM4y2Vy1</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1150906026528391168?ref_src=twsrc%5Etfw">July 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Cmakeで最初にVisualStudioのバージョンを選択できるのですが、64bit版ではなく32bit版を選択してしまい、Cmakeは成功するのにソリューションがビルドできないことがありました。
+CmakeでVisual Studioのバージョンを選択する際、誤って64bit版ではなく32bit版を選択してしまい、Cmake自体は成功するもののソリューションがビルドできないことがありました。
 
 Cmakeの過去のバージョンはGitHubからインストールできます。
 
