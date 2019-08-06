@@ -8,7 +8,7 @@ tags = [
 title = "NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを実装した"
 slug = "optix-raymarching-pathtracing"
 date = "2019-08-05T12:10:23+09:00"
-image = "/images/posts/2019-07-30-optix-raymarching-pathtracing/menger_settchi.png"
+image = "/images/posts/2019-07-30-optix-raymarching-pathtracing/optixRaymarching.jpg"
 
 +++
 
@@ -30,8 +30,8 @@ Optixではユーザ独自のプリミティブを定義できるため、この
 
 独自のプリミティブの定義に必要なProgram（Optix用語でPTXアセンブリにコンパイルされたCUDA C関数を指す）は次の2つです。
 
-- Intersection
 - Bounding Box
+- Intersection
 
 Optixの公式サンプルプロジェクトに optixPathtracing（パストレーシングの実装例）があったので、これにレイマーチングのプリミティブを追加する形で実装しました。
 
@@ -260,6 +260,24 @@ CmakeでVisual Studioのバージョンを選択する際、誤って64bit版で
 Cmakeの過去のバージョンはGitHubからインストールできます。
 
 - [Releases · Kitware/CMake](https://github.com/Kitware/CMake/releases)
+
+## サンプルコードの改造
+
+サンプルコードの改造方法はNVIDIA Developer Forumsにあります。
+
+- [How can I modify a simple example? - NVIDIA Developer Forums](https://devtalk.nvidia.com/default/topic/1049151/optix/how-can-i-modify-a-simple-example-/)
+
+
+> Adding a new example is very simple:
+>
+> * Copy one of the optixIntro_01 (this is effectively optixHello) to optixIntro_10 folders,
+> * rename it,
+> * rename the project name in its copied CMakeLists.txt,
+> * add your new subdirectory in the CMakeLists.txt one folder above,
+> * rebuild the solution with CMake GUI. Done.
+>
+> Your new project appears and would do the same thing as the example you copied it from.
+> Now change it as you like.
 
 # 参考資料
 
