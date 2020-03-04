@@ -80,7 +80,7 @@ googleAnalytics = "UA-84469205-1"
     company = "KLab"
     position = "エンジニア(正社員)"
     year = "2015-04 〜 現在"
-    detail = "某人気スクールアイドルのソーシャルゲームの運営とクライアント(自社エンジン)・サーバ(PHP)の開発を担当した後、新規案件のクライアント(Unity)を開発中"
+    detail = "ソーシャルゲームの運営とクライアント(自社エンジン)・サーバ(PHP)の開発を担当した後、新規案件のクライアント(Unity)を開発中"
 
   [[params.about.career]]
     company = "BearTail"
