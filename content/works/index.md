@@ -140,7 +140,7 @@ three.js はWebGLを手軽に使うためのJavaScriptのライブラリです�
 - [JavaScriptoon - TechBooster in C88](https://techbooster.github.io/c88/#scriptoon)
 - [JavaScriptoon - BOOTH](https://techbooster.booth.pm/items/126683/)
 
-# Unity Wokrs
+# Unity
 
 Unityで作成した映像作品と活動を紹介します。
 
