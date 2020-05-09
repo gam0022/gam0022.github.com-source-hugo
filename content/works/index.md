@@ -9,11 +9,24 @@ section = 100
 toc = true
 +++
 
-最終更新: 2019-05-20
+最終更新: 2020-05-09
 
 # Publications
 
 執筆した書籍を紹介します。
+
+## 2020年3月  KLab Tech Book Vol.6
+
+[<img alt="KLab Tech Book Vol.6" src="/images/works/tbf8.jpg" width="200px" class="right">](/images/works/tbf8.png)
+
+『KLab Tech Book Vol.6』の『第1章 NVIDIA OptiXで『レイマーチング×パストレーシング』による物理ベースレンダラーを自作する』を担当しました。
+
+筆者自作の物理ベースレンダラー[Redflash](https://github.com/gam0022/redflash)を題材にして、GPUとRTコアを用いたレイトレーシングの高速化について紹介しました。
+
+関連記事
+
+- [レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net](/blog/2019/09/18/rtcamp7/)
+- [技術書典応援祭で同人誌を頒布します&amp;電子版ダウンロードページ | Technology | Klablog | KLab株式会社](https://www.klab.com/jp/blog/tech/2020/1077140627.html)
 
 ## 2019年4月 KLab Tech Book Vol.4
 
@@ -131,6 +144,11 @@ three.js はWebGLを手軽に使うためのJavaScriptのライブラリです�
 
 Unityで作成した映像作品と活動を紹介します。
 
+## 2019 Morphing: Hisei -> Reiwa
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーで &quot;平成&quot; と &quot;令和&quot; をモーフィング<br>Morphing &quot;Heisei&quot; and &quot;Reiwa&quot;<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://twitter.com/hashtag/TextMeshPro?src=hash&amp;ref_src=twsrc%5Etfw">#TextMeshPro</a> <a href="https://twitter.com/hashtag/CreativeCoding?src=hash&amp;ref_src=twsrc%5Etfw">#CreativeCoding</a> <a href="https://t.co/t71W0b5Ex4">pic.twitter.com/t71W0b5Ex4</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1123253864008863744?ref_src=twsrc%5Etfw">2019年4月30日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## 2018 Tokyo Demo Fest 2018 優勝作品 WORMHOLE
 
 <div class="movie-wrap">
@@ -211,11 +229,6 @@ ReflectionProbeによって「レイマーチングで動的に生成したモ�
 WebGLで作成した映像作品と活動を紹介します。
 
 動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
-
-## 2019 Morphing: Hisei -> Reiwa
-
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーで &quot;平成&quot; と &quot;令和&quot; をモーフィング<br>Morphing &quot;Heisei&quot; and &quot;Reiwa&quot;<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://twitter.com/hashtag/TextMeshPro?src=hash&amp;ref_src=twsrc%5Etfw">#TextMeshPro</a> <a href="https://twitter.com/hashtag/CreativeCoding?src=hash&amp;ref_src=twsrc%5Etfw">#CreativeCoding</a> <a href="https://t.co/t71W0b5Ex4">pic.twitter.com/t71W0b5Ex4</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1123253864008863744?ref_src=twsrc%5Etfw">2019年4月30日</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 2019 Dot Matrix PostProcessing
 
@@ -391,49 +404,19 @@ three.js 公式サンプルにも取り込まれています。
   <a href="http://gam0022.net/webgl/#raymarching_steel-frame" class="btn btn-primary btn-outline">Steal Frame - gam0022.net</a>
 </div>
 
-# Google Chrome Extention
+# レイトレ合宿
 
-Goole Chrome の拡張機能を紹介します。
+レイトレ合宿用に開発した物理ベースレンダラーを紹介します。
 
-## 2016 Slack 返信引用ボタン
+## 2019 Redflash Renderer
 
-<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
+<script async class="speakerdeck-embed" data-id="ba3966aad908467e8b21249e828c26d0" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-Slack に返信と引用ボタンをつけるChrome拡張機能です。
+Redflash は NVIDIA® OptiX 6.0 上で実装したパストレーシングによる物理ベースのGPUレンダラーで、ポリゴンとレイマーチングが混在したシーンを一貫して描画できます。
 
-- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
-- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
-- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
+関連記事
 
-<div class="read-more">
-  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
-</div>
-
-# Research
-
-大学の卒業研究を紹介します。
-
-## 2014-2015 非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築
-
-[<img alt="Paper Craft -  dolphin" src="/images/works/paper_craft_dolphin.jpg" class="right">](/images/works/paper_craft_dolphin_original.jpg)
-
-曲面を利用したペーパークラフト（画像奥）をインタラクティブに設計するシステムを提案しました。
-市販ソフトウェアで作成したペーパークラフト（画像手前）と比較すると、
-曲線による滑らかな表現、ヒレの部分の1枚の紙の構造（非多様体構造）を許容できる、組立の手間が少ないなどのメリットがあります。
-
-- [学位論文(PDF)](http://www.npal.cs.tsukuba.ac.jp/thesis/2014/thesis2014b_hosoda.pdf)
-- [動画(DropBox)](https://www.dropbox.com/s/8ucnj04gq7zw3uy/vc2015.mp4?dl=0)
-
-表彰
-
-- [GCAD賞](http://www.ipsj-gcad.sakura.ne.jp/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#q23e1b1c), Visual Computing / [グラフィクスと CAD 合同シンポジウム 2015](http://ipsj-gcad.sakura.ne.jp/vc2015/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/06/28,29
-- 学生奨励賞, [情報処理学会第77回全国大会](http://www.ipsj.or.jp/event/taikai/77/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/03/23
-
-指導教官である三谷先生のブログでも紹介していただきました。
-
-- [イルカの紙模型 - みたにっき＠はてな](http://d.hatena.ne.jp/JunMitani/20141112)
-
-# Windows
+- [レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net](https://gam0022.net/blog/2019/09/18/rtcamp7/)
 
 ## 2018 Hanamaru Renderer v2
 
@@ -470,26 +453,29 @@ Rustで開発したパストレーシングによる物理ベースレンダラ�
 - [レイトレ合宿4!?](https://sites.google.com/site/raytracingcamp4/)
 - [GitHub](https://github.com/gam0022/tsukihi)
 
-# iOS App
+# Research
 
-## 2013 カメラで商品検索 C2search
+大学の卒業研究を紹介します。
 
-[<img alt="C2search" src="/images/works/C2search_tmb.png" class="right">](/images/works/C2search.png)
+## 2014-2015 非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築
 
-「カメラで商品検索」という画像によって商品の横断検索ができるiOSアプリを開発しました。
-[Yahoo Inter Hack U 2013](http://hacku.yahoo.co.jp/inter2013/) 参加作品です。
+[<img alt="Paper Craft -  dolphin" src="/images/works/paper_craft_dolphin.jpg" class="right">](/images/works/paper_craft_dolphin_original.jpg)
 
-- 画像認識によって、タイトルが長い本、名前を忘れてしまった商品も簡単に検索できます。
-- Yahoo!ショッピングと楽天市場の両方の結果を同じテーブルビューに表示します。
-- 検索結果を色によってソートする機能もあります。
+曲面を利用したペーパークラフト（画像奥）をインタラクティブに設計するシステムを提案しました。
+市販ソフトウェアで作成したペーパークラフト（画像手前）と比較すると、
+曲線による滑らかな表現、ヒレの部分の1枚の紙の構造（非多様体構造）を許容できる、組立の手間が少ないなどのメリットがあります。
 
-関連記事
+- [学位論文(PDF)](http://www.npal.cs.tsukuba.ac.jp/thesis/2014/thesis2014b_hosoda.pdf)
+- [動画(DropBox)](https://www.dropbox.com/s/8ucnj04gq7zw3uy/vc2015.mp4?dl=0)
 
-- [ヤフー主催のアプリ開発イベント「Inter Hack U」 - 学生15団体が熱戦](http://news.mynavi.jp/articles/2013/12/06/yahoo_inter_hack_u/001.html)
+表彰
 
-<div class="read-more">
-  <a href="http://c2search.gam0022.net/" class="btn btn-primary btn-outline">Read More</a>
-</div>
+- [GCAD賞](http://www.ipsj-gcad.sakura.ne.jp/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#q23e1b1c), Visual Computing / [グラフィクスと CAD 合同シンポジウム 2015](http://ipsj-gcad.sakura.ne.jp/vc2015/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/06/28,29
+- 学生奨励賞, [情報処理学会第77回全国大会](http://www.ipsj.or.jp/event/taikai/77/), 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/03/23
+
+指導教官である三谷先生のブログでも紹介していただきました。
+
+- [イルカの紙模型 - みたにっき＠はてな](http://d.hatena.ne.jp/JunMitani/20141112)
 
 # RubyGems
 
@@ -511,6 +497,27 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a href="https://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
 
+# iOS App
+
+## 2013 カメラで商品検索 C2search
+
+[<img alt="C2search" src="/images/works/C2search_tmb.png" class="right">](/images/works/C2search.png)
+
+「カメラで商品検索」という画像によって商品の横断検索ができるiOSアプリを開発しました。
+[Yahoo Inter Hack U 2013](http://hacku.yahoo.co.jp/inter2013/) 参加作品です。
+
+- 画像認識によって、タイトルが長い本、名前を忘れてしまった商品も簡単に検索できます。
+- Yahoo!ショッピングと楽天市場の両方の結果を同じテーブルビューに表示します。
+- 検索結果を色によってソートする機能もあります。
+
+関連記事
+
+- [ヤフー主催のアプリ開発イベント「Inter Hack U」 - 学生15団体が熱戦](http://news.mynavi.jp/articles/2013/12/06/yahoo_inter_hack_u/001.html)
+
+<div class="read-more">
+  <a href="http://c2search.gam0022.net/" class="btn btn-primary btn-outline">Read More</a>
+</div>
+
 # Web
 
 ## 2013 Twitter名刺ジェネレーター
@@ -529,6 +536,24 @@ TwitterIDを入力するだけで簡単に名刺が作れるサービスです�
 
 <div class="read-more">
   <a href="http://gam0022.net/app/tmg/" class="btn btn-primary btn-outline">Twitter名刺ジェネレーター</a>
+</div>
+
+# Google Chrome Extention
+
+Goole Chrome の拡張機能を紹介します。
+
+## 2016 Slack 返信引用ボタン
+
+<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
+
+Slack に返信と引用ボタンをつけるChrome拡張機能です。
+
+- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
+- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
+- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
+
+<div class="read-more">
+  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
 </div>
 
 
