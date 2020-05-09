@@ -160,6 +160,17 @@ Last Update: 2020-05-09
 - 2007-12-01. [HSPプログラムコンテスト2007](http://hsp.tv/contest2007/) [アジアン・インテグレーション賞](http://hsp.tv/contest2007/cntst_fresult.html#180)
 - 2006-12-01. [HSPプログラムコンテスト2006](http://hsp.tv/contest2006/) [（株）晋遊舎 「Windows100%」編集部賞](http://hsp.tv/contest2006/cntst_fresult.html#323)
 
+## Lectures
+
+- 2019. [近未来教育フォーラム2019 -In Real Time-](https://www.dhw.co.jp/forum/report/report01.html)「シェーダーライブコーディング」
+- 2019. **CEDEC 2019** 「[Android向けUnity製ゲーム最適化のためのCI/CDと連携した自動プロファイリングシステム](https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html)」
+- 2019. [UnityエンジニアによるShader勉強会！](https://techplay.jp/event/733454)「[Unity×レイマーチングによる映像制作の実践手法](/blog/2019/06/25/unity-raymarching/)」
+- 2019. **GDC 2019**「Real-World Techniques and Best Practices for Optimizing Android Games」
+- 2018. メガデモ勉強会!2018「[もっと綺麗で写実的な絵作りをしたい！レイマーチング向けのシェーディング技術](https://gam0022.net/blog/2018/03/16/demoscene-study-session/)」
+- 2016. emscripten night !! #2「[Emscriptenを使ってブラウザ上でレイトレーシングする](https://gam0022.net/blog/2016/12/28/emsn2/)」
+- 2016. **GLSL スクール 2016**「0から始めるthree.jsとカスタムシェーダ」
+- 2016. GLSL シェーダテクニック勉強会「[シェーダだけで世界を創る！three.jsによるレイマーチング](https://gam0022.net/blog/2016/02/16/glsl-tech/)」
+
 ## Publications
 
 - 2020. [KLab Tech Book Vol.6](https://www.klab.com/jp/blog/tech/2020/1077140627.html)
