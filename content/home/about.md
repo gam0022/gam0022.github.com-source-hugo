@@ -24,15 +24,16 @@ weight = 0
 [Qiita](http://qiita.com/gam0022/items/9875480d33e03fe2113c)、
 [GLSL勉強会](http://gam0022.net/blog/2016/02/16/glsl-tech/)や[GLSLスクール](https://webgl.souhonzan.org/entry/?v=0703)の講師として登壇し技術共有を行う。
 
-[Tokyo Demo Fest](http://tokyodemofest.jp)では2016年から2018年まで3年連続で上位入賞を果たす。
+[Tokyo Demo Fest](http://tokyodemofest.jp)や[Revision](https://2020.revision-party.net/start)といった国内外のデモパーティで上位入賞を果たす。
 
 - Tokyo Demo Fest 2016 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2016/02/24/tokyo-demo-fest/)）
 - Tokyo Demo Fest 2017 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2017/02/24/tdf2017/)）
 - Tokyo Demo Fest 2018 Combined Demo Compo **1位優勝**（[解説記事](/blog/2018/12/12/tdf2018/)）
+- Revision 2020 PC 64K Intro **1位優勝**（[解説記事](/blog/2020/04/30/revision2020/)）
 
 KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計、モバイル向けに最適化したシェーダー開発、テクニカルアーティストとしてプロジェクト横断のサポート活動等を行う。
 
-サンフランシスコで開催された[GDC2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表を行う（[セッション情報](https://schedule.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)、[関連記事](https://gam0022.net/blog/2019/03/28/gdc2019/)）。
+サンフランシスコで開催された[GDC2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表を行う（[関連記事1](https://gam0022.net/blog/2019/03/28/gdc2019/)、[関連記事2](https://www.klab.com/jp/blog/pr/2019/51708260.html)）。
 
-- Last Update: 2019-06-14
+- Last Update: 2020-05-09
 - Read More: [Resume](/resume)
