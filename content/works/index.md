@@ -9,7 +9,7 @@ section = 100
 toc = true
 +++
 
-最終更新: 2020-05-09
+最終更新: 2020-05-10
 
 # Publications
 
@@ -224,11 +224,28 @@ ReflectionProbeによって「レイマーチングで動的に生成したモ�
 
 - [Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） | gam0022.net](/blog/2017/12/25/unity-demoscene/)
 
-# WebGL Works
+# WebGL
 
 WebGLで作成した映像作品と活動を紹介します。
 
-動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
+一部の作品は [gam0022.net/webgl/](http://gam0022.net/webgl/) よりブラウザ上で実行できます。
+
+## 2020 RE: SIMULATED
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> の PC 64K Intro にて『RE: SIMULATED』という作品を発表して優勝しました！<br><br>64KBのファイル容量制限のある部門です。<br>映像: <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> / 音楽: <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> の担当で制作しました。<br><br>We won the PC 64K Intro at <a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> ! <br>RE: SIMULATED by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> <a href="https://t.co/wp5koGJFKf">pic.twitter.com/wp5koGJFKf</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1249658268319768576?ref_src=twsrc%5Etfw">April 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+WebGL / WebAudio による64K Introなので、ブラウザ上で動作します。※高性能なGPUが必要です。
+
+- [64KB HTML version](https://gam0022.net/webgl/64k-intro_resimulated.html)
+- [NEORT version](https://neort.io/art/bqa4pgs3p9f6qoqnmujg)
+
+64KBの容量制約があるため、Unityやthree.jsといった既存のゲームエンジンやフレームワークを利用せずに、描画用のWebGLエンジンと制作用のツール（エディタ機能）を自作しました。
+
+関連リンク
+
+- [Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説 | gam0022.net](/blog/2020/04/30/revision2020/)
+- [YouTube](https://youtu.be/tirAdWbceak)
+- [GitHub](https://github.com/gam0022/resimulated)
 
 ## 2019 Dot Matrix PostProcessing
 

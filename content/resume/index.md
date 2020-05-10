@@ -9,7 +9,7 @@ slug = ""
 
 +++
 
-Last Update: 2020-05-09
+Last Update: 2020-05-10
 
 - [日本語版](#ja)
 - [English Version](#en)
