@@ -33,7 +33,8 @@ weight = 0
 
 KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計、モバイル向けに最適化したシェーダー開発、テクニカルアーティストとしてプロジェクト横断のサポート活動等を行う。
 
-サンフランシスコで開催された[GDC2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表を行う（[関連記事1](https://gam0022.net/blog/2019/03/28/gdc2019/)、[関連記事2](https://www.klab.com/jp/blog/pr/2019/51708260.html)）。
+サンフランシスコで開催された[GDC 2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表を行う（[セッション情報](https://schedule2019.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)、[関連記事1](https://gam0022.net/blog/2019/03/28/gdc2019/)、[関連記事2](https://www.klab.com/jp/blog/pr/2019/51708260.html)）。
+[CEDEC 2019でも同テーマで発表](https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html)を行う。
 
-- Last Update: 2020-05-09
+- Last Update: 2020-05-10
 - Read More: [Resume](/resume)
