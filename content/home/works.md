@@ -1,7 +1,7 @@
 +++
 date = "2016-09-24T00:00:00"
 draft = false
-title = "works"
+title = "work"
 subtitle = "成果物・作品"
 section_id = 10
 weight = 10
