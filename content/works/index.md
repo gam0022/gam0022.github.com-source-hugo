@@ -9,11 +9,24 @@ section = 100
 toc = true
 +++
 
-最終更新: 2019-05-20
+最終更新: 2020-05-10
 
 # Publications
 
 執筆した書籍を紹介します。
+
+## 2020年3月  KLab Tech Book Vol.6
+
+[<img alt="KLab Tech Book Vol.6" src="/images/works/tbf8.jpg" width="200px" class="right">](/images/works/tbf8.png)
+
+『KLab Tech Book Vol.6』の『第1章 NVIDIA OptiXで『レイマーチング×パストレーシング』による物理ベースレンダラーを自作する』を担当しました。
+
+筆者自作の物理ベースレンダラー[Redflash](https://github.com/gam0022/redflash)を題材にして、GPUとRTコアを用いたレイトレーシングの高速化について紹介しました。
+
+関連記事
+
+- [レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net](/blog/2019/09/18/rtcamp7/)
+- [技術書典応援祭で同人誌を頒布します&amp;電子版ダウンロードページ | Technology | Klablog | KLab株式会社](https://www.klab.com/jp/blog/tech/2020/1077140627.html)
 
 ## 2019年4月 KLab Tech Book Vol.4
 
@@ -25,7 +38,7 @@ toc = true
 
 関連記事
 
-- [Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net](https://gam0022.net/blog/2018/12/12/tdf2018/)
+- [Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net](/blog/2018/12/12/tdf2018/)
 - [技術書典6で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/tbf06.html)
 
 ## 2018年10月 KLab Tech Book Vol.3
@@ -57,7 +70,7 @@ Rustで自作したパストレーシングによる物理ベースレンダラ�
 
 関連記事
 
-- [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
+- [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](/blog/2017/10/02/rtcamp5/)
 - [技術書典3で同人誌を頒布しました : KLabGames Tech Blog](http://klabgames.tech.blog.jp.klab.com/archives/20171210ac.html)
 - [サークル詳細 | KLab 株式会社 | 技術書典3](https://techbookfest.org/event/tbf03/circle/5644572721938432)
 
@@ -77,7 +90,7 @@ Rustで自作したパストレーシングによる物理ベースレンダラ�
 
 関連記事
 
-- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
+- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](/blog/2017/04/06/webgl-pathtracing-tbf2/)
 - [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
 - [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
 
@@ -127,9 +140,14 @@ three.js はWebGLを手軽に使うためのJavaScriptのライブラリです�
 - [JavaScriptoon - TechBooster in C88](https://techbooster.github.io/c88/#scriptoon)
 - [JavaScriptoon - BOOTH](https://techbooster.booth.pm/items/126683/)
 
-# Unity Wokrs
+# Unity
 
 Unityで作成した映像作品と活動を紹介します。
+
+## 2019 Morphing: Hisei -> Reiwa
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーで &quot;平成&quot; と &quot;令和&quot; をモーフィング<br>Morphing &quot;Heisei&quot; and &quot;Reiwa&quot;<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://twitter.com/hashtag/TextMeshPro?src=hash&amp;ref_src=twsrc%5Etfw">#TextMeshPro</a> <a href="https://twitter.com/hashtag/CreativeCoding?src=hash&amp;ref_src=twsrc%5Etfw">#CreativeCoding</a> <a href="https://t.co/t71W0b5Ex4">pic.twitter.com/t71W0b5Ex4</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1123253864008863744?ref_src=twsrc%5Etfw">2019年4月30日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 2018 Tokyo Demo Fest 2018 優勝作品 WORMHOLE
 
@@ -204,18 +222,30 @@ ReflectionProbeによって「レイマーチングで動的に生成したモ�
 
 関連記事
 
-- [Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） | gam0022.net](https://gam0022.net/blog/2017/12/25/unity-demoscene/)
+- [Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） | gam0022.net](/blog/2017/12/25/unity-demoscene/)
 
-# WebGL Works
+# WebGL
 
 WebGLで作成した映像作品と活動を紹介します。
 
-動くデモは[こちら](http://gam0022.net/webgl/)にもまとめています。
+一部の作品は [gam0022.net/webgl/](http://gam0022.net/webgl/) よりブラウザ上で実行できます。
 
-## 2019 Morphing: Hisei -> Reiwa
+## 2020 RE: SIMULATED
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーで &quot;平成&quot; と &quot;令和&quot; をモーフィング<br>Morphing &quot;Heisei&quot; and &quot;Reiwa&quot;<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://twitter.com/hashtag/TextMeshPro?src=hash&amp;ref_src=twsrc%5Etfw">#TextMeshPro</a> <a href="https://twitter.com/hashtag/CreativeCoding?src=hash&amp;ref_src=twsrc%5Etfw">#CreativeCoding</a> <a href="https://t.co/t71W0b5Ex4">pic.twitter.com/t71W0b5Ex4</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1123253864008863744?ref_src=twsrc%5Etfw">2019年4月30日</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> の PC 64K Intro にて『RE: SIMULATED』という作品を発表して優勝しました！<br><br>64KBのファイル容量制限のある部門です。<br>映像: <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> / 音楽: <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> の担当で制作しました。<br><br>We won the PC 64K Intro at <a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> ! <br>RE: SIMULATED by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> <a href="https://t.co/wp5koGJFKf">pic.twitter.com/wp5koGJFKf</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1249658268319768576?ref_src=twsrc%5Etfw">April 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+WebGL / WebAudio による64K Introなので、ブラウザ上で動作します。※高性能なGPUが必要です。
+
+- [64KB HTML version](https://gam0022.net/webgl/64k-intro_resimulated.html)
+- [NEORT version](https://neort.io/art/bqa4pgs3p9f6qoqnmujg)
+
+64KBの容量制約があるため、Unityやthree.jsといった既存のゲームエンジンやフレームワークを利用せずに、描画用のWebGLエンジンと制作用のツール（エディタ機能）を自作しました。
+
+関連リンク
+
+- [Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説 | gam0022.net](/blog/2020/04/30/revision2020/)
+- [YouTube](https://youtu.be/tirAdWbceak)
+- [GitHub](https://github.com/gam0022/resimulated)
 
 ## 2019 Dot Matrix PostProcessing
 
@@ -275,8 +305,8 @@ TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞した、レイマーチ
 
 関連記事
 
-- [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net](https://gam0022.net/blog/2017/02/24/tdf2017/)
-- [距離関数のfold（折りたたみ）による形状設計 | gam0022.net](https://gam0022.net/blog/2017/03/02/raymarching-fold/)
+- [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net](/blog/2017/02/24/tdf2017/)
+- [距離関数のfold（折りたたみ）による形状設計 | gam0022.net](/blog/2017/03/02/raymarching-fold/)
 
 ## 2017 Realtime Pathtracing
 
@@ -290,7 +320,7 @@ WebGL(three.js)でリアルタイムなパストレーシングを実装しま�
 
 関連記事
 
-- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/)
+- [WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net](/blog/2017/04/06/webgl-pathtracing-tbf2/)
 - [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
 - [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
 
@@ -391,23 +421,57 @@ three.js 公式サンプルにも取り込まれています。
   <a href="http://gam0022.net/webgl/#raymarching_steel-frame" class="btn btn-primary btn-outline">Steal Frame - gam0022.net</a>
 </div>
 
-# Google Chrome Extention
+# レイトレ合宿
 
-Goole Chrome の拡張機能を紹介します。
+レイトレ合宿用に開発した物理ベースレンダラーを紹介します。
 
-## 2016 Slack 返信引用ボタン
+## 2019 Redflash Renderer
 
-<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
+<script async class="speakerdeck-embed" data-id="ba3966aad908467e8b21249e828c26d0" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-Slack に返信と引用ボタンをつけるChrome拡張機能です。
+Redflash は NVIDIA® OptiX 6.0 上で実装したパストレーシングによる物理ベースのGPUレンダラーで、ポリゴンとレイマーチングが混在したシーンを一貫して描画できます。
 
-- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
-- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
-- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
+関連リンク
 
-<div class="read-more">
-  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
+- [レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net](/blog/2019/09/18/rtcamp7/)
+- [GitHub](https://github.com/gam0022/redflash)
+
+## 2018 Hanamaru Renderer v2
+
+<script async class="speakerdeck-embed" data-id="3ea604f4f30248709e316a1cb487f1cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Hanamaru Rendererを高速化しました。
+
+関連リンク
+
+- [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](/blog/2018/09/18/rtcamp6-part1/)
+- [GitHub](https://github.com/gam0022/hanamaru-renderer)
+
+## 2017 Hanamaru Renderer
+
+<script async class="speakerdeck-embed" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+Rustで開発したパストレーシングによる物理ベースレンダラーです。
+
+関連リンク
+
+- [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](/blog/2017/10/02/rtcamp5/)
+- [GitHub](https://github.com/gam0022/hanamaru-renderer)
+
+## 2016 Tsukihi
+
+<div style="width: 300px;" class="right">
+<script async class="speakerdeck-embed" data-slide="1" data-id="3e8b7d83dd0e4b19891d6c8321431d47" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 </div>
+
+距離関数によって表現されたオブジェクトをレイマーチングでレンダリングするCPUレンダラーです。
+パストレーシングによるレンダラーの実装と擬似表現によるレンダラーの両方の実装があります。
+
+関連記事
+
+- [レイトレ合宿4!? に参加しました！ - gam0022のブログ](http://gam0022.hatenablog.com/entry/raytracingcamp4)
+- [レイトレ合宿4!?](https://sites.google.com/site/raytracingcamp4/)
+- [GitHub](https://github.com/gam0022/tsukihi)
 
 # Research
 
@@ -433,42 +497,25 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 
 - [イルカの紙模型 - みたにっき＠はてな](http://d.hatena.ne.jp/JunMitani/20141112)
 
-# Windows
+# RubyGems
 
-## 2018 Hanamaru Renderer v2
+Ruby 向けのライブラリの紹介です。
 
-<script async class="speakerdeck-embed" data-id="3ea604f4f30248709e316a1cb487f1cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+## 2013 ImmutableList
 
-Hanamaru Rendererを高速化しました。
+<img alt="immutable_list" src="/images/works/immutable_list.png" class="right">
 
-関連記事
+RubyGemsとして、ImmutableなLinkedListを公開しました。
 
-- [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](https://gam0022.net/blog/2018/09/18/rtcamp6-part1/)
+C言語の拡張として実装したので、動作はそれなりに高速です。
 
-## 2017 Hanamaru Renderer
+Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使ってプログラミングをするのに最適なデータ構造です。
 
-<script async class="speakerdeck-embed" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+* [RubyGems.org](https://rubygems.org/gems/immutable_list)
+* [README(GitHub)](https://github.com/gam0022/immutable_list/blob/master/README.md)
+* [RubyでLinkedListを使うためのC拡張を作った - gam0022.net](http://gam0022.net/blog/2013/08/19/ruby-linkedlist/)
 
-Rustで開発したパストレーシングによる物理ベースレンダラーです。
-
-関連記事
-
-- [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](https://gam0022.net/blog/2017/10/02/rtcamp5/)
-
-## 2016 Tsukihi
-
-<div style="width: 300px;" class="right">
-<script async class="speakerdeck-embed" data-slide="1" data-id="3e8b7d83dd0e4b19891d6c8321431d47" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-</div>
-
-距離関数によって表現されたオブジェクトをレイマーチングでレンダリングするCPUレンダラーです。
-パストレーシングによるレンダラーの実装と擬似表現によるレンダラーの両方の実装があります。
-
-関連記事
-
-- [レイトレ合宿4!? に参加しました！ - gam0022のブログ](http://gam0022.hatenablog.com/entry/raytracingcamp4)
-- [レイトレ合宿4!?](https://sites.google.com/site/raytracingcamp4/)
-- [GitHub](https://github.com/gam0022/tsukihi)
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a href="https://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
 
 # iOS App
 
@@ -491,26 +538,6 @@ Rustで開発したパストレーシングによる物理ベースレンダラ�
   <a href="http://c2search.gam0022.net/" class="btn btn-primary btn-outline">Read More</a>
 </div>
 
-# RubyGems
-
-Ruby 向けのライブラリの紹介です。
-
-## 2013 ImmutableList
-
-<img alt="immutable_list" src="/images/works/immutable_list.png" class="right">
-
-RubyGemsとして、ImmutableなLinkedListを公開しました。
-
-C言語の拡張として実装したので、動作はそれなりに高速です。
-
-Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使ってプログラミングをするのに最適なデータ構造です。
-
-* [RubyGems.org](https://rubygems.org/gems/immutable_list)
-* [README(GitHub)](https://github.com/gam0022/immutable_list/blob/master/README.md)
-* [RubyでLinkedListを使うためのC拡張を作った - gam0022.net](http://gam0022.net/blog/2013/08/19/ruby-linkedlist/)
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a href="https://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div>
-
 # Web
 
 ## 2013 Twitter名刺ジェネレーター
@@ -529,6 +556,24 @@ TwitterIDを入力するだけで簡単に名刺が作れるサービスです�
 
 <div class="read-more">
   <a href="http://gam0022.net/app/tmg/" class="btn btn-primary btn-outline">Twitter名刺ジェネレーター</a>
+</div>
+
+# Google Chrome Extention
+
+Goole Chrome の拡張機能を紹介します。
+
+## 2016 Slack 返信引用ボタン
+
+<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
+
+Slack に返信と引用ボタンをつけるChrome拡張機能です。
+
+- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
+- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
+- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
+
+<div class="read-more">
+  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
 </div>
 
 

@@ -9,7 +9,7 @@ slug = ""
 
 +++
 
-Last Update: 2019-05-26
+Last Update: 2020-05-10
 
 - [日本語版](#ja)
 - [English Version](#en)
@@ -21,14 +21,15 @@ Last Update: 2019-05-26
 - GLSLとWebGLについて[参加者100人以上の勉強会](https://gam0022.net/blog/2016/02/16/glsl-tech/)での登壇や[有償セミナー](https://webgl.souhonzan.org/entry/?v=0703)での講師経験あり
 - [three.js](https://github.com/mrdoob/three.js/)（JavaScriptの3DライブラリのOSS、GitHubのスター数は43.1k）に[コントリビュート](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed)
 - [Tokyo Demo Fest](http://tokyodemofest.jp)に3年連続で上位入賞（[2016 GLSL Compo 3位](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/), [2017 GLSL Compo 3位](https://gam0022.net/blog/2017/02/24/tdf2017/), [2018 Demo Compo 1位](https://gam0022.net/blog/2018/12/12/tdf2018/)）
+- [Revision 2020](https://2020.revision-party.net/start)（世界最大規模のデモパーティ）の[PC 64K Intro 1位](/blog/2020/04/30/revision2020/)
 - [パストレーシングによる物理ベースレンダラー](https://github.com/gam0022/hanamaru-renderer/)をRustにより開発
 - KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計、モバイル向けに最適化したシェーダー開発、テクニカルアーティストとしてプロジェクト横断のサポート活動等を行う
-- [GDC2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表（[セッション情報](https://schedule.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)、[関連記事](https://gam0022.net/blog/2019/03/28/gdc2019/)）
+- [GDC 2019](https://www.gdconf.com/)にて、Unityアプリの自動プロファイリングシステム構築についての発表（[セッション情報](https://schedule2019.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)、[関連記事1](https://gam0022.net/blog/2019/03/28/gdc2019/)、[関連記事2](https://www.klab.com/jp/blog/pr/2019/51708260.html)）し、[CEDEC 2019でも同テーマで発表](https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html)
 - スキル
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
     - Web Programming
-        - Ruby on Rails, PHP, JavaScript
+        - TypeScript (JavaScript), node.js, Ruby on Rails, PHP
 
 ## 職歴
 
@@ -49,6 +50,7 @@ Last Update: 2019-05-26
 
 ## 受賞
 
+- 2020-04-13. [Revision 2020](https://2020.revision-party.net/start) PC 64K Intro 1位
 - 2018-12-02. [TokyoDemoFest 2018](http://tokyodemofest.jp/2018/) Combined Demo Compo 1位
 - 2017-02-19. [TokyoDemoFest 2017](http://tokyodemofest.jp/2017/?lang=ja) GLSL Graphics Compo 3位
 - 2015-10-31. ISUCON5 本戦出場（271チーム中25チームが本戦出場）
@@ -65,6 +67,7 @@ Last Update: 2019-05-26
 
 ## 出版
 
+- 2020. [KLab Tech Book Vol.6](https://www.klab.com/jp/blog/tech/2020/1077140627.html)
 - 2019. KLab Tech Book Vol.4
 - 2018. KLab Tech Book Vol.3
 - 2017. KLab Tech Book Vol.1
@@ -74,6 +77,17 @@ Last Update: 2019-05-26
 - 2015. JavaScriptoon
 
 詳細は [gam0022.net/works/#publications](https://gam0022.net/works/#publications) を参照。
+
+## 登壇
+
+- 2019. [近未来教育フォーラム2019 -In Real Time-](https://www.dhw.co.jp/forum/report/report01.html)「シェーダーライブコーディング」
+- 2019. **CEDEC 2019** 「[Android向けUnity製ゲーム最適化のためのCI/CDと連携した自動プロファイリングシステム](https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html)」
+- 2019. [UnityエンジニアによるShader勉強会！](https://techplay.jp/event/733454)「[Unity×レイマーチングによる映像制作の実践手法](/blog/2019/06/25/unity-raymarching/)」
+- 2019. **GDC 2019**「[Real-World Techniques and Best Practices for Optimizing Android Games](https://schedule2019.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)」
+- 2018. メガデモ勉強会!2018「[もっと綺麗で写実的な絵作りをしたい！レイマーチング向けのシェーディング技術](https://gam0022.net/blog/2018/03/16/demoscene-study-session/)」
+- 2016. emscripten night !! #2「[Emscriptenを使ってブラウザ上でレイトレーシングする](https://gam0022.net/blog/2016/12/28/emsn2/)」
+- 2016. [**GLSL スクール 2016**](https://webgl.souhonzan.org/entry/?v=0703)「0から始めるthree.jsとカスタムシェーダ」
+- 2016. GLSL シェーダテクニック勉強会「[シェーダだけで世界を創る！three.jsによるレイマーチング](https://gam0022.net/blog/2016/02/16/glsl-tech/)」
 
 ## プロジェクト
 
@@ -102,13 +116,14 @@ Last Update: 2019-05-26
 - Lectured on GLSL and WebGL at the [GLSL workshop](https://gam0022.net/blog/2016/02/16/glsl-tech/) (more than 100 attendees) and the [WebGL School 2016](https://webgl.souhonzan.org/entry/?v=0703) (paid seminar).
 - [Ccontributed to three.js](https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed) (OSS JavaScript 3D library, over 43.1k GitHub Stars).
 - Won the prise at Tokyo Demo Fest for 3 consecutive years ([3rd prize at 2016 GLSL Compo](https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/) and [3rd prize at 2017 GLSL Compo](https://gam0022.net/blog/2017/02/24/tdf2017/), [1st prize at 2018 Demo Compo](https://gam0022.net/blog/2018/12/12/tdf2018/)).
+- Won the [PC 64K Intro](/blog/2020/04/30/revision2020/) at [Revision 2020](https://2020.revision-party.net/start)
 - Developed a [physical base renderer by pathtracing with Rust](https://github.com/gam0022/hanamaru-renderer/).
 - Currently Developing a mobile game Cliant application with Unity and Optimized shaders for mobile.
 - Skills
     - Computer Graphics
         - Unity, three.js (WebGL), Shader Programming (GLSL, HLSL), C++, C#
     - Web Programming
-        - Ruby on Rails, PHP, JavaScript
+        - TypeScript (JavaScript), node.js, Ruby on Rails, PHP
 
 ## Work Experience
 
@@ -130,6 +145,7 @@ Last Update: 2019-05-26
 
 ## Awards
 
+- 2020-04-13. [Revision 2020](https://2020.revision-party.net/start) PC 64K Intro 1st prize
 - 2018-12-02. [TokyoDemoFest 2018](http://tokyodemofest.jp/2018/) Combined Demo Compo 1st prize
 - 2017-02-19. [TokyoDemoFest 2017](http://tokyodemofest.jp/2017/?lang=en) GLSL Graphics Compo 3rd prize
 - 2015-10-31. Participated in the final competition of ISUCON 5 (25 teams out of 271 teams)
@@ -144,8 +160,20 @@ Last Update: 2019-05-26
 - 2007-12-01. [HSPプログラムコンテスト2007](http://hsp.tv/contest2007/) [アジアン・インテグレーション賞](http://hsp.tv/contest2007/cntst_fresult.html#180)
 - 2006-12-01. [HSPプログラムコンテスト2006](http://hsp.tv/contest2006/) [（株）晋遊舎 「Windows100%」編集部賞](http://hsp.tv/contest2006/cntst_fresult.html#323)
 
+## Lectures
+
+- 2019. [近未来教育フォーラム2019 -In Real Time-](https://www.dhw.co.jp/forum/report/report01.html)「シェーダーライブコーディング」
+- 2019. **CEDEC 2019** 「[Android向けUnity製ゲーム最適化のためのCI/CDと連携した自動プロファイリングシステム](https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html)」
+- 2019. [UnityエンジニアによるShader勉強会！](https://techplay.jp/event/733454)「[Unity×レイマーチングによる映像制作の実践手法](/blog/2019/06/25/unity-raymarching/)」
+- 2019. **GDC 2019**「[Real-World Techniques and Best Practices for Optimizing Android Games](https://schedule2019.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328)」
+- 2018. メガデモ勉強会!2018「[もっと綺麗で写実的な絵作りをしたい！レイマーチング向けのシェーディング技術](https://gam0022.net/blog/2018/03/16/demoscene-study-session/)」
+- 2016. emscripten night !! #2「[Emscriptenを使ってブラウザ上でレイトレーシングする](https://gam0022.net/blog/2016/12/28/emsn2/)」
+- 2016. [**GLSL スクール 2016**](https://webgl.souhonzan.org/entry/?v=0703)「0から始めるthree.jsとカスタムシェーダ」
+- 2016. GLSL シェーダテクニック勉強会「[シェーダだけで世界を創る！three.jsによるレイマーチング](https://gam0022.net/blog/2016/02/16/glsl-tech/)」
+
 ## Publications
 
+- 2020. [KLab Tech Book Vol.6](https://www.klab.com/jp/blog/tech/2020/1077140627.html)
 - 2019. KLab Tech Book Vol.4
 - 2018. KLab Tech Book Vol.3
 - 2017. KLab Tech Book Vol.1
