@@ -34,7 +34,7 @@ toc = true
 
 『KLab Tech Book Vol.4』の『第4章 Unity×レイマーチングによる映像制作の実践手法』を担当しました。
 
-[Tokyo Demo Fest 2018](http://tokyodemofest.jp/2018/)で発表したリアルタイムCG作品[『WORMHOLE』](https://www.youtube.com/watch?v=k5MotEfghjQ)を題材にして、Unityとレイマーチングを組み合わせた映像制作技術を解説しました。
+[Tokyo Demo Fest 2018](http://tokyodemofest.jp/2018/)で発表したリアルタイムCG作品[『WORMHOLE』](https://www.youtube.com/watch?v=NMNJV-Pbqtk)を題材にして、Unityとレイマーチングを組み合わせた映像制作技術を解説しました。
 
 関連記事
 
@@ -152,7 +152,7 @@ Unityで作成した映像作品と活動を紹介します。
 ## 2018 Tokyo Demo Fest 2018 優勝作品 WORMHOLE
 
 <div class="movie-wrap">
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/k5MotEfghjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/NMNJV-Pbqtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Tokyo Demo Fest 2018にさだきちさん（[@sadakkey](https://twitter.com/sadakkey)）とチームを組み、『WORMHOLE』（映像：gam0022 / サウンド：sadakkey）という作品を発表しました。
