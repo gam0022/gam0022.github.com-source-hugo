@@ -12,7 +12,7 @@ math = false
 
 +++
 
-昨日の2/14（バレンタインデー）の開催された[The Tokyo Demo Fest team presents: メガデモ勉強会2021](https://connpass.com/event/200294/)に参加しました。
+昨日の2/14（バレンタインデー）に開催された[The Tokyo Demo Fest team presents: メガデモ勉強会2021](https://connpass.com/event/200294/)に参加しました。
 
 私は「64KBのWebGLデモを実装する技術とデモ制作から得た『学びと発見』」というタイトルで発表を行いました。
 
