@@ -24,7 +24,7 @@ math = false
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">本日の <a href="https://twitter.com/hashtag/%E3%83%A1%E3%82%AC%E3%83%87%E3%83%A2%E5%8B%89%E5%BC%B7%E4%BC%9A?src=hash&amp;ref_src=twsrc%5Etfw">#メガデモ勉強会</a> の発表資料です！<br><br>Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題材にして、効率的なデモ制作に必要なエディタ機能やWebGLのプロジェクトの構成、制作中に直面した問題と解決について解説しました。<br><br>レイマーチングはいいぞ！<a href="https://t.co/QWHOXHmZqu">https://t.co/QWHOXHmZqu</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1360889255669633024?ref_src=twsrc%5Etfw">February 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題材にして、効率的なデモ制作に必要なエディタ機能やWebGLのプロジェクトの構成、制作中に直面した問題と解決について解説しました。
+Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題材にして、効率的なデモ制作に必要なエディタ機能やWebGLのプロジェクトの構成、制作中に直面した問題と解決方法について解説しました。
 
 発表の締めとして「CGを学ぶことで世界の解像度を上げるのが楽しい」「レイマーチングはCG入門に最適」という持論について語りました。
 
