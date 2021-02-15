@@ -48,8 +48,8 @@ Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題�
     - 縮小バッファーを利用するマルチパスのBloomにしたので、ビルトインにしたほうがサイズを小さく効率よく実装できそうだったから
     - フォント描画用のテクスチャ生成機能などShadertoyにはない仕様も何個か実装した
 - 補足2: OpenGLよりWebGLの方がGLSLのコンパイル時間が長い
-    - WebGLのデモではなく、OpenGLのexeによるデモすれば、GLSLのコンパイル時間が緩和される
-    - Windows版のChromeおよびFirefoxでは、ANGLEを経由してDirect3Dを使ってWebGLを実現しているらしいのですが、ANGLEを経由する分だけGLSLコンパイルに時間のかかるケースが多い（[Twitter](https://twitter.com/gaziya5/status/1361134297315348482)）
+    - WebGLのデモではなく、OpenGLのexeによるデモにすれば、GLSLのコンパイル時間が緩和される
+    - Windows版のChromeおよびFirefoxでは、ANGLEを経由してDirect3D上でWebGLを実現しているため、ANGLEを経由する分だけGLSLコンパイルに時間のかかるケースが多い（[Twitter](https://twitter.com/gaziya5/status/1361134297315348482)）
     - `chrome.exe --use-angle=gl` というオプション付きでChromeを起動すると、ANGLEを経由せずにWebGLを利用できる（[Twitter](https://twitter.com/gaziya5/status/1350418640093413377)）
 
 # 感想
