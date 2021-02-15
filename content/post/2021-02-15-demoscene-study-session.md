@@ -1,9 +1,9 @@
 +++
 draft = false
 tags = [
-    "event", "CG", "レイマーチング", "TokyoDemoFest", "WebGL", "GLSL"
+    "event", "CG", "レイマーチング", "TokyoDemoFest", "WebGL", "GLSL", "発表資料", "登壇"
 ]
-title = "メガデモ勉強会2021で登壇しました"
+title = "メガデモ勉強会2021で発表しました"
 slug = "demoscene-study-session"
 date = "2021-02-15T13:26:18+09:00"
 image = "/images/posts/2021-02-15-demoscene-study-session/20210214_demoscene.jpg"
