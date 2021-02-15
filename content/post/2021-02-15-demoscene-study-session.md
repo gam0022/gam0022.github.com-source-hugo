@@ -64,8 +64,9 @@ discord上の懇親会では「どうすればライブコーディングを普�
 
 # 関連記事
 
-過去の関連登壇の記事のリンクです。
+過去の関連登壇や記事のリンクです。
 
+- [Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説](https://gam0022.net/blog/2020/04/30/revision2020/)
 - [メガデモ勉強会!2018で発表しました](https://gam0022.net/blog/2018/03/16/demoscene-study-session/)
 - [GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました](https://gam0022.net/blog/2016/02/16/glsl-tech/)
     - この勉強会も5年前のバレンタインデーだったので何かの運命を感じました
