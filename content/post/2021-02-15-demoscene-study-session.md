@@ -39,6 +39,7 @@ Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題�
     - サウンドシェーダーは行数が1800行ほどだが、zlibで効率よく圧縮できるので、最終的なファイル容量にはあまり影響しなかった
     - グラフィックス用のシェーダーは最大（宇宙空間のレイマーチング）で700行、最小（Bloomのポストエフェクト）で10行ほど
     - 用途によって幅があるが、レイマーチング用のシェーダーだと平均して400行くらい
+    - Shadertoyと同じようにCommonのシェーダーの仕組みも用意したが、重複したシェーダーはzlibで圧縮されるため、容量削減の効果は低かった
 - 質問3: ディレクションについて
     - 制作前に打ち合わせをしてBPMは決めていた
         - 音楽と絵の同期はBPMで行っているので重要
@@ -48,7 +49,7 @@ Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題�
     - 縮小バッファーを利用するマルチパスのBloomにしたので、ビルトインにしたほうがサイズを小さく効率よく実装できそうだったから
     - フォント描画用のテクスチャ生成機能などShadertoyにはない仕様も何個か実装した
 - 補足2: OpenGLよりWebGLの方がGLSLのコンパイル時間が長い
-    - WebGLのデモではなく、OpenGLのexeによるデモにすれば、GLSLのコンパイル時間が緩和される
+    - WebGLのデモではなく、OpenGLのexeによるデモにすれば、GLSLのコンパイル時間を短縮できる
     - Windows版のChromeおよびFirefoxでは、ANGLEを経由してDirect3D上でWebGLを実現しているため、ANGLEを経由する分だけGLSLコンパイルに時間のかかるケースが多い（[Twitter](https://twitter.com/gaziya5/status/1361134297315348482)）
     - `chrome.exe --use-angle=gl` というオプション付きでChromeを起動すると、ANGLEを経由せずにWebGLを利用できる（[Twitter](https://twitter.com/gaziya5/status/1350418640093413377)）
 
