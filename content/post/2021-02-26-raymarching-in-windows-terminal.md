@@ -1,7 +1,7 @@
 +++
 title = "Raymarching in Windows Terminal"
 slug = "raymarching-in-windows-terminal"
-date = "2021-02-26T13:19:08+09:00"
+date = "2021-03-08T10:00:00+09:00"
 image = "/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.jpg"
 toc = false
 math = false
@@ -22,11 +22,15 @@ Windows Terminal 1.6から任意のHLSLのPixel Shadersを実行できるよう�
 
 <!--more-->
 
-2021-02-26現在、Windows Terminal 1.6はまだPreview版なので、GitHubのReleasesページから入手する必要があります。
+2021-02-16のツイート時点では、Windows Terminal 1.6はまだPreview版なので、GitHubのReleasesページから入手する必要がありました。
 
 - https://github.com/microsoft/terminal/releases/tag/v1.6.10412.0
 
-Windows TerminalのPixelShaders機能の詳細については、公式ドキュメントをご覧ください。
+2021-03-07現在では、Windows Terminal 1.6からPreviewが外れてMicrosoft Storeから入手できるようになりました。
+
+- [Windows Terminal を入手 - Microsoft Store ja-JP](https://www.microsoft.com/ja-jp/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
+
+Windows TerminalのPixel Shaders機能の詳細については、公式ドキュメントをご覧ください。
 
 - https://github.com/microsoft/terminal/tree/main/samples/PixelShaders
 
@@ -41,7 +45,7 @@ Windows TerminalのPixelShaders機能の詳細については、公式ドキュ�
     },
 ```
 
-レイマーチング用のシェーダーはUnityで下書きしたものをWindows Terminal用に移植して作成しました。
+レイマーチング用のシェーダーはUnityで下書きしたものをWindows Terminal用に移植して実装しました。
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">Raymarching in Windows Terminal のシェーダーを公開しました。<br><br>（シェーダー初心者にも優しい）日本語コメントつき！<a href="https://t.co/GPEpIlHOyD">https://t.co/GPEpIlHOyD</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1361495940356476929?ref_src=twsrc%5Etfw">February 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -61,11 +65,11 @@ SamplerState samplerState;
 cbuffer PixelShaderSettings {
   // The number of seconds since the pixel shader was enabled
   // 秒単位の時間
-  float  Time;
+  float Time;
 
   // UI Scale
   // UIのスケール
-  float  Scale;
+  float Scale;
   
   // Resolution of the shaderTexture
   // ピクセル単位の背景の解像度
@@ -77,7 +81,7 @@ cbuffer PixelShaderSettings {
 };
 ```
 
-`shaderTexture` はターミナルの文字などを含んだターミナルのレンダリング結果のサンプラーになるので、今回は背景に加算合成する形でシェーダーを実装しました（加算合成なので後からレイマーチングを加算しても結果は同じなので、描画順を気にしてくて良い）。
+`shaderTexture` はターミナルの文字などを含んだターミナルのレンダリング結果のサンプラーになるので、今回は背景に加算合成する形でシェーダーを実装しました（加算合成なので後からレイマーチングを加算しても結果は同じになるため、描画順を気にしなてくて良い）。
 
 # Windows Terminalの背景でHLSLライブコーディング
 
@@ -91,7 +95,7 @@ Windows Terminal 1.6の挙動では、シェーダーを再コンパイルして
 - Vimの左側ペイン: HLSLのシェーダー
 - Vimの右側ペイン: Windows Terminal の settings.json
 
-そこで、HLSLを更新を検知して、Windows Terminalの `settings.json` を書き換えることで、HLSLのホットリロードを実現するスクリプトをnode.jsで実装しました。
+そこで、HLSLの更新を検知して、Windows Terminalの `settings.json` を書き換えることで、HLSLのホットリロードを実現するスクリプトをnode.jsで実装しました。
 
 これによって、Windows Terminalの背景でHLSLシェーダーライブコーディングを実現できるようになりました！
 
@@ -99,6 +103,6 @@ Windows Terminal 1.6の挙動では、シェーダーを再コンパイルして
 
 Windows Terminalの `settings.json` に毎回差分を出すために、HLSLファイルをコピーした一時ファイルを作成して、元のファイルのパスと一時ファイルのパスを交互に切り替えて `experimental.pixelShaderPath` に設定するような実装としました。
 
-# まとめ
+# 感想
 
-Microsoft公式のターミナル上でHLSLシェーダーライブコーディング環境を実現できるのは熱いですね！楽しい！！
+Windows TerminalというMicrosoft公式のアプリ上でHLSLシェーダーライブコーディング環境を実現できるのは熱いですね！楽しい！！
