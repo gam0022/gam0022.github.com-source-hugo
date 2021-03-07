@@ -1,20 +1,18 @@
 +++
-title = "Raymarching in Windows Terminal"
+title = "Windows Terminalの背景でレイマーチング"
 slug = "raymarching-in-windows-terminal"
-date = "2021-03-08T10:00:00+09:00"
+date = "2021-03-08T01:00:00+09:00"
 image = "/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.jpg"
 toc = false
 math = false
 draft = false
 tags = [
-    "Raymarching", "Windows Terminal"
+    "Raymarching", "Windows Terminal", "HLSL", "Shader", "シェーダー"
 ]
 
 +++
 
 [![Raymarching in Windows Terminal](/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.jpg)](/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.png)
-
-# Windows Terminalの背景でレイマーチング
 
 Windows Terminal 1.6から任意のHLSLのPixel Shadersを実行できるようになったので、Windows Terminalの背景でレイマーチングを実行してみました。
 
@@ -49,7 +47,7 @@ Windows TerminalのPixel Shaders機能の詳細については、公式ドキュ
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">Raymarching in Windows Terminal のシェーダーを公開しました。<br><br>（シェーダー初心者にも優しい）日本語コメントつき！<a href="https://t.co/GPEpIlHOyD">https://t.co/GPEpIlHOyD</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1361495940356476929?ref_src=twsrc%5Etfw">February 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-HLSLのエラーが発生した行番号が表示されないので、複雑なシェーダーを書くのはちょっと苦労しました。
+HLSLのエラーの行番号が表示されないので、複雑なシェーダーを書くのはちょっと苦労しました。
 
 基本的にはUnityのShaderLab用のプロパティや `_LightColor0` などのビルドインのシェーダー変数を定数（static const）として宣言する修正だけで移植できました。
 
@@ -83,7 +81,7 @@ cbuffer PixelShaderSettings {
 
 `shaderTexture` はターミナルの文字などを含んだターミナルのレンダリング結果のサンプラーになるので、今回は背景に加算合成する形でシェーダーを実装しました（加算合成なので後からレイマーチングを加算しても結果は同じになるため、描画順を気にしなてくて良い）。
 
-# Windows Terminalの背景でHLSLライブコーディング
+# HLSLのホットリロードでシェーダーライブコーディング環境を実現
 
 Windows Terminal 1.6の挙動では、シェーダーを再コンパイルして結果を更新するために以下の手順が必要だったので、ライブコーディングには不向きでした。
 
@@ -93,7 +91,7 @@ Windows Terminal 1.6の挙動では、シェーダーを再コンパイルして
 最初の動画ではシェーダーの描画結果をリアルタイムで更新するために、Vimで2つのファイルを同時編集することで、リアルタイムにライブコーディングっぽいことをしていましたが、かなり操作が忙しいので非実用的でした。
 
 - Vimの左側ペイン: HLSLのシェーダー
-- Vimの右側ペイン: Windows Terminal の settings.json
+- Vimの右側ペイン: Windows Terminalのsettings.json
 
 そこで、HLSLの更新を検知して、Windows Terminalの `settings.json` を書き換えることで、HLSLのホットリロードを実現するスクリプトをnode.jsで実装しました。
 
