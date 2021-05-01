@@ -3,6 +3,7 @@ title = "gam0022.net"
 copyright = "&copy; 2016 gam0022"
 languageCode = "jp"
 theme = "academic"
+publishDir = "docs"
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = "gam0022-net"
