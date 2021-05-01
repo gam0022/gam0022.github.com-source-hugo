@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/mac-os-x/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/mac-os-x/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keynoteで綺麗な数式を使う</title>
+      <link>https://gam0022.net/blog/2014/04/21/latexit/</link>
+      <pubDate>Mon, 21 Apr 2014 09:01:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2014/04/21/latexit/</guid>
+      <description>&lt;p&gt;研究室が始まって、輪講用のスライドをヒイヒイ言いながら作っていた時のことです。&lt;/p&gt;
+
+&lt;p&gt;Keynote には、PowerPointの数式エディタ的な機能が無いらしいのです。&lt;/p&gt;
+
+&lt;p&gt;どうにかして数式を埋め込みたかったので、方法を調べました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/keynote-1.png&#34; alt=&#34;600 keynoteに数式&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;keynote-で数式を埋め込むまで&#34;&gt;Keynote で数式を埋め込むまで&lt;/h1&gt;
+
+&lt;p&gt;結論から言うと、&lt;a href=&#34;http://www.chachatelier.fr/latexit/&#34;&gt;LaTeXiT&lt;/a&gt; というアプリケーションを利用することにしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;latexit-を導入&#34;&gt;LaTeXiT を導入&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en&#34;&gt;LaTexiT の最新版&lt;/a&gt;をダウンロード + インストールする。&lt;/p&gt;
+
+&lt;h2 id=&#34;latexit-の設定&#34;&gt;LaTeXiT の設定&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;コマンドを使って、各コマンドのパスを調べて設定します。&lt;/p&gt;
+
+&lt;p&gt;私の場合はこうしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-config.png&#34; alt=&#34;600 LaTexiTの設定&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;latexit-で数式を生成&#34;&gt;LaTeXiT で数式を生成&lt;/h2&gt;
+
+&lt;p&gt;LaTeXiT では、普通に LaTex と全く同じように数式が扱えます。&lt;/p&gt;
+
+&lt;p&gt;式を入力したら、右下の&lt;code&gt;LaTex it!&lt;/code&gt;ボタンでコンパイル(画像化)してくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-usage.png&#34; alt=&#34;600 LaTexiTの使い方&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;keynote-に貼り付ける&#34;&gt;Keynote に貼り付ける&lt;/h2&gt;
+
+&lt;p&gt;様々な形式に出力(クリップボードにコピー)できるのですが、Keynote で使いたい場合は PDF 形式がベクトル画像になるので良さそうです。&lt;/p&gt;
+
+&lt;p&gt;クリップボードにコピーしたら、Keynote から &lt;code&gt;Command-V&lt;/code&gt; で画像と同じように貼り付けることができます。&lt;/p&gt;
+
+&lt;p&gt;また、数式を Keynote にドラッグ・アンド・ドロップすることでも貼り付けることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-copy.png&#34; alt=&#34;600 数式のコピー&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみに、デフォルトフォーマットは、&lt;code&gt;LaTeXit&amp;gt; 環境設定 &amp;gt; 一般タブ&lt;/code&gt; から指定できます。&lt;/p&gt;
+
+&lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
+
+&lt;h2 id=&#34;数式番号を任意に指定したい&#34;&gt;数式番号を任意に指定したい&lt;/h2&gt;
+
+&lt;p&gt;数式番号を任意に指定したいなら、&lt;code&gt;setcounter&lt;/code&gt; 環境を使うと良いです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\setcounter{equation}{5} %数式番号を(6)としたいなら、5(指定したい番号 - 1)を指定
+\begin{equation}
+  M(T) = \sum_{e \in T,e \not\in P}m(e)
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;無事に数式番号を指定できました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-setcounter.png&#34; alt=&#34;600 数式番号を指定する&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mac-physics.ldblog.jp/archives/51932383.html&#34;&gt;Keynoteとかで数式を綺麗に表示したいーLaTeXiT : macでの研究に便利なものたち&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rails4のアプリをHerokuで動かす</title>
+      <link>https://gam0022.net/blog/2013/09/17/run-rails4-on-heroku/</link>
+      <pubDate>Tue, 17 Sep 2013 22:09:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/09/17/run-rails4-on-heroku/</guid>
+      <description>&lt;p&gt;Rails4のアプリをHerokuで動かすまでにしたことをメモします。&lt;/p&gt;
+
+&lt;h1 id=&#34;1-rails4-のプロジェクトを作る&#34;&gt;1. Rails4 のプロジェクトを作る&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://guides.rubyonrails.org/getting_started.html&#34;&gt;Getting Started with Rails&lt;/a&gt;を参考にして Rails4 のプロジェクトを作りました。&lt;/p&gt;
+
+&lt;p&gt;念の為にバージョンもメモしておきます。&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;ruby&lt;/dt&gt;
+&lt;dd&gt;ruby 2.0.0p247 (2013-06-27 revision 41674) [x86_64-darwin12.4.0]&lt;/dd&gt;
+&lt;dt&gt;rails&lt;/dt&gt;
+&lt;dd&gt;Rails 4.0.0&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Mac OS X でやりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-heroku-に登録&#34;&gt;2. Heroku に登録&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.heroku.com/&#34;&gt;heroku.com&lt;/a&gt; に 登録して、Heroku のコマンドラインツールをインストールして、公開鍵を登録したような記憶があります。&lt;/p&gt;
+
+&lt;p&gt;(あまり記憶に無いので、たぶん指示に従っていけばいい感じだったと思います。)&lt;/p&gt;
+
+&lt;h1 id=&#34;3-production用のdb-を-sqlite3-pg-に変更&#34;&gt;3. production用のDB を sqlite3 → pg に変更&lt;/h1&gt;
+
+&lt;p&gt;Heroku では SQLite3 に対応してないので、production用のデータベースに PostgreSQL(pg) を使うために &lt;code&gt;Gemfile&lt;/code&gt;と&lt;code&gt;config/databae.yml&lt;/code&gt;を編集します。&lt;/p&gt;
+
+&lt;p&gt;Gemfile の diff&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;gem &#39;rails&#39;, &#39;4.0.0&#39;
+
+# Use sqlite3 as the database for Active Record
+-gem &#39;sqlite3&#39;
++gem &#39;sqlite3&#39;, groups: %w(test development), require: false
++gem &#39;pg&#39;, groups: %w(production), require: false
+
+# Use SCSS for stylesheets
+gem &#39;sass-rails&#39;, &#39;~&amp;gt; 4.0.0&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;config/database.yml の diff&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;  timeout: 5000
+
+production:
+-  adapter: sqlite3
+-  database: db/production.sqlite3
++  adapter: pg
++  database: db/production.pg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後に、&lt;code&gt;bundle install&lt;/code&gt;をします。&lt;/p&gt;
+
+&lt;h2 id=&#34;補足&#34;&gt;補足&lt;/h2&gt;
+
+&lt;p&gt;ちなみに、SQLite3 のままで、&lt;code&gt;git push heroku&lt;/code&gt;すると、こんな感じのエラーが起こりました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;       Gem files will remain installed in /tmp/build_8njhwta846es/vendor/bundle/ruby/2.0.0/gems/sqlite3-1.3.8 for inspection.
+       Results logged to /tmp/build_8njhwta846es/vendor/bundle/ruby/2.0.0/gems/sqlite3-1.3.8/ext/sqlite3/gem_make.out
+       An error occurred while installing sqlite3 (1.3.8), and Bundler cannot continue.
+       Make sure that `gem install sqlite3 -v &#39;1.3.8&#39;` succeeds before bundling.
+ !
+ !     Failed to install gems via Bundler.
+ !
+ !     Detected sqlite3 gem which is not supported on Heroku.
+ !     https://devcenter.heroku.com/articles/sqlite3
+ !
+
+ !     Push rejected, failed to compile Ruby/Rails app
+
+To git@heroku.com:pacific-waters-7608.git
+ ! [remote rejected] master -&amp;gt; master (pre-receive hook declined)
+error: failed to push some refs to &#39;git@heroku.com:pacific-waters-7608.git&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;4-git-リポジトリを作る&#34;&gt;4. Git リポジトリを作る&lt;/h1&gt;
+
+&lt;p&gt;普通に Git リポジトリを作ります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+git add .
+git commit -m &amp;quot;first commit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;5-heroku-に-deploy-する&#34;&gt;5. Heroku に deploy する&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;heroku create # このとき、`heroku create アプリ名` で、任意のアプリ名にもできる。
+git push heroku # Heroku への deploy は git の commit で行うよう。時間がかかる。
+heroku open # ブラウザで確認できる。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;補足-1&#34;&gt;補足&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;git push heroku&lt;/code&gt; に失敗して、&lt;code&gt;heroku create&lt;/code&gt; しているうちに、アプリが5個を越えてしまったので、
+&lt;a href=&#34;https://dashboard.heroku.com/apps&#34;&gt;heroku dashbord&lt;/a&gt; からアプリを消していたら、
+push 先の heroku(リモートリポジトリ) が無いとかいうエラーになってしまいました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push heroku
+
+ !  No such app as pacific-waters-7608.
+
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうなってしまったら、&lt;code&gt;.git/config&lt;/code&gt; を書き換えて、&lt;code&gt;[remote &amp;quot;heroku&amp;quot;]&lt;/code&gt;の部分を消してから、もう一度 &lt;code&gt;heroku create&lt;/code&gt;すればいいです。&lt;/p&gt;
+
+&lt;p&gt;もしくは、url の部分を 存在するアプリ名に書き換えてもいい気がします。&lt;/p&gt;
+
+&lt;h1 id=&#34;6-heroku-のデータベースで-rake-db-migrate-する&#34;&gt;6. Heroku のデータベースで rake db:migrate する&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;heroku open&lt;/code&gt;して、動作を確認すれば分かると思いますが、このままだと Heroku 側のDBが空なので、エラーになります。&lt;/p&gt;
+
+&lt;p&gt;なので、Heroku で rake db:migrate します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;heroku run rake db:migrate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;7-ハマった点&#34;&gt;7. ハマった点&lt;/h1&gt;
+
+&lt;p&gt;localでは動くのに、Herokuだとそのままだと上手くいかない場合があります。&lt;/p&gt;
+
+&lt;p&gt;そんな場合は、次のように&lt;code&gt;config/environments/production.rb&lt;/code&gt;の設定を書き換えて、もう一度&lt;code&gt;git push heroku&lt;/code&gt;しましょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;cssやjsが読み込めない場合&#34;&gt;CSSやJSが読み込めない場合&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;config/environments/production.rb&lt;/code&gt; 内で &lt;code&gt;config.assets.compile = true&lt;/code&gt;にします。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config/environments/production.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;   # config.assets.css_compressor = :sass
+
+   # Do not fallback to assets pipeline if a precompiled asset is missed.
+-  config.assets.compile = false
++  config.assets.compile = true
+
+   # Generate digests for assets URLs.
+   config.assets.digest = true
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;public-以下のファイルが404になる場合&#34;&gt;public 以下のファイルが404になる場合&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;config/environments/production.rb&lt;/code&gt; 内で &lt;code&gt;config.serve_static_assets = true&lt;/code&gt;にします。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config/environments/production.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;   # config.action_dispatch.rack_cache = true
+
+   # Disable Rails&#39;s static asset server (Apache or nginx will already do this).
+-  config.serve_static_assets = false
++  config.serve_static_assets = true
+
+   # Compress JavaScripts and CSS.
+   config.assets.js_compressor = :uglifier
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;完&#34;&gt;完&lt;/h1&gt;
+
+&lt;p&gt;これでやっと Heroku で Rails4 を動かせるようになりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;heroku open&lt;/code&gt; で確認しましょう。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XcodeでopenCVを使う</title>
+      <link>https://gam0022.net/blog/2013/08/04/opencv-on-xcode/</link>
+      <pubDate>Sun, 04 Aug 2013 12:40:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/08/04/opencv-on-xcode/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://gam0022.net/blog/2013/08/01/cojtfalsecheng-guo-fa-biao-falsegan-xiang/&#34;&gt;某OJT&lt;/a&gt;で
+&lt;a href=&#34;https://github.com/gam0022/shelf/tree/master/hls_spot&#34;&gt;XcodeからopenCVを使う&lt;/a&gt;機会があったので、その方法をメモします。&lt;/p&gt;
+
+&lt;p&gt;バージョンは次の通りです。&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Xcode&lt;/dt&gt;
+&lt;dd&gt;4.6.3&lt;/dd&gt;
+&lt;dt&gt;openCV&lt;/dt&gt;
+&lt;dd&gt;2.4.5&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h1 id=&#34;opencvをインストールする&#34;&gt;openCVをインストールする&lt;/h1&gt;
+
+&lt;p&gt;まず、普通にhomebrewでopenCVを入れます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew tap homebrew/science
+brew install opencv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;xcodeでopencvを使えるようにプロジェクトを設定する&#34;&gt;XcodeでopenCVを使えるようにプロジェクトを設定する&lt;/h1&gt;
+
+&lt;p&gt;次のページ通りに設定したら、うまくできました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/nurs/20121125/1353861488&#34;&gt;XCode 4.5.2 でOpenCV 2.4.2 を使う&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>bashからzshに乗り換えた</title>
+      <link>https://gam0022.net/blog/2013/05/23/zsh/</link>
+      <pubDate>Thu, 23 May 2013 12:30:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/05/23/zsh/</guid>
+      <description>&lt;p&gt;特に理由はなかったのですが、便利という噂を聞いてbashからzshに乗り換えました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013-05-23-zsh.png&#34; alt=&#34;iTerm2 + zsh&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;zshを試す&#34;&gt;zshを試す&lt;/h1&gt;
+
+&lt;p&gt;Macでは標準でzshが入っているので、ターミナルで&lt;code&gt;$ zsh&lt;/code&gt;とすれば試せます。&lt;/p&gt;
+
+&lt;p&gt;飽きたら、&lt;code&gt;$ exit&lt;/code&gt;で終了です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ログインシェルを変更&#34;&gt;ログインシェルを変更&lt;/h1&gt;
+
+&lt;p&gt;シェルの一覧は&lt;code&gt;/etc/shells&lt;/code&gt;から確認できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cat /etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確認したら、zshにログインシェルを変更しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ chsh -s /bin/zsh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;zshの設定&#34;&gt;zshの設定&lt;/h1&gt;
+
+&lt;p&gt;zshの設定をしようと思ったのですが、自分でゴリゴリ&lt;code&gt;.zshrc&lt;/code&gt;を書くのが大変そうだったので、
+&lt;code&gt;oh-my-zsh&lt;/code&gt;というzshの設定を管理するフレームワークを利用してみました。&lt;/p&gt;
+
+&lt;h2 id=&#34;oh-my-zshのsetup&#34;&gt;oh-my-zshのsetup&lt;/h2&gt;
+
+&lt;p&gt;GitHubのページに従ってインストールすればいいと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;robbyrussell/oh-my-zsh(GitHub)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;特に拘りがなければ、これで良さそうです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;oh-my-zshの設定&#34;&gt;oh-my-zshの設定&lt;/h2&gt;
+
+&lt;p&gt;まずはプロンプトを見やすくしましょう。&lt;/p&gt;
+
+&lt;p&gt;私は&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh/wiki/themes&#34;&gt;oh-my-zshのテーマの一覧&lt;/a&gt;から、
+&lt;code&gt;gallois&lt;/code&gt;というthemeを導入しました。&lt;/p&gt;
+
+&lt;p&gt;導入の方法は簡単で、&lt;code&gt;~/.zshrc&lt;/code&gt;の環境変数&lt;code&gt;ZSH_THEME&lt;/code&gt;を変更して、&lt;code&gt;source ~/.zshrc&lt;/code&gt;するだけです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#  .zshrc
+ZSH_THEME=&amp;quot;gallois&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--
+なぜか、zshにしてからなぜかターミナルで新規タブを開くと、
+カレントディレクトリではなくホームディレクトリで開かれるようになってしまいました。
+この問題は、oh-my-zshの`osx`というプラグインを利用すれば解決しました。
+--&gt;
+
+&lt;p&gt;また、&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins&#34;&gt;プラグインの一覧&lt;/a&gt;から、
+&lt;code&gt;git&lt;/code&gt;と&lt;code&gt;osx&lt;/code&gt;pluginを導入しました。&lt;/p&gt;
+
+&lt;p&gt;最終的には、&lt;code&gt;~/.zshrc&lt;/code&gt; の2行を次のように変更しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# .zshrc
+ZSH_THEME=&amp;quot;gallois&amp;quot;
+plugins=(git osx)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;iterm2の導入&#34;&gt;iTerm2の導入&lt;/h1&gt;
+
+&lt;p&gt;ペインの分割とかが便利そうだったので、&lt;a href=&#34;http://www.iterm2.com/#/section/home&#34;&gt;iTerm2&lt;/a&gt;を入れてみました。&lt;/p&gt;
+
+&lt;p&gt;以下の2点だけ気になったので設定を変えました。&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;ウィンドウを透過する&lt;/dt&gt;
+&lt;dd&gt;* まず、メニューバーの&lt;code&gt;iTerm &amp;gt; Prefernces&lt;/code&gt; で &lt;code&gt;Prefernces&lt;/code&gt;ウィンドウを開く。&lt;/dd&gt;
+&lt;dd&gt;* &lt;code&gt;Profiles&lt;/code&gt;タブを選択する。&lt;/dd&gt;
+&lt;dd&gt;* &lt;code&gt;Window&lt;/code&gt;タブがあるので、&lt;code&gt;Transparency&lt;/code&gt;を適当に設定する。&lt;/dd&gt;
+&lt;dt&gt;新しいタブをカレントディレクトリで開く&lt;/dt&gt;
+&lt;dd&gt;* &lt;code&gt;Window&lt;/code&gt;タブではなく、&lt;code&gt;General&lt;/code&gt;タブを選択する。&lt;/dd&gt;
+&lt;dd&gt;* &lt;code&gt;Working Directory&lt;/code&gt;のラジオボックスから&lt;code&gt;Reuse previous sesson&#39;s directory&lt;/code&gt;を選択する。&lt;/dd&gt;
+&lt;/dl&gt;</description>
+    </item>
+    
+    <item>
+      <title>BetterTouchToolが便利</title>
+      <link>https://gam0022.net/blog/2013/05/23/bettertouchtool/</link>
+      <pubDate>Thu, 23 May 2013 11:14:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/05/23/bettertouchtool/</guid>
+      <description>&lt;p&gt;最近、&lt;a href=&#34;http://www.boastr.de/&#34;&gt;BetterTouchTool&lt;/a&gt;というソフトを入れたのですが、便利でした。&lt;/p&gt;
+
+&lt;p&gt;Macだとウィンドウをスナップする機能がないので困っていたのですが、これで解決しました。&lt;/p&gt;
+
+&lt;p&gt;有料版のBTT Remoteでは、iPadやiPhoneを、Macのキーボード・トラックパッドにできるようです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipseのコード補完のショートカットを変更する</title>
+      <link>https://gam0022.net/blog/2013/04/23/eclipse-content-assist/</link>
+      <pubDate>Tue, 23 Apr 2013 17:31:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/04/23/eclipse-content-assist/</guid>
+      <description>&lt;p&gt;Eclipseのコード補完のショートカットは&lt;code&gt;C-space&lt;/code&gt;なのですが、
+Macで使うとSpotlightと干渉して使えません。&lt;/p&gt;
+
+&lt;p&gt;だったら、ショートカットのキーバインドを変更しましょう!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013-04-23-eclipse-content-assist.png&#34; alt=&#34;Eclipseの設定画面&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;設定方法はメニューバーから&lt;code&gt;Eclipse/環境設定/General/Keys&lt;/code&gt;です。&lt;/p&gt;
+
+&lt;p&gt;ほとんどのキーバインドをここから設定できるので、
+&lt;code&gt;content assist&lt;/code&gt;の項目を見つけて設定します。&lt;/p&gt;
+
+&lt;p&gt;私の場合はコード補完を&lt;code&gt;C-space&lt;/code&gt;ではなく&lt;code&gt;Tab&lt;/code&gt;に割り当てることにしました。&lt;/p&gt;
+
+&lt;p&gt;理由は、Visual Studioと同じショートカットの方が捗りそうだからです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>coinsの環境を使ってDynamic Forward</title>
+      <link>https://gam0022.net/blog/2013/03/21/dynamic-forward/</link>
+      <pubDate>Thu, 21 Mar 2013 11:17:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/03/21/dynamic-forward/</guid>
+      <description>
+
+&lt;p&gt;Twinsなど学内向けのサイトにアクセスするためにLocalForwardを使っている人が多いようですが、
+DynamicForwardの方が汎用性が高くて便利なのに、使っている人が少ないような印象を受けるので紹介します。&lt;/p&gt;
+
+&lt;p&gt;この記事の説明はあまり分かりやすくないので、単純に学外からTwinsを使いたいだけであれば、
+次の記事を参考にすれば良いと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://shkh.hatenablog.com/entry/2011/11/22/231233&#34;&gt;MacでTWINSを学外から使う&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;接続の方法&#34;&gt;接続の方法&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-sshの設定をする&#34;&gt;1.sshの設定をする&lt;/h2&gt;
+
+&lt;p&gt;まず、&lt;code&gt;~/.ssh/config&lt;/code&gt;を次のようにします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# .ssh/config
+Host coins coins-p
+HostName www.coins.tsukuba.ac.jp
+User sxxxxxxx
+
+Host *-p
+DynamicForward 1080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上のように設定すると、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;普通にsshしたいだけならば、&lt;code&gt;ssh coins&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;DynamicForwardしたいなら、&lt;code&gt;ssh coins-p&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;となって捗ります。&lt;/p&gt;
+
+&lt;p&gt;このように、*(アスタリスク)を使って設定を書くと、
+重複してサーバ名などの設定を書かないで済むというちょっとしたテクニックを使っています。&lt;/p&gt;
+
+&lt;h2 id=&#34;2-sokcsプロキシを使う&#34;&gt;2.SOKCSプロキシを使う&lt;/h2&gt;
+
+&lt;p&gt;この設定だと、&lt;code&gt;ssh coins-p&lt;/code&gt;をしたときに、ローカルホストの1080番ポートにSOKCSプロキシサーバを割り当てると、
+学内向けのサイトも普通に見れるようになります。&lt;/p&gt;
+
+&lt;p&gt;SOKCSプロキシの設定は Mac OS X (山ライオン)ならば、&lt;code&gt;ネットワーク環境設定&lt;/code&gt;から下のスクリーンショットを参考にして行なってください。&lt;/p&gt;
+
+&lt;p&gt;他の環境の人はググって調べてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013-03-21-dynamic-forward.png&#34; alt=&#34;SOKCSプロキシの設定&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;切断するとき&#34;&gt;切断するとき&lt;/h1&gt;
+
+&lt;p&gt;切断するときは、次の2つの両方の作業をしてください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sshの接続を切る。&lt;/li&gt;
+&lt;li&gt;プロキシの設定を無効にする。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipseのコンソール(Console)の出力が文字化けする</title>
+      <link>https://gam0022.net/blog/2013/01/23/eclipse-console-encoding/</link>
+      <pubDate>Wed, 23 Jan 2013 10:58:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/01/23/eclipse-console-encoding/</guid>
+      <description>&lt;p&gt;最近、Eclipseを使っているのですが、文字エンコーディングを&lt;code&gt;EUC-JP&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変更したところ、コンソールへの標準出力は正常に行われるのに、標準入力が文字化けするようになってしまいました。&lt;/p&gt;
+
+&lt;p&gt;ぐぐったところ、&lt;code&gt;eclipse.ini&lt;/code&gt;に&lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt;という行を追加すれば解消するようでした。&lt;/p&gt;
+
+&lt;p&gt;Mac OS Xの場合、&lt;code&gt;eclipse.ini&lt;/code&gt;は&lt;code&gt;/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse.ini&lt;/code&gt;にあります。&lt;/p&gt;
+
+&lt;p&gt;コマンドライン引数が文字化けする場合も、同様に対処できるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://starzero.hatenablog.com/entry/20100902/1283438762&#34;&gt;Macのeclipseでコマンドライン引数が文字化け&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mac OS Xでjavacやjavaで文字化けした場合の対処</title>
+      <link>https://gam0022.net/blog/2012/12/19/javac/</link>
+      <pubDate>Wed, 19 Dec 2012 23:40:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/12/19/javac/</guid>
+      <description>&lt;p&gt;Mac OS Xでjavacやjavaで文字化けした場合の対処ですが、
+次のように&lt;code&gt;~/.bash_profile&lt;/code&gt;に&lt;code&gt;alias&lt;/code&gt;を設定すれば、治ると思います。&lt;/p&gt;
+
+&lt;p&gt;この例ではターミナルのエンコーディングがUTF-8という
+前提で設定しているので、UTF-8の部分は自分の環境に合わせて変更してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# ~/.bash_profile
+alias javac=&#39;javac -J-Dfile.encoding=UTF-8&#39;
+alias java=&#39;java -Dfile.encoding=UTF-8&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後に&lt;code&gt;source ~/.bash_profile&lt;/code&gt;してね。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;私に関して言うと、Javaを書くときはEclipseを使うことにしたので、この設定はあまり役に立ってないね！&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GNU Octave を Mac OS Xにインストールする</title>
+      <link>https://gam0022.net/blog/2012/09/06/install-octave-on-mac-os-x/</link>
+      <pubDate>Thu, 06 Sep 2012 19:27:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/09/06/install-octave-on-mac-os-x/</guid>
+      <description>
+
+&lt;p&gt;大学の数値計算法・数理アルゴリズムなどの授業でMatlabを使わないといけないのですが、
+Matlabを買うお金がなかったので、代替ソフトとしてGNU OctaveをMac OS Xに入れました。&lt;/p&gt;
+
+&lt;p&gt;けっこうハマりどころが多かったのでメモします。&lt;/p&gt;
+
+&lt;h2 id=&#34;gnu-octaveについて&#34;&gt;GNU Octaveについて&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ja.wikipedia.org/wiki/GNU_Octave&#34;&gt;wikipedia&lt;/a&gt;からの抜粋です。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;GNU Octaveとは、MATLABと互換性を持ったフリーな数値解析ソフトウェアであり、GNUで開発している。
+MATLABとの互換性を主に目指しており、MATLABの機能の多くをOctaveも持っている。また MATLAB のために書かれたプログラムも修正せずに動作するものが多い。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.gnu.org/software/octave/&#34;&gt;GNU Octave&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;mountain-lion-にしたらhomebrewがおかしくなった人はこれ&#34;&gt;Mountain Lion にしたらHomebrewがおかしくなった人はこれ&lt;/h2&gt;
+
+&lt;p&gt;Mountain Lion にしたら、Homebrewがおかしくなった人は、まず次のリンクを参考にしてFixしましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/1860902&#34;&gt;Get Mountain Lion and Homebrew to Be Happy&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;homebrewでoctaveを入れる&#34;&gt;HomebrewでOctaveを入れる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# リポジトリ追加
+brew tap free/open
+# updateしないとうまくいかなかった
+brew update
+# OctaveのコンパイルにFortranのコンパイラが必要
+brew install gfortran
+# ようやくOctaveがコンパイルできる
+brew install octave
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;plotとかでグラフを描けるようにする&#34;&gt;plotとかでグラフを描けるようにする&lt;/h2&gt;
+
+&lt;p&gt;Octave自体には、グラフの描画機能はなく、gnuplotに依存しているのでgnuplotを入れます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew install gnuplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次に、&lt;code&gt;GNUTERM&lt;/code&gt;という環境変数を設定します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# ~/.bash_profile
+export GNUTERM=x11
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次に&lt;code&gt;source ~/.bash_profile&lt;/code&gt;をするかログインし直せばOctaveでplotなどからグラフを描画できるようになります。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、&lt;code&gt;GNUTERM&lt;/code&gt;を設定しないとこういう感じのエラーになります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-matlab&#34;&gt;octave :1&amp;gt; plot(x)
+gnuplot&amp;gt; set terminal aqua enhanced title &amp;quot;Figure 1&amp;quot; size 560 420  font &amp;quot;*,6&amp;quot;
+                      ^
+         line 0: unknown or ambiguous terminal type; type just &#39;set terminal&#39; for a list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://helloworld.hifumi.info/post/22182948927/mac-octave&#34;&gt;MacのターミナルからOctaveを使うための設定&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;これで、計算機室のゴミみたいなマシンを使わずとも課題ができます。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>大五郎bot(@daigoroubot)を動かすためのメモ</title>
+      <link>https://gam0022.net/blog/2012/08/20/run-daigoroubot/</link>
+      <pubDate>Mon, 20 Aug 2012 13:28:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/20/run-daigoroubot/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/daigoroubot&#34;&gt;@daigoroubot&lt;/a&gt;をMac OS Xで動かすまでのメモです。
+なんて需要が無さそうな記事なんだ!&lt;/p&gt;
+
+&lt;h2 id=&#34;rubyとgemををインストール&#34;&gt;Rubyとgemををインストール&lt;/h2&gt;
+
+&lt;p&gt;とりあえず、バージョンは次のような感じで。インストール方法は&lt;a href=&#34;https://gam0022.net/blog/2012/07/27/getting-started-with-ruby-on-rails-on-mac/&#34;&gt;これ&lt;/a&gt;を参考にしてください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ruby 1.9.3p194&lt;/li&gt;
+&lt;li&gt;gem 1.8.24&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;required-gems&#34;&gt;required gems&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem install oauth json sqlite3 twitter tweetstream unicode_math
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mecabを使えるようにしておく&#34;&gt;MeCabを使えるようにしておく&lt;/h2&gt;
+
+&lt;p&gt;homebrewを導入しているなら、これでok。&lt;/p&gt;
+
+&lt;p&gt;Mac用のメモですが、Ubuntuなら&lt;code&gt;brew&lt;/code&gt;の代わりに&lt;code&gt;apt-get&lt;/code&gt;など、環境に合わせた適当なパッケージ管理システムにすれば普通に動くと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew install mecab mecab-ipadic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mecabのrubyバインディングをする&#34;&gt;MeCabのRubyバインディングをする&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/mecab/downloads/list&#34;&gt;ここ&lt;/a&gt;からbrewで入れたMeCabと同じバージョンのRubyバインディングをダウンロードする。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tar -jxf mecab-ruby-xxx.tar.gz&lt;/code&gt;などで解凍。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;README&lt;/code&gt;の指示通りに作業する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;もし次のようなエラーが出たら、&lt;code&gt;extconf.rb&lt;/code&gt;を編集する必要があるよう。&lt;/p&gt;
+
+&lt;p&gt;(参考:&lt;a href=&#34;http://d.hatena.ne.jp/kasei_san/20121213/p1&#34;&gt;MacPortsで、mecabと、mecab-rubyのインストール&lt;/a&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dyld: lazy symbol binding failed: Symbol not found: __ZN5MeCab12getLastErrorEv
+  Referenced from: /Users/kobayashi/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/site_ruby/1.8/i686-darwin10.7.0/MeCab.bundle
+  Expected in: flat namespace
+
+
+dyld: Symbol not found: __ZN5MeCab12getLastErrorEv
+  Referenced from: /Users/kobayashi/.rvm/rubies/ruby-1.8.7-p174/lib/ruby/site_ruby/1.8/i686-darwin10.7.0/MeCab.bundle
+  Expected in: flat namespace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;extconf.rb&lt;/code&gt; に次のように&lt;code&gt;$LDFLAGS&lt;/code&gt;を追加します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;# extconf.rb
+require &#39;mkmf&#39;
+
+mecab_config = with_config(&#39;mecab-config&#39;, &#39;mecab-config&#39;)
+use_mecab_config = enable_config(&#39;mecab-config&#39;)
+
++$LDFLAGS += &#39; -L&#39; + `#{mecab_config} --libs-only-L`.chomp
+
+`mecab-config --libs-only-l`.chomp.split.each { | lib |
+  have_library(lib)
+}
+
+$CFLAGS += &#39; &#39; + `#{mecab_config} --cflags`.chomp
+
+have_header(&#39;mecab.h&#39;) &amp;amp;&amp;amp; create_makefile(&#39;MeCab&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--
+
+ここが厄介なので、私自身、嵌りました。
+
+1. まず、[ここ](http://code.google.com/p/mecab/downloads/list)からbrewで入れたMeCabと同じバージョンのRubyバインディングをダウンロードする。
+2. 1.を解凍して、cd。
+3. `extconf.rb`を編集する。
+  `$LDFLAGS = &#39;-L/usr/local/lib&#39;`という行を、`$CFLAGS〜`の次の行に加える。
+4. ```bash
+ruby extconf.rb
+make
+sudo make install
+```
+
+ちなみに、`extconf.eb`を編集せずにバインディングしたときにRubyからmecabを使うと、次のようなエラーになってしまう。
+
+```bash
+dyld: NSLinkModule() error
+dyld: Symbol not found: __ZN5MeCab6Tagger6createEiPPc
+  Referenced from: /Users/gam0022/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/x86_64-darwin11.4.0/MeCab.bundle
+  Expected in: flat namespace
+
+Trace/BPT trap
+```
+
+--&gt;
+
+&lt;p&gt;参考:
+&lt;a href=&#34;http://g1g0.com/2012/03/1752/&#34;&gt;MacにMecabとmecab-rubyをインストールして形態素解析。辞書はIPA辞書、NAIST辞書、UniDicの３種：Garbage In Garbage Out&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)</title>
+      <link>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</link>
+      <pubDate>Sat, 11 Aug 2012 10:38:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</guid>
+      <description>
+
+&lt;p&gt;このブログで、カテゴリーに濁点を含んだ日本語を使うと、カテゴリーの一覧などからカテゴリーのページにリンクしたとき、
+404エラーになってしまう問題が起きました。&lt;/p&gt;
+
+&lt;p&gt;原因は、このブログの開発環境にありました。&lt;/p&gt;
+
+&lt;p&gt;このブログは静的コンテンツなのですが、次のような手順でブログを運営しています。
+(Rakefileで自動化されていますが、内部ではこうなっています)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ローカル(Mac OS X)でブログを生成する。&lt;/li&gt;
+&lt;li&gt;サーバ(Ubuntu)にRsyncで生成したブログをアップロードする。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mac OS X では、ファイル名のエンコードに&lt;code&gt;UTF-8-MAC&lt;/code&gt;を使っているので、
+そのままアップロードすると、サーバ上のファイル名も&lt;code&gt;UTF-8-MAC&lt;/code&gt;になります。
+しかし、ファイル自体のエンコードは&lt;code&gt;UTF-8&lt;/code&gt;でURLをパーセントエンコーディングしていないので、
+リンク先が見つからなくなってしまうようです。&lt;/p&gt;
+
+&lt;p&gt;UTF-8-MAC問題について詳しく知りたい人は、&lt;a href=&#34;http://d.hatena.ne.jp/miau/20110805/1312555736&#34;&gt;こちら&lt;/a&gt;などが勉強になるとおもいます。&lt;/p&gt;
+
+&lt;p&gt;解決方法は簡単で、Rsyncでアップロードするときに、&lt;code&gt;--iconv&lt;/code&gt;オプションを使い、
+ファイル名を&lt;code&gt;UTF-8-MAC&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変換すれば治ります。&lt;/p&gt;
+
+&lt;h3 id=&#34;rsyncのバージョンを3にする&#34;&gt;Rsyncのバージョンを3にする&lt;/h3&gt;
+
+&lt;p&gt;Rsyncの&lt;code&gt;--iconv&lt;/code&gt;オプションが使えるのは、Rsync3からなのでアップデートします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# brew tap homebrew/dupes #リポジトリを追加（2019/06/20追記。この手順は不要になりました。）
+brew install libiconv #iconvオプションを使うために必須のよう
+brew install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;念のため、サーバ側(Ubuntu)のrsync3にします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;aptitude install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;rakefileを修正する&#34;&gt;Rakefileを修正する&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Rakefile&lt;/code&gt;の&lt;code&gt;ok_failed system...&lt;/code&gt;の行を書き換えます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;desc &amp;quot;Deploy website via rsync&amp;quot;
+task :rsync do
+  exclude = &amp;quot;&amp;quot;
+  if File.exists?(&#39;./rsync-exclude&#39;)
+    exclude = &amp;quot;--exclude-from &#39;#{File.expand_path(&#39;./rsync-exclude&#39;)}&#39;&amp;quot;
+  end
+  puts &amp;quot;## Deploying website via Rsync&amp;quot;
+  #ok_failed system(&amp;quot;rsync -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+  ok_failed system(&amp;quot;rsync --iconv=UTF-8-MAC,UTF-8 -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;完&#34;&gt;完。&lt;/h3&gt;
+
+&lt;p&gt;これでうまくいきました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[gam0022@starlight:~/git/gam0022.net] $ rake deploy
+## Deploying website via Rsync
+sending incremental file list
+deleting blog/categories/ゴ/index.html
+deleting blog/categories/ゴ/atom.xml
+deleting blog/categories/ゴ/
+blog/categories/ゴ/
+blog/categories/ゴ/atom.xml
+blog/categories/ゴ/index.html
+
+sent 11206 bytes  received 138 bytes  7562.67 bytes/sec
+total size is 2309599  speedup is 203.60
+OK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;「ゴゴゴゴ…」&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cocotで文字コードが異なるマシンにsshする</title>
+      <link>https://gam0022.net/blog/2012/08/06/how-to-use-cocot/</link>
+      <pubDate>Mon, 06 Aug 2012 11:18:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/06/how-to-use-cocot/</guid>
+      <description>&lt;p&gt;私が所属している情報科学類(略称coins)では、24時間いつでもsshできるiMacがあるのですが、文字エンコーディングはEUC-JPです。&lt;/p&gt;
+
+&lt;p&gt;一方で私のノートPCの文字エンコーディングはUTF-8なので、
+普通にsshすると文字化けしてひどいことになってしまいます。&lt;/p&gt;
+
+&lt;p&gt;cocotという端末(tty)とプロセスの間に割り込んで、文字コード変換を行うツールがあるので、これを使うことで文字化けが解消します。&lt;/p&gt;
+
+&lt;p&gt;OS Xを使っていれば、cocotは普通にhomebrewからインストールできます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew install cocot # cocotをインストールする
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;UTF-8環境からEUC-JP環境にsshする場合、次のようにすればいいです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# cocot -t コンソール側の文字コード -p プロセス側の文字コード -- 使いたいコマンド
+cocot -t UTF-8 -p EUC-JP -- ssh coins
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;頻繁にsshする場合、次のようにエイリアスを作ればいいかと思います。
+うーむ。エイリアス名は検討の余地がありそうです。(汗)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;alias sshe=&#39;cocot -t UTF-8 -p EUC-JP -- ssh&#39; #EUC-JP環境にsshする
+sshe coins
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mountain Lionにアップデートしたら、X11が消えた件</title>
+      <link>https://gam0022.net/blog/2012/08/04/x11-is-not-bundled-on-mountain-lion/</link>
+      <pubDate>Sat, 04 Aug 2012 15:32:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/04/x11-is-not-bundled-on-mountain-lion/</guid>
+      <description>&lt;p&gt;この前Macを使い始めたばかりでしたが、無料でアップデートできると知って、
+Mountain Lionにしてしまいました。&lt;/p&gt;
+
+&lt;p&gt;しかし、Mountain Lion にしてから困ったことに、
+wineやinkscapeといった、X Window Systemを必要とするアプリケーションがすべて動かなくなってしまいました。&lt;/p&gt;
+
+&lt;p&gt;調べてみると、Moutain Lionから標準でX11がインストールされなくなったようです。&lt;/p&gt;
+
+&lt;p&gt;X11の代わりに、OS X用の&lt;a href=&#34;http://xquartz.macosforge.org/landing/&#34;&gt;XQuartz&lt;/a&gt;というXウィンドウシステムがあるので、
+これをインストールして再起動すれば、解決します。&lt;/p&gt;
+
+&lt;p&gt;X11はバグがあるらしいので、Moutain Lionじゃない人もXQuartzに乗り換えてもいいかもしれませんね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Macを使い始めて最初に入れたアプリケーションたち</title>
+      <link>https://gam0022.net/blog/2012/08/01/installed-applications-on-os-x/</link>
+      <pubDate>Wed, 01 Aug 2012 11:17:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/01/installed-applications-on-os-x/</guid>
+      <description>
+
+&lt;p&gt;Mac Book Airを使い出してから、1週間を経過しました。&lt;/p&gt;
+
+&lt;p&gt;まともにMacを使ったことがなかったのですが、1週間でかなり慣れました。&lt;/p&gt;
+
+&lt;p&gt;ひとまず、1週間の間にインストールしたソフトをまとめてみます。&lt;/p&gt;
+
+&lt;p&gt;こんなのも便利だよというのがあれば教えてください。&lt;/p&gt;
+
+&lt;h3 id=&#34;google日本語入力&#34;&gt;Google日本語入力&lt;/h3&gt;
+
+&lt;p&gt;ことえりは正直に言って、残念なIMEでした。&lt;/p&gt;
+
+&lt;p&gt;Windows時代にもお世話になり、Ubuntu時代にもMozc(goolge日本語入力のOSS版)を使っていたので、もちろんMacでも導入しました。&lt;/p&gt;
+
+&lt;h3 id=&#34;keyremap4-macbook&#34;&gt;KeyRemap4 MacBook&lt;/h3&gt;
+
+&lt;p&gt;Mac界隈では有名なキーリマッパーらしいです。&lt;/p&gt;
+
+&lt;p&gt;Xmodmapでキーリマップすることを早々に諦めて正解でした。&lt;/p&gt;
+
+&lt;p&gt;このソフトのすごい点は、xmlファイルを編集することで、独自のリマップ設定を作ることが可能なので、自由度がすごく高いことです。&lt;/p&gt;
+
+&lt;p&gt;ひとまず、「英数」キーを日本語入力と英数入力のトグル、「かな」キーをdeleteに割り当てました。&lt;/p&gt;
+
+&lt;h3 id=&#34;locktight&#34;&gt;LockTight&lt;/h3&gt;
+
+&lt;p&gt;Macでは、なぜかスクリーンロックを行うショートカットが存在しないようなので、
+仕方なく導入しました。&lt;/p&gt;
+
+&lt;p&gt;物理アカウントハックされたら困りますからね。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;cheatsheet&#34;&gt;CheatSheet&lt;/h3&gt;
+
+&lt;p&gt;コマンドキーを長押しすることで、現在割り当てられているショートカットを表にして表示してくれるという有り難いユーティリティです。&lt;/p&gt;
+
+&lt;p&gt;私のように、Macを使い出したばかりの人にとっては神アプリでした。&lt;/p&gt;
+
+&lt;h3 id=&#34;google-chrome&#34;&gt;Google Chrome&lt;/h3&gt;
+
+&lt;p&gt;ブラウザはChromeを最近使ってます。&lt;/p&gt;
+
+&lt;p&gt;環境の移行もgoogleアカウントがあれば終わるので楽ですからね。&lt;/p&gt;
+
+&lt;p&gt;Googleに依存しすぎて怖いｗ&lt;/p&gt;
+
+&lt;h3 id=&#34;dropbox&#34;&gt;DropBox&lt;/h3&gt;
+
+&lt;p&gt;なんかかんだで便利ですよね。&lt;/p&gt;
+
+&lt;h3 id=&#34;mucommander&#34;&gt;muCommander&lt;/h3&gt;
+
+&lt;p&gt;2カラムのファイラーが欲しくなったので入れました。&lt;/p&gt;
+
+&lt;p&gt;Finderが使いにくという人はぜひ。&lt;/p&gt;
+
+&lt;h3 id=&#34;picasa&#34;&gt;Picasa&lt;/h3&gt;
+
+&lt;p&gt;Googleの写真編集・管理ソフトです。&lt;/p&gt;
+
+&lt;p&gt;なんだかんだで使いやすいです。&lt;/p&gt;
+
+&lt;p&gt;Linux版が開発中止になってしまったので、Ubuntuでは使えなくて苦労しました。&lt;/p&gt;
+
+&lt;h3 id=&#34;rdc-remote-desktop-connection&#34;&gt;RDC(Remote Desktop Connection)&lt;/h3&gt;
+
+&lt;p&gt;MacからWindowsにリモートデスクトップするためのソフトです。&lt;/p&gt;
+
+&lt;p&gt;学校のWindowsマシンをホストにする予定でしたが、節電中でまだ使えてません。ワロタ。&lt;/p&gt;
+
+&lt;h3 id=&#34;simplecap&#34;&gt;SimpleCap&lt;/h3&gt;
+
+&lt;p&gt;スクリーンショットするためのソフトです。&lt;/p&gt;
+
+&lt;p&gt;使い勝手がいいです。&lt;/p&gt;
+
+&lt;h3 id=&#34;skype&#34;&gt;Skype&lt;/h3&gt;
+
+&lt;p&gt;Linux版のUIが微妙すぎたので、Mac版はけっこうまともに見えます。&lt;/p&gt;
+
+&lt;h3 id=&#34;yoyufukurou&#34;&gt;YoyuFukurou&lt;/h3&gt;
+
+&lt;p&gt;Twitterクライアントです。&lt;/p&gt;
+
+&lt;p&gt;TwitterはWeb派ですが、時々使います。&lt;/p&gt;
+
+&lt;h3 id=&#34;magican&#34;&gt;Magican&lt;/h3&gt;
+
+&lt;p&gt;Macシステム用の最適化ユーティリティソフトです。&lt;/p&gt;
+
+&lt;p&gt;128GBのSSDでは容量が足りなくなることは明らかなので入れました。&lt;/p&gt;
+
+&lt;p&gt;重複ファイル検索などは便利ですが、開発用のパソコンで使うのはリスキーな気がしてまだ使ってません()&lt;/p&gt;
+
+&lt;h2 id=&#34;開発用&#34;&gt;開発用&lt;/h2&gt;
+
+&lt;h3 id=&#34;xcode4-4&#34;&gt;Xcode4.4&lt;/h3&gt;
+
+&lt;p&gt;入れました。&lt;/p&gt;
+
+&lt;p&gt;ちなにみ、Xcode4.4からgccを入れるのはお勧めしません。代案として、次で紹介するosx-gcc-installerを使ったほうが良かったと思いました。&lt;/p&gt;
+
+&lt;p&gt;なお、Xcodeからgccを入れるためには、Xcodeをインストールしたあと、&lt;/p&gt;
+
+&lt;p&gt;Xcode-&amp;gt; Preferences-&amp;gt; Downloads から、Command Line Tools をインストールすればよいです。&lt;/p&gt;
+
+&lt;h3 id=&#34;osx-gcc-installer&#34;&gt;osx-gcc-installer&lt;/h3&gt;
+
+&lt;p&gt;最終的にはこのインストーラでgccを入れました。特に問題は起きていません。&lt;/p&gt;
+
+&lt;h3 id=&#34;filezilla&#34;&gt;FileZilla&lt;/h3&gt;
+
+&lt;p&gt;有名なFTPクライアントです。Macでもちゃんと使えました。&lt;/p&gt;
+
+&lt;h3 id=&#34;railsinstaller&#34;&gt;RAILSINSTALLER&lt;/h3&gt;
+
+&lt;p&gt;RailsをMacで動かすなら、これが一番ラクでした(シロメ&lt;/p&gt;
+
+&lt;p&gt;憶測ですが、osx-gcc-installerからgccを入れれば、rvm経由でRuby on Rails環境を苦労なく作れたかもしれません。&lt;/p&gt;
+
+&lt;h2 id=&#34;最後に&#34;&gt;最後に&lt;/h2&gt;
+
+&lt;p&gt;無料と聞いて、Mountain Lion を入れてしまいました。&lt;/p&gt;
+
+&lt;p&gt;Macを1週間しか使ってないせいか、通知センターの有無くらいしか違いがわからない…&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

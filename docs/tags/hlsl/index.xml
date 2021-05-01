@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/hlsl/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/hlsl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Windows Terminalの背景でレイマーチング</title>
+      <link>https://gam0022.net/blog/2021/03/08/raymarching-in-windows-terminal/</link>
+      <pubDate>Mon, 08 Mar 2021 01:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2021/03/08/raymarching-in-windows-terminal/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.jpg&#34; alt=&#34;Raymarching in Windows Terminal&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows Terminal 1.6から任意のHLSLのPixel Shadersを実行できるようになったので、Windows Terminalの背景でレイマーチングを実行してみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Raymarching in Windows Terminal&lt;br&gt;&lt;br&gt;Windows Terminal 1.6 から任意の Pixel Shaders を実行できるようになったので、Windows Terminal の背景でレイマーチングを実行してみた🎉 これは楽しすぎる🤣 &lt;a href=&#34;https://t.co/WX2JqUZtuL&#34;&gt;pic.twitter.com/WX2JqUZtuL&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1361485111473045505?ref_src=twsrc%5Etfw&#34;&gt;February 16, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;2021-02-16のツイート時点では、Windows Terminal 1.6はまだPreview版なので、GitHubのReleasesページから入手する必要がありました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/microsoft/terminal/releases/tag/v1.6.10412.0&#34;&gt;https://github.com/microsoft/terminal/releases/tag/v1.6.10412.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2021-03-07現在では、Windows Terminal 1.6からPreviewが外れてMicrosoft Storeから入手できるようになりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.microsoft.com/ja-jp/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab&#34;&gt;Windows Terminal を入手 - Microsoft Store ja-JP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Windows TerminalのPixel Shaders機能の詳細については、公式ドキュメントをご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/microsoft/terminal/tree/main/samples/PixelShaders&#34;&gt;https://github.com/microsoft/terminal/tree/main/samples/PixelShaders&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;任意のHLSLのシェーダーのファイルを作成して、Windows Terminalのsettings.jsonの &lt;code&gt;experimental.pixelShaderPath&lt;/code&gt; からHLSLファイルのパスを設定するだけで、気軽に任意のシェーダーを実行できます。素晴らしい！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;profiles&amp;quot;:
+  {
+    &amp;quot;defaults&amp;quot;:
+    {
+      &amp;quot;experimental.pixelShaderPath&amp;quot;: &amp;quot;C:\\Users\\gam0022\\Dropbox\\windows-terminal\\terminal\\samples\\PixelShaders\\Raymarching.hlsl&amp;quot;
+    },
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;レイマーチング用のシェーダーはUnityで下書きしたものをWindows Terminal用に移植して実装しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Raymarching in Windows Terminal のシェーダーを公開しました。&lt;br&gt;&lt;br&gt;（シェーダー初心者にも優しい）日本語コメントつき！&lt;a href=&#34;https://t.co/GPEpIlHOyD&#34;&gt;https://t.co/GPEpIlHOyD&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1361495940356476929?ref_src=twsrc%5Etfw&#34;&gt;February 16, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;HLSLのエラーの行番号が表示されないので、複雑なシェーダーを書くのはちょっと苦労しました。&lt;/p&gt;
+
+&lt;p&gt;基本的にはUnityのShaderLab用のプロパティや &lt;code&gt;_LightColor0&lt;/code&gt; などのビルドインのシェーダー変数を定数（static const）として宣言する修正だけで移植できました。&lt;/p&gt;
+
+&lt;p&gt;Windows Terminal用のPixel Shadersでは、以下のテクスチャのサンプラーや定数が定義されていました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;// The terminal graphics as a texture
+// ターミナルの文字などを含んだターミナルのレンダリング結果のサンプラー
+Texture2D shaderTexture;
+SamplerState samplerState;
+
+// Terminal settings such as the resolution of the texture
+cbuffer PixelShaderSettings {
+  // The number of seconds since the pixel shader was enabled
+  // 秒単位の時間
+  float Time;
+
+  // UI Scale
+  // UIのスケール
+  float Scale;
+  
+  // Resolution of the shaderTexture
+  // ピクセル単位の背景の解像度
+  float2 Resolution;
+  
+  // Background color as rgba
+  // 背景の色
+  float4 Background;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;shaderTexture&lt;/code&gt; はターミナルの文字などを含んだターミナルのレンダリング結果のサンプラーになるので、今回は背景に加算合成する形でシェーダーを実装しました（加算合成なので後からレイマーチングを加算しても結果は同じになるため、描画順を気にしなてくて良い）。&lt;/p&gt;
+
+&lt;h1 id=&#34;hlslのホットリロードでシェーダーライブコーディング環境を実現&#34;&gt;HLSLのホットリロードでシェーダーライブコーディング環境を実現&lt;/h1&gt;
+
+&lt;p&gt;Windows Terminal 1.6の挙動では、シェーダーを再コンパイルして結果を更新するために以下の手順が必要だったので、ライブコーディングには不向きでした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;experimental.pixelShaderPath&lt;/code&gt; で指定したHLSLシェーダーに差分を出してファイル保存&lt;/li&gt;
+&lt;li&gt;Windows Terminalの &lt;code&gt;settings.json&lt;/code&gt; の &lt;code&gt;experimental.pixelShaderPath&lt;/code&gt; の値に差分を出してファイル保存&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最初の動画ではシェーダーの描画結果をリアルタイムで更新するために、Vimで2つのファイルを同時編集することで、リアルタイムにライブコーディングっぽいことをしていましたが、かなり操作が忙しいので非実用的でした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Vimの左側ペイン: HLSLのシェーダー&lt;/li&gt;
+&lt;li&gt;Vimの右側ペイン: Windows Terminalのsettings.json&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;そこで、HLSLの更新を検知して、Windows Terminalの &lt;code&gt;settings.json&lt;/code&gt; を書き換えることで、HLSLのホットリロードを実現するスクリプトをnode.jsで実装しました。&lt;/p&gt;
+
+&lt;p&gt;これによって、Windows Terminalの背景でHLSLシェーダーライブコーディングを実現できるようになりました！&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Windows Terminal 上のHLSLシェーダーライブコーディング環境を実現するスクリプトをGitHubに公開しました！&lt;br&gt;&lt;br&gt;&amp;gt; HLSLの変更を監視して、settings.json を書き換え&lt;a href=&#34;https://t.co/hjB2MqgsSx&#34;&gt;https://t.co/hjB2MqgsSx&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1361706800282656769?ref_src=twsrc%5Etfw&#34;&gt;February 16, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows Terminalの &lt;code&gt;settings.json&lt;/code&gt; に毎回差分を出すために、HLSLファイルをコピーした一時ファイルを作成して、元のファイルのパスと一時ファイルのパスを交互に切り替えて &lt;code&gt;experimental.pixelShaderPath&lt;/code&gt; に設定するような実装としました。&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;Windows TerminalというMicrosoft公式のアプリ上でHLSLシェーダーライブコーディング環境を実現できるのは熱いですね！楽しい！！&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

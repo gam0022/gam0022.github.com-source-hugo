@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/c&#43;&#43;/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>emscripten night !! #2で発表しました</title>
+      <link>https://gam0022.net/blog/2016/12/28/emsn2/</link>
+      <pubDate>Wed, 28 Dec 2016 00:03:38 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2016/12/28/emsn2/</guid>
+      <description>&lt;p&gt;12/21に開催された&lt;a href=&#34;https://emsn.connpass.com/event/42375/&#34;&gt;emscripten night !! #2&lt;/a&gt;という勉強会に参加して、
+「Emscriptenを使ってブラウザ上でレイトレーシングする」というタイトルで10分間のLT発表を行いました。&lt;/p&gt;
+
+&lt;p&gt;こちらが発表資料です。&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-slide=&#34;1&#34; data-id=&#34;cec29326e01e463d8c7f6b586069ea4d&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;内容は&lt;a href=&#34;http://qiita.com/gam0022/items/6a1fb3e6946da1a3d7e5&#34;&gt;同タイトルのQiitaの記事&lt;/a&gt;をLT用に再構成したものです。&lt;/p&gt;
+
+&lt;h1 id=&#34;参加の動機&#34;&gt;参加の動機&lt;/h1&gt;
+
+&lt;p&gt;主催の &lt;a href=&#34;https://twitter.com/ikkou&#34;&gt;@ikkou&lt;/a&gt; さんからのお誘いがあったのと、Emscriptenを使ってるのはどんな人なんだろうという興味から勇気を出して参加しました。&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;Emscriptenだったら、Webフロントエンドの人も多いのかなーと思っていたら、
+蓋を開けてみたらC++勢やアセンブラ勢、Haskellの人みたいな感じの参加者層で、いい意味で期待を裏切られました！&lt;/p&gt;
+
+&lt;p&gt;私はC++やアセンブラについて、詳しいわけでないので、断片的にしか理解できない部分もありましたが、濃くて面白い発表が多かったです。&lt;/p&gt;
+
+&lt;p&gt;個人的にすごい期待しているWebAssemblyについて、Mozilla Japanの清水さんからお話も聞くことができました。&lt;/p&gt;
+
+&lt;p&gt;WebGL勢としてはスクエニの加島さんの「Unity WebGLを用いた乖離性ミリオンアーサーブラウザ版移植事例」も楽しみにしていました。
+このセッションはSNS NGだったので、現地参加した価値はあったなと感じました。
+2016年の現段階で、WebGLをつかった商業ゲームはかなり珍しいので、大変貴重な事例を聞くことができたと思います。&lt;/p&gt;
+
+&lt;p&gt;Googleの &lt;a href=&#34;https://twitter.com/toyoshim&#34;&gt;@toyoshim&lt;/a&gt; さんの発表では、実際のゲーム移植の試行錯誤などの実践的なお話を聞くことができました。
+かなり技術的には高度なことをしていて、すごいなーと思いました。VR対応も熱かったです！&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/JJt6VvQvR8hhiU&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/toyoshim/oh-java-script-emscripten&#34; title=&#34;Oh! java script 夢の続きを語ろうよ〜emscriptenの逆襲&#34; target=&#34;_blank&#34;&gt;Oh! java script 夢の続きを語ろうよ〜emscriptenの逆襲&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a target=&#34;_blank&#34; href=&#34;//www.slideshare.net/toyoshim&#34;&gt;Takashi Toyoshima&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;junji hashimoto さんの発表も良かったです。Emscriptenでデバッグはどうするだろうとは、ずっと疑問に思っていたのですが、予想通りに闇でした…&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://slides.com/junjihashimoto-1/emscripten#/&#34;&gt;デバッグのためのEmscripten内部&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/janus_wel&#34;&gt;@janus_wel&lt;/a&gt;さんの「emscriptenでドメイン層に型と速度を持ち込む」も面白かったです。
+Webフロントエンドでも型が持ち込まれていますが、EmscriptenでWebフロントエンドのドメイン層をC++で実装して、JavaScriptのUIのフレームワーク(React Redux)を組み合わせるお話でした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/janus_wel/items/291ff255bdeb65e93ccc&#34;&gt;emscripten and DDD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/janus_wel/items/f039c91576358bb69626&#34;&gt;emscripten でドメイン層に型と速度を持ち込む&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;当日の様子&#34;&gt;当日の様子&lt;/h1&gt;
+
+&lt;p&gt;当日の様子はこちらにまとめられています。気になる方はぜひご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://togetter.com/li/1062035&#34;&gt;emscripten night !! #2 まとめ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

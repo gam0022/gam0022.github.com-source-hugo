@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>Work | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="最終更新: 2020-05-10
+Publications 執筆した書籍を紹介します。
+2020年3月 KLab Tech Book Vol.6 
+『KLab Tech Book Vol.6』の『第1章 NVIDIA OptiXで『レイマーチング×パストレーシング』による物理ベースレンダラーを自作する』を担当しました。
+筆者自作の物理ベースレンダラーRedflashを題材にして、GPUとRTコアを用いたレイトレーシングの高速化について紹介しました。
+関連記事
+ レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net 技術書典応援祭で同人誌を頒布します&amp;電子版ダウンロードページ | Technology | Klablog | KLab株式会社  2019年4月 KLab Tech Book Vol.4 
+『KLab Tech Book Vol.4』の『第4章 Unity×レイマーチングによる映像制作の実践手法』を担当しました。
+Tokyo Demo Fest 2018で発表したリアルタイムCG作品『WORMHOLE』を題材にして、Unityとレイマーチングを組み合わせた映像制作技術を解説しました。
+関連記事
+ Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net 技術書典6で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog  2018年10月 KLab Tech Book Vol.3 
+『KLab Tech Book Vol.">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/img/gam0022_splash.png">
+        <meta name="twitter:card" content="summary">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="Work | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/works/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">Work</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-09-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2016-09-24</time>
+    </span>
+
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/works/" class="hatena-bookmark-button" data-hatena-bookmark-title="Work" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/works/" data-text="Work" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/works/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    
+
+<p>最終更新: 2020-05-10</p>
+
+<h1 id="publications">Publications</h1>
+
+<p>執筆した書籍を紹介します。</p>
+
+<h2 id="2020年3月-klab-tech-book-vol-6">2020年3月  KLab Tech Book Vol.6</h2>
+
+<p><a href="/images/works/tbf8.png"><img alt="KLab Tech Book Vol.6" src="/images/works/tbf8.jpg" width="200px" class="right"></a></p>
+
+<p>『KLab Tech Book Vol.6』の『第1章 NVIDIA OptiXで『レイマーチング×パストレーシング』による物理ベースレンダラーを自作する』を担当しました。</p>
+
+<p>筆者自作の物理ベースレンダラー<a href="https://github.com/gam0022/redflash">Redflash</a>を題材にして、GPUとRTコアを用いたレイトレーシングの高速化について紹介しました。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2019/09/18/rtcamp7/">レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net</a></li>
+<li><a href="https://www.klab.com/jp/blog/tech/2020/1077140627.html">技術書典応援祭で同人誌を頒布します&amp;電子版ダウンロードページ | Technology | Klablog | KLab株式会社</a></li>
+</ul>
+
+<h2 id="2019年4月-klab-tech-book-vol-4">2019年4月 KLab Tech Book Vol.4</h2>
+
+<p><a href="/images/works/tbf6.png"><img alt="KLab Tech Book Vol.4" src="/images/works/tbf6.jpg" width="200px" class="right"></a></p>
+
+<p>『KLab Tech Book Vol.4』の『第4章 Unity×レイマーチングによる映像制作の実践手法』を担当しました。</p>
+
+<p><a href="http://tokyodemofest.jp/2018/">Tokyo Demo Fest 2018</a>で発表したリアルタイムCG作品<a href="https://www.youtube.com/watch?v=NMNJV-Pbqtk">『WORMHOLE』</a>を題材にして、Unityとレイマーチングを組み合わせた映像制作技術を解説しました。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2018/12/12/tdf2018/">Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net</a></li>
+<li><a href="http://klabgames.tech.blog.jp.klab.com/archives/tbf06.html">技術書典6で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog</a></li>
+</ul>
+
+<h2 id="2018年10月-klab-tech-book-vol-3">2018年10月 KLab Tech Book Vol.3</h2>
+
+<p><a href="/images/works/tbf5.png"><img alt="KLab Tech Book Vol.3" src="/images/works/tbf5.jpg" width="200px" class="right"></a></p>
+
+<p>『KLab Tech Book Vol.3』の『第7章 物理ベースレンダラーをRust実装して、ちょっと高速化した話』を担当しました。</p>
+
+<p>技術書典3の『KLab Tech Book Vol. 1』の第一章『物理ベースレンダラーをRust実装して、表紙絵をレンダリングした話』の続編です。</p>
+
+<p>筆者自作の物理ベースレンダラを題材にして、パストレーシングの高速化の手法を紹介します。
+BVHによる衝突判定の高速化、式を整理して不要な計算を省く高速化、Next Event Estimation（NEE）、デノイズによるノイズの除去、Rust開発環境の最新化について紹介しました。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2018/09/18/rtcamp6-part1/">レイトレ合宿6 参加報告 前編（準備編） | gam0022.net</a></li>
+<li><a href="http://klabgames.tech.blog.jp.klab.com/archives/tbf05pre.html">技術書典5で同人誌を頒布します &amp; 電子版ダウンロードページ : KLabGames Tech Blog</a></li>
+</ul>
+
+<h2 id="2017年10月-klab-tech-book-vol-1">2017年10月 KLab Tech Book Vol.1</h2>
+
+<p><a href="/images/works/tbf3.jpg"><img alt="KLab Tech Book Vol.1" src="/images/works/tbf3.jpg" width="200px" class="right"></a></p>
+
+<p>『KLab Tech Book Vol.1』の表紙絵と『第1章 物理ベースレンダラーを Rust 実装して、表紙絵をレンダリングした話』を担当しました。</p>
+
+<p>Rustで自作したパストレーシングによる物理ベースレンダラーを解説しました。</p>
+
+<p>まず基礎的な3DCGの描画方法について触れた後、パストレーシングの原理について簡単に説明しました。
+続いて筆者自作のHanamaruレンダラーを紹介し、レイトレーシングやパストレーシングの高速化の取り組みについて触れました。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2017/10/02/rtcamp5/">レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net</a></li>
+<li><a href="http://klabgames.tech.blog.jp.klab.com/archives/20171210ac.html">技術書典3で同人誌を頒布しました : KLabGames Tech Blog</a></li>
+<li><a href="https://techbookfest.org/event/tbf03/circle/5644572721938432">サークル詳細 | KLab 株式会社 | 技術書典3</a></li>
+</ul>
+
+<h2 id="2017年4月-think-web">2017年4月 Think Web</h2>
+
+<p><a href="/images/works/tbf2.png"><img alt="Think Web" src="/images/works/tbf2.png" width="200px" class="right"></a></p>
+
+<p>『Think Web』の『第6章 まるで実写！？GPUパストレーシングのWebGL実装』を担当しました。</p>
+
+<p>パストレーシングは3Dの描画手法のひとつで、現実世界に近い光の振る舞いをシミュレートすることで、大域照明を考慮した写実的なレンダリングを可能にします。
+写実的なレンダリングができる反面、処理時間が膨大にかかるという弱点があります。
+私の章ではパストレーシングのGPU実装による高速化について紹介します。
+しかも単純な高速化ではなく、ブラウザ上で3DCGを扱うWebAPIであるWebGLによりGPU実装することで、ブラウザ上で動作するインタラクティブなパストレーシングを実現します。</p>
+
+<ul>
+<li><a href="https://techbooster.github.io/tbf02/#think">Think Web | TechBooster in 技術書典2</a></li>
+<li><a href="https://techbooster.booth.pm/items/488347">Think Web | BOOTH</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2017/04/06/webgl-pathtracing-tbf2/">WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net</a></li>
+<li><a href="https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a">WebGL+GLSLによる超高速なパストレーシング | Qiita</a></li>
+<li><a href="https://gam0022.net/webgl/#pathtracing_sandbox">three.js webgl - pathtracing sandbox | gam0022.net</a></li>
+</ul>
+
+<h2 id="2016年夏-az異本-grimoire-of-web">2016年夏 AZ異本 grimoire of web</h2>
+
+<p><a href="/images/works/tbf1.gif"><img alt="JavaScriptoon2" src="/images/works/tbf1.gif" width="300px" class="right"></a></p>
+
+<p>AZ異本という技術書の「レイマーチングの世界でミクが踊る！『レイマーチング×ラスタライザ』ハイブリッド描画 with three.js」という記事をかきました。
+three.jsによるレイマーチングとラスタライザのハイブリッド手法について解説しました。</p>
+
+<p>レイマーチングはフラクタル図形などの幾何学的なシーンの描画が得意な一方、人物などの有機的な形状の表現は苦手とします。
+そこで、人物などの有機的な箇所のみをラスタライザで描画し、背景などの幾何学的な形状はレイマーチングで描画する手法の考案と実装をしました。 本手法によって、レイマーチングとラスタライザの短所を補い合いながら、ハイブリッドに組み合わせることができます！</p>
+
+<ul>
+<li><a href="https://techbooster.github.io/tbf1/#web">AZ異本 grimoire of web - TechBooster in 技術書典</a></li>
+<li><a href="https://techbooster.booth.pm/items/275301">AZ異本 grimoire of web - BOOTH</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="http://gam0022.hatenablog.com/entry/2016/06/22/tbf1">6/25の技術書典で、AZ異本（アツイホン）を出します！</a></li>
+<li><a href="http://gam0022.net/webgl/#raymarching_hybrid">hybrid - gam0022.net</a></li>
+<li><a href="#2016-live">live</a></li>
+</ul>
+
+<h2 id="2015冬-javascriptoon2">2015冬 JavaScriptoon2</h2>
+
+<p><a href="/images/works/javascriptoon2_original.jpg"><img alt="JavaScriptoon2" src="/images/works/javascriptoon2.jpg" class="right"></a></p>
+
+<p>「JavaScriptoon2」というWebフロントエンド本の「シェーダだけで世界を創る！Three.jsによるレイマーチング」という章を担当しました。</p>
+
+<p>レイマーチングはレイトレーシングの1種です。
+レイトレーシングやレイトレーシングは膨大な計算が必要ですが、フラグメントシェーダで実装することで、GPUの力を利用したリアルタイムに描画する方法を紹介しています。</p>
+
+<p>そもそもシェーダとは何かという基礎の解説からはじまり、レイマーチングの肝となる「距離関数」についても丁寧に解説しました。</p>
+
+<ul>
+<li><a href="https://techbooster.github.io/c89/#scriptoon2">JavaScriptoon2 - TechBooster in C89</a></li>
+<li><a href="https://techbooster.booth.pm/items/178227/">JavaScriptoon2 - BOOTH</a></li>
+</ul>
+
+<h2 id="2015夏-javascriptoon">2015夏 JavaScriptoon</h2>
+
+<p><a href="/images/works/javascriptoon_original.png"><img alt="JavaScriptoon" src="/images/works/javascriptoon.png" class="right"></a></p>
+
+<p>「JavaScriptoon」というWebフロントエンド本の「three.js でお手軽 3DCG 入門」という章を担当しました。</p>
+
+<p>three.js はWebGLを手軽に使うためのJavaScriptのライブラリです。</p>
+
+<p>3DCGが初めてという人でも分かるように、基礎から説明しています。</p>
+
+<ul>
+<li><a href="https://techbooster.github.io/c88/#scriptoon">JavaScriptoon - TechBooster in C88</a></li>
+<li><a href="https://techbooster.booth.pm/items/126683/">JavaScriptoon - BOOTH</a></li>
+</ul>
+
+<h1 id="unity">Unity</h1>
+
+<p>Unityで作成した映像作品と活動を紹介します。</p>
+
+<h2 id="2019-morphing-hisei-reiwa">2019 Morphing: Hisei -&gt; Reiwa</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーで &quot;平成&quot; と &quot;令和&quot; をモーフィング<br>Morphing &quot;Heisei&quot; and &quot;Reiwa&quot;<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://twitter.com/hashtag/TextMeshPro?src=hash&amp;ref_src=twsrc%5Etfw">#TextMeshPro</a> <a href="https://twitter.com/hashtag/CreativeCoding?src=hash&amp;ref_src=twsrc%5Etfw">#CreativeCoding</a> <a href="https://t.co/t71W0b5Ex4">pic.twitter.com/t71W0b5Ex4</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1123253864008863744?ref_src=twsrc%5Etfw">2019年4月30日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="2018-tokyo-demo-fest-2018-優勝作品-wormhole">2018 Tokyo Demo Fest 2018 優勝作品 WORMHOLE</h2>
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/NMNJV-Pbqtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p>Tokyo Demo Fest 2018にさだきちさん（<a href="https://twitter.com/sadakkey">@sadakkey</a>）とチームを組み、『WORMHOLE』（映像：gam0022 / サウンド：sadakkey）という作品を発表しました。</p>
+
+<p>「ワームホールによる空間移動」をコンセプトとして、 不思議な球体がワームホールを介して非現実なデジタル空間と水平線の広がる自然空間を行き来する映像作品です。</p>
+
+<p>Windows実行ファイル形式のデモ作品のコンペティションであるCombined Demo Compoにて、<a href="http://tokyodemofest.jp/2018/results.txt">本作品が1位</a>に選ばれました！
+実行ファイル形式なので、リアルタイムレンダリングです。さらに言えばリアルタイムレイトレです！</p>
+
+<p>Unityの新機能（Timeline・TextMeshPro・Chinemachine・PostProcessingStack）を活用し、効率的に開発と制作を行いました。
+また、レイマーチングとラスタライザのハイブリッドなレンダリング方式を採用しました。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2018/12/12/tdf2018/">Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net</a></li>
+<li><a href="http://klabgames.creative.blog.jp.klab.com/archives/14415590.html">Tokyo Demo Fest2018のDemo Compo優勝作品の解説〜サウンド編〜 : KLabGames Creative Blog</a></li>
+<li><a href="http://pr.blog.klab.jp/archives/51697543.html">「Tokyo Demo Fest 2018」参加レポート : KLab広報ブログ</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="https://github.com/gam0022/unity-demoscene">https://github.com/gam0022/unity-demoscene</a></li>
+<li><a href="https://files.scene.org/view/parties/2018/tokyodemofest18/demo/wormhole.zip">Windowsの実行ファイル</a>（GTX1070以上のGPU推奨）</li>
+<li><a href="https://drive.google.com/file/d/1GxyxjOyGBRcofMVKILmJtlmYaMZ5XoGx/view">動画ファイル</a>（ブラウザ上だとエンコードされた状態で再生されるのでダウンロードしてください）</li>
+<li><a href="https://www.pouet.net/prod.php?which=79380">pouet.net内の『WORMHOLE』のページ</a></li>
+</ul>
+
+<h2 id="2018-カスタムシェーダーでtextmeshproに独創的な演出を加える">2018 カスタムシェーダーでTextMeshProに独創的な演出を加える</h2>
+
+<!--img width="100%" alt="※画像が読み込まれるまでお待ちください WORMHOLE" src="https://media.giphy.com/media/fHouJLi9ipkpXxVPki/giphy.gif"-->
+
+<p>『WORMHOLE』のオープニング部分のタイトルの文字をパラパラと出現させたり消失させたりする演出は、TextMeshProとカスタムシェーダーを組み合わせて実装しました。</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">『カスタムシェーダーでTextMeshProに独創的な演出を加える』という記事を書きました！<br><br>▶️<a href="https://t.co/JGP53ciQ9D">https://t.co/JGP53ciQ9D</a> …<br><br>『WORMHOLE』（<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> 2018のPC Demo Compo 優勝作品）でも活用しています。<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://twitter.com/hashtag/shader?src=hash&amp;ref_src=twsrc%5Etfw">#shader</a> <a href="https://t.co/bvBT95RxZX">pic.twitter.com/bvBT95RxZX</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1075173575424798720?ref_src=twsrc%5Etfw">2018年12月18日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>モーフィング</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">TextMeshPro は SDF をつかってフォントレンダリングしていることを思い出し、もしかしてモーフィーングできるのでは？と思って挑戦してみたらできた！ <a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/nCx7xBwGGv">pic.twitter.com/nCx7xBwGGv</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1053969654165585920?ref_src=twsrc%5Etfw">2018年10月21日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>ブラウン管風のエフェクト</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">TextMeshPro に適当なシェーダーを適用する実験。<br>TextMeshPro 用のシェーダーの書き方が分かってきた気がする。<a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/BPUoH83nrA">pic.twitter.com/BPUoH83nrA</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1053989356384354304?ref_src=twsrc%5Etfw">2018年10月21日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>出現と消失アニメーション</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">TextMeshPro シェーダー遊び その3<a href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/bUJvfyDhBr">pic.twitter.com/bUJvfyDhBr</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1056398353569697792?ref_src=twsrc%5Etfw">2018年10月28日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>TextMeshProの文字描画に独創的な演出を加えるためのカスタムシェーダーの実装方法をQiitaで解説しました。</p>
+
+<ul>
+<li><a href="https://qiita.com/gam0022/items/f3b7a3e9821a67a5b0f3">[Unity] カスタムシェーダーでTextMeshProに独創的な演出を加える - Qiita</a></li>
+</ul>
+
+<h2 id="2018-uraymarchingとreflectionprobeによる反射">2018 uRaymarchingとReflectionProbeによる反射</h2>
+
+<p>ReflectionProbeによって「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させたシーンで破綻のない反射を計算する検証です。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">uRaymarchingとReflectionProbeによる反射と組み合わせる検証<br>中<br><br>毎フレームCubemapを生成するくらいならレイトレで反射を計算したほうが速いと思っていたが、この例ならCubemapの解像度は16x16でも十分だし、Cubemapの方がポリゴンとの混在が容易なので、現実的な方法だと思う。 <a href="https://t.co/sSX7WmVCEd">pic.twitter.com/sSX7WmVCEd</a></p>&mdash; がむ🌷🌴 (@gam0022) <a href="https://twitter.com/gam0022/status/1003274796895895554?ref_src=twsrc%5Etfw">2018年6月3日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="2017-uraymarchingとtimelineによる映像作品">2017 uRaymarchingとTimelineによる映像作品</h2>
+
+<p>「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させた作品です。 ロボットは通常の3Dモデルですが、床や柱のモデルはレイマーチングでプロシージャルに生成しました。</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">Unityで映像作品（デモ）の試作をしました。<br>uRaymarchingとTimelineを使っています <a href="https://t.co/QbvItqc2Bs">pic.twitter.com/QbvItqc2Bs</a></p>&mdash; がむ🌷🌴 (@gam0022) <a href="https://twitter.com/gam0022/status/945455918816174080?ref_src=twsrc%5Etfw">2017年12月26日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2017/12/25/unity-demoscene/">Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） | gam0022.net</a></li>
+</ul>
+
+<h1 id="webgl">WebGL</h1>
+
+<p>WebGLで作成した映像作品と活動を紹介します。</p>
+
+<p>一部の作品は <a href="http://gam0022.net/webgl/">gam0022.net/webgl/</a> よりブラウザ上で実行できます。</p>
+
+<h2 id="2020-re-simulated">2020 RE: SIMULATED</h2>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> の PC 64K Intro にて『RE: SIMULATED』という作品を発表して優勝しました！<br><br>64KBのファイル容量制限のある部門です。<br>映像: <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> / 音楽: <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> の担当で制作しました。<br><br>We won the PC 64K Intro at <a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> ! <br>RE: SIMULATED by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> <a href="https://t.co/wp5koGJFKf">pic.twitter.com/wp5koGJFKf</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1249658268319768576?ref_src=twsrc%5Etfw">April 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>WebGL / WebAudio による64K Introなので、ブラウザ上で動作します。※高性能なGPUが必要です。</p>
+
+<ul>
+<li><a href="https://gam0022.net/webgl/64k-intro_resimulated.html">64KB HTML version</a></li>
+<li><a href="https://neort.io/art/bqa4pgs3p9f6qoqnmujg">NEORT version</a></li>
+</ul>
+
+<p>64KBの容量制約があるため、Unityやthree.jsといった既存のゲームエンジンやフレームワークを利用せずに、描画用のWebGLエンジンと制作用のツール（エディタ機能）を自作しました。</p>
+
+<p>関連リンク</p>
+
+<ul>
+<li><a href="/blog/2020/04/30/revision2020/">Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説 | gam0022.net</a></li>
+<li><a href="https://youtu.be/tirAdWbceak">YouTube</a></li>
+<li><a href="https://github.com/gam0022/resimulated">GitHub</a></li>
+</ul>
+
+<h2 id="2019-dot-matrix-postprocessing">2019 Dot Matrix PostProcessing</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Posted on <a href="https://twitter.com/hashtag/Shadertoy?src=hash&amp;ref_src=twsrc%5Etfw">#Shadertoy</a>: &quot;Dot Matrix PostProcessing&quot;<br>This is a 2D only shader work.<a href="https://t.co/xCi3jyL9WG">https://t.co/xCi3jyL9WG</a><a href="https://twitter.com/hashtag/glsl?src=hash&amp;ref_src=twsrc%5Etfw">#glsl</a> <a href="https://twitter.com/hashtag/raymarching?src=hash&amp;ref_src=twsrc%5Etfw">#raymarching</a> <a href="https://t.co/PNlZ0VuSMs">pic.twitter.com/PNlZ0VuSMs</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1122521979473371137?ref_src=twsrc%5Etfw">2019年4月28日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="2018-シェーダーコーディングバトル優勝">2018 シェーダーコーディングバトル優勝</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーライブコーディングバトルの優勝作品です！<br>ありがとうございました！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://twitter.com/hashtag/tdf2018?src=hash&amp;ref_src=twsrc%5Etfw">#tdf2018</a><a href="https://t.co/MJwbIWFOMl">https://t.co/MJwbIWFOMl</a> <a href="https://t.co/LVr2LYvUgi">pic.twitter.com/LVr2LYvUgi</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1068782247711465472?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>GLSLのシェーダーのみで上記のような作品をつくりました。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2018/12/24/vscode-glslsandbox/#ライブコーディングバトルで優勝できた">GLSL Compoに役立つ！GLSL Sandbox互換のVSCode拡張『Shader Toy』の紹介 | gam0022.net</a></li>
+</ul>
+
+<h2 id="2018-メガデモ勉強会">2018 メガデモ勉強会</h2>
+
+<div style="width:400px; margin:0; padding:0;" class="right">
+<script async class="speakerdeck-embed" data-slide="1" data-id="74ea75d0686849238368f73150a7adba" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
+
+<p>3/10に開催された<a href="https://atnd.org/events/93843">メガデモ勉強会! 2018</a>に登壇しました。</p>
+
+<p>発表タイトルは「もっと綺麗で写実的な絵作りをしたい！レイマーチング向けのシェーディング技術」です。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2018/03/16/demoscene-study-session/">メガデモ勉強会!2018で発表しました | gam0022.net</a></li>
+</ul>
+
+<h2 id="2017-正解するカド">2017 正解するカド</h2>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/kado.png"><img alt="正解するカド" src="/images/works/kado.jpg" width="300px" class="right"></a></p>
+
+<p>アニメ<a href="http://seikaisuru-kado.com/">『正解するカド』</a>に登場するフラクタル図形（カド）のレイマーチングによるレンダリングに挑戦しました。</p>
+
+<p>レイマーチング（スフィアトレーシング）は「カド」のようなフラクタル図形の描画がとても得意なので、
+その特徴を活かせたと思います。</p>
+
+<ul>
+<li><a href="https://gam0022.net/webgl/#raymarching_kado">https://gam0022.net/webgl/#raymarching_kado</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2017/06/30/raymarching-kado/">正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net
+</a></li>
+</ul>
+
+<h2 id="2017-fusioned-bismuth">2017 Fusioned Bismuth</h2>
+
+<p><a href="/images/works/tdf2017.jpg"><img alt="Fusioned Bismuth" src="/images/works/tdf2017.jpg" width="300px" class="right"></a></p>
+
+<p>TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞した、レイマーチングによる映像作品です。</p>
+
+<ul>
+<li><a href="https://gam0022.net/webgl/#raymarching_tdf2017">Fusioned Bismuth | gam0022.net</a></li>
+<li><a href="https://www.shadertoy.com/view/Msscz7">Fusioned Bismuth | Shadertoy</a></li>
+<li><a href="https://youtu.be/o3e7YFspIJ0?t=10m34s">Tokyo Demo Fest 2017 - GLSL Graphics Compo | Youtube</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2017/02/24/tdf2017/">#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net</a></li>
+<li><a href="/blog/2017/03/02/raymarching-fold/">距離関数のfold（折りたたみ）による形状設計 | gam0022.net</a></li>
+</ul>
+
+<h2 id="2017-realtime-pathtracing">2017 Realtime Pathtracing</h2>
+
+<div style="width:400px; margin:0; padding:0;" class="right">
+<iframe width="400" height="315" src="https://www.youtube.com/embed/FUb5U3ttmZE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>WebGL(three.js)でリアルタイムなパストレーシングを実装しました。</p>
+
+<ul>
+<li><a href="https://gam0022.net/webgl/#pathtracing_sandbox">three.js webgl - pathtracing sandbox | gam0022.net</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2017/04/06/webgl-pathtracing-tbf2/">WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net</a></li>
+<li><a href="https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a">WebGL+GLSLによる超高速なパストレーシング | Qiita</a></li>
+<li><a href="https://gam0022.net/webgl/#pathtracing_sandbox">three.js webgl - pathtracing sandbox | gam0022.net</a></li>
+</ul>
+
+<h2 id="2016-live">2016 Live</h2>
+
+<p><a href="/images/works/live.gif"><img alt="Live" src="/images/works/live.gif" width="300px" class="right"></a></p>
+
+<p>WebGLのフォワードレンダリングでレイマーチングとラスラライザをハイブリッドに組み合わせる技術デモです。
+WebGLの深度バッファを書き込む拡張(<code>EXT_frag_depth</code>)を利用しています。
+レイマーチングによる無数のサイリウムのステージ上でMMDの初音ミクが踊ります。</p>
+
+<p><a href="#2016年夏-az異本-grimoire-of-web">AZ異本</a>のサンプル用に作成しました。</p>
+
+<!--div class="read-more">
+  <a href="http://gam0022.net/webgl/#raymarching_hybrid" class="btn btn-primary btn-outline">Hybrid</a>
+</div-->
+
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raymarching_hybrid_live" class="btn btn-primary btn-outline">Live - gam0022.net（※音が出ます）</a>
+</div>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="#2016年夏-az異本-grimoire-of-web">AZ異本 grimoire of web</a></li>
+<li><a href="http://gam0022.hatenablog.com/entry/2016/06/22/tbf1">6/25の技術書典で、AZ異本（アツイホン）を出します！</a></li>
+</ul>
+
+<h2 id="2016-carbon">2016 Carbon</h2>
+
+<p><a href="/images/works/carbon_original.png"><img alt="Carbon" src="/images/works/carbon.png" class="right"></a></p>
+
+<p>TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞した、レイマーチングによる映像作品です。</p>
+
+<p>Mandelbox というフラクタル図形を mod で無限にループさせています。</p>
+
+<ul>
+<li><a href="https://www.shadertoy.com/view/MsG3Wy">Shadertoy - Carbon [TDF2016] - Final Version</a></li>
+<li><a href="http://glslsandbox.com/e#30972.0">GLSL Sandbox - Carbon - TDF Submited Version</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2016/02/24/tokyo-demo-fest/">#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！ - gam0022.net</a></li>
+</ul>
+
+<h2 id="2016-glsltech-発表資料">2016 #GLSLTech 発表資料</h2>
+
+<div style="width:340px; margin:0; padding:0;" class="right">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="\_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="\_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
+</div>
+
+<p>「シェーダだけで世界を創る！three.jsによるレイマーチング」という発表資料です。</p>
+
+<p>2/14のバレンタインデーに開催された「GPU の熱でチョコも溶けちゃう！？ GLSL シェーダテクニック勉強会（#GLSLTech）」で登壇したときのものです。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="/blog/2016/02/16/glsl-tech/">GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました | gam0022.net</a></li>
+</ul>
+
+<h2 id="2016-gem">2016 Gem</h2>
+
+<p><a href="/images/works/gem_original.png"><img alt="Gem" src="/images/works/gem.png" class="right"></a></p>
+
+<p>光の屈折をシミュレートすることで、輝く宝石をWebGLでレンダリングする「gem」という作品（技術デモ）をつくりました。
+レイトレーシングをGLSLのフラグメントシェーダで実装することで、GPUの並列計算を利用したリアルタイムな描画を実現しています。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="http://qiita.com/gam0022/items/9875480d33e03fe2113c">これがGPUの力！three.jsによる“リアルタイム”なレイトレーシング 〜宝石編〜 - Qiita</a></li>
+</ul>
+
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raytracing_gem" class="btn btn-primary btn-outline">Gem - gam0022.net</a>
+</div>
+
+<h2 id="2015-reflect">2015 Reflect</h2>
+
+<p><a href="/images/works/reflect_original.png"><img alt="Gem" src="/images/works/reflect.png" class="right"></a></p>
+
+<p>レイマーチングで鏡面反射する球体を無限に並べたシーンをリアルタイムに描画するデモです。
+three.js 公式サンプルにも取り込まれています。</p>
+
+<ul>
+<li><a href="http://gam0022.net/webgl/#raymarching_reflect">Reflect - gam0022.net</a></li>
+<li><a href="http://threejs.org/examples/#webgl_raymarching_reflect">Reflect - three.js 公式サンプル</a></li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="http://qiita.com/gam0022/items/03699a07e4a4b5f2d41f">これがGPUの力！Three.jsによる“リアルタイム”なレイトレーシング - Qiita</a></li>
+</ul>
+
+<div class="read-more">
+  <a href="http://threejs.org/examples/#webgl_raymarching_reflect" class="btn btn-primary btn-outline">Reflect - threejs.org</a>
+</div>
+
+<h2 id="2015-steal-frame">2015 Steal Frame</h2>
+
+<p><a href="/images/works/steel_frame_original.png"><img alt="Steel Frame" src="/images/works/steel_frame.png" class="right"></a></p>
+
+<p>鉄筋をモチーフにしたレイマーチングによる作品です。</p>
+
+<p><a href="#2015冬-javascriptoon2">JavaScriptoon2</a>の解説用につくったので、わずか20行ほどのコードでシーンを定義しています。</p>
+
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raymarching_steel-frame" class="btn btn-primary btn-outline">Steal Frame - gam0022.net</a>
+</div>
+
+<h1 id="レイトレ合宿">レイトレ合宿</h1>
+
+<p>レイトレ合宿用に開発した物理ベースレンダラーを紹介します。</p>
+
+<h2 id="2019-redflash-renderer">2019 Redflash Renderer</h2>
+
+<script async class="speakerdeck-embed" data-id="ba3966aad908467e8b21249e828c26d0" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>Redflash は NVIDIA® OptiX 6.0 上で実装したパストレーシングによる物理ベースのGPUレンダラーで、ポリゴンとレイマーチングが混在したシーンを一貫して描画できます。</p>
+
+<p>関連リンク</p>
+
+<ul>
+<li><a href="/blog/2019/09/18/rtcamp7/">レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net</a></li>
+<li><a href="https://github.com/gam0022/redflash">GitHub</a></li>
+</ul>
+
+<h2 id="2018-hanamaru-renderer-v2">2018 Hanamaru Renderer v2</h2>
+
+<script async class="speakerdeck-embed" data-id="3ea604f4f30248709e316a1cb487f1cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>Hanamaru Rendererを高速化しました。</p>
+
+<p>関連リンク</p>
+
+<ul>
+<li><a href="/blog/2018/09/18/rtcamp6-part1/">レイトレ合宿6 参加報告 前編（準備編） | gam0022.net</a></li>
+<li><a href="https://github.com/gam0022/hanamaru-renderer">GitHub</a></li>
+</ul>
+
+<h2 id="2017-hanamaru-renderer">2017 Hanamaru Renderer</h2>
+
+<script async class="speakerdeck-embed" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>Rustで開発したパストレーシングによる物理ベースレンダラーです。</p>
+
+<p>関連リンク</p>
+
+<ul>
+<li><a href="/blog/2017/10/02/rtcamp5/">レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net</a></li>
+<li><a href="https://github.com/gam0022/hanamaru-renderer">GitHub</a></li>
+</ul>
+
+<h2 id="2016-tsukihi">2016 Tsukihi</h2>
+
+<div style="width: 300px;" class="right">
+<script async class="speakerdeck-embed" data-slide="1" data-id="3e8b7d83dd0e4b19891d6c8321431d47" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
+
+<p>距離関数によって表現されたオブジェクトをレイマーチングでレンダリングするCPUレンダラーです。
+パストレーシングによるレンダラーの実装と擬似表現によるレンダラーの両方の実装があります。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="http://gam0022.hatenablog.com/entry/raytracingcamp4">レイトレ合宿4!? に参加しました！ - gam0022のブログ</a></li>
+<li><a href="https://sites.google.com/site/raytracingcamp4/">レイトレ合宿4!?</a></li>
+<li><a href="https://github.com/gam0022/tsukihi">GitHub</a></li>
+</ul>
+
+<h1 id="research">Research</h1>
+
+<p>大学の卒業研究を紹介します。</p>
+
+<h2 id="2014-2015-非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築">2014-2015 非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築</h2>
+
+<p><a href="/images/works/paper_craft_dolphin_original.jpg"><img alt="Paper Craft -  dolphin" src="/images/works/paper_craft_dolphin.jpg" class="right"></a></p>
+
+<p>曲面を利用したペーパークラフト（画像奥）をインタラクティブに設計するシステムを提案しました。
+市販ソフトウェアで作成したペーパークラフト（画像手前）と比較すると、
+曲線による滑らかな表現、ヒレの部分の1枚の紙の構造（非多様体構造）を許容できる、組立の手間が少ないなどのメリットがあります。</p>
+
+<ul>
+<li><a href="http://www.npal.cs.tsukuba.ac.jp/thesis/2014/thesis2014b_hosoda.pdf">学位論文(PDF)</a></li>
+<li><a href="https://www.dropbox.com/s/8ucnj04gq7zw3uy/vc2015.mp4?dl=0">動画(DropBox)</a></li>
+</ul>
+
+<p>表彰</p>
+
+<ul>
+<li><a href="http://www.ipsj-gcad.sakura.ne.jp/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#q23e1b1c">GCAD賞</a>, Visual Computing / <a href="http://ipsj-gcad.sakura.ne.jp/vc2015/">グラフィクスと CAD 合同シンポジウム 2015</a>, 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/06/28,29</li>
+<li>学生奨励賞, <a href="http://www.ipsj.or.jp/event/taikai/77/">情報処理学会第77回全国大会</a>, 細田翔,三谷純,金森由博, 可展面間の交差に基づくトリム処理を組み入れた対話的紙模型用形状構築システム, 2015/03/23</li>
+</ul>
+
+<p>指導教官である三谷先生のブログでも紹介していただきました。</p>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/JunMitani/20141112">イルカの紙模型 - みたにっき＠はてな</a></li>
+</ul>
+
+<h1 id="rubygems">RubyGems</h1>
+
+<p>Ruby 向けのライブラリの紹介です。</p>
+
+<h2 id="2013-immutablelist">2013 ImmutableList</h2>
+
+<p><img alt="immutable_list" src="/images/works/immutable_list.png" class="right"></p>
+
+<p>RubyGemsとして、ImmutableなLinkedListを公開しました。</p>
+
+<p>C言語の拡張として実装したので、動作はそれなりに高速です。</p>
+
+<p>Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使ってプログラミングをするのに最適なデータ構造です。</p>
+
+<ul>
+<li><a href="https://rubygems.org/gems/immutable_list">RubyGems.org</a></li>
+<li><a href="https://github.com/gam0022/immutable_list/blob/master/README.md">README(GitHub)</a></li>
+<li><a href="http://gam0022.net/blog/2013/08/19/ruby-linkedlist/">RubyでLinkedListを使うためのC拡張を作った - gam0022.net</a></li>
+</ul>
+
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a href="https://www.slideshare.net/shohosoda9" target="_blank">Sho Hosoda</a></strong> </div></p>
+
+<h1 id="ios-app">iOS App</h1>
+
+<h2 id="2013-カメラで商品検索-c2search">2013 カメラで商品検索 C2search</h2>
+
+<p><a href="/images/works/C2search.png"><img alt="C2search" src="/images/works/C2search_tmb.png" class="right"></a></p>
+
+<p>「カメラで商品検索」という画像によって商品の横断検索ができるiOSアプリを開発しました。
+<a href="http://hacku.yahoo.co.jp/inter2013/">Yahoo Inter Hack U 2013</a> 参加作品です。</p>
+
+<ul>
+<li>画像認識によって、タイトルが長い本、名前を忘れてしまった商品も簡単に検索できます。</li>
+<li>Yahoo!ショッピングと楽天市場の両方の結果を同じテーブルビューに表示します。</li>
+<li>検索結果を色によってソートする機能もあります。</li>
+</ul>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="http://news.mynavi.jp/articles/2013/12/06/yahoo_inter_hack_u/001.html">ヤフー主催のアプリ開発イベント「Inter Hack U」 - 学生15団体が熱戦</a></li>
+</ul>
+
+<div class="read-more">
+  <a href="http://c2search.gam0022.net/" class="btn btn-primary btn-outline">Read More</a>
+</div>
+
+<h1 id="web">Web</h1>
+
+<h2 id="2013-twitter名刺ジェネレーター">2013 Twitter名刺ジェネレーター</h2>
+
+<p><a href="/images/works/tmg.png"><img alt="Twitter名刺ジェネレーター" src="/images/works/tmg_tmb.png" class="right"></a></p>
+
+<p>TwitterIDを入力するだけで簡単に名刺が作れるサービスです。</p>
+
+<p>認証は不要でデザインを選択するだけ！</p>
+
+<p>さらに、マルコフ連鎖によってあなたを適当に自己紹介してくれます！</p>
+
+<p>紹介スライド</p>
+
+<ul>
+<li><a href="http://www.slideshare.net/shohosoda9/twitter-26428486">Twitter名刺ジェネレータ - SlideShare</a></li>
+</ul>
+
+<div class="read-more">
+  <a href="http://gam0022.net/app/tmg/" class="btn btn-primary btn-outline">Twitter名刺ジェネレーター</a>
+</div>
+
+<h1 id="google-chrome-extention">Google Chrome Extention</h1>
+
+<p>Goole Chrome の拡張機能を紹介します。</p>
+
+<h2 id="2016-slack-返信引用ボタン">2016 Slack 返信引用ボタン</h2>
+
+<p><img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right"></p>
+
+<p>Slack に返信と引用ボタンをつけるChrome拡張機能です。</p>
+
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja">Slack 返信引用ボタン - Chrome ストア</a></li>
+<li><a href="https://github.com/gam0022/slack-reply-and-quote-button">GitHubリポジトリ</a></li>
+<li><a href="http://qiita.com/gam0022/items/9cce1d118bc42dc0e212">Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita</a></li>
+</ul>
+
+<div class="read-more">
+  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
+</div>
+
+<h2 id="2013-shelf">2013 Shelf</h2>
+
+<p><a href="/images/works/shelf_original.png"><img alt="Shelf" src="/images/works/shelf.png" class="right"></a></p>
+
+<p>3Dで描画された回転する棚にカバンを展示することで、実際の店舗でショッピングをしている感覚を体験できるというコンセプトのWeb通販サイトのプロトタイプです。</p>
+
+<p><a href="http://inf.tsukuba.ac.jp/ET-COJT/">COJT</a>という、筑波大学の産学連携の授業で開発しました。</p>
+
+<p>WebGL(Canvas)で描画しています。</p>
+
+<p>COJTソフトウェアコース2013の前期の準優勝/技術賞受賞作品です。</p>
+
+<div class="read-more">
+  <a href="http://gam0022.net/app/shelf/" class="btn btn-primary btn-outline">Shelf デモ</a>
+</div>
+
+<h2 id="2012-2013-twincal">2012-2013 TwinCal</h2>
+
+<p><img alt="twincal" src="/images/works/twincal.png" class="right"></p>
+
+<p>TwinCalとは、Twinsの時間割をiCalendar形式に変換し、Googleカレンダー・iCalへのインポートをサポートするWebサービスです。</p>
+
+<p><a href="http://acaric-valuator.com/event/studentappcontest2013/">アカリクVALUATOR主催 学生のためのアプリ開発コンテスト</a>のファイナリストに採択されました。</p>
+
+<div class="read-more">
+  <a href="http://gam0022.net/app/twincal/" class="btn btn-primary btn-outline">TwinCal 公式サイト</a>
+</div>
+
+<h2 id="2011-2013-daigoroubot">2011-2013 @daigoroubot</h2>
+
+<p><img alt="大五郎Bot" src="/images/works/daigoroubot.png" class="right"></p>
+
+<p>マルコフ連鎖で学習する人工無能のTwitterのBOTです。</p>
+
+<p>つくば市の天気予報機能、電卓機能、n進数変換器、全学教室検察など便利な機能を搭載しています。</p>
+
+<p><a href="https://twitter.com/daigoroubot" class="twitter-follow-button" data-show-count="false">Follow @daigoroubot</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><a href="https://twitter.com/daigoroubot">大五郎（Ｕ＾ω＾）BOT (@daigoroubot)</a></p>
+
+<div class="read-more">
+  <a href="/works/daigoroubot/" class="btn btn-primary btn-outline">Read More</a>
+</div>
+
+<h1 id="hsptv-games">HSPTV Games</h1>
+
+<p>HSPプログラミングコンテスト用に作ったゲーム達です。</p>
+
+<h2 id="2012-soar-ソアー">2012 Soar(ソアー)</h2>
+
+<p><a href="/images/works/soar_original.png"><img alt="soar" src="/images/works/soar.png" class="right"></a></p>
+
+<p>女の子を落下しないように操作して、ひたすら上を目指すアクションゲーム</p>
+
+<ul>
+<li>コンテスト
+
+<ul>
+<li><a href="http://dev.onionsoft.net/seed/info.ax?id=313">HSPコンテスト2012 #313</a></li>
+<li>秀和システム賞を受賞</li>
+<li><a href="http://gam0022.net/blog/2012/12/11/hsp-contest2012/">HSPプログラミングコンテスト2012で秀和システム賞を受賞</a></li>
+<li><a href="http://hsp.tv/contest2012/cntst_fresult.html#313">HSPプログラムコンテスト2012　入賞作品詳細</a></li>
+</ul></li>
+<li>その他
+
+<ul>
+<li><a href="http://www.moongift.jp/2012/12/20121225/">飛び上がれ！女の子が主役のアクションゲーム「Soar (ソアー)」</a></li>
+</ul></li>
+</ul>
+
+<h2 id="2010-雲-sky">2010 雲(sky)</h2>
+
+<p><a href="/images/works/sky1_original.png"><img alt="雲" src="/images/works/sky1.png" class="right"></a></p>
+
+<p>パーリンノイズを使ったリアルな雲画像のリアルタイムレンダリング実験。</p>
+
+<p>描画の高速化の為に、VRAMを直接書き換えるなど、HSPの限界に挑戦した作品。</p>
+
+<ul>
+<li>コンテスト
+
+<ul>
+<li><a href="http://hsp.tv/contest2010/entry.php?id=141">HSPコンテスト 2010 #141</a></li>
+</ul></li>
+<li>作成記録
+
+<ul>
+<li><a href="http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-%E9%9B%B2/">GAM-22のメモ</a></li>
+</ul></li>
+</ul>
+
+<div style="clear: both;"></div>
+
+<p><a href="/images/works/sky2_original.png"><img alt="config画面" src="/images/works/sky2.png" class="right"></a></p>
+
+<h2 id="2009-ボウリング-笑-bowling-w">2009 ボウリング(笑) (bowling(w))</h2>
+
+<p><a href="/images/works/bowling_original.png"><img alt="ボウリング(笑)" src="/images/works/bowling.png" class="right"></a></p>
+
+<p>OBAQによる物理演算とランキング機能によるステージ投稿が特徴のボウリング風ゲーム。</p>
+
+<ul>
+<li>コンテスト
+
+<ul>
+<li><a href="http://hsp.tv/contest2009/list_s1.html#id120">HSPコンテスト 2009 #120</a></li>
+<li><a href="http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-%E3%83%9C%E3%82%A6%E3%83%AA%E3%83%B3%E3%82%B0-%E7%AC%91-/obaq%E8%B3%9E%E3%81%AE%E3%80%8Cwii%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3-wiiremote%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%80%8D%E3%81%8C%E5%B1%8A%E3%81%84%E3%81%9F">OBAQ賞の「wiiリモコン+WiiRemoteプログラミング」が届いた</a></li>
+</ul></li>
+<li>作成記録
+
+<ul>
+<li><a href="http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-%E3%83%9C%E3%82%A6%E3%83%AA%E3%83%B3%E3%82%B0-%E7%AC%91-/">GAM-22のメモ</a></li>
+</ul></li>
+<li>動画
+
+<ul>
+<li><a href="http://www.nicovideo.jp/watch/sm8246495">ニコニコ動画</a></li>
+<li><a href="http://www.youtube.com/watch?v=ZojFN8L34cI">YouTube</a></li>
+</ul></li>
+<li>その他
+
+<ul>
+<li><a href="http://www38.atwiki.jp/kerupani129/pages/20.html">kerupaniさんのステージ</a></li>
+<li><a href="http://www38.atwiki.jp/kerupani129/pages/20.html">隠しブロックについて</a></li>
+<li><a href="http://www.forest.impress.co.jp/docs/serial/shumatsu/20100122_342276.html">窓の杜 - 【週末ゲーム】第402回：「HSPTVブラウザ」で遊んでみよう！</a></li>
+</ul></li>
+</ul>
+
+<h2 id="2008-蟲-worms">2008 蟲(worms)</h2>
+
+<p>蟲を切断して遊ぶゲーム。ドラッグでレーザーを照射。</p>
+
+<p><img alt="蟲" src="/images/works/worms.png" class="right"></p>
+
+<p>よく考えてみるとマジキチ。複雑系に興味を持って作ったらしい。</p>
+
+<p>HSPTV部門で効果音を扱うために、<a href="http://gmr.blog.shinobi.jp/-hsp3%E3%83%A1%E3%83%A2-%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/hsp%E3%81%A7%E3%80%81midi%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%92%E9%B3%B4%E3%82%89%E3%81%99%20-winmm.dll-">winmm.dll</a> を使用した。</p>
+
+<ul>
+<li>コンテスト
+
+<ul>
+<li><a href="http://hsp.tv/contest2008/list_s1.html#id95">HSPコンテスト2008 #95</a></li>
+<li><a href="http://hsp.tv/contest2008/cntst_fresult.html#95">アジアン・インテグレーション有限会社賞</a></li>
+</ul></li>
+<li>作成記録
+
+<ul>
+<li><a href="http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-%E8%9F%B2/">GAM-22のメモ</a></li>
+</ul></li>
+</ul>
+
+<h1 id="windows-games">Windows Games</h1>
+
+<p>HSPで作ったWindows向けゲーム達です。</p>
+
+<h2 id="2007-battle-armor">2007 Battle Armor</h2>
+
+<p><a href="/images/works/battle_armor_original.png"><img alt="Battle Armor" src="/images/works/battle_armor.png" class="right"></a></p>
+
+<p>中2の時に作ったタンクシューティング。</p>
+
+<p>バランスがおかしいですが、クリアは出来ます。</p>
+
+<ul>
+<li>コンテスト
+
+<ul>
+<li><a href="http://hsp.tv/contest2007/list_n3.html#id180">HSPコンテスト 2007 #180</a></li>
+<li><a href="http://hsp.tv/contest2007/cntst_fresult.html#180">アジアン・インテグレーション賞</a></li>
+</ul></li>
+<li>その他
+
+<ul>
+<li><a href="http://www.vector.co.jp/soft/winnt/game/se442399.html">Vector</a></li>
+<li><a href="http://gmr.blog.shinobi.jp/-%E7%A7%81%E3%81%AE%E3%83%A1%E3%83%A2-%E8%87%AA%E6%85%A2/windows100-%2012%E6%9C%88%E5%8F%B7%E3%80%80%E6%8E%B2%E8%BC%89">Windows100% 12月号に掲載</a></li>
+<li><a href="http://file.gmr.blog.shinobi.jp/battle_armor.index.htm">README的な何か</a></li>
+</ul></li>
+<li>作成記録
+
+<ul>
+<li><a href="http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-battle%20armor/">GAM-22のメモ</a></li>
+</ul></li>
+</ul>
+
+<h2 id="2006-asteroids">2006 ASTEROIDS</h2>
+
+<p><img alt="ASTEROIDS" src="/images/works/asteroids.jpg" class="right"></p>
+
+<p>中1の時に作った、アーケードゲームの&rdquo;ASTEROIDS&rdquo;風の全方向シューティングゲーム。</p>
+
+<p>UFOやパワーアップアイテムなどのオリジナル要素があります。</p>
+
+<ul>
+<li><a href="http://www.vector.co.jp/soft/win95/game/se414088.html">Vector</a></li>
+<li><a href="http://gmr.blog.shinobi.jp/-%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0-%E6%99%AE%E9%80%9A/asteroids%20-%2016.8">GAM-22のメモ</a></li>
+<li><a href="http://gmr.blog.shinobi.jp/-%E7%A7%81%E3%81%AE%E3%83%A1%E3%83%A2-%E8%87%AA%E6%85%A2/windows100-%205%E6%9C%88%E5%8F%B7%E3%80%80%E6%8E%B2%E8%BC%89">Windows100% 5月号に掲載</a></li>
+<li><a href="http://www.youtube.com/watch?v=6rXsh1ktsh0">kerupaniさんによる動画</a></li>
+</ul>
+
+<h2 id="それ以前">それ以前</h2>
+
+<ul>
+<li><a href="http://gmr.blog.shinobi.jp/-%E7%A7%81%E3%81%AE%E3%83%A1%E3%83%A2-%E6%97%A5%E8%A8%98/hdd%E3%81%AB%E7%9C%A0%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9Fhsp%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%92%E5%85%AC%E9%96%8B">HDDに眠っていた昔作ったHSPゲームを公開</a></li>
+<li><a href="http://gmr.blog.shinobi.jp/-%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88/%E6%88%A6%E8%BB%8Avs%E2%97%8F%20-%200.5">戦車vs●</a></li>
+</ul>
+
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-09-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2016-09-24</time>
+    </span>
+
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/works/" class="hatena-bookmark-button" data-hatena-bookmark-title="Work" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/works/" data-text="Work" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/works/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/works/daigoroubot/">大五郎（Ｕ＾ω＾）BOT の説明書 <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/works\/';
+    var disqus_title = 'Work';
+    var disqus_url = 'https:\/\/gam0022.net\/works\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#publications">Publications</a>
+<ul>
+<li><a href="#2020年3月-klab-tech-book-vol-6">2020年3月  KLab Tech Book Vol.6</a></li>
+<li><a href="#2019年4月-klab-tech-book-vol-4">2019年4月 KLab Tech Book Vol.4</a></li>
+<li><a href="#2018年10月-klab-tech-book-vol-3">2018年10月 KLab Tech Book Vol.3</a></li>
+<li><a href="#2017年10月-klab-tech-book-vol-1">2017年10月 KLab Tech Book Vol.1</a></li>
+<li><a href="#2017年4月-think-web">2017年4月 Think Web</a></li>
+<li><a href="#2016年夏-az異本-grimoire-of-web">2016年夏 AZ異本 grimoire of web</a></li>
+<li><a href="#2015冬-javascriptoon2">2015冬 JavaScriptoon2</a></li>
+<li><a href="#2015夏-javascriptoon">2015夏 JavaScriptoon</a></li>
+</ul></li>
+<li><a href="#unity">Unity</a>
+<ul>
+<li><a href="#2019-morphing-hisei-reiwa">2019 Morphing: Hisei -&gt; Reiwa</a></li>
+<li><a href="#2018-tokyo-demo-fest-2018-優勝作品-wormhole">2018 Tokyo Demo Fest 2018 優勝作品 WORMHOLE</a></li>
+<li><a href="#2018-カスタムシェーダーでtextmeshproに独創的な演出を加える">2018 カスタムシェーダーでTextMeshProに独創的な演出を加える</a></li>
+<li><a href="#2018-uraymarchingとreflectionprobeによる反射">2018 uRaymarchingとReflectionProbeによる反射</a></li>
+<li><a href="#2017-uraymarchingとtimelineによる映像作品">2017 uRaymarchingとTimelineによる映像作品</a></li>
+</ul></li>
+<li><a href="#webgl">WebGL</a>
+<ul>
+<li><a href="#2020-re-simulated">2020 RE: SIMULATED</a></li>
+<li><a href="#2019-dot-matrix-postprocessing">2019 Dot Matrix PostProcessing</a></li>
+<li><a href="#2018-シェーダーコーディングバトル優勝">2018 シェーダーコーディングバトル優勝</a></li>
+<li><a href="#2018-メガデモ勉強会">2018 メガデモ勉強会</a></li>
+<li><a href="#2017-正解するカド">2017 正解するカド</a></li>
+<li><a href="#2017-fusioned-bismuth">2017 Fusioned Bismuth</a></li>
+<li><a href="#2017-realtime-pathtracing">2017 Realtime Pathtracing</a></li>
+<li><a href="#2016-live">2016 Live</a></li>
+<li><a href="#2016-carbon">2016 Carbon</a></li>
+<li><a href="#2016-glsltech-発表資料">2016 #GLSLTech 発表資料</a></li>
+<li><a href="#2016-gem">2016 Gem</a></li>
+<li><a href="#2015-reflect">2015 Reflect</a></li>
+<li><a href="#2015-steal-frame">2015 Steal Frame</a></li>
+</ul></li>
+<li><a href="#レイトレ合宿">レイトレ合宿</a>
+<ul>
+<li><a href="#2019-redflash-renderer">2019 Redflash Renderer</a></li>
+<li><a href="#2018-hanamaru-renderer-v2">2018 Hanamaru Renderer v2</a></li>
+<li><a href="#2017-hanamaru-renderer">2017 Hanamaru Renderer</a></li>
+<li><a href="#2016-tsukihi">2016 Tsukihi</a></li>
+</ul></li>
+<li><a href="#research">Research</a>
+<ul>
+<li><a href="#2014-2015-非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築">2014-2015 非多様体構造を許容した可展面パッチ集合による紙模型用形状モデルの構築</a></li>
+</ul></li>
+<li><a href="#rubygems">RubyGems</a>
+<ul>
+<li><a href="#2013-immutablelist">2013 ImmutableList</a></li>
+</ul></li>
+<li><a href="#ios-app">iOS App</a>
+<ul>
+<li><a href="#2013-カメラで商品検索-c2search">2013 カメラで商品検索 C2search</a></li>
+</ul></li>
+<li><a href="#web">Web</a>
+<ul>
+<li><a href="#2013-twitter名刺ジェネレーター">2013 Twitter名刺ジェネレーター</a></li>
+</ul></li>
+<li><a href="#google-chrome-extention">Google Chrome Extention</a>
+<ul>
+<li><a href="#2016-slack-返信引用ボタン">2016 Slack 返信引用ボタン</a></li>
+<li><a href="#2013-shelf">2013 Shelf</a></li>
+<li><a href="#2012-2013-twincal">2012-2013 TwinCal</a></li>
+<li><a href="#2011-2013-daigoroubot">2011-2013 @daigoroubot</a></li>
+</ul></li>
+<li><a href="#hsptv-games">HSPTV Games</a>
+<ul>
+<li><a href="#2012-soar-ソアー">2012 Soar(ソアー)</a></li>
+<li><a href="#2010-雲-sky">2010 雲(sky)</a></li>
+<li><a href="#2009-ボウリング-笑-bowling-w">2009 ボウリング(笑) (bowling(w))</a></li>
+<li><a href="#2008-蟲-worms">2008 蟲(worms)</a></li>
+</ul></li>
+<li><a href="#windows-games">Windows Games</a>
+<ul>
+<li><a href="#2007-battle-armor">2007 Battle Armor</a></li>
+<li><a href="#2006-asteroids">2006 ASTEROIDS</a></li>
+<li><a href="#それ以前">それ以前</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

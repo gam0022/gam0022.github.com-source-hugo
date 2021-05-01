@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/java/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Eclipseのコンソール(Console)の出力が文字化けする</title>
+      <link>https://gam0022.net/blog/2013/01/23/eclipse-console-encoding/</link>
+      <pubDate>Wed, 23 Jan 2013 10:58:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/01/23/eclipse-console-encoding/</guid>
+      <description>&lt;p&gt;最近、Eclipseを使っているのですが、文字エンコーディングを&lt;code&gt;EUC-JP&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変更したところ、コンソールへの標準出力は正常に行われるのに、標準入力が文字化けするようになってしまいました。&lt;/p&gt;
+
+&lt;p&gt;ぐぐったところ、&lt;code&gt;eclipse.ini&lt;/code&gt;に&lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt;という行を追加すれば解消するようでした。&lt;/p&gt;
+
+&lt;p&gt;Mac OS Xの場合、&lt;code&gt;eclipse.ini&lt;/code&gt;は&lt;code&gt;/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse.ini&lt;/code&gt;にあります。&lt;/p&gt;
+
+&lt;p&gt;コマンドライン引数が文字化けする場合も、同様に対処できるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://starzero.hatenablog.com/entry/20100902/1283438762&#34;&gt;Macのeclipseでコマンドライン引数が文字化け&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mac OS Xでjavacやjavaで文字化けした場合の対処</title>
+      <link>https://gam0022.net/blog/2012/12/19/javac/</link>
+      <pubDate>Wed, 19 Dec 2012 23:40:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/12/19/javac/</guid>
+      <description>&lt;p&gt;Mac OS Xでjavacやjavaで文字化けした場合の対処ですが、
+次のように&lt;code&gt;~/.bash_profile&lt;/code&gt;に&lt;code&gt;alias&lt;/code&gt;を設定すれば、治ると思います。&lt;/p&gt;
+
+&lt;p&gt;この例ではターミナルのエンコーディングがUTF-8という
+前提で設定しているので、UTF-8の部分は自分の環境に合わせて変更してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# ~/.bash_profile
+alias javac=&#39;javac -J-Dfile.encoding=UTF-8&#39;
+alias java=&#39;java -Dfile.encoding=UTF-8&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後に&lt;code&gt;source ~/.bash_profile&lt;/code&gt;してね。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;私に関して言うと、Javaを書くときはEclipseを使うことにしたので、この設定はあまり役に立ってないね！&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

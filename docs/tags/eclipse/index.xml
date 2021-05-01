@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/eclipse/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Eclipseのコード補完のショートカットを変更する</title>
+      <link>https://gam0022.net/blog/2013/04/23/eclipse-content-assist/</link>
+      <pubDate>Tue, 23 Apr 2013 17:31:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/04/23/eclipse-content-assist/</guid>
+      <description>&lt;p&gt;Eclipseのコード補完のショートカットは&lt;code&gt;C-space&lt;/code&gt;なのですが、
+Macで使うとSpotlightと干渉して使えません。&lt;/p&gt;
+
+&lt;p&gt;だったら、ショートカットのキーバインドを変更しましょう!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013-04-23-eclipse-content-assist.png&#34; alt=&#34;Eclipseの設定画面&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;設定方法はメニューバーから&lt;code&gt;Eclipse/環境設定/General/Keys&lt;/code&gt;です。&lt;/p&gt;
+
+&lt;p&gt;ほとんどのキーバインドをここから設定できるので、
+&lt;code&gt;content assist&lt;/code&gt;の項目を見つけて設定します。&lt;/p&gt;
+
+&lt;p&gt;私の場合はコード補完を&lt;code&gt;C-space&lt;/code&gt;ではなく&lt;code&gt;Tab&lt;/code&gt;に割り当てることにしました。&lt;/p&gt;
+
+&lt;p&gt;理由は、Visual Studioと同じショートカットの方が捗りそうだからです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipseのformatterの設定の方法をいつも忘れてしまうので</title>
+      <link>https://gam0022.net/blog/2013/01/24/eclipse-formatter/</link>
+      <pubDate>Thu, 24 Jan 2013 14:55:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/01/24/eclipse-formatter/</guid>
+      <description>&lt;p&gt;Eclipseのformatterの設定は、&lt;code&gt;Java &amp;gt; Code Style &amp;gt; Formatter&lt;/code&gt;から。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013.1.24_eclipse_formatter.png&#34; alt=&#34;Eclipseのformatterの設定&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipseのコンソール(Console)の出力が文字化けする</title>
+      <link>https://gam0022.net/blog/2013/01/23/eclipse-console-encoding/</link>
+      <pubDate>Wed, 23 Jan 2013 10:58:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/01/23/eclipse-console-encoding/</guid>
+      <description>&lt;p&gt;最近、Eclipseを使っているのですが、文字エンコーディングを&lt;code&gt;EUC-JP&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変更したところ、コンソールへの標準出力は正常に行われるのに、標準入力が文字化けするようになってしまいました。&lt;/p&gt;
+
+&lt;p&gt;ぐぐったところ、&lt;code&gt;eclipse.ini&lt;/code&gt;に&lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt;という行を追加すれば解消するようでした。&lt;/p&gt;
+
+&lt;p&gt;Mac OS Xの場合、&lt;code&gt;eclipse.ini&lt;/code&gt;は&lt;code&gt;/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse.ini&lt;/code&gt;にあります。&lt;/p&gt;
+
+&lt;p&gt;コマンドライン引数が文字化けする場合も、同様に対処できるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://starzero.hatenablog.com/entry/20100902/1283438762&#34;&gt;Macのeclipseでコマンドライン引数が文字化け&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

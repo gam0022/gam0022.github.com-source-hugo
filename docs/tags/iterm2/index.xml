@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/iterm2/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>bashからzshに乗り換えた</title>
+      <link>https://gam0022.net/blog/2013/05/23/zsh/</link>
+      <pubDate>Thu, 23 May 2013 12:30:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/05/23/zsh/</guid>
+      <description>&lt;p&gt;特に理由はなかったのですが、便利という噂を聞いてbashからzshに乗り換えました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013-05-23-zsh.png&#34; alt=&#34;iTerm2 + zsh&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;zshを試す&#34;&gt;zshを試す&lt;/h1&gt;
+
+&lt;p&gt;Macでは標準でzshが入っているので、ターミナルで&lt;code&gt;$ zsh&lt;/code&gt;とすれば試せます。&lt;/p&gt;
+
+&lt;p&gt;飽きたら、&lt;code&gt;$ exit&lt;/code&gt;で終了です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ログインシェルを変更&#34;&gt;ログインシェルを変更&lt;/h1&gt;
+
+&lt;p&gt;シェルの一覧は&lt;code&gt;/etc/shells&lt;/code&gt;から確認できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cat /etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確認したら、zshにログインシェルを変更しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ chsh -s /bin/zsh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;zshの設定&#34;&gt;zshの設定&lt;/h1&gt;
+
+&lt;p&gt;zshの設定をしようと思ったのですが、自分でゴリゴリ&lt;code&gt;.zshrc&lt;/code&gt;を書くのが大変そうだったので、
+&lt;code&gt;oh-my-zsh&lt;/code&gt;というzshの設定を管理するフレームワークを利用してみました。&lt;/p&gt;
+
+&lt;h2 id=&#34;oh-my-zshのsetup&#34;&gt;oh-my-zshのsetup&lt;/h2&gt;
+
+&lt;p&gt;GitHubのページに従ってインストールすればいいと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;robbyrussell/oh-my-zsh(GitHub)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;特に拘りがなければ、これで良さそうです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;oh-my-zshの設定&#34;&gt;oh-my-zshの設定&lt;/h2&gt;
+
+&lt;p&gt;まずはプロンプトを見やすくしましょう。&lt;/p&gt;
+
+&lt;p&gt;私は&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh/wiki/themes&#34;&gt;oh-my-zshのテーマの一覧&lt;/a&gt;から、
+&lt;code&gt;gallois&lt;/code&gt;というthemeを導入しました。&lt;/p&gt;
+
+&lt;p&gt;導入の方法は簡単で、&lt;code&gt;~/.zshrc&lt;/code&gt;の環境変数&lt;code&gt;ZSH_THEME&lt;/code&gt;を変更して、&lt;code&gt;source ~/.zshrc&lt;/code&gt;するだけです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#  .zshrc
+ZSH_THEME=&amp;quot;gallois&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--
+なぜか、zshにしてからなぜかターミナルで新規タブを開くと、
+カレントディレクトリではなくホームディレクトリで開かれるようになってしまいました。
+この問題は、oh-my-zshの`osx`というプラグインを利用すれば解決しました。
+--&gt;
+
+&lt;p&gt;また、&lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins&#34;&gt;プラグインの一覧&lt;/a&gt;から、
+&lt;code&gt;git&lt;/code&gt;と&lt;code&gt;osx&lt;/code&gt;pluginを導入しました。&lt;/p&gt;
+
+&lt;p&gt;最終的には、&lt;code&gt;~/.zshrc&lt;/code&gt; の2行を次のように変更しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# .zshrc
+ZSH_THEME=&amp;quot;gallois&amp;quot;
+plugins=(git osx)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;iterm2の導入&#34;&gt;iTerm2の導入&lt;/h1&gt;
+
+&lt;p&gt;ペインの分割とかが便利そうだったので、&lt;a href=&#34;http://www.iterm2.com/#/section/home&#34;&gt;iTerm2&lt;/a&gt;を入れてみました。&lt;/p&gt;
+
+&lt;p&gt;以下の2点だけ気になったので設定を変えました。&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;ウィンドウを透過する&lt;/dt&gt;
+&lt;dd&gt;* まず、メニューバーの&lt;code&gt;iTerm &amp;gt; Prefernces&lt;/code&gt; で &lt;code&gt;Prefernces&lt;/code&gt;ウィンドウを開く。&lt;/dd&gt;
+&lt;dd&gt;* &lt;code&gt;Profiles&lt;/code&gt;タブを選択する。&lt;/dd&gt;
+&lt;dd&gt;* &lt;code&gt;Window&lt;/code&gt;タブがあるので、&lt;code&gt;Transparency&lt;/code&gt;を適当に設定する。&lt;/dd&gt;
+&lt;dt&gt;新しいタブをカレントディレクトリで開く&lt;/dt&gt;
+&lt;dd&gt;* &lt;code&gt;Window&lt;/code&gt;タブではなく、&lt;code&gt;General&lt;/code&gt;タブを選択する。&lt;/dd&gt;
+&lt;dd&gt;* &lt;code&gt;Working Directory&lt;/code&gt;のラジオボックスから&lt;code&gt;Reuse previous sesson&#39;s directory&lt;/code&gt;を選択する。&lt;/dd&gt;
+&lt;/dl&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/twitter/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>大五郎botがTwitterで凍結された</title>
+      <link>https://gam0022.net/blog/2013/11/14/daigoroubot-was-suspended-on-twitter/</link>
+      <pubDate>Thu, 14 Nov 2013 21:29:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/11/14/daigoroubot-was-suspended-on-twitter/</guid>
+      <description>&lt;p&gt;10/25に&lt;a href=&#34;https://twitter.com/daigoroubot&#34;&gt;大五郎bot&lt;/a&gt;がTwitter上で凍結されました。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p&gt;大五郎Botが凍結されてくそウケるｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ &lt;a href=&#34;http://t.co/wsVWZim7OC&#34;&gt;pic.twitter.com/wsVWZim7OC&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/statuses/393730346518196224&#34;&gt;October 25, 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;凍結の解除方法&#34;&gt;凍結の解除方法&lt;/h1&gt;
+
+&lt;p&gt;ざっくりと書きますが、とりあえずこのような流れで凍結を解除することができました。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.twitter.com/forms/general?subtopic=suspended&#34;&gt;サポートチームに問題を報告する。&lt;/a&gt; から凍結解除のお願いをする。&lt;/li&gt;
+&lt;li&gt;Twitter サポートからメールが届くので、Twitterで迷惑行為を2度と行なわないという旨の返信をする。&lt;/li&gt;
+&lt;li&gt;Twitter サポートから凍結を解除しましたという旨のメールが届き、凍結も解除される。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;凍結の理由&#34;&gt;凍結の理由&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;お客様のアカウントが凍結されたのは、返信や@ツイートを使った複数の迷惑メッセージを送ったためです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;とのことです。&lt;/p&gt;
+
+&lt;h1 id=&#34;ふぁぼ数&#34;&gt;ふぁぼ数&lt;/h1&gt;
+
+&lt;p&gt;後から気がついたのですが、凍結されたことによって大五郎のふぁぼ数の変化がヤバいことになっていました。&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p&gt;10-25のふぁぼ数: -162472 (162472 → 0)&amp;#10;&lt;a href=&#34;http://t.co/dPbDL5D0dR&#34;&gt;http://t.co/dPbDL5D0dR&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23favcounter&amp;amp;src=hash&#34;&gt;#favcounter&lt;/a&gt;&lt;/p&gt;&amp;mdash; 大五郎（Ｕ＾ω＾）BOT (@daigoroubot) &lt;a href=&#34;https://twitter.com/daigoroubot/statuses/394146517008646144&#34;&gt;October 26, 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p&gt;10-27のふぁぼ数: 163660 (0 → 163660)&amp;#10;&lt;a href=&#34;http://t.co/dPbDL5D0dR&#34;&gt;http://t.co/dPbDL5D0dR&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23favcounter&amp;amp;src=hash&#34;&gt;#favcounter&lt;/a&gt;&lt;/p&gt;&amp;mdash; 大五郎（Ｕ＾ω＾）BOT (@daigoroubot) &lt;a href=&#34;https://twitter.com/daigoroubot/statuses/394509565296791552&#34;&gt;October 27, 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

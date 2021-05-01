@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848448">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>Optix | gam0022.net</title>
+
+    
+        <meta property="og:type" content="blog">
+        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/img/gam0022_splash.png">
+        <meta name="twitter:card" content="summary">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="Optix | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/tags/optix/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2019/09/18/rtcamp7/" itemprop="url">レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2019-09-18 10:15:43 &#43;0900 JST" itemprop="datePublished">2019-09-18</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">レイトレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">パストレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/optix">OptiX</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cuda">CUDA</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/gpu">GPU</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf">レイトレ合宿</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                9月7日(土)～9月8日(日)に猪苗代湖で開催された<a href="https://sites.google.com/site/raytracingcamp7/">レイトレ合宿7</a>に参加しました。</p>
+
+<p>自作のレンダラーでこんな画像を <strong>60秒の制限時間</strong> でレンダリングして4位をいただきました！</p>
+
+<p><a href="/images/posts/2019-09-10-rtcamp7/11.gam.png"><img src="/images/posts/2019-09-10-rtcamp7/11.gam.jpg" alt="本番のレンダリング結果" /></a></p>
+
+<p>ちなみに4K解像度（3840x2160）です！</p>
+
+<p>事前に本番環境で動作確認できなかったこともあり、よく見ると意図しないアーティファクトが発生しているのですが、許容レベルに収まったのはラッキーでした。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2019/09/18/rtcamp7/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2019/08/05/optix-raymarching-pathtracing/" itemprop="url">NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを実装した</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2019-08-05 12:10:23 &#43;0900 JST" itemprop="datePublished">2019-08-05</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">レイトレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">パストレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf">レイトレ合宿</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/optix">Optix</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                これは<a href="https://sites.google.com/site/raytracingcamp7/">レイトレ合宿7</a>アドベントカレンダーの記事です。</p>
+
+<p>NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを開発しました。</p>
+
+<p>レイとオブジェクトの交差判定をレイマーチングで行い、ライティングをパストレーシングをするという、レイマーチングとパストレーシングのハイブリッドなレンダリングを実現しました。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NVIDIA® OptiX上で<br>『レイマーチング×パストレーシング』<br>を実装できた😉 <a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash&amp;ref_src=twsrc%5Etfw">#レイトレ合宿</a> <a href="https://t.co/FKbuHiXqmP">pic.twitter.com/FKbuHiXqmP</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1155489034354843649?ref_src=twsrc%5Etfw">July 28, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2019/08/05/optix-raymarching-pathtracing/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+
+    
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+

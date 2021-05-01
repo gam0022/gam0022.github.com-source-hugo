@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/isucon/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/isucon/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ISUCON7予選で81位でした</title>
+      <link>https://gam0022.net/blog/2017/10/30/isucon7q/</link>
+      <pubDate>Mon, 30 Oct 2017 08:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2017/10/30/isucon7q/</guid>
+      <description>&lt;p&gt;会社の同期（&lt;a href=&#34;https://twitter.com/kanetaaaaa&#34;&gt;@kanetaaaaa&lt;/a&gt;）とチーム「アロマゲドン」を結成して、ISUCON7予選に参加しました。
+ISUCONは、お題となるWebサービスに対して、決められたレギュレーションの中で高速化を図るチューニングバトルです。&lt;/p&gt;
+
+&lt;p&gt;チーム名のアロマゲドンは、TVアニメ『プリパラ』に登場する白玉みかんさんと黒須あろまさんの2人組アイドルユニットの名前をお借りしました。
+本チームでは、白玉みかんさん役を私が、黒須あろまさん役をkanetaaaaaさん（以下、あろま）が務めました。&lt;/p&gt;
+
+&lt;p&gt;予選結果は、&lt;a href=&#34;http://isucon.net/archives/50961437.html&#34;&gt;407チーム中81位で、最終スコアは46,461&lt;/a&gt;でした。
+アプリのチューニングはある程度はできたのですが、&lt;code&gt;GET /icons&lt;/code&gt;の帯域問題に対処できなかったのが敗因でした。
+来年の予選突破に向けて、反省と感想を残そうと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-10-23-isucon7q/score.png&#34; alt=&#34;score遷移&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;事前準備&#34;&gt;事前準備&lt;/h1&gt;
+
+&lt;p&gt;私は過去にISUCON5に参加していますが、あろまはISUCON初参加だったため、ISUCON5の本戦用に私が用意したチートシートや&lt;a href=&#34;http://isucon.net/archives/50648750.html&#34;&gt;ISUCON夏期講習&lt;/a&gt;のスライドを読んで勉強してもらいました。&lt;/p&gt;
+
+&lt;h2 id=&#34;過去問の対策&#34;&gt;過去問の対策&lt;/h2&gt;
+
+&lt;p&gt;休日に会社に集まり、役割分担を意識しながらチームで問題を解く練習をしました。
+&lt;a href=&#34;https://github.com/catatsuy/private-isu&#34;&gt;pixiv ISUCON&lt;/a&gt;はEC2のAMIが公開されており環境構築が簡単だったので、これを使って練習しました。&lt;/p&gt;
+
+&lt;p&gt;pixiv ISUCONとISUCON7の予選問題は非常に似ていまいた。
+どちらも初期実装ではアップロードされた画像をMySQLのDBに書き込んでおり、
+この画像をDBから切り離してファイルに保存するようにして、nginx等で配信すれば、ぐっとスコアが伸びるような問題になっていました。&lt;/p&gt;
+
+&lt;p&gt;予選前に公開された&lt;a href=&#34;http://isucon.net/archives/50927022.html&#34;&gt;レギュレーション&lt;/a&gt;に『複数台あるサーバーの役割の変更』という文言があり、
+複数台構成は予想できていたので、pixiv ISUCONを2台のサーバにする練習もしました。
+練習の構成では、1台のサーバに画像のアップロードと配信を行わせ、もう1台のサーバでその他の処理をさせるようにしました。
+しかし、この構成は微妙らしく、1台のときよりスコアが下がりました。&lt;/p&gt;
+
+&lt;p&gt;今思えば、この時に複数台構成の練習をちゃんとしていれば、予選のスコアはもっと伸びただろうという後悔しかありません。
+予選では帯域がボトルネックだったので、複数のサーバで画像を配信する構成で練習するべきでした。
+練習の方向性は間違っていなかったので、詰めが甘かったことを本当に後悔しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;ツールの整備&#34;&gt;ツールの整備&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/KLab/myprofiler&#34;&gt;myprofiler&lt;/a&gt;: MySQLのプロファイラ&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sonots/lltsv&#34;&gt;lltsv&lt;/a&gt;: ステータスコードごとのアクセスログの集計用&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/firehol/netdata&#34;&gt;netdata&lt;/a&gt;: リソースモニタリング&lt;/li&gt;
+&lt;li&gt;nginxのアクセスログをサマライズするスクリプト&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最後のアクセスログのサマライズは、あろまがいい感じにHTML出力とソート対応をしてくれました。&lt;/p&gt;
+
+&lt;iframe style=&#34;width: 100%;height: 400px;&#34; src=&#34;https://gam0022.net/images/posts/2017-10-23-isucon7q/summary_log_init.html&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;ISUCON用にslackのグループを作って、上記のサマライズの結果をslackに投稿する仕組みを作りました。&lt;/p&gt;
+
+&lt;h2 id=&#34;環境整備の仕込み&#34;&gt;環境整備の仕込み&lt;/h2&gt;
+
+&lt;p&gt;当日の環境構築は私が担当することにしました。
+まず最初にsshの設定をすることは明らかだったので、事前にあろまの公開鍵を教えてもらいました。&lt;/p&gt;
+
+&lt;p&gt;環境設定用のリポジトリを作って、&lt;code&gt;.bashrc&lt;/code&gt; や &lt;code&gt;.vimrc&lt;/code&gt; を入れておきました。
+本番環境の &lt;code&gt;.bashrc&lt;/code&gt; や &lt;code&gt;.vimrc&lt;/code&gt; からincludeする手順も確立しておきました。&lt;/p&gt;
+
+&lt;p&gt;他にも役に立ちそうなシェルスクリプトやaliasを用意しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アプリとMySQLとnginxを一発で再起動するスクリプト&lt;/li&gt;
+&lt;li&gt;プロファイリングツールを起動するコマンド&lt;/li&gt;
+&lt;li&gt;複数のサーバにrsyncでコードをデプロイするスクリプト（担当：あろま）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ツール整備で紹介したmyprofilerやlltsvについては、
+事前にバイナリをダウンロードして、環境設定用のリポジトリに突っ込んでおきました。&lt;/p&gt;
+
+&lt;p&gt;最後に当日やることのリストの整備しておいて、当日の役割分担を打ち合わせしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;チームビルディング&#34;&gt;チームビルディング&lt;/h2&gt;
+
+&lt;p&gt;プリパラのアニメや曲を鑑賞することで、チームの結束力を高めました。&lt;/p&gt;
+
+&lt;h1 id=&#34;予選当日&#34;&gt;予選当日&lt;/h1&gt;
+
+&lt;p&gt;当日の流れを振り返ります。&lt;/p&gt;
+
+&lt;h2 id=&#34;初回ベンチマークまでの動き&#34;&gt;初回ベンチマークまでの動き&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;環境設定（担当：みかん）
+
+&lt;ul&gt;
+&lt;li&gt;sshの設定&lt;/li&gt;
+&lt;li&gt;GitHubへの公開鍵設定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.bashrc&lt;/code&gt; と &lt;code&gt;.vimrc&lt;/code&gt;の仕込み&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;サーバ構成の変更（担当：みかん）
+
+&lt;ul&gt;
+&lt;li&gt;3台のサーバのうち、mysqlのある3台目のサーバだけを使う1台構成に決定
+
+&lt;ul&gt;
+&lt;li&gt;今思うと致命的な判断ミス。ここで負けが決まってしまった&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;1台目の2台目のサーバにPythonのアプリがあったので、それらを落とす&lt;/li&gt;
+&lt;li&gt;3台目のサーバでRubyのアプリとnginxを起動&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/home/isucon/isubata/webapp&lt;/code&gt; と &lt;code&gt;/etc&lt;/code&gt; をGit管理、リポジトリ作成（担当：みかん）&lt;/li&gt;
+&lt;li&gt;MySQLのユーザ名とパスワードを調査（担当：あろま）
+
+&lt;ul&gt;
+&lt;li&gt;事前に用意していたMySQL関係のaliasでは、ユーザ名をrootでパスワードなしを前提としていて、動かずに困っていたが、これで解決&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;apt-get update（担当：あろま）&lt;/li&gt;
+&lt;li&gt;vimやnetdataのインストール（担当：あろま）&lt;/li&gt;
+&lt;li&gt;MySQLのバックアップ（担当：あろま）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;初期ベンチマークのスコアは6,134でした。&lt;/p&gt;
+
+&lt;h3 id=&#34;重たいページ&#34;&gt;重たいページ&lt;/h3&gt;
+
+&lt;p&gt;初期状態だとユーザのプロフィール画像の &lt;code&gt;GET /icons&lt;/code&gt; がボトルネックになっていました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-10-23-isucon7q/summay_log_init.png&#34; alt=&#34;summay_log_init&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;重たいmysqlのクエリ&#34;&gt;重たいMySQLのクエリ&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;GET /icons&lt;/code&gt; はimageテーブルの画像データを取り出すようになっており、それが反映されていました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 209 SELECT * FROM image WHERE name = ?
+  41 SELECT COUNT(*) as cnt FROM message WHERE channel_id = ?
+  14 SELECT name, display_name, avatar_icon FROM user WHERE id = ?
+   3 SELECT * FROM haveread WHERE user_id = ? AND channel_id = ?
+   1 INSERT INTO haveread (user_id, channel_id, message_id, updated_at, created_at) VALUES (?, ?, ?, NOW(), NOW()) ON DUPLICATE KEY UPDATE message_id = ?, updated_at = NOW()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;前半のチューニング&#34;&gt;前半のチューニング&lt;/h2&gt;
+
+&lt;p&gt;これらチューニングで、初期スコアの6,134から最終スコアの46,461前後になりました。&lt;/p&gt;
+
+&lt;!--
+- nginxのworker_connections 1024 にしたら、スコアが3,000前後に下がったので、リバート（担当：みかん）
+--&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MySQLのインデックス追加（担当：みかん）
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ALTER TABLE message ADD INDEX channel_id(channel_id);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;imageテーブルの画像をファイルとして読み書きしてnginxで配信するように変更（担当：みかん）
+
+&lt;ul&gt;
+&lt;li&gt;pixiv ISUCONで予習済みだったため、すんなりとできた&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;imageテーブルをDrop（担当：あろま）&lt;/li&gt;
+&lt;li&gt;cssやjsなどの静的ファイルをnginxで配信。さらにgzip_staticで帯域の節約（担当：あろま）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GET /icons&lt;/code&gt;で304を返せるようにnginxのCache-Controlの設定（担当：あろま）
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://sfujiwara.hatenablog.com/entry/2017/10/23/123240&#34;&gt;上位チームでもすぐに気が付かなかった&lt;/a&gt; &lt;code&gt;Cache-Control: public&lt;/code&gt; を付けてくれた（超絶ナイス）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;stackprofというRubyのプロファイラを導入（担当：あろま）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GET /message&lt;/code&gt;が時々9秒など異常に遅いときがあるのに気がつく（担当：みかん）
+
+&lt;ul&gt;
+&lt;li&gt;N+1問題を解消&lt;/li&gt;
+&lt;li&gt;パラメータのlast_message_idより新しい最新の100件のmessageを返していた&lt;/li&gt;
+&lt;li&gt;MySQLで最新の100件を取得し、last_message_idによるフィルタリングはアプリ側で行うように修正&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;root@app2483:/etc$ cat /var/log/nginx/access.log | grep &amp;quot;/message&amp;quot; | lltsv -k reqtime,request,in,out | sort -n -r | head
+reqtime:9.686    request:GET /message?channel_id=2&amp;amp;last_message_id=0 HTTP/1.1    in:673    out:52306
+reqtime:4.825    request:GET /message?channel_id=2&amp;amp;last_message_id=0 HTTP/1.1    in:673    out:52306
+reqtime:4.590    request:GET /message?channel_id=3&amp;amp;last_message_id=0 HTTP/1.1    in:677    out:50090
+reqtime:3.017    request:GET /message?channel_id=10&amp;amp;last_message_id=11918 HTTP/1.1    in:678    out:18771
+reqtime:3.000    request:POST /message HTTP/1.1    in:2904    out:0
+reqtime:3.000    request:POST /message HTTP/1.1    in:1571    out:0
+reqtime:2.964    request:POST /message HTTP/1.1    in:1502    out:152
+reqtime:2.962    request:POST /message HTTP/1.1    in:1547    out:152
+reqtime:2.960    request:POST /message HTTP/1.1    in:2113    out:152
+reqtime:2.855    request:POST /message HTTP/1.1    in:1563    out:152
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;重たいページ-1&#34;&gt;重たいページ&lt;/h3&gt;
+
+&lt;p&gt;nginxで画像を返すようにしても相変わらず &lt;code&gt;GET /icons&lt;/code&gt; がボトルネックになっていました。
+キャッシュコントロールもしているのに、どうしてだろうと頭を抱えました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-10-23-isucon7q/summary_log_final.png&#34; alt=&#34;summary_log_final&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ステータスコードごとの集計でも304が最多でしたので、やはりキャッシュコントロールは正しく効いていそうでした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lltsv -k status access.log.2017-10-22_20-42-27 | sort | uniq -c
+5673 status:200
+  91 status:204
+6554 status:303
+24765 status:304
+  26 status:400
+  52 status:403
+   1 status:404
+  13 status:409
+   3 status:499
+ 108 status:500
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;試合後に気がついたのですが、画像の中身のハッシュ値からファイル名を決定していたので、同じファイル名の画像は更新されない仕様でした。
+ 反省点としては、同じ画像がアップロードされたら無視するようにするべきでした。
+ そうすれば、画像のアップロード直後にも304を返せるので、さらに&lt;code&gt;/icons&lt;/code&gt;の帯域を節約できたのではないかと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;重たいmysqlのクエリ-1&#34;&gt;重たいMySQLのクエリ&lt;/h3&gt;
+
+&lt;p&gt;imageテーブルを排除し、明らかに危険なN+1は解消したので、メッセージ数のカウント等のクエリが上位になりました。&lt;/p&gt;
+
+&lt;p&gt;既読を管理している&lt;code&gt;haveread&lt;/code&gt;はMySQLから離して、memcached等のメモリキャッシュシステムに載せることも考えましたが、練習してこなかったので諦めました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;40 SELECT COUNT(*) as cnt FROM message WHERE channel_id = ?
+37 SELECT * FROM haveread WHERE user_id = ? AND channel_id = ?
+ 4 INSERT INTO message (channel_id, user_id, content, created_at) VALUES (?, ?, ?, NOW())
+ 3 INSERT INTO haveread (user_id, channel_id, message_id, updated_at, created_at) VALUES (?, ?, ?, NOW(), NOW()) ON DUPLICATE KEY UPDATE message_id = ?, updated_at = NOW()
+ 1 SELECT id FROM channel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;netdata&#34;&gt;netdata&lt;/h3&gt;
+
+&lt;p&gt;CPUの使用率が100%となっており、CPUを使い切っていることが分かりました。
+ようやくCPUが1コアしかないことに気が付きました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;isucon@app2483:~/isubata/webapp/ruby$  cat /proc/cpuinfo | grep processor
+processor    : 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最初はアプリ側のチューニングができた証拠のだろうと楽観的な解釈したのですが、
+サーバ1台あたりのスペックがとても低く、複数台構成でないと勝てないのではないかという疑念が湧きはじめました。&lt;/p&gt;
+
+&lt;p&gt;次に帯域に注目しました。
+当日マニュアルによると『グローバルIP側の帯域は100Mbps』となっており、帯域も使い切っていることが分かりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-10-23-isucon7q/netdata_final.png&#34; alt=&#34;netdata_final&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;後半のチューニング&#34;&gt;後半のチューニング&lt;/h2&gt;
+
+&lt;p&gt;残念ながら、ボトルネックの帯域に対する対策が何もできず、スコアに貢献できるアクションは何一つできずに終わりました。&lt;/p&gt;
+
+&lt;p&gt;私のオペレーションミスでMySQLのデータを壊してしまい、
+ベンチマークが通らなくなるなどのトラブルもありましたが、あろまにリストアして助けてもらいました。&lt;/p&gt;
+
+&lt;p&gt;試合終了1時間前にベンチマーク対象のサーバを複数選択すると、並列にアクセスされることに気が付きましたが、
+残り1時間で複数台構成への変更は危険だと判断して、最後まで1台構成にすることにしました。&lt;/p&gt;
+
+&lt;p&gt;早い段階で複数台構成を考えていればと後悔ばかりです。&lt;/p&gt;
+
+&lt;!--
+- みかん : `statement.close`をコメントアウト（致命的ミス）
+  - Rubyのmysql2に使い慣れておらず、`statement.close`を明示するのに見慣れていなかった
+  - N+1問題が残っている状態だったら、毎回コネクションをクローズするのは良くないのかもと思っていた
+  - これによってMySQLのコネクションが足りなくなる
+  - Rubyの初期実装では `statement.close`が抜けている部分があったので、これを補うのか、mysql2-cs-bindに置き換えるのが正しい対処だった模様
+--&gt;
+
+&lt;p&gt;他のチームがスコアを伸ばす中、スコアが全く伸びないという焦燥感から冷静な判断力を失い、お互いの作業内容も把握できなくなっていました。&lt;/p&gt;
+
+&lt;p&gt;私は&lt;code&gt;GET /history&lt;/code&gt;の中でレコード数の多いmessageに対して、&lt;code&gt;SELECT id FROM message WHERE channel_id = ? ORDER BY id DESC LIMIT ? OFFSET ?&lt;/code&gt;していて、大量のレコードを走査していそうだったので、これの対処を試みるもうまくいかずに時間を無駄にしただけでした。&lt;/p&gt;
+
+&lt;h2 id=&#34;提出30分前&#34;&gt;提出30分前&lt;/h2&gt;
+
+&lt;p&gt;試合終了30分前を目処に再起動のテストを行いました。&lt;/p&gt;
+
+&lt;p&gt;不要なサービスをdisableして、nginxのアクセスログをOFFにしました。&lt;/p&gt;
+
+&lt;p&gt;再起動テストを時間に余裕をもって取り組めたのは良かった点だと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;反省&#34;&gt;反省&lt;/h1&gt;
+
+&lt;p&gt;帯域問題に対応できなかった他にも反省点があります。&lt;/p&gt;
+
+&lt;p&gt;試合終了後に発覚したのですが、レギュレーションをきちんと読まなかったために、スコアに関して非常に重大なポイントを見落としていました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;スコアは基本的に以下のルールで算出されます。&lt;/p&gt;
+
+&lt;p&gt;成功したGETリクエスト数＋成功したPOSTリクエスト数×3＋受信したメッセージ件数&lt;/p&gt;
+
+&lt;p&gt;「受信したメッセージ件数」とは、 GET /message が返したJSON内のメッセージ数です。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;また&lt;a href=&#34;http://isucon.net/archives/50961706.html&#34;&gt;ISUCON7 予選問題の公開と解説&lt;/a&gt;に次のようにあります。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;クライアントはGET /fetchをポーリングしていて、閲覧中のチャンネルに新着メッセージがある場合にはGET /messageを呼んで新着メッセージを受信します。GET /fetchのレスポンスをどんなに改善しても、新着メッセージがなければスコアは上がりません。閲覧中のチャンネルに新着メッセージが1件ある状態ですぐに返しても、GET /messageで1点とそこに含まれる1メッセージ分の1点で、2リクエストで2点しか稼ぐことができません。&lt;/p&gt;
+
+&lt;p&gt;しかしGET /fetchをタイムアウトにならない範囲で遅くしてやると、GET /messageは1リクエストで数十件のメッセージを取得することができるので2リクエストで数十点を稼ぐ事ができます。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;通常の1回のGETリクエストで1点しか稼げませんが、&lt;code&gt;GET /fetch&lt;/code&gt;を適切に遅くしてやると、1回の&lt;code&gt;GET /message&lt;/code&gt;で最大100点稼ぐことができました。&lt;/p&gt;
+
+&lt;p&gt;我々のチームはこれに気が付きませんでした。
+&lt;code&gt;GET /message&lt;/code&gt;のレスポンスサイズに注目すると、初期状態の46989.50877 byteから、チューニング後は9451.1263 byteに下がっていました。
+初期状態で何件のメッセージを返せていたのか不明ですが、初期実装と比較して、1回の&lt;code&gt;GET /message&lt;/code&gt;の点数はおよそ1/5に落ちていたようです。&lt;/p&gt;
+
+&lt;p&gt;ただし、検証した範囲内ではsleepを消したほうがスコアが上がりました。
+Rubyのようにprefork型だとsleepでworkerが専有されてしまうからでしょうか。
+ISUCONの問題は言語によって差が出ないものが多いですが、sleepに関しては言語による差があるように感じました。&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;事前の打ち合わせ通りに作業を分担して、チームとして戦えた点は非常に良かったと思います。
+事前準備のツールやスクリプトを本番で活用できたので、事前準備も成功だったと思います。&lt;/p&gt;
+
+&lt;p&gt;帯域問題の複数台構成による解決は、チームのスキル的に難しかったので、今回のように諦めるのも戦略として間違いでは無かったと思っています。
+とはいえ、冷静になればもう少しうまく対処できたような気もするので、ちょっと悔しいです。
+最大の反省点はレギュレーションの読み込みの甘さです。次回は絶対に気をつけたいです。&lt;/p&gt;
+
+&lt;p&gt;今年の問題はアプリのチューニングだけでは完結せずに、帯域の制約も対処する必要があって、インフラ側の知識や経験も要求されました。
+言い訳っぽいですが、自分のようにクライアントがメインでサーバは片手間に触っているようなエンジニアだと厳しいものを感じました。&lt;/p&gt;
+
+&lt;p&gt;個人的な意見になりますが、複数台構成や帯域制限のある構成だと、試合後に再現が困難なため復習しにくい気がします。
+欲を言えば、EC2のAMIが公開されていて、特定のインスタンプタイプでインスタンスを作ればすぐに環境を再現できるような問題が嬉しいです。&lt;/p&gt;
+
+&lt;p&gt;なんだか愚痴っぽくなってしまいましたが、ISUCONの練習や予選を通して得たものは多かったので、来年も是非参加したいです。
+運営の方々、楽しいイベントをありがとうございました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>全くの素人がISUCON5本戦に参加しました</title>
+      <link>https://gam0022.net/blog/2015/11/08/isucon/</link>
+      <pubDate>Sun, 08 Nov 2015 18:21:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2015/11/08/isucon/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;ISUCON5の本戦に @methane さん、@koki_cheese さん、私(@gam0022)の3人で、チーム名 lily white として参加しました。
+結果は fail (サーバの再起動のテストで失格しため、スコア無し)でした。&lt;/p&gt;
+
+&lt;p&gt;ISUCONとは、お題となるWebサービスを限界まで高速化を図るチューニングバトルです。
+私は今回のISUCONに参加するまで、インフラもパフォーマンス・チューニングも経験のない全くの素人でした。
+自分の実力では本戦出場は絶対に不可能でしたので、本戦まで連れていってくださったチームのみなさんには本当に感謝しています。&lt;/p&gt;
+
+&lt;p&gt;ISUCONの攻略に関する有益な情報は、既に他のブログに多くのエントリーがあると思いますので、
+本記事では全くの素人がどんなふうにISUCONに参加したのかを振り返っていこうかと思います。
+予選+本戦を振り返るため、長文になります。すみません。
+チーム全体での参加の様子は、@methane さんのブログで紹介されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dsas.blog.klab.org/archives/isucon5-qual-methane.html&#34;&gt;ISUCON5 予選通過しました (@methane編)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dsas.blog.klab.org/archives/isucon5-final.html&#34;&gt;ISUCON 5 決勝戦で負けてきました&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参加のきっかけは、会社の先輩でスーパーエンジニアの @methane さんがISUCONに興味のある新人を募集していたことでした。
+インフラやパフォーマンス・チューニングを学習する良い機会になりそうだと考えて、参加を決意しました。
+また、大学生の @koki_cheese さんが ISUCON メンバーを募集していたので、
+@methane さんが自チームに引き入れ、チーム lily white が結成されました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;予選&#34;&gt;予選&lt;/h1&gt;
+
+&lt;p&gt;まずは予選に関して、練習でやったこと、当日やったこと、後日やったことを振り返ります。&lt;/p&gt;
+
+&lt;h2 id=&#34;予選にむけての準備&#34;&gt;予選にむけての準備&lt;/h2&gt;
+
+&lt;p&gt;リーダの @methane さんにアドバイスをいただきながら、私と @koki_cheese さんは練習と対策を行っていきました。&lt;/p&gt;
+
+&lt;p&gt;事前に、&lt;a href=&#34;https://cloud.google.com/?hl=ja&#34;&gt;GCP(Google Cloud Platform)&lt;/a&gt;上で
+予選が実施されるというアナウンスがあったため、練習にはGCP環境を使用しました。
+ちなみに、ISUCON 参加チームには1年間有効な100ドル分のGCPクーポンが配布されます。&lt;/p&gt;
+
+&lt;p&gt;また、去年開催された ISUCON4 の予選はAWS上で実施されましたが、
+ISUCON運営チームが ISUCON5 の練習用に
+ISUCON4 の予選の&lt;a href=&#34;http://isucon.net/archives/45253058.html#5_1&#34;&gt;GCPのイメージ&lt;/a&gt;を配布してくださいました。
+まずは、このイメージを使って ISUCON の雰囲気をつかんでいきました。&lt;/p&gt;
+
+&lt;p&gt;ISUCON4の予選はのお題は「いすこん銀行」というログイン機能だけの非常にシンプルなWebアプリでした。
+@methane さんにプロファイリングの方法などを教わりながら、次のようなことをしました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GCP自体の使い方の練習&lt;/li&gt;
+&lt;li&gt;以下のコマンドやツールを使った、プロファイリングの練習
+
+&lt;ul&gt;
+&lt;li&gt;@methane さん作の &lt;a href=&#34;https://github.com/KLab/myprofiler&#34;&gt;myprofiler&lt;/a&gt; という MySQL のプロファイラ&lt;/li&gt;
+&lt;li&gt;@methane さん作の Nginxのアクセスログを集計して、ページごとのレスポンスや通信量を調べるスクリプト&lt;/li&gt;
+&lt;li&gt;dstat という色々なリソース状況を見るためのコマンド&lt;/li&gt;
+&lt;li&gt;top というプロセスごとの CPUやメモリの状況を調べるコマンド&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Go言語のアプリとMySQLをTCPではなく、UNIXドメインソケットで繋ぐ練習&lt;/li&gt;
+&lt;li&gt;Nginxで静的ファイルを返す設定をする練習&lt;/li&gt;
+&lt;li&gt;DBのオンメモリ作戦にチャレンジ（自分の実装力とアプリの挙動の把握力が低すぎてハマったので、当日はオンメモリは止めることにしました）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、チームとしてGoを選択することは決まっていたのに、私はGoが全くの未経験だったので、
+&lt;a href=&#34;http://go-tour-jp.appspot.com/#1&#34;&gt;A Tour of Go&lt;/a&gt;を一通り目を通してGoに慣れておきました。&lt;/p&gt;
+
+&lt;p&gt;strace/pprof についても教えてもらっていましたが、これらの練習は手を付けられませんでした。&lt;/p&gt;
+
+&lt;h2 id=&#34;予選の当日&#34;&gt;予選の当日&lt;/h2&gt;
+
+&lt;p&gt;ISUCON5の予選のお題は「ISUXI」という某SNS風のアプリでした。
+また、SQLのチューニングだけでもギリギリ予選突破できるような問題となっていました。&lt;/p&gt;
+
+&lt;p&gt;基本的にISUCONはチーム戦ですが、私たちのチームでは個人でそれぞれチューニングを行ない、
+最高スコアのインスタンスを提出する作戦でいきました。&lt;/p&gt;
+
+&lt;p&gt;私のベストスコアは2000程度で、予選通過ボーダーラインの13898を大きく下回る結果となってしまいました。
+チームとしては、@methane さん1人の力で予選を突破する結果となりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;ボトルネックの調査&#34;&gt;ボトルネックの調査&lt;/h3&gt;
+
+&lt;p&gt;まず、myprofiler でクエリをプロファイリングしたところ、&lt;code&gt;relations&lt;/code&gt;というテーブルが何度も参照されていることが分かりました。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;entries&lt;/code&gt;と&lt;code&gt;comments&lt;/code&gt;というテーブルでは、body というカラムの1行目がタイトルとなっていて、
+アプリ側で1行目を取り出して、2行目以降は捨てるような処理となっており、
+かなり無駄な FETCH が発生していることが分かりました。&lt;/p&gt;
+
+&lt;p&gt;そして、いくつかのテンプレートで、&lt;code&gt;users&lt;/code&gt;テーブルをSELECTしていて、
+いわゆる「N+1」問題になっているというところまでは分かりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;対策&#34;&gt;対策&lt;/h3&gt;
+
+&lt;p&gt;まず最初に、Go言語のアプリとMySQLをTCPではなく、UNIXドメインソケットで繋ぐところをやりました。&lt;/p&gt;
+
+&lt;p&gt;body カラムの問題については、対応が大変そうだったので、後回しにしました。&lt;/p&gt;
+
+&lt;p&gt;予選マニュアルをよく読むと、
+「ユーザはすべてメールアドレスとパスワードでログインしますが、データベースにデフォルトで登録されているユーザは全て、パスワードはアカウント名と同じです。」
+とあり、追加分のユーザのデータについてもこのルールを満たしていることが分かったので、
+初期実装のハッシュ値の計算などを消して、メールアドレスのアカウント名だけを切り出して、パスワードとの単純な文字列の一致で行うようにしました。&lt;/p&gt;
+
+&lt;p&gt;この変更を加えた後もベンチマークは正常にパスしましたが、結果的にはこの変更は悪手でした。
+ログインの処理はベンチマーク中で数回しか行われおらず、
+スコア的には誤差くらいの意味しか無かったので、他のことに時間を使ったほうが有意義でした。&lt;/p&gt;
+
+&lt;p&gt;この後は、ずっとSQLチューニングをしていました。
+INDEXを貼ったり消してEXPLAIN結果の変化を見たり、地道に「N+1」になっている箇所を潰したりしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ralations&lt;/code&gt;というテーブルが&lt;code&gt;user&lt;/code&gt;同士の友達関係を保持しており、
+&lt;code&gt;isFriend()&lt;/code&gt;という関数でユーザ同士の友達関係のチェックをするために、次のSQLのクエリを使っていました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT COUNT(1) AS cnt FROM relations WHERE (one = ? AND another = ?) OR (one = ? AND another = ?)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このアプリでは友達関係は両方向で、
+初期データセット全ての&lt;code&gt;relations&lt;/code&gt;のレコードについて、
+one と another を入れ替えた対応するレコードが存在していそうなことを確認して、次のように書き換えました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT COUNT(1) AS cnt FROM relations WHERE (one = ? AND another = ?)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;元のクエリでもそこまで処理が重いわけではありません。
+しかし、理由は後から分かりましたが、&lt;code&gt;isFriend()&lt;/code&gt;関数はトップページを1回表示するごとに2000回以上呼ばれていたので、それなりに効果がありました。&lt;/p&gt;
+
+&lt;p&gt;友達の人数を取得するために友達の&lt;code&gt;uesrs&lt;/code&gt;を全件FETCHしてGo側で配列の要素数を数えているのを、SQLの&lt;code&gt;COUNT&lt;/code&gt;で置き換えるなどしました。&lt;/p&gt;
+
+&lt;p&gt;ここまですると、友だちの最新の日記エントリ10件を返す部分がボトルネックになってきました。
+最初の実装だと、最新のエントリ1000件を全件取得して、上の&lt;code&gt;isFriend()&lt;/code&gt;関数を呼んで友達のエントリーだけをフィルターしていました。
+そのため、&lt;code&gt;isFriend()&lt;/code&gt;関数が大量に呼ばれていたわけです。
+ここが最大のボトルネックなのは察したので、残りの全ての時間をかけてここを潰す作戦にしました。&lt;/p&gt;
+
+&lt;p&gt;このようなケースだったら、&lt;code&gt;IN&lt;/code&gt;句を使うことで友達の&lt;code&gt;user_id&lt;/code&gt;でフィルターできるという知識くらいはかろうじてありました。
+単純に&lt;code&gt;IN&lt;/code&gt;句の中にサブクエリを書くように書き換えたところ、スコアが大きく下がりました。
+適当に書いたサブクエリがうまく最適化されていないのが原因でした。&lt;/p&gt;
+
+&lt;p&gt;サブクエリの中身を別の独立したSQLして分離するか、&lt;code&gt;EXISTS&lt;/code&gt;や&lt;code&gt;INNER JOIN&lt;/code&gt;で置き換えれば良かったのですが、
+予選時にはそれらの知識が無かったので、間違った方向に試行錯誤して、時間切れになりました。&lt;/p&gt;
+
+&lt;p&gt;そして、2000程度の予選通過ボーダーラインを大きく下回るしょぼいスコアでフィニッシュしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;予選のリベンジ&#34;&gt;予選のリベンジ&lt;/h2&gt;
+
+&lt;p&gt;とても予選が悔しかったので、&lt;a href=&#34;https://github.com/gam0022/isucon5q-retry&#34;&gt;MySQLのクエリチューニングとインフラの設定だけで予選ボーダーを超える練習&lt;/a&gt;をしました。
+本当に基本的なSQLチューニングしかできませんでしたが、
+最終的には17000くらいスコアが出て、なんとか予選のボーダーは超えました。&lt;/p&gt;
+
+&lt;h3 id=&#34;クエリチューニング&#34;&gt;クエリチューニング&lt;/h3&gt;
+
+&lt;p&gt;例の友だちの日記エントリについては、
+&lt;a href=&#34;http://www.geocities.jp/mickindex/database/db_optimize.html&#34;&gt;SQLを速くするぞ&lt;/a&gt;や
+&lt;a href=&#34;http://nippondanji.blogspot.jp/2009/03/mysql_25.html&#34;&gt;なぜMySQLのサブクエリは遅いのか。&lt;/a&gt;という記事を参考にして、
+&lt;code&gt;IN&lt;/code&gt;句ではなく、&lt;code&gt;EXIST&lt;/code&gt;句に置き換えたところ、サブクエリが最適化されるようになりました。
+さらに &lt;code&gt;INNER JOIN&lt;/code&gt; に置き換えてみましたが、これはあまり効果がありませんでした。&lt;/p&gt;
+
+&lt;p&gt;全く同じような方法で、最新の友達のコメント10件も&lt;code&gt;EXISTS&lt;/code&gt;に置き換えると、10000点は超えるようになりました。&lt;/p&gt;
+
+&lt;p&gt;予選当日に潰しそこねた「N+1」を全て殲滅すると、&lt;code&gt;isFriend()&lt;/code&gt;関数の呼び出しは1箇所だけになりました。&lt;/p&gt;
+
+&lt;p&gt;あまりネタバレを見ないでリベンジしていたのですが、足あとに関しては自分では良い対策が考えつかず、
+&lt;a href=&#34;http://isucon.net/archives/45627361.html&#34;&gt;公式の解説&lt;/a&gt;の鮮やかなREPLACEとテーブルの置き換えをそのまま行いました。&lt;/p&gt;
+
+&lt;p&gt;クライアントでこのようなクエリを投げて、
+body カラムの問題については、&lt;code&gt;entries.body&lt;/code&gt; の1行目を &lt;code&gt;entries.title&lt;/code&gt; に入れるスキーマの変更をしました。
+あとはクエリを適正に書き換えることで、body の無駄な FETCH が減らすことができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE entries ADD COLUMN ( title VARCHAR(80) );
+UPDATE entries SET title = SUBSTRING_INDEX(body,&amp;quot;\n&amp;quot;,1);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;圧縮テーブル&#34;&gt;圧縮テーブル&lt;/h3&gt;
+
+&lt;p&gt;今回はDBのサイズが巨大でメモリに載りきらないので、圧縮テーブルを試しました。
+まずは、&lt;code&gt;my.cnf&lt;/code&gt; で ファイルフォーマットを Barracuda にして、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;[mysqld]
+innodb_file_format = Barracuda
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;クラアントでこうすると、既存テーブルも圧縮テーブルにできます。意外と簡単です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE entries row_format = compressed;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ウォームアップ&#34;&gt;ウォームアップ&lt;/h3&gt;
+
+&lt;p&gt;正しいウォームアップ方法は今も分かっていませんが、
+&lt;code&gt;innodb_buffer_pool_dump&lt;/code&gt; を有効にするだけでも、再起動直後のスコアはかなり効果がありました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;[mysqld]
+innodb_buffer_pool_dump_at_shutdown = 1
+innodb_buffer_pool_load_at_startup = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;本戦&#34;&gt;本戦&lt;/h1&gt;
+
+&lt;p&gt;本戦の練習やっこと、当日やったことを振り返ります。&lt;/p&gt;
+
+&lt;h2 id=&#34;本戦にむけての準備&#34;&gt;本戦にむけての準備&lt;/h2&gt;
+
+&lt;p&gt;本戦の役割分担としては、環境設定などの下回り的な部分、オペレーション、MySQLのクエリチューニング、&lt;br /&gt;
+リグレッションテストをすることになったので、これらを中心に練習しました。&lt;/p&gt;
+
+&lt;h3 id=&#34;クエリチューニング-1&#34;&gt;クエリチューニング&lt;/h3&gt;
+
+&lt;p&gt;上で紹介した予選のリベンジを通して、基本的なクエリチューニングを学んでおきました。
+また、MySQLのプロファイリングについては、
+&lt;a href=&#34;http://nippondanji.blogspot.jp/2009/02/mysql.html&#34;&gt;プロファイリングで快適MySQLチューニング生活&lt;/a&gt;や
+&lt;a href=&#34;http://nippondanji.blogspot.jp/2009/03/mysqlexplain.html&#34;&gt;MySQLのEXPLAINを徹底解説!!&lt;/a&gt;、
+&lt;a href=&#34;http://ameblo.jp/principia-ca/entry-11923272810.html&#34;&gt;MySQL初心者に贈るインデックスチューニングのポイントまとめ2014&lt;/a&gt;
+などの記事を読みながら練習しました。&lt;/p&gt;
+
+&lt;p&gt;その他にも、&lt;code&gt;my.cnf&lt;/code&gt;の読みこまれる順序や、設定ファイルの基本的なパラメータの勉強、
+スキーマの変更のためのALTER系のクエリの使い方などを一通り予習しておきました。&lt;/p&gt;
+
+&lt;h3 id=&#34;nginx&#34;&gt;Nginx&lt;/h3&gt;
+
+&lt;p&gt;予選リベンジでやった以上のことは実践できませんでしたが、
+&lt;a href=&#34;http://www.amazon.co.jp/dp/4873116457&#34;&gt;マスタリングNginx&lt;/a&gt;という本を読んでおきました。&lt;/p&gt;
+
+&lt;h3 id=&#34;オペレーション&#34;&gt;オペレーション&lt;/h3&gt;
+
+&lt;p&gt;sshの環境設定、DBや設定のバックアップ、プロファイリング用のログを取るなどの最低限の練習はしました。&lt;/p&gt;
+
+&lt;p&gt;気休め程度に、当日の環境構築のチートシートは用意しておきました。&lt;/p&gt;
+
+&lt;p&gt;あとは、Nginxの再起動無しにログファイルを別のファイルに退避するコマンドなどを用意して、
+プロファイリング用のコマンドを当日コピーすればすぐ使えるように、ビルド済のバイナルファイルをまとめておきました。&lt;/p&gt;
+
+&lt;h3 id=&#34;リグレッションテスト&#34;&gt;リグレッションテスト&lt;/h3&gt;
+
+&lt;p&gt;予選ではベンチマークのキューの待ち時間が長いため、気軽にテストをできる状況では無かったです。
+そのため、簡易的なリグレッションテストをしようということになりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/buger/gor&#34;&gt;gor&lt;/a&gt;というツールを使うと、
+ヘッダーなどを含めてHTTPのリクエストをキャプチャできるので、
+この結果を見ながら&lt;a href=&#34;https://github.com/gam0022/isucon5q-regtest&#34;&gt;簡易的なリグレッションテスト&lt;/a&gt;を行うRubyのスクリプトを書く練習などをしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;本戦の当日&#34;&gt;本戦の当日&lt;/h2&gt;
+
+&lt;p&gt;本戦のテーマはマイクロサービスとなっていて、
+外部APIにリクエストを送り、その結果をまとめてユーザに返す「AirISU」というサービスでした。&lt;/p&gt;
+
+&lt;p&gt;スコアを上げるためには、APIへのリクエストを並列化したり、適切にレスポンスをキャッシュしたりする必要がありました。
+このあたりのチームの攻略方法については、@methane さんの&lt;a href=&#34;http://dsas.blog.klab.org/archives/isucon5-final.html&#34;&gt;記事&lt;/a&gt;に詳細があります。&lt;/p&gt;
+
+&lt;p&gt;本戦で私がやったことを振り返ります。&lt;/p&gt;
+
+&lt;p&gt;まずは事前の打ち合わせ通り、sshの環境設定を行いました。
+本戦ではマシンが3台構成で、初期状態ではパスワード認証だけができる状態でした。
+全員分の公開鍵も用意してあり、準備万端かと思いきや、ローカルから各マシンにはsshができるのに、
+マシン同士のsshができずに時間を無駄にしてしまいました。&lt;/p&gt;
+
+&lt;p&gt;@koki_cheese さんが &lt;code&gt;/etc/hosts.deny&lt;/code&gt;が原因であることを付け止めてくださり、
+&lt;code&gt;/etc/hosts.allow&lt;/code&gt;を&lt;code&gt;sshd: ALL&lt;/code&gt;に書き変えて対処しました。
+基本的な設定だったことに加え、適切に調べればすぐに分かるような問題だっただけに情けなかったです。
+事前の作戦では、プロファイリングやGoへのアプリの実装の切り替え・初回ベンチ・プロファイリング用のログの取得は自分の役割だったのですが、
+上記のsshの設定で手間取っている間に、2人に代わりにやっていただきました。&lt;/p&gt;
+
+&lt;p&gt;その後は、設定ファイルをバージョン管理したり、
+ログインシェルが sh だったので、bash に切り替えたり、
+事前に用意したコマンドをサーバに配置してパスを通したり、
+リーダの指示に従って、Nginx 周りの設定を行なっていました。&lt;/p&gt;
+
+&lt;p&gt;Nginxでの静的ファイルの配信は予選でもやっていたので問題無かったのですが、
+gzip_static の設定は gzip コマンドの &lt;code&gt;-k&lt;/code&gt; オプションを知らずに時間を無駄にしてしまいました。&lt;/p&gt;
+
+&lt;p&gt;他にも、&lt;code&gt;include mime.types;&lt;/code&gt;を追加したところ、Nginx が再起動しなくなってしまい、
+service コマンド経由で再起動するとエラーメッセージが標準出力されずに、fail としか出力されず、時間を無駄にしました。
+冷静に考えると、Nginxのエラーログを先に見れば、すぐに解決する問題でした。&lt;/p&gt;
+
+&lt;p&gt;このような初歩的な知識が無く、エラーログを読むなどの基本的なトラブルシューティングができずに、
+チームには迷惑をかけてしまいました。&lt;/p&gt;
+
+&lt;p&gt;MySQL のクエリチューニングの練習を一番練習していたのですが、本戦は MySQL ではなく postgress でした。
+しかも、クエリは非常に単純で、データ量も少ないのでボトルネックでは無さそうでした。
+2人がDBのオンメモリ化を進めていたので、結局DBのチューニングはスルーしました。
+一応、&lt;code&gt;pg_dump&lt;/code&gt; で初期データとスキーマのバックアップはとっておきましたが、最後まで使いませんでした。
+後から考えると、もう少しスキーマをじっくりと眺めて、インデックスだけでも適切に貼っていたりすれば、
+初動のスコアなら少しは貢献できたかもしれなかったです。&lt;/p&gt;
+
+&lt;p&gt;リグレッションテストについても、一部のレスポンスが外部APIに依存していてベンチマーク毎に結果が変わってしまうこと、
+予選よりもキューに空きがあってベンチマークを投げやすかったことなどがあって、
+リグレッションテスト自体の必要性が薄れてしまったので、作りかけで破棄しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;後日やったこと&#34;&gt;後日やったこと&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/hosts.allow&lt;/code&gt;を&lt;code&gt;sshd: ALL&lt;/code&gt;に書き変えた結果、
+本戦後3日くらいまでは自宅からも本戦のマシンにアクセスできる状態になっていたので、
+API を叩いたり、当日は把握できなかったアプリの挙動を確認たりしていました。&lt;/p&gt;
+
+&lt;p&gt;公式の GCP のイメージが公開されたら、きちんと復習したいと思っています。&lt;/p&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;ISUCON5 にチーム lily white のメンバーとして参加し、
+初参加ながら本戦出場を始めとして多くの貴重な機会を得ることができました。
+私個人としては、予選・本戦ともに、初歩的な知識や事前練習が不足していたこと、
+エラーログを読むなどの基本的なトラブルシューティングができなかったことで、
+チームのメンバーには迷惑をかけてしまいました。&lt;/p&gt;
+
+&lt;p&gt;結果的には、不完全燃焼でしたが、インフラやパフォーマンス・チューニングを勉強する良いきっかけになったと思います。
+また、社内のすごい先輩に直々に指導してもらい、意欲的な学生に出会えて、良い刺激を受けました。&lt;/p&gt;
+
+&lt;p&gt;来年もISUCONが開催されるのであれば、またリベンジするつもりです。
+それまでに、自分の力で予選突破できる程度には、頑張って実力をつけたいです。&lt;/p&gt;
+
+&lt;p&gt;最後に、ISUCONの運営チームの方々に深く感謝します。
+問題の作成やインフラの提供に加えて、GCPの無料クーポンの配布や過去の問題のイメージの準備など、練習の環境までサポートしていただきました。
+楽しいコンテストを、どうもありがとうございました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

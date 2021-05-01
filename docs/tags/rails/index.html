@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848448">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>Rails | gam0022.net</title>
+
+    
+        <meta property="og:type" content="blog">
+        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/img/gam0022_splash.png">
+        <meta name="twitter:card" content="summary">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="Rails | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/tags/rails/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2014/06/15/javascript-and-coffeescript/" itemprop="url">JavaScriptとCoffeeScriptのメモ</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2014-06-15 06:50:00 &#43;0900 JST" itemprop="datePublished">2014-06-15</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/javascript">JavaScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/coffeescript">CoffeeScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/rails">Rails</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <h1 id="はじめに">はじめに</h1>
+
+<p>卒研で <a href="http://threejs.org/">three.js</a> という3DCGのライブラリを使って何か開発することしたので、JavaScript について勉強しました。</p>
+
+<p>また、CoffeeScript という、コンパイルするとJavaScriptのコードに変換される言語についても使ってみることにしたので、
+これについても勉強しました。</p>
+
+<p>忘れてしまうと勿体無く思うので、備忘録です。</p>
+
+<p>この記事では、</p>
+
+<ol>
+<li>JavaScriptを勉強する上で重要だと思われる概念</li>
+<li>CoffeScript の学び方</li>
+<li>Rails で CoffeeScript を使う時のメモ</li>
+</ol>
+
+<p>を紹介します。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2014/06/15/javascript-and-coffeescript/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2013/10/18/run-rails-on-passenger/" itemprop="url">Rails4をPassengerで動かす</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2013-10-18 00:13:00 &#43;0900 JST" itemprop="datePublished">2013-10-18</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/rails">Rails</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/passenger">Passenger</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                RailsをPassengerを使ってVPSで動かすまでにハマったことなどをメモします。
+自分用のメモ程度の記事なので、あくまで参考程度にお願いします。
+Railsのサーバ環境を作るのは難しいというイメージがありましたが、結果的には Passenger の指示通りにやればなんとかなりました。
+ Passenger をインストールする。  古い情報らしいですが、Passenger のインストールについては、このページが参考になる。 $ gem install passenger $ passenger-install-apache2-module 上を実行すると、必要なパッケージが足りてないというエラーがでるので、パッケージ管理システムなどを使ってインストールする。 インストールが成功すると、LoadModule などの設定やvirtualhostの設定のサンプルが表示されるので、メモしておく。   LoadModule passenger_module /usr/local/rvm/gems/ruby-2.0.0-p247/gems/passenger-4.0.14/buildout/apache2/mod_passenger.so PassengerRoot /usr/local/rvm/gems/ruby-2.0.0-p247/gems/passenger-4.0.14 PassengerDefaultRuby /usr/local/rvm/wrappers/ruby-2.0.0-p247/ruby  &lt;VirtualHost *:80&gt; ServerName www.yourhost.com # !!! Be sure to point DocumentRoot to &lsquo;public&rsquo;! DocumentRoot /somewhere/public &lt;Directory /somewhere/public&gt; # This relaxes Apache security settings. AllowOverride all # MultiViews must be turned off. Options -MultiViews &lt;/Directory&gt; &lt;/VirtualHost&gt;   VPSのAレコードの設定をして、サブドメインを使えるようにする。
+ DTI のServerman@VPSのUbicNameでドメインを取っている場合、負荷分散設定というのでDNSレコードを設定できる。  Railsのプロジェクトをサーバの適当な場所に配置する。
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2013/10/18/run-rails-on-passenger/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+
+    
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+

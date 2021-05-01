@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>gam0022.net</title>
+
+    
+        <meta property="og:type" content="blog">
+        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/img/gam0022_splash.png">
+        <meta name="twitter:card" content="summary">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+<span id="homepage" style="display: none"></span>
+
+
+
+
+<section id="bio" class="home-section">
+    <div class="container">
+        <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="col-xs-12 col-md-4">
+        <div id="profile">
+
+            <div class="portrait" itemprop="image" style="background-image: url('https://gam0022.net/img/gam0022_splash.png');"></div>
+
+            <div class="portrait-title">
+                <h2 itemprop="name">細田 翔 / Sho Hosoda</h2>
+                <p itemprop="screen_name">@gam0022</p>
+                <p itemprop="jobTitle">ソフトウェアエンジニア</p>
+                <p itemprop="worksFor">KLab株式会社</p>
+            </div>
+
+            <ul class="social-icon">
+                
+                <li>
+                    <a href="//twitter.com/gam0022">
+                    
+                        <i class="fa fa-twitter big-icon" aria-hidden="true"></i>
+                    
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="//github.com/gam0022">
+                    
+                        <i class="fa fa-github big-icon" aria-hidden="true"></i>
+                    
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="//qiita.com/gam0022">
+                    
+                        <div class="social-icon" style="background-image: url('img/icons/qiita.png');"></div>
+                    
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="//gam0022.hatenablog.com">
+                    
+                        <div class="social-icon" style="background-image: url('img/icons/hatena-blog.png');"></div>
+                    
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="//www.facebook.com/sho.hosoda.9">
+                    
+                        <i class="fa fa-facebook-official big-icon" aria-hidden="true"></i>
+                    
+                    </a>
+                </li>
+                
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="visible-sm visible-xs"></div>
+
+    <div class="col-xs-12 col-md-8" itemprop="description">
+
+        
+
+<h1 id="略歴-biography">略歴 / Biography</h1>
+
+<p>群馬県出身、東京在住。グラフィック特化型のUnityエンジニア。</p>
+
+<p>中学生時代（2007年頃）にHSPに出会いゲームプログラミングに熱中する。
+中学生ながら開発したゲームが<a href="/works/#windows-games">2度もWindows100%に掲載される</a>。</p>
+
+<p>2011年に筑波大学 情報学群 情報科学類に入学。
+在学中には<a href="http://gam0022.net/app/twincal/">TwinCal</a>という筑波大学に特化した時間割のWebアプリケーションを開発する。TwinCalは在学生に広く利用され、<a href="http://acaric-valuator.com/event/studentappcontest2013/">学生のためのアプリ開発コンテスト</a>のファイナリストにも採択される（後輩に運用を引き継ぎ、現在も運用されている！）。<a href="http://www.cgg.cs.tsukuba.ac.jp/">計算幾何学とグラフィックス研究室</a>に所属し<a href="/works/#research">紙模型に特化したCADに関する研究</a>を行い、その業績を評価され<a href="https://twitter.com/gam0022/status/580638093226692608">筑波大学 情報学群長表彰</a>を受賞する。
+さらにグラフィクスとCAD／Visual Computing 合同シンポジウム 2015（<strong>査読付き国内会議</strong>）にて<a href="http://cgvi.jp/gcad/%CD%A5%BD%A8%B8%A6%B5%E6%C8%AF%C9%BD%BE%DE.html#qd40ba36">GCAD賞</a>（<strong>発表36件中4人</strong>）を受賞する。</p>
+
+<p>2014年にブラウザ上でハードウェアアクセラレータされた3DCG表現を可能にするWebGLに強い関心を持つ。
+先のCADの研究でもWebGLを用いて試作アプリを開発する。
+大学卒業後はWebGLのライブラリであるthree.jsとカスタムシェーダを組み合わせた表現に挑戦し、
+得られた知見を<a href="https://github.com/mrdoob/three.js/pulls?q=is%3Apr+author%3Agam0022+is%3Aclosed">three.jsへのOSSコントリビュート</a>や
+<a href="http://qiita.com/gam0022/items/9875480d33e03fe2113c">Qiita</a>、
+<a href="http://gam0022.net/blog/2016/02/16/glsl-tech/">GLSL勉強会</a>や<a href="https://webgl.souhonzan.org/entry/?v=0703">GLSLスクール</a>の講師として登壇し技術共有を行う。</p>
+
+<p><a href="http://tokyodemofest.jp">Tokyo Demo Fest</a>や<a href="https://2020.revision-party.net/start">Revision</a>といった国内外のデモパーティで上位入賞を果たす。</p>
+
+<ul>
+<li>Tokyo Demo Fest 2016 GLSL Graphics Compo 3位入賞（<a href="/blog/2016/02/24/tokyo-demo-fest/">解説記事</a>）</li>
+<li>Tokyo Demo Fest 2017 GLSL Graphics Compo 3位入賞（<a href="/blog/2017/02/24/tdf2017/">解説記事</a>）</li>
+<li>Tokyo Demo Fest 2018 Combined Demo Compo <strong>1位優勝</strong>（<a href="/blog/2018/12/12/tdf2018/">解説記事</a>）</li>
+<li>Revision 2020 PC 64K Intro <strong>1位優勝</strong>（<a href="/blog/2020/04/30/revision2020/">解説記事</a>）</li>
+</ul>
+
+<p>KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計、モバイル向けに最適化したシェーダー開発、テクニカルアーティストとしてプロジェクト横断のサポート活動等を行う。</p>
+
+<p>サンフランシスコで開催された<a href="https://www.gdconf.com/">GDC 2019</a>にて、Unityアプリの自動プロファイリングシステム構築についての発表を行う（<a href="https://schedule2019.gdconf.com/session/real-world-techniques-and-best-practices-for-optimizing-android-games-presented-by-google-inc/865328">セッション情報</a>、<a href="https://gam0022.net/blog/2019/03/28/gdc2019/">関連記事1</a>、<a href="https://www.klab.com/jp/blog/pr/2019/51708260.html">関連記事2</a>）。
+<a href="https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html">CEDEC 2019でも同テーマで発表</a>を行う。</p>
+
+<ul>
+<li>Last Update: 2020-05-10</li>
+<li>Read More: <a href="/resume">Resume</a></li>
+</ul>
+
+
+        <div class="row">
+
+
+            <div class="col-sm-4">
+                
+                <h3>興味 / Interests</h3>
+                <ul class="fa-ul">
+                    
+                    <li><i class="fa-li fa fa-tag"></i>Computer Graphics</li>
+                    
+                    <li><i class="fa-li fa fa-tag"></i>GPU Programming</li>
+                    
+                    <li><i class="fa-li fa fa-tag"></i>Realtime Rendering</li>
+                    
+                    <li><i class="fa-li fa fa-tag"></i>Offline Rendering</li>
+                    
+                    <li><i class="fa-li fa fa-tag"></i>Demoscene</li>
+                    
+                </ul>
+                
+
+                
+                <h3>技術 / Skills</h3>
+                <ul class="fa-ul">
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>three.js / WebGL</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>Unity</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>GLSL</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>HLSL</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>C&#43;&#43;/C</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>C#</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>Ruby on Rails</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>JavaScript</li>
+                    
+                    <li><i class="fa-li fa fa-wrench"></i>HTML/CSS</li>
+                    
+                </ul>
+                
+            </div>
+
+            <div class="col-sm-8">
+                
+                <h3>学歴 / Education</h3>
+                <ul class="ul-edu fa-ul">
+                    
+                    <li>
+                        <i class="fa-li fa fa-graduation-cap"></i>
+                        <div class="description">
+                            <p class="institution">筑波大学 情報学群 情報科学類, 2011-04 〜 2015-03</p>
+                            <p class="course">ソフトウェアサイエンス専攻, 計算幾何学とグラフィックス研究室</p>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+
+                
+                <h3>職歴 / Career</h3>
+                <ul class="ul-career fa-ul">
+                    
+                    <li>
+                        <i class="fa-li fa fa-briefcase"></i>
+                        <div class="description">
+                            <p class="company">KLab, エンジニア(正社員), 2015-04 〜 現在</p>
+                            <p class="detail">ソーシャルゲームの運営とクライアント(自社エンジン)・サーバ(PHP)の開発を担当した後、新規案件のクライアント(Unity)を開発中</p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <i class="fa-li fa fa-briefcase"></i>
+                        <div class="description">
+                            <p class="company">BearTail, エンジニア(学生アルバイト), 2014-04 〜 2015-03</p>
+                            <p class="detail"> Ruby on Railsによるスマートフォンアプリのバックエンド及びWeb版アプリの開発を担当</p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <i class="fa-li fa fa-briefcase"></i>
+                        <div class="description">
+                            <p class="company">情報基盤研究所, エンジニア(学生アルバイト), 2011-09 〜 2015-02</p>
+                            <p class="detail">C#とWPFによるWindowsアプリケーション開発、C&#43;&#43;とOpenCVによる画像処理を主に担当</p>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="work" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3 section-heading">
+                <h1>Work</h1>
+                <p>成果物・作品</p>
+            </div>
+            <div class="col-xs-12 col-md-9">
+                
+
+<h2 id="2017-realtime-pathtracing">2017 Realtime Pathtracing</h2>
+
+<div style="width:400px; margin:0; padding:0;" class="right">
+<iframe width="400" height="315" src="https://www.youtube.com/embed/FUb5U3ttmZE" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>WebGL(three.js)でリアルタイムなパストレーシングを実装しました。</p>
+
+<ul>
+<li><a href="https://gam0022.net/webgl/#pathtracing_sandbox">three.js webgl - pathtracing sandbox | gam0022.net</a></li>
+</ul>
+
+<p>関連情報</p>
+
+<ul>
+<li><a href="https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/">WebGLパストレーシングを技術書典2のためにブラッシュアップ | gam0022.net</a></li>
+<li><a href="https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a">WebGL+GLSLによる超高速なパストレーシング | Qiita</a></li>
+<li><a href="https://gam0022.net/webgl/#pathtracing_sandbox">three.js webgl - pathtracing sandbox | gam0022.net</a></li>
+</ul>
+
+<h2 id="2016-gem">2016 Gem</h2>
+
+<p><a href="/images/works/gem_original.png"><img alt="Gem" src="/images/works/gem.png" class="right"></a></p>
+
+<p>光の屈折をシミュレートすることで、輝く宝石をWebGLでレンダリングする「gem」という作品（技術デモ）をつくりました。
+レイトレーシングをGLSLのフラグメントシェーダで実装することで、GPUの並列計算を利用したリアルタイムな描画を実現しています。</p>
+
+<p>関連記事</p>
+
+<ul>
+<li><a href="http://qiita.com/gam0022/items/9875480d33e03fe2113c">これがGPUの力！three.jsによる“リアルタイム”なレイトレーシング 〜宝石編〜 - Qiita</a></li>
+</ul>
+
+<div class="read-more">
+  <a href="http://gam0022.net/webgl/#raytracing_gem" class="btn btn-primary btn-outline">Gem - gam0022.net</a>
+</div>
+
+<h2 id="2015冬-javascriptoon2">2015冬 JavaScriptoon2</h2>
+
+<p><a href="/images/works/javascriptoon2_original.jpg"><img alt="JavaScriptoon2" src="/images/works/javascriptoon2.jpg" class="right"></a></p>
+
+<p>「JavaScriptoon2」というWebフロントエンド本の「シェーダだけで世界を創る！Three.jsによるレイマーチング」という章を担当しました。</p>
+
+<p>レイマーチングはレイトレーシングの1種です。
+レイトレーシングやレイトレーシングは膨大な計算が必要ですが、フラグメントシェーダで実装することで、GPUの力を利用したリアルタイムに描画する方法を紹介しています。</p>
+
+<p>そもそもシェーダとは何かという基礎の解説からはじまり、レイマーチングの肝となる「距離関数」についても丁寧に解説しました。</p>
+
+<ul>
+<li><a href="https://techbooster.github.io/c89/#scriptoon2">JavaScriptoon2 - TechBooster in C89</a></li>
+<li><a href="https://techbooster.booth.pm/items/178227/">JavaScriptoon2 - BOOTH</a></li>
+</ul>
+
+<h2 id="まだまだあります">まだまだあります</h2>
+
+<p>詳しくはこちら。</p>
+
+<div class="read-more">
+  <a href="/works" class="btn btn-primary btn-outline btn-lg">Read more</a>
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="recent" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3 section-heading">
+                <h1>Recent Posts</h1>
+                <p>最新記事</p>
+            </div>
+            <div class="col-xs-12 col-md-9 row">
+                <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="contact" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3 section-heading">
+                <h1>Contact</h1>
+                <p>連絡先</p>
+            </div>
+            <div class="col-xs-12 col-md-9">
+                <ul class="list-unstyled">
+
+    
+
+    
+    <li>
+        <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+        <script>
+            function converter(M){var str="", str_as=""; for(var i=0;i<M.length;i++){ str_as = M.charCodeAt(i); str += String.fromCharCode(str_as + 1); } return str; } var ad = converter(String.fromCharCode(102,96,108,47,47,49,49,63,102,108)+String.fromCharCode(96,104,107,45,98,110,108)); document.write("<a href=\"mai"+"lto:"+ad+"\">"+ad+"<\/a>");
+        </script>
+    </li>
+    
+
+    
+
+</ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+

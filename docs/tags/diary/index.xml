@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/diary/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>三谷先生の鉄道模型コースシミュレータにパーマリンク機能を実装</title>
+      <link>https://gam0022.net/blog/2016/04/10/railway/</link>
+      <pubDate>Sun, 10 Apr 2016 10:37:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2016/04/10/railway/</guid>
+      <description>&lt;p&gt;三谷先生の鉄道模型コースシミュレータにパーマリンク機能を実装という記事をはてなブログに投稿しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gam0022.hatenablog.com/entry/2016/04/09/173827&#34;&gt;三谷先生の鉄道模型コースシミュレータにパーマリンク機能を実装という記事 - gam0022のブログ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>今年もよろしくお願いします</title>
+      <link>https://gam0022.net/blog/2014/01/01/happy-new-year/</link>
+      <pubDate>Wed, 01 Jan 2014 10:30:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2014/01/01/happy-new-year/</guid>
+      <description>&lt;p&gt;2014年、あけましておめでとうございます。今年もよろしくお願いします。&lt;/p&gt;
+
+&lt;p&gt;2013年を振り返ってみると、本当にあっという間に過ぎた1年でした。&lt;/p&gt;
+
+&lt;p&gt;しかし、手を動かして何かを作って発表するということを実践できた年だったと思います。&lt;/p&gt;
+
+&lt;p&gt;2014年は、決断の年になると思います。&lt;/p&gt;
+
+&lt;p&gt;ぱっと思いつくだけでも、研究室配属、就職活動、卒業研究など、
+人生に大きな影響を与えるようなイベントがたくさんあります。&lt;/p&gt;
+
+&lt;p&gt;後悔のないような決断をしていき、良い年にしていきたいです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>近状報告</title>
+      <link>https://gam0022.net/blog/2013/04/22/diary/</link>
+      <pubDate>Mon, 22 Apr 2013 22:13:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/04/22/diary/</guid>
+      <description>
+
+&lt;p&gt;近状報告です。&lt;/p&gt;
+
+&lt;p&gt;早いもので大学生活も3年目に突入してしまいました。とりあえず最近についてダラダラ書きます。&lt;/p&gt;
+
+&lt;h1 id=&#34;twincalを2学期制に対応&#34;&gt;TwinCalを2学期制に対応。&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gam0022.net/app/twincal/&#34;&gt;TwinCal&lt;/a&gt;を2学期制に対応しました。&lt;/p&gt;
+
+&lt;p&gt;新Twinsにも履修情報をCSV出力する機能があるのですが、いざCSV出力してみると、
+科目番号しか出力されない仕様だったので、対応を諦めていました。&lt;/p&gt;
+
+&lt;p&gt;しかし、kDBの履修データをを使うことで新Twinsへの対応することができました。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://kdb.tsukuba.ac.jp/&#34;&gt;kDB&lt;/a&gt;には履修データがある。&lt;/li&gt;
+&lt;li&gt;kDBは科目一覧のCSV出力機能がある。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;まず、kDBの2013年度の履修データをCSV出力して、SQlite3のデーブル化しました。&lt;/p&gt;
+
+&lt;p&gt;全ての履修データをCSV出力したところ、5.3MBくらいある巨大なファイルが吐き出されました。&lt;/p&gt;
+
+&lt;p&gt;しかも、変なCSVだったのでRuby標準ライブラリのCSVではパースできませんでした。&lt;/p&gt;
+
+&lt;p&gt;最終的には、ダウンロードしたCSVをOpenOfficeで開いて保存することで、なんとかなりました。&lt;/p&gt;
+
+&lt;p&gt;また、「実施学期」と「曜時限」のフォーマットがフリーダムなので、これをパースするのに苦労しました。&lt;/p&gt;
+
+&lt;h1 id=&#34;cojt&#34;&gt;COJT&lt;/h1&gt;
+
+&lt;p&gt;情報科学類では主専攻実験の替わりに&lt;a href=&#34;http://inf.tsukuba.ac.jp/ET-COJT/&#34;&gt;COJT&lt;/a&gt;という授業をとれるのですが、
+COJTのソフトウェアコースを受講することになりました。&lt;/p&gt;
+
+&lt;p&gt;COJTをとった理由は以下のようなものです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;バイト先の先輩が勧めていた。&lt;/li&gt;
+&lt;li&gt;1年間、専用の机をゲットできる。&lt;/li&gt;
+&lt;li&gt;オープニングセレモニーなどで、豪華な食事を少ないお金や無料で食べることができる！&lt;/li&gt;
+&lt;li&gt;企業が協賛しているので、個人ではできないようなお金のかかる実験もできる。&lt;/li&gt;
+&lt;li&gt;面白そう。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;成果発表もあったりと普通の主専攻実験よりハードな気もしますが、やるからには頑張りたいと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;早期卒業&#34;&gt;早期卒業&lt;/h1&gt;
+
+&lt;p&gt;情報科学類では、以下の条件を満たすと早期卒業できる可能性があるそうなのですが、
+その条件を満たしていたようです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;卒業要件科目を85単位以上履修&lt;/li&gt;
+&lt;li&gt;成績が上位10％以内&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;しかし、卒業研究とCOJTを並行して行いながら単位をとるのは難しそうだったので、早期卒業は諦めました。完。&lt;/p&gt;
+
+&lt;h1 id=&#34;メタルギアライジング&#34;&gt;メタルギアライジング&lt;/h1&gt;
+
+&lt;p&gt;実におもしろい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressのテーマをカスタマイズする</title>
+      <link>https://gam0022.net/blog/2012/07/21/use-bootstrap-theme/</link>
+      <pubDate>Sat, 21 Jul 2012 23:51:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/21/use-bootstrap-theme/</guid>
+      <description>&lt;p&gt;Ocpressの標準のデザインは悪くはないのですが、個人的にはいまいち物足りなさを感じたので、テーマを変更しました。&lt;/p&gt;
+
+&lt;p&gt;テーマですが、&lt;a href=&#34;https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes&#34;&gt;このページ&lt;/a&gt;などから、
+かっこいいのを見つけてくればいいと思います。&lt;/p&gt;
+
+&lt;p&gt;とりあえず私は、&lt;a href=&#34;https://github.com/bkutil/bootstrap-theme&#34;&gt;bootstrap-theme&lt;/a&gt;を入れてみることにしました。
+導入はとても簡単です。&lt;/p&gt;
+
+&lt;p&gt;コード例を示すまでもないですが、Codeblockを試してみたいので、導入するまでのコードを貼り付けます。&lt;/p&gt;
+
+&lt;p&gt;(ちなみに、シェルのコマンドを貼り付けるときはlangをbashにすると良いみたいです。)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/git/octpress #octpressのディレクトリ
+git clone https://github.com/bkutil/bootstrap-theme.git .themes/bootstrap-theme
+rake install[&amp;quot;bootstrap-theme&amp;quot;]
+rake generate
+rake deploy #公開
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;テーマを変えることで、一気にモダンな感じになりました!&lt;/p&gt;
+
+&lt;p&gt;話題のBootstrapだけあって、こんなショボイブログも見てくれだけはいい感じに見えるような気がします。&lt;/p&gt;
+
+&lt;p&gt;あとは、_config.ymlをちょっといじるだけで、facebookやGoogle+のボタンをつけたり、
+Disqus Commentsでコメントをできるようにできるので、簡単にモダンなブログを作ることが出来ました。&lt;/p&gt;
+
+&lt;p&gt;Octopressすごい!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressはじめました!</title>
+      <link>https://gam0022.net/blog/2012/07/21/hello/</link>
+      <pubDate>Sat, 21 Jul 2012 17:39:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/21/hello/</guid>
+      <description>&lt;p&gt;どうもこんにちは！&lt;/p&gt;
+
+&lt;p&gt;私は情報系の大学生をしている「がむ」というものです。&lt;/p&gt;
+
+&lt;p&gt;高校生までは、こっちのほうで&lt;a href=&#34;http://gmr.blog.shinobi.jp/&#34;&gt;ブログ&lt;/a&gt;を書いていたのですが、
+更新が面倒になってしまい、放置して1年以上経ってしまいました…&lt;/p&gt;
+
+&lt;p&gt;技術ネタをどこかにアウトプットしたいというの欲求はあるので、旧ブログに書いても良かったのですが
+せっかくなので、少しギークっぽい方法でブログを作ってみたくなりました。&lt;/p&gt;
+
+&lt;p&gt;最近はRuby弄りに夢中なので、Rails製のCMSの&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;というものがあると知り、試してみることにしました。&lt;/p&gt;
+
+&lt;p&gt;ターミナル上からブログの更新が完結するというのは新鮮ですし、Markdown形式で記事を書けるのも嬉しいです。&lt;/p&gt;
+
+&lt;p&gt;また、Rubyで書いてあるので実装を追いやすいですし、使っている人が少ないという未開拓な感じがいいですね。&lt;/p&gt;
+
+&lt;p&gt;Octopressを気に入ったら、このブログを私の技術的なメモとして活用していきたいなと思っています。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

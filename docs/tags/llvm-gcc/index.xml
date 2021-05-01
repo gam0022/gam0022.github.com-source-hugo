@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/llvm-gcc/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/llvm-gcc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MacでRuby on Railsの開発環境を作るまで</title>
+      <link>https://gam0022.net/blog/2012/07/27/getting-started-with-ruby-on-rails-on-mac/</link>
+      <pubDate>Fri, 27 Jul 2012 06:34:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/27/getting-started-with-ruby-on-rails-on-mac/</guid>
+      <description>
+
+&lt;h2 id=&#34;macでruby-on-railsの開発環境を作るまで&#34;&gt;MacでRuby on Railsの開発環境を作るまで&lt;/h2&gt;
+
+&lt;p&gt;先日、1世代前のMac Book Air 13インチモデルを入手しました。&lt;/p&gt;
+
+&lt;p&gt;設定を弄りまくっている真っ最中ですが、
+まずはMacでRuby on Railsの開発環境を作るまでをまとめます。&lt;/p&gt;
+
+&lt;p&gt;今回の記事を一言でまとめると、「RAILSINSTALLERは神」です。&lt;/p&gt;
+
+&lt;p&gt;おおまかな手順を説明すると、次のような感じです。&lt;/p&gt;
+
+&lt;p&gt;せっかくなので、正解と失敗の２通りの方法を紹介します。&lt;/p&gt;
+
+&lt;h3 id=&#34;失敗&#34;&gt;失敗&lt;/h3&gt;
+
+&lt;p&gt;Xcode4.4経由でgccを入れると、LLVMベースのgccが入ってしまい、rvmでコケます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;XcodeをAppStoreからインストールする。&lt;/li&gt;
+&lt;li&gt;Xcode-&amp;gt; Preferences-&amp;gt; Downloads から、Command Line Tools をインストールする。&lt;/li&gt;
+&lt;li&gt;(ここでなんとなくhomebrewをインストールする。)&lt;/li&gt;
+&lt;li&gt;rvmを公式ページのように&lt;code&gt;$ curl -L https://get.rvm.io | bash -s stable --ruby&lt;/code&gt;とかでインストールする。&lt;/li&gt;
+&lt;li&gt;rvmのインストールは完了するが、rubyのコンパイルに失敗する。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ rvm requirements&lt;/code&gt;をしたら、Xcodeを4.1にダウングレードするか、Xcodeをアンインストールして&lt;code&gt;osx-gcc-installer&lt;/code&gt;をインストールしろと言われる。&lt;/li&gt;
+&lt;li&gt;Xcodeを入れなおすのも消すのもめんどくさい&lt;/li&gt;
+&lt;li&gt;＼(&amp;#94;o&amp;#94;)／ｵﾜﾀ&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;正解&#34;&gt;正解&lt;/h3&gt;
+
+&lt;p&gt;最初からRAILSINSTALLERを使っていれば、これだけで終了しました。Xcode4.4と共存もできます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;RAILSINSTALLER でrvmをインストールする。&lt;/li&gt;
+&lt;li&gt;rvmでrubyをインストールする。&lt;/li&gt;
+&lt;li&gt;rvmで適当にgemsetを作って使う。&lt;/li&gt;
+&lt;li&gt;3.で作ったgemsetに、gemでrailsを入れる。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;正解例を詳しく&#34;&gt;正解例を詳しく&lt;/h2&gt;
+
+&lt;h3 id=&#34;railsinstaller-でrvmをインストールする&#34;&gt;RAILSINSTALLER でrvmをインストールする&lt;/h3&gt;
+
+&lt;p&gt;リンクから&lt;a href=&#34;http://railsinstaller.org/#osx&#34;&gt;RailsInstaller&lt;/a&gt;をインストールします。&lt;/p&gt;
+
+&lt;p&gt;GUIでとっても簡単にインストールできます。ゆとり仕様です。&lt;/p&gt;
+
+&lt;p&gt;あまりちゃんと確認しませんでしたが、この段階で最新のRubyとRailsが入った環境になります。&lt;/p&gt;
+
+&lt;p&gt;最新でないRubyやRailsが欲しいときは、次のような感じで作業すればいいと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;rvmでrubyをインストールする&#34;&gt;rvmでrubyをインストールする&lt;/h3&gt;
+
+&lt;p&gt;Ruby1.9.2が欲しければ、&lt;code&gt;$ rvm install 1.9.2&lt;/code&gt;をします。&lt;/p&gt;
+
+&lt;p&gt;なんで1.9.2にしたか言うと、Octopressを使いたいからです。ご了承ください。&lt;/p&gt;
+
+&lt;h4 id=&#34;rvmの超基本的な使い方&#34;&gt;rvmの超基本的な使い方&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;rvm list&lt;/code&gt;でインストールしたrubyの一覧を表示します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ rvm list
+
+rvm rubies
+
+ruby-1.9.2-p320 [ x86_64 ]
+=* ruby-1.9.3-p194 [ x86_64 ]
+
+# =&amp;gt; - current
+# =* - current &amp;amp;&amp;amp; default
+#  * - default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;rvm use [version]&lt;/code&gt;で指定したバージョンのRubyを使います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ rvm use 1.9.2
+Using /Users/gam0022/.rvm/gems/ruby-1.9.2-p320
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;rvmで適当にgemsetを作って使う&#34;&gt;rvmで適当にgemsetを作って使う&lt;/h3&gt;
+
+&lt;p&gt;ここでは、rails3というgemsetを作って使います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rvm gemset create rails3
+rvm gemset use rails3 --default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;作ったgemsetにgemでrailsをインストールする&#34;&gt;作ったgemsetにgemでrailsをインストールする&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ gem install rails&lt;/code&gt;で最新のrails3がインストールできます。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code&gt;$ gem install rails -v 3.2.3&lt;/code&gt;のように、バージョンも指定できます。&lt;/p&gt;
+
+&lt;p&gt;以上で、MacでRuby on Railsの開発環境ができました。めでたしめでたし。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;-v&lt;/code&gt;オプションでバージョンを確認できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ruby -v
+ruby 1.9.2p320 (2012-04-20 revision 35421) [x86_64-darwin11.4.0]
+$ rails -v
+Rails 3.2.6
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

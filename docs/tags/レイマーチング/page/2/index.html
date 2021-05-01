@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848448">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>レイマーチング | gam0022.net</title>
+
+    
+        <meta property="og:type" content="blog">
+        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/img/gam0022_splash.png">
+        <meta name="twitter:card" content="summary">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="レイマーチング | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/tags/%E3%83%AC%E3%82%A4%E3%83%9E%E3%83%BC%E3%83%81%E3%83%B3%E3%82%B0/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2018/12/12/tdf2018/" itemprop="url">Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編）</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2018-12-12 09:49:52 &#43;0900 JST" itemprop="datePublished">2018-12-12</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/tokyodemofest">TokyoDemoFest</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                これは<a href="http://qiita.com/advent-calendar/2018/klab">KLab Engineer Advent Calendar 2018</a>の12日目の記事です。</p>
+
+<hr />
+
+<p>12月1日～12月2日に秋葉原で開催された<a href="http://tokyodemofest.jp/2018/">Tokyo Demo Fest 2018</a>（以下、TDF）に参加しました。</p>
+
+<p>TDFは、日本国内で唯一のデモパーティです。
+コンピュータを用いて作成された楽曲や映像作品をデモと呼び、
+デモに関心のある人々が一堂に会してコンペティションを行ったり、技術を共有したりといったイベントをデモパーティと呼びます。</p>
+
+<p>今年のTDFでは、さだきちさん（<a href="https://twitter.com/sadakkey">@sadakkey</a>）とチームを組み、『WORMHOLE』（映像：gam0022 / サウンド：sadakkey）という作品を発表しました。</p>
+
+<p><a href="/images/posts/2018-12-12-tdf2018/tdf2018_collage_original.jpg"><img src="/images/posts/2018-12-12-tdf2018/tdf2018_collage.jpg" alt="WORMHOLE by gam0022 &amp; sadakkey" /></a></p>
+
+<p>Windows実行ファイル形式のデモ作品のコンペティションであるCombined Demo Compoにて、<a href="http://tokyodemofest.jp/2018/results.txt">本作品が1位</a>に選ばれました！</p>
+
+<p>この記事では『WORMHOLE』の映像制作技術について解説します。
+ソースコードを公開していますので、ご興味のある方はそちらもご確認いただければと思います（スターください！）。</p>
+
+<ul>
+<li><a href="https://github.com/gam0022/unity-demoscene">https://github.com/gam0022/unity-demoscene</a></li>
+</ul>
+
+<p>サウンド編についてはさだきちさんが解説されています。あわせてご覧ください！</p>
+
+<ul>
+<li><a href="http://klabgames.creative.blog.jp.klab.com/archives/14415590.html">Tokyo Demo Fest2018のDemo Compo優勝作品の解説〜サウンド編〜 : KLabGames Creative Blog</a></li>
+</ul>
+
+<h1 id="作品の概要">作品の概要</h1>
+
+<p>「ワームホールによる空間移動」をコンセプトとして、
+不思議な球体がワームホールを介して非現実なデジタル空間と水平線の広がる自然空間を行き来する映像を制作しました。</p>
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/NMNJV-Pbqtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p>不思議な球体がトンネルを進んでいくと、周囲を明滅する光がだんだんとモノクロからカラフルに変わっていきます。
+トンネルの最奥にあるワームホールへ近づくほど明滅はだんだんと激しくなっていき、ホワイトアウトとともにワームホールを越えると、球体は海上に出現します。
+その後、球体はじわじわと歪んでいき、戦闘機へと形を変えます。</p>
+
+<p>変形中の不思議な球体の上には、私が尊敬するデモシーナーの名前を表示しました。
+これはグリーティングと呼ばれるデモシーンにおける慣習です。</p>
+
+<p>戦闘機はパーティクルを放ちながら海上を進み、パーティクルが一瞬だけTDFのロゴを形作ります。
+そして戦闘機は元の球体に変形し、突如現れたワームホールに吸い込まれるようにして冒頭のトンネルのシーンに戻っていきます。</p>
+
+<p>実装ならびに制作にはUnityを利用しました。
+詳細は後述しますが、Timeline, TextMeshPro, Chinemachine, PostProcessingStack v2といったUnity 2018.2の新機能も活用しています。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2018/12/12/tdf2018/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2018/03/16/demoscene-study-session/" itemprop="url">メガデモ勉強会!2018で発表しました</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2018-03-16 10:14:35 &#43;0900 JST" itemprop="datePublished">2018-03-16</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                3/10（土）に開催された<a href="https://atnd.org/events/93843">メガデモ勉強会! 2018</a>で発表しました。</p>
+
+<p>発表タイトルは「もっと綺麗で写実的な絵作りをしたい！レイマーチング向けのシェーディング技術」です。</p>
+
+<p>発表の概要はこんな感じです。</p>
+
+<ul>
+<li>レイマーチングのおさらい</li>
+<li>レイマーチングでいい感じにシェーディングするための理論と実践
+
+<ul>
+<li>写実的なレンダリングに不可欠な <strong>大域照明</strong> を説明</li>
+<li>大域照明を構成する間接照明を近似する <strong>AO</strong> を説明</li>
+<li>レイマーチングによるAO計算の実装を図で解説</li>
+</ul></li>
+<li>レイマーチングによるマテリアル実装のベストプラクティスを紹介</li>
+</ul>
+
+<p>AOがどういう意味を持つのか、大域照明にどんな関係にあるのか、などを学んでいただけたら嬉しいです。
+レイマーチングによるAO計算の動作原理を図で解説した日本語の資料は見たことが無いので、
+この発表を聞いて「なるほどな」と思ってもらえれば幸いです。</p>
+
+<script async class="speakerdeck-embed" data-id="74ea75d0686849238368f73150a7adba" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2018/03/16/demoscene-study-session/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2017/12/25/unity-demoscene/" itemprop="url">Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す）</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-12-25 09:30:11 &#43;0900 JST" itemprop="datePublished">2017-12-25</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                これは <a href="https://qiita.com/advent-calendar/2017/unity2">Unity #2 Advent Calendar 2017</a> 21日目の記事です。</p>
+
+<hr />
+
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A2%E3%82%B7%E3%83%BC%E3%83%B3">デモシーン</a>界隈では、美しいCGアニメーションをリアルタイムに生成するプログラムを「デモ」と呼びます。</p>
+
+<p>今回はUnityを使ったデモの制作に初挑戦しました。
+13秒の短い無音の動画です。</p>
+
+<iframe width="720" height="405" src="https://www.youtube.com/embed/BZGO5xXuPj8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+<!--
+[![THE GLOW](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)
+-->
+
+<h1 id="作品の解説">作品の解説</h1>
+
+<p>「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させた作品です。
+ロボットは通常の3Dモデルですが、床や柱のモデルはレイマーチングでプロシージャルに生成しました。</p>
+
+<p>レイマーチングにはuRaymarchingというAssetを利用しました。</p>
+
+<p>映像作品と相性が良さそうなので、Unity2017のTimelineも利用しました。</p>
+
+<p>今回は試作という意味から、uRaymarchingとTimelineの他にも様々なアセットを試しました。
+色々と試行錯誤をしたので、この記事ではそのノウハウを共有したいと思います。</p>
+
+<p>Unityのバージョンは執筆時点の最新版である2017.2.1f1を用いました。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2017/12/25/unity-demoscene/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2017/06/30/raymarching-kado/" itemprop="url">正解するカドの「カド」をレイマーチングでリアルタイム描画する</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-06-30 04:33:31 &#43;0900 JST" itemprop="datePublished">2017-06-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                今夜はアニメ<a href="http://seikaisuru-kado.com/">「正解するカド」</a>の最終回ですね。</p>
+
+<p>フラクタル図形（カド）や折り紙（ワム）が重要な要素になっていて、個人的にとても刺さるアニメでした。</p>
+
+<p>最終回は楽しみですが、今日で終わってしまうと思うと寂しくも感じます。</p>
+
+<p>さて、<a href="https://www.slideshare.net/shohosoda9/threejs-58238484">レイマーチング（スフィアトレーシング）</a>は「カド」のようなフラクタル図形の描画がとても得意です。</p>
+
+<p>そこで、WebGLによるレイマーチングでカドのレンダリングに挑戦しました！！</p>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/kado.png"><img src="/images/posts/2017-06-30-raymarching-kado/kado.png" alt="カド" /></a></p>
+
+<p>レイマーチングでカド(MandelBox)を描画した結果です。</p>
+
+<p>次のリンクからブラウザ上から動かすこともできます。</p>
+
+<ul>
+<li><a href="http://gam0022.net/webgl/#raymarching_kado">http://gam0022.net/webgl/#raymarching_kado</a></li>
+</ul>
+
+<p>PauseをOFFにすると、カドがアニメーションします（負荷注意）。</p>
+
+<p>描画の負荷が重たすぎる場合には、Pixel Ratioを1/2xか1/4xにしてください。</p>
+
+<!--
+
+Pixel Ratioを2xにすると、綺麗な結果になりますが、描画の負荷が4倍になります。
+
+2xにする場合は、PauseをONにするのがオススメです。カメラを動かさない限り再描画が行われなくなり、描画の負荷が下がります。
+
+-->
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2017/06/30/raymarching-kado/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2017/03/02/raymarching-fold/" itemprop="url">距離関数のfold（折りたたみ）による形状設計</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-03-02 23:24:26 &#43;0900 JST" itemprop="datePublished">2017-03-02</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <a href="https://www.slideshare.net/shohosoda9/threejs-58238484">レイマーチング（別名 Sphere Tracing）</a>とは、距離関数と呼ばれる数式で定義したシーンに対して、レイの衝突判定を行って絵を出す手法です。</p>
+
+<p>この距離関数に対し、fold（折りたたみ）の操作を行うと、万華鏡のような美しい形状や、フラクタルのような複雑な形状の設計が可能です。</p>
+
+<p>先日のTokyoDemoFest2017でも、このfoldを用いた作品を投稿しました。</p>
+
+<ul>
+<li><a href="/blog/2017/02/24/tdf2017/">#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net</a></li>
+<li><a href="http://gam0022.net/webgl/#raymarching_tdf2017">Fusioned Bismuth | gam0022.net</a></li>
+<li><a href="https://www.shadertoy.com/view/Msscz7">Fusioned Bismuth | Shadertoy</a></li>
+</ul>
+
+<p>この記事では、距離関数のfoldについて、解説していきます。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2017/03/02/raymarching-fold/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2017/02/24/tdf2017/" itemprop="url">#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-02-24 10:13:11 &#43;0900 JST" itemprop="datePublished">2017-02-24</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/tokyodemofest">TokyoDemoFest</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                2017年2月18日(土)・19日(日)の2日間に開催された<a href="http://tokyodemofest.jp/2017/">Tokyo Demo Fest 2017</a>に参加しました。</p>
+
+<p>去年に引き続き、2回目の参加でした。去年の記事はこちらです。</p>
+
+<ul>
+<li><a href="http://gam0022.net/blog/2016/02/24/tokyo-demo-fest/">#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！</a></li>
+</ul>
+
+<p>Tokyo Demo Fest(TDF)とは、こんなイベントです（公式サイトからの引用）。</p>
+
+<blockquote>
+<p>Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに興味のある人々が日本中、世界中から一堂に会し、デモ作品のコンペティション(コンポ)やセミナーなどを行います。また、イベント開催中は集まった様々な人たちとの交流が深められます。</p>
+</blockquote>
+
+<p>今年は、なんと私の勤め先である<a href="http://www.klab.com/jp/">KLab株式会社</a>もTDFにパートナーという形で参加させていただきました！
+去年の様子を紹介したことをきっかけに、弊社内でデモシーンへの関心が高まりつつあり非常に嬉しいです。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">エナジータワー <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> <a href="https://t.co/O6dXOFwGXq">pic.twitter.com/O6dXOFwGXq</a></p>&mdash; kemas_Ti(ｶﾌｪｲﾝファイター (@kemas306) <a href="https://twitter.com/kemas306/status/832810497628004352">2017年2月18日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>また、個人としては「Fusioned Bismuth」という作品でGLSL Graphics Compoで3位を頂くことができました！
+自分の作品を多くの方に評価していただけて、大変嬉しいです！！ありがとうございました！</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> 2017のGLSL Graphics Compoにて、昨年に引き続き3位をいただきました！嬉しいです！<br>せっかくなのでトロフィーを並べました（左が今年、右が去年）。 <a href="https://t.co/In8QqliO1L">pic.twitter.com/In8QqliO1L</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/833340442578071552">2017年2月19日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2017/02/24/tdf2017/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2016/04/09/qiita-raymarching/" itemprop="url">GPUをつかったリアルタイムなレイトレーシング</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-04-09 18:03:00 &#43;0900 JST" itemprop="datePublished">2016-04-09</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <p>Qiitaに「GPUをつかったリアルタイムなレイトレーシング」の記事を2つ投稿しました。</p>
+
+<p>実際に動作するものはコチラです。WebGLなのでブラウザでそのまま動作します。</p>
+
+<ul>
+<li><a href="http://gam0022.net/webgl/#raymarching_reflect">reflect</a></li>
+<li><a href="http://gam0022.net/webgl/#raytracing_gem">gem</a></li>
+</ul>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Three.jsからGPUをつかったリアルタイムなレイトレーシング！<a href="https://t.co/zu5v2NXXeq">https://t.co/zu5v2NXXeq</a><br>WebGL Advent Calendar 15日目の記事です。 <a href="https://t.co/mwFZrFjJdf">pic.twitter.com/mwFZrFjJdf</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/676564561034481664">2015年12月15日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">これがGPUの力！three.jsによるレイトレーシング 〜宝石編〜<a href="https://t.co/dU4bQOnpPg">https://t.co/dU4bQOnpPg</a><br>屈折のあるレイトレーシングをGLSLのフラグメントシェーダで実装した話を書きました。 <a href="https://t.co/HnEMg7mUwP">pic.twitter.com/HnEMg7mUwP</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/692856764081897472">2016年1月28日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>レイトレーシングは膨大な計算が必要で、一般的にはリアルタイムに行うことは困難です。</p>
+
+<p>WebGLのフラグメントシェーダでレイトレーシングを実装することで、GPUの力を利用してリアルタイムに処理しようというものです。</p>
+
+<p>記事で紹介している例は、iPhone6のような携帯端末でもリアルタイムに動作するくらい軽量です。</p>
+
+<p>さらに面白い特徴として、ラスタライザでは難しい、相互の鏡面反射、2回以上の屈折、無限の繰り返しも実現しています。</p>
+
+<p>ラスタライザで鏡面反射するためには、<a href="https://wgld.org/d/webgl/w044.html">キューブ環境マッピング</a>がよく用いられます。
+環境マッピングとは、周囲の景色を立方体のテクスチャに入れておいて、それを参照して反射して写り込んだ景色をフェッチします。
+しかし、環境マッピングだけでは、床も球体も鏡面反射するような、相互に鏡面反射するシーンは実現できません。</p>
+
+<p>また屈折も環境マッピングで実現できるのですが、<a href="http://www.4gamer.net/games/032/G003263/20130207052/">環境マッピングで2回以上の屈折させるのは難しい課題</a>になります。</p>
+
+<p>レイトレーシングではカメラからスクリーンの全ピクセルに対して光のシュミレーションをするため、
+環境マッピングでは難しかった鏡面反射や屈折の問題を簡単に解決できるというわけです！</p>
+
+<p>1つ目の記事ではレイトレーシングではなく、厳密にはレイマーチングを使っています。
+レイマーチングはレイトレーシングの1種です。レイマーチングでは、シーンを距離関数で定義します。
+シーンを距離関数で定義することで、<code>mod</code> 演算を利用した物体を無限に繰り返すことができます。</p>
+
+<p>昔はレイトレーシングで1枚の絵を描画するために一晩のような長い時間が必要でした。
+それが今やリアルタイムにWebブラウザ上で動作するなんて、すごい時代になりましたね。</p>
+
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2016/04/09/qiita-raymarching/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+
+    
+<nav>
+    <ul class="pager">
+        
+        <li><a href="https://gam0022.net//tags/%E3%83%AC%E3%82%A4%E3%83%9E%E3%83%BC%E3%83%81%E3%83%B3%E3%82%B0/">« Previous</a></li>
+        
+        
+    </ul>
+</nav>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+

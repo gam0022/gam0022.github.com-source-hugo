@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説 | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="4月10日～4月13日に世界最大のデモパーティRevision 2020に参加しました。
+
+Revision 2020内で開催されたコンペのうち、PC 64K Introという64KBの容量制約のある部門で『RE: SIMULATED by gam0022 &amp; sadakkey』という作品を発表しました。
+
+Tokyo Demo Fest 2018に続き、私（@gam0022）が映像を、さだきちさん（@sadakkey）が音楽を制作しました。
+
+……なんと、本作品が参加者投票により1位に選ばれました！
+日本人のチームがPC 64K Intro部門で優勝するのは Revision 史上初です。とても嬉しいです！
+
+本記事では、技術解説をメインに、『RE: SIMULATED by gam0022 &amp; sadakkey』を紹介したいと思います。
+
+
+
+">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/images/posts/2020-04-19-revision2020/resimulated-collage.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説 | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/blog/2020/04/30/revision2020/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-04-30 12:00:00 &#43;0900 JST" itemprop="datePublished">2020-04-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/revision">Revision</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/typescript">TypeScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/javascript">JavaScript</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2020/04/30/revision2020/" class="hatena-bookmark-button" data-hatena-bookmark-title="Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2020/04/30/revision2020/" data-text="Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2020/04/30/revision2020/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    <p>4月10日～4月13日に世界最大のデモパーティ<a href="https://2020.revision-party.net/start">Revision 2020</a>に参加しました。</p>
+
+<p>Revision 2020内で開催されたコンペのうち、<a href="https://2020.revision-party.net/competitions/pc-competitions">PC 64K Intro</a>という64KBの容量制約のある部門で『RE: SIMULATED by gam0022 &amp; sadakkey』という作品を発表しました。</p>
+
+<p>Tokyo Demo Fest 2018に続き、私（<a href="https://twitter.com/gam0022">@gam0022</a>）が映像を、さだきちさん（<a href="https://twitter.com/sadakkey">@sadakkey</a>）が音楽を制作しました。</p>
+
+<p>……なんと、本作品が参加者投票により1位に選ばれました！
+日本人のチームがPC 64K Intro部門で優勝するのは Revision 史上初です。とても嬉しいです！</p>
+
+<p>本記事では、技術解説をメインに、『RE: SIMULATED by gam0022 &amp; sadakkey』を紹介したいと思います。</p>
+
+<p><a href="/images/posts/2020-04-19-revision2020/resimulated-collage.jpg"><img src="/images/posts/2020-04-19-revision2020/resimulated-collage.jpg" alt="resimulated-collage" /></a></p>
+
+<p></p>
+
+<h1 id="作品へのリンク">作品へのリンク</h1>
+
+<p>WebGLとWebAudioによる64K Introなので、最新のChromeと高性能なGPUがあれば、ブラウザ上で動作します。</p>
+
+<ul>
+<li><a href="https://gam0022.net/webgl/64k-intro_resimulated.html">64KB HTML version</a></li>
+<li><a href="https://neort.io/art/bqa4pgs3p9f6qoqnmujg">NEORT version</a></li>
+</ul>
+
+<p>高スペックのPCを持っていない方は、YouTubeの動画をご覧ください。</p>
+
+<p>フラクタルをつかった映像のビットレートの高い作品ですが、4K解像度を選ぶことである程度は綺麗な状態で見れます。</p>
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/tirAdWbceak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<hr />
+
+<p>こちらはpouet（デモシーンのコミュニティサイト）のリンクです。</p>
+
+<ul>
+<li><a href="https://www.pouet.net/prod.php?which=85260">RE: SIMULATED by Gam0022 &amp; Sadakkey :: pouët.net</a></li>
+</ul>
+
+<h1 id="技術解説">技術解説</h1>
+
+<p>ソースコードはすべてGitHubに公開しているので、興味がある方はぜひ見てください。</p>
+
+<ul>
+<li><a href="https://github.com/gam0022/resimulated">gam0022/resimulated: 1st place at Revision 2020 (PC 64K Intro)</a></li>
+</ul>
+
+<p>サウンド編についてはさだきちさんが解説されています。あわせてご覧ください！</p>
+
+<ul>
+<li><a href="https://www.klab.com/jp/blog/creative/2020/revision-2020-pc-64k-intro.html">Revision 2020 のPC 64K INTRO 優勝作品のサウンドについて</a></li>
+</ul>
+
+<p>キーワードとしては、以下の技術が使われています。</p>
+
+<p>TypeScript, WebGL, WebAudio, webpack, pnginator.rb, Raymarching, GLSL Sound</p>
+
+<h2 id="シンプルなwebglエンジン-chromatiq">シンプルなWebGLエンジン『Chromatiq』</h2>
+
+<p>64KBの容量制約があるため、Unityやthree.jsといった既存のゲームエンジンやフレームワークを利用せずに、描画用のWebGLエンジンと制作用のツール（エディタ機能）を自作する必要がありました。</p>
+
+<p>OpenGLやDirectXを使わずに、WebGLを選択した理由は以下です。</p>
+
+<ul>
+<li>WebGLでブラウザ上で動かせれば、手元のPCで動かしてもらえる可能性が高いと考えた
+
+<ul>
+<li>自分の作品は映像のビットレートが高く、動画だと綺麗にならない</li>
+<li>手元のPCで実行して綺麗な状態で見てもらいたい</li>
+</ul></li>
+<li>Webフロントエンドの技術をキャッチアップしたかった</li>
+</ul>
+
+<p>そこで、64K Intro向けに<strong>ファイルサイズの最小化を目指したシンプルなWebGLエンジン『Chromatiq』</strong>を開発しました。</p>
+
+<p>WebGLエンジンとは言うものの、本当にシンプルで最小限な機能しか &ldquo;現段階では&rdquo; 実装していません。</p>
+
+<p>なるべく作品に依存した機能は用意したくなかったので、汎用的な設計になっています。</p>
+
+<ul>
+<li>マルチパスのImageShaderによるレンダリング（viewport square）</li>
+<li>ビルドインのBloomのポストエフェクト
+
+<ul>
+<li>どんな作品でも利用できそうなので、これだけビルドインにした</li>
+</ul></li>
+<li>TypeScriptからuniformをアニメーションするためのインターフェース</li>
+<li>Shadertoyと互換性のあるGLSL Sound</li>
+<li>オーディオファイルの再生（mp3 / ogg）
+
+<ul>
+<li>DAWによる音楽の再生用の機能</li>
+<li>今回は先にDAWで作曲し、後からGLSLに移植する作戦にした</li>
+</ul></li>
+<li>フォントをレンダリングするためのcanvasからのテクスチャ生成</li>
+</ul>
+
+<p>イメージとしてはGLSLエディタを排除したスタンドアローンなShadertoyが近いかもしれません。</p>
+
+<p>ソースコードは<a href="https://github.com/gam0022/resimulated/blob/master/src/chromatiq.ts">こちら</a>です。単一ファイルのTypeScriptで実装しました。</p>
+
+<p>圧縮後のコードサイズを気にして、変な感じの実装になっているので、微妙に読みづらいかもしれません。</p>
+
+<p>例えば、フィールド参照の this を頭につけるとコードサイズが増えるため、コンストラクタの中で動的にインスタンスメソッドを定義することで、this の利用を最小限にしたり、
+クラス外から値を参照・設定する必要があるデータのみ、フィールドとして定義する方針とています。enumもコードサイズが増えるので禁止にしました。</p>
+
+<p>製作の終盤から容量が余裕そうなことが判明したので、途中からファイルサイズを考慮するのを止め、mini化の中途半端感は否めないです。
+このあたりは、次のデモに向けて改良していきたいと考えています。</p>
+
+<p>uniform名は基本的にはShadertoyと一致させているのですが、テクスチャのサンプラーはShadertoyを踏襲せずに、直前のパスを参照する <code>iPrevPass</code> を定義しました。
+これによってGLSLを書き換えずにエフェクトの順番を入れ替えたり、気軽にパスを増やしてエフェクトをチェインしやすくしました。
+このあたりの仕様も、作品の需要に応じて変更していく可能性は高いです。</p>
+
+<h2 id="ファイル圧縮のためのビルドプロセス">ファイル圧縮のためのビルドプロセス</h2>
+
+<p>圧縮には<a href="https://webpack.js.org/">webpack</a>と<a href="https://gist.github.com/gasman/2560551">pnginator.rb</a>を利用しています。</p>
+
+<p>ビルドプロセスを図にしました。</p>
+
+<p><img src="/images/posts/2020-04-19-revision2020/build-process.svg" alt="build-process" /></p>
+
+<p>webpackですべてのファイルをbundle.jsという単一のJavaScriptに固めてから、pnginator.rbで自己解凍形式のPNGにしています。</p>
+
+<p>TypeScriptのminifyは完全にwebpack任せです。</p>
+
+<p>PNGでは画像データをzlib圧縮するため、画像データではなくても、例えば今回のようなプログラムのソースコードでちゃんと圧縮できます。</p>
+
+<p><a href="https://qiita.com/gam0022/items/364c7f76f2787e385161">GLSLのminifyも検証</a>はしていて、webpackのLoaderを開発する予定もあったのですが、容量が余裕だったのでGLSLの圧縮はPNG（zlib）だけになりました。</p>
+
+<p>また、開発用にしか必要ないコードの削除もwebpackの<a href="https://webpack.js.org/plugins/define-plugin/">define-plugin</a>で実現できました。</p>
+
+<p>webpackとpnginator.rbを組み合わせる手法は、<a href="https://twitter.com/FMS_Cat">FMS_Catさん</a>の<a href="https://github.com/FMS-Cat/until/">Until</a>を参考にしました。</p>
+
+<p>当初はnode.jsでGLSLのホットリロード機能付きのWebサーバを開発しようと技術検証していたのですが、
+要件は<a href="https://github.com/webpack/webpack-dev-server">webpack-dev-server</a>ですべて実現可能だったので、webpackを採用しました。</p>
+
+<p>PRごとに圧縮後のファイルサイズを確認するようにしたら、圧縮後のファイルサイズについて知見が貯まりました（例）</p>
+
+<ul>
+<li>コードの自動フォーマットをかけると、圧縮効率が上がってファイルサイズが減る</li>
+<li>コードをコピペすると圧縮効率が高くなるので、実は無理にコードを共通化する意味は実は薄い</li>
+<li>似たよな構造になるようにコードを意識すると圧縮効率が良くなる</li>
+<li>関数の順番を入れ替えただけで微妙にサイズが減ったりと謎が多い</li>
+</ul>
+
+<h2 id="制作用のエディタ機能の紹介">制作用のエディタ機能の紹介</h2>
+
+<p><a href="/images/posts/2020-04-19-revision2020/chromatiq-editor.png"><img src="/images/posts/2020-04-19-revision2020/chromatiq-editor.png" alt="chromatiq-editor" /></a></p>
+
+<p>製作のイテレーションを高速化するため、必要なエディタ機能は一通り実装しました。</p>
+
+<ul>
+<li>再生位置のシーク機能
+
+<ul>
+<li>再生・一時停止・停止・フレームのコマ送り・時間の表示単位の秒とビートの切り替え</li>
+</ul></li>
+<li>GLSLやTypeScriptのホットリロード機能</li>
+<li>uniformのパラメータのインスペクタ</li>
+<li>カメラの自由移動</li>
+<li>デバッグ用に特定のパスの表示</li>
+</ul>
+
+<p>エディタ機能は容量制約に影響しないので、既存のライブラリを積極的に利用しています。</p>
+
+<ul>
+<li>ボタン用のアイコンのために、<a href="https://fontawesome.com/">fontawesome</a></li>
+<li>uniformのパラメータのインスペクタのために、<a href="https://github.com/dataarts/dat.gui">dat.gui</a></li>
+<li>カメラの自由移動のために、<a href="https://threejs.org/">three.js</a>の<a href="https://threejs.org/docs/#examples/en/controls/OrbitControls">OrbitControls</a></li>
+</ul>
+
+<p><a href="https://github.com/gam0022/resimulated#1-get-started">リポジトリ</a>をcloneして、 <code>npm run start</code> すれば、エディタ機能が使えますので、興味がある人はお試しください。</p>
+
+<pre><code class="language-bash">git clone git@github.com:gam0022/resimulated.git
+cd resimulated
+npm install
+
+# 制作用のエディタを起動
+npm run start
+
+# 提出用のビルド（dist\resimulated.html）を生成
+npm run build
+</code></pre>
+
+<h3 id="uniformのパラメータのインスペクタ">uniformのパラメータのインスペクタ</h3>
+
+<p>GLSL上で以下のようなuniformを宣言するだけで、そのままインスペクタに表示されるような仕組みを実装しました。</p>
+
+<p>コメントでは左から順に <code>初期値 min max カテゴリー名</code> を指定しています。初期値は必須ですが、それ以外は省略可能としました。</p>
+
+<pre><code class="language-c">uniform float gEmissiveIntensity;     // 6.0 0 20 emissive
+uniform float gEmissiveSpeed;         // 1 0 2
+uniform float gEmissiveHue;           // 0.33947042613522904 0 1
+uniform float gEmissiveHueShiftBeat;  // 0 0 1
+uniform float gEmissiveHueShiftZ;     // 0 0 1
+uniform float gEmissiveHueShiftXY;    // 0 0 1
+</code></pre>
+
+<p>uniform宣言をすると、自動的にインスペクタにパラメータが追加されます。</p>
+
+<p><img src="/images/posts/2020-04-19-revision2020/chromatiq-editor-emissive.png" alt="chromatiq-editor-emissive" /></p>
+
+<p>私の作品では、フラクタルやIFSといったパラメータの細かな調整が重要になる表現を多用しているため、気軽にパラメータを増やして、気軽に値を調整できるようにしました。</p>
+
+<p>値の当たりをつけた後に、パラメータのアニメーションを<a href="https://github.com/gam0022/resimulated/blob/master/src/index.common.ts#L142-L569">TypeScriptのコード</a>に落とし込むワークフローにしました。</p>
+
+<p>これは、インスペクタを動かしている様子の動画です。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">三谷先生に便乗して、MengerSponge をカットしてみました。<br>断面が星みたいになって面白いですね⭐️ <a href="https://t.co/mCqFnfbjBF">https://t.co/mCqFnfbjBF</a> <a href="https://t.co/QF73xfFL1y">pic.twitter.com/QF73xfFL1y</a></p>&mdash; がむ / encoder killer (@gam0022) <a href="https://twitter.com/gam0022/status/1253296266424930304?ref_src=twsrc%5Etfw">April 23, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h3 id="動画の保存機能">動画の保存機能</h3>
+
+<p>処理落ちなしに4K解像度で動画を出力したかったので、以下の機能を実装しました。</p>
+
+<ul>
+<li>映像の連番PNG保存機能</li>
+<li>サウンドの wav 保存機能</li>
+</ul>
+
+<p>.png と .wav を ffmpeg で .mp4 に変換してYouTubeにアップロードしました。</p>
+
+<pre><code class="language-bash">ffmpeg.exe -r 60 -i chromatiq%04d.png -i chromatiq.wav -c:v libx264 -preset slow -profile:v high -coder 1 -pix_fmt yuv420p -movflags +faststart -g 30 -bf 2 -c:a aac -b:a 384k -profile:a aac_low -b:v 68M chromatiq_68M.mp4
+</code></pre>
+
+<p>YouTube用のffmpegのエンコード設定については、以下を参考にしました。</p>
+
+<ul>
+<li><a href="https://support.google.com/youtube/answer/1722171?hl=ja">アップロードする動画におすすめのエンコード設定</a>
+
+<ul>
+<li>映像ビットレート 2160p（4k）53～68 Mbps</li>
+</ul></li>
+<li><a href="https://gist.github.com/mikoim/27e4e0dc64e384adbcb91ff10a2d3678">YouTube recommended encoding settings on ffmpeg (+ libx264)</a></li>
+<li><a href="https://twitter.com/sasaki_0222/status/1248910333835530241">解像度とビットレードについて by sasaki_0222</a></li>
+</ul>
+
+<h2 id="映像について">映像について</h2>
+
+<p>映像の3D描画は基本的に全部レイマーチングです。</p>
+
+<p>前半のサイバーなシーンはMandelboxをベースにしました。</p>
+
+<p>後半の宇宙空間とグリーティングのシーンでは、宇宙空間はレイマーチング、惑星の上のグリーティングの文字はAABBとして解析的に衝突判定をするハイブリッドなレイトレをしています。</p>
+
+<p>パスの構成は、最終的にこうなりました。</p>
+
+<p>1パス目と2パス目を分離したのは、シェーダーのコンパイル時間の短縮のためです。</p>
+
+<ul>
+<li>1パス目: 前半のシーンのレイマーチング</li>
+<li>2パス目: 後半のシーンのレイマーチング</li>
+<li>3パス目: テキストの描画</li>
+<li>4～13パス目: Bloomのポストエフェクト</li>
+<li>14パス目: ポストエフェクトとトーンマッピング</li>
+</ul>
+
+<h3 id="惑星のバリエーション生成の仕組み">惑星のバリエーション生成の仕組み</h3>
+
+<p>後半のグリーティングでは、自分が特に尊敬しているデモグループをイメージした惑星が合計14パターン登場します。</p>
+
+<p>様々なバリエーションの惑星を効率的に生成するための仕組みを実装しました。</p>
+
+<ul>
+<li>地形の高さマップの自動生成</li>
+<li>テクスチャの色のグラデーションの自動生成</li>
+</ul>
+
+<h4 id="地形の高さマップの自動生成">地形の高さマップの自動生成</h4>
+
+<p>2DのValue Noiseを重ね合わせたfbm（Fractal Brownian Motion）で地形の高さマップを生成しました。</p>
+
+<p>さらに、fbm関数をネストして（fbmのUV計算にfbmをつかって）、歪んだような不思議な雰囲気の地形も生成できるようにしました。</p>
+
+<p>左がfbmのネストよる歪みなしで、右がfbmのネストによる歪みありです。</p>
+
+<p><a href="/images/posts/2020-04-19-revision2020/fbm-shift.jpg"><img src="/images/posts/2020-04-19-revision2020/fbm-shift.jpg" alt="fbm-shift" /></a></p>
+
+<p>fbmの各種パラメーター（振幅や周波数、Y方向のスケール、歪み用のfbmの強度）は、乱数ではなく、配列で直接指定することで、イメージ通りの結果に調整できるようにしました。</p>
+
+<pre><code class="language-c">// fbmAmp, fbmFreq, fbmYScale, fbmShift
+vec4[PLANETS_PAT_MAX * PLANETS_NUM_MAX] planetFbmParams = vec4[](
+    // MIX_A
+    vec4(0.3, 17.0, 1.0, 0.01), vec4(0.05, 10.0, 1.05, 0.0), vec4(0.05, 10.0, 1.05, 0.01),
+    vec4(0.05, 10.0, 4.05, 0.02), vec4(0.05, 10.0, 2.05, 00.1), vec4(0.0),
+    // MIX_B
+    vec4(0.0, 10.0, 1.0, 0.2), vec4(0.0, 10.0, 1.0, 0.01), vec4(0.0, 10.0, 1.0, 0.03),
+    vec4(0.05, 10.0, 1.0, 00.2), vec4(0.06, 10.0, 1.0, 0.03), vec4(0.05, 10.0, 1.0, 0.03));
+</code></pre>
+
+<p>このようなfbmをネストしたシンプルな関数で高さマップを生成しました。</p>
+
+<pre><code class="language-c">// 惑星の高さマップ（height map）を生成する関数
+// pは球体のUV, id は惑星のID
+float hPlanetsMix(vec2 p, int id) {
+    p.y *= planetFbmParams[id].z;
+    return fbm(p + 
+        planetFbmParams[id].w * fbm(p, 4.0 * planetFbmParams[id].y), planetFbmParams[id].y);
+}
+</code></pre>
+
+<h4 id="テクスチャの色のグラデーションの自動生成">テクスチャの色のグラデーションの自動生成</h4>
+
+<p>iqのColor Palettesを使いました。</p>
+
+<ul>
+<li><a href="https://iquilezles.org/www/articles/palettes/palettes.htm">Color Palettes - Inigo Quilez :: fractals, computer graphics</a></li>
+</ul>
+
+<pre><code class="language-c">vec3 pal(in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d) {
+    return a + b * cos(TAU * (c * t + d));
+}
+</code></pre>
+
+<p>pal 関数の使い方は簡単で、<code>a, b, c, d</code> を任意に指定すれば、<code>t</code> を変化することでグラデーションを生成できます。</p>
+
+<p>今回は <code>a, b, c</code> は定数、<code>d</code> は惑星ごとに乱数で決定しました。</p>
+
+<p><code>a, b, c</code> や乱数のseed値はインスペクタで値を調整しながら、イメージ通りのグラデーションが生成されるまで試行錯誤しました。</p>
+
+<p><code>t</code> は地形の高さマップにマッピングしました。</p>
+
+<h3 id="無数の小惑星のランダムな配置">無数の小惑星のランダムな配置</h3>
+
+<p>宇宙空間がスカスカすぎて寂しかったので、無数の小惑星をランダムに配置しようとしたら、予想外に苦戦しました。</p>
+
+<p>レイマーチングだと空間をmodすることで物体を無限に複製することは簡単なのですが、それでは規則的な配置にしかならず、かなり不自然になってしまいます。</p>
+
+<p>gazさんのシェーダーを参考にして、空間をgridに分割して、gridごとに乱数を生成して、乱数で確率的に物体を間引く手法を採用しました。</p>
+
+<p>また、アーティファクトの回避するために、rayの長さを制限する工夫も必要でした。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">もう忘れてるよ。自分で読み解いてしまったじゃないか。xy平面を通常のmod()で分割。z軸の奥行のみgridをseedに乱数を使い間引きしてる。z軸だけ空間移動のスピード、回転を変えてる。アーティファクト対策で、min(map(p), 1.0)を使いrayの長さを制限。effectにビルボードを使い発光を演出。</p>&mdash; gaz (@gaziya5) <a href="https://twitter.com/gaziya5/status/1247671912521596928?ref_src=twsrc%5Etfw">April 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>最終的に、ランダムな位置と大きさをもつ小惑星の距離関数はこうなりました。</p>
+
+<pre><code class="language-c">float dGomi(vec3 p) {
+    // アーティファクト対策のための固定長の距離
+    float d = 1.0;
+
+    // グリット（4m四方の立方体）の計算
+    vec3 g = vec3(floor(p / 4.0));
+
+    // 座標の繰り返し
+    p = mod(p, 4.0) - 2.0;
+
+    // 確率 rate に応じて球体を配置
+    vec3 rand = hash33(g);
+    float rate = (gPlanetsId != PLANETS_EARTH) ? 0.08 : 0.01;
+    if (rand.x &lt; rate) {
+        p -= (rand - 0.5);
+        d = sdSphere(p, 0.1 * rand.y);
+    }
+
+    // fbmで表面の凹凸のディテールを加える
+    // レイが接近したときだけに計算するのは、LODによる負荷対策
+    // fbmの計算はかなり高負荷なので、LODをしないと激重になる
+    if (d &lt; 0.5) {
+        vec2 uv = uvSphere(normalize(p));
+        uv.x += dot(rand, vec3(1.0));
+        d -= remapTo(rand.z, 0.01, 0.08) * fbm(uv, 5.0);
+    }
+
+    return d;
+}
+</code></pre>
+
+<h2 id="音楽について">音楽について</h2>
+
+<p>基盤となるGLSLサウンド用のシーケンサーの実装は私が、それ以外のオシレーターの関数やメロディの実装はさだきちさんが担当しました。</p>
+
+<p>音楽もやはり容量制約のためにGLSLで実装する必要があり、さだきちさんにはコーディングによる作曲をお願いしました。
+さだきちさんはプログラミングもGLSLも未経験だったので、それらの習得から始まりました。
+かなり無茶なお願いだったにも関わらず、かっこいいトランスミュージックを提供してくれたさだきちさんには感謝しかありません。ありがとうございます！</p>
+
+<p>私が担当したGLSLサウンド用のシーケンサーはGLSLサウンド上で実装されており、GLSLサウンドを鳴らす仕組みについては、AMAGIさん（<a href="https://twitter.com/amagitakayosi">@amagitakayosi</a>）の記事を参考に、Shadertoy互換のGLSLサウンドの再生機能を実装しました。ありがとうございます！</p>
+
+<ul>
+<li><a href="https://blog.amagi.dev/entry/veda-sound">VEDA 2.4: GLSLで音楽を演奏できるようになったぞ！！！ - マルシテイア</a></li>
+</ul>
+
+<h3 id="サウンド用のシーケンサーの利用例">サウンド用のシーケンサーの利用例</h3>
+
+<p>これはベースのパートの波形を生成するGLSLの関数です。</p>
+
+<pre><code class="language-c">vec2 bass1(float beat, float time) {
+// 1つのパターンのビート数
+#define BASS1_BEAT_LEN 8
+
+// パターンの種類
+#define BASS1_DEV_PAT 10
+
+// 楽曲全体の長さのパターン数
+#define BASS1_DEV_LEN 32
+
+    // パターンの定義
+    int[BASS1_BEAT_LEN * NOTE_DIV * BASS1_DEV_PAT] notes = int[](
+        // パターン0
+        F(0), F(33), E(0, 33), S(0, 33, 0, 33),
+        F(0), F(33), E(0, 33), S(0, 33, 0, 33),
+
+        // パターン1
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+
+        // パターン2
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(29, 29), S(0, 29, 29, 29), S(0, 31, 31, 31), S(48, 47, 43, 40),
+
+        // パターン3
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 34, 34, 34),
+
+        // パターン4
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 36, 36, 36),
+
+        // パターン5
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 34, 34, 34), S(0, 36, 36, 36),
+
+        // パターン6
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 43, 43, 43), S(0, 55, 57, 69),
+
+        // パターン7
+        E(29, 29), S(0, 29, 29, 29), S(0, 29, 29, 29), S(0, 31, 33, 45),
+        E(29, 29), S(0, 29, 29, 29), S(0, 29, 29, 29), S(0, 31, 31, 31),
+
+        // パターン8
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 43, 45, 57),
+
+        // パターン9
+        E(29, 29), S(0, 29, 29, 29), S(0, 29, 29, 29), S(0, 31, 33, 45),
+        E(29, 29), S(0, 29, 29, 29), S(0, 31, 31, 31), S(0, 31, 31, 31));
+
+    // パターンの進行
+    int[BASS1_DEV_LEN / DEV_PACK] development = int[](
+        D(0, 0, 0, 0, 0, 0, 0, 0), D(1, 1, 1, 2, 3, 4, 5, 6),
+        D(7, 0, 7, 8, 7, 0, 9, 0), D(0, 0, 0, 0, 0, 0, 0, 0));
+
+    SEQUENCER(beat, time, BASS1_BEAT_LEN, BASS1_DEV_PAT, BASS1_DEV_LEN,
+        notes, development, bass)
+
+    return ret;
+}
+</code></pre>
+
+<p>パターン（2小節分のノートナンバーの並び）の定義と進行は、それぞれ配列で指定できるようにしています。</p>
+
+<p>音の長さは下記の4種類に対応しました。
+ノートナンバーに0を指定すれば、同じ長さの休符になります。</p>
+
+<ul>
+<li>O: 全音符</li>
+<li>F: 4分音符</li>
+<li>E: 8分音符</li>
+<li>S: 16分音符</li>
+</ul>
+
+<p>GLSLのコンスタントバッファのサイズには上限があり、サウンド用のシェーダー全体で要素数が4096個まででしか配列を宣言できません。</p>
+
+<p>そこで、<code>O, F, E, S</code> を関数マクロとし、16分音符を最小単位として各音符を16bit（うち、ノートナンバーが8bit、音の長さが8bit）ずつパッキングしています。
+GLSLのintは32bitなので、int配列の1要素に16分音符なら2つ、8分音符なら1つ入るような設計です。</p>
+
+<p>また、パターン進行の <code>D</code> もマクロにしていて、要素数の節約のために4bitずつパッキングをしています。</p>
+
+<p>続いて、<code>bass</code> は時間とノートナンバーを入力として、波形を出力するオシレーターのGLSL関数です。</p>
+
+<p><code>SEQUENCER</code> は、時間、パターンの定義の配列、パターンの進行の配列、オシレーターの関数を指定することで、パートごとの波形を生成して <code>vec2 ret</code> に代入する関数マクロです。
+GLSLでは関数を引数とするような高階関数は実現できませんが、関数マクロで擬似的に実現しました。</p>
+
+<pre><code class="language-c">#define SEQUENCER(beat, time, beatLen, devPat, devLen, notes, development, toneFunc)  \
+    int indexOffset = development[int(                                                \
+        mod(beat / float(beatLen * DEV_PACK), float(devLen / DEV_PACK)))];            \
+    indexOffset =                                                                     \
+        (indexOffset &gt;&gt; (4 * int(mod(beat / float(beatLen), float(DEV_PACK))))) &amp; 15; \
+    indexOffset *= beatLen * NOTE_VDIV;                                               \
+                                                                                      \
+    for (int i = 0; i &lt; beatLen * NOTE_VDIV;) {                                       \
+        int index = i + indexOffset;                                                  \
+        int shift = (index % 2 == 1) ? 16 : 0;                                        \
+        int div = ((notes[index &gt;&gt; 1] &gt;&gt; shift) &gt;&gt; 8) &amp; 255;                          \
+        int len = NOTE_VDIV * NOTE_VDIV / div;                                        \
+        for (int j = 0; j &lt; len; j++) {                                               \
+            tmpIndexes[i + j] = i;                                                    \
+        }                                                                             \
+        i += len;                                                                     \
+    }                                                                                 \
+                                                                                      \
+    float indexFloat = mod(beat * float(NOTE_VDIV), float(beatLen * NOTE_VDIV));      \
+    int index = int(indexFloat);                                                      \
+    int shift = (index % 2 == 1) ? 16 : 0;                                            \
+    int note = (notes[(index + indexOffset) &gt;&gt; 1] &gt;&gt; shift) &amp; 255;                    \
+    float localTime =                                                                 \
+        beatToTime((indexFloat - float(tmpIndexes[index])) / float(NOTE_VDIV));       \
+    float amp = (note == 0) ? 0.0 : 1.0;                                              \
+    vec2 ret = vec2(toneFunc(float(note), localTime) * amp);
+</code></pre>
+
+<p>パターンの定義・進行のマクロはこちらです。</p>
+
+<pre><code class="language-c">// 1ビートを最大何分割するか。16分音符に対応するなら4
+#define NOTE_VDIV 4
+
+// 1ビートのpackingを考慮した分割数。32bitのintに16bitずつ詰めているので
+// 4 / (32 / 16) = 2
+#define NOTE_DIV 2
+
+// 展開用の配列のpacking数。32bitのintに4bitずつ詰めているので
+// 32 / 4 = 8
+#define DEV_PACK 8
+
+#define MAX_BEAT_LEN 8
+int[MAX_BEAT_LEN * NOTE_VDIV] tmpIndexes;
+
+#define O(a)                                                                      \
+    (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16), (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16),     \
+        (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16), (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16), \
+        (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16), (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16), \
+        (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16), (a | 1 &lt;&lt; 8) | ((a | 1 &lt;&lt; 8) &lt;&lt; 16)
+#define F(a) (a | 4 &lt;&lt; 8) | ((a | 4 &lt;&lt; 8) &lt;&lt; 16), (a | 4 &lt;&lt; 8) | ((a | 4 &lt;&lt; 8) &lt;&lt; 16)
+#define E(a, b) (a | 8 &lt;&lt; 8) | ((a | 8 &lt;&lt; 8) &lt;&lt; 16), (b | 8 &lt;&lt; 8) | ((b | 8 &lt;&lt; 8) &lt;&lt; 16)
+#define S(a, b, c, d) \
+    (a | 16 &lt;&lt; 8) | ((b | 16 &lt;&lt; 8) &lt;&lt; 16), (c | 16 &lt;&lt; 8) | ((d | 16 &lt;&lt; 8) &lt;&lt; 16)
+#define D(a, b, c, d, e, f, g, h) \
+    (a) | (b &lt;&lt; 4) | (c &lt;&lt; 8) | (d &lt;&lt; 12) | (e &lt;&lt; 16) | (f &lt;&lt; 20) | (g &lt;&lt; 24) | (h &lt;&lt; 28)
+</code></pre>
+
+<h1 id="re-simulated-の意味">『RE: SIMULATED』の意味</h1>
+
+<p>タイトルの『RE: SIMULATED』には2つの意味を込めました。</p>
+
+<ol>
+<li>前作『WORMHOLE』の64K Introとしての「再現」</li>
+<li>SIMULATED REALITY</li>
+</ol>
+
+<h2 id="1-前作-wormhole-の64k-introとしての-再現">1. 前作『WORMHOLE』の64K Introとしての「再現」</h2>
+
+<p>一昨年のTokyo Demo Fest 2018のCombined Demo Compoでも、さだきちさんとチームを組んで『WORMHOLE』という作品を制作しました（<a href="https://gam0022.net/blog/2018/12/12/tdf2018/">記事</a>）。</p>
+
+<p>前半のシーンが顕著ですが、『WORMHOLE』と表現や演出が酷似していると思います。</p>
+
+<ul>
+<li>フラクタルの形状変化</li>
+<li>光の色の変化</li>
+<li>シーン転換前の激しい点滅</li>
+<li>シーン転換後のホワイトイン</li>
+<li>パーティのロゴの登場</li>
+</ul>
+
+<p>『WORMHOLE』はUnityで制作したので、60.7 MB（zip圧縮で 23.18MB）というファイルサイズでした。</p>
+
+<p>前作では、Unityを利用したことで賛否両論があったので、ツールに頼らなくても同様のビジュアルを再現できることを証明する意図がありました。</p>
+
+<p>また、64K Introなどの容量制限のある部門への参加が個人的にも憧れだったという理由もあります。</p>
+
+<p>今回は自作のシステムで作品を制作することでファイルサイズは26KBになりました。</p>
+
+<p>同じ表現を「再現」しつつも、容量を <sup>1</sup>&frasl;<sub>2334</sub> まで圧縮する試みのコンセプトは達成できました。</p>
+
+<p>まさか、コンポで優勝するという結果まで「再現」してしまうのは予想外でした（笑）</p>
+
+<h2 id="2-simulated-reality">2. SIMULATED REALITY</h2>
+
+<p><a href="https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%86%E3%83%83%E3%83%89%E3%83%BB%E3%83%AA%E3%82%A2%E3%83%AA%E3%83%86%E3%82%A3">Simulated Reality</a>という裏設定もありました。</p>
+
+<p>作品の最後に「RE: SIMULATED」の文字が</p>
+
+<p><code>RE: SIMULATED</code> → <code>RE</code> → <code>REALITY</code></p>
+
+<p>と変化して、REALITYに変化するタイミングで「地球」がフラッシュバックするのは、Simulated Realityの暗喩です。</p>
+
+<p>前半のサイバーなシーンは電子的な仮想空間という設定で、シーン転換時に球体を中心に空間が歪んで圧縮するのは、宇宙誕生の爆発であるビッグバンの暗喩です。</p>
+
+<p>この世界は上位存在によって電子的にシミュレーションされた仮想現実で、最後に自分たちが住む地球を見つけるというストーリーでした（あくまで裏設定だったので、見た人に通じなくても良い）。</p>
+
+<p>できれば現実と見分けがつかないようなリアルなグラフィックで表現できたら良かったのですが、力量不足でした……。</p>
+
+<h1 id="おわりに">おわりに</h1>
+
+<p>Webフロントエンドは久しぶりで、node.jsとwebpackは初めてだったので、新しい技術を学ぶ良い機会となりました。</p>
+
+<p>昔はjQueryが必要だったDOMのセレクターやHTTPアクセスが、標準のAPI（<a href="https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector">querySelector</a>や<a href="https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch">Fetch</a>）になっていて驚きました。</p>
+
+<p>TypeScript（ECMascript）に苦手意識がありましたが、最近はかなり使いやすい言語になったなぁと認識を改めました。
+演算子オーバーロードがないのだけは、3Dプログラミングには必須のベクトル計算の実装の可読性が落ちて苦しい気持ちになったので、早くサポートして欲しいと感じました。</p>
+
+<p>また、64K Introのエントリーは今回が初めてということで、どのくらいのコンテンツが詰め込めるか感覚がつかめず、容量を半分以上も余らせてしまいました。
+次の機会には64KBギリギリまで使って、もっと映像としても洗練させて、さらにCoolな作品を発表したいです。</p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">実は26KBしか使いきれなかったので、次回は64KBギリギリまで使えるように精進します💪 <a href="https://t.co/uxF2M5DZmg">pic.twitter.com/uxF2M5DZmg</a></p>&mdash; がむ / encoder killer (@gam0022) <a href="https://twitter.com/gam0022/status/1249677712815321088?ref_src=twsrc%5Etfw">April 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>例年のRevisionの64K Introの作品と比較すると、かなり未熟なので、もっと精進して最高のデモを作りたいという気持ちです。</p>
+
+<p>ともあれ、このたびは優勝作品に選んでいただき、とても光栄に思います。</p>
+
+<p>世界中の尊敬するデモチームの方々からいただいたお祝いのコメントも嬉しかったです。わーい！</p>
+
+<p>最後に、世界的に大変な状況の中、オンラインでの開催のためにご尽力いただいた皆様に、心より感謝申し上げます。
+とても楽しく充実した3日間を過ごせました。来年はドイツでお会いしましょう！</p>
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-04-30 12:00:00 &#43;0900 JST" itemprop="datePublished">2020-04-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/revision">Revision</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/typescript">TypeScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/javascript">JavaScript</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2020/04/30/revision2020/" class="hatena-bookmark-button" data-hatena-bookmark-title="Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2020/04/30/revision2020/" data-text="Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2020/04/30/revision2020/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://gam0022.net/blog/2020/03/10/best-buy/"><span aria-hidden="true">&larr;</span> 最強の作業環境でリモートワークを乗り切る</a></li>
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/blog/2020/09/13/cgworld-vol266/">CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/blog\/2020\/04\/30\/revision2020\/';
+    var disqus_title = 'Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説';
+    var disqus_url = 'https:\/\/gam0022.net\/blog\/2020\/04\/30\/revision2020\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#作品へのリンク">作品へのリンク</a></li>
+<li><a href="#技術解説">技術解説</a>
+<ul>
+<li><a href="#シンプルなwebglエンジン-chromatiq">シンプルなWebGLエンジン『Chromatiq』</a></li>
+<li><a href="#ファイル圧縮のためのビルドプロセス">ファイル圧縮のためのビルドプロセス</a></li>
+<li><a href="#制作用のエディタ機能の紹介">制作用のエディタ機能の紹介</a>
+<ul>
+<li><a href="#uniformのパラメータのインスペクタ">uniformのパラメータのインスペクタ</a></li>
+<li><a href="#動画の保存機能">動画の保存機能</a></li>
+</ul></li>
+<li><a href="#映像について">映像について</a>
+<ul>
+<li><a href="#惑星のバリエーション生成の仕組み">惑星のバリエーション生成の仕組み</a>
+<ul>
+<li><a href="#地形の高さマップの自動生成">地形の高さマップの自動生成</a></li>
+<li><a href="#テクスチャの色のグラデーションの自動生成">テクスチャの色のグラデーションの自動生成</a></li>
+</ul></li>
+<li><a href="#無数の小惑星のランダムな配置">無数の小惑星のランダムな配置</a></li>
+</ul></li>
+<li><a href="#音楽について">音楽について</a>
+<ul>
+<li><a href="#サウンド用のシーケンサーの利用例">サウンド用のシーケンサーの利用例</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#re-simulated-の意味">『RE: SIMULATED』の意味</a>
+<ul>
+<li><a href="#1-前作-wormhole-の64k-introとしての-再現">1. 前作『WORMHOLE』の64K Introとしての「再現」</a></li>
+<li><a href="#2-simulated-reality">2. SIMULATED REALITY</a></li>
+</ul></li>
+<li><a href="#おわりに">おわりに</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

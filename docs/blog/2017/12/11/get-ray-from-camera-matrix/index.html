@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>カメラ行列からレイトレ用のレイを生成する | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="これはKLab Advent Calendar 2017の11日目の記事です。
+
+はじめに
+
+先日、three.jsのexamples（公式サンプル集）で紹介されている「raymarching / reflect」に関して、2つのPRを送ってマージされました。
+
+
+Improve raymarching example by gam0022 · Pull Request #12792 · mrdoob/three.js
+Improve raymarching example v2 by gam0022 · Pull Request #12801 · mrdoob/three.js
+
+
+内部的なリファクタリングですので、目に見える変化はまったくありません。
+
+レイトレーシングやレイマーチングでは、レイを生成する処理が必要です。
+そのレイの生成処理を改良しました。
+上記のPRでは、カメラ行列（モデル行列 &#43; プロジェクション行列の逆行列）からレイの生成するリファクタリングを行いました。
+
+レイの生成方法というのはとても奥深いテーマで、さまざまな実装方法があります。
+この記事では、今回のPRに至るまでの試行錯誤をまとめたいと思います。
+
+raymarching / reflect とは
+
+「raymarching / reflect」は、three.jsによるレイマーチングのGLSL（GPU）実装の技術デモです。
+
+無数のオブジェクトの描画はレイマーチングが得意とする表現です。
+レイマーチングでは距離関数を利用してシーンの形状を定義します。
+距離関数にmod関数を適用すると、同じ形状を無限に繰り返す repetition を実現できます。
+
+
+
+私が2年前に実装して、three.jsのexamplesに取り込んでいただきました。その時のPRはこちらです。
+
+
+Added raymarching reflect example. by gam0022 · Pull Request #7860 · mrdoob/three.js
+[WIP] Fix raymarching reflect by gam0022 · Pull Request #7863 · mrdoob/three.js
+
+
+解説記事もあるので、もしご興味があればあわせてお読みください。
+
+
+これがGPUの力！Three.jsによる“リアルタイム”なレイトレーシング
+
+
+要するに、2年前に自分で作った作品を今になって改良しました。
+
+">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/images/posts/2017-12-11-get-ray-from-camera-matrix/reflect.png">
+        <meta name="twitter:card" content="summary_large_image">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="カメラ行列からレイトレ用のレイを生成する | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">カメラ行列からレイトレ用のレイを生成する</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-12-11 10:12:08 &#43;0900 JST" itemprop="datePublished">2017-12-11</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/three.js">three.js</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/" class="hatena-bookmark-button" data-hatena-bookmark-title="カメラ行列からレイトレ用のレイを生成する" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/" data-text="カメラ行列からレイトレ用のレイを生成する" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    <p>これは<a href="https://qiita.com/advent-calendar/2017/klab">KLab Advent Calendar 2017</a>の11日目の記事です。</p>
+
+<h1 id="はじめに">はじめに</h1>
+
+<p>先日、three.jsの<a href="https://threejs.org/examples">examples（公式サンプル集）</a>で紹介されている<a href="https://threejs.org/examples/#webgl_raymarching_reflect">「raymarching / reflect」</a>に関して、2つのPRを送ってマージされました。</p>
+
+<ul>
+<li><a href="https://github.com/mrdoob/three.js/pull/12792">Improve raymarching example by gam0022 · Pull Request #12792 · mrdoob/three.js</a></li>
+<li><a href="https://github.com/mrdoob/three.js/pull/12801">Improve raymarching example v2 by gam0022 · Pull Request #12801 · mrdoob/three.js</a></li>
+</ul>
+
+<p>内部的なリファクタリングですので、目に見える変化はまったくありません。</p>
+
+<p>レイトレーシングやレイマーチングでは、レイを生成する処理が必要です。
+そのレイの生成処理を改良しました。
+上記のPRでは、カメラ行列（モデル行列 + プロジェクション行列の逆行列）からレイの生成するリファクタリングを行いました。</p>
+
+<p>レイの生成方法というのはとても奥深いテーマで、さまざまな実装方法があります。
+この記事では、今回のPRに至るまでの試行錯誤をまとめたいと思います。</p>
+
+<h1 id="raymarching-reflect-とは">raymarching / reflect とは</h1>
+
+<p>「raymarching / reflect」は、three.jsによるレイマーチングのGLSL（GPU）実装の技術デモです。</p>
+
+<p>無数のオブジェクトの描画はレイマーチングが得意とする表現です。
+レイマーチングでは距離関数を利用してシーンの形状を定義します。
+距離関数にmod関数を適用すると、同じ形状を無限に繰り返す repetition を実現できます。</p>
+
+<p><img src="/images/posts/2017-12-11-get-ray-from-camera-matrix/reflect.png" alt="three.jsによるレイマーチングのGLSL（GPU）実装の技術デモ: reflect" /></p>
+
+<p>私が2年前に実装して、three.jsのexamplesに取り込んでいただきました。その時のPRはこちらです。</p>
+
+<ul>
+<li><a href="https://github.com/mrdoob/three.js/pull/7860">Added raymarching reflect example. by gam0022 · Pull Request #7860 · mrdoob/three.js</a></li>
+<li><a href="https://github.com/mrdoob/three.js/pull/7863">[WIP] Fix raymarching reflect by gam0022 · Pull Request #7863 · mrdoob/three.js</a></li>
+</ul>
+
+<p>解説記事もあるので、もしご興味があればあわせてお読みください。</p>
+
+<ul>
+<li><a href="https://qiita.com/gam0022/items/03699a07e4a4b5f2d41f">これがGPUの力！Three.jsによる“リアルタイム”なレイトレーシング</a></li>
+</ul>
+
+<p>要するに、2年前に自分で作った作品を今になって改良しました。</p>
+
+<p></p>
+
+<h1 id="レイの生成方法の試行錯誤">レイの生成方法の試行錯誤</h1>
+
+<p>それでは、カメラ行列からレイを生成するに至った経緯を混じえながら、
+レイの生成方法の試行錯誤について、実装した順番に紹介します。</p>
+
+<h2 id="方法1-glslで全てのカメラ制御を行う">方法1: GLSLで全てのカメラ制御を行う</h2>
+
+<p>2年前の初PR <a href="https://github.com/mrdoob/three.js/pull/7860">#7860</a> で実装したのは、マウス座標と経過時間から、フラグメントシェーダ（GLSL）の中でカメラのレイを生成する方法です。</p>
+
+<p>シェーダに渡すuniformsは、マウス座標<code>mouse</code>と、経過時間<code>time</code>の2つです。</p>
+
+<ul>
+<li><code>uniform vec2 mouse;</code></li>
+<li><code>uniform float time;</code></li>
+</ul>
+
+<p>以下のGLSLのコードを書きました。レイマーチング（デモシーン）の界隈では最もメジャーな実装かと思います。</p>
+
+<p>コード1 <a href="https://github.com/gam0022/three.js/blob/1048d6751b11fa7c0caf7e480fa2682312716516/examples/webgl_raymarching_reflect.html#L199-L208">カメラ制御をすべて行うGLSLのコード</a></p>
+
+<pre><code class="language-cpp">// fragment position
+vec2 p = ( gl_FragCoord.xy * 2.0 - resolution ) / min( resolution.x, resolution.y );
+
+// camera and ray
+vec3 cPos  = vec3( mouse.x - 0.5, mouse.y * 4.0 - 0.2, time );
+vec3 cDir  = normalize( vec3( 0.0, -0.3, 1.0 ) );
+vec3 cSide = cross( cDir, vec3( 0.0, 1.0 ,0.0 ) );
+vec3 cUp   = cross( cSide, cDir );
+float targetDepth = 1.3;
+vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
+</code></pre>
+
+<p>※オリジナルのコードではY-upの扱いが間違っていたので、記事用に修正を加えています。</p>
+
+<p><code>cPos</code>はカメラのワールド座標、<code>ray</code>はカメラのレイの方向をそれぞれ表します。
+また、カメラのY-upに対応する <code>vec3( 0.0, 1.0 ,0.0 )</code> とカメラのFOVに対応する <code>float targetDepth = 1.3;</code> はコード上に埋め混んだ、いわゆるマジックナンバーとしました。</p>
+
+<h2 id="方法2-カメラの座標と向きを渡す">方法2: カメラの座標と向きを渡す</h2>
+
+<p>この方法は2年前の2つ目のPR <a href="https://github.com/mrdoob/three.js/pull/7863">#7863</a> で対応しました。</p>
+
+<p>方法1でPRを送ったところ、three.jsの作者である<a href="https://twitter.com/mrdoob">@mrdoob</a>から<a href="https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299">コメント</a>をいただきました。
+以下に一部を抜粋します。</p>
+
+<blockquote>
+<p>However&hellip; I think it would be cool if, instead of passing mouse and time to the shader we would simply pass the camera. I guess for that we have to decompose the camera matrix into position and direction?</p>
+</blockquote>
+
+<p>要約すると、GLSL側でカメラの位置や方向を決めずに、three.js側（JavaScript側）でカメラの操作を行うのはどうかという提案でした。
+カメラ操作はthree.jsで行い、シェーダはカメラの情報を受取るようにすれば、three.jsの世界とレイマーチングの世界をより統合できます。</p>
+
+<p>そこでシェーダに渡すuniformsを、カメラのワールド座標<code>cameraPos</code>と、カメラの方向<code>cameraDir</code>に改めました。</p>
+
+<ul>
+<li><code>uniform vec3 cameraPos;</code></li>
+<li><code>uniform vec3 cameraDir;</code></li>
+</ul>
+
+<p>three.jsにはカメラの制御を行う <code>Control</code> クラスが豊富にあります。
+この変更によって、three.jsの <code>Control</code> クラスを利用したカメラ制御を実現できるようになります。</p>
+
+<p>この変更のあとで、<code>FlyControl</code> による自由カメラモードを実装しました。</p>
+
+<p>次がレイを生成するコードです。
+1つ目のコードとほぼ同じですが、 <code>cPos</code> と <code>cDir</code> はthree.jsから送られたuniformの値を代入するように変更しました。</p>
+
+<p>コード2.1 <a href="https://github.com/mrdoob/three.js/blob/f68e1fb22daad1cfe87fbd57df55d978ffd425a7/examples/webgl_raymarching_reflect.html#L200-L209">カメラの座標と向きをからレイを生成するGLSLのコード</a></p>
+
+<pre><code class="language-cpp">// fragment position
+vec2 p = ( gl_FragCoord.xy * 2.0 - resolution ) / min( resolution.x, resolution.y );
+
+// camera and ray
+vec3 cPos  = cameraPos;
+vec3 cDir  = cameraDir;
+vec3 cSide = cross( cDir, vec3( 0.0, 1.0 ,0.0 ) );
+vec3 cUp   = cross( cSide, cDir );
+float targetDepth = 1.3;
+vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
+</code></pre>
+
+<p>JavaScriptからシェーダにuniformを渡すコードはこんな感じです。</p>
+
+<p>コード2.2 <a href="https://github.com/mrdoob/three.js/blob/f68e1fb22daad1cfe87fbd57df55d978ffd425a7/examples/webgl_raymarching_reflect.html#L326-L327">シェーダにuniformを渡すJavaScriptのコード</a></p>
+
+<pre><code class="language-JavaScript">material.uniforms.cameraPos.value = camera.getWorldPosition();
+material.uniforms.cameraDir.value = camera.getWorldDirection();
+</code></pre>
+
+<p>ワールド空間でのカメラの座標と方向を取得するメソッドはthree.jsに定義されています。便利ですね。</p>
+
+<p>だだし、この方法にも問題がありました。</p>
+
+<ol>
+<li>カメラのFOVやY-upの情報をシェーダに送れない</li>
+<li>毎フレーム実行する処理の中で、Vector3のインスタンスを生成していて、パフォーマンス的に懸念がある
+
+<ul>
+<li><code>camera.getWorldPosition()</code> と <code>camera.getWorldDirection()</code> は <code>Vector3</code> を <code>new</code> します</li>
+<li>インスタンスを大量に生成することで、GCの頻度を高めてしまい、瞬間的にレンダリングを止めてしまう等の懸念があります</li>
+</ul></li>
+</ol>
+
+<h2 id="方法3-カメラ行列の逆行列を渡す">方法3: カメラ行列の逆行列を渡す</h2>
+
+<p>ようやく本題です。今回の2つのPR <a href="https://github.com/mrdoob/three.js/pull/12792">#12792</a> と <a href="https://github.com/mrdoob/three.js/pull/12801">#12801</a> で対応しました。</p>
+
+<p>カメラ行列（モデル行列 + プロジェクション行列の逆行列）から、レイの向きを生成するようにしました。</p>
+
+<p>シェーダに渡すuniformsは、カメラのモデル行列（ビュー行列の逆行列）<code>cameraWorldMatrix</code>と、プロジェクション変換行列の逆行列<code>cameraProjectionMatrixInverse</code>の2つです。</p>
+
+<ul>
+<li><code>uniform mat4 cameraWorldMatrix;</code></li>
+<li><code>uniform mat4 cameraProjectionMatrixInverse;</code></li>
+</ul>
+
+<p>カメラ行列を渡すことで、これまでの実装では実現できなかったカメラのY-upとFOVも同期できるようになりました。
+<code>cameraWorldMatrix</code>にY-upが、<code>cameraProjectionMatrixInverse</code>にFOVの情報が含まれています。</p>
+
+<p>コード3.1では、まずスクリーン座標から正規化デバイス座標系のレイの方向<code>ndcRay</code>を求め、
+それを行列変換によってワールド座標系のレイの方向<code>ray</code>に変換しています。</p>
+
+<p>コード3.1 <a href="https://github.com/mrdoob/three.js/blob/6d9c22a3bc346f34ad779bada397db6f5c691760/examples/webgl_raymarching_reflect.html#L204-L215">カメラ行列からレイを生成するGLSLのコード</a></p>
+
+<pre><code class="language-cpp">// screen position
+vec2 screenPos = ( gl_FragCoord.xy * 2.0 - resolution ) / resolution;
+
+// ray direction in normalized device coordinate
+vec4 ndcRay = vec4( screenPos.xy, 1.0, 1.0 );
+
+// convert ray direction from normalized device coordinate to world coordinate
+vec3 ray = ( cameraWorldMatrix * cameraProjectionMatrixInverse * ndcRay ).xyz;
+ray = normalize( ray );
+
+// camera position
+vec3 cPos = cameraPosition;
+</code></pre>
+
+<p>ここで、ワールド座標からクリッピング座標への座標変換について考えます。</p>
+
+<p>コード3.2 ワールド座標 =&gt; クリッピング座標 の変換 を行うGLSLのコード</p>
+
+<pre><code class="language-cpp">// ワールド座標 =&gt; 視点系座標 =&gt; クリッピング座標 の変換
+vec4 clipPos = cameraProjectionMatrix * cameraViewMatrix * vec4( worldPos, 1.0 );
+</code></pre>
+
+<p>行列Aの逆行列を利用すると、Aの行列による行列変換の逆変換ができます。</p>
+
+<p>$V$をビュー行列（<code>cameraViewMatrix</code>）、$P$をプロジェクション行列（<code>cameraProjectionMatrix</code>）とすると、
+逆行列の性質から、$PV$（ワールド座標 =&gt; 視点系座標 =&gt; クリッピング座標）の逆変換は、$V^{-1}P^{-1}$となります。</p>
+
+<p>$$
+(PV)^{-1} = V^{-1}P^{-1}
+$$</p>
+
+<p>つまり、コード3.1では、<code>cameraViewMatrix</code> と <code>cameraProjectionMatrix</code> の逆行列である
+$V^{-1}$（<code>cameraWorldMatrix</code>）と$P^{-1}$（<code>cameraProjectionMatrixInverse</code>）を乗算することで、逆変換（クリッピング座標 =&gt; ワールド座標への変換）をしていたのですね。</p>
+
+<p>補足しますと、ビュー行列(<code>cameraViewMatrix</code>)とカメラのモデル行列(<code>cameraWorldMatrix</code>)はお互いに逆行列の関係にあります（<a href="http://marupeke296.com/DXG_No72_ViewProjInfo.html">その72 ビュー・射影変換行列が持つ情報を抜き出そう</a>）。</p>
+
+<p>クリッピング座標系を同次座標のwで除算すると、正規化デバイス座標系に変換できます。
+<code>ndcRay.w = 1.0</code> と定義すると、クリッピング座標系と正規化デバイス座標系が一致するため、
+今回は<code>正規化デバイス座標系 =&gt; クリッピング座標系</code> の変換は省略できます。</p>
+
+<p>JavaScriptからシェーダにuniformを渡すコードはこんな感じです。
+逆行列の計算はJavaScript（CPU）側で事前に行う実装としました。</p>
+
+<p>コード3.3 <a href="https://github.com/mrdoob/three.js/blob/6d9c22a3bc346f34ad779bada397db6f5c691760/examples/webgl_raymarching_reflect.html#L302-L303">シェーダにuniformを渡すJavaScriptのコード</a></p>
+
+<pre><code>cameraWorldMatrix: { value: camera.matrixWorld },
+cameraProjectionMatrixInverse: { value: new THREE.Matrix4().getInverse( camera.projectionMatrix ) }
+</code></pre>
+
+<p>カメラの完全な同期ができただけでなく、さらにパフォーマンス的な改善もできました。
+<code>cameraProjectionMatrixInverse</code>を再計算するタイミングは <code>camera.projectionMatrix</code> が更新されたときのみです。
+今回の作品ですと、<code>camera.projectionMatrix</code> が更新されるのは画面のアスペクト比に変化があったときのみです。
+方法3では毎フレーム実行される処理の中で <code>Vector3</code> のインスタンスを作成してしまう問題が残りましたが、これも解決できました。</p>
+
+<h2 id="方法4-逆行列を用いずに-カメラ行列を渡す">方法4: 逆行列を用いずに、カメラ行列を渡す</h2>
+
+<p>方法3ではプロジェクション行列の逆行列を計算していますが、シェーダ内でカメラ行列を分解すれば、この処理すら省けます。</p>
+
+<p>次のコードはCEDECの<a href="https://docs.google.com/presentation/d/1j4t4mcLw8F1PfqvKP3P8meMJ5dWfDXkfb9lc63qOFVM/edit#slide=id.g2460f5a976_1_77">デモシーンへようこそ
+4KBで映像作品を作る技術、およびゲーム開発への応用
+</a>で紹介されていたものです。</p>
+
+<p><img src="/images/posts/2017-12-11-get-ray-from-camera-matrix/cedec.png" alt="カメラ行列の分解" /></p>
+
+<p>Y-upとFOV（<code>focal_length</code>）も同期できています。</p>
+
+<p>今思うと、mrdoobは “decompose the camera matrix” という言葉を使っていたので、この方法を意図していたのかもしれません。</p>
+
+<p>今回の例ですと、プロジェクション行列が更新が必要なのは画面のアスペクト比が変わった時だけですし、
+シェーダ内の処理はなるべく単純にしたいので、今回であれば方法3で十分かなと感じています。
+まだ実装していないので、実装したら書き味やパフォーマンスを比較したいです。</p>
+
+<!--
+# three.jsへのコントリビュートのすゝめ
+
+最後に「three.jsにOSSコントリビュータしたいなぁ」という人へ向けた文章を残しておきます。
+
+## examplesのマージ基準は緩い
+
+three.jsは2017-12-10時点でGitHubのスター数が37377を超える超人気プロジェクトです。
+
+小さな変更だとしても、three.jsのコントリビュータとして名前を刻めるのは嬉しいものです。
+
+three.jsのライブラリ本体に変更を加えるPRのマージ基準はそれなりに高い印象ですが、
+examplesを変更をするPRのマージ基準はかなり緩いように感じました。
+
+2年前のPRは1日、今回のPRのマージはわずか数時間でマージされてビックリしました！
+
+もしあなたが「こういうexamplesがあれば良いのになぁ」と思ったのなら、three.jsのコントリビュータになるチャンスです！
+
+ただし、examplesの数がむやみに増えすぎるのも、three.js初学者への負担を強いるだけなので、
+全く同じようなexampleを追加するのは避けるべきだと個人的には思います。
+
+## PRを作る時の注意点
+
+あまりにも雑なPRを作るのは、作者たちのレビューの負担になってしまいます。
+
+PRを作る前に [How to contribute to three.js](https://github.com/mrdoob/three.js/wiki/How-to-contribute-to-three.js) を熟読しておきましょう。
+
+特に注意すべきポイントはコードフォーマットです。
+[Mr.doob's Code Style™](https://github.com/mrdoob/three.js/wiki/Mr.doob%27s-Code-Style%E2%84%A2)は空白と改行が多い、かなり癖が強いコードフォーマットです。
+
+[mrdoobapproves](http://zz85.github.io/mrdoobapproves/)というツールを用いれば、Mr.doob's Code Styleにオートフォーマットできるので、これを利用するのもオススメです。
+
+## コントリビュートして得たもの
+
+three.jsにコントリビュートして良かったことを紹介します。
+
+### コードの添削
+
+mrdoobにコードをリファクタリングしてもらいました！
+
+- [More improvements to raymarching example.](https://github.com/mrdoob/three.js/commit/0e12847099cbc4f9597496ce7367771430183d7c#diff-fd09ca29c011c0e4ab932acf6021fdb7)
+  - 毎フレーム実行される処理で `camera.lookAt` を使うと `Vector3` のインスタンスが大量に作られるので、代わりに `camera.rotation.set` を利用
+  - 重複した処理の削除
+- [Replaced FlyControls with OrbitControls](https://github.com/mrdoob/three.js/commit/e2f9a78fe49f0e09bd108e733e54989c4e4ea40c#diff-fd09ca29c011c0e4ab932acf6021fdb7)
+  - `FlyControls` がモバイル未対応だったので、モバイルに対応した `OrbitControls` に置き換え
+
+mrdoobだけでなく、WestLangleyさんとIteeさんにもコードを修正してもらいました（[history](https://github.com/mrdoob/three.js/commits/dev/examples/webgl_raymarching_reflect.html)）。
+
+これぞOSSの醍醐味ですね😊
+
+### mrdoobを囲んだ飲み会
+
+先日、日本に旅行中のmrdoobを囲んだ、three.js界隈の人たちとの飲み会に呼ばれたので、私も参加しました。
+
+私は英語を話せないのですが、上のレイマーチングのexamplesについてmrdoobに話を振ったら、少しは英語でコミュニケーションできました！
+いつかは普通に英語を話せるようになりたい...！
+
+たぶんPRを送っていなければ、mrdoobに認識されず、そもそも飲み会にも呼ばれなかった可能性が高いので、
+2年前に勇気を出してPRを出して良かったと本当に思います！
+
+これは自慢なのですが、MacBook Airにサインしてもらって、ツーショト写真も撮ってもらえました。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Photo with <a href="https://twitter.com/mrdoob?ref_src=twsrc%5Etfw">@mrdoob</a> 🤗 <a href="https://t.co/hIQC6iLbZS">pic.twitter.com/hIQC6iLbZS</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938075608197636096?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="en" dir="ltr">I am glad to have a signature written by mrdoob on my MacBook! <a href="https://t.co/phPyU7JUj6">pic.twitter.com/phPyU7JUj6</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938077812719624192?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+-->
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>レイを生成する方法は様々ですが、three.jsの <code>Control</code> クラス等の資産を利用し、
+毎フレーム実行される処理を減らしてパフォーマンスを向上させたいのであれば、カメラ行列からレイを生成する方法をオススメします。</p>
+
+<!--
+three.jsに限らず、勇気を出してOSSにコントリビュートすると、良いきっかけが生まれるかもしれません。
+OSSにPRを出すときには、GitHubのWikiやドキュメントから開発マニュアル等を熟読しておくと、スムーズにマージしてもらえる可能性が高まります。
+-->
+
+<h1 id="おまけ">おまけ</h1>
+
+<p>今回のPRを送った直後に、日本に旅行中のmrdoobを囲んだthree.js界隈の人たちとの飲み会があったので、参加させていただきました。
+参加者のみなさんありがとうございました。</p>
+
+<p>英語はとても苦手なのですが、作品やPRについてmrdoobと少しお話しすることができました。サインまでいただけて大満足です🤗
+勇気を出してPRを送って良かったなと思いました。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Photo with <a href="https://twitter.com/mrdoob?ref_src=twsrc%5Etfw">@mrdoob</a> 🤗 <a href="https://t.co/hIQC6iLbZS">pic.twitter.com/hIQC6iLbZS</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938075608197636096?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="en" dir="ltr">I am glad to have a signature written by mrdoob on my MacBook! <a href="https://t.co/phPyU7JUj6">pic.twitter.com/phPyU7JUj6</a></p>&mdash; がむ😇 (@gam0022) <a href="https://twitter.com/gam0022/status/938077812719624192?ref_src=twsrc%5Etfw">2017年12月5日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<hr />
+
+<p>明日は <a href="https://twitter.com/pandax381">@pandax381</a> さんの記事です。それでは！</p>
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-12-11 10:12:08 &#43;0900 JST" itemprop="datePublished">2017-12-11</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/three.js">three.js</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/" class="hatena-bookmark-button" data-hatena-bookmark-title="カメラ行列からレイトレ用のレイを生成する" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/" data-text="カメラ行列からレイトレ用のレイを生成する" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://gam0022.net/blog/2017/11/17/https-support/"><span aria-hidden="true">&larr;</span> Let&#39;s EncryptでHTTPS対応しました</a></li>
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/blog/2017/12/25/unity-demoscene/">Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/blog\/2017\/12\/11\/get-ray-from-camera-matrix\/';
+    var disqus_title = 'カメラ行列からレイトレ用のレイを生成する';
+    var disqus_url = 'https:\/\/gam0022.net\/blog\/2017\/12\/11\/get-ray-from-camera-matrix\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#raymarching-reflect-とは">raymarching / reflect とは</a></li>
+<li><a href="#レイの生成方法の試行錯誤">レイの生成方法の試行錯誤</a>
+<ul>
+<li><a href="#方法1-glslで全てのカメラ制御を行う">方法1: GLSLで全てのカメラ制御を行う</a></li>
+<li><a href="#方法2-カメラの座標と向きを渡す">方法2: カメラの座標と向きを渡す</a></li>
+<li><a href="#方法3-カメラ行列の逆行列を渡す">方法3: カメラ行列の逆行列を渡す</a></li>
+<li><a href="#方法4-逆行列を用いずに-カメラ行列を渡す">方法4: 逆行列を用いずに、カメラ行列を渡す</a></li>
+</ul></li>
+<li><a href="#まとめ">まとめ</a></li>
+<li><a href="#おまけ">おまけ</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

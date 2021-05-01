@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/rsync/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)</title>
+      <link>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</link>
+      <pubDate>Sat, 11 Aug 2012 10:38:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</guid>
+      <description>
+
+&lt;p&gt;このブログで、カテゴリーに濁点を含んだ日本語を使うと、カテゴリーの一覧などからカテゴリーのページにリンクしたとき、
+404エラーになってしまう問題が起きました。&lt;/p&gt;
+
+&lt;p&gt;原因は、このブログの開発環境にありました。&lt;/p&gt;
+
+&lt;p&gt;このブログは静的コンテンツなのですが、次のような手順でブログを運営しています。
+(Rakefileで自動化されていますが、内部ではこうなっています)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ローカル(Mac OS X)でブログを生成する。&lt;/li&gt;
+&lt;li&gt;サーバ(Ubuntu)にRsyncで生成したブログをアップロードする。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mac OS X では、ファイル名のエンコードに&lt;code&gt;UTF-8-MAC&lt;/code&gt;を使っているので、
+そのままアップロードすると、サーバ上のファイル名も&lt;code&gt;UTF-8-MAC&lt;/code&gt;になります。
+しかし、ファイル自体のエンコードは&lt;code&gt;UTF-8&lt;/code&gt;でURLをパーセントエンコーディングしていないので、
+リンク先が見つからなくなってしまうようです。&lt;/p&gt;
+
+&lt;p&gt;UTF-8-MAC問題について詳しく知りたい人は、&lt;a href=&#34;http://d.hatena.ne.jp/miau/20110805/1312555736&#34;&gt;こちら&lt;/a&gt;などが勉強になるとおもいます。&lt;/p&gt;
+
+&lt;p&gt;解決方法は簡単で、Rsyncでアップロードするときに、&lt;code&gt;--iconv&lt;/code&gt;オプションを使い、
+ファイル名を&lt;code&gt;UTF-8-MAC&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変換すれば治ります。&lt;/p&gt;
+
+&lt;h3 id=&#34;rsyncのバージョンを3にする&#34;&gt;Rsyncのバージョンを3にする&lt;/h3&gt;
+
+&lt;p&gt;Rsyncの&lt;code&gt;--iconv&lt;/code&gt;オプションが使えるのは、Rsync3からなのでアップデートします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# brew tap homebrew/dupes #リポジトリを追加（2019/06/20追記。この手順は不要になりました。）
+brew install libiconv #iconvオプションを使うために必須のよう
+brew install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;念のため、サーバ側(Ubuntu)のrsync3にします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;aptitude install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;rakefileを修正する&#34;&gt;Rakefileを修正する&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Rakefile&lt;/code&gt;の&lt;code&gt;ok_failed system...&lt;/code&gt;の行を書き換えます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;desc &amp;quot;Deploy website via rsync&amp;quot;
+task :rsync do
+  exclude = &amp;quot;&amp;quot;
+  if File.exists?(&#39;./rsync-exclude&#39;)
+    exclude = &amp;quot;--exclude-from &#39;#{File.expand_path(&#39;./rsync-exclude&#39;)}&#39;&amp;quot;
+  end
+  puts &amp;quot;## Deploying website via Rsync&amp;quot;
+  #ok_failed system(&amp;quot;rsync -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+  ok_failed system(&amp;quot;rsync --iconv=UTF-8-MAC,UTF-8 -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;完&#34;&gt;完。&lt;/h3&gt;
+
+&lt;p&gt;これでうまくいきました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[gam0022@starlight:~/git/gam0022.net] $ rake deploy
+## Deploying website via Rsync
+sending incremental file list
+deleting blog/categories/ゴ/index.html
+deleting blog/categories/ゴ/atom.xml
+deleting blog/categories/ゴ/
+blog/categories/ゴ/
+blog/categories/ゴ/atom.xml
+blog/categories/ゴ/index.html
+
+sent 11206 bytes  received 138 bytes  7562.67 bytes/sec
+total size is 2309599  speedup is 203.60
+OK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;「ゴゴゴゴ…」&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rsyncを使ってOctopressをVPS上で公開する</title>
+      <link>https://gam0022.net/blog/2012/07/23/run-octopress-on-a-vps-using-rsync/</link>
+      <pubDate>Mon, 23 Jul 2012 10:02:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/23/run-octopress-on-a-vps-using-rsync/</guid>
+      <description>
+
+&lt;p&gt;今回もOctopressに関する記事です。&lt;/p&gt;
+
+&lt;p&gt;先日、Octopressを使ってGithubPages上にブログを運営しましたが、
+気が変わってレンタルしているVPS上で運営したくなりました。&lt;/p&gt;
+
+&lt;p&gt;Octopressでは&lt;code&gt;rake deploy&lt;/code&gt;を叩くだけでRsyncを使い自分のサーバ上にコンテンツを同期することができるので、
+その方法を紹介したいと思います。&lt;/p&gt;
+
+&lt;p&gt;Rsyncを使って同期するためには次の2つの作業をする必要があります。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;公開鍵認証を使ってsshでログインできるようにする。&lt;/li&gt;
+&lt;li&gt;サーバ側の&lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;にローカル側の公開鍵を登録する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ここでは、serverという名前のサーバに作成済みのuserというユーザを使って、公開鍵でログインするようにするまでの手順を紹介します。&lt;/p&gt;
+
+&lt;h1 id=&#34;ローカル側の設定-鍵のペアの生成&#34;&gt;ローカル側の設定(鍵のペアの生成)&lt;/h1&gt;
+
+&lt;p&gt;まず、ローカル側で鍵のペアの生成します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/.ssh
+ssh-keygen -t rsa # RSAの鍵のペアを生成する。save the keyは空白でOK。パスフレーズは任意のものを指定する。
+cat id_rsa.pub # 公開鍵はサーバのauthorized_keysに後で登録するので表示しておく
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;サーバ側の設定&#34;&gt;サーバ側の設定&lt;/h1&gt;
+
+&lt;h2 id=&#34;公開鍵の登録&#34;&gt;公開鍵の登録&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vim ~/.ssh/authorized_keys # 上で表示したローカル側のid_rsa.pubを最後の行に追加する。(ファイルがなければ作る)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sshの設定&#34;&gt;sshの設定&lt;/h2&gt;
+
+&lt;p&gt;vimなどで、サーバ側の&lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;を編集します。
+間違った設定をすると最悪sshでログインできなるので注意しましょうw&lt;/p&gt;
+
+&lt;p&gt;私の場合はこのような感じに&lt;strong&gt;一部を書き換えました。&lt;/strong&gt;
+この記事を書いている私ですが、サーバの設定は初心者なので、あまり信用しないようにしましょうw
+あくまで参考程度で。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AllowUsers user
+RSAAuthentication yes 
+PubkeyAuthentication yes 
+AuthorizedKeysFile   %h/.ssh/authorized_keys
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;VPS上の設定が終わったら、sshdを再起動します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;/etc/init.d/ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;再びローカル側の設定-sshのテスト&#34;&gt;再びローカル側の設定(sshのテスト)&lt;/h1&gt;
+
+&lt;p&gt;以上で公開鍵を使ってsshをする準備が整ったので、テストしてみます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/.ssh
+chmod 600 id_rsa # パーミションが600でないと「WARNING: UNPROTECTED PRIVATE KEY FILE!」というエラーになる。
+ssh -i id_rsa user@server #これでログインできれば成功。-iで秘密鍵を指定できる。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;octopressの設定&#34;&gt;Octopressの設定&lt;/h1&gt;
+
+&lt;p&gt;ここまで来れば、あとはOctopressの設定だけです。&lt;code&gt;Rakefile&lt;/code&gt;を編集します。&lt;/p&gt;
+
+&lt;p&gt;私の場合、GithubPages用にRakeFileを設定してしまったので、書き直します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;## -- Rsync Deploy config -- ##
+# Be sure your public key is listed in your server&#39;s ~/.ssh/authorized_keys file
+ssh_user       = &amp;quot;user@server&amp;quot;
+ssh_port       = &amp;quot;1234&amp;quot; #普通は22ですが、セキュリティ上の理由で(
+document_root  = &amp;quot;/var/www/html/&amp;quot; #htmlの公開用のディレクトリを指定。ServersMan@VPSならこの設定でいいはず。
+rsync_delete   = true
+#deploy_default = &amp;quot;push&amp;quot;
+deploy_default = &amp;quot;rsync&amp;quot; #rsyncで同期します。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで設定は終わりです。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rake deploy&lt;/code&gt;でファイルが同期できたら成功です。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;参考記事
+:&lt;a href=&#34;http://octopress.org/docs/deploying/rsync/&#34;&gt;Deploying With Rsync&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

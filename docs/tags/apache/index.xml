@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/apache/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ServersMan@VPSでRubyのCGIを実行するまでのメモ</title>
+      <link>https://gam0022.net/blog/2012/07/26/run-ruby-cgi-on-serversman-at-vps/</link>
+      <pubDate>Thu, 26 Jul 2012 00:11:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/26/run-ruby-cgi-on-serversman-at-vps/</guid>
+      <description>
+
+&lt;p&gt;ServersMan@VPS(Ubuntu)でRubyのCGIを実行するまでのメモです。&lt;/p&gt;
+
+&lt;h2 id=&#34;apache2をインストールする&#34;&gt;apache2をインストールする&lt;/h2&gt;
+
+&lt;p&gt;apt-getかaptitudeでインストールすればいいと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo aptitude install apache2	
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;addhandlerを設定する&#34;&gt;AddHandlerを設定する&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/apache2/mods-enabled/mime.conf&lt;/code&gt;にAddHandlerを設定します。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#AddHandler cgi-script .cgi&lt;/code&gt;という行があるので、
+見つけてコメントアウトを解除して、次のように書き換えればいいと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AddHandler cgi-script .cgi .rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;options-execcgiを設定する&#34;&gt;Options +ExecCGIを設定する&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/apache2/sites-available/default&lt;/code&gt;でOptions +ExecCGIを設定します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Directory /var/www/html/&amp;gt;
+	#Options Indexes FollowSymLinks MultiViews 
+	Options Indexes FollowSymLinks MultiViews ExecCGI
+	AllowOverride None
+	Order allow,deny
+	allow from all
+&amp;lt;/Directory&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;apache2を再起動する&#34;&gt;apache2を再起動する&lt;/h2&gt;
+
+&lt;p&gt;上の2つのファイルを編集したら、apacheを再起動して設定を反映させます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo /etc/init.d/apache2 restart	
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ruby-cgiのパーミッションを755にする&#34;&gt;Ruby CGIのパーミッションを755にする&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /var/www/html
+chmod 755 test.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでたぶん動くようになります。&lt;/p&gt;
+
+&lt;p&gt;ね？簡単でしょ？&lt;/p&gt;
+
+&lt;h2 id=&#34;うまくいかないときは&#34;&gt;うまくいかないときは&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;/var/log/apache2/error.log&lt;/code&gt;のエラーメッセージを見ましょう。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

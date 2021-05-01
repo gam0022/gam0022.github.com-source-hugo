@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/canvas/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Canvasでハマった点まとめ</title>
+      <link>https://gam0022.net/blog/2013/09/16/canvas-memo/</link>
+      <pubDate>Mon, 16 Sep 2013 14:05:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/09/16/canvas-memo/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://gam0022.net/app/tmg/&#34;&gt;Twitter名刺ジェネレータ&lt;/a&gt;を作るにあたって、
+Canvas を使ったので、勉強になったことを適当にメモします。&lt;/p&gt;
+
+&lt;p&gt;関連記事&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2013/09/16/sqlite3-memo/&#34;&gt;SQlite3でハマった点まとめ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;canvas-todataurl-の注意点&#34;&gt;canvas#toDataURL() の注意点&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.html5.jp/canvas/ref/HTMLCanvasElement/toDataURL.html&#34;&gt;&lt;code&gt;canvas#toDataURL()&lt;/code&gt;&lt;/a&gt; の注意点なのですが、
+一度でもクロスドメインで読み込んだファイルを描画した canvas に対して使うと、
+&lt;code&gt;Uncaught SecurityError: An attempt was made to break through the security policy of the user agent.&lt;/code&gt; というエラーがでます。&lt;/p&gt;
+
+&lt;p&gt;クロスドメインで取得した&lt;code&gt;Image&lt;/code&gt;を引数にしても、&lt;a href=&#34;http://www.html5.jp/canvas/ref/method/drawImage.html&#34;&gt;&lt;code&gt;context#drawImage()&lt;/code&gt;&lt;/a&gt;は成功するので、すこし気が付きにくいと思いました。&lt;/p&gt;
+
+&lt;p&gt;Chrome バージョン 29.0.1547.65 で確認しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;canvas-で複数行のテキストを描画する&#34;&gt;Canvas で複数行のテキストを描画する&lt;/h1&gt;
+
+&lt;p&gt;Canvas で、指定した幅でテキストを改行させたかったのですが、標準の関数では実現できませんでした。&lt;/p&gt;
+
+&lt;p&gt;仕方ないので、&lt;a href=&#34;http://ninoha.com/?p=60&#34;&gt;指定した幅で文字列を分割して配列に入れる関数&lt;/a&gt;を作って、
+複数回に分けて &lt;code&gt;context#fillText()&lt;/code&gt; をするしかないようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/gam0022/twitter-meishi-generator/blob/master/js/functions.js&#34;&gt;twitter-meishi-generator / js / functions.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Canvas で複数行のテキストを描画する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// http://ninoha.com/?p=60
+/*
+      文字列を指定幅ごとに区切る
+
+      context : 描画コンテキスト
+      text    : 変換元の文字列
+      width   : １行の最大幅
+
+      戻り値  : １行毎に分割した文字列の配列
+*/
+function multilineText(context, text, width) {
+    var len = text.length;
+    var strArray = [];
+    var tmp = &amp;quot;&amp;quot;;
+    var i = 0;
+
+    if( len &amp;lt; 1 ){
+        //textの文字数が0だったら終わり
+        return strArray;
+    }
+
+    for( i = 0; i &amp;lt; len; i++ ){
+        var c = text.charAt(i);  //textから１文字抽出
+        if( c == &amp;quot;\n&amp;quot; ){
+            /* 改行コードの場合はそれまでの文字列を配列にセット */
+            strArray.push( tmp );
+            tmp = &amp;quot;&amp;quot;;
+
+            continue;
+        }
+
+        /* contextの現在のフォントスタイルで描画したときの長さを取得 */
+        if (context.measureText( tmp + c ).width &amp;lt;= width){
+            /* 指定幅を超えるまでは文字列を繋げていく */
+            tmp += c;
+        }else{
+            /* 超えたら、それまでの文字列を配列にセット */
+            strArray.push( tmp );
+            tmp = c;
+        }
+    }
+
+    /* 繋げたままの分があれば回収 */
+    if( tmp.length &amp;gt; 0 )
+        strArray.push( tmp );
+
+    return strArray;
+}
+
+function fillMultilineText(context, text, width, x, y, line_height, max_line) {
+  var ary = multilineText(context, text, width);
+  var n = ary.length;
+  if (n &amp;gt; max_line) {
+    n = max_line;
+  }
+  for (var i = 0; i &amp;lt; n; ++i) {
+    context.fillText(ary[i], x, y + line_height * i);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

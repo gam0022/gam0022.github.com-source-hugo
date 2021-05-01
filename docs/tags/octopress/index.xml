@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/octopress/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/octopress/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>OctopressからHugoへ移行する方法</title>
+      <link>https://gam0022.net/blog/2016/09/25/migrated-from-octopress-to-hugo/</link>
+      <pubDate>Sun, 25 Sep 2016 12:45:18 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2016/09/25/migrated-from-octopress-to-hugo/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2016-09-25-migrated-from-octopress-to-hugo/migrated-from-octopress-to-hugo.png&#34; alt=&#34;OctopressからHugoへ移行&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当サイトはOctopressを使って生成していたのですが、このたびHugoに移行することにしました。
+この記事ではHugoに移行した経緯と、Hugoへの移行手順についてまとめます。
+なおローカル環境はMac OS Xです。&lt;/p&gt;
+
+&lt;h1 id=&#34;octopressを辞めた理由&#34;&gt;Octopressを辞めた理由&lt;/h1&gt;
+
+&lt;p&gt;Octopressを辞めた理由は、記事数の増加に伴い、サイトの生成に時間がかかるようになってしまったからです。&lt;/p&gt;
+
+&lt;p&gt;HugoではOctopressに比べてサイトの生成時間が短いことから、Hugoに移行することにしました。&lt;/p&gt;
+
+&lt;p&gt;現在の記事数でのサイトの生成時間は、Octpress(&lt;code&gt;rake generate&lt;/code&gt;コマンド)で 20.39秒、Hugo(&lt;code&gt;hugo&lt;/code&gt;コマンド)では 2.66秒でした！&lt;/p&gt;
+
+&lt;p&gt;他にも、Octpressは直近のコミットが半年前のもので、活発にメンテナンスされていないと感じたことも、Hugoへ移行した理由の1つです。&lt;/p&gt;
+
+&lt;h1 id=&#34;hugoのインストール&#34;&gt;Hugoのインストール&lt;/h1&gt;
+
+&lt;p&gt;Macの場合はHomebrewからインストールするのが良いでしょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew update
+brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mac以外の方は、公式ページを参考にして、ソースコードからインストールしましょう。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo - Installing Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugoを使ってみる&#34;&gt;Hugoを使ってみる&lt;/h1&gt;
+
+&lt;p&gt;Hugoでページを生成して、ブラウザで表示を確認するまでの最短手順は以下の通りです。&lt;/p&gt;
+
+&lt;p&gt;各手順の詳細は&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;Hugo Quickstart Guide&lt;/a&gt;で確認しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Hugoのプロジェクトをつくる
+hugo new site hugo-site
+cd hugo-site
+
+# 記事を生成
+hugo new post/good-to-great.md
+
+# テンプレートをインストール
+# テンプレートがない状態では、真っ白なページしか表示されません
+mkdir themes
+cd themes
+git clone https://github.com/dim0627/hugo_theme_robust.git
+
+# ローカルサーバでプレビュー
+# http://localhost:1313/ にブラウザでアクセスすることで、プレビューを確認できます
+cd ..
+hugo server --theme=hugo_theme_robust --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;hugo記事へ記事の移行する&#34;&gt;Hugo記事へ記事の移行する&lt;/h1&gt;
+
+&lt;p&gt;Octopress の記事を Hugo に移植する大まかな手順は次の4つです。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Markdownの記事のコピー&lt;/li&gt;
+&lt;li&gt;画像のコピー&lt;/li&gt;
+&lt;li&gt;Octopressの独自記法をPure Markdownに置換&lt;/li&gt;
+&lt;li&gt;Octopressと同一のパーマリンクにする（オプション）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;markdownの記事のコピー&#34;&gt;Markdownの記事のコピー&lt;/h2&gt;
+
+&lt;p&gt;Octopressでは、&lt;code&gt;source/_posts&lt;/code&gt;に記事を配置しましたが、Hugoでは&lt;code&gt;content/post&lt;/code&gt;に配置します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp octopress-site/source/_posts/* hugo-site/content/post/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;画像のコピー&#34;&gt;画像のコピー&lt;/h2&gt;
+
+&lt;p&gt;Octopressでは画像ファイルを、&lt;code&gt;source/images/&lt;/code&gt;に配置しましたが、Hugoでは&lt;code&gt;static/images/&lt;/code&gt;に配置します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp -r octopress-site/source/images/* hugo-site/static/images/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;octopressの独自タグをpure-markdownに置換&#34;&gt;Octopressの独自タグをPure Markdownに置換&lt;/h2&gt;
+
+&lt;p&gt;Octopressのみでしか使えない独自記法を、Hugoでも扱えるようMarkdownに書き換える必要があります。&lt;/p&gt;
+
+&lt;p&gt;将来的な移行を考えると、独自記法は極力避けて、なるべくプラットフォームに依存しない書き方をするべきだと痛感しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd content/post/
+
+# 記事のタイムスタンプの形式を変える
+# Hugoでは、&amp;quot;2016-09-25T15:09:57&amp;quot;のような形式のタイムスタンプでないとパースに失敗します
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/date: \([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\) \([0-9]\{2\}:[0-9]\{2\}\)$/date: \1T\2:00+09:00/g&#39; {} \;
+
+# コードブロック
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% codeblock lang:\([a-z]*\) %}/```\1/g&#39; {} \;
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% codeblock %}/```/g&#39; {} \;
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% endcodeblock %}/```/g&#39; {} \;
+
+# s/categories/tags/
+# OctopressのカテゴリーはHugoのタグに相当します
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/^categories:.*/tags:/g&#39; {} \;
+
+# 画像
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% img \([^ ]*\) \(.*\) %}/![\2](\1)/g&#39; {} \;
+
+# class付きの画像
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% img right \([^ ]*\) \(.*\) %}/&amp;lt;img alt=&amp;quot;\2&amp;quot; src=&amp;quot;\1&amp;quot; class=&amp;quot;right&amp;quot;&amp;gt;/g&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;octopressと同一のパーマリンクにする-オプション&#34;&gt;Octopressと同一のパーマリンクにする（オプション）&lt;/h2&gt;
+
+&lt;p&gt;OctopressとHugoではURLの付与ルールが異なるので、パーマリンクを維持させるためには一手間必要です。&lt;/p&gt;
+
+&lt;p&gt;たとえば、&lt;code&gt;2016-09-25-migrated-from-octopress-to-hugo.md&lt;/code&gt;というファイル名に対して、&lt;/p&gt;
+
+&lt;p&gt;Octopressでは&lt;code&gt;/blog/2016/09/25/migrated-from-octopress-to-hugo/&lt;/code&gt;というURLになります。&lt;/p&gt;
+
+&lt;p&gt;Hugoのデフォルト設定では&lt;code&gt;/post/2016-09-25-migrated-from-octopress-to-hugo/&lt;/code&gt;というURLとなります。&lt;/p&gt;
+
+&lt;p&gt;そこで、&lt;code&gt;config.toml&lt;/code&gt;に次の設定を加えてHugoのURLの付与ルールを変更することで、OctpressとHugoのURLを一致させました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[permalinks]
+  post = &amp;quot;/blog/:year/:month/:day/:slug&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そして各記事に&lt;code&gt;slug&lt;/code&gt;属性を設定することで、Octopressと同じパーマリンクを維持しました。&lt;/p&gt;
+
+&lt;p&gt;記事数が多い場合、すべての記事にslug属性を設定するのは手間だったので、次のようなRubyのスクリプトを使用しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;dir = &#39;content/post/&#39;
+Dir::foreach(dir) do |filename|
+  if filename =~ /\.markdown$/
+    slug = filename.gsub(/\d{4}-\d{2}-\d{2}-/, &#39;&#39;).sub(&#39;.markdown&#39;, &#39;&#39;)
+    puts &amp;quot;#{filename} : #{slug}&amp;quot;
+
+    lines = []
+    File::open(dir + filename) do |f|
+      f.each do |line|
+        lines &amp;lt;&amp;lt; line
+      end
+    end
+
+    File::open(dir + filename, &#39;w&#39;) do |f|
+      lines.each_with_index do |line, i|
+        f.puts(&amp;quot;slug: #{slug}&amp;quot;) if i == 3
+        f.print(line)
+      end
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;また、&lt;code&gt;slug&lt;/code&gt;を設定せずに、ファイル名から日付のprefixを削除してHugoのルールに合わせる方法もあります。&lt;/p&gt;
+
+&lt;h1 id=&#34;deployコマンド&#34;&gt;deployコマンド&lt;/h1&gt;
+
+&lt;p&gt;Hugoではdeployコマンドが内包されていないので、自作する必要があります。&lt;/p&gt;
+
+&lt;p&gt;そこで、&lt;code&gt;rsync&lt;/code&gt;を使ってVPSにデプロイするシェルスクリプトを作成しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;deploy.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+rm -rf public
+hugo
+
+dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+echo &amp;quot;dir: $dir&amp;quot;
+
+ssh_host=&amp;quot;g22&amp;quot;
+rsync --iconv=UTF-8-MAC,UTF-8 -avzc --delete --exclude-from=rsync-exclude ${dir}/public/ ${ssh_host}:/var/www/html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;rsync-exclude&lt;/code&gt;では上書きしたくないファイルやディレクトリを指定します。
+当サイトでは &lt;a href=&#34;https://gam0022.net/webgl/&#34;&gt;&lt;code&gt;gam0022.net/webgl&lt;/code&gt;&lt;/a&gt;のようなサブディレクトリ以下のコンテンツがあるため、&lt;code&gt;rsync-exclude&lt;/code&gt;を次のように指定しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rsync-exclude&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;webgl/
+*.swp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;--iconv=UTF-8-MAC,UTF-8&lt;/code&gt;はリモート環境がMacで、かつURLに日本語を含むコンテンツがある場合(&lt;a href=&#34;https://gam0022.net/tags/レイマーチング/&#34;&gt;例としては日本語のタグ名を使用した場合&lt;/a&gt;)には必要なオプションです。
+このオプションを付けると&lt;code&gt;UTF-8-MAC&lt;/code&gt;のファイル名をリモートでは&lt;code&gt;UTF-8&lt;/code&gt;に変換してコピーします。 詳しくは次の記事を参照してください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/&#34;&gt;カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;参考記事&#34;&gt;参考記事&lt;/h1&gt;
+
+&lt;p&gt;この記事を書くにあたって、次の記事を参考にさせていただきました。ありがとうございます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/&#34;&gt;ブログをOctopressからHugoに移行した&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://deeeet.com/writing/2014/12/25/hugo/&#34;&gt;OctopressからHugoへ移行した | SOTA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Octopressで最後に編集した記事だけをgenerate</title>
+      <link>https://gam0022.net/blog/2014/12/07/octopress-rake-generate-only/</link>
+      <pubDate>Sun, 07 Dec 2014 12:15:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2014/12/07/octopress-rake-generate-only/</guid>
+      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;以前、&lt;a href=&#34;https://gam0022.net/blog/2013/09/28/speed-up-octopress-site-generation/&#34;&gt;Octopressのpreviewを高速化する&lt;/a&gt;という記事を書きました。&lt;/p&gt;
+
+&lt;p&gt;この記事では、&lt;code&gt;rake isolate&lt;/code&gt; と &lt;code&gt;rake integrate&lt;/code&gt; を使って特定の記事だけを &lt;code&gt;generate&lt;/code&gt; することによって、
+&lt;code&gt;rake generate&lt;/code&gt; を高速化していました。&lt;/p&gt;
+
+&lt;p&gt;しかしながら、この方法は手順が複雑で使うコマンドが多く、面倒だし使い方を忘れるという問題がありました。&lt;/p&gt;
+
+&lt;p&gt;通常、最後に保存したファイルを generate することが多いので、これを利用してもっと便利な Rake の task を作ります。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;rake-generate-only&#34;&gt;rake generate_only&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Rakefile&lt;/code&gt; に &lt;code&gt;generate_only&lt;/code&gt; という task を追加します。頻繁に使うので、&lt;code&gt;go&lt;/code&gt;というaliasも定義しました。&lt;/p&gt;
+
+&lt;p&gt;使い方は、&lt;code&gt;rake generate_only [filename]&lt;/code&gt; という形式で使います。
+&lt;code&gt;filename&lt;/code&gt;を省略すると、最後に保存されたファイルが自動的に設定されます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rb&#34;&gt;# usage rake generate_only[my-post]
+# thanks to http://rcmdnk.github.io/blog/2013/12/06/blog-octopress-rake/
+desc &amp;quot;Generate only the specified post (much faster)&amp;quot;
+task :generate_only, :filename do |t, args|
+  if args.filename
+    filename = args.filename
+  else
+    filename = Dir.glob(&amp;quot;#{source_dir}/#{posts_dir}/*.#{new_post_ext}&amp;quot;).sort_by{|f| File.mtime(f)}.last
+  end
+  puts &amp;quot;## Test build for #{filename}&amp;quot;
+  puts &amp;quot;## Stashing other posts&amp;quot;
+  Rake::Task[:isolate].invoke(filename)
+  Rake::Task[:generate].execute
+  puts &amp;quot;## Restoring stashed posts&amp;quot;
+  Rake::Task[:integrate].execute
+end
+task go: :generate_only
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;補足&#34;&gt;補足&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;rake generate_only&lt;/code&gt; を実行した後に &lt;code&gt;_stash&lt;/code&gt; にファイルが退避されたままだとしたら、
+Octopress が古いために、次のパッチが入ってない可能性が高いです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/imathis/octopress/pull/682&#34;&gt;[BUGFIX] Unbreak generate_only task.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+
+&lt;p&gt;以下の記事がとても参考になりました！ありがとうございます！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://rcmdnk.github.io/blog/2013/12/06/blog-octopress-rake/&#34;&gt;Octopressのgenerate_onlyをモット便利に2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;qiita-やってます&#34;&gt;Qiita やってます&lt;/h1&gt;
+
+&lt;p&gt;全く同じ内容ですが、こちらにもポストしました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/gam0022/items/7b5a6e4492c90583706f&#34;&gt;Octopressで最後に編集した記事だけをgenerate - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Octopressのpreviewを高速化する</title>
+      <link>https://gam0022.net/blog/2013/09/28/speed-up-octopress-site-generation/</link>
+      <pubDate>Sat, 28 Sep 2013 16:04:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/09/28/speed-up-octopress-site-generation/</guid>
+      <description>&lt;h1 id=&#34;octopressの記事の生成が遅い&#34;&gt;Octopressの記事の生成が遅い&lt;/h1&gt;
+
+&lt;p&gt;Octopressを使ってから一年以上が経ちました。&lt;/p&gt;
+
+&lt;p&gt;記事の数に比例して、&lt;code&gt;rake generate&lt;/code&gt; がアホみたいに遅くなって、耐えられないレベルになってきました。&lt;/p&gt;
+
+&lt;p&gt;今日は、&lt;code&gt;rake isolate&lt;/code&gt; と &lt;code&gt;rake integrate&lt;/code&gt; を使うことでOctopressの記事の生成を高速化するテクニックを紹介します。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rake isolate&lt;/code&gt; と &lt;code&gt;rake integrate&lt;/code&gt; については、次の記事に詳しく紹介されています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.pixelingene.com/2011/09/tips-for-speeding-up-octopress-site-generation/&#34;&gt;Tips for Speeding Up Octopress Site Generation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;rake-isolate-と-rake-integrate-について簡単に説明&#34;&gt;rake isolate と rake integrate について簡単に説明&lt;/h1&gt;
+
+&lt;p&gt;さっき紹介したリンクは英語なので、日本語で&lt;code&gt;rake isolate&lt;/code&gt; と &lt;code&gt;rake integrate&lt;/code&gt;をざっくり説明します。&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;rake isolate[filename]&lt;/dt&gt;
+&lt;dd&gt;filenameを除いた、&lt;code&gt;source/_posts/&lt;/code&gt;にある記事のファイルを、&lt;code&gt;source/_stash&lt;/code&gt; に退避します。&lt;/dd&gt;
+&lt;dd&gt;記事を退避することで、&lt;code&gt;rake generate&lt;/code&gt;を高速化します。&lt;/dd&gt;
+&lt;dt&gt;rake integrate&lt;/dt&gt;
+&lt;dd&gt;rake isolate で、&lt;code&gt;source/_stash&lt;/code&gt;に退避したファイルを、&lt;code&gt;source/_posts/&lt;/code&gt; に戻します。&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h1 id=&#34;実際の使い方&#34;&gt;実際の使い方&lt;/h1&gt;
+
+&lt;p&gt;普通、記事を書くときには、&lt;code&gt;rake preview&lt;/code&gt;で出力の内容を確認しつつ、記事の編集を行うと思います。&lt;/p&gt;
+
+&lt;p&gt;ある記事をプレビューしたいとき、何もしないとOctopressは全ての記事に対して&lt;code&gt;generate&lt;/code&gt;をしてしまうので、
+どうしてもプレビューの反映に時間がかかってしまい、ストレスが溜まってしまいます。&lt;/p&gt;
+
+&lt;p&gt;ある記事を編集するときには、次のような流れで行うと、ストレスが減るかもしれません。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;rake new_post[title]&lt;/code&gt; で記事を生成。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake isolate[2013-09-28-title.markdown]&lt;/code&gt; で編集する以外の記事を退避。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake preview&lt;/code&gt; でプレビューしつつ、記事を気が済むまで編集。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake integrate&lt;/code&gt; で退避させた記事を戻す。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake generate&lt;/code&gt; で全ての記事を再生成。これだけは時間がかかる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake deploy&lt;/code&gt; でアップロード。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;注意点&#34;&gt;注意点&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;退避させるのは &lt;code&gt;source/_posts/&lt;/code&gt;のファイルだけなので、
+Octopress を CMS 的に運用している人だと、あまり恩恵が受けられません。
+逆に、ブログとして運用して記事を大量生成している人は高速化が期待できます。&lt;/li&gt;
+&lt;li&gt;上の流れで分かると思いますが、人間が行う作業としては複雑で面倒なので、このくらい自動化して欲しいですね。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Octopressで定義リストを使う</title>
+      <link>https://gam0022.net/blog/2013/05/27/kramdown/</link>
+      <pubDate>Mon, 27 May 2013 22:40:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/05/27/kramdown/</guid>
+      <description>&lt;h1 id=&#34;定義リストを使いたい&#34;&gt;定義リストを使いたい&lt;/h1&gt;
+
+&lt;p&gt;Markdownは楽で便利なのですが、残念なことに標準ではMarkdownは定義リスト&lt;code&gt;&amp;lt;dl&amp;gt;&lt;/code&gt;を使えません。&lt;/p&gt;
+
+&lt;p&gt;Markdownでは、HTMLを埋め込めるので、手打ちでHTMLを書くことで対処できますが、
+それだと負けた気分になってしまいます。&lt;/p&gt;
+
+&lt;p&gt;Octopress(というか、Jekyll)では、標準のMarkdownのパーサを変更できるので、
+定義リストを使えるParserに変更して対処しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;調べたところOctopressでサポートされていて、
+定義リストを扱えるパーサは次の2つでした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;kramdown&lt;/li&gt;
+&lt;li&gt;maruku&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;両方使ってみたのですが、
+marukuの方は既存のmarkdownをうまく解釈してくれなかったので、
+kramdownを使うことにしました。&lt;/p&gt;
+
+&lt;h1 id=&#34;markdownのパーサの変更方法&#34;&gt;Markdownのパーサの変更方法&lt;/h1&gt;
+
+&lt;h2 id=&#34;config-yml-の-変更&#34;&gt;_config.yml の 変更&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;_config.yml&lt;/code&gt; の &lt;code&gt;markdown&lt;/code&gt; を &lt;code&gt;kramdown&lt;/code&gt; に変更します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;# _config.yml
+code_dir: downloads/code
+ category_dir: blog/categories
+ category_title_prefix: &amp;quot;Category: &amp;quot;
+-markdown: rdiscount
++#markdown: rdiscount
++markdown: kramdown
+ paginate: 10          # Posts per page on the blog index
+ pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;gemfile-の変更&#34;&gt;Gemfile の変更&lt;/h2&gt;
+
+&lt;p&gt;まず、&lt;code&gt;Gemfile&lt;/code&gt;に&lt;code&gt;gem &#39;kramdown&#39;&lt;/code&gt;を付け足します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;#  Gemfile
+   gem &#39;rack&#39;, &#39;~&amp;gt; 1.4.1&#39;
+   gem &#39;jekyll&#39;, &#39;~&amp;gt; 0.11.2&#39;
+   gem &#39;rdiscount&#39;, &#39;~&amp;gt; 1.6.8&#39;
++  gem &#39;kramdown&#39;
+   gem &#39;pygments.rb&#39;, &#39;~&amp;gt; 0.2.12&#39;
+   gem &#39;RedCloth&#39;, &#39;~&amp;gt; 4.2.9&#39;
+   gem &#39;haml&#39;, &#39;~&amp;gt; 3.1.6&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次に、&lt;code&gt;bundle install&lt;/code&gt; します。&lt;/p&gt;
+
+&lt;h2 id=&#34;確認&#34;&gt;確認&lt;/h2&gt;
+
+&lt;p&gt;最後に、&lt;code&gt;rake generate&lt;/code&gt;と&lt;code&gt;rake preview&lt;/code&gt;で確認しましょう。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、&lt;code&gt;kramdown&lt;/code&gt;の定義リストは次のように書きます。&lt;/p&gt;
+
+&lt;h3 id=&#34;定義リストの例&#34;&gt;定義リストの例&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;名前
+: がむ
+: gam0022
+
+HOGE
+: * aaa
+: * bbb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;プレビュー&#34;&gt;プレビュー&lt;/h3&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;名前&lt;/dt&gt;
+  &lt;dd&gt;がむ&lt;/dd&gt;
+  &lt;dd&gt;gam0022&lt;/dd&gt;
+  &lt;dt&gt;HOGE&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;ul&gt;
+      &lt;li&gt;aaa&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;ul&gt;
+      &lt;li&gt;bbb&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;</description>
+    </item>
+    
+    <item>
+      <title>OctopressでMathJax.rbの導入</title>
+      <link>https://gam0022.net/blog/2013/02/11/fdtd/</link>
+      <pubDate>Mon, 11 Feb 2013 16:23:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/02/11/fdtd/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://www.coins.tsukuba.ac.jp/syllabus/GB22201.html&#34;&gt;数値シュミレーション&lt;/a&gt;という授業で波動関数をシュミレーションする課題がありました。&lt;/p&gt;
+
+&lt;p&gt;面白かったので忘れないように、&lt;code&gt;MathJax.rb&lt;/code&gt;というプラグインのテストを兼ねてメモすることにしました。&lt;/p&gt;
+
+&lt;h1 id=&#34;mathjax-rbの導入&#34;&gt;MathJax.rbの導入&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;MathJax.rb&lt;/code&gt;の導入には、&lt;a href=&#34;http://melborne.github.com/2012/05/13/first-step-of-jekyll/&#34;&gt;30分のチュートリアルでJekyllを理解する&lt;/a&gt;が非常に参考になりました。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/jessykate/834610&#34;&gt;MathJax.rb&lt;/a&gt;をダウンロードして、&lt;code&gt;/plugins/&lt;/code&gt;にコピーする。&lt;/li&gt;
+&lt;li&gt;octopressの場合、&lt;code&gt;_layouts/layout.html&lt;/code&gt;ではなくて、&lt;code&gt;source/_includes/custom/head.html&lt;/code&gt;に次の行を追加する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;# source/_includes/custom/head.html
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;mathjax-rbの使い方&#34;&gt;MathJax.rbの使い方&lt;/h1&gt;
+
+&lt;p&gt;ブロックの場合、&lt;code&gt;math&lt;/code&gt;と&lt;code&gt;endmath&lt;/code&gt;タグで囲む&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;{% math %}
+
+Simple\ FDTD\ Algorithm\ and\ Devils\ in\ the\ Details \\
+
+\begin{eqnarray}
+\psi(x,t + \Delta t) &amp;amp;=&amp;amp; -\psi(x, t - \Delta t) + [2 + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2] \psi(x,t) \\
+$$ -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2 \psi(x,t) \\
+$$ -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2}
+                       [ \psi(x - \Delta x, t) + \psi(x + \Delta x, t) - 2 \psi(x, t) ] \\
+\end{eqnarray}
+
+{% endmath %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;インラインの場合、&lt;code&gt;m&lt;/code&gt; と&lt;code&gt;em&lt;/code&gt;タグで囲む(下のコードだと、&lt;code&gt;em&lt;/code&gt;の部分が消えていますが囲んでください)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1次元の波を {% m %} \psi(x,t) {% em %} という
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;fdtd&#34;&gt;FDTD&lt;/h1&gt;
+
+&lt;p&gt;私も詳細はちゃんと理解していませんが、1次元の波を $\psi(x,t)$ という
+座標と時間をパラメータとした関数を使って表すとします。&lt;/p&gt;
+
+&lt;p&gt;このとき、FDTDというアルゴリズムを当てはまれば、漸化式によって波動関数をシュミレーションできます。&lt;/p&gt;
+
+&lt;p&gt;実際に計算してみると面白いと思います。&lt;/p&gt;
+
+&lt;p&gt;Simple FDTD Algorithm and Devils in the Details&lt;/p&gt;
+
+&lt;p&gt;$$\psi(x,t + \Delta t) $$
+$$ = -\psi(x, t - \Delta t) + [2 + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2] \psi(x,t)$$
+$$ = -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} d_x^2 \psi(x,t) $$
+$$ = -\psi(x, t - \Delta t) + 2\psi(x,t) + \frac{v^2\Delta t^2}{\Delta x ^2} [ \psi(x - \Delta x, t) + \psi(x + \Delta x, t) - 2 \psi(x, t) ] $$&lt;/p&gt;
+
+&lt;h1 id=&#34;ftdtでシュミレーションした例&#34;&gt;FTDTでシュミレーションした例&lt;/h1&gt;
+
+&lt;p&gt;授業の課題の条件で計算したので、数字がとても荒いですが、FTDTで波動関数を計算した例を紹介します。&lt;/p&gt;
+
+&lt;p&gt;問題の条件はこれ。&lt;/p&gt;
+
+&lt;p&gt;$$\psi(0,0) = \psi(1,0) = 0, \psi(2,0) = sin(\frac{1}{4}\pi), \psi(3,0) = sin(\frac{2}{4}\pi), \psi(4,0) = sin(\frac{3}{4}\pi), \psi(j,0) = 0 for j = 5,6,..,10$$&lt;/p&gt;
+
+&lt;p&gt;$$\psi(0,1) = \psi(1,1) = \psi(2,1) = 0, \psi(3,1) = sin(\frac{1}{4}\pi), \psi(4,1) = sin(\frac{2}{4}\pi), \psi(5,1) = sin(\frac{3}{4}\pi), \psi(j,0) = 0 for j = 6,7,..,10$$&lt;/p&gt;
+
+&lt;p&gt;$$v = 1.0, \Delta x = 1, \Delta t = 1$$&lt;/p&gt;
+
+&lt;p&gt;条件を元に、FTDTの式を整理してみます。&lt;/p&gt;
+
+&lt;p&gt;$$\psi(x,t + \Delta t)$$
+$$ = -\psi(x, t - \Delta t) + [2 + \frac{v^2(\Delta t)^2}{\Delta x ^2}d_x^2] \psi(x,t)$$
+$$ = -\psi(x,t-1) + 2\psi(x,t) + d_x^2 \psi(x,t)$$
+$$ = -\psi(x,t-1) + 2\psi(x,t) + \psi(x-1,t) + \psi(x+1,t) - 2\psi(x,t)$$
+$$ = -\psi(x,t-1) + \psi(x-1,t) + \psi(x+1,t)$$&lt;/p&gt;
+
+&lt;p&gt;最終的に、こんなシンプルな漸化式になります。&lt;/p&gt;
+
+&lt;p&gt;$$
+\psi(x,t) = -\psi(x,t-2) + \psi(x-1,t-1) + \psi(x+1,t-1)
+$$&lt;/p&gt;
+
+&lt;p&gt;上の式を元に計算すると、次のような波形を得られます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2013.02.11_ftdt.png&#34; alt=&#34;FTDTで計算した波動関数&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressの見出しにアンカーリンクをつけるように改造</title>
+      <link>https://gam0022.net/blog/2013/02/05/header-anchor/</link>
+      <pubDate>Tue, 05 Feb 2013 14:30:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/02/05/header-anchor/</guid>
+      <description>
+
+&lt;p&gt;タイトルの通りなのですが、h1レベルの見出しにアンカーリンクをつけるようにOctopressを改造しました。&lt;/p&gt;
+
+&lt;p&gt;``の19行目を次のように修正して、
+h1レベルの見出しに正規表現でアンカーリンクをつけるようにしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;# plugins/octopress_filters.rb
+@@ -16,7 +16,7 @@ module OctopressFilters
+   end
+   def post_filter(input)
+     input = unwrap(input)
+-    RubyPants.new(input).to_html
++    RubyPants.new(input).to_html.gsub(/&amp;lt;h1&amp;gt;([^&amp;lt;].*[^&amp;gt;])&amp;lt;\/h1&amp;gt;/, &#39;&amp;lt;h1&amp;gt;&amp;lt;a name=&amp;quot;\1&amp;quot; href=&amp;quot;#\1&amp;quot;&amp;gt;\1&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;&#39;)
+   end
+ end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修正するべき場所がここで本当に良いのか微妙ですが、とりあえず思った通りに動いているので良しとします。&lt;/p&gt;
+
+&lt;p&gt;以下、見出しのテスト&lt;/p&gt;
+
+&lt;h1 id=&#34;見出し1&#34;&gt;見出し1&lt;/h1&gt;
+
+&lt;h1 id=&#34;見出し2&#34;&gt;見出し2&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressでパスを指定するときのテクニック</title>
+      <link>https://gam0022.net/blog/2012/08/15/octopress-path/</link>
+      <pubDate>Wed, 15 Aug 2012 09:34:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/15/octopress-path/</guid>
+      <description>&lt;p&gt;Octopressで画像などを使うとき、例えば、トップページで表示されるときと記事の詳細ページで表示されるときでは、
+ディレクトリの階層が同じならないため、アドレスは絶対パスで指定するしかないのですが、そのときに使えるテクニックを紹介します。&lt;/p&gt;
+
+&lt;p&gt;URLを&lt;code&gt;/&lt;/code&gt;から指定すると、Octopress側で絶対パスに補完してくれるようです。&lt;/p&gt;
+
+&lt;p&gt;例を挙げると、次のような具合に補完してくれます。&lt;/p&gt;
+
+&lt;p&gt;例:
+&lt;code&gt;/images/hoge.png&lt;/code&gt; =&amp;gt; &lt;code&gt;http://gam0022.net/images/hoge.png&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;この機能は、&lt;code&gt;plugins/octopress_filters.rb&lt;/code&gt;の79行目の&lt;code&gt;expand_urls&lt;/code&gt;というメソッドで定義されているようです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)</title>
+      <link>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</link>
+      <pubDate>Sat, 11 Aug 2012 10:38:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</guid>
+      <description>
+
+&lt;p&gt;このブログで、カテゴリーに濁点を含んだ日本語を使うと、カテゴリーの一覧などからカテゴリーのページにリンクしたとき、
+404エラーになってしまう問題が起きました。&lt;/p&gt;
+
+&lt;p&gt;原因は、このブログの開発環境にありました。&lt;/p&gt;
+
+&lt;p&gt;このブログは静的コンテンツなのですが、次のような手順でブログを運営しています。
+(Rakefileで自動化されていますが、内部ではこうなっています)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ローカル(Mac OS X)でブログを生成する。&lt;/li&gt;
+&lt;li&gt;サーバ(Ubuntu)にRsyncで生成したブログをアップロードする。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mac OS X では、ファイル名のエンコードに&lt;code&gt;UTF-8-MAC&lt;/code&gt;を使っているので、
+そのままアップロードすると、サーバ上のファイル名も&lt;code&gt;UTF-8-MAC&lt;/code&gt;になります。
+しかし、ファイル自体のエンコードは&lt;code&gt;UTF-8&lt;/code&gt;でURLをパーセントエンコーディングしていないので、
+リンク先が見つからなくなってしまうようです。&lt;/p&gt;
+
+&lt;p&gt;UTF-8-MAC問題について詳しく知りたい人は、&lt;a href=&#34;http://d.hatena.ne.jp/miau/20110805/1312555736&#34;&gt;こちら&lt;/a&gt;などが勉強になるとおもいます。&lt;/p&gt;
+
+&lt;p&gt;解決方法は簡単で、Rsyncでアップロードするときに、&lt;code&gt;--iconv&lt;/code&gt;オプションを使い、
+ファイル名を&lt;code&gt;UTF-8-MAC&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変換すれば治ります。&lt;/p&gt;
+
+&lt;h3 id=&#34;rsyncのバージョンを3にする&#34;&gt;Rsyncのバージョンを3にする&lt;/h3&gt;
+
+&lt;p&gt;Rsyncの&lt;code&gt;--iconv&lt;/code&gt;オプションが使えるのは、Rsync3からなのでアップデートします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# brew tap homebrew/dupes #リポジトリを追加（2019/06/20追記。この手順は不要になりました。）
+brew install libiconv #iconvオプションを使うために必須のよう
+brew install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;念のため、サーバ側(Ubuntu)のrsync3にします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;aptitude install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;rakefileを修正する&#34;&gt;Rakefileを修正する&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Rakefile&lt;/code&gt;の&lt;code&gt;ok_failed system...&lt;/code&gt;の行を書き換えます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;desc &amp;quot;Deploy website via rsync&amp;quot;
+task :rsync do
+  exclude = &amp;quot;&amp;quot;
+  if File.exists?(&#39;./rsync-exclude&#39;)
+    exclude = &amp;quot;--exclude-from &#39;#{File.expand_path(&#39;./rsync-exclude&#39;)}&#39;&amp;quot;
+  end
+  puts &amp;quot;## Deploying website via Rsync&amp;quot;
+  #ok_failed system(&amp;quot;rsync -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+  ok_failed system(&amp;quot;rsync --iconv=UTF-8-MAC,UTF-8 -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;完&#34;&gt;完。&lt;/h3&gt;
+
+&lt;p&gt;これでうまくいきました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[gam0022@starlight:~/git/gam0022.net] $ rake deploy
+## Deploying website via Rsync
+sending incremental file list
+deleting blog/categories/ゴ/index.html
+deleting blog/categories/ゴ/atom.xml
+deleting blog/categories/ゴ/
+blog/categories/ゴ/
+blog/categories/ゴ/atom.xml
+blog/categories/ゴ/index.html
+
+sent 11206 bytes  received 138 bytes  7562.67 bytes/sec
+total size is 2309599  speedup is 203.60
+OK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;「ゴゴゴゴ…」&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressでカテゴリーの一覧みたいのを実装する</title>
+      <link>https://gam0022.net/blog/2012/08/10/make-categories-on-otcpress/</link>
+      <pubDate>Fri, 10 Aug 2012 12:24:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/10/make-categories-on-otcpress/</guid>
+      <description>
+
+&lt;p&gt;Octopressはそれなりに高機能なのにも関わらず、なぜかカテゴリーの一覧を表示する機能がありませんでした。&lt;/p&gt;
+
+&lt;p&gt;仕方ないので、自分で実装することにしました。&lt;/p&gt;
+
+&lt;p&gt;今回の記事は、次の画像のようなカテゴリーの一覧をサイドバーに表示するまでのメモです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2012-08-10-make-categories-on-otcpress.png&#34; alt=&#34;カテゴリーの一覧&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;前提知識として、Octopressのサイドバーをカスタマイズするためには、次の2つの作業が必要です。
+ここでは、categoriesという名前のサイドバーを追加します。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;source/_includes/asides/categories.html&lt;/code&gt;というファイルを作る。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_config.yml&lt;/code&gt;の&lt;code&gt;default_asides:&lt;/code&gt;に&lt;code&gt;asides/categories.html&lt;/code&gt;を加える。&lt;a href=&#34;https://github.com/gam0022/gam0022.net/commit/8cdfa189385461b1c5beef6e8956e721c113514f#diff-0&#34;&gt;ex.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;あとは、1,の&lt;code&gt;source/_includes/asides/categories.html&lt;/code&gt;にカテゴリーの一覧を表示する機能をうまく実装しなくてはなりません。&lt;/p&gt;
+
+&lt;p&gt;siteというグローバル変数のダンプを手がかりに、&lt;code&gt;site.categories&lt;/code&gt;というハッシュが存在することがわかりました。&lt;/p&gt;
+
+&lt;p&gt;JekyllのLiquidテンプレートエンジンの文法がよくわからないので、以下のサイトなどを参考にして学習しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.shopify.com/UsingLiquid&#34;&gt;http://wiki.shopify.com/UsingLiquid&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://melborne.github.com/2012/05/13/first-step-of-jekyll/&#34;&gt;http://melborne.github.com/2012/05/13/first-step-of-jekyll/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/8206869/iterate-over-hashes-in-liquid-templates&#34;&gt;for item in hash すると、item[0]にキー名、item[1]に値が入る&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;しかし、&lt;code&gt;site.categories&lt;/code&gt;はカテゴリー名をキーとして値が記事の本文のHTMLへの参照(?)の配列としたハッシュになっており、
+そのままではURLが取得できず、カテゴリー名からURLに変換する処理をLiquidの文法だけで実装するのは無理だと気が付きました。&lt;/p&gt;
+
+&lt;p&gt;で、どうしたかというと、Liquidを拡張しました。&lt;code&gt;Jekyll::Filters&lt;/code&gt;にメソッドを定義すると、Liquidからそのメソッドを呼び出せるようになります。&lt;/p&gt;
+
+&lt;p&gt;最終的に、&lt;code&gt;_config.yml&lt;/code&gt;を編集後、
+&lt;code&gt;source/_includes/asides/categories.html&lt;/code&gt;と&lt;code&gt;plugins/category_generator.rb&lt;/code&gt;を次のようにしたら、うまくいきました。&lt;/p&gt;
+
+&lt;h3 id=&#34;source-includes-asides-categories-html&#34;&gt;source/_includes/asides/categories.html&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;source/_includes/asides/categories.html&lt;/code&gt; はこれだけです。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;{.{&lt;/code&gt; の&lt;code&gt;.&lt;/code&gt;は消してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;section class=&amp;quot;well&amp;quot;&amp;gt;
+  &amp;lt;ul id=&amp;quot;categorys&amp;quot; class=&amp;quot;nav nav-list&amp;quot;&amp;gt;
+    &amp;lt;li class=&amp;quot;nav-header&amp;quot;&amp;gt;Categorys&amp;lt;/li&amp;gt;
+    {.{ site.categories | site_categories_links }}
+  &amp;lt;/ul&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;plugins-category-generator-rb&#34;&gt;plugins/category_generator.rb&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;plugins/category_generator.rb&lt;/code&gt;の&lt;code&gt;Jekyll::Filters&lt;/code&gt;に&lt;code&gt;site_categories_links&lt;/code&gt;というメソッドを追加します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;module Jekyll
+  module Filters
+    # Outputs a list of categories as comma-separated &amp;lt;a&amp;gt; links. This is used
+    # to output the category list for site&#39;s all categories.
+    #   
+    # Returns string
+    #   
+    def site_categories_links(categories)
+      def adjust_fontsize(size)
+        [20, size*2 + 8].min
+      end
+      dir = @context.registers[:site].config[&#39;category_dir&#39;]
+      categories = categories.to_a.sort.map do |key, val|
+        &amp;quot;&amp;lt;a class=&#39;category&#39; style=&#39;font-size:#{adjust_fontsize(val.size)}px;&#39; href=&#39;https://gam0022.net/#{dir}/#{key.gsub(/_|\P{Word}/, &#39;-&#39;).gsub(/-{2,}/, &#39;-&#39;).downcase}/&#39;&amp;gt;#{key}(#{val.size})&amp;lt;/a&amp;gt;&amp;quot;
+      end
+      categories.join(&#39; / &#39;)
+    end
+  end
+
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;とりあえず、これでカテゴリーの一覧を表示することができました。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressでbootstrap-themeにしたとき、sass/custom/_styles.scssが反映されなくなった件について</title>
+      <link>https://gam0022.net/blog/2012/07/24/configure-the-css-with-bootstrap-theme/</link>
+      <pubDate>Tue, 24 Jul 2012 22:50:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/24/configure-the-css-with-bootstrap-theme/</guid>
+      <description>
+
+&lt;h2 id=&#34;octopressでbootstrap-themeにしたとき-sass-custom-styles-scssが反映されなくなった件について&#34;&gt;Octopressでbootstrap-themeにしたとき、sass/custom/_styles.scssが反映されなくなった件について&lt;/h2&gt;
+
+&lt;p&gt;前回、&lt;a href=&#34;http://gam0022.net/blog/2012/07/21/use-bootstrap-theme/&#34;&gt;Octopressのテーマをカスタマイズする&lt;/a&gt;という記事で、
+Octopressに&lt;a href=&#34;https://github.com/bkutil/bootstrap-theme&#34;&gt;bootstrap-theme&lt;/a&gt;を導入しました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you want to add or override styles, edit sass/custom/_styles.scss. This stylesheet is imported last, so you can override styles with the cascade.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;上の文は&lt;a href=&#34;http://octopress.org/docs/theme/styles/&#34;&gt;Octopressの公式&lt;/a&gt;からの引用で、本来であれば&lt;code&gt;sass/custom/_styles.scss&lt;/code&gt;
+に書いたSCSSが最終的にオーバーライドされて適用されるはずです。&lt;/p&gt;
+
+&lt;p&gt;しかし、このテーマを導入してから、&lt;code&gt;sass/custom/_styles.scss&lt;/code&gt;に書いたSCSS(CSS)が反映されなくなってしまいました。&lt;/p&gt;
+
+&lt;h2 id=&#34;octopressのcss生成の仕組み&#34;&gt;OctopressのCSS生成の仕組み&lt;/h2&gt;
+
+&lt;p&gt;Octopressでは、&lt;code&gt;sass&lt;/code&gt;以下のディレクトリにある&lt;code&gt;.scss&lt;/code&gt;ファイルを読み取り、
+最終的なCSSを生成しているようです。(たぶん)&lt;/p&gt;
+
+&lt;p&gt;SCSSとは、CSSメタ言語のことで、要するにCSSを生成するための言語です。&lt;/p&gt;
+
+&lt;p&gt;本題の&lt;code&gt;sass/custom/_styles.scss&lt;/code&gt;が反映されない原因は単純で、
+&lt;code&gt;sass/bootstrap/bootstrap.scss&lt;/code&gt;を見たら、&lt;code&gt;sass/custom/_styles.scs&lt;/code&gt;がimportされていませんでした。&lt;/p&gt;
+
+&lt;p&gt;というわけで、&lt;code&gt;sass/bootstrap/bootstrap.scss&lt;/code&gt;の最終行に次のような感じでimport文を追加することで解決します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;// Custom
+@import &amp;quot;custom/colors&amp;quot;;
+@import &amp;quot;custom/fonts&amp;quot;;
+@import &amp;quot;custom/layout&amp;quot;;
+@import &amp;quot;custom/styles&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;後は、&lt;code&gt;sass/custom/_styles.scs&lt;/code&gt;に好きな設定を書けばOKです。ひとまず、こんな感じにしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+div.entry-content {
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 2;
+		margin-top: 30px;
+		margin-bottom: 20px;
+		padding-left: 10px;
+	}
+	h1 {
+		font-size: 20px;
+		background: #eee;  
+		border-left: 7px solid #777;  
+		margin-top: 50px;
+	}
+	h2 {
+		font-size: 18px;
+		border-left:7px solid #ccc;  
+		border-bottom:1px solid #ccc;
+		margin-top: 40px;
+	}
+	h3 {
+		font-size: 15px;
+		border-left:7px solid #ccc;  
+	}
+	h4 {
+		line-height: 1.5;
+		font-size: 14px;
+		border-bottom:1px solid #ddd;
+	}
+	h5 {
+		line-height: 1.5;
+		font-size: 12px;
+		border-bottom:1px dashed #ddd;
+	}
+	h6 {
+		line-height: 1.5;
+		font-size: 11px;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;まあ、せいぜいsubsubsectionくらいまでしか使いませんよね…&lt;/p&gt;
+
+&lt;h1 id=&#34;h1&#34;&gt;h1&lt;/h1&gt;
+
+&lt;h2 id=&#34;h2&#34;&gt;h2&lt;/h2&gt;
+
+&lt;h3 id=&#34;h3&#34;&gt;h3&lt;/h3&gt;
+
+&lt;h4 id=&#34;h4&#34;&gt;h4&lt;/h4&gt;
+
+&lt;h5 id=&#34;h5&#34;&gt;h5&lt;/h5&gt;
+
+&lt;h6 id=&#34;h6&#34;&gt;h6&lt;/h6&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rsyncを使ってOctopressをVPS上で公開する</title>
+      <link>https://gam0022.net/blog/2012/07/23/run-octopress-on-a-vps-using-rsync/</link>
+      <pubDate>Mon, 23 Jul 2012 10:02:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/23/run-octopress-on-a-vps-using-rsync/</guid>
+      <description>
+
+&lt;p&gt;今回もOctopressに関する記事です。&lt;/p&gt;
+
+&lt;p&gt;先日、Octopressを使ってGithubPages上にブログを運営しましたが、
+気が変わってレンタルしているVPS上で運営したくなりました。&lt;/p&gt;
+
+&lt;p&gt;Octopressでは&lt;code&gt;rake deploy&lt;/code&gt;を叩くだけでRsyncを使い自分のサーバ上にコンテンツを同期することができるので、
+その方法を紹介したいと思います。&lt;/p&gt;
+
+&lt;p&gt;Rsyncを使って同期するためには次の2つの作業をする必要があります。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;公開鍵認証を使ってsshでログインできるようにする。&lt;/li&gt;
+&lt;li&gt;サーバ側の&lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;にローカル側の公開鍵を登録する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ここでは、serverという名前のサーバに作成済みのuserというユーザを使って、公開鍵でログインするようにするまでの手順を紹介します。&lt;/p&gt;
+
+&lt;h1 id=&#34;ローカル側の設定-鍵のペアの生成&#34;&gt;ローカル側の設定(鍵のペアの生成)&lt;/h1&gt;
+
+&lt;p&gt;まず、ローカル側で鍵のペアの生成します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/.ssh
+ssh-keygen -t rsa # RSAの鍵のペアを生成する。save the keyは空白でOK。パスフレーズは任意のものを指定する。
+cat id_rsa.pub # 公開鍵はサーバのauthorized_keysに後で登録するので表示しておく
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;サーバ側の設定&#34;&gt;サーバ側の設定&lt;/h1&gt;
+
+&lt;h2 id=&#34;公開鍵の登録&#34;&gt;公開鍵の登録&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vim ~/.ssh/authorized_keys # 上で表示したローカル側のid_rsa.pubを最後の行に追加する。(ファイルがなければ作る)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sshの設定&#34;&gt;sshの設定&lt;/h2&gt;
+
+&lt;p&gt;vimなどで、サーバ側の&lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;を編集します。
+間違った設定をすると最悪sshでログインできなるので注意しましょうw&lt;/p&gt;
+
+&lt;p&gt;私の場合はこのような感じに&lt;strong&gt;一部を書き換えました。&lt;/strong&gt;
+この記事を書いている私ですが、サーバの設定は初心者なので、あまり信用しないようにしましょうw
+あくまで参考程度で。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AllowUsers user
+RSAAuthentication yes 
+PubkeyAuthentication yes 
+AuthorizedKeysFile   %h/.ssh/authorized_keys
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;VPS上の設定が終わったら、sshdを再起動します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;/etc/init.d/ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;再びローカル側の設定-sshのテスト&#34;&gt;再びローカル側の設定(sshのテスト)&lt;/h1&gt;
+
+&lt;p&gt;以上で公開鍵を使ってsshをする準備が整ったので、テストしてみます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/.ssh
+chmod 600 id_rsa # パーミションが600でないと「WARNING: UNPROTECTED PRIVATE KEY FILE!」というエラーになる。
+ssh -i id_rsa user@server #これでログインできれば成功。-iで秘密鍵を指定できる。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;octopressの設定&#34;&gt;Octopressの設定&lt;/h1&gt;
+
+&lt;p&gt;ここまで来れば、あとはOctopressの設定だけです。&lt;code&gt;Rakefile&lt;/code&gt;を編集します。&lt;/p&gt;
+
+&lt;p&gt;私の場合、GithubPages用にRakeFileを設定してしまったので、書き直します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;## -- Rsync Deploy config -- ##
+# Be sure your public key is listed in your server&#39;s ~/.ssh/authorized_keys file
+ssh_user       = &amp;quot;user@server&amp;quot;
+ssh_port       = &amp;quot;1234&amp;quot; #普通は22ですが、セキュリティ上の理由で(
+document_root  = &amp;quot;/var/www/html/&amp;quot; #htmlの公開用のディレクトリを指定。ServersMan@VPSならこの設定でいいはず。
+rsync_delete   = true
+#deploy_default = &amp;quot;push&amp;quot;
+deploy_default = &amp;quot;rsync&amp;quot; #rsyncで同期します。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで設定は終わりです。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rake deploy&lt;/code&gt;でファイルが同期できたら成功です。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;参考記事
+:&lt;a href=&#34;http://octopress.org/docs/deploying/rsync/&#34;&gt;Deploying With Rsync&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressのテーマをカスタマイズする</title>
+      <link>https://gam0022.net/blog/2012/07/21/use-bootstrap-theme/</link>
+      <pubDate>Sat, 21 Jul 2012 23:51:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/21/use-bootstrap-theme/</guid>
+      <description>&lt;p&gt;Ocpressの標準のデザインは悪くはないのですが、個人的にはいまいち物足りなさを感じたので、テーマを変更しました。&lt;/p&gt;
+
+&lt;p&gt;テーマですが、&lt;a href=&#34;https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes&#34;&gt;このページ&lt;/a&gt;などから、
+かっこいいのを見つけてくればいいと思います。&lt;/p&gt;
+
+&lt;p&gt;とりあえず私は、&lt;a href=&#34;https://github.com/bkutil/bootstrap-theme&#34;&gt;bootstrap-theme&lt;/a&gt;を入れてみることにしました。
+導入はとても簡単です。&lt;/p&gt;
+
+&lt;p&gt;コード例を示すまでもないですが、Codeblockを試してみたいので、導入するまでのコードを貼り付けます。&lt;/p&gt;
+
+&lt;p&gt;(ちなみに、シェルのコマンドを貼り付けるときはlangをbashにすると良いみたいです。)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/git/octpress #octpressのディレクトリ
+git clone https://github.com/bkutil/bootstrap-theme.git .themes/bootstrap-theme
+rake install[&amp;quot;bootstrap-theme&amp;quot;]
+rake generate
+rake deploy #公開
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;テーマを変えることで、一気にモダンな感じになりました!&lt;/p&gt;
+
+&lt;p&gt;話題のBootstrapだけあって、こんなショボイブログも見てくれだけはいい感じに見えるような気がします。&lt;/p&gt;
+
+&lt;p&gt;あとは、_config.ymlをちょっといじるだけで、facebookやGoogle+のボタンをつけたり、
+Disqus Commentsでコメントをできるようにできるので、簡単にモダンなブログを作ることが出来ました。&lt;/p&gt;
+
+&lt;p&gt;Octopressすごい!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopressはじめました!</title>
+      <link>https://gam0022.net/blog/2012/07/21/hello/</link>
+      <pubDate>Sat, 21 Jul 2012 17:39:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/07/21/hello/</guid>
+      <description>&lt;p&gt;どうもこんにちは！&lt;/p&gt;
+
+&lt;p&gt;私は情報系の大学生をしている「がむ」というものです。&lt;/p&gt;
+
+&lt;p&gt;高校生までは、こっちのほうで&lt;a href=&#34;http://gmr.blog.shinobi.jp/&#34;&gt;ブログ&lt;/a&gt;を書いていたのですが、
+更新が面倒になってしまい、放置して1年以上経ってしまいました…&lt;/p&gt;
+
+&lt;p&gt;技術ネタをどこかにアウトプットしたいというの欲求はあるので、旧ブログに書いても良かったのですが
+せっかくなので、少しギークっぽい方法でブログを作ってみたくなりました。&lt;/p&gt;
+
+&lt;p&gt;最近はRuby弄りに夢中なので、Rails製のCMSの&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;というものがあると知り、試してみることにしました。&lt;/p&gt;
+
+&lt;p&gt;ターミナル上からブログの更新が完結するというのは新鮮ですし、Markdown形式で記事を書けるのも嬉しいです。&lt;/p&gt;
+
+&lt;p&gt;また、Rubyで書いてあるので実装を追いやすいですし、使っている人が少ないという未開拓な感じがいいですね。&lt;/p&gt;
+
+&lt;p&gt;Octopressを気に入ったら、このブログを私の技術的なメモとして活用していきたいなと思っています。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

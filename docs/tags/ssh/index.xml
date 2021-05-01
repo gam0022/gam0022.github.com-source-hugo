@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/ssh/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>cocotで文字コードが異なるマシンにsshする</title>
+      <link>https://gam0022.net/blog/2012/08/06/how-to-use-cocot/</link>
+      <pubDate>Mon, 06 Aug 2012 11:18:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/06/how-to-use-cocot/</guid>
+      <description>&lt;p&gt;私が所属している情報科学類(略称coins)では、24時間いつでもsshできるiMacがあるのですが、文字エンコーディングはEUC-JPです。&lt;/p&gt;
+
+&lt;p&gt;一方で私のノートPCの文字エンコーディングはUTF-8なので、
+普通にsshすると文字化けしてひどいことになってしまいます。&lt;/p&gt;
+
+&lt;p&gt;cocotという端末(tty)とプロセスの間に割り込んで、文字コード変換を行うツールがあるので、これを使うことで文字化けが解消します。&lt;/p&gt;
+
+&lt;p&gt;OS Xを使っていれば、cocotは普通にhomebrewからインストールできます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew install cocot # cocotをインストールする
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;UTF-8環境からEUC-JP環境にsshする場合、次のようにすればいいです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# cocot -t コンソール側の文字コード -p プロセス側の文字コード -- 使いたいコマンド
+cocot -t UTF-8 -p EUC-JP -- ssh coins
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;頻繁にsshする場合、次のようにエイリアスを作ればいいかと思います。
+うーむ。エイリアス名は検討の余地がありそうです。(汗)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;alias sshe=&#39;cocot -t UTF-8 -p EUC-JP -- ssh&#39; #EUC-JP環境にsshする
+sshe coins
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

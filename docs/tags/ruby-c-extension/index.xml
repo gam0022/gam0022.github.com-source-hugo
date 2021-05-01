@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/ruby-c-extension/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/ruby-c-extension/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rubyで関数型プログラミングをするための ImmutableList gem を公開</title>
+      <link>https://gam0022.net/blog/2013/10/22/immutable-list-gem/</link>
+      <pubDate>Tue, 22 Oct 2013 14:17:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/10/22/immutable-list-gem/</guid>
+      <description>&lt;h1 id=&#34;immutablelist-gem-とは&#34;&gt;ImmutableList gem とは&lt;/h1&gt;
+
+&lt;p&gt;Immutable な LinkedList を Ruby で使うためのライブラリです。&lt;/p&gt;
+
+&lt;p&gt;C-Extension なので、Rubyで実装したものに比べて動作が高速です。&lt;/p&gt;
+
+&lt;p&gt;Ruby の &lt;code&gt;Array&lt;/code&gt; は 配列で実装されているため、
+長いリストでの先頭への要素を追加(&lt;code&gt;cons&lt;/code&gt;)や連結(&lt;code&gt;append&lt;/code&gt;)が
+とても遅いという問題を解決しようと思って作りました。&lt;/p&gt;
+
+&lt;p&gt;用途としては、Rubyで再帰を使って関数型言語風にプログラムを組むことを想定しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm&#34; title=&#34;Immutable List Gem (KLab ALM版)&#34; target=&#34;_blank&#34;&gt;Immutable List Gem (KLab ALM版)&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a target=&#34;_blank&#34; href=&#34;//www.slideshare.net/shohosoda9&#34;&gt;Sho Hosoda&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;導入方法&#34;&gt;導入方法&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rubygems.org/gems/immutable_list&#34;&gt;RubyGems&lt;/a&gt; で公開したので、次のようにターミナルで入力するだけで導入できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ gem install immutable_list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;基本的な使い方&#34;&gt;基本的な使い方&lt;/h1&gt;
+
+&lt;p&gt;基本的には、Ocaml の List のような動作をします。メソッド名も Ocaml を意識しています。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;require &#39;immutable_list&#39;
+
+p ImmutableList.new # =&amp;gt; ()
+
+p l1 = ImmutableList.new.cons(1).cons(2).cons(3) # =&amp;gt; (3, 2, 1)
+p l1.head # =&amp;gt; 3
+p l1.tail # =&amp;gt; (2, 1)
+
+p l2 = ImmutableList[1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;] #=&amp;gt; (1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;)
+
+p l1.rev_append(l2) #=&amp;gt; (1, 2, 3, 1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;)
+p l1.rev #=&amp;gt; (1, 2, 3)
+p l3 = l1.append(l2) #=&amp;gt; (3, 2, 1, 1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;)
+
+p l3.length # =&amp;gt; 8
+p ImmutableList[].length #=&amp;gt; 0
+
+p l3.nth(0) #=&amp;gt; 3
+p l3[7] #=&amp;gt; &amp;quot;b&amp;quot;
+p l3[100] #=&amp;gt; nil
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;rubyで関数型プログラミングを書きたい&#34;&gt;Rubyで関数型プログラミングを書きたい&lt;/h1&gt;
+
+&lt;p&gt;まずここで言う、関数型プログラミングというのは、
+一般的な言語がループを使って繰り返しを表現するのに対して、
+再帰を使って繰り返しを表現することを指します。&lt;/p&gt;
+
+&lt;p&gt;例えば、&lt;code&gt;ImmutableList&lt;/code&gt;を使えば、クイックソートを次のように実装することができます。&lt;/p&gt;
+
+&lt;p&gt;再帰を使うことで、プログラムの本質に関係ないループと変数が消えて、
+とても読みやすく短くプログラムを書くことができます。(読みやすさには個人差があります。)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;require &#39;immutable_list&#39;
+
+def partition(a, l, lt, ge)
+  if l.empty?
+    [lt, ge]
+  elsif l.head &amp;lt; a
+    partition(a, l.tail, lt.cons(l.head), ge)
+  else
+    partition(a, l.tail, lt, ge.cons(l.head))
+  end
+end
+
+def qsort(l)
+  if l.empty?
+    ImmutableList.new
+  else
+    lt, ge = partition(l.head, l.tail, ImmutableList.new, ImmutableList.new)
+    qsort(lt) + qsort(ge).cons(l.head)
+  end
+end
+
+l = ImmutableList[3, 5, 8, 1, 4, 7, 10, -3, 2, 100, 43, 10, 50]
+p qsort(l) #=&amp;gt; (-3, 1, 2, 3, 4, 5, 7, 8, 10, 10, 43, 50, 100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--## 補足
+
+なぜ、関数型プログラミングするためには Immutable なリストが必要なのかわからない人に補足です。
+
+もし、リストに破壊的な操作を許してしまうと、再帰の過程で
+--&gt;
+
+&lt;h1 id=&#34;動作速度について&#34;&gt;動作速度について&lt;/h1&gt;
+
+&lt;p&gt;C-Extension なので、動作が高速だと言いますが、どのくらい速いのか気になる人もいるかと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Array&lt;/code&gt;と&lt;code&gt;ImmutableList&lt;/code&gt;で、先頭に長さ3のリストを 連結する処理にかかった秒数を、
+連結した回数ごとにまとめました。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;連結回数&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Array&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;LinkedList&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.5e-05&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0e-05&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;1000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.007251&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00166&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;10000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.727542&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.015206&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;100000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;102.080825&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.414083&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;この測定には、&lt;a href=&#34;https://github.com/gam0022/linkedlist/blob/master/benchmark.rb&#34;&gt;benchmark.rb&lt;/a&gt; を用いました。&lt;/p&gt;
+
+&lt;p&gt;リストの長さが長くなるほど、&lt;code&gt;Array&lt;/code&gt;よりも&lt;code&gt;LinkedList&lt;/code&gt; の方が相対的に高速になります。&lt;/p&gt;
+
+&lt;h1 id=&#34;その他&#34;&gt;その他&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHub
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/immutable_list&#34;&gt;https://github.com/gam0022/immutable_list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.loveruby.net/w/RubyExtensionProgrammingGuide.html&#34;&gt;RubyExtensionProgrammingGuide&lt;/a&gt; がとても参考になりました。&lt;/li&gt;
+&lt;li&gt;WBなどはしていないので、&lt;a href=&#34;http://www.atdot.net/~ko1/activities/RubyKaigi2013-ko1.pdf&#34;&gt;RGenGC&lt;/a&gt; に対応できてるか不安です。
+
+&lt;ul&gt;
+&lt;li&gt;そもそも、どの関数も破壊的ではないので、WBが発生するタイミングが無い?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;セーフレベルやオブジェクトの汚染など、セキュリティのことは全く考えてません。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;head&lt;/code&gt; や &lt;code&gt;tail&lt;/code&gt; や &lt;code&gt;nth&lt;/code&gt; で要素がない場合ですが、すべて&lt;code&gt;nil&lt;/code&gt;を返すようにして、例外は発生させないことにしました。
+
+&lt;ul&gt;
+&lt;li&gt;将来的には例外を発生させるように仕様を変更するかもしれません。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;これまでのあらすじ&#34;&gt;これまでのあらすじ&lt;/h1&gt;
+
+&lt;p&gt;RubyのC-Extentionとして、Immutable な LinkedList を作り、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2013/08/19/ruby-linkedlist/&#34;&gt;RubyでLinkedListを使うためのC拡張を作った&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;RubyGems で C-Extention を含んだGemを作る方法を紹介しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2013/10/18/gems-with-extensions/&#34;&gt;BundlerでC拡張を含んだgemを公開する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1つ目の記事と内容がほとんど同じですが、クラス名やインストール方法が変わったので、記事を書き直しました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RubyでLinkedListを使うためのC拡張を作った</title>
+      <link>https://gam0022.net/blog/2013/08/19/ruby-linkedlist/</link>
+      <pubDate>Mon, 19 Aug 2013 21:25:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/08/19/ruby-linkedlist/</guid>
+      <description>
+
+&lt;h1 id=&#34;追記&#34;&gt;追記&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt; RubyGemsとして公開。クラス名はImmutableListに変更。
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rubygems.org/gems/immutable_list&#34;&gt;RubyGems.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/immutable_list/blob/master/README.md&#34;&gt;README(GitHub)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;22&lt;/sub&gt; クラス名が変わったり、この記事では説明不足の部分があったので、記事を書き直しました。
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2013/10/22/immutable-list-gem/&#34;&gt;Rubyで関数型プログラミングをするための ImmutableList Gem を公開&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;RubyのC拡張として &lt;code&gt;LinkedList&lt;/code&gt; (連結リスト) を実装しました。&lt;/p&gt;
+
+&lt;p&gt;Ruby の &lt;code&gt;Array&lt;/code&gt; は 配列で実装されているため、長いリストでの先頭への要素を追加(&lt;code&gt;cons&lt;/code&gt;)や連結(&lt;code&gt;append&lt;/code&gt;)が非常に遅いのをなんとかしたいと思いました。&lt;/p&gt;
+
+&lt;p&gt;用途としては、Rubyで再帰を使って関数型言語風にプログラムを組むことを想定しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/gam0022/linkedlist/blob/master/linkedlist.c&#34;&gt;ソースコード&lt;/a&gt;はGitHubに置きました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/gam0022/linkedlist&#34;&gt;gam0022/linkedlist (GitHub)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;車輪の再発明じゃないの&#34;&gt;車輪の再発明じゃないの?&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;gem search linked_list&lt;/code&gt; で調べてみたところ、次の2つのgemが見つかりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;circular_linked_list (0.0.1)&lt;/li&gt;
+&lt;li&gt;linked_list (1.0.0)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;しかし、どちらも Ruby で実装されていたので、Cの拡張として実装し直す意味はあるのではないかと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;使用例&#34;&gt;使用例&lt;/h1&gt;
+
+&lt;p&gt;OCaml の &lt;code&gt;List&lt;/code&gt; に影響を受けて実装したので、次のようなメソッドがあります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cons&lt;/li&gt;
+&lt;li&gt;head&lt;/li&gt;
+&lt;li&gt;tail&lt;/li&gt;
+&lt;li&gt;rev_append&lt;/li&gt;
+&lt;li&gt;rev&lt;/li&gt;
+&lt;li&gt;append&lt;/li&gt;
+&lt;li&gt;length&lt;/li&gt;
+&lt;li&gt;nth&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、Ruby風の名前の文字列や配列への変換、空リストの判定をするメソッドもあります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;inspect(to_s)&lt;/li&gt;
+&lt;li&gt;to_a&lt;/li&gt;
+&lt;li&gt;empty?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;動作確認&#34;&gt;動作確認&lt;/h2&gt;
+
+&lt;p&gt;以下のような動作をします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;require &#39;linkedlist&#39;
+
+p LinkedList.new # =&amp;gt; ()
+
+p l1 = LinkedList.new.cons(1).cons(2).cons(3) # =&amp;gt; (3, 2, 1)
+p l1.head # =&amp;gt; 3
+p l1.tail # =&amp;gt; (2, 1)
+
+p l2 = LinkedList[1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;] #=&amp;gt; (1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;)
+
+p l1.rev_append(l2) #=&amp;gt; (1, 2, 3, 1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;)
+p l1.rev #=&amp;gt; (1, 2, 3)
+p l3 = l1.append(l2) #=&amp;gt; (3, 2, 1, 1, 2, 3, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;)
+
+p l3.length # =&amp;gt; 8
+p LinkedList[].length #=&amp;gt; 0
+
+p l3.nth(0) #=&amp;gt; 3
+p l3[7] #=&amp;gt; &amp;quot;b&amp;quot;
+p l3[100] #=&amp;gt; nil
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;クイックソート&#34;&gt;クイックソート&lt;/h2&gt;
+
+&lt;p&gt;せっかくなので、&lt;code&gt;LinkedList&lt;/code&gt;を使って関数型言語風にクイックソートを書いてみました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;# qsort_sample.rb
+require &#39;linkedlist&#39;
+
+def divide(a, l, lt, ge)
+  if l.empty?
+    [lt, ge]
+  elsif l.head &amp;lt; a
+    divide(a, l.tail, lt.cons(l.head), ge)
+  else
+    divide(a, l.tail, lt, ge.cons(l.head))
+  end
+end
+
+def qsort(l)
+  if l.empty?
+    LinkedList.new
+  else
+    lt, ge = divide(l.head, l.tail, LinkedList.new, LinkedList.new)
+    qsort(lt) + qsort(ge).cons(l.head)
+  end
+end
+
+l = LinkedList[3, 5, 8, 1, 4, 7, 10, -3, 2, 100, 43, 10, 50]
+p qsort(l) #=&amp;gt; (-3, 1, 2, 3, 4, 5, 7, 8, 10, 10, 43, 50, 100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;cons などが、演算子になっていないせいで可読性が少し低いですが、それなりに綺麗にクイックソートが書けます。&lt;/p&gt;
+
+&lt;h1 id=&#34;ベンチマーク結果&#34;&gt;ベンチマーク結果&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Array&lt;/code&gt;と&lt;code&gt;LinkedList&lt;/code&gt;で、先頭に長さ3のリストを 連結する処理にかかった秒数を、連結した回数ごとにまとめました。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;連結回数&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Array&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;LinkedList&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.5e-05&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0e-05&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;1000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.007251&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00166&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;10000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.727542&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.015206&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;100000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;102.080825&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.414083&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;この測定には、&lt;a href=&#34;https://github.com/gam0022/linkedlist/blob/master/benchmark.rb&#34;&gt;benchmark.rb&lt;/a&gt; を用いました。&lt;/p&gt;
+
+&lt;p&gt;クラス名を変えただけのコードですが、
+リストの長さが長くなるほど、&lt;code&gt;Array&lt;/code&gt;よりも&lt;code&gt;LinkedList&lt;/code&gt; の方が相対的に高速になります。&lt;/p&gt;
+
+&lt;p&gt;まあ、連結リストに圧倒的に有利な操作で測定しているので当然ですが&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;ともかく、これで速度を気にせずにappendやconsをバリバリ使うことができます!&lt;/p&gt;
+
+&lt;h1 id=&#34;その他&#34;&gt;その他&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;struct linkedlist&lt;/code&gt; の定義など見ればわかると思いますが、かなりシンプルな実装になりました。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.loveruby.net/w/RubyExtensionProgrammingGuide.html&#34;&gt;RubyExtensionProgrammingGuide&lt;/a&gt; がとても参考になりました。&lt;/li&gt;
+&lt;li&gt;WBなどはしていないので、&lt;a href=&#34;http://www.atdot.net/~ko1/activities/RubyKaigi2013-ko1.pdf&#34;&gt;RGenGC&lt;/a&gt; に対応できてるか不安です。
+
+&lt;ul&gt;
+&lt;li&gt;そもそも、どの関数も破壊的ではないので、WBが発生するタイミングが無い?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;余裕が無かったので、セーフレベルやオブジェクトの汚染など、セキュリティのことは全く考えてません。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;head&lt;/code&gt; や &lt;code&gt;tail&lt;/code&gt; や &lt;code&gt;nth&lt;/code&gt; で要素がない場合ですが、すべて&lt;code&gt;nil&lt;/code&gt;を返すようにして、例外は発生させないことにしました。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;インストール方法&#34;&gt;インストール方法&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git clone https://github.com/gam0022/linkedlist.git
+$ cd linkedlist
+# インストール先のrubyで extconf.rb を実行する
+$ ruby extconf.rb
+$ make
+$ make install
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rubyの改造してThread#joinのTimeoutで例外を発生させる</title>
+      <link>https://gam0022.net/blog/2013/08/18/ruby-thread-join/</link>
+      <pubDate>Sun, 18 Aug 2013 17:15:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/08/18/ruby-thread-join/</guid>
+      <description>
+
+&lt;h1 id=&#34;ぼっちupcamp&#34;&gt;ぼっちupcamp&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/search?q=%23upcamp&amp;amp;src=hash&#34;&gt;#upcamp&lt;/a&gt; に参加しようと思ったのですが、
+諸事情により行けなくなったので、一人で何か作ってました。&lt;/p&gt;
+
+&lt;p&gt;Ruby の 処理系の動作の改良(改悪)をしていました。&lt;/p&gt;
+
+&lt;p&gt;Ruby は &lt;code&gt;git clone https://github.com/ruby/ruby.git&lt;/code&gt; で落としたものを使いました。&lt;/p&gt;
+
+&lt;h1 id=&#34;thread-join-で-タイムアウトしたときに例外を発生させる&#34;&gt;Thread#join で タイムアウトしたときに例外を発生させる&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://doc.ruby-lang.org/ja/2.0.0/method/Thread/i/join.html&#34;&gt;Thread#join&lt;/a&gt;は、
+スレッド self の実行が終了するまで、カレントスレッドを停止させるメソッドです。
+limit を指定して、limit 秒過ぎても自身が終了しない場合、nil を返します。&lt;/p&gt;
+
+&lt;p&gt;今回は、limit 秒を過ぎてタイムアウトした場合、
+例外&lt;code&gt;Timeout&lt;/code&gt; を発生させるように改造しました。&lt;/p&gt;
+
+&lt;p&gt;正直、自分でもネタをミスった感がありますが、
+すこしはタイムアウトした場合の処理が楽に書けるようになる気がします。&lt;/p&gt;
+
+&lt;h2 id=&#34;従来のrubyの-thread-join-でタイムアウトを処理する&#34;&gt;従来のRubyの Thread#join でタイムアウトを処理する&lt;/h2&gt;
+
+&lt;p&gt;まず、従来のRubyの &lt;code&gt;Thread#join&lt;/code&gt; でタイムアウトを処理する場合のコード例を示します。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Thread#join&lt;/code&gt;の返り値が &lt;code&gt;nil&lt;/code&gt;のときにタイムアウトしたと分かるので、
+このように書けると思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;begin
+  t = Thread.start {
+    # 1秒で終わらない処理
+    while true
+      1
+    end
+  }
+  isTimeout = (t.join(1) == nil)
+rescue ThreadError
+  puts &amp;quot;theread error&amp;quot;
+ensure
+  puts &amp;quot;timeout error&amp;quot; if isTimeout
+
+  t.kill
+end
+
+# =&amp;gt; &amp;quot;timeout error&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;改造したrubyの-thread-join-でタイムアウトを処理する&#34;&gt;改造したRubyの Thread#join でタイムアウトを処理する&lt;/h2&gt;
+
+&lt;p&gt;今回の改造によって、次のようにRubyのコードをスッキリさせることができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;begin
+  t = Thread.start {
+    # 1秒で終わらない処理
+    while true
+      1
+    end
+  }
+  t.join(1)
+rescue TimeoutError
+  puts &amp;quot;timeout error&amp;quot;
+rescue ThreadError
+  puts &amp;quot;theread error&amp;quot;
+ensure
+  t.kill
+end
+
+# =&amp;gt; &amp;quot;timeout error&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;例外処理が &lt;code&gt;rescue&lt;/code&gt; 節にまとまって、コードが見やすくなります。&lt;/p&gt;
+
+&lt;h1 id=&#34;変更箇所&#34;&gt;変更箇所&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;diff --git a/include/ruby/ruby.h b/include/ruby/ruby.h
+index 575a2b6..79e4289 100644
+--- a/include/ruby/ruby.h
++++ b/include/ruby/ruby.h
+@@ -1646,6 +1646,7 @@ RUBY_EXTERN VALUE rb_eRuntimeError;
+ RUBY_EXTERN VALUE rb_eSecurityError;
+ RUBY_EXTERN VALUE rb_eSystemCallError;
+ RUBY_EXTERN VALUE rb_eThreadError;
++RUBY_EXTERN VALUE rb_eTimeoutError;
+ RUBY_EXTERN VALUE rb_eTypeError;
+ RUBY_EXTERN VALUE rb_eZeroDivError;
+ RUBY_EXTERN VALUE rb_eNotImpError;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;diff --git a/eval.c b/eval.c
+index 0bf8337..1304ad0 100644
+--- a/eval.c
++++ b/eval.c
+@@ -694,6 +694,8 @@ rb_iterator_p(void)
+     return rb_block_given_p();
+ }
+
++
++VALUE rb_eTimeoutError;
+ VALUE rb_eThreadError;
+
+ void
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;diff --git a/thread.c b/thread.c
+index 4f1f409..1bdd657 100644
+--- a/thread.c
++++ b/thread.c
+@@ -821,7 +821,7 @@ thread_join(rb_thread_t *target_th, double delay)
+        target_th-&amp;gt;join_list = &amp;amp;list;
+        if (!rb_ensure(thread_join_sleep, (VALUE)&amp;amp;arg,
+                       remove_from_join_list, (VALUE)&amp;amp;arg)) {
+-           return Qnil;
++            rb_raise(rb_eTimeoutError, &amp;quot;timeout in Thread#join.&amp;quot;);
+        }
+     }
+
+@@ -5103,6 +5103,7 @@ Init_Thread(void)
+
+     recursive_key = rb_intern(&amp;quot;__recursive_key__&amp;quot;);
+     rb_eThreadError = rb_define_class(&amp;quot;ThreadError&amp;quot;, rb_eStandardError);
++    rb_eTimeoutError = rb_define_class(&amp;quot;TimeoutError&amp;quot;, rb_eStandardError);
+
+     /* init thread core */
+     {
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;感想とか&#34;&gt;感想とか&lt;/h1&gt;
+
+&lt;p&gt;思ったことを箇条書きで適当に。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;そもそも、タイムアウトで例外を発生させる動作が妥当なのか。
+
+&lt;ul&gt;
+&lt;li&gt;スレッドプログラミングをほとんどしたことがないので分からないのですが、例外が発生すると不便なこともあるんですかね?&lt;/li&gt;
+&lt;li&gt;C# の &lt;code&gt;Thread.join()&lt;/code&gt; でも、bool 型の返り値によって、true なら正常終了、false ならタイムアウトとなっていて、
+現状のRubyと同じような仕様になっていました。&lt;/li&gt;
+&lt;li&gt;詳しい人がもしいたら、コメントほしいです。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;苦労した点
+
+&lt;ul&gt;
+&lt;li&gt;特に無かったのですが、Thread#join の定義箇所を見つけるのに苦労しました。&lt;/li&gt;
+&lt;li&gt;というか、2,3行しかプログラムを書いてない&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

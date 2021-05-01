@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <style tyle="text/css">
+      h4 {
+        font-size: 20px;
+      }
+      th:hover{
+        background-color: #444;
+      }
+      .head {
+        background-color: black;
+        color: white;
+      }
+      .selected {
+        background-color: #888;
+        color: white;
+      }
+      .hovered {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="row">
+        <div class="col s4">
+<h4>Request by count</h4>
+<table id="count" class="bordered card-panel">
+<thead class="head"><tr><th>SUM</th><th>REQUEST</th></tr></thead>
+<tbody>
+<tr class="4ab6c36432e7c95d9c6c14468dcf24b3"><td>1501</td><td>GET /icons</td></tr>
+<tr class="83f6f7712edee91dcce99e5b649afe69"><td>404</td><td>GET /fetch</td></tr>
+<tr class="2b15e55ed6d8870ab204a222b5292f04"><td>220</td><td>GET /fonts/*</td></tr>
+<tr class="a650fd67ad7bd609d26682096f2b0d7e"><td>188</td><td>POST /login</td></tr>
+<tr class="e70676cabb1b68a5da15b1537ef9f5b8"><td>180</td><td>GET /js/*</td></tr>
+<tr class="fdac0f4474fdeaf0839b24fa7526e160"><td>93</td><td>POST /add_channel</td></tr>
+<tr class="65c01d8d1e4a0091a61b087f6df38749"><td>90</td><td>GET /css/*</td></tr>
+<tr class="85769a6cd406b1894198b8b17248adb0"><td>74</td><td>GET /channel/*</td></tr>
+<tr class="8ac12d29c5ee4e5b16508feba60c99a8"><td>57</td><td>GET /message</td></tr>
+<tr class="d89b6d0c386786dac4131568b43f65f8"><td>45</td><td>GET /favicon.ico</td></tr>
+<tr class="3a7ff651466956cd8db3a966d72a0de1"><td>14</td><td>POST /register</td></tr>
+<tr class="d92c2a3ba58b7f358399a12dd3cdc268"><td>13</td><td>GET /history/*</td></tr>
+<tr class="0c96ee0eb80536c09093491a5aa6524e"><td>9</td><td>POST /profile</td></tr>
+<tr class="086302bbf9718ecab73fe72a7c80da0c"><td>8</td><td>GET /profile/*</td></tr>
+<tr class="e3b717d5883a45ef9493d009741f7c64"><td>5</td><td>GET /</td></tr>
+<tr class="bd886de5ac0b1aa4a390c92fb1216374"><td>3</td><td>GET /register</td></tr>
+<tr class="c88552fea5944e5608bb86ac444be15b"><td>3</td><td>GET /add_channel</td></tr>
+<tr class="c153d6d8dce4d2c827a77e2a4f640e47"><td>2</td><td>POST /message</td></tr>
+<tr class="1d1ca6617c0d72b90b93ceae2e0eb6f7"><td>2</td><td>GET /logout</td></tr>
+<tr class="22374240a33c13979bf2e2a190925072"><td>2</td><td>GET /login</td></tr>
+<tr class="609cc09df7695f22ee5b0882f57a6801"><td>1</td><td>GET /initialize</td></tr>
+</tbody>
+</table>
+</div>
+<div class="col s4">
+<h4>Request by total time</h4>
+<table id="time" class="bordered card-panel">
+<thead class="head"><tr><th>SUM</th><th>AVG</th><th>REQUEST</th></tr></thead>
+<tbody>
+<tr class="4ab6c36432e7c95d9c6c14468dcf24b3"><td>10341.129</td><td>6.88949</td><td>GET /icons</td></tr>
+<tr class="83f6f7712edee91dcce99e5b649afe69"><td>781.713</td><td>1.93493</td><td>GET /fetch</td></tr>
+<tr class="85769a6cd406b1894198b8b17248adb0"><td>213.609</td><td>2.88661</td><td>GET /channel/*</td></tr>
+<tr class="a650fd67ad7bd609d26682096f2b0d7e"><td>97.338</td><td>0.51776</td><td>POST /login</td></tr>
+<tr class="8ac12d29c5ee4e5b16508feba60c99a8"><td>67.475</td><td>1.18377</td><td>GET /message</td></tr>
+<tr class="2b15e55ed6d8870ab204a222b5292f04"><td>43.04</td><td>0.19564</td><td>GET /fonts/*</td></tr>
+<tr class="65c01d8d1e4a0091a61b087f6df38749"><td>38.888</td><td>0.43209</td><td>GET /css/*</td></tr>
+<tr class="e70676cabb1b68a5da15b1537ef9f5b8"><td>25.398</td><td>0.1411</td><td>GET /js/*</td></tr>
+<tr class="3a7ff651466956cd8db3a966d72a0de1"><td>14.193</td><td>1.01379</td><td>POST /register</td></tr>
+<tr class="c88552fea5944e5608bb86ac444be15b"><td>10.031</td><td>3.34367</td><td>GET /add_channel</td></tr>
+<tr class="0c96ee0eb80536c09093491a5aa6524e"><td>6.3</td><td>0.7</td><td>POST /profile</td></tr>
+<tr class="086302bbf9718ecab73fe72a7c80da0c"><td>4.047</td><td>0.50587</td><td>GET /profile/*</td></tr>
+<tr class="d92c2a3ba58b7f358399a12dd3cdc268"><td>3.195</td><td>0.24577</td><td>GET /history/*</td></tr>
+<tr class="e3b717d5883a45ef9493d009741f7c64"><td>0.906</td><td>0.1812</td><td>GET /</td></tr>
+<tr class="fdac0f4474fdeaf0839b24fa7526e160"><td>0.871</td><td>0.00937</td><td>POST /add_channel</td></tr>
+<tr class="1d1ca6617c0d72b90b93ceae2e0eb6f7"><td>0.798</td><td>0.399</td><td>GET /logout</td></tr>
+<tr class="22374240a33c13979bf2e2a190925072"><td>0.367</td><td>0.1835</td><td>GET /login</td></tr>
+<tr class="609cc09df7695f22ee5b0882f57a6801"><td>0.091</td><td>0.091</td><td>GET /initialize</td></tr>
+<tr class="bd886de5ac0b1aa4a390c92fb1216374"><td>0.088</td><td>0.02933</td><td>GET /register</td></tr>
+<tr class="c153d6d8dce4d2c827a77e2a4f640e47"><td>0.017</td><td>0.0085</td><td>POST /message</td></tr>
+</tbody>
+</table>
+</div>
+<div class="col s4">
+<h4>Request by out bytes</h4>
+<table id="byte" class="bordered card-panel">
+<thead class="head"><tr><th>SUM</th><th>AVG</th><th>REQUEST</th></tr></thead>
+<tbody>
+<tr class="4ab6c36432e7c95d9c6c14468dcf24b3"><td>150099232</td><td>99999.48834</td><td>GET /icons</td></tr>
+<tr class="2b15e55ed6d8870ab204a222b5292f04"><td>9549716</td><td>43407.8</td><td>GET /fonts/*</td></tr>
+<tr class="e70676cabb1b68a5da15b1537ef9f5b8"><td>7342110</td><td>40789.5</td><td>GET /js/*</td></tr>
+<tr class="65c01d8d1e4a0091a61b087f6df38749"><td>6895575</td><td>76617.5</td><td>GET /css/*</td></tr>
+<tr class="8ac12d29c5ee4e5b16508feba60c99a8"><td>2678402</td><td>46989.50877</td><td>GET /message</td></tr>
+<tr class="83f6f7712edee91dcce99e5b649afe69"><td>1209204</td><td>2993.07921</td><td>GET /fetch</td></tr>
+<tr class="85769a6cd406b1894198b8b17248adb0"><td>173505</td><td>2344.66216</td><td>GET /channel/*</td></tr>
+<tr class="a650fd67ad7bd609d26682096f2b0d7e"><td>141971</td><td>755.16489</td><td>POST /login</td></tr>
+<tr class="d92c2a3ba58b7f358399a12dd3cdc268"><td>75100</td><td>5776.92308</td><td>GET /history/*</td></tr>
+<tr class="fdac0f4474fdeaf0839b24fa7526e160"><td>29746</td><td>319.84946</td><td>POST /add_channel</td></tr>
+<tr class="d89b6d0c386786dac4131568b43f65f8"><td>25560</td><td>568.0</td><td>GET /favicon.ico</td></tr>
+<tr class="086302bbf9718ecab73fe72a7c80da0c"><td>17575</td><td>2196.875</td><td>GET /profile/*</td></tr>
+<tr class="3a7ff651466956cd8db3a966d72a0de1"><td>8049</td><td>574.92857</td><td>POST /register</td></tr>
+<tr class="e3b717d5883a45ef9493d009741f7c64"><td>5440</td><td>1088.0</td><td>GET /</td></tr>
+<tr class="bd886de5ac0b1aa4a390c92fb1216374"><td>3609</td><td>1203.0</td><td>GET /register</td></tr>
+<tr class="c88552fea5944e5608bb86ac444be15b"><td>3606</td><td>1202.0</td><td>GET /add_channel</td></tr>
+<tr class="0c96ee0eb80536c09093491a5aa6524e"><td>2721</td><td>302.33333</td><td>POST /profile</td></tr>
+<tr class="22374240a33c13979bf2e2a190925072"><td>2402</td><td>1201.0</td><td>GET /login</td></tr>
+<tr class="1d1ca6617c0d72b90b93ceae2e0eb6f7"><td>1676</td><td>838.0</td><td>GET /logout</td></tr>
+<tr class="609cc09df7695f22ee5b0882f57a6801"><td>680</td><td>680.0</td><td>GET /initialize</td></tr>
+<tr class="c153d6d8dce4d2c827a77e2a4f640e47"><td>304</td><td>152.0</td><td>POST /message</td></tr>
+</tbody>
+</table>
+</div>
+
+      </div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function () {
+      $("#count").tablesorter();
+      $("#time").tablesorter();
+      $("#byte").tablesorter();
+    });
+    $("tbody tr").on("click",function() {
+      var requestHash = $(this).attr("class").split(" ")[0];
+      if ($(this).hasClass("selected")) {
+        $("." + requestHash).removeClass("selected");
+      } else {
+        $("." + requestHash).removeClass("hovered");
+        $("." + requestHash).addClass("selected");
+      }
+    });
+    $("tbody tr").on({
+      "mouseenter":function() {
+        if ($(this).hasClass("selected")) {
+          return;
+        }
+        var requestHash = $(this).attr("class").split(" ")[0];
+        $("." + requestHash).addClass("hovered");
+      },
+      "mouseleave":function() {
+        var requestHash = $(this).attr("class").split(" ")[0];
+        $("." + requestHash).removeClass("hovered");
+      }
+    });
+    </script>
+  </body>
+</html>

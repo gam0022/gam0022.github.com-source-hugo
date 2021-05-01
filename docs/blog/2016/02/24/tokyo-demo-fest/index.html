@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！ | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="はじめに
+
+2016-02-20〜21に開催されたTokyo Demo Fest 2016に参加しました。
+
+Tokyo Demo Festとは、このようなイベントです（公式ページからの引用）。
+
+
+Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに 興味のある人々が日本中、世界中から一堂に会し、 デモ作品のコンペティションやセミナーなどを行います。 また、イベント開催中は集まった様々な人たちとの交流が深められます。
+
+
+私は&rdquo;Carbon&rdquo;という作品をGLSL Graphics Compoに提出して、3位入賞してきました！
+
+さらに、three.jsの作者であり、GLSL Sandboxの作者でもあるMr.Doobと握手してきました！
+
+今回が初参加でしたが、本当に最高のイベントでした！楽しかったです。
+オーガナイザーのみなさん、参加者のみなさん、ありがとうございました！
+
+全体のレポートについては、@h_doxasさんの記事がとても分かりやすいです。
+
+WebGL 総本山を更新しました ＞ 超ハイレベルな作品が入り乱れた Tokyo Demo Fest 2016！ 大興奮の２日間をレポート！ - WebGL 総本山 https://t.co/ZeYrYoLiz2 pic.twitter.com/e3XFwpIrCD&mdash; h_doxas (@h_doxas) 2016, 2月 23
+
+
+この記事では、GLSL Graphics Compoで発表した&rdquo;Carbon&rdquo;という作品の裏話と、個人的に印象に残った思い出などを話します。
+
+Carbon 製作秘話
+
+Compo（コンポ）とは、一定の制約の中で映像や音楽の作品を製作し、投票によって順位をつけるイベントです。
+
+今年のGLSL Graphics Compoでは、GLSL Sandbox上で動作する映像作品の順位を競いました。
+
+GLSL Sandboxで動作させるためには、フラグメントシェーダだけで作品を実装する必要があります。
+当然ですが、立体データや画像データは読み込めないので、コードだけでなんとかする必要があります。
+
+私は&rdquo;Carbon&rdquo;というタイトルで作品を提出して3位入賞しました。
+今年のGLSL Graphics Compoはレベルが高かったので、入賞できて嬉しかったです。
+
+コチラから動くデモをご覧になれます！
+
+
+Shadertoy - Carbon [TDF2016] - Final Version
+GLSL Sandbox - Carbon - TDF Submited Version
+
+
+
+
+
+
+
+
+
+GLSL Compo に 「Carbon」という作品を出しました！https://t.co/UOqE3FvFyWhttps://t.co/JxkH3LtI4t#TokyoDemoFest pic.twitter.com/yfkJBzQllD&mdash; がむ@TDF最高だった (@gam0022) 2016, 2月 21
+
+
+#TokyoDemoFest の &quot;Carbon&quot; の回路にglow効果をつけたのでスクショ撮り直した。Shadertoyにも反映。https://t.co/zeIZhsc8zT pic.twitter.com/Q4UKTCfAsP&mdash; がむ@TDF最高だった (@gam0022) 2016年2月27日
+
+
+私の「Carbon」が GLSL Compo で入賞しました👏ありがとうございます！ #TokyoDemoFesthttps://t.co/f7LoEYWzFq pic.twitter.com/SIel9DKA6n&mdash; がむ@TDF最高だった (@gam0022) 2016年2月21日
+
+
+今回もレイマーチングによる作品です。
+
+距離関数（distance function）は、Mandelboxというフラクタル図形を mod でループさせただけなので、非常にお手軽です。
+
+">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/images/posts/2016-02-24-tokyo-demo-fest/carbon-neo-blue.png">
+        <meta name="twitter:card" content="summary_large_image">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！ | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-02-24 08:19:00 &#43;0900 JST" itemprop="datePublished">2016-02-24</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/demo">demo</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/" class="hatena-bookmark-button" data-hatena-bookmark-title="#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/" data-text="#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    <h1 id="はじめに">はじめに</h1>
+
+<p>2016-02-20〜21に開催された<a href="http://tokyodemofest.jp/2016/">Tokyo Demo Fest 2016</a>に参加しました。</p>
+
+<p>Tokyo Demo Festとは、このようなイベントです（公式ページからの引用）。</p>
+
+<blockquote>
+<p>Tokyo Demo Fest は日本で唯一のデモパーティです。 デモパーティは、コンピュータを用いたプログラミングとアートに 興味のある人々が日本中、世界中から一堂に会し、 デモ作品のコンペティションやセミナーなどを行います。 また、イベント開催中は集まった様々な人たちとの交流が深められます。</p>
+</blockquote>
+
+<p>私は&rdquo;Carbon&rdquo;という作品をGLSL Graphics Compoに提出して、3位入賞してきました！</p>
+
+<p>さらに、<a href="threejs.org">three.js</a>の作者であり、<a href="http://glslsandbox.com/">GLSL Sandbox</a>の作者でもある<a href="http://mrdoob.com/">Mr.Doob</a>と握手してきました！</p>
+
+<p>今回が初参加でしたが、本当に最高のイベントでした！楽しかったです。
+オーガナイザーのみなさん、参加者のみなさん、ありがとうございました！</p>
+
+<p>全体のレポートについては、<a href="https://twitter.com/h_doxas">@h_doxas</a>さんの記事がとても分かりやすいです。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">WebGL 総本山を更新しました ＞ 超ハイレベルな作品が入り乱れた Tokyo Demo Fest 2016！ 大興奮の２日間をレポート！ - WebGL 総本山 <a href="https://t.co/ZeYrYoLiz2">https://t.co/ZeYrYoLiz2</a> <a href="https://t.co/e3XFwpIrCD">pic.twitter.com/e3XFwpIrCD</a></p>&mdash; h_doxas (@h_doxas) <a href="https://twitter.com/h_doxas/status/701988774117376004">2016, 2月 23</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>この記事では、GLSL Graphics Compoで発表した&rdquo;Carbon&rdquo;という作品の裏話と、個人的に印象に残った思い出などを話します。</p>
+
+<h1 id="carbon-製作秘話">Carbon 製作秘話</h1>
+
+<p>Compo（コンポ）とは、一定の制約の中で映像や音楽の作品を製作し、投票によって順位をつけるイベントです。</p>
+
+<p>今年のGLSL Graphics Compoでは、<a href="http://glslsandbox.com/">GLSL Sandbox</a>上で動作する映像作品の順位を競いました。</p>
+
+<p>GLSL Sandboxで動作させるためには、フラグメントシェーダだけで作品を実装する必要があります。
+当然ですが、立体データや画像データは読み込めないので、コードだけでなんとかする必要があります。</p>
+
+<p>私は&rdquo;Carbon&rdquo;というタイトルで作品を提出して3位入賞しました。
+今年のGLSL Graphics Compoはレベルが高かったので、入賞できて嬉しかったです。</p>
+
+<p>コチラから動くデモをご覧になれます！</p>
+
+<ul>
+<li><a href="https://www.shadertoy.com/view/MsG3Wy">Shadertoy - Carbon [TDF2016] - Final Version</a></li>
+<li><a href="http://glslsandbox.com/e#30972.0">GLSL Sandbox - Carbon - TDF Submited Version</a></li>
+</ul>
+
+<!--[Carbon](/images/posts/2016-02-24-tokyo-demo-fest/carbon-blue.png)-->
+
+<p><img src="/images/posts/2016-02-24-tokyo-demo-fest/carbon-neo-blue.png" alt="Carbon - Blue" />
+<img src="/images/posts/2016-02-24-tokyo-demo-fest/carbon-neo-green.png" alt="Carbon - Green" />
+<img src="/images/posts/2016-02-24-tokyo-demo-fest/carbon-neo-red.png" alt="Carbon - Red" />
+<img src="/images/posts/2016-02-24-tokyo-demo-fest/carbon-neo-violet.png" alt="Carbon - Violet" /></p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">GLSL Compo に 「Carbon」という作品を出しました！<a href="https://t.co/UOqE3FvFyW">https://t.co/UOqE3FvFyW</a><a href="https://t.co/JxkH3LtI4t">https://t.co/JxkH3LtI4t</a><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> <a href="https://t.co/yfkJBzQllD">pic.twitter.com/yfkJBzQllD</a></p>&mdash; がむ@TDF最高だった (@gam0022) <a href="https://twitter.com/gam0022/status/701327225224736768">2016, 2月 21</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> の &quot;Carbon&quot; の回路にglow効果をつけたのでスクショ撮り直した。Shadertoyにも反映。<a href="https://t.co/zeIZhsc8zT">https://t.co/zeIZhsc8zT</a> <a href="https://t.co/Q4UKTCfAsP">pic.twitter.com/Q4UKTCfAsP</a></p>&mdash; がむ@TDF最高だった (@gam0022) <a href="https://twitter.com/gam0022/status/703612944903372800">2016年2月27日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">私の「Carbon」が GLSL Compo で入賞しました👏<br>ありがとうございます！ <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a><a href="https://t.co/f7LoEYWzFq">https://t.co/f7LoEYWzFq</a> <a href="https://t.co/SIel9DKA6n">pic.twitter.com/SIel9DKA6n</a></p>&mdash; がむ@TDF最高だった (@gam0022) <a href="https://twitter.com/gam0022/status/701362103928487937">2016年2月21日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>今回もレイマーチングによる作品です。</p>
+
+<p>距離関数（distance function）は、Mandelboxというフラクタル図形を mod でループさせただけなので、非常にお手軽です。</p>
+
+<p></p>
+
+<p>この作品は大会中に頑張って製作しました。製作期間はなんと1日です！
+20日のお昼くらいに作り始めて、20日は徹夜で作業し、21日の13:00の提出期限のギリギリに間に合わせました。
+提出期限5分前くらいまでバグが取れずにあたふたしていたのですが、なんとか提出できて本当に嬉しかったです。</p>
+
+<p>シェーダはデバッグが難しいので、バグを取るのはけっこう大変です…
+今回も同名の変数を異なるスコープで宣言しているという単純なミスで30分くらい無駄にしました。みなさんは気をつけましょう…</p>
+
+<p>実は先週の <a href="http://gam0022.net/blog/2016/02/16/glsl-tech/">#GLSLTech</a>の打ち上げの飲み会の際に、Mandelboxというフラクタル図形という名前を聞きました。
+Mandelboxで何か作品を作るということ、完成図のイメージはだいたい決まっていたので、そこまで出戻りなどもなく、1日で完成にこぎつけることができました。</p>
+
+<p>わざと0.5秒おきにチカチカ点滅させてます。BPM120の曲を後ろで流すことを想定したためです。</p>
+
+<h2 id="実装的な細かい話">実装的な細かい話</h2>
+
+<p>実装的な細かい話をすると、<a href="http://qiita.com/gam0022/items/03699a07e4a4b5f2d41f">前回にレイマーチングで作成した&rdquo;reflect&rdquo;という作品</a>では、
+<code>sceneColor</code>という最短距離にある物体表面の色を返す関数を実装をすることで、色分けを実現しました。</p>
+
+<p>&ldquo;reflect&rdquo;では床も球体も全て同様に鏡面反射させたかったので、この方法で十分でした。</p>
+
+<p>今回の&rdquo;Carbon&rdquo;では物体ごとにシェーディングの挙動を切り替えることが必要でした。
+背景のMandelboxは普通のPhongシェーディングを行い、空中に漂っている球体は鏡面反射というように、色だけでなく反射の挙動を物体ごとに制御する必要がありました。</p>
+
+<p>今回は衝突情報を<code>Intersect</code>という構造体に格納して、衝突した物体に応じたMaterialに応じて、<code>Intersect.material</code>にセットするようにしました。</p>
+
+<p><code>Intersect</code>の定義はこうしました。</p>
+
+<pre><code class="language-c">struct Intersect {
+	bool isHit;
+
+	vec3 position;
+	float distance;
+	vec3 normal;
+
+	int material;
+	vec3 color;
+};
+
+const int CIRCUIT_MATERIAL = 0;
+const int MIRROR_MATERIAL = 1;
+</code></pre>
+
+<p>マーチングループを抜けたあとのシェーディングを行うプログラムで、<code>Intersect.material</code>を参照し、シェーディング方法を切り替えるような実装としました。
+この方法により、色だけでなく、反射の挙動やシェーディングも物体ごとに制御することを実現しました。</p>
+
+<p>衝突情報を構造体に格納するというのは、ちょっと前につくった<a href="http://qiita.com/gam0022/items/9875480d33e03fe2113c">&ldquo;gem&rdquo;という作品</a>からのアプローチからの継承です。
+&ldquo;gem&rdquo;はレイトレーシングのGLSL実装作品ですが、レイマーチングにも応用できることを証明できました。</p>
+
+<p>ソースコードは可読性重視したので、なんとか読めるレベルになっていると思います。参考にしてください。</p>
+
+<h2 id="カメラのデバッグ">カメラのデバッグ</h2>
+
+<p>カメラのデバッグのために<code>THREE.OrbitControls</code>を使いたかったので、three.jsで開発やデバッグしました。</p>
+
+<ul>
+<li><a href="http://gam0022.net/misc/raymarching/carbon_tdf2016.html">Carbon - three.js版</a></li>
+</ul>
+
+<p>ただし、GLSLのエラーを見つけるためにGLSL sandboxにコピペするといったように、three.js製の自作システムと、GLSL sandboxを平行して使用しました。
+GLSL sandboxと互換性を持たせるために、three.jsで開発したシステムはGLSL sandboxと互換のある<code>uniforms</code>設計をしました。</p>
+
+<p>Mandelboxのいい感じに映し出すためのカメラの軌跡を見つけるのが大変でした。適当に動かすと、すぐにMandelboxの壁に衝突してしまうので…
+MandelboxのScaleというパラメータを弄りつつ、直線で壁に衝突しない軌跡を発見できたのは、<code>THREE.OrbitControls</code>のおかげです。</p>
+
+<p>他にもスクショをとるのにも、自作システムが役に立ちました。</p>
+
+<p>GLSL sandboxで清書する前に、まずは自作システムで下書きするという方法はオススメです。</p>
+
+<h1 id="tdfで出会った-すごい人たち">TDFで出会った、すごい人たち</h1>
+
+<p>コミュ症なので、普段はあんまり人に話しかけたりしないのですが、勇気を出して交流してみました。</p>
+
+<p>ここからは、TDF（Tokyo Demo Fest）で出会った人たちを紹介します。他己紹介はやったことがないので緊張しますね。</p>
+
+<h2 id="doxasさん">doxasさん</h2>
+
+<p>先週の<a href="/blog/2016/02/16/glsl-tech/">#GLSLTech</a>につづいて、<a href="https://twitter.com/h_doxas">@h_doxas</a>さんにお会いしました。</p>
+
+<p>doxasさんは、あの有名な<a href="https://wgld.org/">wgld.org</a>や<a href="https://webgl.souhonzan.org/">WebGL 総本山</a>の中の人です。</p>
+
+<p>wgld.orgはWebGLについて日本語で十分な情報が書かれている唯一のサイトといっても過言では無いでしょう。
+しかも初心者でも分かるように、とても丁寧に分かりやすく解説されています。</p>
+
+<p>自分自身、<a href="https://wgld.org/d/glsl/">wgld.org</a>を読んでレイマーチングを学びました。
+また、TDFの存在はdoxasさんのTwitterを見て知りました。
+もしdoxasさんがいなかったら、今の私はなかったと思います。
+ありがとうございます！</p>
+
+<p>そんなdoxasさんの海をテーマにした&rdquo;The Birth of&hellip;&ldquo;という作品はコチラ！</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/tokyodemofest?src=hash">#tokyodemofest</a> で出品した WebGL のデモ上げました ＞ <a href="https://t.co/EDxflYxDBF">https://t.co/EDxflYxDBF</a></p>&mdash; h_doxas (@h_doxas) <a href="https://twitter.com/h_doxas/status/701637606409379842">2016年2月22日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="mr-doob">Mr.Doob</h2>
+
+<p><a href="http://threejs.org/">three.js</a>の作者であり、<a href="http://glslsandbox.com/">GLSL Sandbox</a>の作者でもある<a href="https://twitter.com/mrdoob">Mr.Doob氏</a>が、なんと、TDFのために来日していました！</p>
+
+<p>ちゃっかり記念撮影と握手させていただきました！</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/mrdoob">@mrdoob</a> と記念撮影！ <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a> <a href="https://t.co/j1xwSKNamz">pic.twitter.com/j1xwSKNamz</a></p>&mdash; がむ@TDF最高だった (@gam0022) <a href="https://twitter.com/gam0022/status/702292595486040064">2016, 2月 24</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>私は英語が怪しいので、あまりコミュニケーション取れませんでしたが、<a href="https://twitter.com/yomotsu">@yomotsu</a>さんに助けていただきました。
+yomotsuさんみたいにかっこ良く英語話せるようになりたいと本気で思いました。</p>
+
+<p><a href="https://github.com/mrdoob/three.js/pull/7860">three.jsに今年初めにPRを送った</a>ことを覚えてくださったようで、本当に嬉しかったです。めっちゃ優しい人でした。</p>
+
+<p>そんなMr.Doobのマントルをテーマにした作品&rdquo;Broken Mantra&rdquo;はコチラ！</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Hacked a quick demo with <a href="https://twitter.com/Lornnn">@Lornnn</a>&#39;s Broken Mantra for <a href="https://twitter.com/TokyoDemoFest">@TokyoDemoFest</a>. Hope you like it! 😊 <a href="https://t.co/UBqTlEURG9">https://t.co/UBqTlEURG9</a> <a href="https://t.co/p68GiA06JT">pic.twitter.com/p68GiA06JT</a></p>&mdash; Ricardo Cabello (@mrdoob) <a href="https://twitter.com/mrdoob/status/701352090833129472">2016年2月21日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="yomotsuさん">yomotsuさん</h2>
+
+<p>yomotsuさんも#GLSLTechで先週お会いしたばかりでしたが、TDFでもお会いすることができました。</p>
+
+<p>中学生の時からyomotsuさんを知っていて、<a href="http://www.yomotsu.net/wp/">ヨモツネット</a>には大変お世話になっていました。</p>
+
+<p>こんな形で出会えるなんて思っていなかったので、世の中なにがあるのか分かりませんね。</p>
+
+<h2 id="fms-catくん">FMS_Catくん</h2>
+
+<p><a href="https://twitter.com/FMS_Cat">FMS_CAT</a>くんのWebGLによるデモも凄かったですね。Demo Compo2位作品です！</p>
+
+<p>特に最後のグリッチ効果が良い！グリッチ時の映像と音楽が完全に同期とれていてナイスですね。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">[ Type ] on YouTube!! <a href="https://t.co/2Khdm3fpUb">https://t.co/2Khdm3fpUb</a></p>&mdash; FMS_Cat (@FMS_Cat) <a href="https://twitter.com/FMS_Cat/status/701925327883272192">2016年2月23日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>音楽もWebGLのシェーダで生成して、WebAudioに波形データとして渡して再生しているそうです。</p>
+
+<p>映像はレイマーチングで生成して、フォント埋め埋め込むところに謎技術をつかってます。</p>
+
+<p>ちなみに、FMS_CatのFMSというのは学科名で、大学を背負って活動してるそうです！</p>
+
+<h2 id="gaziyaさん">gaziyaさん</h2>
+
+<p><a href="https://www.shadertoy.com/user/gaz">gaziya</a>さんもヤバかったです。</p>
+
+<p>レイマーチングのテクニックについて、様々なお話を聞きました。</p>
+
+<p>foldによる点対称な物体の配置、一部の物体を消すことで不規則にreperationするテクニックを教えていただきました！</p>
+
+<p>gaziyaさんの&rdquo;Dragon&rdquo;は、GLSL Graphics Compoで見事に1位でした！</p>
+
+<script type="text/javascript" src="http://jsdo.it/blogparts/wXzq/js"></script>
+
+<p>未だにこれがレイマーチングによる作品とは信じられません。</p>
+
+<p>レイマーチングでは形状を数式で表現するので、この龍のような有機的な形状を表現するのは、不可能だと思っていました。</p>
+
+<p>時間を見つけて、じっくりコードを研究させていただきます。</p>
+
+<h2 id="soma-arcくん">soma_arcくん</h2>
+
+<p><a href="https://twitter.com/soma_arc">soma_arc</a>の作品はGLSL Graphics Compoで2位でした。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">はてなブログに投稿しました <a href="https://twitter.com/hashtag/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0?src=hash">#はてなブログ</a> <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash">#TokyoDemoFest</a><br>TokyoDemoFest2016に参加しました - 心鏡曼荼羅<a href="https://t.co/w5sAirKw9G">https://t.co/w5sAirKw9G</a> <a href="https://t.co/A5tGW3evrf">pic.twitter.com/A5tGW3evrf</a></p>&mdash; 蘇摩清良 (@soma_arc) <a href="https://twitter.com/soma_arc/status/701753713266814977">2016年2月22日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>少ししかお話しかできませんでしたが、レイマーチング若人が増えてきて、負けていられないなと焦りました。</p>
+
+<h2 id="notargsくん">notargsくん</h2>
+
+<p><a href="https://twitter.com/notargs">notargs</a>は4月からスクエニで働く優秀な学生です。スクエニ羨ましすぎる！！</p>
+
+<p>彼のブラウン管風シェーダが本当にすごい。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">[Unity3D]ブラウン管風シェーダーを作った <a href="https://t.co/9FIgyy528c">https://t.co/9FIgyy528c</a><br>スキャンラインの速度と、残像の長さを指定できる機能を追加しました。<a href="https://twitter.com/hashtag/unity3d?src=hash">#unity3d</a> <a href="https://twitter.com/hashtag/CRT?src=hash">#CRT</a> <a href="https://twitter.com/hashtag/Shader?src=hash">#Shader</a> <a href="https://twitter.com/hashtag/%E3%83%96%E3%83%A9%E3%82%A6%E3%83%B3%E7%AE%A1%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%80%E3%83%BC?src=hash">#ブラウン管シェーダー</a> <a href="https://t.co/Som59KI8nl">pic.twitter.com/Som59KI8nl</a></p>&mdash; !args (@notargs) <a href="https://twitter.com/notargs/status/686752224391766016">2016年1月12日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>さらに飲み会で話を聞くと、アルバイトであの1000万DLを突破したスマフォゲームのコアパートのプログラムを手がけていたそうで、格の違いを見せつけられました＞＜</p>
+
+<h2 id="nikqさん">nikqさん</h2>
+
+<p><a href="https://twitter.com/h013">hole</a>さんの同僚の<a href="https://twitter.com/nikq">nikq</a>さん。</p>
+
+<p>リアルタイムなパストレーシングのデモすごかったですね。激戦区のDEMO Compoで3位とってました！</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://t.co/964xXvOEVb">https://t.co/964xXvOEVb</a> <a href="https://t.co/hKRspPsCUH">https://t.co/hKRspPsCUH</a><br>pouetにsubmitしたら、間違えてpc64kにしちゃったよね <a href="https://t.co/w5lIYufVt1">pic.twitter.com/w5lIYufVt1</a></p>&mdash; nikq (@nikq) <a href="https://twitter.com/nikq/status/701549075582160896">2016年2月21日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="veloさん">veloさん</h2>
+
+<p>スウェーデンの<a href="https://www.facebook.com/approximate.demoscene/">&ldquo;Approximate&rdquo;というデモグループ</a>の音楽担当の<a href="https://twitter.com/velo_aprx">velo</a>さん。</p>
+
+<p>打ち上げの席で一緒になりました。</p>
+
+<p>聞き間違えでなければ、全世界のデモイベントに参加していて、80回以上の参加しているとか！</p>
+
+<p>「Amigaは日本で有名か？」という質問には笑ってしまいました（TDFの参加者がAmiga大好きなのは何故なんだろう…）。</p>
+
+<p>また、Approximateのグラフィックプログラマーの<a href="http://6octaves.blogspot.jp/2016/01/crypticapproximate.html">Crypticさんのインタビュー記事</a>を見せてくれました。</p>
+
+<p>（自分のひどい英語に根気よく付き合ってくださってありがとうございました＞＜）</p>
+
+<h2 id="0x4015-yet11さん">0x4015 &amp; YET11さん</h2>
+
+<p>&ldquo;2nd stage BOSS&rdquo;はDEMO Compo 1位の作品です。圧倒的なクオリティの作品です。</p>
+
+<p>0x4015さんが映像、YET11さんが音楽の作者さんです。</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SFoyJED5A4s" frameborder="0" allowfullscreen></iframe>
+
+<p>こんな凄まじい作品が4K部門なんて信じられないですね。</p>
+
+<p>残念なことに、0x4015さんもYET11さんにもお会いできませんでした。来年こそは是非お会いしたい！</p>
+
+<h3 id="2nd-stage-bossはレイマーチング作品">2nd stage BOSSはレイマーチング作品！？</h3>
+
+<p>この記事を執筆している途中で知ったのですが、<a href="https://twitter.com/i_saint">i_saint</a>さんによると、レイマーチングで実装してるみたいですね。
+i_saintさんが<a href="https://t.co/4lr7GbTnFc">&ldquo;2nd stage BOSS&rdquo;をGLSL Sandboxにポートしていて</a>、たいへん驚きました。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/gam0022">@gam0022</a> yes です。4k 作品はピクセルシェーダ以外に割く容量がほぼ無いのと、現状レイマーチが最も低容量で綺麗な 3DCG 出す方法なので、GLSL Sandbox とかにポート可能な作品も多いです。 (私もコードの具体的な内容は全然理解できてません！)</p>&mdash; i-saint (@i_saint) <a href="https://twitter.com/i_saint/status/702862298600198144">2016年2月25日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>さらに、Shadertoyにも移植されて、音楽まで含めて完全にWebGLで再現できるようになっていました。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">So <a href="https://twitter.com/i_saint">@i_saint</a> and I decompiled &quot;Second stage BOSS&quot;, extracted the shaders, and patched it for WebGL. Enjoy! <a href="https://t.co/ezmkRsZ6J5">https://t.co/ezmkRsZ6J5</a> <a href="https://twitter.com/hashtag/shadertoy?src=hash">#shadertoy</a></p>&mdash; Michael Tedder (@_Falken) <a href="https://twitter.com/_Falken/status/702863221409976321">2016年2月25日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>また、<a href="https://twitter.com/kioku_systemk">kioku_systemk</a>さんから、4KBプロシージャルGFXのテンプレートを教えていただきました。
+このようなテンプレートがあれば、4Kデモのシェーダプログラムに集中できるので、素晴らしいですね。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/i_saint">@i_saint</a> <a href="https://twitter.com/gam0022">@gam0022</a> 最近の向けの説明だとこっちの方が目的のものに近いかもです。 <a href="https://t.co/ylBByZfESf">https://t.co/ylBByZfESf</a></p>&mdash; kioku@TDF片付け (@kioku_systemk) <a href="https://twitter.com/kioku_systemk/status/702877874462728192">2016年2月25日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>GLSL sandboxへのportが可能であれば、逆に4Kのexeにもport可能なはずなので、来年のTDFでは4K Compoから出してもいいかな、とちょっと考えました。
+しかし、自分には音楽をプロシージャルに作る技術は無いので、冷静に考えたら無謀でしたｗ</p>
+
+<p>せっかくシェーダのコードが公開されているので、研究させていただきます！</p>
+
+<p>大会が終わった後でも、こんなにもワクワクさせてくれるTDFは本当に最高ですね！</p>
+
+<p>いつか自分も、このくらいのデモを作れるようになりたいなぁ…（無理だなぁ）</p>
+
+<h1 id="おわりに">おわりに</h1>
+
+<p>興味の近い人と交流するのって、最高に楽しいですね！</p>
+
+<p>来年も参加するので、よろしくお願いしますm(_ _)m</p>
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-02-24 08:19:00 &#43;0900 JST" itemprop="datePublished">2016-02-24</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/demo">demo</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/" class="hatena-bookmark-button" data-hatena-bookmark-title="#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/" data-text="#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2016/02/24/tokyo-demo-fest/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://gam0022.net/blog/2016/02/16/glsl-tech/"><span aria-hidden="true">&larr;</span> GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました</a></li>
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/blog/2016/04/09/qiita-raymarching/">GPUをつかったリアルタイムなレイトレーシング <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/blog\/2016\/02\/24\/tokyo-demo-fest\/';
+    var disqus_title = '#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！';
+    var disqus_url = 'https:\/\/gam0022.net\/blog\/2016\/02\/24\/tokyo-demo-fest\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#はじめに">はじめに</a></li>
+<li><a href="#carbon-製作秘話">Carbon 製作秘話</a>
+<ul>
+<li><a href="#実装的な細かい話">実装的な細かい話</a></li>
+<li><a href="#カメラのデバッグ">カメラのデバッグ</a></li>
+</ul></li>
+<li><a href="#tdfで出会った-すごい人たち">TDFで出会った、すごい人たち</a>
+<ul>
+<li><a href="#doxasさん">doxasさん</a></li>
+<li><a href="#mr-doob">Mr.Doob</a></li>
+<li><a href="#yomotsuさん">yomotsuさん</a></li>
+<li><a href="#fms-catくん">FMS_Catくん</a></li>
+<li><a href="#gaziyaさん">gaziyaさん</a></li>
+<li><a href="#soma-arcくん">soma_arcくん</a></li>
+<li><a href="#notargsくん">notargsくん</a></li>
+<li><a href="#nikqさん">nikqさん</a></li>
+<li><a href="#veloさん">veloさん</a></li>
+<li><a href="#0x4015-yet11さん">0x4015 &amp; YET11さん</a>
+<ul>
+<li><a href="#2nd-stage-bossはレイマーチング作品">2nd stage BOSSはレイマーチング作品！？</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#おわりに">おわりに</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

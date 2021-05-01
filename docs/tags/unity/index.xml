@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/unity/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました</title>
+      <link>https://gam0022.net/blog/2020/09/17/kec2/</link>
+      <pubDate>Thu, 17 Sep 2020 12:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2020/09/17/kec2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2020-09-14-kec2/name-card-original.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-09-14-kec2/name-card.jpg&#34; alt=&#34;ネームカード&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;9/8～9/12に開催されたKLab Expert Camp（KEC）の第2回にメンターとして参加しました。&lt;/p&gt;
+
+&lt;p&gt;今回のKLab Expert Campは「シェーダー」がテーマでした。&lt;/p&gt;
+
+&lt;p&gt;5日間（平日4日間＋土曜日に成果発表＆懇親会）の日程でひたすらシェーダーを書き続けるという、エクストリームかつ珍しい内容の技術系インターンです。&lt;/p&gt;
+
+&lt;p&gt;当日の様子はハッシュタグ &lt;a href=&#34;https://twitter.com/search?q=%23KLabExpertCamp%20since%3A2020-01-01_00%3A00%3A00_JST%20until%3A2020-12-31_00%3A00%3A00_JST&amp;amp;src=typed_query&#34;&gt;#KLabExpertCamp&lt;/a&gt; から確認できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;開催の経緯&#34;&gt;開催の経緯&lt;/h1&gt;
+
+&lt;p&gt;メンターとして、私（&lt;a href=&#34;https://twitter.com/gam0022&#34;&gt;@gam0022&lt;/a&gt;）とかねたさん（&lt;a href=&#34;https://twitter.com/kanetaaaaa&#34;&gt;@kanetaaaaa&lt;/a&gt;）、運営スタッフとして人事のKの27乗さん（&lt;a href=&#34;https://twitter.com/oktillion27&#34;&gt;@oktillion27&lt;/a&gt;）の3名で今回のイベントを企画・運営しました。&lt;/p&gt;
+
+&lt;p&gt;私はデモパーティ（デモを鑑賞したり完成度を競ったりして楽しむイベント）が好きなので、デモパーティを意識して企画を考えました。&lt;/p&gt;
+
+&lt;p&gt;大画面で自分たちの作品を上映して、参加者でワイワイするのがすごく楽しいので、そのような雰囲気をデモパーティに参加したことのない学生にも感じて欲しいという思いがありました。&lt;/p&gt;
+
+&lt;p&gt;そして、優秀な若人にもデモシーンに参入してもらい、国内のデモシーンをもっと盛り上げたいと思っていました。&lt;/p&gt;
+
+&lt;p&gt;当初は3月にオフラインで開催する予定だったのですが、昨今の感染症に関する状況を鑑み、オンラインでの開催となりました。&lt;/p&gt;
+
+&lt;p&gt;オンライン開催だったので、大画面で上映はできませんでしたが、デモパーティの楽しさを少しでも参加者に感じ取ってもらえたのならば、とても嬉しいです。&lt;/p&gt;
+
+&lt;p&gt;昨今の感染症の影響もあって、残念ながら国内のデモパーティは開催の見通しが立たない状況になってしまったので、参加者にとって代替イベントのひとつになっていれば幸いです。&lt;/p&gt;
+
+&lt;p&gt;開催の経緯については、かねたさんの参加レポートを合わせて読むことで、内容を補完できると思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; でメンターをした感想などを書きました。&lt;br&gt;参加者の皆様ありがとうございました。そしてお疲れ様でした。&lt;a href=&#34;https://t.co/0pOSbv5xJN&#34;&gt;https://t.co/0pOSbv5xJN&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1306044957556273154?ref_src=twsrc%5Etfw&#34;&gt;September 16, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;インターンの内容について&#34;&gt;インターンの内容について&lt;/h1&gt;
+
+&lt;p&gt;オンライン開催ということで、Google MeetとSlackを利用しました。&lt;/p&gt;
+
+&lt;p&gt;メンター2人で約1時間の講義を合計4つ行い、講義のない残りの時間はひたすら参加者の制作時間としました。&lt;/p&gt;
+
+&lt;p&gt;参加した学生は13名でした。全国からシェーダーに強い優秀な学生が集まりました。&lt;/p&gt;
+
+&lt;p&gt;少なくともメンターの1人は常時Google Meetに待機して、Slackでも随時質問を受け付ける体制にしました。&lt;/p&gt;
+
+&lt;p&gt;そして、最終日には成果発表＆懇親会を行いました。&lt;/p&gt;
+
+&lt;p&gt;オンライン開催となってしまった分、少しでも参加者に楽しんでいただけるような工夫として、5日分のノベルティやお菓子を郵送しました（Kの27乗さんのアイデアで、郵送などの準備も全部してもらった）。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;4日目の箱の中には、こんなものをご用意しました！&lt;br&gt;&lt;br&gt;（お菓子とノベルティグッズ（モバイルバッテリー）のセットです。開発に集中しすぎて、もしスマホの充電を忘れてしまったときにぜひ使ってくださいね！）&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; &lt;a href=&#34;https://t.co/7ssZogITE4&#34;&gt;pic.twitter.com/7ssZogITE4&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kの27乗 (@oktillion27) &lt;a href=&#34;https://twitter.com/oktillion27/status/1304247375393816576?ref_src=twsrc%5Etfw&#34;&gt;September 11, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;講義&#34;&gt;講義&lt;/h1&gt;
+
+&lt;p&gt;運営内で協議した結果、講義の資料の公開については、参加者のみにしました。&lt;/p&gt;
+
+&lt;p&gt;この記事では、講義の内容について可能な範囲で概要を紹介します。&lt;/p&gt;
+
+&lt;h2 id=&#34;担当講義1-シェーダー芸のプロダクション利用&#34;&gt;担当講義1「シェーダー芸のプロダクション利用」&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;2日目の本日は、この後2つ目の講義を実施予定です。&lt;br&gt;&lt;br&gt;外部非公開の内容の為、このツイートで詳細をご紹介できません…！参加者のみなさんに、本日の講義もワクワクしてもらえるような内容だと嬉しい限りです！&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kの27乗 (@oktillion27) &lt;a href=&#34;https://twitter.com/oktillion27/status/1303591474601144321?ref_src=twsrc%5Etfw&#34;&gt;September 9, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;KLabはモバイルゲームを開発・運用している会社です。&lt;/p&gt;
+
+&lt;p&gt;そこで、「シェーダーがモバイルゲームにどのように活用されているか？」について、実践的な内容を紹介しました。&lt;/p&gt;
+
+&lt;p&gt;モバイル端末の性能はかなり幅広く、性能が低いGPUの端末もたくさん存在します。&lt;/p&gt;
+
+&lt;p&gt;レイマーチングのようなフラグメントシェーダーを酷使する高負荷なシェーダーの利用は難しいため、一般的にはシェーダー芸を活用するイメージは沸かないかもしれません。&lt;/p&gt;
+
+&lt;p&gt;しかし、シェーダー芸をうまく活用すれば、むしろレンダリングの負荷を削減できます！&lt;/p&gt;
+
+&lt;p&gt;たとえば、頂点シェーダーでアニメーション計算やスキニング計算をCPU計算からGPU計算に置き換えば、アプリの負荷がCPUバウンドの場合は性能向上ができます。&lt;/p&gt;
+
+&lt;p&gt;また、商業用のタイトルでどんなシェーダーが利用されているのかについて、具体的な事例を紹介しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;担当講義2-シェーダー芸で役立ちそうな知識の詰め合わせ&#34;&gt;担当講義2「シェーダー芸で役立ちそうな知識の詰め合わせ」&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;3DCGのための行列（導出方法や重要な特徴）、ノイズ、イージング関数など、個人的に「これだけは知っておきたい」という知識をピックアップして紹介しました。&lt;br&gt;おまけとして、便利なツールの紹介もしました。&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; &lt;a href=&#34;https://t.co/VOoRInqMtO&#34;&gt;https://t.co/VOoRInqMtO&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ CGWORLD 10月号に寄稿 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1304007251795914754?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;3DCGのための行列（導出方法や重要な特徴）、ノイズ、イージング関数など、個人的に「これだけは知っておきたい」という知識をピックアップして紹介しました。おまけとして、便利なツールの紹介もしました。&lt;/p&gt;
+
+&lt;p&gt;行列は3DCGにおいては必須科目ですが、3DCGに特化した分かりやすい資料や説明が少ないと以前から感じていました。&lt;/p&gt;
+
+&lt;p&gt;そこで、行列について「3DCGに特化」した直感的で分かりやすい説明を目指して講義を行いました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;基底ベクトル&lt;/strong&gt;から&lt;strong&gt;視覚的かつ直感的&lt;/strong&gt;に、「回転行列、拡大縮小の行列、せん断」などの線形変換の行列を生成できることを示して、よくある変換行列の定義は覚える必要がないことを説明したり、
+回転行列の転置が逆行列となる直交行列の性質を説明したりしました。また、線形変換やアフィン変換などの用語についても説明しました。&lt;/p&gt;
+
+&lt;p&gt;さらに、ノイズやイージング関数で映像作品の品質を向上するテクニックを具体例を踏まえながら紹介しました。&lt;/p&gt;
+
+&lt;p&gt;最後に、Shadertoyの再生時間をシークしたり、連番でPNG保存するChromeの拡張機能、連番画像からffmpegでmp4に変換する方法、YouTubeにアップロードするための最適なビットレート調整のパラメーターなど秘伝のタレ的な知識も公開しました。&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;参加者の方々、5日間お疲れさまでした！&lt;br&gt;&lt;br&gt;レベルの高い作品だらけで驚かされました😍&lt;br&gt;この調子でデモパーティにもエントリーして欲しいです！&lt;br&gt;&lt;br&gt;メンターという立場で参加しましたが、参加者のみなさんに刺激をたくさん貰いました！&lt;br&gt;とても楽しかったです！ありがとうございました！&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ CGWORLD 10月号に寄稿 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1304769327380406272?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;まず、参加者のレベルが非常に高いことに驚かされました。&lt;/p&gt;
+
+&lt;p&gt;インターンの選考をしている時点で、技術力の高い優秀な学生ばかり集まっていることは分かっていたので「どうしたら満足してもらえる講義になるか？」とメンターとしてはかなりプレッシャーを感じていました。
+たとえば、レイマーチングの基礎などを説明をしたとしても、知っていることばかりで何も持ち帰ってもらえずに終わってしまう可能性が高いと考えました。
+紆余曲折があって、最終的に上記のような講義内容になりました。
+アンケート結果によると、いずれの講義も参加者の満足度がとても高かったので、講義の難易度や内容のバランス調整は概ね成功だったと思っています。
+また、どの講義もとても真剣に聞いていただけて、質疑応答でも本質を突くような鋭い質問が多かったので、メンターとしてもやりやすくて大満足でした！&lt;/p&gt;
+
+&lt;p&gt;さらに、最終日の成果発表では、メンターたちの予想を遥かに上回るレベルの高い作品が次々に発表されて、驚きと興奮の連続でした！！&lt;/p&gt;
+
+&lt;p&gt;講義やオリエンテーションの時間を含めると、実質3日弱の期間だったので、かなり厳しいスケジュールだったと思うのですが、参加者のみなさんは本当にすごいと思いました。&lt;/p&gt;
+
+&lt;p&gt;また、インターン期間中はGoogle MeetやSlackでシェーダーに関する雑談や疑問について参加者と語り合うことができ、参加者からも刺激をたくさんもらって、メンターという立場を忘れそうになるくらいに楽しかったです！&lt;/p&gt;
+
+&lt;p&gt;今回はメンターという立場で参加しましたが、これからもシェーダーが好きな仲間として参加者の方々と交流していきたいと思いました！&lt;/p&gt;
+
+&lt;p&gt;参加者の方々、本当にお疲れさまでした！そして、ありがとうございました！&lt;/p&gt;
+
+&lt;h1 id=&#34;参加レポートのリンク&#34;&gt;参加レポートのリンク&lt;/h1&gt;
+
+&lt;p&gt;大変ありがたいことに参加レポートを書いてくださった参加者がいるので、こちらにリンクを貼ります。&lt;/p&gt;
+
+&lt;p&gt;発見したら、随時更新します。&lt;/p&gt;
+
+&lt;p&gt;※投稿時間順&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;はてなブログに投稿しました &lt;a href=&#34;https://twitter.com/hashtag/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#はてなブログ&lt;/a&gt;&lt;br&gt;KLabExpertCampに参加して作ったembraceの解説を語る - 覚え書き&lt;a href=&#34;https://t.co/wl3MHcxtQr&#34;&gt;https://t.co/wl3MHcxtQr&lt;/a&gt;&lt;/p&gt;&amp;mdash; tonoshake🍶 (@TonoShake) &lt;a href=&#34;https://twitter.com/TonoShake/status/1304970930783887361?ref_src=twsrc%5Etfw&#34;&gt;September 13, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; の話を書きました～&lt;br&gt;はてなブログに投稿しました &lt;a href=&#34;https://twitter.com/hashtag/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#はてなブログ&lt;/a&gt;&lt;br&gt;KLab Expert Campに参加してきました - Butadiene Works &lt;a href=&#34;https://t.co/zBV5bcEkZt&#34;&gt;https://t.co/zBV5bcEkZt&lt;/a&gt;&lt;/p&gt;&amp;mdash; ブタジエン (@butadiene121) &lt;a href=&#34;https://twitter.com/butadiene121/status/1305001646301220864?ref_src=twsrc%5Etfw&#34;&gt;September 13, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;成果発表の作品リンク&#34;&gt;成果発表の作品リンク&lt;/h1&gt;
+
+&lt;p&gt;成果発表の作品のリンクを貼ります。とてもクオリティの高い作品ばかりです！&lt;/p&gt;
+
+&lt;p&gt;発見したら、随時更新します。&lt;/p&gt;
+
+&lt;p&gt;※投稿時間順&lt;/p&gt;
+
+&lt;!--blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt;&lt;br&gt;「embrace」です&lt;a href=&#34;https://t.co/8DMSc7ItvZ&#34;&gt;https://t.co/8DMSc7ItvZ&lt;/a&gt;&lt;br&gt;shadertoyなど関連リンクはツリーにつなげます&lt;/p&gt;&amp;mdash; tonoshake🍶 (@TonoShake) &lt;a href=&#34;https://twitter.com/TonoShake/status/1304704452788498433?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script--&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt;&lt;br&gt;&amp;quot;metaball and hexagon ver.1.0&amp;quot; by &amp;quot;Santa&amp;quot; &lt;a href=&#34;https://t.co/3UlZzelxro&#34;&gt;https://t.co/3UlZzelxro&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/NEORT?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#NEORT&lt;/a&gt;&lt;/p&gt;&amp;mdash; 𝙎𝙖𝙣𝙩𝙖 (@santa_sukitoku) &lt;a href=&#34;https://twitter.com/santa_sukitoku/status/1304704651749539840?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; で流体シミュレーション作りました！&lt;br&gt;leapmotion使って自分の手で混ぜ混ぜできます😆&lt;a href=&#34;https://twitter.com/hashtag/madewithunity?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#madewithunity&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/unity?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#unity&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/shader?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#shader&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/geometry?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#geometry&lt;/a&gt; &lt;a href=&#34;https://t.co/iEfugMgbCD&#34;&gt;pic.twitter.com/iEfugMgbCD&lt;/a&gt;&lt;/p&gt;&amp;mdash; Fᴇʏʀɪs💤VRC民 (@Feyris77) &lt;a href=&#34;https://twitter.com/Feyris77/status/1304712464789942273?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; でLayered Materialを制作しました。&lt;br&gt;動画提出が規定なのでフレーク塗装/カーボンファイバー塗装の車にセットアップして、vaperwaveっぽい背景で走らせました。（音楽はvaperwaveっぽくはない？よね？） &lt;a href=&#34;https://t.co/0gTMFhH0fo&#34;&gt;pic.twitter.com/0gTMFhH0fo&lt;/a&gt;&lt;/p&gt;&amp;mdash; Haruka Kjt (@kajitaj63b3) &lt;a href=&#34;https://twitter.com/kajitaj63b3/status/1304714516177981440?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; で初めてパストレーシングを勉強してそれを用いて動画作品を作りました！！　見ていってください！&lt;a href=&#34;https://t.co/h31s5hK0YT&#34;&gt;https://t.co/h31s5hK0YT&lt;/a&gt;&lt;/p&gt;&amp;mdash; ブタジエン (@butadiene121) &lt;a href=&#34;https://twitter.com/butadiene121/status/1304715353528778752?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; でglslを使ってデモっぽいものを作成しました。良かったら見てね！&lt;a href=&#34;https://t.co/3gmJkDlGJC&#34;&gt;https://t.co/3gmJkDlGJC&lt;/a&gt; &lt;a href=&#34;https://t.co/eV0CPbvdtB&#34;&gt;pic.twitter.com/eV0CPbvdtB&lt;/a&gt;&lt;/p&gt;&amp;mdash; 避雷 (@lucknknock) &lt;a href=&#34;https://twitter.com/lucknknock/status/1304721446216675328?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;FlashBack&lt;a href=&#34;https://twitter.com/hashtag/klabexpertcamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klabexpertcamp&lt;/a&gt; での最終成果です！&lt;br&gt;レイマーチングとWebGLを混ぜ合わせました。&lt;a href=&#34;https://t.co/kv3O0VksYe&#34;&gt;https://t.co/kv3O0VksYe&lt;/a&gt; &lt;a href=&#34;https://t.co/PJQk8rn9K8&#34;&gt;https://t.co/PJQk8rn9K8&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/threejs?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#threejs&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/webgl?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#webgl&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/glsl?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#glsl&lt;/a&gt; &lt;a href=&#34;https://t.co/O60mnFeGYZ&#34;&gt;pic.twitter.com/O60mnFeGYZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; ukonpower (@UkskSan) &lt;a href=&#34;https://twitter.com/UkskSan/status/1304721668158308352?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; &lt;br&gt;投稿作品です！　GLSLでフラクタル書きました！&lt;a href=&#34;https://t.co/olmvCDfB7V&#34;&gt;https://t.co/olmvCDfB7V&lt;/a&gt;&lt;/p&gt;&amp;mdash; hibit (@hibit_at) &lt;a href=&#34;https://twitter.com/hibit_at/status/1304727106132176897?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; で作りました～ &lt;a href=&#34;https://t.co/ckqwJojqlX&#34;&gt;https://t.co/ckqwJojqlX&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/glsl?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#glsl&lt;/a&gt; &lt;a href=&#34;https://t.co/GEm63mdUEd&#34;&gt;pic.twitter.com/GEm63mdUEd&lt;/a&gt;&lt;/p&gt;&amp;mdash; 寝る前 (@nerumae3) &lt;a href=&#34;https://twitter.com/nerumae3/status/1304736190134775808?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; で制作しました！&lt;br&gt;凄い人ばかりでめちゃくちゃ良い経験になりました！&lt;a href=&#34;https://t.co/astTdcYc79&#34;&gt;https://t.co/astTdcYc79&lt;/a&gt;&lt;/p&gt;&amp;mdash; 3yen (@3yen_CG) &lt;a href=&#34;https://twitter.com/3yen_CG/status/1304754989412134912?ref_src=twsrc%5Etfw&#34;&gt;September 12, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;メンター賞を頂いたあの「embrace」がツイッター投稿版になりました！&lt;br&gt;ツイッター限定で、映画と同じフレームレートで書き出したバージョンになります&lt;br&gt;フレームレートを下げることで雰囲気も変わりました&lt;br&gt;ぜひ見てください！&lt;a href=&#34;https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#KLabExpertCamp&lt;/a&gt; &lt;a href=&#34;https://t.co/XE6wsLfws4&#34;&gt;https://t.co/XE6wsLfws4&lt;/a&gt; &lt;a href=&#34;https://t.co/47sXyr8FtL&#34;&gt;pic.twitter.com/47sXyr8FtL&lt;/a&gt;&lt;/p&gt;&amp;mdash; tonoshake🍶 (@TonoShake) &lt;a href=&#34;https://twitter.com/TonoShake/status/1304933850754068480?ref_src=twsrc%5Etfw&#34;&gt;September 13, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました</title>
+      <link>https://gam0022.net/blog/2020/09/13/cgworld-vol266/</link>
+      <pubDate>Sun, 13 Sep 2020 20:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2020/09/13/cgworld-vol266/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-09-13-cgworld-vol266/Collage_Fotor.jpg&#34; alt=&#34;CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。&lt;/p&gt;
+
+&lt;p&gt;デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。&lt;/p&gt;
+
+&lt;p&gt;この記事をきっかけにCGWORLD読者の方々にもデモシーンに興味をもっていただき、国内のデモシーンが盛り上がっていくことを願っています。&lt;/p&gt;
+
+&lt;p&gt;もちろん自分の活動を知っている方々もお手に取っていただければとても嬉しいです！&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。&lt;br&gt;&lt;br&gt;デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。&lt;a href=&#34;https://t.co/BPf1txlSxU&#34;&gt;https://t.co/BPf1txlSxU&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/CGWjp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CGWjp&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/demoscene?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#demoscene&lt;/a&gt; &lt;a href=&#34;https://t.co/XXpCh1xiFw&#34;&gt;pic.twitter.com/XXpCh1xiFw&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ #CEDEC2020 9/4登壇, CGWORLD 10月号 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1301514617588518915?ref_src=twsrc%5Etfw&#34;&gt;September 3, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;購入方法&#34;&gt;購入方法&lt;/h1&gt;
+
+&lt;p&gt;Amazonのアフェリエイトリンクを貼っておきます。&lt;/p&gt;
+
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=gam00220c-22&amp;language=ja_JP&amp;o=9&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08FP5NM5P&amp;linkId=8ed32da93c5253b64ba074583462b34a&#34;&gt;&lt;/iframe&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;Twitter上の反響を認知している範囲でメモしておきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;すごい、、表紙に「デモシーン」の文字があるぅ、、！&lt;a href=&#34;https://twitter.com/hashtag/CGWjp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CGWjp&lt;/a&gt;&lt;/p&gt;&amp;mdash; Setsuko (@setsuko_h) &lt;a href=&#34;https://twitter.com/setsuko_h/status/1303997649582874625?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;CGWORLD vol.266「デモシーンを支えるプロシージャル技術」を買ってきて読んだ。ディファードレンダリングか。まさに俺が手を付けようとしてるとこだね。これとエフェクトを何とかしないと勝負にはならないな。&lt;/p&gt;&amp;mdash; gaziya (@gaziya5) &lt;a href=&#34;https://twitter.com/gaziya5/status/1303907439134220288?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;がむさん…！ &lt;a href=&#34;https://t.co/0SV02Jq91M&#34;&gt;pic.twitter.com/0SV02Jq91M&lt;/a&gt;&lt;/p&gt;&amp;mdash; さだきち : sadakkey (@sadakkey) &lt;a href=&#34;https://twitter.com/sadakkey/status/1304006171674640386?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;余談&#34;&gt;余談&lt;/h1&gt;
+
+&lt;p&gt;ついに商業誌デビュー！と思ったら、よく考えたら2007年にWindows100%のフリーゲーム紹介コーナーに自作ゲームがちょっとだけ掲載されたのを思い出しました（当時は中学生）。&lt;/p&gt;
+
+&lt;p&gt;今回は4ページしっかりと担当できましたし、CGWORLDという映像業界において圧倒的な知名度のある雑誌に寄稿する機会をいただけて、本当に嬉しいです。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Unity] Y軸ビルボードシェーダーの実装と解説</title>
+      <link>https://gam0022.net/blog/2019/07/23/unity-y-axis-billboard-shader/</link>
+      <pubDate>Tue, 23 Jul 2019 09:30:09 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2019/07/23/unity-y-axis-billboard-shader/</guid>
+      <description>&lt;p&gt;こんな感じのY軸のビルボードをC#スクリプトを使わずに、シェーダーだけで実装しました（Unity 2018.3.12f1）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif&#34; alt=&#34;Y軸ビルボード&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHubリポジトリ: &lt;a href=&#34;https://github.com/gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard/Billboard.shader#L51-L82&#34;&gt;gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;この記事の要約&#34;&gt;この記事の要約&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;頂点シェーダーでView行列の回転（カメラに応じた回転）をスキップすれば、ビルボードができる&lt;/li&gt;
+&lt;li&gt;Unityは左手系座標だが、 &lt;strong&gt;View空間では右手系座標&lt;/strong&gt; なので、View変換をスキップするときには自前でZの符号を反転する必要がある&lt;/li&gt;
+&lt;li&gt;Y軸のビルボードが必要なら、View行列から回転行列のY軸成分のみを抽出した行列を作れば良い&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;シェーダーで実装するメリット&#34;&gt;シェーダーで実装するメリット&lt;/h1&gt;
+
+&lt;p&gt;シェーダーでビルボードを計算するメリットはたくさんあります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VRChatなどユーザのC#スクリプトが使えない環境でも動作する&lt;/li&gt;
+&lt;li&gt;シーンビュー上でも動作する&lt;/li&gt;
+&lt;li&gt;GPU（頂点シェーダー）でビルボード計算ができる
+
+&lt;ul&gt;
+&lt;li&gt;ビルボード計算のためのCPU負荷が全くかからない&lt;/li&gt;
+&lt;li&gt;板ポリの頂点数は4なので、頂点シェーダーで多少重い処理をしても、GPU負荷への影響はわずか&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;シェーダーのコード-全体&#34;&gt;シェーダーのコード（全体）&lt;/h1&gt;
+
+&lt;p&gt;最終的なシェーダーのコードはこちらです。&lt;/p&gt;
+
+&lt;p&gt;単体で動作しますので、コピペしてお使いいただけます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// Unity Y-Axis Billboard Shader by @gam0022
+// https://gam0022.net/blog/2019/07/23/unity-y-axis-billboard-shader/
+Shader &amp;quot;Unlit/Billboard&amp;quot;
+{
+    Properties
+    {
+        _MainTex (&amp;quot;Texture&amp;quot;, 2D) = &amp;quot;white&amp;quot; {}
+        [KeywordEnum(OFF, ALL_AXIS, Y_AXIS)] _BILLBOARD(&amp;quot;Billboard Mode&amp;quot;, Float) = 2
+        _Cutoff (&amp;quot;Alpha Cutoff&amp;quot;, Range(0, 1)) = 0.5
+    }
+    SubShader
+    {
+        Tags{ &amp;quot;Queue&amp;quot; = &amp;quot;AlphaTest&amp;quot; &amp;quot;RenderType&amp;quot; = &amp;quot;TransparentCutout&amp;quot;
+                &amp;quot;IgnoreProjector&amp;quot; = &amp;quot;True&amp;quot; &amp;quot;DisableBatching&amp;quot; = &amp;quot;True&amp;quot; }
+
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            // make fog work
+            #pragma multi_compile_fog
+
+            #include &amp;quot;UnityCG.cginc&amp;quot;
+            #pragma multi_compile _BILLBOARD_OFF _BILLBOARD_ALL_AXIS _BILLBOARD_Y_AXIS
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct v2f
+            {
+                float2 uv : TEXCOORD0;
+                UNITY_FOG_COORDS(1)
+                float4 vertex : SV_POSITION;
+            };
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+            
+            float _Cutoff;
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+
+                #if _BILLBOARD_OFF
+                {
+                    // ビルボードなしの通常の座標変換
+                    o.vertex = UnityObjectToClipPos(v.vertex);
+                }
+                #elif _BILLBOARD_ALL_AXIS
+                {                   
+                    // Meshの原点をModelView変換
+                    float3 viewPos = UnityObjectToViewPos(float3(0, 0, 0));
+                    
+                    // スケールと回転（平行移動なし）だけModel変換して、View変換はスキップ
+                    float3 scaleRotatePos = mul((float3x3)unity_ObjectToWorld, v.vertex);
+                    
+                    // scaleRotatePosを右手系に変換して、viewPosに加算
+                    // 本来はView変換で暗黙的にZが反転されているので、
+                    // View変換をスキップする場合は明示的にZを反転する必要がある
+                    viewPos += float3(scaleRotatePos.xy, -scaleRotatePos.z);
+                    
+                    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
+                }
+                #elif _BILLBOARD_Y_AXIS
+                {
+                    // Meshの原点をModelView変換
+                    float3 viewPos = UnityObjectToViewPos(float3(0, 0, 0));
+                    
+                    // スケールと回転（平行移動なし）だけModel変換して、View変換はスキップ
+                    float3 scaleRotatePos = mul((float3x3)unity_ObjectToWorld, v.vertex);                
+                    
+                    // View行列から回転行列のY軸成分のみを抽出
+                    float3x3 ViewRotateY = float3x3(
+                        1, UNITY_MATRIX_V._m01, 0,
+                        0, UNITY_MATRIX_V._m11, 0,
+                        0, UNITY_MATRIX_V._m21, -1// Zの符号を反転して右手系に変換
+                    );
+                    viewPos += mul(ViewRotateY, scaleRotatePos);
+                    
+                    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
+                }
+                #endif
+
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
+                return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+                // sample the texture
+                fixed4 col = tex2D(_MainTex, i.uv);
+                clip(col.a - _Cutoff);
+                
+                // apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
+            }
+            ENDCG
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&#34;ビルボードのモードについて&#34;&gt;ビルボードのモードについて&lt;/h2&gt;
+
+&lt;p&gt;このようにビルボードのモードをインスペクタで選択できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/shader_inspector.png&#34; alt=&#34;シェーダーのインスペクタ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;それぞれの結果を並べました。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;OFF: ビルボードなし&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;ALL_AXIS: 通常のビルボード&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Y_AXIS: Y軸のビルボード&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_off.gif&#34; alt=&#34;ビルボードなし&#34; /&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_all_axis.gif&#34; alt=&#34;ビルボードあり&#34; /&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif&#34; alt=&#34;Y軸ビルボード&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;通常の描画&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;上から見たときの違和感が大きい&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;上から見たときの違和感を緩和できる&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;コードの解説&#34;&gt;コードの解説&lt;/h1&gt;
+
+&lt;p&gt;ここから、本題であるシェーダーの解説を行います。&lt;/p&gt;
+
+&lt;h2 id=&#34;通常のビルボード&#34;&gt;通常のビルボード&lt;/h2&gt;
+
+&lt;p&gt;通常のビルボードの頂点シェーダーの処理を抜粋しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#elif _BILLBOARD_ALL_AXIS
+{                   
+    // ①Meshの原点をModelView変換
+    float3 viewPos = UnityObjectToViewPos(float3(0, 0, 0));
+    
+    // ②スケールと回転（平行移動なし）だけModel変換して、View変換はスキップ
+    float3 scaleRotatePos = mul((float3x3)unity_ObjectToWorld, v.vertex);
+    
+    // ③scaleRotatePosを右手系に変換して、viewPosに加算
+    // 本来はView変換で暗黙的にZが反転されているので、
+    // View変換をスキップする場合は明示的にZを反転する必要がある
+    viewPos += float3(scaleRotatePos.xy, -scaleRotatePos.z);
+    
+    // ④最後にプロジェクション変換
+    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;①について&#34;&gt;①について&lt;/h3&gt;
+
+&lt;p&gt;記事の冒頭で&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;1.頂点シェーダーでView行列の回転（カメラに応じた回転）をスキップすれば、ビルボードができる&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;と書きましたが、厳密にはMeshの原点だけはView変換を行います。&lt;/p&gt;
+
+&lt;p&gt;原点は回転の影響を受けないので、普通にModelView変換することで平行移動のみ適応できます。&lt;/p&gt;
+
+&lt;h3 id=&#34;②について&#34;&gt;②について&lt;/h3&gt;
+
+&lt;p&gt;Model行列よる平行移動は①で処理しているので、スケールと回転だけを各頂点に適応します。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;(float3x3)unity_ObjectToWorld&lt;/code&gt; のように &lt;code&gt;float3x3&lt;/code&gt; でキャストすることで、平行移動の行列の成分を捨てることができます。&lt;/p&gt;
+
+&lt;p&gt;列ベクトルの場合は4行目に平行移動の情報が入っていますが、キャストによって4列目の成分が消えるため、平行移動の成分が消えます。&lt;/p&gt;
+
+&lt;h3 id=&#34;③について&#34;&gt;③について&lt;/h3&gt;
+
+&lt;p&gt;①で&lt;code&gt;viewPos&lt;/code&gt; には原点のView空間の座標を代入しましたが、これに②で生成した各頂点の座標を加算しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;float3(scaleRotatePos.xy, -scaleRotatePos.z)&lt;/code&gt; のようにZ成分だけ符号を反転しているのは、冒頭の&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2.Unityは左手系座標だが、 &lt;strong&gt;View空間では右手系座標&lt;/strong&gt; なので、View変換をスキップするときには自前でZの符号を反転する必要がある&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;という理由によるものです。&lt;/p&gt;
+
+&lt;p&gt;左手系座標ではZ軸とカメラのforwardベクトルが同じ向きですが、右手系座標では反対向きになります。&lt;/p&gt;
+
+&lt;p&gt;私はこのUnityの仕様を知らずに、かなり悩んでしまいました…&lt;/p&gt;
+
+&lt;p&gt;私がネットで見つけたUnityのビルボードのシェーダーの実装のほとんどはZを反転する処理が抜けていました。
+そのため、Box等の厚みのあるMeshに用いると、Cullingが反転して背面ポリゴンが描画される不具合がありました。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Z反転なし&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Z反転あり&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/z_reverse_off.png&#34; alt=&#34;Z反転なし&#34; /&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-07-22-unity-y-axis-billboard-shader/z_reverse_on.png&#34; alt=&#34;Z反転あり&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;NG: Cullingが反転して背面ポリゴンが描画されている&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;OK: 正常に表面ポリゴンが描画されている&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;④について&#34;&gt;④について&lt;/h3&gt;
+
+&lt;p&gt;View座標にプロジェクション行列を乗算すると、最終的なクリッピング座標を計算できます（定形処理）。&lt;/p&gt;
+
+&lt;h2 id=&#34;y軸のビルボード&#34;&gt;Y軸のビルボード&lt;/h2&gt;
+
+&lt;p&gt;Y軸のビルボードの頂点シェーダーの処理を抜粋しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#elif _BILLBOARD_Y_AXIS
+{
+    // ①Meshの原点をModelView変換
+    float3 viewPos = UnityObjectToViewPos(float3(0, 0, 0));
+    
+    // ②スケールと回転（平行移動なし）だけModel変換して、View変換はスキップ
+    float3 scaleRotatePos = mul((float3x3)unity_ObjectToWorld, v.vertex);                
+    
+    // ③View行列からY軸の回転だけ抽出した行列を生成
+    float3x3 ViewRotateY = float3x3(
+        1, UNITY_MATRIX_V._m01, 0,
+        0, UNITY_MATRIX_V._m11, 0,
+        0, UNITY_MATRIX_V._m21, -1// Zの符号を反転して右手系に変換
+    );
+    viewPos += mul(ViewRotateY, scaleRotatePos);
+    
+    // ④最後にプロジェクション変換
+    o.vertex = mul(UNITY_MATRIX_P, float4(viewPos, 1));
+}
+#endif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;①②④について&#34;&gt;①②④について&lt;/h3&gt;
+
+&lt;p&gt;①②④については、通常のビルボードと全く同じ処理なので、説明を割愛します。&lt;/p&gt;
+
+&lt;h3 id=&#34;③について-1&#34;&gt;③について&lt;/h3&gt;
+
+&lt;p&gt;③の &lt;code&gt;ViewRotateY&lt;/code&gt; は冒頭で説明したこの行列です。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;3.Y軸のビルボードが必要なら、View行列から回転行列のY軸成分のみを抽出した行列を作れば良い&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;View行列から回転行列のY軸成分だけ抽出して、X軸とZ軸は変換しないようにしています。&lt;/p&gt;
+
+&lt;p&gt;通常のビルボードと同様に、View空間では右手系座標とするために、3行3列目には -1 を指定しています。&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;ビルボードくらいサクッと実装できると思いきや、View空間が右手系座標になっているとは夢にも思わず、すこし苦戦しました。&lt;/p&gt;
+
+&lt;p&gt;そこで動作原理を解説した日本語の記事を探したものの、ほとんど見当たらなかったため、今回筆を執った次第です。&lt;/p&gt;
+
+&lt;p&gt;なるべく丁寧に解説したつもりでしたが、分かりにくい点や間違いがあればコメントやTwitterで教えてください。&lt;/p&gt;
+
+&lt;p&gt;ちなみに今回の方法だとドローコールバッチングができないため、次回はドローコールを減らす解決策を紹介するかもしれません。&lt;/p&gt;
+
+&lt;h1 id=&#34;参考資料&#34;&gt;参考資料&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unity公式リファレンス
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual//SL-BuiltinFunctions.html&#34;&gt;ビルトインシェーダーヘルパー機能&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual/SL-UnityShaderVariables.html&#34;&gt;ビルトインのシェーダー変数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/current/ScriptReference/Camera-worldToCameraMatrix.html&#34;&gt;Camera.worldToCameraMatrix&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ポイント: Note that camera space matches OpenGL convention: camera&amp;rsquo;s forward is the negative Z axis. This is different from Unity&amp;rsquo;s convention, where forward is the positive Z axis.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://edom18.hateblo.jp/entry/2019/01/04/153205&#34;&gt;Unityの行列の扱いとベクトルのオーダー周りについてまとめておく&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ポイント: UnityのC#は「列オーダー」。でもシェーダは「行オーダー」&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://logicalbeat.jp/blog/929/&#34;&gt;【Unity】【数学】Unityでのビュー＆プロジェクション行列とプラットフォームの関係&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ポイント: UnityのScene上は左手座標系が原則だが、シェーダ内の行列（UNITY_MATRIX_V）では右手座標系になっているという情報がある。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://marupeke296.com/DXG_No72_ViewProjInfo.html&#34;&gt;その72 ビュー・射影変換行列が持つ情報を抜き出そう&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Model行列・View行列・Projection行列の各成分が何だったか忘れたときに参考になります&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;既存のビルボードのシェーダー実装
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/kaiware007/8ebad2d28638ff83b6b74970a4f70c9a#file-billboard-shader-L47-L50&#34;&gt;Simple Billboard shader for Unity&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NOTE: Cullingの不具合あり&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/Unity3D/comments/ahqbod/a_billboard_sprite_shader_in_only_one_axis/eeieb6q/&#34;&gt;A billboard sprite shader in only one axis&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NOTE: 逆行列（転置行列）でViewのXZの回転を打ち消すアプローチなので、計算に無駄がある&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;利用したテクスチャ素材
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.pngall.com/tree-png/download/23754&#34;&gt;Tree PNG Clipart Background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.deviantart.com/fabooguy/art/Dirt-Ground-Texture-Tileable-2048x2048-441212191&#34;&gt;Dirt/Ground Texture [Tileable | 2048x2048]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unity×レイマーチングによる映像制作の実践手法</title>
+      <link>https://gam0022.net/blog/2019/06/25/unity-raymarching/</link>
+      <pubDate>Tue, 25 Jun 2019 09:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2019/06/25/unity-raymarching/</guid>
+      <description>&lt;p&gt;6/19に開催された&lt;a href=&#34;https://techplay.jp/event/733454&#34;&gt;UnityエンジニアによるShader勉強会！&lt;/a&gt;で「Unity×レイマーチングによる映像制作の実践手法」という発表をしました。&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;daf8218b7458460087137b6f23e938b3&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;この記事は、発表内容をブログ向けに編集・要約したものになります。スライドだけでは伝わりにくい箇所を文章でフォローしました。&lt;/p&gt;
+
+&lt;p&gt;発表当日の様子は前回の記事にまとめました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2019/06/20/klab-tech-meetup4/&#34;&gt;UnityエンジニアによるShader勉強会！に登壇しました | gam0022.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;発表の題材-wormhole&#34;&gt;発表の題材『WORMHOLE』&lt;/h1&gt;
+
+&lt;p&gt;TokyoDemoFest2018で発表した『WORMHOLE』という映像作品を題材とした発表です。&lt;/p&gt;
+
+&lt;p&gt;WORMHOLEの映像はUnityと&lt;a href=&#34;https://www.slideshare.net/shohosoda9/threejs-58238484&#34;&gt;レイマーチング&lt;/a&gt;を組み合わせて制作しました。&lt;/p&gt;
+
+&lt;p&gt;以下の記事で利用したテクニックは既に解説していましたが、今回は &lt;strong&gt;汎用的に役立ちそうなテクニック&lt;/strong&gt; に焦点を絞って、前回は説明しきれなかった部分を掘り下げて解説しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2018/12/12/tdf2018/&#34;&gt;Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編） | gam0022.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今回の発表では &lt;strong&gt;「形状」「質感」「演出」&lt;/strong&gt; の3つをテーマとして、WORMHOLEに用いたテクニックの解説を行いました。&lt;/p&gt;
+
+&lt;h1 id=&#34;形状-モデリング&#34;&gt;形状（モデリング）&lt;/h1&gt;
+
+&lt;p&gt;1つ目のテーマは &lt;strong&gt;「形状」&lt;/strong&gt; です。&lt;/p&gt;
+
+&lt;p&gt;CGの世界では、形状を決める作業をモデリングと呼びます。
+複雑なトンネルの形状を40行ほどの距離関数でモデリングする方法を解説しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.011.jpeg&#34; alt=&#34;トンネルの距離関数の設計アプローチ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;トンネルは既存のフラクタル図形をアレンジして設計しました。
+IFSと呼ばれる手法でMengerSpongeと呼ばれる有名なフラクタル図形を定義（図の左）して、IFSのパラメータを変化によって形状をアレンジ（図の中央）し、さらにfoldRotateという操作を加えるとトンネルの形状（図の右）が完成します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.012.jpeg&#34; alt=&#34;IFS（Iterated function system）とは&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;IFS&lt;/strong&gt; は自身の縮小コピーを重ね合わせることでフラクタル図形を作るテクニックです。
+IFSはIterated Function Systemの略で、その名前の通りforループの中で、fold、拡大や縮小、平行移動といった操作を繰り返して距離関数をつくります。
+forループで空間を操作してから、最後にBoxの距離関数を return します。&lt;/p&gt;
+
+&lt;p&gt;ループの中でスケールと位置を変化させながら空間を折りたたみをして、Boxが出現する座標空間を再帰的に繰り返すことで、Boxを再帰的に配置するイメージです。&lt;/p&gt;
+
+&lt;p&gt;foldの部分はかなり難解なので、1行ずつコメントアウトしながら変化を確認すると理解が深まると思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.013.jpeg&#34; alt=&#34;IFS（Iterated function system）のアレンジ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;この関数では平行移動はOffset、拡大縮小はScaleという名前のパラメータにしました。&lt;/p&gt;
+
+&lt;p&gt;このOffsetとScaleを変化させることで、フラクタル図形をアレンジできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.014.jpeg&#34; alt=&#34;foldRotateとは&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;foldRotate&lt;/strong&gt; （別名: &lt;strong&gt;polarMod&lt;/strong&gt; ）はある軸を中心として一定の角度で回転しながら空間を折りたたみする操作です。
+この回転の角度を変化させると、任意の図形を多角形の柱のような形に変形できます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三角柱を作りたいときは、360° を N = 3 で割った θ = 120° ずつ回転します。&lt;/li&gt;
+&lt;li&gt;元の形が立方体なので、N = 4 のときは変化がありませんが、元の図形の4分の1が繰り返されています。&lt;/li&gt;
+&lt;li&gt;N = 6 にすれば6角柱ができます。&lt;/li&gt;
+&lt;li&gt;N = 8 にすれば8角柱になります。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;WORMHOLEのトンネルには8角柱のfoldRotateを利用しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.018.jpeg&#34; alt=&#34;最終的なコード&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ここまで使ったIFSによるMengerSpongeの距離関数とfoldRotateを組み合わせた最終的な距離関数のコードがこちらです。
+なんと、わずか40行のコードで複雑な形状を定義できました！
+非常に短いコードだけで複雑なモデリングができるのが距離関数の強みです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;float3 _MengerOffset;
+float _MengerScale;
+float _MengerFold;
+
+// IFSによるMengerSpongeの距離関数
+float dMenger(float3 z0, float3 offset, float scale) {
+    float4 z = float4(z0, 1.0);
+    for (int n = 0; n &amp;lt; 4; n++) {
+        z = abs(z);
+
+        if (z.x &amp;lt; z.y) z.xy = z.yx;
+        if (z.x &amp;lt; z.z) z.xz = z.zx;
+        if (z.y &amp;lt; z.z) z.yz = z.zy;
+
+        z *= scale;
+        z.xyz -= offset * (scale - 1.0);
+
+        if (z.z &amp;lt; -0.5 * offset.z * (scale - 1.0))
+            z.z += offset.z * (scale - 1.0);
+    }
+    return (length(max(abs(z.xyz) - float3(1.0, 1.0, 1.0), 0.0)) - 0.05) / z.w;
+}
+
+// 2Dの回転行列の生成
+float2x2 rotate(in float a) {
+    float s = sin(a), c = cos(a);
+    return float2x2(c, s, -s, c);
+}
+
+// 回転のfold
+// https://www.shadertoy.com/view/Mlf3Wj
+float2 foldRotate(in float2 p, in float s) {
+    float a = PI / s - atan2(p.x, p.y);
+    float n = PI2 / s;
+    a = floor(a / n) * n;
+    p = mul(rotate(a), p);
+    return p;
+}
+
+// 最終的な距離関数
+inline float DistanceFunction(float3 pos) {
+    // 回転foldの適用
+    pos.yx = foldRotate(pos.yx, _MengerFold);
+
+    return dMenger(pos, _MengerOffset, _MengerScale);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;シェーダー全体: &lt;a href=&#34;https://github.com/gam0022/unity-demoscene/blob/master/Assets/Demoscene/Projects/2019-06-02-KLabTechMeetup4/Tunel.shader&#34;&gt;Tunel.shader&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;距離関数のfoldについてブログ記事を書いたので、もっと詳しく知りたい方はご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2017/03/02/raymarching-fold/&#34;&gt;距離関数のfold（折りたたみ）による形状設計 | gam0022.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;質感-ライティング&#34;&gt;質感（ライティング）&lt;/h1&gt;
+
+&lt;p&gt;2つ目のテーマは &lt;strong&gt;「質感」&lt;/strong&gt; です。&lt;/p&gt;
+
+&lt;p&gt;CGの世界では、質感はライティング処理によって計算されます。
+WORMHOLEではディファードレンダリングを採用しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.021.jpeg&#34; alt=&#34;ディファードレンダリングを採用&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ディファードレンダリングは2つのパスでシーンを描画するレンダリング手法です。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;G-Bufferパス&lt;/strong&gt; でNormalやDepthなどのライティングに必要な情報を詰め込んだGバッファを生成します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lightingパス&lt;/strong&gt; でGバッファの情報を元にライティングを計算して、最終的なレンダリング結果を生成します。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;これがディファードレンダリングの流れです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.022.jpeg&#34; alt=&#34;ディファードレンダリングを採用した3つの理由&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ディファードレンダリングを採用した理由は3つあります。&lt;/p&gt;
+
+&lt;p&gt;1つ目の理由は &lt;strong&gt;距離関数とポリゴンが混在したシーンであっても一貫したライティングができる&lt;/strong&gt; 点です。レイマーチングの結果をGバッファに書き込む &lt;strong&gt;G-Bufferパス&lt;/strong&gt; のシェーダーを実装すれば、Gバッファ上では距離関数もポリゴンもどちらもスクリーンスペースの2Dのデータとなり、両者を区別する必要がないので、一貫したライティングができます。
+&lt;a href=&#34;https://twitter.com/hecomi&#34;&gt;@hecomi&lt;/a&gt;さんが開発している&lt;a href=&#34;https://github.com/hecomi/uRaymarching&#34;&gt;uRaymarching&lt;/a&gt;というレイマーチング用のシェーダーのテンプレートを用いると、このようなシェーダーを少ない手間で書くことができます。
+WORMHOLEでもuRaymarchingを利用しています。&lt;/p&gt;
+
+&lt;p&gt;2つ目の理由は、Unityが標準で用意している &lt;strong&gt;Lightingパス&lt;/strong&gt; を利用することで、自分でライティング処理を実装しなくてもUnityの全種類の光源やReflectionProbeに対応できる点です。
+もしフォワードレンダリングでレイマーチングをする場合にはライティング処理を自力で実装する必要があるので、ライティング処理を実装しなくて済むのはディファードレンダリングの強みと言えると思います。&lt;/p&gt;
+
+&lt;p&gt;3つ目の理由は、ディファードレンダリングの特性上、光源が数が多いシーンであっても現実的な処理負荷でライティングを計算できる点です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.023.jpeg&#34; alt=&#34;ディファードレンダリングのライティングをカスタマイズ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一方でディファードレンダリングにはデメリットもあります。
+シーン全体を同じ &lt;strong&gt;Lightingパス&lt;/strong&gt; で処理するということは、
+裏を返すとマテリアルごとのライティングのカスタマイズが難しくなります。&lt;/p&gt;
+
+&lt;p&gt;このような場合、StencilやGバッファにマテリアルIDの情報を埋め込んで、
+Lightingパスの中でマテリアルを判定してライティングを切り替えることが正攻法となりますが、Lightingパスの修正となると、プロジェクト全体への影響も大きいですし、手間もかかってしまいます。&lt;/p&gt;
+
+&lt;p&gt;WORMHOLEではEmissiveを活用してこの問題を解決しました。
+Emissiveは自発光（自分が放つ光の強さ）のパラメーターですが、Emissive以外のパラメータを0にすると、Emissiveの色がそのまま最終的なピクセルの色として画面に出力されます。
+この性質を利用して、独自のライティング結果をEmissiveに書き込むことで、自由にライティングをカスタマイズできます。&lt;/p&gt;
+
+&lt;h1 id=&#34;演出-テキストのアニメーション&#34;&gt;演出（テキストのアニメーション）&lt;/h1&gt;
+
+&lt;p&gt;3つ目のテーマは &lt;strong&gt;「演出」&lt;/strong&gt; です。&lt;/p&gt;
+
+&lt;p&gt;演出と言ってもたくさんの要素があると思いますが、今回の発表ではテキストのアニメーション演出をシェーダーで実装する話をします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.028.jpeg&#34; alt=&#34;TextMeshProとは？&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TextMeshProはSDFをつかって高品質にフォントをレンダリングするためのAssetです。&lt;/p&gt;
+
+&lt;p&gt;SDFはSigned Distance Fieldのことで、左のように文字の輪郭までの距離を画素値にした画像です。
+SDFを使うとフォントを拡大してもジャギが目立たないため、フォントのレンダリングに適しています。&lt;/p&gt;
+
+&lt;p&gt;また、勘の良い方はお気づきかと思いますが、SDFはレイマーチングの距離関数と全く同じ概念です。
+距離関数の入力が3Dなのか2Dなのかというのと、コードで表現されるか、テクスチャで表現されるかという違いはありますが、本質的には同じものです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup_p29.gif&#34; alt=&#34;TextMeshProの描画の仕組み&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TextMeshProの描画の仕組みについて説明します。&lt;/p&gt;
+
+&lt;p&gt;まずCPUで1文字ずつMeshを生成します。
+オレンジ色で示されたTextMeshProの文字をワイヤーフレーム表示を見ると、1文字ずつMeshが存在することが分かります。&lt;/p&gt;
+
+&lt;p&gt;SDFテクスチャのUV情報はMeshの頂点データとして埋め込まれています。
+次にこのMeshを描画するフラグメントシェーダーをつかってSDFテクスチャをフェッチしてフォントの内外判定をしてフォントをレンダリングします。&lt;/p&gt;
+
+&lt;p&gt;このように TextMeshProではシェーダーをつかってフォントをレンダリングしています。&lt;/p&gt;
+
+&lt;p&gt;つまり、 &lt;strong&gt;シェーダーを書けば、TextMeshProのレンダリングを 自由にカスタマイズできます！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.031.jpeg&#34; alt=&#34;TextMeshProのシェーダーのカスタマイズ方法&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TextMeshProのシェーダーのカスタマイズ方法を紹介します。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TextMeshProのシェーダーをコピーします。どのシェーダーをコピーしても良いのですが、Mobileと書いてあるものは実装がシンプルなのでオススメです。&lt;/li&gt;
+&lt;li&gt;好きなようにシェーダーをカスタマイズします。色を決定する部分や、SDFテクスチャをフェッチする部分を改造するのが良いかと思います。&lt;/li&gt;
+&lt;li&gt;TextMeshProのインスペクタから改造したシェーダーを設定すれば、完了です。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup_p32.gif&#34; alt=&#34;TextMeshProのシェーダーのカスタマイズ例1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TextMeshProのシェーダーのカスタマイズ例を2つ紹介します。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;【左】色を決定する部分のシェーダーを書き換えて、sin関数で模様と動きをつけて、ブラウン管風のエフェクトと追加しました。&lt;/li&gt;
+&lt;li&gt;【右】2種類のSDFテクスチャをブレンドすることで、平成と令和をモーフィングさせました。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup_p33.gif&#34; alt=&#34;TextMeshProのシェーダーのカスタマイズ例2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これはWORMHOLEのオープニング部分のエフェクトです。文字をパラパラと出現させたり消失させたりしています。&lt;/p&gt;
+
+&lt;p&gt;これがシェーダーの差分のコードです。
+SDFテクスチャをフェッチするUVをこのように時間でclampすることで、フォントを引き伸ばす効果を加えました。
+わずか3行くらいの差分ですが、面白いエフェクトができたかなと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;        // PIXEL SHADER
+        fixed4 PixShader(pixel_t input) : SV_Target
+        {
+-           half d = tex2D(_MainTex, input.texcoord0.xy).a * input.param.x;
++           half2 uv = input.texcoord0.xy;
++           uv.y = clamp(uv.y, 0.0, 0.5 + 0.5 * sin(_Time.y));
++           half d = tex2D(_MainTex, uv).a * input.param.x;
+            half4 c = input.faceColor * saturate(d - input.param.w);
+
+        #ifdef OUTLINE_ON
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TextMeshProとカスタムシェーダーを組み合わせる方法についてはQiitaに記事を投稿しているので、詳しく知りたい方は、こちらをご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/gam0022/items/f3b7a3e9821a67a5b0f3&#34;&gt;[Unity] カスタムシェーダーでTextMeshProに独創的な演出を加える | Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;番外編-unity-timelineを活用した演出&#34;&gt;番外編: Unity Timelineを活用した演出&lt;/h2&gt;
+
+&lt;p&gt;番外編のテキスト以外の演出の話として、Unity Timelineの活用についても紹介しました。&lt;/p&gt;
+
+&lt;p&gt;シェーダーだけでなくUnity Timelineも利用することで、演出制作の効率を高めました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.037.jpeg&#34; alt=&#34;Unity Timelineの活用&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;オレンジ色の枠で囲まれているのがTimeline Windowです。&lt;/p&gt;
+
+&lt;p&gt;演出の品質を高めるためには、演出の試行錯誤のイテレーションが必要です。
+このイテレーションを高速に回すために、リアルタイムに編集結果をプレビューできる点や、自由に再生時間をシークできる点が本当に良かったです。&lt;/p&gt;
+
+&lt;p&gt;Timelineの主な利用箇所です。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Animation Track
+
+&lt;ul&gt;
+&lt;li&gt;レイマーチング用のマテリアルのパラメータ制御&lt;/li&gt;
+&lt;li&gt;ポストエフェクト用のマテリアルのパラメータ制御&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;TextMeshPro専用のCustom Track
+
+&lt;ul&gt;
+&lt;li&gt;TextMeshProのテキストを書き換えは標準のTrackでは実現できなかったので、Timelineのカスタムトラックを自作して実現しました。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Chinemachine Track
+
+&lt;ul&gt;
+&lt;li&gt;カメラワークにはChinemachineというAssetのトラックを利用しました。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup.041.jpeg&#34; alt=&#34;演出のまとめ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;シェーダーが不得意な（数式で表現しにくい）演出はTimelineも活用することで、効率的に演出を制作しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;規則的な（数式で表現ができる）動きはシェーダーが得意
+
+&lt;ul&gt;
+&lt;li&gt;音楽のBPMに合わせてチカチカ点滅させるのは、シェーダーが適しています。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;不規則な（数式で表現しにくい）動きはTimelineが得意
+
+&lt;ul&gt;
+&lt;li&gt;カメラワークはTimelineを利用したほうが効率的に演出が作れると思います。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/klab_tech_meetup_p35.gif&#34; alt=&#34;まとめ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;リアルな質感も、複雑な形状も、カッコいい演出も、どれもシェーダーで実現できます。&lt;/p&gt;
+
+&lt;p&gt;短いコードだけで多彩な表現ができるため、映像作成においては &lt;strong&gt;シェーダーは最強の道具&lt;/strong&gt; だと言えるでしょう。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UnityエンジニアによるShader勉強会！に登壇しました</title>
+      <link>https://gam0022.net/blog/2019/06/20/klab-tech-meetup4/</link>
+      <pubDate>Thu, 20 Jun 2019 10:04:11 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2019/06/20/klab-tech-meetup4/</guid>
+      <description>&lt;p&gt;6/19に開催された&lt;a href=&#34;https://techplay.jp/event/733454&#34;&gt;UnityエンジニアによるShader勉強会！&lt;/a&gt;で「Unity×レイマーチングによる映像制作の実践手法」という発表をしました。&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;daf8218b7458460087137b6f23e938b3&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;（06/25追記）&lt;/strong&gt; 発表内容をブログ向けに編集・要約して別記事にまとめました。
+スライドだけでは伝わりにくい箇所を文章でフォローしました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2019/06/25/unity-raymarching/&#34;&gt;Unity×レイマーチングによる映像制作の実践手法 | gam0022.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;発表資料まとめ&#34;&gt;発表資料まとめ&lt;/h1&gt;
+
+&lt;p&gt;発表者の資料のツイートをまとめました。&lt;/p&gt;
+
+&lt;h2 id=&#34;kanetaaaaa-シェーダーライブコーディングのすすめ&#34;&gt;@kanetaaaaa 「シェーダーライブコーディングのすすめ」&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;先日の資料を元にシェーダーライブコーディング入門の記事を書きました🤔&lt;br&gt;普段シェーダーを使ってる人の遊び道具になって欲しいです！&lt;br&gt;懇親会時に作ったシェーダーで使用したテクニックもいくつか追加で紹介しています！！&lt;a href=&#34;https://t.co/MgDFAatZre&#34;&gt;https://t.co/MgDFAatZre&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1141485526815346688?ref_src=twsrc%5Etfw&#34;&gt;2019年6月19日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;本日の資料のために眺めるだけでレイマーチングを完全に理解できるかもしれないシェーダーを作りました🤔&lt;a href=&#34;https://t.co/Hia4I0Dgii&#34;&gt;https://t.co/Hia4I0Dgii&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; &lt;a href=&#34;https://t.co/kIuU4USxRJ&#34;&gt;pic.twitter.com/kIuU4USxRJ&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1141307706139004934?ref_src=twsrc%5Etfw&#34;&gt;2019年6月19日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;gam0022-unity-レイマーチングによる映像制作の実践手法&#34;&gt;@gam0022「Unity×レイマーチングによる映像制作の実践手法」&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;本日の発表資料です！&lt;br&gt;モデリングと演出とライティングを全部シェーダーで実装しました！&lt;a href=&#34;https://t.co/lwg0xVcm3J&#34;&gt;https://t.co/lwg0xVcm3J&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/Unity3D?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#Unity3D&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/Shader?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#Shader&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/HLSL?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#HLSL&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1141307844999778304?ref_src=twsrc%5Etfw&#34;&gt;2019年6月19日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ブログも更新しました🙏&lt;br&gt;全員の発表資料をまとめ！もあります。&lt;a href=&#34;https://t.co/TdiHF5jILF&#34;&gt;https://t.co/TdiHF5jILF&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/Unity3D?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#Unity3D&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/Shader?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#Shader&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/HLSL?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#HLSL&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1141541272877850624?ref_src=twsrc%5Etfw&#34;&gt;2019年6月20日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;archeleeds-unityで遊べる背景シェーダーを作る&#34;&gt;@archeleeds「Unityで遊べる背景シェーダーを作る」&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;KLab Tech Meetup #4&lt;br&gt;「Unityで遊べる背景シェーダーを作る」のスライドです&lt;a href=&#34;https://t.co/YyVB6gEhVk&#34;&gt;https://t.co/YyVB6gEhVk&lt;/a&gt;&lt;br&gt;拙いですが何かの参考になれば 🙇‍♂️&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt;&lt;/p&gt;&amp;mdash; リゼ (@archeleeds) &lt;a href=&#34;https://twitter.com/archeleeds/status/1141376228558983168?ref_src=twsrc%5Etfw&#34;&gt;2019年6月19日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;setchi-fancyscrollview-x-shader&#34;&gt;@setchi「FancyScrollView x Shader」&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;スクロールビューでもシェーダー芸がしたい！&lt;br&gt;KLab TECH Meetup ＃4 で発表したスライドおよびサンプルコードです。&lt;br&gt;&lt;br&gt;GitHub: &lt;a href=&#34;https://t.co/WFqznn2vVM&#34;&gt;https://t.co/WFqznn2vVM&lt;/a&gt;&lt;br&gt;Google Slides: &lt;a href=&#34;https://t.co/TR5KBVmDUJ&#34;&gt;https://t.co/TR5KBVmDUJ&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/madewithunity?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#madewithunity&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/zqECmup7Qi&#34;&gt;pic.twitter.com/zqECmup7Qi&lt;/a&gt;&lt;/p&gt;&amp;mdash; setchi (@setchi) &lt;a href=&#34;https://twitter.com/setchi/status/1141313091134562304?ref_src=twsrc%5Etfw&#34;&gt;2019年6月19日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ブログ更新しました &amp;gt; スクロールビューでもシェーダー芸がしたい！&lt;a href=&#34;https://t.co/5bNo2FlQqe&#34;&gt;https://t.co/5bNo2FlQqe&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/unity3d?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#unity3d&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt;&lt;/p&gt;&amp;mdash; setchi (@setchi) &lt;a href=&#34;https://twitter.com/setchi/status/1142779645751783425?ref_src=twsrc%5Etfw&#34;&gt;2019年6月23日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;20分シェーダーライブコーディング-by-kanetaaaaa&#34;&gt;20分シェーダーライブコーディング by @kanetaaaaa&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;昨日の勉強会の懇親会中に20分間のライブコーディングでシェーダーを作りました！&lt;br&gt;初めて人前でコーディングをしたんですが、めちゃくちゃ楽しかったです！！&lt;br&gt;&lt;br&gt;（当日動かなかったpmod修正済です&amp;hellip;）&lt;br&gt;差分&lt;br&gt;- q.x = abs(p.x ) - 10.;&lt;br&gt;+ q.x = abs(q.x ) - 10.;&lt;a href=&#34;https://t.co/LH3TT4YzSU&#34;&gt;https://t.co/LH3TT4YzSU&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; &lt;a href=&#34;https://t.co/k61c3O2ZA1&#34;&gt;pic.twitter.com/k61c3O2ZA1&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1141480732180619264?ref_src=twsrc%5Etfw&#34;&gt;2019年6月19日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;先日の &lt;a href=&#34;https://twitter.com/hashtag/klab_meetup?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#klab_meetup&lt;/a&gt; の懇親会で行った20分のライブコーディング映像を公開しました！&lt;br&gt;実況解説は&lt;a href=&#34;https://twitter.com/gam0022?ref_src=twsrc%5Etfw&#34;&gt;@gam0022&lt;/a&gt; さんと&lt;a href=&#34;https://twitter.com/songofsaya_?ref_src=twsrc%5Etfw&#34;&gt;@songofsaya_&lt;/a&gt;さんです&lt;br&gt;突発ながら面白い実況で場を盛り上げてくださって非常に楽しかったです！&lt;br&gt;動画でもこの空間の楽しさが伝わると思うので是非ご覧ください！&lt;a href=&#34;https://t.co/1CDeXMfJlT&#34;&gt;https://t.co/1CDeXMfJlT&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1141987474824036353?ref_src=twsrc%5Etfw&#34;&gt;2019年6月21日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;これまでの人生で最高の勉強会でした！&lt;/p&gt;
+
+&lt;p&gt;参加者も発表者もモチベーションがとても高く、終始ものすごい熱気に包まれていて、発表する側としても非常にやりやすかったです！&lt;/p&gt;
+
+&lt;p&gt;勉強会のテーマがニッチすぎることから当初は参加枠を100名としていたのですが、告知開始から数時間後には満員となってしまったため、最終的に会場のキャパシティ上限の200名まで増枠することになりました。
+これほど大人数の勉強会が実現されるとは思っておらず、世間のシェーダーへの関心の高さに驚きました。&lt;/p&gt;
+
+&lt;p&gt;どの発表も尖った内容が満載だったのではないでしょうか。
+シェーダーに対する理解がより深まり、興味が増したのであれば幸いです。&lt;/p&gt;
+
+&lt;p&gt;ご参加いただいた皆さま、本当にありがとうございました！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/live-coding-original.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2019-06-20-klab-tech-meetup4/live-coding.jpg&#34; alt=&#34;懇親会中のライブコーディングの様子&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;懇親会中のライブコーディングの様子&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tokyo Demo Fest 2018のDemo Compo優勝作品の解説（グラフィック編）</title>
+      <link>https://gam0022.net/blog/2018/12/12/tdf2018/</link>
+      <pubDate>Wed, 12 Dec 2018 09:49:52 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2018/12/12/tdf2018/</guid>
+      <description>&lt;p&gt;これは&lt;a href=&#34;http://qiita.com/advent-calendar/2018/klab&#34;&gt;KLab Engineer Advent Calendar 2018&lt;/a&gt;の12日目の記事です。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;12月1日～12月2日に秋葉原で開催された&lt;a href=&#34;http://tokyodemofest.jp/2018/&#34;&gt;Tokyo Demo Fest 2018&lt;/a&gt;（以下、TDF）に参加しました。&lt;/p&gt;
+
+&lt;p&gt;TDFは、日本国内で唯一のデモパーティです。
+コンピュータを用いて作成された楽曲や映像作品をデモと呼び、
+デモに関心のある人々が一堂に会してコンペティションを行ったり、技術を共有したりといったイベントをデモパーティと呼びます。&lt;/p&gt;
+
+&lt;p&gt;今年のTDFでは、さだきちさん（&lt;a href=&#34;https://twitter.com/sadakkey&#34;&gt;@sadakkey&lt;/a&gt;）とチームを組み、『WORMHOLE』（映像：gam0022 / サウンド：sadakkey）という作品を発表しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/tdf2018_collage_original.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/tdf2018_collage.jpg&#34; alt=&#34;WORMHOLE by gam0022 &amp;amp; sadakkey&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows実行ファイル形式のデモ作品のコンペティションであるCombined Demo Compoにて、&lt;a href=&#34;http://tokyodemofest.jp/2018/results.txt&#34;&gt;本作品が1位&lt;/a&gt;に選ばれました！&lt;/p&gt;
+
+&lt;p&gt;この記事では『WORMHOLE』の映像制作技術について解説します。
+ソースコードを公開していますので、ご興味のある方はそちらもご確認いただければと思います（スターください！）。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/unity-demoscene&#34;&gt;https://github.com/gam0022/unity-demoscene&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;サウンド編についてはさだきちさんが解説されています。あわせてご覧ください！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://klabgames.creative.blog.jp.klab.com/archives/14415590.html&#34;&gt;Tokyo Demo Fest2018のDemo Compo優勝作品の解説〜サウンド編〜 : KLabGames Creative Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;作品の概要&#34;&gt;作品の概要&lt;/h1&gt;
+
+&lt;p&gt;「ワームホールによる空間移動」をコンセプトとして、
+不思議な球体がワームホールを介して非現実なデジタル空間と水平線の広がる自然空間を行き来する映像を制作しました。&lt;/p&gt;
+
+&lt;div class=&#34;movie-wrap&#34;&gt;
+&lt;iframe width=&#34;1920&#34; height=&#34;1080&#34; src=&#34;https://www.youtube.com/embed/NMNJV-Pbqtk&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不思議な球体がトンネルを進んでいくと、周囲を明滅する光がだんだんとモノクロからカラフルに変わっていきます。
+トンネルの最奥にあるワームホールへ近づくほど明滅はだんだんと激しくなっていき、ホワイトアウトとともにワームホールを越えると、球体は海上に出現します。
+その後、球体はじわじわと歪んでいき、戦闘機へと形を変えます。&lt;/p&gt;
+
+&lt;p&gt;変形中の不思議な球体の上には、私が尊敬するデモシーナーの名前を表示しました。
+これはグリーティングと呼ばれるデモシーンにおける慣習です。&lt;/p&gt;
+
+&lt;p&gt;戦闘機はパーティクルを放ちながら海上を進み、パーティクルが一瞬だけTDFのロゴを形作ります。
+そして戦闘機は元の球体に変形し、突如現れたワームホールに吸い込まれるようにして冒頭のトンネルのシーンに戻っていきます。&lt;/p&gt;
+
+&lt;p&gt;実装ならびに制作にはUnityを利用しました。
+詳細は後述しますが、Timeline, TextMeshPro, Chinemachine, PostProcessingStack v2といったUnity 2018.2の新機能も活用しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;レンダリング&#34;&gt;レンダリング&lt;/h1&gt;
+
+&lt;p&gt;映像の大部分は&lt;a href=&#34;https://www.slideshare.net/shohosoda9/threejs-58238484&#34;&gt;レイマーチング&lt;/a&gt;で描画し、パーティクルやグリーティングのテキストなどのレイマーチングが苦手とする部分はラスタライザで描画するというハイブリッドなレンダリング方式を採用しました。&lt;/p&gt;
+
+&lt;p&gt;なお、今回は制作期間が短かったため、レイマーチングのシェーディングにはUnity標準のディファードレンダリングを利用することにしました。
+ディファードレンダリングにすることで、Gバッファの書き込みまでを実装すれば、それ以降のライティングの処理をUnityの標準のディファードレンダリングのシェーダーに任せることができます。
+簡単に言ってしまえば、Unityでサポートされる全種類のライトやGI機能に対応するライティング処理をあえて自分で実装しなくて済むという、工数削減のメリットがあります。&lt;/p&gt;
+
+&lt;p&gt;Unityでディファードレンダリングによるレイマーチングを実現するにあたり、
+&lt;a href=&#34;https://twitter.com/hecomi&#34;&gt;@hecomi&lt;/a&gt;さんの&lt;a href=&#34;https://github.com/hecomi/uRaymarching&#34;&gt;uRaymarching&lt;/a&gt;を利用させていただきました。
+uRaymarchingは距離関数とGバッファに値を書き込む部分を実装すれば、簡単にレイマーチングができる便利なシェーダーテンプレートです。&lt;/p&gt;
+
+&lt;p&gt;他にも、鏡面反射による周囲の映り込みに、Unity標準のReflectionProbeを配置して実現しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;uRaymarchingとReflectionProbeによる反射と組み合わせる検証&lt;br&gt;中&lt;br&gt;&lt;br&gt;毎フレームCubemapを生成するくらいならレイトレで反射を計算したほうが速いと思っていたが、この例ならCubemapの解像度は16x16でも十分だし、Cubemapの方がポリゴンとの混在が容易なので、現実的な方法だと思う。 &lt;a href=&#34;https://t.co/sSX7WmVCEd&#34;&gt;pic.twitter.com/sSX7WmVCEd&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1003274796895895554?ref_src=twsrc%5Etfw&#34;&gt;2018年6月3日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;full-screen-quadの実装方法&#34;&gt;Full Screen Quadの実装方法&lt;/h2&gt;
+
+&lt;p&gt;uRaymarchingの話に関連して、Full Screen Quadの実装方法について紹介します。&lt;/p&gt;
+
+&lt;p&gt;uRaymarchingではCommandBufferでフルスクリーンQuadを表示させていましたが、
+スクリプトによる制御は最小限にしてEditorモードの挙動を安定させたかったので、別のアプローチをとってみました。&lt;/p&gt;
+
+&lt;p&gt;EditorツールでBoudingBoxを巨大にしてFrustum Cullingを無効にしたQuadを静的生成しました。&lt;/p&gt;
+
+&lt;p&gt;これによって時々レイマーチング部分が動かないトラブルを回避できました。
+また、本作品のようにFull Screen Quadが必要なレイマーチングのワールドが複数存在して、
+時間によって切り替わる表現のためには、MeshRendererのenableの切り替えで制御できる単純な仕組みの方が好都合でした。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Unityで画面全体にレイマーチングをさせる最高のソリューションができた！&lt;br&gt;&lt;br&gt;CommandBufferを使う方法だとEditMode等の考慮が大変。&lt;br&gt;通常のQuadだとFrustum Cullingされて困る。&lt;br&gt;&lt;br&gt;そこで、BoudingBoxを拡張したQuadを事前生成して通常のMeshRendererで描画できるようにした。&lt;a href=&#34;https://t.co/Askoyvnq0X&#34;&gt;https://t.co/Askoyvnq0X&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1018214911367761920?ref_src=twsrc%5Etfw&#34;&gt;2018年7月14日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/unity-demoscene/pull/10&#34;&gt;RaymarchingQuadMeshCreator by gam0022 · Pull Request #10 · gam0022/unity-demoscene&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;トンネルのモデリング&#34;&gt;トンネルのモデリング&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/tunnel_original.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/tunnel.jpg&#34; alt=&#34;tunnel&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;トンネルはMenger spongeという有名なフラクタル図形をベースにしています。
+回転のfoldのテクニックを利用して万華鏡のように見せたり、modをつかった図形の繰り返しのテクニックを適用しました。&lt;/p&gt;
+
+&lt;p&gt;回転のfoldは次の記事で紹介しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2017/03/02/raymarching-fold/&#34;&gt;距離関数のfold（折りたたみ）による形状設計 | gam0022.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上の4種類の画像はいずれも同じ距離関数によるトンネルの様子です。
+パラメータを変化させることで形状や色などを演出に合わせて変更できるようにしました。&lt;/p&gt;
+
+&lt;h1 id=&#34;海面のモデリング&#34;&gt;海面のモデリング&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/sea.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/sea.jpg&#34; alt=&#34;sea&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;海面は平面として衝突判定を行い、ノーマルマップだけで波が立っているように見せています。
+こちらは以前にWebGLによって実装した『&lt;a href=&#34;https://gam0022.net/blog/2017/06/30/raymarching-kado/&#34;&gt;正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net&lt;/a&gt;』と同じアプローチの軽量化方法です。&lt;/p&gt;
+
+&lt;p&gt;ところで、上記の記事の作品と異なり、本作品ではLODを一切行っておりません。
+カメラワーク的に海面に近づかないため、そもそもLODが必要なかったのと、
+マーチングループ中でテクスチャのフェッチをするとUnityのシェーダーのコンパイルが激重になる現象を回避するためです。&lt;/p&gt;
+
+&lt;p&gt;海面の質感は、Gバッファに書き込むパラメータの調整だけで再現しました。
+ディファードレンダリングなので不透明オブジェクトとして当然ライティングされているのですが、どことなく海中を感じさせるような半透明の質感を擬似的に再現できたのではないかと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;戦闘機のモデリング&#34;&gt;戦闘機のモデリング&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/plane.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/plane.jpg&#34; alt=&#34;plane&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;戦闘機は距離関数でモデリングしました。&lt;/p&gt;
+
+&lt;p&gt;3つのBoxの大きさをcos/sin/abs等で調整しつつ、smoothminによるメタボールでBoxを融合することで、流線形のSFっぽい戦闘機をモデリングしました。&lt;/p&gt;
+
+&lt;p&gt;また、フラグメントシェーダーの負荷軽減のために&lt;a href=&#34;http://i-saint.hatenablog.com/entry/2015/08/24/225254&#34;&gt;Object Space Raymarching&lt;/a&gt;を行いました。
+Full Screen Quadを使わずに戦闘機と同じ大きさのSphereを配置し、Sphereのシェーダーでレイマーチングをしています。
+上記の画像を拡大するとSphereのワイヤーフレームを確認できます。&lt;/p&gt;
+
+&lt;h1 id=&#34;演出の実装&#34;&gt;演出の実装&lt;/h1&gt;
+
+&lt;h2 id=&#34;textmeshproによるフォントのレンダリング&#34;&gt;TextMeshProによるフォントのレンダリング&lt;/h2&gt;
+
+&lt;p&gt;フォントはプロシージャルではなくテクスチャを使用しています。
+TextMeshProのEditorツールを利用して &lt;a href=&#34;https://www.fontspace.com/mixofx/azonix&#34;&gt;Azonix fontのデータ&lt;/a&gt;からSDFのフォントのアトラステクスチャを生成しました。&lt;/p&gt;
+
+&lt;p&gt;生成したアトラステクスチャはTextMeshProのシェーダーでレンダリングしています。&lt;/p&gt;
+
+&lt;p&gt;次のような簡単な文字の出現と消滅のエフェクトを、TextMeshProの標準シェーダーの一部を改造して実装しました。
+この演出に関する解説を&lt;a href=&#34;https://qiita.com/advent-calendar/2018/unity2&#34;&gt;Unity #2 Advent Calendar 2018&lt;/a&gt;の19日目の記事で行いました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/gam0022/items/f3b7a3e9821a67a5b0f3&#34;&gt;[Unity] カスタムシェーダーでTextMeshProに独創的な演出を加える&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;TextMeshPro シェーダー遊び その3&lt;a href=&#34;https://twitter.com/hashtag/unity3d?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#unity3d&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/Unity?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#Unity&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/creativecoding?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#creativecoding&lt;/a&gt; &lt;a href=&#34;https://t.co/bUJvfyDhBr&#34;&gt;pic.twitter.com/bUJvfyDhBr&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1056398353569697792?ref_src=twsrc%5Etfw&#34;&gt;2018年10月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;animation-track-vs-custom-track&#34;&gt;Animation Track vs Custom Track&lt;/h2&gt;
+
+&lt;p&gt;UnityのTimelineではトラックを自作することができます（以降、自作トラックのことをCustom Trackと書きます）。&lt;/p&gt;
+
+&lt;p&gt;Custom Trackの実装はそれなりに工数がかかります。
+たとえば、クリップのパラメータを1つでも増やすと複数箇所に変更が発生します。
+工数が限られている場合や試行錯誤しながら色々なパータンを作る場合には、Animation Trackでは実現できないのかを事前に確認することをおすすめします。&lt;/p&gt;
+
+&lt;p&gt;本作品でも、基本的にはAnimation Trackを利用し、アニメーションでは制御できないTextMeshProの文字列指定においてのみCustom Trackを利用する方針としました。&lt;/p&gt;
+
+&lt;h2 id=&#34;パーティクル&#34;&gt;パーティクル&lt;/h2&gt;
+
+&lt;p&gt;パーティクルはUnityのParticleSystemを利用しました。&lt;/p&gt;
+
+&lt;p&gt;次の画像はポストエフェクトとSkyboxをOFFにした状態でパーティクルをワイヤーフレーム表示したものです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/particle_discard.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/particle_discard.png&#34; alt=&#34;particle_discard&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;パーティクルの形状は5種類でしたが、パーティクル用のモデルは1種類しか用意しませんでした。
+四角形のQuadをフラグメントシェーダーでdiscardして形状を変化させました。
+すべてのパーティクルを1マテリアルで表現できるので、全パーティクルを1ドローコールで描画できました。&lt;/p&gt;
+
+&lt;p&gt;4種類のパーティクルが当時に登場する演出では、Custom Vertex Streamsを用いてランダム値をシェーダーに渡し、シェーダーで形状の切り替えを行いました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://goisagi-517.hatenablog.com/entry/2018/05/15/011845&#34;&gt;【Unity】Shuriken Particle「Custom Vertex Streams」  - ゴイサギ日記&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ワームホールの実装&#34;&gt;ワームホールの実装&lt;/h2&gt;
+
+&lt;p&gt;「ワームホールの中身だけ別の世界になる」演出にも戦闘機と同じObject Space Raymarchingの仕組みを利用しました。&lt;/p&gt;
+
+&lt;p&gt;まずHoudiniでワームホールの八角形のポリゴンメッシュを作成しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/houdini.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/houdini.png&#34; alt=&#34;houdini&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;この八角形のメッシュのシェーダーでObject Space Raymarchingを行えば、別の世界と繋がる演出ができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/gate.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2018-12-12-tdf2018/gate.jpg&#34; alt=&#34;gate&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ところが、カメラの原点からレイを進めると、別世界が3Dの立体映像のように飛び出してしまうという罠にハマってしまいました。
+この問題はレイを物体の表面から進めることで回避できました。&lt;/p&gt;
+
+&lt;p&gt;ワームホールの内側は現在の世界（上の画像では海の世界）のレイマーチングのシェーダーを無効にしたかったので、Stencilを利用しようとしたのですが、
+UnityのディファードレンダリングではStencilの利用が制限されていました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/ja/current/Manual/SL-Stencil.html&#34;&gt;ShaderLab: ステンシル - Unity マニュアル&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;deferred レンダリングパスでレンダリングするオブジェクトのためのステンシル機能はいくらか制限されます。それらの 2 つのステージの間、シェーダーで定義されるステンシルステートは無視され、最終的なパスの間に考慮されるだけです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;そこで、DepthテストとRenderQueueによる制御でStencilを代用しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;reflectionprobeの映り込みによる演出&#34;&gt;ReflectionProbeの映り込みによる演出&lt;/h2&gt;
+
+&lt;p&gt;2回目のワームホール出現時（2:05〜）に海面が黒く侵食されていく演出があります。&lt;/p&gt;
+
+&lt;div class=&#34;movie-wrap&#34;&gt;
+&lt;iframe width=&#34;1920&#34; height=&#34;1080&#34; src=&#34;https://www.youtube.com/embed/NMNJV-Pbqtk?start=125&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;これは、ワームホールの向こう側の景色がReflectionProbeに映り込み、Unityのライティング機能によって自動的に水面に反映された結果です。
+意図的に演出したものではなく偶然の産物でしたが、気に入ったのでこのまま採用しました。&lt;/p&gt;
+
+&lt;h2 id=&#34;揺らぎ&#34;&gt;揺らぎ&lt;/h2&gt;
+
+&lt;!-- 直す --&gt;
+
+&lt;p&gt;揺らぎは2箇所で利用しました。
+単純でコストもかからない工夫ですが、効果は大きいと感じました。&lt;/p&gt;
+
+&lt;p&gt;カメラにfbmノイズを加えて手ブレ感を出すことで臨場感が生まれました。&lt;/p&gt;
+
+&lt;p&gt;それから、戦闘機をcos波で振り子のように左右に揺らしています。
+戦闘機の動き自体はZ軸に直進するだけなのですが、機体の揺れとカメラワークによって旋回しているような雰囲気が出ているのではないでしょうか。&lt;/p&gt;
+
+&lt;h1 id=&#34;音楽との同期方法&#34;&gt;音楽との同期方法&lt;/h1&gt;
+
+&lt;h2 id=&#34;ビート単位でのシェーダー制御&#34;&gt;ビート単位でのシェーダー制御&lt;/h2&gt;
+
+&lt;p&gt;シェーダーの入力をビートにし、演出を「ビート単位」で制御することで、映像と音楽を同期させました。
+時間単位（秒単位）で制御するよりも、BPM変更に柔軟に対応できるというメリットがあります。&lt;/p&gt;
+
+&lt;p&gt;秒数 &lt;code&gt;time&lt;/code&gt; を特定のBPM &lt;code&gt;bpm&lt;/code&gt; のビートに変換するには &lt;code&gt;beat = time * bpm / 60&lt;/code&gt; を計算します。&lt;/p&gt;
+
+&lt;h2 id=&#34;カメラのカット切り替えやパーティクルの同期&#34;&gt;カメラのカット切り替えやパーティクルの同期&lt;/h2&gt;
+
+&lt;p&gt;カメラのカットやパーティクルのエミットのタイミングといったシェーダーで制御していない部分は、
+音楽に合わせてTimelineのクリップを手動で配置する必要がありました。&lt;/p&gt;
+
+&lt;p&gt;こちらは音楽を120BPMで制作していただいたことで、かなり楽に解決できました。&lt;/p&gt;
+
+&lt;p&gt;120BPMでは、1ビートが0.5秒となります。&lt;/p&gt;
+
+&lt;p&gt;4分の4拍子であれば1小節の長さが2秒となるため、カメラのカット切り替えを2秒単位にすると音楽と映像が自然に同期します。
+同様に、4分の3拍子であればカット切り替えを1.5秒単位にすればよいわけです。&lt;/p&gt;
+
+&lt;p&gt;パーティクルは、エミット間隔を0.5秒ごとに設定することで音楽とタイミングを合わせています。&lt;/p&gt;
+
+&lt;h1 id=&#34;来年の抱負&#34;&gt;来年の抱負&lt;/h1&gt;
+
+&lt;p&gt;次はライティングに凝ってみたいです。&lt;/p&gt;
+
+&lt;p&gt;物理ベースレンダリング（PBR）で攻めるのであれば今回のライティングはUnityに任せる作戦で正解だと思いますが、
+非現実的なレンダリング（NPR）には対応できないので、ディファードレンダリングのライティングパスの独自実装などを調査したいです。&lt;/p&gt;
+
+&lt;p&gt;他にも、Unityの新機能のScriptable Render Pipeline (SRP) や
+High Definition Render Pipeline（HDRP）とレイマーチングを組み合わせる検証などもしてみたいです。&lt;/p&gt;
+
+&lt;h1 id=&#34;おわりに&#34;&gt;おわりに&lt;/h1&gt;
+
+&lt;p&gt;『WORMHOLE』の映像を作るための取り組みや手法について技術的な視点で解説しました。&lt;/p&gt;
+
+&lt;p&gt;上記の通り、『WORMHOLE』の制作にはUnityの機能やライブラリを多く利用しています。
+巨人の肩の上に立つことで表現の部分に注力でき、3週間弱という短い制作期間の中で完成度の高い作品に仕上げることができました。&lt;/p&gt;
+
+&lt;p&gt;とはいえ、制作期間中は『WORMHOLE』を受け入れてもらえないのではと常に不安を感じていました。
+デモシーンの世界ではゲームエンジンの機能に頼らない高度な実装力こそ評価されると思っていたからです。
+そんな予想に反し、Unityで作成したデモ作品を高く評価していただけて大変光栄です。&lt;/p&gt;
+
+&lt;p&gt;Unityには初心者～上級者まで様々なレベルの方を対象とした資料や教材があります。
+『WORMHOLE』では使用しませんでしたが、たくさんのアセットも用意されています。
+デモシーンに興味はあるもののハードルが高そうで踏みとどまっている方や、レンダリング技術の学習に挫折してしまった方に、Unityでもデモ作品を作成できることをお伝えしたいです。
+また、日頃の業務でUnityを利用している方に、自分でも作れそうな身近なものとしてデモシーンに興味を持ってもらえれば嬉しいです。
+『WORMHOLE』が新たなデモシーナーを生み出すきっかけとなれば幸いです。&lt;/p&gt;
+
+&lt;p&gt;最後に、素晴らしいサウンドを生み出してくれたさだきちさんに感謝申し上げます。
+チームでTDFに参加するのは今回が初めてでしたが、非常に良い経験をさせてもらいました。
+自分の映像にかっこいい音楽が組み合わさった時の喜びや興奮は忘れられません！ありがとうございました！！&lt;/p&gt;
+
+&lt;h1 id=&#34;関連情報&#34;&gt;関連情報&lt;/h1&gt;
+
+&lt;h2 id=&#34;wormhole-を高画質で見るには&#34;&gt;『WORMHOLE』を高画質で見るには&lt;/h2&gt;
+
+&lt;p&gt;下記の実行ファイルか動画ファイルをダウンロードしていただくと、エンコード前の綺麗な画質でご覧いただけます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.scene.org/view/parties/2018/tokyodemofest18/demo/wormhole.zip&#34;&gt;Windowsの実行ファイル&lt;/a&gt;（GTX1070以上のGPU推奨）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/file/d/1GxyxjOyGBRcofMVKILmJtlmYaMZ5XoGx/view&#34;&gt;動画ファイル&lt;/a&gt;（ブラウザ上だとエンコードされた状態で再生されるのでダウンロードしてください）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;wormhole-の感想をお待ちしております&#34;&gt;『WORMHOLE』の感想をお待ちしております！&lt;/h2&gt;
+
+&lt;p&gt;pouet.netという世界中のデモ情報を集めたポータルサイトに作品を公開しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pouet.net/prod.php?which=79380&#34;&gt;pouet.net内の『WORMHOLE』のページ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;作品の感想をYouTubeやpouet.netでいただけると泣いて喜びます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す）</title>
+      <link>https://gam0022.net/blog/2017/12/25/unity-demoscene/</link>
+      <pubDate>Mon, 25 Dec 2017 09:30:11 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2017/12/25/unity-demoscene/</guid>
+      <description>&lt;p&gt;これは &lt;a href=&#34;https://qiita.com/advent-calendar/2017/unity2&#34;&gt;Unity #2 Advent Calendar 2017&lt;/a&gt; 21日目の記事です。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A2%E3%82%B7%E3%83%BC%E3%83%B3&#34;&gt;デモシーン&lt;/a&gt;界隈では、美しいCGアニメーションをリアルタイムに生成するプログラムを「デモ」と呼びます。&lt;/p&gt;
+
+&lt;p&gt;今回はUnityを使ったデモの制作に初挑戦しました。
+13秒の短い無音の動画です。&lt;/p&gt;
+
+&lt;iframe width=&#34;720&#34; height=&#34;405&#34; src=&#34;https://www.youtube.com/embed/BZGO5xXuPj8&#34; frameborder=&#34;0&#34; gesture=&#34;media&#34; allow=&#34;encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;!--
+[![THE GLOW](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)](/images/posts/2017-12-21-unity-demoscene/cut1.jpg)
+--&gt;
+
+&lt;h1 id=&#34;作品の解説&#34;&gt;作品の解説&lt;/h1&gt;
+
+&lt;p&gt;「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させた作品です。
+ロボットは通常の3Dモデルですが、床や柱のモデルはレイマーチングでプロシージャルに生成しました。&lt;/p&gt;
+
+&lt;p&gt;レイマーチングにはuRaymarchingというAssetを利用しました。&lt;/p&gt;
+
+&lt;p&gt;映像作品と相性が良さそうなので、Unity2017のTimelineも利用しました。&lt;/p&gt;
+
+&lt;p&gt;今回は試作という意味から、uRaymarchingとTimelineの他にも様々なアセットを試しました。
+色々と試行錯誤をしたので、この記事ではそのノウハウを共有したいと思います。&lt;/p&gt;
+
+&lt;p&gt;Unityのバージョンは執筆時点の最新版である2017.2.1f1を用いました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;uraymarchingによるレイマーチング&#34;&gt;uRaymarchingによるレイマーチング&lt;/h2&gt;
+
+&lt;p&gt;uRaymarchingはレイマーチングのシェーダの作成をサポートするシェーダ群とエディタ拡張です。
+開発者は&lt;a href=&#34;https://twitter.com/hecomi&#34;&gt;@hecomi&lt;/a&gt;さんです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hecomi/uRaymarching&#34;&gt;uRaymarching | GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tips.hecomi.com/entry/2016/10/11/225541&#34;&gt;Unity でレイマーチングするシェーダを簡単に作成できるツールを作ってみた&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;uRaymarchingではDefferedシェーディングを採用しており、レイマーチングのシェーダはGバッファに対して結果を書き込みます。
+そのため、今回のようにレイマーチングとポリゴンのモデルが混在したシーンであっても、一貫したシェーディングを実現できました！&lt;/p&gt;
+
+&lt;p&gt;レイマーチングの衝突判定などの共通処理は、uRaymarchingが提供する共通のシェーダが肩代わりしてくれます。
+uRaymarchingの利用者は、レイマーチングの距離関数の定義とGバッファの書き込みの処理だけに集中できるため、開発効率が向上しました。&lt;/p&gt;
+
+&lt;p&gt;具体的な使い方を簡単に説明しますと、まずはuRaymarchingのエディタ拡張でレイマーチングシェーダの雛形を作成します。
+次に雛形シェーダの2つの関数をカスタマイズすれば、独自のレイマーチングシェーダをお手軽に作成できました。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;距離関数の定義を&lt;code&gt;DistanceFunction&lt;/code&gt;関数に記述&lt;/li&gt;
+&lt;li&gt;Gバッファへの書き込み処理を&lt;code&gt;PostEffect&lt;/code&gt;関数に記述&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;uRaymarchingのチュートリアル動画です。&lt;/p&gt;
+
+&lt;iframe width=&#34;720&#34; height=&#34;540&#34; src=&#34;//www.youtube.com/embed/AppyVflAagc?wmode=transparent&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&#34;距離関数の設計&#34;&gt;距離関数の設計&lt;/h3&gt;
+
+&lt;p&gt;Boxの組み合わせだけでシーンを構成しました。
+床はBoxを敷き詰めているのは見た目通りだと思いますが、柱もBoxの組み合わせで作っています！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/blog/2017/03/02/raymarching-fold/&#34;&gt;距離関数のfoldの記事&lt;/a&gt;で紹介した回転のfoldを利用して、
+Boxから上から見たときに多角形になる柱を生成しました。&lt;/p&gt;
+
+&lt;p&gt;単純なBoxの形状だけでも、時間経過で形状が変化する面白い形ができたと思っています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/distance-function.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/distance-function.jpg&#34; alt=&#34;柱の様子&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;床がランダムな順番に光る演出&#34;&gt;床がランダムな順番に光る演出&lt;/h3&gt;
+
+&lt;p&gt;床をランダムに光らせる演出は自分でも気に入っています。&lt;/p&gt;
+
+&lt;p&gt;この演出はお手軽な方法で実装できました！&lt;/p&gt;
+
+&lt;p&gt;まずは、Y座標に応じて光るように、Gバッファに書き出すemissionを設定します。
+光らせるY座標の位置は時間でアニメーションさせます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;float4 _SlideEmission;
+
+inline void PostEffect(RaymarchInfo ray, inout PostEffectOutput o)
+{
+    float a = frac(4.0 * ray.endPos.y - 2.0 * _Time.x - 0.5);
+    float width = 0.04;
+    o.emission = _SlideEmission * abs(sin(PI * 12.0 * _Time.x)) * step(a, width) * ((a + 0.5 * width) / width);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次に、床のブロックの高さの動きをランダムに設定します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;float dFloor(float3 pos)
+{
+    float3 p = pos;
+    p.xz = Repeat(p.xz, 0.5);
+    p.y += 1 + 0.1 * sin(36.0 * _Time.x + 2.0 * Rand(floor(2.0 * pos.xz)));
+    return sdBox(p, float3(0.2, 0.2, 0.2));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これだけで、床をにランダムに光らせる演出の完成です！&lt;/p&gt;
+
+&lt;p&gt;床の高さがバラバラになっているので、等高線で光らせるとタイミングが微妙にずれて、いい感じにバラバラのタイミングで光ります！&lt;/p&gt;
+
+&lt;h3 id=&#34;uraymarchingのトラブルシューティング&#34;&gt;uRaymarchingのトラブルシューティング&lt;/h3&gt;
+
+&lt;p&gt;2点だけつまずいたポイントがあったので、後学のためにメモを残しておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ShaderTemplates で Direct GBuffer を選択すると、影が落ちない（Shadow Caster が動作しない）
+
+&lt;ul&gt;
+&lt;li&gt;これはUnityの仕様に原因があるらしく、hecomiさんの記事にも書いてありました&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;プロジェクトの設定で &lt;code&gt;metalEditorSupport: 0&lt;/code&gt; にしないと、Macで動作しない
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/unity-demoscene/commit/47f19613bbc032bef1b8b35b9b972f3f9983debc&#34;&gt;修正のコミット&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;timelineとの連携&#34;&gt;Timelineとの連携&lt;/h2&gt;
+
+&lt;p&gt;Unity2017のTimeline機能でカメラワークやロボットの動き、UI上のテキストなどの演出の制御をしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/timeline.jpg&#34; alt=&#34;timeline&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;カメラワーク&#34;&gt;カメラワーク&lt;/h3&gt;
+
+&lt;p&gt;Timelineからゲームオブジェクトを操作する2つの方法があります。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Playables&lt;/code&gt;を実装・利用する方法
+
+&lt;ul&gt;
+&lt;li&gt;APIは複雑で、気軽に使うのは難しい&lt;/li&gt;
+&lt;li&gt;作り込めば何でもできる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ITimeControl&lt;/code&gt;を継承したコンポーネントを実装・利用する方法
+
+&lt;ul&gt;
+&lt;li&gt;APIは単純で、気軽に使える&lt;/li&gt;
+&lt;li&gt;できることが少ない（クリップの現在時間しか受け取れない）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;カメラワークの制御をどちらで行うのか悩みましたが、最終的には以下の理由で&lt;code&gt;ITimeControl&lt;/code&gt;に決めました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;とりあえずカメラを動かすだけなら、&lt;code&gt;ITimeControl&lt;/code&gt;が手っ取り早いと感じた&lt;/li&gt;
+&lt;li&gt;カメラワークを汎用的な&lt;code&gt;Playables&lt;/code&gt;に落とし込む時間もスキルも足りなかった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とりあえずカメラワークを&lt;code&gt;ITimeControl&lt;/code&gt;で実装することはできましたが、
+&lt;code&gt;ITimeControl&lt;/code&gt;では再生時間の情報しか受け取れず、クリップごとにパラメータを持たすことすらできません。
+三角関数などを駆使してカメラのtransformを操作して、無理やりカメラワークを実装しましたが、
+&lt;a href=&#34;https://github.com/gam0022/unity-demoscene/blob/bdb84d7517b812f742363c971174d9435cea0cb2/Assets/Demoscene/TheGlow/TheGlowCameraWork.cs&#34;&gt;職人芸すぎてメンテナンスが困難なコード&lt;/a&gt;になりました。&lt;/p&gt;
+
+&lt;p&gt;今回は満足するものはできなかったので、次回はこれらの方法でカメラワークに再挑戦したいです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.assetstore.unity3d.com/jp/#!/content/95266&#34;&gt;Default Playables&lt;/a&gt;
+に含まれているTimeline Playable Wizardを使えば、&lt;code&gt;Playables&lt;/code&gt;の雛形コードを作成できるそうなので、これを利用して独自&lt;code&gt;Playables&lt;/code&gt;の実装に再挑戦する&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tsubakit1.hateblo.jp/entry/2017/06/15/225504&#34;&gt;Cinemachine&lt;/a&gt;というUnity公式のカメラワークを作るための&lt;code&gt;Playables&lt;/code&gt;を利用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ロボットの動き&#34;&gt;ロボットの動き&lt;/h3&gt;
+
+&lt;p&gt;ロボットに&lt;code&gt;Animator&lt;/code&gt;コンポーネントをアタッチすれば、普通に&lt;code&gt;Animation Track&lt;/code&gt;でクリップを再生できました。&lt;/p&gt;
+
+&lt;p&gt;2つの&lt;code&gt;Animation Track&lt;/code&gt;のクリップを重ねるように配置すると、モーションのブレンドができるので、
+待機モーションから走るモーションへのブレンドはこれを利用しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Animation Track&lt;/code&gt;の中に作成できる&lt;code&gt;Override Track&lt;/code&gt;でキャラクターの移動を実現しました。
+&lt;code&gt;Override Track&lt;/code&gt;ではパラメータのアニメーションのカーブを直接編集できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/timeline-animation.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/timeline-animation.png&#34; alt=&#34;Animation Trackによるロボットの制御&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;テキスト&#34;&gt;テキスト&lt;/h3&gt;
+
+&lt;p&gt;後半のタイトル文字には&lt;a href=&#34;https://www.assetstore.unity3d.com/jp/#!/content/84126&#34;&gt;TextMesh Pro&lt;/a&gt;を使用しました。
+Timelineとの連携は、Activation Trackを使って実現しています。
+1文字ずつ表示する部分は、TextMesh ProのサンプルのTextConsoleSimulatorクラスを使って制御しています。
+しかし、このクラスはTimelineは考慮されておらず、通常再生時と録画時とで表示速度がずれる問題が残りました。
+将来的には独自の&lt;code&gt;Playables&lt;/code&gt;を実装して、これらの問題を解決したいです。&lt;/p&gt;
+
+&lt;h3 id=&#34;パーティクル&#34;&gt;パーティクル&lt;/h3&gt;
+
+&lt;p&gt;ロボットの足元の火花には、&lt;a href=&#34;https://www.assetstore.unity3d.com/jp/#!/content/73777&#34;&gt;Unity Particle Pack&lt;/a&gt;
+に含まれている「ElectricalSparksEffect」を使用しました。
+Timelineとの連携は、Activation Trackを使って実現しています。&lt;/p&gt;
+
+&lt;h2 id=&#34;その他&#34;&gt;その他&lt;/h2&gt;
+
+&lt;h3 id=&#34;ポストエフェクト&#34;&gt;ポストエフェクト&lt;/h3&gt;
+
+&lt;p&gt;ポストエフェクトには、&lt;a href=&#34;https://github.com/Unity-Technologies/PostProcessing&#34;&gt;Post-processing Stack v2&lt;/a&gt;を利用しました。&lt;/p&gt;
+
+&lt;p&gt;以下のポストエフェクトを利用しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fog
+
+&lt;ul&gt;
+&lt;li&gt;レイマーチングでは遠景にエイリアシングが発生して汚くなる弱点があるので、Fogで遠景を暗くしました&lt;/li&gt;
+&lt;li&gt;現実でも距離の二乗に比例して光が減衰するので、Fogで現実感が増します&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Bloom
+
+&lt;ul&gt;
+&lt;li&gt;Bloomは明るい光源からの光が周囲に漏れるように見える効果です&lt;/li&gt;
+&lt;li&gt;今回はemissionを多用したシーンなので、Bloomが効果的に機能しました&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Ambient Occlusion
+
+&lt;ul&gt;
+&lt;li&gt;AOで大域照明感を出しました&lt;/li&gt;
+&lt;li&gt;暗いシーンなので、違いは分かりにくいかもしれませんね&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ポストエフェクトの有無で比較画像を用意しました。
+左がポストエフェクトOFF、右がポストエフェクトONです。
+違いが一目瞭然ですね！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/postprocessing.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-12-21-unity-demoscene/postprocessing.jpg&#34; alt=&#34;ポストエフェクトの有無で比較&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3d素材&#34;&gt;3D素材&lt;/h3&gt;
+
+&lt;p&gt;ロボットの3Dモデルは&lt;a href=&#34;https://www.assetstore.unity3d.com/jp/#!/content/4696&#34;&gt;Space Robot Kyle&lt;/a&gt;を使わせていただきました。&lt;/p&gt;
+
+&lt;p&gt;モーションは&lt;a href=&#34;http://unity-chan.com/download/releaseNote.php?id=UnityChan&#34;&gt;ユニティちゃん 3Dモデルデータ&lt;/a&gt;を利用しました。&lt;/p&gt;
+
+&lt;h3 id=&#34;動画撮影&#34;&gt;動画撮影&lt;/h3&gt;
+
+&lt;p&gt;冒頭のYouTubeの動画は、&lt;a href=&#34;https://github.com/Unity-Technologies/GenericFrameRecorder&#34;&gt;Unity Recorder&lt;/a&gt;を使って撮影しました。
+このアセットは、Unityの画面を録画し、動画として保存してくれます。
+固定フレームレートに対応しているので、非力なPCでも撮影が可能です。&lt;/p&gt;
+
+&lt;p&gt;Unity Recorderには、Timelineとの連携機能もありました。
+Recorder trackをタイムラインに追加すると、エディター再生時に自動で録画ができます。&lt;/p&gt;
+
+&lt;p&gt;注意点として、&lt;a href=&#34;https://github.com/Unity-Technologies/GenericFrameRecorder/issues/11&#34;&gt;v0.1ではUIが録画できないという不具合&lt;/a&gt;がありました。
+&lt;a href=&#34;https://github.com/Unity-Technologies/GenericFrameRecorder/releases&#34;&gt;GitHubのReleases&lt;/a&gt;から、v0.2（現時点の最新版）をダウンロードすることで解決できました。&lt;/p&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;Unityを上手に利用すれば効率的にデモ作成できると感じました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;便利なAssetがたくさん提供されている&lt;/li&gt;
+&lt;li&gt;リアルタイムに見た目を確認しながら、シェーダのパラメータを調整できる
+
+&lt;ul&gt;
+&lt;li&gt;シェーダ（ShaderLab）に数行コードを足すだけで、インスペクタにパラメータを露出できる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;リアルタイムに見た目を確認しながら、シェーダやスクリプトを編集できる
+
+&lt;ul&gt;
+&lt;li&gt;Unityに標準搭載されているホットリロード機能によって、シーンの再生中でもシェーダやスクリプトの変更が反映できる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--
+まだUnityを使いこなせていない感があるので、もっとUnityの経験値を貯めたいです。
+--&gt;
+
+&lt;h1 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h1&gt;
+
+&lt;p&gt;UnityのプロジェクトをGitHubで公開しています。スターが欲しいです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/unity-demoscene&#34;&gt;Unity Demoscene | GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今回のデモ用のファイルは&lt;a href=&#34;https://github.com/gam0022/unity-demoscene/tree/master/Assets/Demoscene/TheGlow&#34;&gt;&lt;code&gt;Assets/Demoscene/TheGlow&lt;/code&gt;&lt;/a&gt;のディレクトリにあります。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

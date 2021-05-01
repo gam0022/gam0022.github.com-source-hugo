@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/%E5%B0%8F%E3%83%8D%E3%82%BF/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/%E5%B0%8F%E3%83%8D%E3%82%BF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>先頭にコピペするだけ！Shadertoy → GLSL Sandbox / NEORT の移植用ヘッダーコードの紹介</title>
+      <link>https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/</link>
+      <pubDate>Mon, 04 Mar 2019 09:01:07 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/&#34;&gt;Shadertoy&lt;/a&gt;のコードを&lt;a href=&#34;http://glslsandbox.com/&#34;&gt;GLSL Sandbox&lt;/a&gt;に一発で移植するコードを思いつきました。&lt;/p&gt;
+
+&lt;p&gt;以下のコードをShadertoyのコードの先頭にコピペするだけで、元のコードには一切手を加えずにGLSL Sandbox用のコードに変換できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// BEGIN: shadertoy porting template
+// https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/
+precision highp float;
+
+uniform vec2 resolution;
+uniform float time;
+uniform vec2 mouse;
+
+#define iResolution resolution
+#define iTime time
+#define iMouse mouse
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord);
+
+void main(void) {
+    vec4 col;
+    mainImage(col, gl_FragCoord.xy);
+    gl_FragColor = col;
+}
+// END: shadertoy porting template
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Shadertoyのマルチパスやテクスチャ機能をつかったShaderの移植はできませんが、普通の1パスのShaderなら移植できると思います。&lt;/p&gt;
+
+&lt;p&gt;ぜひ使ってみてください！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;shadertoy-neort-の移植事例&#34;&gt;Shadertoy → NEORT の移植事例&lt;/h2&gt;
+
+&lt;p&gt;最近、&lt;a href=&#34;https://neort.io/&#34;&gt;NEORT&lt;/a&gt;という国内産Shadertoyのようなサイトが登場しました。&lt;/p&gt;
+
+&lt;p&gt;NEORTはGLSL Sandbox互換があるので、ご紹介した方法で一発でShadertoyから移植できました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;NEORTはじめました⛩️&lt;a href=&#34;https://twitter.com/hashtag/GLSL?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#GLSL&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/creativecoding?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#creativecoding&lt;/a&gt; &lt;a href=&#34;https://t.co/acKyzwIU8S&#34;&gt;https://t.co/acKyzwIU8S&lt;/a&gt; &lt;a href=&#34;https://t.co/1AqphUQ5jv&#34;&gt;pic.twitter.com/1AqphUQ5jv&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1100564853985501184?ref_src=twsrc%5Etfw&#34;&gt;2019年2月27日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;解説&#34;&gt;解説&lt;/h2&gt;
+
+&lt;p&gt;なぜこれでうまく移植できるのか、簡単に解説します。&lt;/p&gt;
+
+&lt;h3 id=&#34;uniform名の違いの吸収&#34;&gt;uniform名の違いの吸収&lt;/h3&gt;
+
+&lt;p&gt;まず以下のコードでShadertoyとGLSL Sandboxのuniform名の違いの吸収しています。&lt;/p&gt;
+
+&lt;p&gt;単純に &lt;code&gt;#define&lt;/code&gt; のプリプロセッサで置換しているだけなので、特に不思議なことは無いと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;uniform vec2 resolution;
+uniform float time;
+uniform vec2 mouse;
+
+#define iResolution resolution
+#define iTime time
+#define iMouse mouse
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;エントリーポイント名の違いの吸収&#34;&gt;エントリーポイント名の違いの吸収&lt;/h3&gt;
+
+&lt;p&gt;Shadertoyのエントリポイントは &lt;code&gt;mainImage&lt;/code&gt; で、GLSL Sandboxは &lt;code&gt;main&lt;/code&gt; です。&lt;/p&gt;
+
+&lt;p&gt;が、よく考えてみると、ShadertoyもWebGLで実装されているからにはGLSLのルールに従って &lt;code&gt;main&lt;/code&gt; が定義されているはずです。&lt;/p&gt;
+
+&lt;p&gt;Shadertoyのソースコードを眺めてみると、&lt;code&gt;mainImage&lt;/code&gt; を呼び出す &lt;code&gt;main&lt;/code&gt; 関数をヘッダーとして挿入する実装になっています。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void main(void) {
+    vec4 col;
+    mainImage(col, gl_FragCoord.xy);
+    gl_FragColor = col;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この「mainImage を呼び出す main を定義する」というアイデアは&lt;a href=&#34;https://twitter.com/kanetaaaaa&#34;&gt;kaneta&lt;/a&gt;さんのこの作品からヒントをもらいました！&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;早速2D版🤔のGLSLコード置いているので、ご自由にお使いください🤔&lt;a href=&#34;https://t.co/OJjTYlLy0c&#34;&gt;https://t.co/OJjTYlLy0c&lt;/a&gt; &lt;a href=&#34;https://t.co/NYN6zT77sM&#34;&gt;pic.twitter.com/NYN6zT77sM&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1099180997269106688?ref_src=twsrc%5Etfw&#34;&gt;2019年2月23日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;次はコンパイルエラーを避けるための前方宣言です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void mainImage(out vec4 fragColor, in vec2 fragCoord);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;GLSLではC言語と同様に、別の関数から呼び出される前に関数を定義するか、前方宣言する必要があります。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

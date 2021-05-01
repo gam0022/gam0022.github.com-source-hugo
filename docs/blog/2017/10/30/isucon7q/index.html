@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>ISUCON7予選で81位でした | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="会社の同期（@kanetaaaaa）とチーム「アロマゲドン」を結成して、ISUCON7予選に参加しました。
+ISUCONは、お題となるWebサービスに対して、決められたレギュレーションの中で高速化を図るチューニングバトルです。
+
+チーム名のアロマゲドンは、TVアニメ『プリパラ』に登場する白玉みかんさんと黒須あろまさんの2人組アイドルユニットの名前をお借りしました。
+本チームでは、白玉みかんさん役を私が、黒須あろまさん役をkanetaaaaaさん（以下、あろま）が務めました。
+
+予選結果は、407チーム中81位で、最終スコアは46,461でした。
+アプリのチューニングはある程度はできたのですが、GET /iconsの帯域問題に対処できなかったのが敗因でした。
+来年の予選突破に向けて、反省と感想を残そうと思います。
+
+
+
+">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/images/posts/2017-10-23-isucon7q/score.png">
+        <meta name="twitter:card" content="summary_large_image">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="ISUCON7予選で81位でした | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/blog/2017/10/30/isucon7q/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">ISUCON7予選で81位でした</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-10-30 08:00:00 &#43;0900 JST" itemprop="datePublished">2017-10-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/isucon">ISUCON</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2017/10/30/isucon7q/" class="hatena-bookmark-button" data-hatena-bookmark-title="ISUCON7予選で81位でした" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2017/10/30/isucon7q/" data-text="ISUCON7予選で81位でした" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2017/10/30/isucon7q/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    <p>会社の同期（<a href="https://twitter.com/kanetaaaaa">@kanetaaaaa</a>）とチーム「アロマゲドン」を結成して、ISUCON7予選に参加しました。
+ISUCONは、お題となるWebサービスに対して、決められたレギュレーションの中で高速化を図るチューニングバトルです。</p>
+
+<p>チーム名のアロマゲドンは、TVアニメ『プリパラ』に登場する白玉みかんさんと黒須あろまさんの2人組アイドルユニットの名前をお借りしました。
+本チームでは、白玉みかんさん役を私が、黒須あろまさん役をkanetaaaaaさん（以下、あろま）が務めました。</p>
+
+<p>予選結果は、<a href="http://isucon.net/archives/50961437.html">407チーム中81位で、最終スコアは46,461</a>でした。
+アプリのチューニングはある程度はできたのですが、<code>GET /icons</code>の帯域問題に対処できなかったのが敗因でした。
+来年の予選突破に向けて、反省と感想を残そうと思います。</p>
+
+<p><img src="/images/posts/2017-10-23-isucon7q/score.png" alt="score遷移" /></p>
+
+<p></p>
+
+<h1 id="事前準備">事前準備</h1>
+
+<p>私は過去にISUCON5に参加していますが、あろまはISUCON初参加だったため、ISUCON5の本戦用に私が用意したチートシートや<a href="http://isucon.net/archives/50648750.html">ISUCON夏期講習</a>のスライドを読んで勉強してもらいました。</p>
+
+<h2 id="過去問の対策">過去問の対策</h2>
+
+<p>休日に会社に集まり、役割分担を意識しながらチームで問題を解く練習をしました。
+<a href="https://github.com/catatsuy/private-isu">pixiv ISUCON</a>はEC2のAMIが公開されており環境構築が簡単だったので、これを使って練習しました。</p>
+
+<p>pixiv ISUCONとISUCON7の予選問題は非常に似ていまいた。
+どちらも初期実装ではアップロードされた画像をMySQLのDBに書き込んでおり、
+この画像をDBから切り離してファイルに保存するようにして、nginx等で配信すれば、ぐっとスコアが伸びるような問題になっていました。</p>
+
+<p>予選前に公開された<a href="http://isucon.net/archives/50927022.html">レギュレーション</a>に『複数台あるサーバーの役割の変更』という文言があり、
+複数台構成は予想できていたので、pixiv ISUCONを2台のサーバにする練習もしました。
+練習の構成では、1台のサーバに画像のアップロードと配信を行わせ、もう1台のサーバでその他の処理をさせるようにしました。
+しかし、この構成は微妙らしく、1台のときよりスコアが下がりました。</p>
+
+<p>今思えば、この時に複数台構成の練習をちゃんとしていれば、予選のスコアはもっと伸びただろうという後悔しかありません。
+予選では帯域がボトルネックだったので、複数のサーバで画像を配信する構成で練習するべきでした。
+練習の方向性は間違っていなかったので、詰めが甘かったことを本当に後悔しています。</p>
+
+<h2 id="ツールの整備">ツールの整備</h2>
+
+<ul>
+<li><a href="https://github.com/KLab/myprofiler">myprofiler</a>: MySQLのプロファイラ</li>
+<li><a href="https://github.com/sonots/lltsv">lltsv</a>: ステータスコードごとのアクセスログの集計用</li>
+<li><a href="https://github.com/firehol/netdata">netdata</a>: リソースモニタリング</li>
+<li>nginxのアクセスログをサマライズするスクリプト</li>
+</ul>
+
+<p>最後のアクセスログのサマライズは、あろまがいい感じにHTML出力とソート対応をしてくれました。</p>
+
+<iframe style="width: 100%;height: 400px;" src="/images/posts/2017-10-23-isucon7q/summary_log_init.html"></iframe>
+
+<p>ISUCON用にslackのグループを作って、上記のサマライズの結果をslackに投稿する仕組みを作りました。</p>
+
+<h2 id="環境整備の仕込み">環境整備の仕込み</h2>
+
+<p>当日の環境構築は私が担当することにしました。
+まず最初にsshの設定をすることは明らかだったので、事前にあろまの公開鍵を教えてもらいました。</p>
+
+<p>環境設定用のリポジトリを作って、<code>.bashrc</code> や <code>.vimrc</code> を入れておきました。
+本番環境の <code>.bashrc</code> や <code>.vimrc</code> からincludeする手順も確立しておきました。</p>
+
+<p>他にも役に立ちそうなシェルスクリプトやaliasを用意しました。</p>
+
+<ul>
+<li>アプリとMySQLとnginxを一発で再起動するスクリプト</li>
+<li>プロファイリングツールを起動するコマンド</li>
+<li>複数のサーバにrsyncでコードをデプロイするスクリプト（担当：あろま）</li>
+</ul>
+
+<p>ツール整備で紹介したmyprofilerやlltsvについては、
+事前にバイナリをダウンロードして、環境設定用のリポジトリに突っ込んでおきました。</p>
+
+<p>最後に当日やることのリストの整備しておいて、当日の役割分担を打ち合わせしました。</p>
+
+<h2 id="チームビルディング">チームビルディング</h2>
+
+<p>プリパラのアニメや曲を鑑賞することで、チームの結束力を高めました。</p>
+
+<h1 id="予選当日">予選当日</h1>
+
+<p>当日の流れを振り返ります。</p>
+
+<h2 id="初回ベンチマークまでの動き">初回ベンチマークまでの動き</h2>
+
+<ul>
+<li>環境設定（担当：みかん）
+
+<ul>
+<li>sshの設定</li>
+<li>GitHubへの公開鍵設定</li>
+<li><code>.bashrc</code> と <code>.vimrc</code>の仕込み</li>
+</ul></li>
+<li>サーバ構成の変更（担当：みかん）
+
+<ul>
+<li>3台のサーバのうち、mysqlのある3台目のサーバだけを使う1台構成に決定
+
+<ul>
+<li>今思うと致命的な判断ミス。ここで負けが決まってしまった</li>
+</ul></li>
+<li>1台目の2台目のサーバにPythonのアプリがあったので、それらを落とす</li>
+<li>3台目のサーバでRubyのアプリとnginxを起動</li>
+</ul></li>
+<li><code>/home/isucon/isubata/webapp</code> と <code>/etc</code> をGit管理、リポジトリ作成（担当：みかん）</li>
+<li>MySQLのユーザ名とパスワードを調査（担当：あろま）
+
+<ul>
+<li>事前に用意していたMySQL関係のaliasでは、ユーザ名をrootでパスワードなしを前提としていて、動かずに困っていたが、これで解決</li>
+</ul></li>
+<li>apt-get update（担当：あろま）</li>
+<li>vimやnetdataのインストール（担当：あろま）</li>
+<li>MySQLのバックアップ（担当：あろま）</li>
+</ul>
+
+<p>初期ベンチマークのスコアは6,134でした。</p>
+
+<h3 id="重たいページ">重たいページ</h3>
+
+<p>初期状態だとユーザのプロフィール画像の <code>GET /icons</code> がボトルネックになっていました。</p>
+
+<p><img src="/images/posts/2017-10-23-isucon7q/summay_log_init.png" alt="summay_log_init" /></p>
+
+<h3 id="重たいmysqlのクエリ">重たいMySQLのクエリ</h3>
+
+<p><code>GET /icons</code> はimageテーブルの画像データを取り出すようになっており、それが反映されていました。</p>
+
+<pre><code> 209 SELECT * FROM image WHERE name = ?
+  41 SELECT COUNT(*) as cnt FROM message WHERE channel_id = ?
+  14 SELECT name, display_name, avatar_icon FROM user WHERE id = ?
+   3 SELECT * FROM haveread WHERE user_id = ? AND channel_id = ?
+   1 INSERT INTO haveread (user_id, channel_id, message_id, updated_at, created_at) VALUES (?, ?, ?, NOW(), NOW()) ON DUPLICATE KEY UPDATE message_id = ?, updated_at = NOW()
+</code></pre>
+
+<h2 id="前半のチューニング">前半のチューニング</h2>
+
+<p>これらチューニングで、初期スコアの6,134から最終スコアの46,461前後になりました。</p>
+
+<!--
+- nginxのworker_connections 1024 にしたら、スコアが3,000前後に下がったので、リバート（担当：みかん）
+-->
+
+<ul>
+<li>MySQLのインデックス追加（担当：みかん）
+
+<ul>
+<li><code>ALTER TABLE message ADD INDEX channel_id(channel_id);</code></li>
+</ul></li>
+<li>imageテーブルの画像をファイルとして読み書きしてnginxで配信するように変更（担当：みかん）
+
+<ul>
+<li>pixiv ISUCONで予習済みだったため、すんなりとできた</li>
+</ul></li>
+<li>imageテーブルをDrop（担当：あろま）</li>
+<li>cssやjsなどの静的ファイルをnginxで配信。さらにgzip_staticで帯域の節約（担当：あろま）</li>
+<li><code>GET /icons</code>で304を返せるようにnginxのCache-Controlの設定（担当：あろま）
+
+<ul>
+<li><a href="http://sfujiwara.hatenablog.com/entry/2017/10/23/123240">上位チームでもすぐに気が付かなかった</a> <code>Cache-Control: public</code> を付けてくれた（超絶ナイス）</li>
+</ul></li>
+<li>stackprofというRubyのプロファイラを導入（担当：あろま）</li>
+<li><code>GET /message</code>が時々9秒など異常に遅いときがあるのに気がつく（担当：みかん）
+
+<ul>
+<li>N+1問題を解消</li>
+<li>パラメータのlast_message_idより新しい最新の100件のmessageを返していた</li>
+<li>MySQLで最新の100件を取得し、last_message_idによるフィルタリングはアプリ側で行うように修正</li>
+</ul></li>
+</ul>
+
+<pre><code>root@app2483:/etc$ cat /var/log/nginx/access.log | grep &quot;/message&quot; | lltsv -k reqtime,request,in,out | sort -n -r | head
+reqtime:9.686    request:GET /message?channel_id=2&amp;last_message_id=0 HTTP/1.1    in:673    out:52306
+reqtime:4.825    request:GET /message?channel_id=2&amp;last_message_id=0 HTTP/1.1    in:673    out:52306
+reqtime:4.590    request:GET /message?channel_id=3&amp;last_message_id=0 HTTP/1.1    in:677    out:50090
+reqtime:3.017    request:GET /message?channel_id=10&amp;last_message_id=11918 HTTP/1.1    in:678    out:18771
+reqtime:3.000    request:POST /message HTTP/1.1    in:2904    out:0
+reqtime:3.000    request:POST /message HTTP/1.1    in:1571    out:0
+reqtime:2.964    request:POST /message HTTP/1.1    in:1502    out:152
+reqtime:2.962    request:POST /message HTTP/1.1    in:1547    out:152
+reqtime:2.960    request:POST /message HTTP/1.1    in:2113    out:152
+reqtime:2.855    request:POST /message HTTP/1.1    in:1563    out:152
+</code></pre>
+
+<h3 id="重たいページ-1">重たいページ</h3>
+
+<p>nginxで画像を返すようにしても相変わらず <code>GET /icons</code> がボトルネックになっていました。
+キャッシュコントロールもしているのに、どうしてだろうと頭を抱えました。</p>
+
+<p><img src="/images/posts/2017-10-23-isucon7q/summary_log_final.png" alt="summary_log_final" /></p>
+
+<p>ステータスコードごとの集計でも304が最多でしたので、やはりキャッシュコントロールは正しく効いていそうでした。</p>
+
+<pre><code>lltsv -k status access.log.2017-10-22_20-42-27 | sort | uniq -c
+5673 status:200
+  91 status:204
+6554 status:303
+24765 status:304
+  26 status:400
+  52 status:403
+   1 status:404
+  13 status:409
+   3 status:499
+ 108 status:500
+</code></pre>
+
+<p>試合後に気がついたのですが、画像の中身のハッシュ値からファイル名を決定していたので、同じファイル名の画像は更新されない仕様でした。
+ 反省点としては、同じ画像がアップロードされたら無視するようにするべきでした。
+ そうすれば、画像のアップロード直後にも304を返せるので、さらに<code>/icons</code>の帯域を節約できたのではないかと思います。</p>
+
+<h3 id="重たいmysqlのクエリ-1">重たいMySQLのクエリ</h3>
+
+<p>imageテーブルを排除し、明らかに危険なN+1は解消したので、メッセージ数のカウント等のクエリが上位になりました。</p>
+
+<p>既読を管理している<code>haveread</code>はMySQLから離して、memcached等のメモリキャッシュシステムに載せることも考えましたが、練習してこなかったので諦めました。</p>
+
+<pre><code>40 SELECT COUNT(*) as cnt FROM message WHERE channel_id = ?
+37 SELECT * FROM haveread WHERE user_id = ? AND channel_id = ?
+ 4 INSERT INTO message (channel_id, user_id, content, created_at) VALUES (?, ?, ?, NOW())
+ 3 INSERT INTO haveread (user_id, channel_id, message_id, updated_at, created_at) VALUES (?, ?, ?, NOW(), NOW()) ON DUPLICATE KEY UPDATE message_id = ?, updated_at = NOW()
+ 1 SELECT id FROM channel
+</code></pre>
+
+<h3 id="netdata">netdata</h3>
+
+<p>CPUの使用率が100%となっており、CPUを使い切っていることが分かりました。
+ようやくCPUが1コアしかないことに気が付きました。</p>
+
+<pre><code>isucon@app2483:~/isubata/webapp/ruby$  cat /proc/cpuinfo | grep processor
+processor    : 0
+</code></pre>
+
+<p>最初はアプリ側のチューニングができた証拠のだろうと楽観的な解釈したのですが、
+サーバ1台あたりのスペックがとても低く、複数台構成でないと勝てないのではないかという疑念が湧きはじめました。</p>
+
+<p>次に帯域に注目しました。
+当日マニュアルによると『グローバルIP側の帯域は100Mbps』となっており、帯域も使い切っていることが分かりました。</p>
+
+<p><img src="/images/posts/2017-10-23-isucon7q/netdata_final.png" alt="netdata_final" /></p>
+
+<h2 id="後半のチューニング">後半のチューニング</h2>
+
+<p>残念ながら、ボトルネックの帯域に対する対策が何もできず、スコアに貢献できるアクションは何一つできずに終わりました。</p>
+
+<p>私のオペレーションミスでMySQLのデータを壊してしまい、
+ベンチマークが通らなくなるなどのトラブルもありましたが、あろまにリストアして助けてもらいました。</p>
+
+<p>試合終了1時間前にベンチマーク対象のサーバを複数選択すると、並列にアクセスされることに気が付きましたが、
+残り1時間で複数台構成への変更は危険だと判断して、最後まで1台構成にすることにしました。</p>
+
+<p>早い段階で複数台構成を考えていればと後悔ばかりです。</p>
+
+<!--
+- みかん : `statement.close`をコメントアウト（致命的ミス）
+  - Rubyのmysql2に使い慣れておらず、`statement.close`を明示するのに見慣れていなかった
+  - N+1問題が残っている状態だったら、毎回コネクションをクローズするのは良くないのかもと思っていた
+  - これによってMySQLのコネクションが足りなくなる
+  - Rubyの初期実装では `statement.close`が抜けている部分があったので、これを補うのか、mysql2-cs-bindに置き換えるのが正しい対処だった模様
+-->
+
+<p>他のチームがスコアを伸ばす中、スコアが全く伸びないという焦燥感から冷静な判断力を失い、お互いの作業内容も把握できなくなっていました。</p>
+
+<p>私は<code>GET /history</code>の中でレコード数の多いmessageに対して、<code>SELECT id FROM message WHERE channel_id = ? ORDER BY id DESC LIMIT ? OFFSET ?</code>していて、大量のレコードを走査していそうだったので、これの対処を試みるもうまくいかずに時間を無駄にしただけでした。</p>
+
+<h2 id="提出30分前">提出30分前</h2>
+
+<p>試合終了30分前を目処に再起動のテストを行いました。</p>
+
+<p>不要なサービスをdisableして、nginxのアクセスログをOFFにしました。</p>
+
+<p>再起動テストを時間に余裕をもって取り組めたのは良かった点だと思います。</p>
+
+<h1 id="反省">反省</h1>
+
+<p>帯域問題に対応できなかった他にも反省点があります。</p>
+
+<p>試合終了後に発覚したのですが、レギュレーションをきちんと読まなかったために、スコアに関して非常に重大なポイントを見落としていました。</p>
+
+<blockquote>
+<p>スコアは基本的に以下のルールで算出されます。</p>
+
+<p>成功したGETリクエスト数＋成功したPOSTリクエスト数×3＋受信したメッセージ件数</p>
+
+<p>「受信したメッセージ件数」とは、 GET /message が返したJSON内のメッセージ数です。</p>
+</blockquote>
+
+<p>また<a href="http://isucon.net/archives/50961706.html">ISUCON7 予選問題の公開と解説</a>に次のようにあります。</p>
+
+<blockquote>
+<p>クライアントはGET /fetchをポーリングしていて、閲覧中のチャンネルに新着メッセージがある場合にはGET /messageを呼んで新着メッセージを受信します。GET /fetchのレスポンスをどんなに改善しても、新着メッセージがなければスコアは上がりません。閲覧中のチャンネルに新着メッセージが1件ある状態ですぐに返しても、GET /messageで1点とそこに含まれる1メッセージ分の1点で、2リクエストで2点しか稼ぐことができません。</p>
+
+<p>しかしGET /fetchをタイムアウトにならない範囲で遅くしてやると、GET /messageは1リクエストで数十件のメッセージを取得することができるので2リクエストで数十点を稼ぐ事ができます。</p>
+</blockquote>
+
+<p>通常の1回のGETリクエストで1点しか稼げませんが、<code>GET /fetch</code>を適切に遅くしてやると、1回の<code>GET /message</code>で最大100点稼ぐことができました。</p>
+
+<p>我々のチームはこれに気が付きませんでした。
+<code>GET /message</code>のレスポンスサイズに注目すると、初期状態の46989.50877 byteから、チューニング後は9451.1263 byteに下がっていました。
+初期状態で何件のメッセージを返せていたのか不明ですが、初期実装と比較して、1回の<code>GET /message</code>の点数はおよそ1/5に落ちていたようです。</p>
+
+<p>ただし、検証した範囲内ではsleepを消したほうがスコアが上がりました。
+Rubyのようにprefork型だとsleepでworkerが専有されてしまうからでしょうか。
+ISUCONの問題は言語によって差が出ないものが多いですが、sleepに関しては言語による差があるように感じました。</p>
+
+<h1 id="感想">感想</h1>
+
+<p>事前の打ち合わせ通りに作業を分担して、チームとして戦えた点は非常に良かったと思います。
+事前準備のツールやスクリプトを本番で活用できたので、事前準備も成功だったと思います。</p>
+
+<p>帯域問題の複数台構成による解決は、チームのスキル的に難しかったので、今回のように諦めるのも戦略として間違いでは無かったと思っています。
+とはいえ、冷静になればもう少しうまく対処できたような気もするので、ちょっと悔しいです。
+最大の反省点はレギュレーションの読み込みの甘さです。次回は絶対に気をつけたいです。</p>
+
+<p>今年の問題はアプリのチューニングだけでは完結せずに、帯域の制約も対処する必要があって、インフラ側の知識や経験も要求されました。
+言い訳っぽいですが、自分のようにクライアントがメインでサーバは片手間に触っているようなエンジニアだと厳しいものを感じました。</p>
+
+<p>個人的な意見になりますが、複数台構成や帯域制限のある構成だと、試合後に再現が困難なため復習しにくい気がします。
+欲を言えば、EC2のAMIが公開されていて、特定のインスタンプタイプでインスタンスを作ればすぐに環境を再現できるような問題が嬉しいです。</p>
+
+<p>なんだか愚痴っぽくなってしまいましたが、ISUCONの練習や予選を通して得たものは多かったので、来年も是非参加したいです。
+運営の方々、楽しいイベントをありがとうございました。</p>
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-10-30 08:00:00 &#43;0900 JST" itemprop="datePublished">2017-10-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/isucon">ISUCON</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2017/10/30/isucon7q/" class="hatena-bookmark-button" data-hatena-bookmark-title="ISUCON7予選で81位でした" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2017/10/30/isucon7q/" data-text="ISUCON7予選で81位でした" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2017/10/30/isucon7q/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://gam0022.net/blog/2017/10/02/rtcamp5/"><span aria-hidden="true">&larr;</span> レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！</a></li>
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/blog/2017/11/14/move-from-serversman-to-conoha/">ServersMan@VPSからConoHaに引っ越しました <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/blog\/2017\/10\/30\/isucon7q\/';
+    var disqus_title = 'ISUCON7予選で81位でした';
+    var disqus_url = 'https:\/\/gam0022.net\/blog\/2017\/10\/30\/isucon7q\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#事前準備">事前準備</a>
+<ul>
+<li><a href="#過去問の対策">過去問の対策</a></li>
+<li><a href="#ツールの整備">ツールの整備</a></li>
+<li><a href="#環境整備の仕込み">環境整備の仕込み</a></li>
+<li><a href="#チームビルディング">チームビルディング</a></li>
+</ul></li>
+<li><a href="#予選当日">予選当日</a>
+<ul>
+<li><a href="#初回ベンチマークまでの動き">初回ベンチマークまでの動き</a>
+<ul>
+<li><a href="#重たいページ">重たいページ</a></li>
+<li><a href="#重たいmysqlのクエリ">重たいMySQLのクエリ</a></li>
+</ul></li>
+<li><a href="#前半のチューニング">前半のチューニング</a>
+<ul>
+<li><a href="#重たいページ-1">重たいページ</a></li>
+<li><a href="#重たいmysqlのクエリ-1">重たいMySQLのクエリ</a></li>
+<li><a href="#netdata">netdata</a></li>
+</ul></li>
+<li><a href="#後半のチューニング">後半のチューニング</a></li>
+<li><a href="#提出30分前">提出30分前</a></li>
+</ul></li>
+<li><a href="#反省">反省</a></li>
+<li><a href="#感想">感想</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

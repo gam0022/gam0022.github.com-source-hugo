@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/keynote/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/keynote/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keynoteで綺麗な数式を使う</title>
+      <link>https://gam0022.net/blog/2014/04/21/latexit/</link>
+      <pubDate>Mon, 21 Apr 2014 09:01:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2014/04/21/latexit/</guid>
+      <description>&lt;p&gt;研究室が始まって、輪講用のスライドをヒイヒイ言いながら作っていた時のことです。&lt;/p&gt;
+
+&lt;p&gt;Keynote には、PowerPointの数式エディタ的な機能が無いらしいのです。&lt;/p&gt;
+
+&lt;p&gt;どうにかして数式を埋め込みたかったので、方法を調べました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/keynote-1.png&#34; alt=&#34;600 keynoteに数式&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;keynote-で数式を埋め込むまで&#34;&gt;Keynote で数式を埋め込むまで&lt;/h1&gt;
+
+&lt;p&gt;結論から言うと、&lt;a href=&#34;http://www.chachatelier.fr/latexit/&#34;&gt;LaTeXiT&lt;/a&gt; というアプリケーションを利用することにしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;latexit-を導入&#34;&gt;LaTeXiT を導入&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en&#34;&gt;LaTexiT の最新版&lt;/a&gt;をダウンロード + インストールする。&lt;/p&gt;
+
+&lt;h2 id=&#34;latexit-の設定&#34;&gt;LaTeXiT の設定&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;コマンドを使って、各コマンドのパスを調べて設定します。&lt;/p&gt;
+
+&lt;p&gt;私の場合はこうしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-config.png&#34; alt=&#34;600 LaTexiTの設定&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;latexit-で数式を生成&#34;&gt;LaTeXiT で数式を生成&lt;/h2&gt;
+
+&lt;p&gt;LaTeXiT では、普通に LaTex と全く同じように数式が扱えます。&lt;/p&gt;
+
+&lt;p&gt;式を入力したら、右下の&lt;code&gt;LaTex it!&lt;/code&gt;ボタンでコンパイル(画像化)してくれます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-usage.png&#34; alt=&#34;600 LaTexiTの使い方&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;keynote-に貼り付ける&#34;&gt;Keynote に貼り付ける&lt;/h2&gt;
+
+&lt;p&gt;様々な形式に出力(クリップボードにコピー)できるのですが、Keynote で使いたい場合は PDF 形式がベクトル画像になるので良さそうです。&lt;/p&gt;
+
+&lt;p&gt;クリップボードにコピーしたら、Keynote から &lt;code&gt;Command-V&lt;/code&gt; で画像と同じように貼り付けることができます。&lt;/p&gt;
+
+&lt;p&gt;また、数式を Keynote にドラッグ・アンド・ドロップすることでも貼り付けることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-copy.png&#34; alt=&#34;600 数式のコピー&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみに、デフォルトフォーマットは、&lt;code&gt;LaTeXit&amp;gt; 環境設定 &amp;gt; 一般タブ&lt;/code&gt; から指定できます。&lt;/p&gt;
+
+&lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
+
+&lt;h2 id=&#34;数式番号を任意に指定したい&#34;&gt;数式番号を任意に指定したい&lt;/h2&gt;
+
+&lt;p&gt;数式番号を任意に指定したいなら、&lt;code&gt;setcounter&lt;/code&gt; 環境を使うと良いです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\setcounter{equation}{5} %数式番号を(6)としたいなら、5(指定したい番号 - 1)を指定
+\begin{equation}
+  M(T) = \sum_{e \in T,e \not\in P}m(e)
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;無事に数式番号を指定できました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2014-04-21-latexit/latexit-setcounter.png&#34; alt=&#34;600 数式番号を指定する&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mac-physics.ldblog.jp/archives/51932383.html&#34;&gt;Keynoteとかで数式を綺麗に表示したいーLaTeXiT : macでの研究に便利なものたち&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

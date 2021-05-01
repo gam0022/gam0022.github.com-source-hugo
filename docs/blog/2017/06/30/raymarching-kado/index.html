@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="今夜はアニメ「正解するカド」の最終回ですね。
+
+フラクタル図形（カド）や折り紙（ワム）が重要な要素になっていて、個人的にとても刺さるアニメでした。
+
+最終回は楽しみですが、今日で終わってしまうと思うと寂しくも感じます。
+
+さて、レイマーチング（スフィアトレーシング）は「カド」のようなフラクタル図形の描画がとても得意です。
+
+そこで、WebGLによるレイマーチングでカドのレンダリングに挑戦しました！！
+
+
+
+レイマーチングでカド(MandelBox)を描画した結果です。
+
+次のリンクからブラウザ上から動かすこともできます。
+
+
+http://gam0022.net/webgl/#raymarching_kado
+
+
+PauseをOFFにすると、カドがアニメーションします（負荷注意）。
+
+描画の負荷が重たすぎる場合には、Pixel Ratioを1/2xか1/4xにしてください。
+
+
+
+">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/images/posts/2017-06-30-raymarching-kado/kado.png">
+        <meta name="twitter:card" content="summary_large_image">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/blog/2017/06/30/raymarching-kado/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">正解するカドの「カド」をレイマーチングでリアルタイム描画する</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-06-30 04:33:31 &#43;0900 JST" itemprop="datePublished">2017-06-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2017/06/30/raymarching-kado/" class="hatena-bookmark-button" data-hatena-bookmark-title="正解するカドの「カド」をレイマーチングでリアルタイム描画する" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2017/06/30/raymarching-kado/" data-text="正解するカドの「カド」をレイマーチングでリアルタイム描画する" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2017/06/30/raymarching-kado/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    <p>今夜はアニメ<a href="http://seikaisuru-kado.com/">「正解するカド」</a>の最終回ですね。</p>
+
+<p>フラクタル図形（カド）や折り紙（ワム）が重要な要素になっていて、個人的にとても刺さるアニメでした。</p>
+
+<p>最終回は楽しみですが、今日で終わってしまうと思うと寂しくも感じます。</p>
+
+<p>さて、<a href="https://www.slideshare.net/shohosoda9/threejs-58238484">レイマーチング（スフィアトレーシング）</a>は「カド」のようなフラクタル図形の描画がとても得意です。</p>
+
+<p>そこで、WebGLによるレイマーチングでカドのレンダリングに挑戦しました！！</p>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/kado.png"><img src="/images/posts/2017-06-30-raymarching-kado/kado.png" alt="カド" /></a></p>
+
+<p>レイマーチングでカド(MandelBox)を描画した結果です。</p>
+
+<p>次のリンクからブラウザ上から動かすこともできます。</p>
+
+<ul>
+<li><a href="http://gam0022.net/webgl/#raymarching_kado">http://gam0022.net/webgl/#raymarching_kado</a></li>
+</ul>
+
+<p>PauseをOFFにすると、カドがアニメーションします（負荷注意）。</p>
+
+<p>描画の負荷が重たすぎる場合には、Pixel Ratioを1/2xか1/4xにしてください。</p>
+
+<!--
+
+Pixel Ratioを2xにすると、綺麗な結果になりますが、描画の負荷が4倍になります。
+
+2xにする場合は、PauseをONにするのがオススメです。カメラを動かさない限り再描画が行われなくなり、描画の負荷が下がります。
+
+-->
+
+<p></p>
+
+<h1 id="解説">解説</h1>
+
+<p>制作における工夫点や参考資料を紹介していきます。</p>
+
+<h2 id="カドのレンダリング">カドのレンダリング</h2>
+
+<p>アニメの「カド」はMandelBoxと呼ばれるフラクタル図形をベースに改造したもののようです。</p>
+
+<ul>
+<li><a href="https://cgworld.jp/feature/201602-kado01-cgw211.html">謎に満ちたアニメCGプロジェクト『正解するカド』（総監督：村田和也）に迫る 〜 mystery 01：3Dフラクタル 〜</a></li>
+</ul>
+
+<p>今回はベーシックなMandelBoxをレイマーチングで普通に描画しました。</p>
+
+<p>MandelBoxの距離関数は以下のサイトを参考に実装しました。</p>
+
+<ul>
+<li><a href="http://blog.hvidtfeldts.net/index.php/2011/11/distance-estimated-3d-fractals-vi-the-mandelbox/">Distance Estimated 3D Fractals (VI): The Mandelbox</a></li>
+</ul>
+
+<p>カドのシェーディングは<a href="http://gam0022.net/blog/2017/02/24/tdf2017/">TokyoDemoFest2017の作品</a>の実装をほぼそのまま流用しました。</p>
+
+<p>独特なカラフルな色は色相をレイマーチングのステップ数などによって変化させることで実現しています。</p>
+
+<p>IBL(Image Based Lighting)やAO(Ambient Occlusion)でシェーディングの品質を高めました。IBLのためのキューブマップ画像は以下のサイトのものを利用しました。</p>
+
+<ul>
+<li><a href="http://www.custommapmakers.org/skyboxes.php">Skyboxes for download</a></li>
+</ul>
+
+<h2 id="水面のレンダリング">水面のレンダリング</h2>
+
+<p>カドのレンダリングは特に特殊なことはしていませんが、水面には色々な工夫をこらしました。</p>
+
+<h3 id="cpuによるパーリンノイズの生成">CPUによるパーリンノイズの生成</h3>
+
+<p>フラクタルノイズの1種であるパーリンノイズをハイトマップとして、水面を表現しました。</p>
+
+<p>ハイトマップとの衝突判定もレイマーチングにより行いました。
+ハイトマップの距離関数は非常にシンプルに実装できます。</p>
+
+<pre><code class="language-c">float sdGround(in vec3 p) {
+	return p.y - texture2D(groundHeight, p.xz * 0.1).r + GROUND_BASE;
+}
+</code></pre>
+
+<p>パーリンノイズの生成は起動時にCPU側で行っています。</p>
+
+<p>次のサイトを参考にして、JavaScriptでパーリンノイズの計算を実装しました。</p>
+
+<ul>
+<li><a href="http://postd.cc/understanding-perlin-noise/">パーリンノイズを理解する</a></li>
+</ul>
+
+<p>この記事を読んで、今まで「パーリンノイズ」だと思い込んでいたものが、「バリューノイズ」だと知りました。</p>
+
+<p>勾配を使った本物のパーリンノイズの実装は今回が初めてだったので、勉強になりました。</p>
+
+<h3 id="水面のアニメーション">水面のアニメーション</h3>
+
+<p>3Dのパーリンノイズを実装したので、時間方向にパーリンノイズを動かすことで、水面のアニメーションもできます。</p>
+
+<p><code>Animate Water</code>というチェックボックスをONにすると、水面のアニメーションができます。</p>
+
+<p>毎フレーム毎にCPU計算で256x256のパーリンノイズを生成するため、かなり激重です。ハイエンドPCでもまともに動きませんｗ</p>
+
+<p>起動時にまとめて生成すれば良いような気がしますが、起動時間が長くなるのが嫌なので、このような仕様となっています。</p>
+
+<h3 id="衝突判定の軽量化">衝突判定の軽量化</h3>
+
+<p>単純に水面のハイトマップをテクスチャとして参照する実装にしたところ、テクスチャのフェッチ回数が危険領域に突入しました。</p>
+
+<p>そこで、カメラの近くの水面だけハイトマップからレイマーチングを行うようにして、
+カメラから離れた水面は凹凸のない平面として扱い、判定式から解析的に衝突判定を行うことで、軽量化を図りました。</p>
+
+<p>遠くの水面は形状的には平面ですが、シェーディングの法線計算ではハイトマップを参照するようにして、見た目の品質を向上しました。
+ノーマルマップと全く同じ原理です。</p>
+
+<p>ちなみに、今回のシーンように水面がXZ平面になっていれば、レイとの衝突判定は非常に低コストに行うことができます。</p>
+
+<p><code>GROUND_BASE</code> を水面の高さとして、次の <code>t</code> を計算し、<code>t &gt; 0.0</code> であればレイと平面が交差しています。</p>
+
+<pre><code class="language-c">float t = -(ray.origin.y - GROUND_BASE) / ray.direction.y;
+if (t &gt; 0.0) {
+  // Hit!!
+}
+</code></pre>
+
+<p>なんと、floatの引き算と割り算一回ずつだけで、平面とレイの衝突判定ができます！</p>
+
+<h3 id="fresnel反射">Fresnel反射</h3>
+
+<p>雑にFresnel反射も入れました。</p>
+
+<p>俯瞰視点にすると、遠くの方の水面は鏡面のようになっていることが分かると思います。</p>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/fresnel.png"><img src="/images/posts/2017-06-30-raymarching-kado/fresnel.png" alt="Fresnel反射" /></a></p>
+
+<p>水面がXZ平面になっていれば、衝突判定と同様にFresnel反射率の近似値もかなり低コストに計算できます。</p>
+
+<pre><code>float f0 = 0.7;// 垂直に入射した時の反射率。かなり大きめな値に設定。
+intersection.reflectance = f0 + (1.0 - f0) * pow(1.0 + ray.direction.y, 5.0);
+</code></pre>
+
+<h1 id="試作">試作</h1>
+
+<p>最終的には海の上にカドが浮かんでいるシーンとしましたが、ビルのシーンも試作しました。せっかくなので画像を残しておきます。</p>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/proto.png"><img src="/images/posts/2017-06-30-raymarching-kado/proto.png" alt="ビルの試作段階" /></a></p>
+
+<h1 id="余談">余談</h1>
+
+<p>最後に余談なのですが、作品の重要な要素であるカドとワムのどちらとも知り合いが関わっていて、あまりの世間の狭さに驚きました。</p>
+
+<p>カドのレンダリングはレイトレ合宿などで繋がりのある<a href="https://twitter.com/_Pheema_/">Pheemaさん</a>のUnityのレイマーチングによるものでした。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">先程TOKYOMXで放送された『正解するカド』で、「カド」などの3Dフラクタル描画に関わりましたー。Unityでゴリゴリとレイマーチングしております！よろしくお願いいたしますー！ / <a href="https://t.co/8J8e3Yrff8">https://t.co/8J8e3Yrff8</a></p>&mdash; Pheema (@<em>Pheema</em>) <a href="https://twitter.com/_Pheema_/status/850347680039489536">2017年4月7日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>さらに、ワムは大学時代の指導教官の三谷純先生の幾何学折り紙そのものでした。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">東映のフル3Dアニメ 「正解するカド」<a href="https://t.co/M6ae6WIZa3">https://t.co/M6ae6WIZa3</a><br>の第5話に立体折り紙（球体）の制作シーンが登場。<br>スタッフロールに資料協力として名前を掲載いただきました。<br><br>こちらの作品のイメージに近い感じでした。<a href="https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash">#正解するカド</a> <a href="https://t.co/2yjpB1643t">pic.twitter.com/2yjpB1643t</a></p>&mdash; 三谷 純 Jun MITANI (@jmitani) <a href="https://twitter.com/jmitani/status/860644756417765376">2017年5月5日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>こんなことってあるんですね…！</p>
+
+<h1 id="アニメ版のカドの再現-2017-07-03追記">アニメ版のカドの再現（2017/07/03追記）</h1>
+
+<p>notargsさんがアニメ版のカドの再現のヒントをくださったので、自分もチャンジしました。</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">- カドの内部に入った光は全て吸収する（レイが通り抜けた場合は出力を黒にする）<br>- ２つのMandelboxを重ねる<br>- zに掛けるScaleの値をマイナスにする<br>あたりがカドっぽくするコツだった</p>&mdash; !args(のたぐす) (@notargs) <a href="https://twitter.com/notargs/status/881448613993267201">2017年7月2日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>こちらは<a href="https://cgworld.jp/feature/201602-kado01-cgw211.html">CGWORLDの記事</a>の画像の転載です。これをリファレンスとします。</p>
+
+<p><img src="/images/posts/2017-06-30-raymarching-kado/reference.jpg" alt="CGWORLDの記事のリファレンス画像" /></p>
+
+<p>Scaleをマイナスにして、大小の違う2つのMandelBoxを重ねてみました。
+内部に入った光を吸収させる替わりにAOを強めにしました。
+すると、本当にアニメ版のカドにかなり近い結果になりました！！これは面白いですね！</p>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/anime.png"><img src="/images/posts/2017-06-30-raymarching-kado/anime.png" alt="アニメ版のカドの再現" /></a></p>
+
+<p><a href="/images/posts/2017-06-30-raymarching-kado/anime2.png"><img src="/images/posts/2017-06-30-raymarching-kado/anime2.png" alt="アニメ版のカドの再現2" /></a></p>
+
+<p>こちらからアニメ版に近いカドを動かすことができます。MandelBoxを2つ重ねたことで、負荷が約2倍になりました。</p>
+
+<ul>
+<li><a href="http://gam0022.net/webgl/#raymarching_kado_anime">http://gam0022.net/webgl/#raymarching_kado_anime</a></li>
+</ul>
+
+<h1 id="カドを再現する人たち-2017-07-03追記">カドを再現する人たち（2017/07/03追記）</h1>
+
+<p>カドのレンダリングに挑戦している方が自分以外にも現れたので、観測範囲内でまとめました。</p>
+
+<p>notargsさん</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">カドをほぼ再現できました！ <a href="https://t.co/nXFYvFRN9w">pic.twitter.com/nXFYvFRN9w</a></p>&mdash; !args(のたぐす) (@notargs) <a href="https://twitter.com/notargs/status/881444119666491392">2017年7月2日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>cx20さん</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">[WebGL] Grimoire.js で <a href="https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash">#正解するカド</a> っぽいものを表現してみるテスト <a href="https://twitter.com/hashtag/jsdoit?src=hash">#jsdoit</a> <a href="https://t.co/OORNMSemzo">https://t.co/OORNMSemzo</a></p>&mdash; cx20 (@cx20) <a href="https://twitter.com/cx20/status/881121051186417664">2017年7月1日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>自分</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash">#正解するカド</a> の「カド」を <a href="https://twitter.com/hashtag/WebGL?src=hash">#WebGL</a> のレイマーチングでリアルタイムに描画しました！いい感じに仕上がったので、徹夜した甲斐がありました！今晩の最終話が楽しみです！ <a href="https://twitter.com/hashtag/threejs?src=hash">#threejs</a><a href="https://t.co/pMRREywdyy">https://t.co/pMRREywdyy</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/880562345990275072">2017年6月29日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2017-06-30 04:33:31 &#43;0900 JST" itemprop="datePublished">2017-06-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2017/06/30/raymarching-kado/" class="hatena-bookmark-button" data-hatena-bookmark-title="正解するカドの「カド」をレイマーチングでリアルタイム描画する" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2017/06/30/raymarching-kado/" data-text="正解するカドの「カド」をレイマーチングでリアルタイム描画する" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2017/06/30/raymarching-kado/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/"><span aria-hidden="true">&larr;</span> WebGLパストレーシングを技術書典2のためにブラッシュアップ</a></li>
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/blog/2017/10/02/rtcamp5/">レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/blog\/2017\/06\/30\/raymarching-kado\/';
+    var disqus_title = '正解するカドの「カド」をレイマーチングでリアルタイム描画する';
+    var disqus_url = 'https:\/\/gam0022.net\/blog\/2017\/06\/30\/raymarching-kado\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#解説">解説</a>
+<ul>
+<li><a href="#カドのレンダリング">カドのレンダリング</a></li>
+<li><a href="#水面のレンダリング">水面のレンダリング</a>
+<ul>
+<li><a href="#cpuによるパーリンノイズの生成">CPUによるパーリンノイズの生成</a></li>
+<li><a href="#水面のアニメーション">水面のアニメーション</a></li>
+<li><a href="#衝突判定の軽量化">衝突判定の軽量化</a></li>
+<li><a href="#fresnel反射">Fresnel反射</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#試作">試作</a></li>
+<li><a href="#余談">余談</a></li>
+<li><a href="#アニメ版のカドの再現-2017-07-03追記">アニメ版のカドの再現（2017/07/03追記）</a></li>
+<li><a href="#カドを再現する人たち-2017-07-03追記">カドを再現する人たち（2017/07/03追記）</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

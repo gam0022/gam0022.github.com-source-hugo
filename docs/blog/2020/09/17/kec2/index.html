@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848449">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました | gam0022.net</title>
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="
+
+9/8～9/12に開催されたKLab Expert Camp（KEC）の第2回にメンターとして参加しました。
+
+今回のKLab Expert Campは「シェーダー」がテーマでした。
+
+5日間（平日4日間＋土曜日に成果発表＆懇親会）の日程でひたすらシェーダーを書き続けるという、エクストリームかつ珍しい内容の技術系インターンです。
+
+当日の様子はハッシュタグ #KLabExpertCamp から確認できます。
+
+">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/images/posts/2020-09-14-kec2/name-card.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/blog/2020/09/17/kec2/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <article class="article" itemscope itemtype="http://schema.org/Article">
+
+                
+
+                <h3 class="article-title" itemprop="name">第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました</h3>
+                
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-09-17 12:00:00 &#43;0900 JST" itemprop="datePublished">2020-09-17</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc">シェーダー</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2020/09/17/kec2/" class="hatena-bookmark-button" data-hatena-bookmark-title="第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2020/09/17/kec2/" data-text="第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2020/09/17/kec2/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+                <div class="article-style" itemprop="articleBody">
+                    <p><a href="/images/posts/2020-09-14-kec2/name-card-original.jpg"><img src="/images/posts/2020-09-14-kec2/name-card.jpg" alt="ネームカード" /></a></p>
+
+<p>9/8～9/12に開催されたKLab Expert Camp（KEC）の第2回にメンターとして参加しました。</p>
+
+<p>今回のKLab Expert Campは「シェーダー」がテーマでした。</p>
+
+<p>5日間（平日4日間＋土曜日に成果発表＆懇親会）の日程でひたすらシェーダーを書き続けるという、エクストリームかつ珍しい内容の技術系インターンです。</p>
+
+<p>当日の様子はハッシュタグ <a href="https://twitter.com/search?q=%23KLabExpertCamp%20since%3A2020-01-01_00%3A00%3A00_JST%20until%3A2020-12-31_00%3A00%3A00_JST&amp;src=typed_query">#KLabExpertCamp</a> から確認できます。</p>
+
+<p></p>
+
+<h1 id="開催の経緯">開催の経緯</h1>
+
+<p>メンターとして、私（<a href="https://twitter.com/gam0022">@gam0022</a>）とかねたさん（<a href="https://twitter.com/kanetaaaaa">@kanetaaaaa</a>）、運営スタッフとして人事のKの27乗さん（<a href="https://twitter.com/oktillion27">@oktillion27</a>）の3名で今回のイベントを企画・運営しました。</p>
+
+<p>私はデモパーティ（デモを鑑賞したり完成度を競ったりして楽しむイベント）が好きなので、デモパーティを意識して企画を考えました。</p>
+
+<p>大画面で自分たちの作品を上映して、参加者でワイワイするのがすごく楽しいので、そのような雰囲気をデモパーティに参加したことのない学生にも感じて欲しいという思いがありました。</p>
+
+<p>そして、優秀な若人にもデモシーンに参入してもらい、国内のデモシーンをもっと盛り上げたいと思っていました。</p>
+
+<p>当初は3月にオフラインで開催する予定だったのですが、昨今の感染症に関する状況を鑑み、オンラインでの開催となりました。</p>
+
+<p>オンライン開催だったので、大画面で上映はできませんでしたが、デモパーティの楽しさを少しでも参加者に感じ取ってもらえたのならば、とても嬉しいです。</p>
+
+<p>昨今の感染症の影響もあって、残念ながら国内のデモパーティは開催の見通しが立たない状況になってしまったので、参加者にとって代替イベントのひとつになっていれば幸いです。</p>
+
+<p>開催の経緯については、かねたさんの参加レポートを合わせて読むことで、内容を補完できると思います。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> でメンターをした感想などを書きました。<br>参加者の皆様ありがとうございました。そしてお疲れ様でした。<a href="https://t.co/0pOSbv5xJN">https://t.co/0pOSbv5xJN</a></p>&mdash; かねた (@kanetaaaaa) <a href="https://twitter.com/kanetaaaaa/status/1306044957556273154?ref_src=twsrc%5Etfw">September 16, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="インターンの内容について">インターンの内容について</h1>
+
+<p>オンライン開催ということで、Google MeetとSlackを利用しました。</p>
+
+<p>メンター2人で約1時間の講義を合計4つ行い、講義のない残りの時間はひたすら参加者の制作時間としました。</p>
+
+<p>参加した学生は13名でした。全国からシェーダーに強い優秀な学生が集まりました。</p>
+
+<p>少なくともメンターの1人は常時Google Meetに待機して、Slackでも随時質問を受け付ける体制にしました。</p>
+
+<p>そして、最終日には成果発表＆懇親会を行いました。</p>
+
+<p>オンライン開催となってしまった分、少しでも参加者に楽しんでいただけるような工夫として、5日分のノベルティやお菓子を郵送しました（Kの27乗さんのアイデアで、郵送などの準備も全部してもらった）。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">4日目の箱の中には、こんなものをご用意しました！<br><br>（お菓子とノベルティグッズ（モバイルバッテリー）のセットです。開発に集中しすぎて、もしスマホの充電を忘れてしまったときにぜひ使ってくださいね！）<a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> <a href="https://t.co/7ssZogITE4">pic.twitter.com/7ssZogITE4</a></p>&mdash; Kの27乗 (@oktillion27) <a href="https://twitter.com/oktillion27/status/1304247375393816576?ref_src=twsrc%5Etfw">September 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="講義">講義</h1>
+
+<p>運営内で協議した結果、講義の資料の公開については、参加者のみにしました。</p>
+
+<p>この記事では、講義の内容について可能な範囲で概要を紹介します。</p>
+
+<h2 id="担当講義1-シェーダー芸のプロダクション利用">担当講義1「シェーダー芸のプロダクション利用」</h2>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">2日目の本日は、この後2つ目の講義を実施予定です。<br><br>外部非公開の内容の為、このツイートで詳細をご紹介できません…！参加者のみなさんに、本日の講義もワクワクしてもらえるような内容だと嬉しい限りです！<a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a></p>&mdash; Kの27乗 (@oktillion27) <a href="https://twitter.com/oktillion27/status/1303591474601144321?ref_src=twsrc%5Etfw">September 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>KLabはモバイルゲームを開発・運用している会社です。</p>
+
+<p>そこで、「シェーダーがモバイルゲームにどのように活用されているか？」について、実践的な内容を紹介しました。</p>
+
+<p>モバイル端末の性能はかなり幅広く、性能が低いGPUの端末もたくさん存在します。</p>
+
+<p>レイマーチングのようなフラグメントシェーダーを酷使する高負荷なシェーダーの利用は難しいため、一般的にはシェーダー芸を活用するイメージは沸かないかもしれません。</p>
+
+<p>しかし、シェーダー芸をうまく活用すれば、むしろレンダリングの負荷を削減できます！</p>
+
+<p>たとえば、頂点シェーダーでアニメーション計算やスキニング計算をCPU計算からGPU計算に置き換えば、アプリの負荷がCPUバウンドの場合は性能向上ができます。</p>
+
+<p>また、商業用のタイトルでどんなシェーダーが利用されているのかについて、具体的な事例を紹介しました。</p>
+
+<h2 id="担当講義2-シェーダー芸で役立ちそうな知識の詰め合わせ">担当講義2「シェーダー芸で役立ちそうな知識の詰め合わせ」</h2>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">3DCGのための行列（導出方法や重要な特徴）、ノイズ、イージング関数など、個人的に「これだけは知っておきたい」という知識をピックアップして紹介しました。<br>おまけとして、便利なツールの紹介もしました。<a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> <a href="https://t.co/VOoRInqMtO">https://t.co/VOoRInqMtO</a></p>&mdash; がむ CGWORLD 10月号に寄稿 (@gam0022) <a href="https://twitter.com/gam0022/status/1304007251795914754?ref_src=twsrc%5Etfw">September 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>3DCGのための行列（導出方法や重要な特徴）、ノイズ、イージング関数など、個人的に「これだけは知っておきたい」という知識をピックアップして紹介しました。おまけとして、便利なツールの紹介もしました。</p>
+
+<p>行列は3DCGにおいては必須科目ですが、3DCGに特化した分かりやすい資料や説明が少ないと以前から感じていました。</p>
+
+<p>そこで、行列について「3DCGに特化」した直感的で分かりやすい説明を目指して講義を行いました。</p>
+
+<p><strong>基底ベクトル</strong>から<strong>視覚的かつ直感的</strong>に、「回転行列、拡大縮小の行列、せん断」などの線形変換の行列を生成できることを示して、よくある変換行列の定義は覚える必要がないことを説明したり、
+回転行列の転置が逆行列となる直交行列の性質を説明したりしました。また、線形変換やアフィン変換などの用語についても説明しました。</p>
+
+<p>さらに、ノイズやイージング関数で映像作品の品質を向上するテクニックを具体例を踏まえながら紹介しました。</p>
+
+<p>最後に、Shadertoyの再生時間をシークしたり、連番でPNG保存するChromeの拡張機能、連番画像からffmpegでmp4に変換する方法、YouTubeにアップロードするための最適なビットレート調整のパラメーターなど秘伝のタレ的な知識も公開しました。</p>
+
+<h1 id="感想">感想</h1>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">参加者の方々、5日間お疲れさまでした！<br><br>レベルの高い作品だらけで驚かされました😍<br>この調子でデモパーティにもエントリーして欲しいです！<br><br>メンターという立場で参加しましたが、参加者のみなさんに刺激をたくさん貰いました！<br>とても楽しかったです！ありがとうございました！<a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a></p>&mdash; がむ CGWORLD 10月号に寄稿 (@gam0022) <a href="https://twitter.com/gam0022/status/1304769327380406272?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>まず、参加者のレベルが非常に高いことに驚かされました。</p>
+
+<p>インターンの選考をしている時点で、技術力の高い優秀な学生ばかり集まっていることは分かっていたので「どうしたら満足してもらえる講義になるか？」とメンターとしてはかなりプレッシャーを感じていました。
+たとえば、レイマーチングの基礎などを説明をしたとしても、知っていることばかりで何も持ち帰ってもらえずに終わってしまう可能性が高いと考えました。
+紆余曲折があって、最終的に上記のような講義内容になりました。
+アンケート結果によると、いずれの講義も参加者の満足度がとても高かったので、講義の難易度や内容のバランス調整は概ね成功だったと思っています。
+また、どの講義もとても真剣に聞いていただけて、質疑応答でも本質を突くような鋭い質問が多かったので、メンターとしてもやりやすくて大満足でした！</p>
+
+<p>さらに、最終日の成果発表では、メンターたちの予想を遥かに上回るレベルの高い作品が次々に発表されて、驚きと興奮の連続でした！！</p>
+
+<p>講義やオリエンテーションの時間を含めると、実質3日弱の期間だったので、かなり厳しいスケジュールだったと思うのですが、参加者のみなさんは本当にすごいと思いました。</p>
+
+<p>また、インターン期間中はGoogle MeetやSlackでシェーダーに関する雑談や疑問について参加者と語り合うことができ、参加者からも刺激をたくさんもらって、メンターという立場を忘れそうになるくらいに楽しかったです！</p>
+
+<p>今回はメンターという立場で参加しましたが、これからもシェーダーが好きな仲間として参加者の方々と交流していきたいと思いました！</p>
+
+<p>参加者の方々、本当にお疲れさまでした！そして、ありがとうございました！</p>
+
+<h1 id="参加レポートのリンク">参加レポートのリンク</h1>
+
+<p>大変ありがたいことに参加レポートを書いてくださった参加者がいるので、こちらにリンクを貼ります。</p>
+
+<p>発見したら、随時更新します。</p>
+
+<p>※投稿時間順</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">はてなブログに投稿しました <a href="https://twitter.com/hashtag/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0?src=hash&amp;ref_src=twsrc%5Etfw">#はてなブログ</a><br>KLabExpertCampに参加して作ったembraceの解説を語る - 覚え書き<a href="https://t.co/wl3MHcxtQr">https://t.co/wl3MHcxtQr</a></p>&mdash; tonoshake🍶 (@TonoShake) <a href="https://twitter.com/TonoShake/status/1304970930783887361?ref_src=twsrc%5Etfw">September 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> の話を書きました～<br>はてなブログに投稿しました <a href="https://twitter.com/hashtag/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0?src=hash&amp;ref_src=twsrc%5Etfw">#はてなブログ</a><br>KLab Expert Campに参加してきました - Butadiene Works <a href="https://t.co/zBV5bcEkZt">https://t.co/zBV5bcEkZt</a></p>&mdash; ブタジエン (@butadiene121) <a href="https://twitter.com/butadiene121/status/1305001646301220864?ref_src=twsrc%5Etfw">September 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="成果発表の作品リンク">成果発表の作品リンク</h1>
+
+<p>成果発表の作品のリンクを貼ります。とてもクオリティの高い作品ばかりです！</p>
+
+<p>発見したら、随時更新します。</p>
+
+<p>※投稿時間順</p>
+
+<!--blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a><br>「embrace」です<a href="https://t.co/8DMSc7ItvZ">https://t.co/8DMSc7ItvZ</a><br>shadertoyなど関連リンクはツリーにつなげます</p>&mdash; tonoshake🍶 (@TonoShake) <a href="https://twitter.com/TonoShake/status/1304704452788498433?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script-->
+
+<p><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a><br>&quot;metaball and hexagon ver.1.0&quot; by &quot;Santa&quot; <a href="https://t.co/3UlZzelxro">https://t.co/3UlZzelxro</a> <a href="https://twitter.com/hashtag/NEORT?src=hash&amp;ref_src=twsrc%5Etfw">#NEORT</a></p>&mdash; 𝙎𝙖𝙣𝙩𝙖 (@santa_sukitoku) <a href="https://twitter.com/santa_sukitoku/status/1304704651749539840?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> で流体シミュレーション作りました！<br>leapmotion使って自分の手で混ぜ混ぜできます😆<a href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a href="https://twitter.com/hashtag/unity?src=hash&amp;ref_src=twsrc%5Etfw">#unity</a> <a href="https://twitter.com/hashtag/shader?src=hash&amp;ref_src=twsrc%5Etfw">#shader</a> <a href="https://twitter.com/hashtag/geometry?src=hash&amp;ref_src=twsrc%5Etfw">#geometry</a> <a href="https://t.co/iEfugMgbCD">pic.twitter.com/iEfugMgbCD</a></p>&mdash; Fᴇʏʀɪs💤VRC民 (@Feyris77) <a href="https://twitter.com/Feyris77/status/1304712464789942273?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> でLayered Materialを制作しました。<br>動画提出が規定なのでフレーク塗装/カーボンファイバー塗装の車にセットアップして、vaperwaveっぽい背景で走らせました。（音楽はvaperwaveっぽくはない？よね？） <a href="https://t.co/0gTMFhH0fo">pic.twitter.com/0gTMFhH0fo</a></p>&mdash; Haruka Kjt (@kajitaj63b3) <a href="https://twitter.com/kajitaj63b3/status/1304714516177981440?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> で初めてパストレーシングを勉強してそれを用いて動画作品を作りました！！　見ていってください！<a href="https://t.co/h31s5hK0YT">https://t.co/h31s5hK0YT</a></p>&mdash; ブタジエン (@butadiene121) <a href="https://twitter.com/butadiene121/status/1304715353528778752?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> でglslを使ってデモっぽいものを作成しました。良かったら見てね！<a href="https://t.co/3gmJkDlGJC">https://t.co/3gmJkDlGJC</a> <a href="https://t.co/eV0CPbvdtB">pic.twitter.com/eV0CPbvdtB</a></p>&mdash; 避雷 (@lucknknock) <a href="https://twitter.com/lucknknock/status/1304721446216675328?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">FlashBack<a href="https://twitter.com/hashtag/klabexpertcamp?src=hash&amp;ref_src=twsrc%5Etfw">#klabexpertcamp</a> での最終成果です！<br>レイマーチングとWebGLを混ぜ合わせました。<a href="https://t.co/kv3O0VksYe">https://t.co/kv3O0VksYe</a> <a href="https://t.co/PJQk8rn9K8">https://t.co/PJQk8rn9K8</a><a href="https://twitter.com/hashtag/threejs?src=hash&amp;ref_src=twsrc%5Etfw">#threejs</a> <a href="https://twitter.com/hashtag/webgl?src=hash&amp;ref_src=twsrc%5Etfw">#webgl</a> <a href="https://twitter.com/hashtag/glsl?src=hash&amp;ref_src=twsrc%5Etfw">#glsl</a> <a href="https://t.co/O60mnFeGYZ">pic.twitter.com/O60mnFeGYZ</a></p>&mdash; ukonpower (@UkskSan) <a href="https://twitter.com/UkskSan/status/1304721668158308352?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> <br>投稿作品です！　GLSLでフラクタル書きました！<a href="https://t.co/olmvCDfB7V">https://t.co/olmvCDfB7V</a></p>&mdash; hibit (@hibit_at) <a href="https://twitter.com/hibit_at/status/1304727106132176897?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> で作りました～ <a href="https://t.co/ckqwJojqlX">https://t.co/ckqwJojqlX</a> <a href="https://twitter.com/hashtag/glsl?src=hash&amp;ref_src=twsrc%5Etfw">#glsl</a> <a href="https://t.co/GEm63mdUEd">pic.twitter.com/GEm63mdUEd</a></p>&mdash; 寝る前 (@nerumae3) <a href="https://twitter.com/nerumae3/status/1304736190134775808?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> で制作しました！<br>凄い人ばかりでめちゃくちゃ良い経験になりました！<a href="https://t.co/astTdcYc79">https://t.co/astTdcYc79</a></p>&mdash; 3yen (@3yen_CG) <a href="https://twitter.com/3yen_CG/status/1304754989412134912?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">メンター賞を頂いたあの「embrace」がツイッター投稿版になりました！<br>ツイッター限定で、映画と同じフレームレートで書き出したバージョンになります<br>フレームレートを下げることで雰囲気も変わりました<br>ぜひ見てください！<a href="https://twitter.com/hashtag/KLabExpertCamp?src=hash&amp;ref_src=twsrc%5Etfw">#KLabExpertCamp</a> <a href="https://t.co/XE6wsLfws4">https://t.co/XE6wsLfws4</a> <a href="https://t.co/47sXyr8FtL">pic.twitter.com/47sXyr8FtL</a></p>&mdash; tonoshake🍶 (@TonoShake) <a href="https://twitter.com/TonoShake/status/1304933850754068480?ref_src=twsrc%5Etfw">September 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+                </div>
+
+            </article>
+
+            
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-09-17 12:00:00 &#43;0900 JST" itemprop="datePublished">2020-09-17</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc">シェーダー</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>
+        
+    </span>
+    
+    
+
+    
+        
+
+<div class="share-box">
+    <div class="share_wrap">
+        <div class="share_button">
+            <a href="http://b.hatena.ne.jp/entry/https://gam0022.net/blog/2020/09/17/kec2/" class="hatena-bookmark-button" data-hatena-bookmark-title="第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="share_button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://gam0022.net/blog/2020/09/17/kec2/" data-text="第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました" data-via="gam0022">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="share_button">
+            <div class="g-plus" data-action="share" data-annotation="none"></div>
+        </div>
+        <div class="share_button">
+            <div class="fb-like" data-href="https://gam0022.net/blog/2020/09/17/kec2/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="share_button">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</div>
+
+            <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="https://gam0022.net/blog/2020/09/13/cgworld-vol266/"><span aria-hidden="true">&larr;</span> CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました</a></li>
+        
+
+        
+        <li class="next"><a href="https://gam0022.net/blog/2021/02/15/demoscene-study-session/">メガデモ勉強会2021で発表しました <span aria-hidden="true">&rarr;</span></a></li>
+        
+    </ul>
+</nav>
+
+            
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'gam0022-net';
+    var disqus_identifier = 'https:\/\/gam0022.net\/blog\/2020\/09\/17\/kec2\/';
+    var disqus_title = '第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました';
+    var disqus_url = 'https:\/\/gam0022.net\/blog\/2020\/09\/17\/kec2\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+            <div class="row">
+    <div class="col-md-12">
+        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+        <ul class="category-list">
+    <div class="widget tagcloud">
+        
+        <a href="https://gam0022.net/tags/apache" style="font-size: 12px;">apache(1)</a>
+        
+        <a href="https://gam0022.net/tags/ascii" style="font-size: 12px;">ascii(1)</a>
+        
+        <a href="https://gam0022.net/tags/bootstrap" style="font-size: 12px;">bootstrap(2)</a>
+        
+        <a href="https://gam0022.net/tags/c" style="font-size: 12px;">c#(1)</a>
+        
+        <a href="https://gam0022.net/tags/c&#43;&#43;" style="font-size: 12px;">c&#43;&#43;(1)</a>
+        
+        <a href="https://gam0022.net/tags/canvas" style="font-size: 12px;">canvas(1)</a>
+        
+        <a href="https://gam0022.net/tags/cg" style="font-size: 12px;">cg(25)</a>
+        
+        <a href="https://gam0022.net/tags/cgi" style="font-size: 12px;">cgi(2)</a>
+        
+        <a href="https://gam0022.net/tags/chrome" style="font-size: 12px;">chrome(1)</a>
+        
+        <a href="https://gam0022.net/tags/cocot" style="font-size: 12px;">cocot(1)</a>
+        
+        <a href="https://gam0022.net/tags/coffeescript" style="font-size: 12px;">coffeescript(1)</a>
+        
+        <a href="https://gam0022.net/tags/coins" style="font-size: 12px;">coins(3)</a>
+        
+        <a href="https://gam0022.net/tags/cojt" style="font-size: 12px;">cojt(4)</a>
+        
+        <a href="https://gam0022.net/tags/conoha" style="font-size: 12px;">conoha(2)</a>
+        
+        <a href="https://gam0022.net/tags/contest" style="font-size: 12px;">contest(1)</a>
+        
+        <a href="https://gam0022.net/tags/css" style="font-size: 12px;">css(1)</a>
+        
+        <a href="https://gam0022.net/tags/cuda" style="font-size: 12px;">cuda(1)</a>
+        
+        <a href="https://gam0022.net/tags/daigoroubot" style="font-size: 12px;">daigoroubot(1)</a>
+        
+        <a href="https://gam0022.net/tags/demo" style="font-size: 12px;">demo(1)</a>
+        
+        <a href="https://gam0022.net/tags/develop" style="font-size: 12px;">develop(1)</a>
+        
+        <a href="https://gam0022.net/tags/diary" style="font-size: 12px;">diary(5)</a>
+        
+        <a href="https://gam0022.net/tags/eclipse" style="font-size: 12px;">eclipse(3)</a>
+        
+        <a href="https://gam0022.net/tags/emscripten" style="font-size: 12px;">emscripten(1)</a>
+        
+        <a href="https://gam0022.net/tags/encoding" style="font-size: 12px;">encoding(1)</a>
+        
+        <a href="https://gam0022.net/tags/event" style="font-size: 12px;">event(19)</a>
+        
+        <a href="https://gam0022.net/tags/gcc" style="font-size: 12px;">gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/gem" style="font-size: 12px;">gem(3)</a>
+        
+        <a href="https://gam0022.net/tags/git" style="font-size: 12px;">git(2)</a>
+        
+        <a href="https://gam0022.net/tags/github" style="font-size: 12px;">github(2)</a>
+        
+        <a href="https://gam0022.net/tags/glsl" style="font-size: 12px;">glsl(9)</a>
+        
+        <a href="https://gam0022.net/tags/glsl-snadbox" style="font-size: 12px;">glsl-snadbox(1)</a>
+        
+        <a href="https://gam0022.net/tags/gnuplot" style="font-size: 12px;">gnuplot(1)</a>
+        
+        <a href="https://gam0022.net/tags/gpu" style="font-size: 12px;">gpu(1)</a>
+        
+        <a href="https://gam0022.net/tags/heroku" style="font-size: 12px;">heroku(1)</a>
+        
+        <a href="https://gam0022.net/tags/hlsl" style="font-size: 12px;">hlsl(1)</a>
+        
+        <a href="https://gam0022.net/tags/homebrew" style="font-size: 12px;">homebrew(2)</a>
+        
+        <a href="https://gam0022.net/tags/houdini" style="font-size: 12px;">houdini(2)</a>
+        
+        <a href="https://gam0022.net/tags/hsp" style="font-size: 12px;">hsp(1)</a>
+        
+        <a href="https://gam0022.net/tags/html5" style="font-size: 12px;">html5(2)</a>
+        
+        <a href="https://gam0022.net/tags/http2" style="font-size: 12px;">http2(1)</a>
+        
+        <a href="https://gam0022.net/tags/https" style="font-size: 12px;">https(1)</a>
+        
+        <a href="https://gam0022.net/tags/hugo" style="font-size: 12px;">hugo(1)</a>
+        
+        <a href="https://gam0022.net/tags/isucon" style="font-size: 12px;">isucon(2)</a>
+        
+        <a href="https://gam0022.net/tags/iterm2" style="font-size: 12px;">iterm2(1)</a>
+        
+        <a href="https://gam0022.net/tags/java" style="font-size: 12px;">java(2)</a>
+        
+        <a href="https://gam0022.net/tags/javascript" style="font-size: 12px;">javascript(8)</a>
+        
+        <a href="https://gam0022.net/tags/keynote" style="font-size: 12px;">keynote(1)</a>
+        
+        <a href="https://gam0022.net/tags/kramdown" style="font-size: 12px;">kramdown(1)</a>
+        
+        <a href="https://gam0022.net/tags/latex" style="font-size: 12px;">latex(3)</a>
+        
+        <a href="https://gam0022.net/tags/lion" style="font-size: 12px;">lion(3)</a>
+        
+        <a href="https://gam0022.net/tags/llvm-gcc" style="font-size: 12px;">llvm-gcc(1)</a>
+        
+        <a href="https://gam0022.net/tags/mac-os-x" style="font-size: 12px;">mac-os-x(18)</a>
+        
+        <a href="https://gam0022.net/tags/markdown" style="font-size: 12px;">markdown(2)</a>
+        
+        <a href="https://gam0022.net/tags/mecab" style="font-size: 12px;">mecab(1)</a>
+        
+        <a href="https://gam0022.net/tags/mountain-lion" style="font-size: 12px;">mountain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/moutain-lion" style="font-size: 12px;">moutain-lion(1)</a>
+        
+        <a href="https://gam0022.net/tags/neort" style="font-size: 12px;">neort(1)</a>
+        
+        <a href="https://gam0022.net/tags/nginx" style="font-size: 12px;">nginx(1)</a>
+        
+        <a href="https://gam0022.net/tags/ocaml" style="font-size: 12px;">ocaml(1)</a>
+        
+        <a href="https://gam0022.net/tags/octave" style="font-size: 12px;">octave(1)</a>
+        
+        <a href="https://gam0022.net/tags/octopress" style="font-size: 12px;">octopress(13)</a>
+        
+        <a href="https://gam0022.net/tags/opencv" style="font-size: 12px;">opencv(1)</a>
+        
+        <a href="https://gam0022.net/tags/optix" style="font-size: 12px;">optix(2)</a>
+        
+        <a href="https://gam0022.net/tags/passenger" style="font-size: 12px;">passenger(1)</a>
+        
+        <a href="https://gam0022.net/tags/programming" style="font-size: 12px;">programming(1)</a>
+        
+        <a href="https://gam0022.net/tags/rails" style="font-size: 12px;">rails(2)</a>
+        
+        <a href="https://gam0022.net/tags/rails4" style="font-size: 12px;">rails4(1)</a>
+        
+        <a href="https://gam0022.net/tags/raymarching" style="font-size: 12px;">raymarching(1)</a>
+        
+        <a href="https://gam0022.net/tags/revision" style="font-size: 12px;">revision(2)</a>
+        
+        <a href="https://gam0022.net/tags/rsync" style="font-size: 12px;">rsync(2)</a>
+        
+        <a href="https://gam0022.net/tags/ruby" style="font-size: 12px;">ruby(17)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-c-extension" style="font-size: 12px;">ruby-c-extension(3)</a>
+        
+        <a href="https://gam0022.net/tags/ruby-on-rails" style="font-size: 12px;">ruby-on-rails(1)</a>
+        
+        <a href="https://gam0022.net/tags/rubygems" style="font-size: 12px;">rubygems(1)</a>
+        
+        <a href="https://gam0022.net/tags/rust" style="font-size: 12px;">rust(3)</a>
+        
+        <a href="https://gam0022.net/tags/rvm" style="font-size: 12px;">rvm(1)</a>
+        
+        <a href="https://gam0022.net/tags/sass/scss" style="font-size: 12px;">sass/scss(1)</a>
+        
+        <a href="https://gam0022.net/tags/serversmanvps" style="font-size: 12px;">serversmanvps(3)</a>
+        
+        <a href="https://gam0022.net/tags/shader" style="font-size: 12px;">shader(2)</a>
+        
+        <a href="https://gam0022.net/tags/shadertoy" style="font-size: 12px;">shadertoy(1)</a>
+        
+        <a href="https://gam0022.net/tags/slide" style="font-size: 12px;">slide(4)</a>
+        
+        <a href="https://gam0022.net/tags/sqlite3" style="font-size: 12px;">sqlite3(1)</a>
+        
+        <a href="https://gam0022.net/tags/ssh" style="font-size: 12px;">ssh(1)</a>
+        
+        <a href="https://gam0022.net/tags/study" style="font-size: 12px;">study(3)</a>
+        
+        <a href="https://gam0022.net/tags/techbooster" style="font-size: 12px;">techbooster(1)</a>
+        
+        <a href="https://gam0022.net/tags/terminal.app" style="font-size: 12px;">terminal.app(1)</a>
+        
+        <a href="https://gam0022.net/tags/textmeshpro" style="font-size: 12px;">textmeshpro(1)</a>
+        
+        <a href="https://gam0022.net/tags/theme" style="font-size: 12px;">theme(1)</a>
+        
+        <a href="https://gam0022.net/tags/three.js" style="font-size: 12px;">three.js(2)</a>
+        
+        <a href="https://gam0022.net/tags/tips" style="font-size: 12px;">tips(1)</a>
+        
+        <a href="https://gam0022.net/tags/tokyodemofest" style="font-size: 12px;">tokyodemofest(8)</a>
+        
+        <a href="https://gam0022.net/tags/trouble" style="font-size: 12px;">trouble(1)</a>
+        
+        <a href="https://gam0022.net/tags/twincal" style="font-size: 12px;">twincal(1)</a>
+        
+        <a href="https://gam0022.net/tags/twitter" style="font-size: 12px;">twitter(1)</a>
+        
+        <a href="https://gam0022.net/tags/typescript" style="font-size: 12px;">typescript(2)</a>
+        
+        <a href="https://gam0022.net/tags/ubuntu" style="font-size: 12px;">ubuntu(2)</a>
+        
+        <a href="https://gam0022.net/tags/unity" style="font-size: 12px;">unity(7)</a>
+        
+        <a href="https://gam0022.net/tags/utf-8-mac" style="font-size: 12px;">utf-8-mac(1)</a>
+        
+        <a href="https://gam0022.net/tags/uva-online-judge" style="font-size: 12px;">uva-online-judge(3)</a>
+        
+        <a href="https://gam0022.net/tags/vim" style="font-size: 12px;">vim(1)</a>
+        
+        <a href="https://gam0022.net/tags/vps" style="font-size: 12px;">vps(2)</a>
+        
+        <a href="https://gam0022.net/tags/vscode" style="font-size: 12px;">vscode(1)</a>
+        
+        <a href="https://gam0022.net/tags/webgl" style="font-size: 12px;">webgl(10)</a>
+        
+        <a href="https://gam0022.net/tags/webrick" style="font-size: 12px;">webrick(1)</a>
+        
+        <a href="https://gam0022.net/tags/windows-terminal" style="font-size: 12px;">windows-terminal(1)</a>
+        
+        <a href="https://gam0022.net/tags/x11" style="font-size: 12px;">x11(1)</a>
+        
+        <a href="https://gam0022.net/tags/x86" style="font-size: 12px;">x86(1)</a>
+        
+        <a href="https://gam0022.net/tags/xcode" style="font-size: 12px;">xcode(2)</a>
+        
+        <a href="https://gam0022.net/tags/zsh" style="font-size: 12px;">zsh(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%a9" style="font-size: 12px;">アセンブラ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88" style="font-size: 12px;">アフィリエイト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b3%e3%83%9f%e3%82%b1" style="font-size: 12px;">コミケ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b4" style="font-size: 12px;">ゴ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc" style="font-size: 12px;">シェーダー(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%8d%e3%82%bf" style="font-size: 12px;">ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">パストレーシング(6)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%9a%e3%83%bc%e3%83%91%e3%83%bc%e3%82%af%e3%83%a9%e3%83%95%e3%83%88" style="font-size: 12px;">ペーパークラフト(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af" style="font-size: 12px;">リモートワーク(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイトレーシング(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf" style="font-size: 12px;">レイトレ合宿(5)</a>
+        
+        <a href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0" style="font-size: 12px;">レイマーチング(17)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%8b%89%e5%bc%b7%e4%bc%9a" style="font-size: 12px;">勉強会(7)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%a4%a7%e4%ba%94%e9%83%8ebot" style="font-size: 12px;">大五郎bot(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%ae%a3%e4%bc%9d" style="font-size: 12px;">宣伝(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e5%b0%8f%e3%83%8d%e3%82%bf" style="font-size: 12px;">小ネタ(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%8a%80%e8%a1%93%e6%9b%b8%e5%85%b8" style="font-size: 12px;">技術書典(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e6%9c%ac%e8%aa%9e" style="font-size: 12px;">日本語(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%97%a5%e8%a8%98" style="font-size: 12px;">日記(2)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%9c%ac" style="font-size: 12px;">本(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e6%a9%9f%e6%a2%b0%e8%aa%9e%e5%ba%8f%e8%ab%96" style="font-size: 12px;">機械語序論(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99" style="font-size: 12px;">発表資料(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87" style="font-size: 12px;">登壇(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%a0%94%e7%a9%b6" style="font-size: 12px;">研究(1)</a>
+        
+        <a href="https://gam0022.net/tags/%e7%ab%b6%e6%8a%80%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0" style="font-size: 12px;">競技プログラミング(4)</a>
+        
+        <a href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae" style="font-size: 12px;">買って良かったもの(1)</a>
+        
+    </div>
+</ul>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="78732/"></script> 
+    <div class="read-more">
+      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+<div class="col-md-6">
+    <h4 class="blog-title"><img src="/img/icons/qiita.png" class="icon"> Qiita</h4>
+     <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="80501/"></script> 
+    <div class="read-more">
+      <a href="http://qiita.com/gam0022" class="btn btn-primary btn-outline">Read more</a>
+    </div>
+</div>
+
+</div>
+
+
+            <footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
+        </div>
+        <div class="col-md-3">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#開催の経緯">開催の経緯</a></li>
+<li><a href="#インターンの内容について">インターンの内容について</a></li>
+<li><a href="#講義">講義</a>
+<ul>
+<li><a href="#担当講義1-シェーダー芸のプロダクション利用">担当講義1「シェーダー芸のプロダクション利用」</a></li>
+<li><a href="#担当講義2-シェーダー芸で役立ちそうな知識の詰め合わせ">担当講義2「シェーダー芸で役立ちそうな知識の詰め合わせ」</a></li>
+</ul></li>
+<li><a href="#感想">感想</a></li>
+<li><a href="#参加レポートのリンク">参加レポートのリンク</a></li>
+<li><a href="#成果発表の作品リンク">成果発表の作品リンク</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+</div>

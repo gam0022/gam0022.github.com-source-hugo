@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic">
+    <meta name="generator" content="Hugo 0.17" />
+    <meta name="author" content="@gam0022">
+    <meta name="description" content="ソフトウェアエンジニア">
+
+    <link rel="stylesheet" href="https://gam0022.net/css/highlight.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619848448">
+    
+
+    
+    <link rel="alternate" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    <link rel="feed" href="https://gam0022.net/index.xml" type="application/rss+xml" title="gam0022.net">
+    
+    <link rel="shortcut icon" href="https://gam0022.net/img/favicon.png" type="image/png">
+    
+
+    <title>Posts | gam0022.net</title>
+
+    
+        <meta property="og:type" content="blog">
+        <meta property="og:description" content="gam0022(Hosoda Sho)の個人サイトです">
+    
+
+    
+        <meta property="og:image" content="https://gam0022.net/img/gam0022_splash.png">
+        <meta name="twitter:card" content="summary">
+    
+
+    <meta property="fb:app_id" content="413045302370371">
+    <meta property="og:title" content="Posts | gam0022.net">
+    <meta property="og:url" content="https://gam0022.net/post/">
+
+    <meta name="twitter:site" content="@gam0022">
+
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function() {
+      var cx = '014076568914435119268:lp0lsoyv6uk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://gam0022.net/">gam0022.net</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="nav-item"><a href="https://gam0022.net/#top"><i class='fa fa-home'></i> Home</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/post/"><i class='fa fa-pencil-square-o'></i> Post</a></li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/works"><i class='fa fa-photo'></i> Work</a></li>
+                
+            </ul>
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item google-search-item"><gcse:searchbox-only></gcse:searchbox-only>
+</li>
+                
+                <li class="nav-item"><a href="https://gam0022.net/webgl/#raymarching_reflect"><i class='fa fa-flask'></i> WebGL</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2021/03/08/raymarching-in-windows-terminal/" itemprop="url">Windows Terminalの背景でレイマーチング</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2021-03-08 01:00:00 &#43;0900 JST" itemprop="datePublished">2021-03-08</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/raymarching">Raymarching</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/windows-terminal">Windows Terminal</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/hlsl">HLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/shader">Shader</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc">シェーダー</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <a href="/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.png"><img src="/images/posts/2021-02-26-raymarching-in-windows-terminal/raymarching-in-windows-terminal.jpg" alt="Raymarching in Windows Terminal" /></a></p>
+
+<p>Windows Terminal 1.6から任意のHLSLのPixel Shadersを実行できるようになったので、Windows Terminalの背景でレイマーチングを実行してみました。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Raymarching in Windows Terminal<br><br>Windows Terminal 1.6 から任意の Pixel Shaders を実行できるようになったので、Windows Terminal の背景でレイマーチングを実行してみた🎉 これは楽しすぎる🤣 <a href="https://t.co/WX2JqUZtuL">pic.twitter.com/WX2JqUZtuL</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1361485111473045505?ref_src=twsrc%5Etfw">February 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2021/03/08/raymarching-in-windows-terminal/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2021/02/15/demoscene-study-session/" itemprop="url">メガデモ勉強会2021で発表しました</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2021-02-15 13:26:18 &#43;0900 JST" itemprop="datePublished">2021-02-15</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/tokyodemofest">TokyoDemoFest</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e7%99%ba%e8%a1%a8%e8%b3%87%e6%96%99">発表資料</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e7%99%bb%e5%a3%87">登壇</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                昨日の2/14（バレンタインデー）に開催された<a href="https://connpass.com/event/200294/">The Tokyo Demo Fest team presents: メガデモ勉強会2021</a>に参加しました。</p>
+
+<p>私は「64KBのWebGLデモを実装する技術とデモ制作から得た『学びと発見』」というタイトルで発表を行いました。</p>
+
+<p>発表スライドはこちらです。</p>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRd-L7WcWWzcoE9zNpBsJdeMjJf9HelDg1Pto8cFGJTjinejpjZ1mGmzWCZPANJZ0QOCObuVOIdPuy-/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2021/02/15/demoscene-study-session/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2020/09/17/kec2/" itemprop="url">第2回 KLab Expert Camp「テーマ：シェーダー」のメンターをしました</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-09-17 12:00:00 &#43;0900 JST" itemprop="datePublished">2020-09-17</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%82%b7%e3%82%a7%e3%83%bc%e3%83%80%e3%83%bc">シェーダー</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <a href="/images/posts/2020-09-14-kec2/name-card-original.jpg"><img src="/images/posts/2020-09-14-kec2/name-card.jpg" alt="ネームカード" /></a></p>
+
+<p>9/8～9/12に開催されたKLab Expert Camp（KEC）の第2回にメンターとして参加しました。</p>
+
+<p>今回のKLab Expert Campは「シェーダー」がテーマでした。</p>
+
+<p>5日間（平日4日間＋土曜日に成果発表＆懇親会）の日程でひたすらシェーダーを書き続けるという、エクストリームかつ珍しい内容の技術系インターンです。</p>
+
+<p>当日の様子はハッシュタグ <a href="https://twitter.com/search?q=%23KLabExpertCamp%20since%3A2020-01-01_00%3A00%3A00_JST%20until%3A2020-12-31_00%3A00%3A00_JST&amp;src=typed_query">#KLabExpertCamp</a> から確認できます。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2020/09/17/kec2/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2020/09/13/cgworld-vol266/" itemprop="url">CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-09-13 20:00:00 &#43;0900 JST" itemprop="datePublished">2020-09-13</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/revision">Revision</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/typescript">TypeScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/javascript">JavaScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/tokyodemofest">TokyoDemoFest</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <img src="/images/posts/2020-09-13-cgworld-vol266/Collage_Fotor.jpg" alt="CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました" /></p>
+
+<p>9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。</p>
+
+<p>デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。</p>
+
+<p>この記事をきっかけにCGWORLD読者の方々にもデモシーンに興味をもっていただき、国内のデモシーンが盛り上がっていくことを願っています。</p>
+
+<p>もちろん自分の活動を知っている方々もお手に取っていただければとても嬉しいです！</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。<br><br>デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。<a href="https://t.co/BPf1txlSxU">https://t.co/BPf1txlSxU</a><a href="https://twitter.com/hashtag/CGWjp?src=hash&amp;ref_src=twsrc%5Etfw">#CGWjp</a> <a href="https://twitter.com/hashtag/demoscene?src=hash&amp;ref_src=twsrc%5Etfw">#demoscene</a> <a href="https://t.co/XXpCh1xiFw">pic.twitter.com/XXpCh1xiFw</a></p>&mdash; がむ #CEDEC2020 9/4登壇, CGWORLD 10月号 (@gam0022) <a href="https://twitter.com/gam0022/status/1301514617588518915?ref_src=twsrc%5Etfw">September 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2020/09/13/cgworld-vol266/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2020/04/30/revision2020/" itemprop="url">Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-04-30 12:00:00 &#43;0900 JST" itemprop="datePublished">2020-04-30</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/revision">Revision</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webgl">WebGL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/typescript">TypeScript</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/javascript">JavaScript</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                4月10日～4月13日に世界最大のデモパーティ<a href="https://2020.revision-party.net/start">Revision 2020</a>に参加しました。</p>
+
+<p>Revision 2020内で開催されたコンペのうち、<a href="https://2020.revision-party.net/competitions/pc-competitions">PC 64K Intro</a>という64KBの容量制約のある部門で『RE: SIMULATED by gam0022 &amp; sadakkey』という作品を発表しました。</p>
+
+<p>Tokyo Demo Fest 2018に続き、私（<a href="https://twitter.com/gam0022">@gam0022</a>）が映像を、さだきちさん（<a href="https://twitter.com/sadakkey">@sadakkey</a>）が音楽を制作しました。</p>
+
+<p>……なんと、本作品が参加者投票により1位に選ばれました！
+日本人のチームがPC 64K Intro部門で優勝するのは Revision 史上初です。とても嬉しいです！</p>
+
+<p>本記事では、技術解説をメインに、『RE: SIMULATED by gam0022 &amp; sadakkey』を紹介したいと思います。</p>
+
+<p><a href="/images/posts/2020-04-19-revision2020/resimulated-collage.jpg"><img src="/images/posts/2020-04-19-revision2020/resimulated-collage.jpg" alt="resimulated-collage" /></a></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2020/04/30/revision2020/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2020/03/10/best-buy/" itemprop="url">最強の作業環境でリモートワークを乗り切る</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2020-03-10 10:00:00 &#43;0900 JST" itemprop="datePublished">2020-03-10</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%82%a2%e3%83%95%e3%82%a3%e3%83%aa%e3%82%a8%e3%82%a4%e3%83%88">アフィリエイト</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e8%b2%b7%e3%81%a3%e3%81%a6%e8%89%af%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%82%e3%81%ae">買って良かったもの</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%aa%e3%83%a2%e3%83%bc%e3%83%88%e3%83%af%e3%83%bc%e3%82%af">リモートワーク</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <h1 id="はじめに">はじめに</h1>
+
+<p>コロナウイルスの影響でリモートワークを実施する企業が増えましたね。</p>
+
+<p>普段あまり自宅でコーディングをしないという方にとっては、自宅の作業環境を見直すきっかけになったのではないでしょうか？</p>
+
+<p>今回は私の作業環境を紹介したいと思います。</p>
+
+<p><img src="/images/posts/2020-03-04-best-buy/overall.jpg" alt="全体図" /></p>
+
+<p>※これはアフィリエイト記事です。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">自宅勤務が &quot;最高&quot; なので、一生自宅勤務したい。<br>・ディスプレイが大きくて最高！<br>・椅子が体にフィットしていて最高！<br>・人間に話しかけられなくて最高！<br>・トイレの待ち時間が0秒で最高！<br>・通勤時間が0秒で最高！<br>・目的が不明瞭な会議がなくて最高！</p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1230485148530958336?ref_src=twsrc%5Etfw">February 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2020/03/10/best-buy/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2019/11/29/dhw/" itemprop="url">近未来教育フォーラム2019でシェーダーライブコーディングをしました</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2019-11-29 10:36:17 &#43;0900 JST" itemprop="datePublished">2019-11-29</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/event">event</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/slide">Slide</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/tokyodemofest">TokyoDemoFest</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/glsl">GLSL</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                2019/11/28にデジタルハリウッド大学で開催された<a href="https://www.dhw.co.jp/forum/program.html">近未来教育フォーラム</a>の
+「The Real Time Live &amp; Reception リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類」というイベントに登壇しました。</p>
+
+<p><a href="https://twitter.com/FL1NE">@FL1NE</a>さんと一緒にデモシーンについて話しました。
+私は簡単なシェーダーライブコーディングをしながらプログラミングによる形状のモデリングについて解説しました。</p>
+
+<p><a href="https://twitter.com/o_ob/status/1200067621799903238"><img src="/images/posts/2019-11-29-dhw/live_coding_init.jpg" alt="シェーダーライブコーディング（初期）" /></a></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2019/11/29/dhw/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2019/09/18/rtcamp7/" itemprop="url">レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2019-09-18 10:15:43 &#43;0900 JST" itemprop="datePublished">2019-09-18</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">レイトレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">パストレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/optix">OptiX</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cuda">CUDA</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/gpu">GPU</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf">レイトレ合宿</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                9月7日(土)～9月8日(日)に猪苗代湖で開催された<a href="https://sites.google.com/site/raytracingcamp7/">レイトレ合宿7</a>に参加しました。</p>
+
+<p>自作のレンダラーでこんな画像を <strong>60秒の制限時間</strong> でレンダリングして4位をいただきました！</p>
+
+<p><a href="/images/posts/2019-09-10-rtcamp7/11.gam.png"><img src="/images/posts/2019-09-10-rtcamp7/11.gam.jpg" alt="本番のレンダリング結果" /></a></p>
+
+<p>ちなみに4K解像度（3840x2160）です！</p>
+
+<p>事前に本番環境で動作確認できなかったこともあり、よく見ると意図しないアーティファクトが発生しているのですが、許容レベルに収まったのはラッキーでした。</p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2019/09/18/rtcamp7/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2019/08/05/optix-raymarching-pathtracing/" itemprop="url">NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを実装した</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2019-08-05 12:10:23 &#43;0900 JST" itemprop="datePublished">2019-08-05</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">レイトレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%91%e3%82%b9%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%b3%e3%82%b0">パストレーシング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%9e%e3%83%bc%e3%83%81%e3%83%b3%e3%82%b0">レイマーチング</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/%e3%83%ac%e3%82%a4%e3%83%88%e3%83%ac%e5%90%88%e5%ae%bf">レイトレ合宿</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/optix">Optix</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                これは<a href="https://sites.google.com/site/raytracingcamp7/">レイトレ合宿7</a>アドベントカレンダーの記事です。</p>
+
+<p>NVIDIA® OptiX上で『レイマーチング×パストレーシング』による物理ベースレンダラーを開発しました。</p>
+
+<p>レイとオブジェクトの交差判定をレイマーチングで行い、ライティングをパストレーシングをするという、レイマーチングとパストレーシングのハイブリッドなレンダリングを実現しました。</p>
+
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NVIDIA® OptiX上で<br>『レイマーチング×パストレーシング』<br>を実装できた😉 <a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash&amp;ref_src=twsrc%5Etfw">#レイトレ合宿</a> <a href="https://t.co/FKbuHiXqmP">pic.twitter.com/FKbuHiXqmP</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1155489034354843649?ref_src=twsrc%5Etfw">July 28, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2019/08/05/optix-raymarching-pathtracing/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2019/07/23/unity-y-axis-billboard-shader/" itemprop="url">[Unity] Y軸ビルボードシェーダーの実装と解説</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2019-07-23 09:30:09 &#43;0900 JST" itemprop="datePublished">2019-07-23</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/unity">Unity</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/shader">Shader</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cg">CG</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                こんな感じのY軸のビルボードをC#スクリプトを使わずに、シェーダーだけで実装しました（Unity 2018.3.12f1）。</p>
+
+<p><img src="/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif" alt="Y軸ビルボード" /></p>
+
+<p>GitHubリポジトリ: <a href="https://github.com/gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard/Billboard.shader#L51-L82">gam0022/unity-legacy-render-pipeline-experiments/blob/master/Assets/Experiments/Billboard</a></p>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2019/07/23/unity-y-axis-billboard-shader/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
+    
+
+    
+<nav>
+    <ul class="pager">
+        
+        
+        <li><a href="https://gam0022.net//post/page/2/">Next »</a></li>
+        
+    </ul>
+</nav>
+
+
+
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <p class="powered-by">
+
+            &copy; 2016 gam0022 &middot; 
+
+            Powered by the <a href="https://github.com/gam0022/hugo-academic" target="_blank">Customized Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="https://gam0022.net/js/jquery-1.12.3.min.js"></script>
+        <script src="https://gam0022.net/js/bootstrap.custom.js"></script>
+        <script src="https://gam0022.net/js/hugo-academic.js"></script>
+        
+
+        <script>
+            
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-84469205-1', 'auto');
+            ga('send', 'pageview');
+
+             
+            var links = document.querySelectorAll('a');
+            Array.prototype.map.call(links, function(item) {
+                if (item.host != document.location.host) {
+                    item.addEventListener('click', function() {
+                        var action = item.getAttribute('data-action') || 'follow';
+                        ga('send', 'event', 'outbound', action, item.href);
+                    });
+                }
+            });
+            
+
+            $(document).ready(function() {
+                $("#TableOfContents").addClass("bs-docs-sidebar affix");
+                $("#TableOfContents ul").addClass("nav nav-stacked");
+            });
+        </script>
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+

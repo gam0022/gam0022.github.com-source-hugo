@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/github/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rubyのgitリポジトリ</title>
+      <link>https://gam0022.net/blog/2013/08/04/ruby-git/</link>
+      <pubDate>Sun, 04 Aug 2013 11:39:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/08/04/ruby-git/</guid>
+      <description>&lt;p&gt;RubyってSubversionで開発してるというイメージしか無かったのですが、GitHubでも最新のソースコードをCloneできました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/ruby/ruby.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;公式にリポジトリガイドなるページがあるので、最新のRubyのソースコードを読んでみたい人は参考にしたらいいと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ruby-lang.org/ja/documentation/repository-guide/&#34;&gt;レポジトリガイド&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GitHubのMarkdownでListをNest</title>
+      <link>https://gam0022.net/blog/2013/08/01/github-markdown/</link>
+      <pubDate>Thu, 01 Aug 2013 22:31:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/08/01/github-markdown/</guid>
+      <description>&lt;p&gt;GitHubでリストや順序リストをネストするときは、インデントをスペース4つにする必要があるみたいです。&lt;/p&gt;
+
+&lt;p&gt;そうしないと、うまくネストできませんでした。&lt;/p&gt;
+
+&lt;p&gt;例: &lt;a href=&#34;https://github.com/gam0022/shelf/blob/master/README.md&#34;&gt;https://github.com/gam0022/shelf/blob/master/README.md&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

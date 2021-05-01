@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/utf-8-mac/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/utf-8-mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)</title>
+      <link>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</link>
+      <pubDate>Sat, 11 Aug 2012 10:38:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/</guid>
+      <description>
+
+&lt;p&gt;このブログで、カテゴリーに濁点を含んだ日本語を使うと、カテゴリーの一覧などからカテゴリーのページにリンクしたとき、
+404エラーになってしまう問題が起きました。&lt;/p&gt;
+
+&lt;p&gt;原因は、このブログの開発環境にありました。&lt;/p&gt;
+
+&lt;p&gt;このブログは静的コンテンツなのですが、次のような手順でブログを運営しています。
+(Rakefileで自動化されていますが、内部ではこうなっています)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ローカル(Mac OS X)でブログを生成する。&lt;/li&gt;
+&lt;li&gt;サーバ(Ubuntu)にRsyncで生成したブログをアップロードする。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mac OS X では、ファイル名のエンコードに&lt;code&gt;UTF-8-MAC&lt;/code&gt;を使っているので、
+そのままアップロードすると、サーバ上のファイル名も&lt;code&gt;UTF-8-MAC&lt;/code&gt;になります。
+しかし、ファイル自体のエンコードは&lt;code&gt;UTF-8&lt;/code&gt;でURLをパーセントエンコーディングしていないので、
+リンク先が見つからなくなってしまうようです。&lt;/p&gt;
+
+&lt;p&gt;UTF-8-MAC問題について詳しく知りたい人は、&lt;a href=&#34;http://d.hatena.ne.jp/miau/20110805/1312555736&#34;&gt;こちら&lt;/a&gt;などが勉強になるとおもいます。&lt;/p&gt;
+
+&lt;p&gt;解決方法は簡単で、Rsyncでアップロードするときに、&lt;code&gt;--iconv&lt;/code&gt;オプションを使い、
+ファイル名を&lt;code&gt;UTF-8-MAC&lt;/code&gt;から&lt;code&gt;UTF-8&lt;/code&gt;に変換すれば治ります。&lt;/p&gt;
+
+&lt;h3 id=&#34;rsyncのバージョンを3にする&#34;&gt;Rsyncのバージョンを3にする&lt;/h3&gt;
+
+&lt;p&gt;Rsyncの&lt;code&gt;--iconv&lt;/code&gt;オプションが使えるのは、Rsync3からなのでアップデートします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# brew tap homebrew/dupes #リポジトリを追加（2019/06/20追記。この手順は不要になりました。）
+brew install libiconv #iconvオプションを使うために必須のよう
+brew install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;念のため、サーバ側(Ubuntu)のrsync3にします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;aptitude install rsync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;rakefileを修正する&#34;&gt;Rakefileを修正する&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Rakefile&lt;/code&gt;の&lt;code&gt;ok_failed system...&lt;/code&gt;の行を書き換えます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;desc &amp;quot;Deploy website via rsync&amp;quot;
+task :rsync do
+  exclude = &amp;quot;&amp;quot;
+  if File.exists?(&#39;./rsync-exclude&#39;)
+    exclude = &amp;quot;--exclude-from &#39;#{File.expand_path(&#39;./rsync-exclude&#39;)}&#39;&amp;quot;
+  end
+  puts &amp;quot;## Deploying website via Rsync&amp;quot;
+  #ok_failed system(&amp;quot;rsync -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+  ok_failed system(&amp;quot;rsync --iconv=UTF-8-MAC,UTF-8 -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{&amp;quot;--delete&amp;quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&amp;quot;)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;完&#34;&gt;完。&lt;/h3&gt;
+
+&lt;p&gt;これでうまくいきました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[gam0022@starlight:~/git/gam0022.net] $ rake deploy
+## Deploying website via Rsync
+sending incremental file list
+deleting blog/categories/ゴ/index.html
+deleting blog/categories/ゴ/atom.xml
+deleting blog/categories/ゴ/
+blog/categories/ゴ/
+blog/categories/ゴ/atom.xml
+blog/categories/ゴ/index.html
+
+sent 11206 bytes  received 138 bytes  7562.67 bytes/sec
+total size is 2309599  speedup is 203.60
+OK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;「ゴゴゴゴ…」&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

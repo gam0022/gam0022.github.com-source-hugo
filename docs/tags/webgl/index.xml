@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/webgl/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/webgl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>メガデモ勉強会2021で発表しました</title>
+      <link>https://gam0022.net/blog/2021/02/15/demoscene-study-session/</link>
+      <pubDate>Mon, 15 Feb 2021 13:26:18 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2021/02/15/demoscene-study-session/</guid>
+      <description>&lt;p&gt;昨日の2/14（バレンタインデー）に開催された&lt;a href=&#34;https://connpass.com/event/200294/&#34;&gt;The Tokyo Demo Fest team presents: メガデモ勉強会2021&lt;/a&gt;に参加しました。&lt;/p&gt;
+
+&lt;p&gt;私は「64KBのWebGLデモを実装する技術とデモ制作から得た『学びと発見』」というタイトルで発表を行いました。&lt;/p&gt;
+
+&lt;p&gt;発表スライドはこちらです。&lt;/p&gt;
+
+&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vRd-L7WcWWzcoE9zNpBsJdeMjJf9HelDg1Pto8cFGJTjinejpjZ1mGmzWCZPANJZ0QOCObuVOIdPuy-/embed?start=false&amp;loop=false&amp;delayms=3000&#34; frameborder=&#34;0&#34; width=&#34;960&#34; height=&#34;569&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;本日の &lt;a href=&#34;https://twitter.com/hashtag/%E3%83%A1%E3%82%AC%E3%83%87%E3%83%A2%E5%8B%89%E5%BC%B7%E4%BC%9A?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#メガデモ勉強会&lt;/a&gt; の発表資料です！&lt;br&gt;&lt;br&gt;Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題材にして、効率的なデモ制作に必要なエディタ機能やWebGLのプロジェクトの構成、制作中に直面した問題と解決について解説しました。&lt;br&gt;&lt;br&gt;レイマーチングはいいぞ！&lt;a href=&#34;https://t.co/QWHOXHmZqu&#34;&gt;https://t.co/QWHOXHmZqu&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1360889255669633024?ref_src=twsrc%5Etfw&#34;&gt;February 14, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Revision2020のPC 64K Introで優勝したデモ作品『RE: SIMULATED』を題材にして、効率的なデモ制作に必要なエディタ機能やWebGLのプロジェクトの構成、制作中に直面した問題と解決方法について解説しました。&lt;/p&gt;
+
+&lt;p&gt;発表の締めとして「CGを学ぶことで世界の解像度を上げるのが楽しい」「レイマーチングはCG入門に最適」という持論について語りました。&lt;/p&gt;
+
+&lt;h1 id=&#34;質疑応答と補足&#34;&gt;質疑応答と補足&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;質問1: シェーダーを分割することで容量がどのくらい増えるか？
+
+&lt;ul&gt;
+&lt;li&gt;マルチパスを前提のエンジン設計にしたので、シェーダー分割してもTypeScriptのコード量は増えない&lt;/li&gt;
+&lt;li&gt;重複コードはzlib（pnginator.rb）で圧縮されるため、シェーダーの圧縮後のコードもほとんど増えない&lt;/li&gt;
+&lt;li&gt;前半と後半で2分割したときは45byteだけ増えた（&lt;a href=&#34;https://github.com/gam0022/resimulated/pull/112&#34;&gt;PR&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;質問2: シェーダーの数と行数について
+
+&lt;ul&gt;
+&lt;li&gt;サウンドシェーダーは1ファイル。グラフィックス用のシェーダーは合計10ファイル&lt;/li&gt;
+&lt;li&gt;サウンドシェーダーは行数が1800行ほどだが、zlibで効率よく圧縮できるので、最終的なファイル容量にはあまり影響しなかった&lt;/li&gt;
+&lt;li&gt;グラフィックス用のシェーダーは最大（宇宙空間のレイマーチング）で700行、最小（Bloomのポストエフェクト）で10行ほど&lt;/li&gt;
+&lt;li&gt;用途によって幅があるが、レイマーチング用のシェーダーだと平均して400行くらい&lt;/li&gt;
+&lt;li&gt;Shadertoyと同じようにCommonのシェーダーの仕組みも用意したが、重複したシェーダーはzlibで圧縮されるため、容量削減の効果は低かった&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;質問3: ディレクションについて
+
+&lt;ul&gt;
+&lt;li&gt;制作前に打ち合わせをしてBPMは決めていた
+
+&lt;ul&gt;
+&lt;li&gt;音楽と絵の同期はBPMで行っているので重要&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;方向性は絵が先行&lt;/li&gt;
+&lt;li&gt;尺については音楽が先行&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;補足1: Bloomのポストエフェクトはエンジンのビルトイン機能にした
+
+&lt;ul&gt;
+&lt;li&gt;縮小バッファーを利用するマルチパスのBloomにしたので、ビルトインにしたほうがサイズを小さく効率よく実装できそうだったから&lt;/li&gt;
+&lt;li&gt;フォント描画用のテクスチャ生成機能などShadertoyにはない仕様も何個か実装した&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;補足2: OpenGLよりWebGLの方がGLSLのコンパイル時間が長い
+
+&lt;ul&gt;
+&lt;li&gt;WebGLのデモではなく、OpenGLのexeによるデモにすれば、GLSLのコンパイル時間を短縮できる&lt;/li&gt;
+&lt;li&gt;Windows版のChromeおよびFirefoxでは、ANGLEを経由してDirect3D上でWebGLを実現しているため、ANGLEを経由する分だけGLSLコンパイルに時間のかかるケースが多い（&lt;a href=&#34;https://twitter.com/gaziya5/status/1361134297315348482&#34;&gt;Twitter&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chrome.exe --use-angle=gl&lt;/code&gt; というオプション付きでChromeを起動すると、ANGLEを経由せずにWebGLを利用できる（&lt;a href=&#34;https://twitter.com/gaziya5/status/1350418640093413377&#34;&gt;Twitter&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;かなり久しぶりに日本のデモシーンの人たちとワイワイできて楽しかったです！&lt;/p&gt;
+
+&lt;p&gt;最後のTokyoDemoFestは2018年の12月なので、もう2年以上も前なんですよね。時間が経つのは早いです。&lt;/p&gt;
+
+&lt;p&gt;discord上の懇親会では「どうすればライブコーディングを普及できるのか？一般人でも理解できるような実況が必要という仮説」「物理的な会場のクラブの体験とVRの違い」など興味深いお話を聞けて面白かったです。&lt;/p&gt;
+
+&lt;p&gt;素晴らしいイベントを企画・開催してくださったTDFのオーガナイザーのみなさん、本当にありがとうございました！&lt;/p&gt;
+
+&lt;h1 id=&#34;関連記事&#34;&gt;関連記事&lt;/h1&gt;
+
+&lt;p&gt;過去の関連登壇や記事のリンクです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2020/04/30/revision2020/&#34;&gt;Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2018/03/16/demoscene-study-session/&#34;&gt;メガデモ勉強会!2018で発表しました&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2016/02/16/glsl-tech/&#34;&gt;GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;この勉強会も5年前のバレンタインデーだったので何かの運命を感じました&lt;/li&gt;
+&lt;li&gt;私がレイマーチングを始めてから5年以上も経過しているのもちょっと驚きでした&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました</title>
+      <link>https://gam0022.net/blog/2020/09/13/cgworld-vol266/</link>
+      <pubDate>Sun, 13 Sep 2020 20:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2020/09/13/cgworld-vol266/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-09-13-cgworld-vol266/Collage_Fotor.jpg&#34; alt=&#34;CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。&lt;/p&gt;
+
+&lt;p&gt;デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。&lt;/p&gt;
+
+&lt;p&gt;この記事をきっかけにCGWORLD読者の方々にもデモシーンに興味をもっていただき、国内のデモシーンが盛り上がっていくことを願っています。&lt;/p&gt;
+
+&lt;p&gt;もちろん自分の活動を知っている方々もお手に取っていただければとても嬉しいです！&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。&lt;br&gt;&lt;br&gt;デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。&lt;a href=&#34;https://t.co/BPf1txlSxU&#34;&gt;https://t.co/BPf1txlSxU&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/CGWjp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CGWjp&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/demoscene?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#demoscene&lt;/a&gt; &lt;a href=&#34;https://t.co/XXpCh1xiFw&#34;&gt;pic.twitter.com/XXpCh1xiFw&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ #CEDEC2020 9/4登壇, CGWORLD 10月号 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1301514617588518915?ref_src=twsrc%5Etfw&#34;&gt;September 3, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;購入方法&#34;&gt;購入方法&lt;/h1&gt;
+
+&lt;p&gt;Amazonのアフェリエイトリンクを貼っておきます。&lt;/p&gt;
+
+&lt;iframe style=&#34;width:120px;height:240px;&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;bc1=000000&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=gam00220c-22&amp;language=ja_JP&amp;o=9&amp;p=8&amp;l=as4&amp;m=amazon&amp;f=ifr&amp;ref=as_ss_li_til&amp;asins=B08FP5NM5P&amp;linkId=8ed32da93c5253b64ba074583462b34a&#34;&gt;&lt;/iframe&gt;
+
+&lt;h1 id=&#34;感想&#34;&gt;感想&lt;/h1&gt;
+
+&lt;p&gt;Twitter上の反響を認知している範囲でメモしておきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;すごい、、表紙に「デモシーン」の文字があるぅ、、！&lt;a href=&#34;https://twitter.com/hashtag/CGWjp?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CGWjp&lt;/a&gt;&lt;/p&gt;&amp;mdash; Setsuko (@setsuko_h) &lt;a href=&#34;https://twitter.com/setsuko_h/status/1303997649582874625?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;CGWORLD vol.266「デモシーンを支えるプロシージャル技術」を買ってきて読んだ。ディファードレンダリングか。まさに俺が手を付けようとしてるとこだね。これとエフェクトを何とかしないと勝負にはならないな。&lt;/p&gt;&amp;mdash; gaziya (@gaziya5) &lt;a href=&#34;https://twitter.com/gaziya5/status/1303907439134220288?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;がむさん…！ &lt;a href=&#34;https://t.co/0SV02Jq91M&#34;&gt;pic.twitter.com/0SV02Jq91M&lt;/a&gt;&lt;/p&gt;&amp;mdash; さだきち : sadakkey (@sadakkey) &lt;a href=&#34;https://twitter.com/sadakkey/status/1304006171674640386?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;余談&#34;&gt;余談&lt;/h1&gt;
+
+&lt;p&gt;ついに商業誌デビュー！と思ったら、よく考えたら2007年にWindows100%のフリーゲーム紹介コーナーに自作ゲームがちょっとだけ掲載されたのを思い出しました（当時は中学生）。&lt;/p&gt;
+
+&lt;p&gt;今回は4ページしっかりと担当できましたし、CGWORLDという映像業界において圧倒的な知名度のある雑誌に寄稿する機会をいただけて、本当に嬉しいです。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Revision2020 PC 64K Intro 優勝作品『RE: SIMULATED』の技術解説</title>
+      <link>https://gam0022.net/blog/2020/04/30/revision2020/</link>
+      <pubDate>Thu, 30 Apr 2020 12:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2020/04/30/revision2020/</guid>
+      <description>&lt;p&gt;4月10日～4月13日に世界最大のデモパーティ&lt;a href=&#34;https://2020.revision-party.net/start&#34;&gt;Revision 2020&lt;/a&gt;に参加しました。&lt;/p&gt;
+
+&lt;p&gt;Revision 2020内で開催されたコンペのうち、&lt;a href=&#34;https://2020.revision-party.net/competitions/pc-competitions&#34;&gt;PC 64K Intro&lt;/a&gt;という64KBの容量制約のある部門で『RE: SIMULATED by gam0022 &amp;amp; sadakkey』という作品を発表しました。&lt;/p&gt;
+
+&lt;p&gt;Tokyo Demo Fest 2018に続き、私（&lt;a href=&#34;https://twitter.com/gam0022&#34;&gt;@gam0022&lt;/a&gt;）が映像を、さだきちさん（&lt;a href=&#34;https://twitter.com/sadakkey&#34;&gt;@sadakkey&lt;/a&gt;）が音楽を制作しました。&lt;/p&gt;
+
+&lt;p&gt;……なんと、本作品が参加者投票により1位に選ばれました！
+日本人のチームがPC 64K Intro部門で優勝するのは Revision 史上初です。とても嬉しいです！&lt;/p&gt;
+
+&lt;p&gt;本記事では、技術解説をメインに、『RE: SIMULATED by gam0022 &amp;amp; sadakkey』を紹介したいと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/resimulated-collage.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/resimulated-collage.jpg&#34; alt=&#34;resimulated-collage&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;作品へのリンク&#34;&gt;作品へのリンク&lt;/h1&gt;
+
+&lt;p&gt;WebGLとWebAudioによる64K Introなので、最新のChromeと高性能なGPUがあれば、ブラウザ上で動作します。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/webgl/64k-intro_resimulated.html&#34;&gt;64KB HTML version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://neort.io/art/bqa4pgs3p9f6qoqnmujg&#34;&gt;NEORT version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;高スペックのPCを持っていない方は、YouTubeの動画をご覧ください。&lt;/p&gt;
+
+&lt;p&gt;フラクタルをつかった映像のビットレートの高い作品ですが、4K解像度を選ぶことである程度は綺麗な状態で見れます。&lt;/p&gt;
+
+&lt;div class=&#34;movie-wrap&#34;&gt;
+&lt;iframe width=&#34;1920&#34; height=&#34;1080&#34; src=&#34;https://www.youtube.com/embed/tirAdWbceak&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;こちらはpouet（デモシーンのコミュニティサイト）のリンクです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pouet.net/prod.php?which=85260&#34;&gt;RE: SIMULATED by Gam0022 &amp;amp; Sadakkey :: pouët.net&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;技術解説&#34;&gt;技術解説&lt;/h1&gt;
+
+&lt;p&gt;ソースコードはすべてGitHubに公開しているので、興味がある方はぜひ見てください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gam0022/resimulated&#34;&gt;gam0022/resimulated: 1st place at Revision 2020 (PC 64K Intro)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;サウンド編についてはさだきちさんが解説されています。あわせてご覧ください！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.klab.com/jp/blog/creative/2020/revision-2020-pc-64k-intro.html&#34;&gt;Revision 2020 のPC 64K INTRO 優勝作品のサウンドについて&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;キーワードとしては、以下の技術が使われています。&lt;/p&gt;
+
+&lt;p&gt;TypeScript, WebGL, WebAudio, webpack, pnginator.rb, Raymarching, GLSL Sound&lt;/p&gt;
+
+&lt;h2 id=&#34;シンプルなwebglエンジン-chromatiq&#34;&gt;シンプルなWebGLエンジン『Chromatiq』&lt;/h2&gt;
+
+&lt;p&gt;64KBの容量制約があるため、Unityやthree.jsといった既存のゲームエンジンやフレームワークを利用せずに、描画用のWebGLエンジンと制作用のツール（エディタ機能）を自作する必要がありました。&lt;/p&gt;
+
+&lt;p&gt;OpenGLやDirectXを使わずに、WebGLを選択した理由は以下です。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WebGLでブラウザ上で動かせれば、手元のPCで動かしてもらえる可能性が高いと考えた
+
+&lt;ul&gt;
+&lt;li&gt;自分の作品は映像のビットレートが高く、動画だと綺麗にならない&lt;/li&gt;
+&lt;li&gt;手元のPCで実行して綺麗な状態で見てもらいたい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Webフロントエンドの技術をキャッチアップしたかった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;そこで、64K Intro向けに&lt;strong&gt;ファイルサイズの最小化を目指したシンプルなWebGLエンジン『Chromatiq』&lt;/strong&gt;を開発しました。&lt;/p&gt;
+
+&lt;p&gt;WebGLエンジンとは言うものの、本当にシンプルで最小限な機能しか &amp;ldquo;現段階では&amp;rdquo; 実装していません。&lt;/p&gt;
+
+&lt;p&gt;なるべく作品に依存した機能は用意したくなかったので、汎用的な設計になっています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;マルチパスのImageShaderによるレンダリング（viewport square）&lt;/li&gt;
+&lt;li&gt;ビルドインのBloomのポストエフェクト
+
+&lt;ul&gt;
+&lt;li&gt;どんな作品でも利用できそうなので、これだけビルドインにした&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;TypeScriptからuniformをアニメーションするためのインターフェース&lt;/li&gt;
+&lt;li&gt;Shadertoyと互換性のあるGLSL Sound&lt;/li&gt;
+&lt;li&gt;オーディオファイルの再生（mp3 / ogg）
+
+&lt;ul&gt;
+&lt;li&gt;DAWによる音楽の再生用の機能&lt;/li&gt;
+&lt;li&gt;今回は先にDAWで作曲し、後からGLSLに移植する作戦にした&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;フォントをレンダリングするためのcanvasからのテクスチャ生成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;イメージとしてはGLSLエディタを排除したスタンドアローンなShadertoyが近いかもしれません。&lt;/p&gt;
+
+&lt;p&gt;ソースコードは&lt;a href=&#34;https://github.com/gam0022/resimulated/blob/master/src/chromatiq.ts&#34;&gt;こちら&lt;/a&gt;です。単一ファイルのTypeScriptで実装しました。&lt;/p&gt;
+
+&lt;p&gt;圧縮後のコードサイズを気にして、変な感じの実装になっているので、微妙に読みづらいかもしれません。&lt;/p&gt;
+
+&lt;p&gt;例えば、フィールド参照の this を頭につけるとコードサイズが増えるため、コンストラクタの中で動的にインスタンスメソッドを定義することで、this の利用を最小限にしたり、
+クラス外から値を参照・設定する必要があるデータのみ、フィールドとして定義する方針とています。enumもコードサイズが増えるので禁止にしました。&lt;/p&gt;
+
+&lt;p&gt;製作の終盤から容量が余裕そうなことが判明したので、途中からファイルサイズを考慮するのを止め、mini化の中途半端感は否めないです。
+このあたりは、次のデモに向けて改良していきたいと考えています。&lt;/p&gt;
+
+&lt;p&gt;uniform名は基本的にはShadertoyと一致させているのですが、テクスチャのサンプラーはShadertoyを踏襲せずに、直前のパスを参照する &lt;code&gt;iPrevPass&lt;/code&gt; を定義しました。
+これによってGLSLを書き換えずにエフェクトの順番を入れ替えたり、気軽にパスを増やしてエフェクトをチェインしやすくしました。
+このあたりの仕様も、作品の需要に応じて変更していく可能性は高いです。&lt;/p&gt;
+
+&lt;h2 id=&#34;ファイル圧縮のためのビルドプロセス&#34;&gt;ファイル圧縮のためのビルドプロセス&lt;/h2&gt;
+
+&lt;p&gt;圧縮には&lt;a href=&#34;https://webpack.js.org/&#34;&gt;webpack&lt;/a&gt;と&lt;a href=&#34;https://gist.github.com/gasman/2560551&#34;&gt;pnginator.rb&lt;/a&gt;を利用しています。&lt;/p&gt;
+
+&lt;p&gt;ビルドプロセスを図にしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/build-process.svg&#34; alt=&#34;build-process&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;webpackですべてのファイルをbundle.jsという単一のJavaScriptに固めてから、pnginator.rbで自己解凍形式のPNGにしています。&lt;/p&gt;
+
+&lt;p&gt;TypeScriptのminifyは完全にwebpack任せです。&lt;/p&gt;
+
+&lt;p&gt;PNGでは画像データをzlib圧縮するため、画像データではなくても、例えば今回のようなプログラムのソースコードでちゃんと圧縮できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://qiita.com/gam0022/items/364c7f76f2787e385161&#34;&gt;GLSLのminifyも検証&lt;/a&gt;はしていて、webpackのLoaderを開発する予定もあったのですが、容量が余裕だったのでGLSLの圧縮はPNG（zlib）だけになりました。&lt;/p&gt;
+
+&lt;p&gt;また、開発用にしか必要ないコードの削除もwebpackの&lt;a href=&#34;https://webpack.js.org/plugins/define-plugin/&#34;&gt;define-plugin&lt;/a&gt;で実現できました。&lt;/p&gt;
+
+&lt;p&gt;webpackとpnginator.rbを組み合わせる手法は、&lt;a href=&#34;https://twitter.com/FMS_Cat&#34;&gt;FMS_Catさん&lt;/a&gt;の&lt;a href=&#34;https://github.com/FMS-Cat/until/&#34;&gt;Until&lt;/a&gt;を参考にしました。&lt;/p&gt;
+
+&lt;p&gt;当初はnode.jsでGLSLのホットリロード機能付きのWebサーバを開発しようと技術検証していたのですが、
+要件は&lt;a href=&#34;https://github.com/webpack/webpack-dev-server&#34;&gt;webpack-dev-server&lt;/a&gt;ですべて実現可能だったので、webpackを採用しました。&lt;/p&gt;
+
+&lt;p&gt;PRごとに圧縮後のファイルサイズを確認するようにしたら、圧縮後のファイルサイズについて知見が貯まりました（例）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コードの自動フォーマットをかけると、圧縮効率が上がってファイルサイズが減る&lt;/li&gt;
+&lt;li&gt;コードをコピペすると圧縮効率が高くなるので、実は無理にコードを共通化する意味は実は薄い&lt;/li&gt;
+&lt;li&gt;似たよな構造になるようにコードを意識すると圧縮効率が良くなる&lt;/li&gt;
+&lt;li&gt;関数の順番を入れ替えただけで微妙にサイズが減ったりと謎が多い&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;制作用のエディタ機能の紹介&#34;&gt;制作用のエディタ機能の紹介&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/chromatiq-editor.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/chromatiq-editor.png&#34; alt=&#34;chromatiq-editor&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;製作のイテレーションを高速化するため、必要なエディタ機能は一通り実装しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再生位置のシーク機能
+
+&lt;ul&gt;
+&lt;li&gt;再生・一時停止・停止・フレームのコマ送り・時間の表示単位の秒とビートの切り替え&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;GLSLやTypeScriptのホットリロード機能&lt;/li&gt;
+&lt;li&gt;uniformのパラメータのインスペクタ&lt;/li&gt;
+&lt;li&gt;カメラの自由移動&lt;/li&gt;
+&lt;li&gt;デバッグ用に特定のパスの表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;エディタ機能は容量制約に影響しないので、既存のライブラリを積極的に利用しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ボタン用のアイコンのために、&lt;a href=&#34;https://fontawesome.com/&#34;&gt;fontawesome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;uniformのパラメータのインスペクタのために、&lt;a href=&#34;https://github.com/dataarts/dat.gui&#34;&gt;dat.gui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;カメラの自由移動のために、&lt;a href=&#34;https://threejs.org/&#34;&gt;three.js&lt;/a&gt;の&lt;a href=&#34;https://threejs.org/docs/#examples/en/controls/OrbitControls&#34;&gt;OrbitControls&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/gam0022/resimulated#1-get-started&#34;&gt;リポジトリ&lt;/a&gt;をcloneして、 &lt;code&gt;npm run start&lt;/code&gt; すれば、エディタ機能が使えますので、興味がある人はお試しください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone git@github.com:gam0022/resimulated.git
+cd resimulated
+npm install
+
+# 制作用のエディタを起動
+npm run start
+
+# 提出用のビルド（dist\resimulated.html）を生成
+npm run build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;uniformのパラメータのインスペクタ&#34;&gt;uniformのパラメータのインスペクタ&lt;/h3&gt;
+
+&lt;p&gt;GLSL上で以下のようなuniformを宣言するだけで、そのままインスペクタに表示されるような仕組みを実装しました。&lt;/p&gt;
+
+&lt;p&gt;コメントでは左から順に &lt;code&gt;初期値 min max カテゴリー名&lt;/code&gt; を指定しています。初期値は必須ですが、それ以外は省略可能としました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;uniform float gEmissiveIntensity;     // 6.0 0 20 emissive
+uniform float gEmissiveSpeed;         // 1 0 2
+uniform float gEmissiveHue;           // 0.33947042613522904 0 1
+uniform float gEmissiveHueShiftBeat;  // 0 0 1
+uniform float gEmissiveHueShiftZ;     // 0 0 1
+uniform float gEmissiveHueShiftXY;    // 0 0 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;uniform宣言をすると、自動的にインスペクタにパラメータが追加されます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/chromatiq-editor-emissive.png&#34; alt=&#34;chromatiq-editor-emissive&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;私の作品では、フラクタルやIFSといったパラメータの細かな調整が重要になる表現を多用しているため、気軽にパラメータを増やして、気軽に値を調整できるようにしました。&lt;/p&gt;
+
+&lt;p&gt;値の当たりをつけた後に、パラメータのアニメーションを&lt;a href=&#34;https://github.com/gam0022/resimulated/blob/master/src/index.common.ts#L142-L569&#34;&gt;TypeScriptのコード&lt;/a&gt;に落とし込むワークフローにしました。&lt;/p&gt;
+
+&lt;p&gt;これは、インスペクタを動かしている様子の動画です。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;三谷先生に便乗して、MengerSponge をカットしてみました。&lt;br&gt;断面が星みたいになって面白いですね⭐️ &lt;a href=&#34;https://t.co/mCqFnfbjBF&#34;&gt;https://t.co/mCqFnfbjBF&lt;/a&gt; &lt;a href=&#34;https://t.co/QF73xfFL1y&#34;&gt;pic.twitter.com/QF73xfFL1y&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ / encoder killer (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1253296266424930304?ref_src=twsrc%5Etfw&#34;&gt;April 23, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;動画の保存機能&#34;&gt;動画の保存機能&lt;/h3&gt;
+
+&lt;p&gt;処理落ちなしに4K解像度で動画を出力したかったので、以下の機能を実装しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;映像の連番PNG保存機能&lt;/li&gt;
+&lt;li&gt;サウンドの wav 保存機能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;.png と .wav を ffmpeg で .mp4 に変換してYouTubeにアップロードしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ffmpeg.exe -r 60 -i chromatiq%04d.png -i chromatiq.wav -c:v libx264 -preset slow -profile:v high -coder 1 -pix_fmt yuv420p -movflags +faststart -g 30 -bf 2 -c:a aac -b:a 384k -profile:a aac_low -b:v 68M chromatiq_68M.mp4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;YouTube用のffmpegのエンコード設定については、以下を参考にしました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.google.com/youtube/answer/1722171?hl=ja&#34;&gt;アップロードする動画におすすめのエンコード設定&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;映像ビットレート 2160p（4k）53～68 Mbps&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gist.github.com/mikoim/27e4e0dc64e384adbcb91ff10a2d3678&#34;&gt;YouTube recommended encoding settings on ffmpeg (+ libx264)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/sasaki_0222/status/1248910333835530241&#34;&gt;解像度とビットレードについて by sasaki_0222&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;映像について&#34;&gt;映像について&lt;/h2&gt;
+
+&lt;p&gt;映像の3D描画は基本的に全部レイマーチングです。&lt;/p&gt;
+
+&lt;p&gt;前半のサイバーなシーンはMandelboxをベースにしました。&lt;/p&gt;
+
+&lt;p&gt;後半の宇宙空間とグリーティングのシーンでは、宇宙空間はレイマーチング、惑星の上のグリーティングの文字はAABBとして解析的に衝突判定をするハイブリッドなレイトレをしています。&lt;/p&gt;
+
+&lt;p&gt;パスの構成は、最終的にこうなりました。&lt;/p&gt;
+
+&lt;p&gt;1パス目と2パス目を分離したのは、シェーダーのコンパイル時間の短縮のためです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1パス目: 前半のシーンのレイマーチング&lt;/li&gt;
+&lt;li&gt;2パス目: 後半のシーンのレイマーチング&lt;/li&gt;
+&lt;li&gt;3パス目: テキストの描画&lt;/li&gt;
+&lt;li&gt;4～13パス目: Bloomのポストエフェクト&lt;/li&gt;
+&lt;li&gt;14パス目: ポストエフェクトとトーンマッピング&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;惑星のバリエーション生成の仕組み&#34;&gt;惑星のバリエーション生成の仕組み&lt;/h3&gt;
+
+&lt;p&gt;後半のグリーティングでは、自分が特に尊敬しているデモグループをイメージした惑星が合計14パターン登場します。&lt;/p&gt;
+
+&lt;p&gt;様々なバリエーションの惑星を効率的に生成するための仕組みを実装しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;地形の高さマップの自動生成&lt;/li&gt;
+&lt;li&gt;テクスチャの色のグラデーションの自動生成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;地形の高さマップの自動生成&#34;&gt;地形の高さマップの自動生成&lt;/h4&gt;
+
+&lt;p&gt;2DのValue Noiseを重ね合わせたfbm（Fractal Brownian Motion）で地形の高さマップを生成しました。&lt;/p&gt;
+
+&lt;p&gt;さらに、fbm関数をネストして（fbmのUV計算にfbmをつかって）、歪んだような不思議な雰囲気の地形も生成できるようにしました。&lt;/p&gt;
+
+&lt;p&gt;左がfbmのネストよる歪みなしで、右がfbmのネストによる歪みありです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/fbm-shift.jpg&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2020-04-19-revision2020/fbm-shift.jpg&#34; alt=&#34;fbm-shift&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;fbmの各種パラメーター（振幅や周波数、Y方向のスケール、歪み用のfbmの強度）は、乱数ではなく、配列で直接指定することで、イメージ通りの結果に調整できるようにしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;// fbmAmp, fbmFreq, fbmYScale, fbmShift
+vec4[PLANETS_PAT_MAX * PLANETS_NUM_MAX] planetFbmParams = vec4[](
+    // MIX_A
+    vec4(0.3, 17.0, 1.0, 0.01), vec4(0.05, 10.0, 1.05, 0.0), vec4(0.05, 10.0, 1.05, 0.01),
+    vec4(0.05, 10.0, 4.05, 0.02), vec4(0.05, 10.0, 2.05, 00.1), vec4(0.0),
+    // MIX_B
+    vec4(0.0, 10.0, 1.0, 0.2), vec4(0.0, 10.0, 1.0, 0.01), vec4(0.0, 10.0, 1.0, 0.03),
+    vec4(0.05, 10.0, 1.0, 00.2), vec4(0.06, 10.0, 1.0, 0.03), vec4(0.05, 10.0, 1.0, 0.03));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このようなfbmをネストしたシンプルな関数で高さマップを生成しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;// 惑星の高さマップ（height map）を生成する関数
+// pは球体のUV, id は惑星のID
+float hPlanetsMix(vec2 p, int id) {
+    p.y *= planetFbmParams[id].z;
+    return fbm(p + 
+        planetFbmParams[id].w * fbm(p, 4.0 * planetFbmParams[id].y), planetFbmParams[id].y);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;テクスチャの色のグラデーションの自動生成&#34;&gt;テクスチャの色のグラデーションの自動生成&lt;/h4&gt;
+
+&lt;p&gt;iqのColor Palettesを使いました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://iquilezles.org/www/articles/palettes/palettes.htm&#34;&gt;Color Palettes - Inigo Quilez :: fractals, computer graphics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;vec3 pal(in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d) {
+    return a + b * cos(TAU * (c * t + d));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pal 関数の使い方は簡単で、&lt;code&gt;a, b, c, d&lt;/code&gt; を任意に指定すれば、&lt;code&gt;t&lt;/code&gt; を変化することでグラデーションを生成できます。&lt;/p&gt;
+
+&lt;p&gt;今回は &lt;code&gt;a, b, c&lt;/code&gt; は定数、&lt;code&gt;d&lt;/code&gt; は惑星ごとに乱数で決定しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;a, b, c&lt;/code&gt; や乱数のseed値はインスペクタで値を調整しながら、イメージ通りのグラデーションが生成されるまで試行錯誤しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;t&lt;/code&gt; は地形の高さマップにマッピングしました。&lt;/p&gt;
+
+&lt;h3 id=&#34;無数の小惑星のランダムな配置&#34;&gt;無数の小惑星のランダムな配置&lt;/h3&gt;
+
+&lt;p&gt;宇宙空間がスカスカすぎて寂しかったので、無数の小惑星をランダムに配置しようとしたら、予想外に苦戦しました。&lt;/p&gt;
+
+&lt;p&gt;レイマーチングだと空間をmodすることで物体を無限に複製することは簡単なのですが、それでは規則的な配置にしかならず、かなり不自然になってしまいます。&lt;/p&gt;
+
+&lt;p&gt;gazさんのシェーダーを参考にして、空間をgridに分割して、gridごとに乱数を生成して、乱数で確率的に物体を間引く手法を採用しました。&lt;/p&gt;
+
+&lt;p&gt;また、アーティファクトの回避するために、rayの長さを制限する工夫も必要でした。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;もう忘れてるよ。自分で読み解いてしまったじゃないか。xy平面を通常のmod()で分割。z軸の奥行のみgridをseedに乱数を使い間引きしてる。z軸だけ空間移動のスピード、回転を変えてる。アーティファクト対策で、min(map(p), 1.0)を使いrayの長さを制限。effectにビルボードを使い発光を演出。&lt;/p&gt;&amp;mdash; gaz (@gaziya5) &lt;a href=&#34;https://twitter.com/gaziya5/status/1247671912521596928?ref_src=twsrc%5Etfw&#34;&gt;April 7, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;最終的に、ランダムな位置と大きさをもつ小惑星の距離関数はこうなりました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;float dGomi(vec3 p) {
+    // アーティファクト対策のための固定長の距離
+    float d = 1.0;
+
+    // グリット（4m四方の立方体）の計算
+    vec3 g = vec3(floor(p / 4.0));
+
+    // 座標の繰り返し
+    p = mod(p, 4.0) - 2.0;
+
+    // 確率 rate に応じて球体を配置
+    vec3 rand = hash33(g);
+    float rate = (gPlanetsId != PLANETS_EARTH) ? 0.08 : 0.01;
+    if (rand.x &amp;lt; rate) {
+        p -= (rand - 0.5);
+        d = sdSphere(p, 0.1 * rand.y);
+    }
+
+    // fbmで表面の凹凸のディテールを加える
+    // レイが接近したときだけに計算するのは、LODによる負荷対策
+    // fbmの計算はかなり高負荷なので、LODをしないと激重になる
+    if (d &amp;lt; 0.5) {
+        vec2 uv = uvSphere(normalize(p));
+        uv.x += dot(rand, vec3(1.0));
+        d -= remapTo(rand.z, 0.01, 0.08) * fbm(uv, 5.0);
+    }
+
+    return d;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;音楽について&#34;&gt;音楽について&lt;/h2&gt;
+
+&lt;p&gt;基盤となるGLSLサウンド用のシーケンサーの実装は私が、それ以外のオシレーターの関数やメロディの実装はさだきちさんが担当しました。&lt;/p&gt;
+
+&lt;p&gt;音楽もやはり容量制約のためにGLSLで実装する必要があり、さだきちさんにはコーディングによる作曲をお願いしました。
+さだきちさんはプログラミングもGLSLも未経験だったので、それらの習得から始まりました。
+かなり無茶なお願いだったにも関わらず、かっこいいトランスミュージックを提供してくれたさだきちさんには感謝しかありません。ありがとうございます！&lt;/p&gt;
+
+&lt;p&gt;私が担当したGLSLサウンド用のシーケンサーはGLSLサウンド上で実装されており、GLSLサウンドを鳴らす仕組みについては、AMAGIさん（&lt;a href=&#34;https://twitter.com/amagitakayosi&#34;&gt;@amagitakayosi&lt;/a&gt;）の記事を参考に、Shadertoy互換のGLSLサウンドの再生機能を実装しました。ありがとうございます！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.amagi.dev/entry/veda-sound&#34;&gt;VEDA 2.4: GLSLで音楽を演奏できるようになったぞ！！！ - マルシテイア&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;サウンド用のシーケンサーの利用例&#34;&gt;サウンド用のシーケンサーの利用例&lt;/h3&gt;
+
+&lt;p&gt;これはベースのパートの波形を生成するGLSLの関数です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;vec2 bass1(float beat, float time) {
+// 1つのパターンのビート数
+#define BASS1_BEAT_LEN 8
+
+// パターンの種類
+#define BASS1_DEV_PAT 10
+
+// 楽曲全体の長さのパターン数
+#define BASS1_DEV_LEN 32
+
+    // パターンの定義
+    int[BASS1_BEAT_LEN * NOTE_DIV * BASS1_DEV_PAT] notes = int[](
+        // パターン0
+        F(0), F(33), E(0, 33), S(0, 33, 0, 33),
+        F(0), F(33), E(0, 33), S(0, 33, 0, 33),
+
+        // パターン1
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+
+        // パターン2
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(29, 29), S(0, 29, 29, 29), S(0, 31, 31, 31), S(48, 47, 43, 40),
+
+        // パターン3
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 34, 34, 34),
+
+        // パターン4
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 36, 36, 36),
+
+        // パターン5
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 34, 34, 34), S(0, 36, 36, 36),
+
+        // パターン6
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 43, 43, 43), S(0, 55, 57, 69),
+
+        // パターン7
+        E(29, 29), S(0, 29, 29, 29), S(0, 29, 29, 29), S(0, 31, 33, 45),
+        E(29, 29), S(0, 29, 29, 29), S(0, 29, 29, 29), S(0, 31, 31, 31),
+
+        // パターン8
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33),
+        E(33, 33), S(0, 33, 33, 33), S(0, 33, 33, 33), S(0, 43, 45, 57),
+
+        // パターン9
+        E(29, 29), S(0, 29, 29, 29), S(0, 29, 29, 29), S(0, 31, 33, 45),
+        E(29, 29), S(0, 29, 29, 29), S(0, 31, 31, 31), S(0, 31, 31, 31));
+
+    // パターンの進行
+    int[BASS1_DEV_LEN / DEV_PACK] development = int[](
+        D(0, 0, 0, 0, 0, 0, 0, 0), D(1, 1, 1, 2, 3, 4, 5, 6),
+        D(7, 0, 7, 8, 7, 0, 9, 0), D(0, 0, 0, 0, 0, 0, 0, 0));
+
+    SEQUENCER(beat, time, BASS1_BEAT_LEN, BASS1_DEV_PAT, BASS1_DEV_LEN,
+        notes, development, bass)
+
+    return ret;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;パターン（2小節分のノートナンバーの並び）の定義と進行は、それぞれ配列で指定できるようにしています。&lt;/p&gt;
+
+&lt;p&gt;音の長さは下記の4種類に対応しました。
+ノートナンバーに0を指定すれば、同じ長さの休符になります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;O: 全音符&lt;/li&gt;
+&lt;li&gt;F: 4分音符&lt;/li&gt;
+&lt;li&gt;E: 8分音符&lt;/li&gt;
+&lt;li&gt;S: 16分音符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GLSLのコンスタントバッファのサイズには上限があり、サウンド用のシェーダー全体で要素数が4096個まででしか配列を宣言できません。&lt;/p&gt;
+
+&lt;p&gt;そこで、&lt;code&gt;O, F, E, S&lt;/code&gt; を関数マクロとし、16分音符を最小単位として各音符を16bit（うち、ノートナンバーが8bit、音の長さが8bit）ずつパッキングしています。
+GLSLのintは32bitなので、int配列の1要素に16分音符なら2つ、8分音符なら1つ入るような設計です。&lt;/p&gt;
+
+&lt;p&gt;また、パターン進行の &lt;code&gt;D&lt;/code&gt; もマクロにしていて、要素数の節約のために4bitずつパッキングをしています。&lt;/p&gt;
+
+&lt;p&gt;続いて、&lt;code&gt;bass&lt;/code&gt; は時間とノートナンバーを入力として、波形を出力するオシレーターのGLSL関数です。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SEQUENCER&lt;/code&gt; は、時間、パターンの定義の配列、パターンの進行の配列、オシレーターの関数を指定することで、パートごとの波形を生成して &lt;code&gt;vec2 ret&lt;/code&gt; に代入する関数マクロです。
+GLSLでは関数を引数とするような高階関数は実現できませんが、関数マクロで擬似的に実現しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#define SEQUENCER(beat, time, beatLen, devPat, devLen, notes, development, toneFunc)  \
+    int indexOffset = development[int(                                                \
+        mod(beat / float(beatLen * DEV_PACK), float(devLen / DEV_PACK)))];            \
+    indexOffset =                                                                     \
+        (indexOffset &amp;gt;&amp;gt; (4 * int(mod(beat / float(beatLen), float(DEV_PACK))))) &amp;amp; 15; \
+    indexOffset *= beatLen * NOTE_VDIV;                                               \
+                                                                                      \
+    for (int i = 0; i &amp;lt; beatLen * NOTE_VDIV;) {                                       \
+        int index = i + indexOffset;                                                  \
+        int shift = (index % 2 == 1) ? 16 : 0;                                        \
+        int div = ((notes[index &amp;gt;&amp;gt; 1] &amp;gt;&amp;gt; shift) &amp;gt;&amp;gt; 8) &amp;amp; 255;                          \
+        int len = NOTE_VDIV * NOTE_VDIV / div;                                        \
+        for (int j = 0; j &amp;lt; len; j++) {                                               \
+            tmpIndexes[i + j] = i;                                                    \
+        }                                                                             \
+        i += len;                                                                     \
+    }                                                                                 \
+                                                                                      \
+    float indexFloat = mod(beat * float(NOTE_VDIV), float(beatLen * NOTE_VDIV));      \
+    int index = int(indexFloat);                                                      \
+    int shift = (index % 2 == 1) ? 16 : 0;                                            \
+    int note = (notes[(index + indexOffset) &amp;gt;&amp;gt; 1] &amp;gt;&amp;gt; shift) &amp;amp; 255;                    \
+    float localTime =                                                                 \
+        beatToTime((indexFloat - float(tmpIndexes[index])) / float(NOTE_VDIV));       \
+    float amp = (note == 0) ? 0.0 : 1.0;                                              \
+    vec2 ret = vec2(toneFunc(float(note), localTime) * amp);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;パターンの定義・進行のマクロはこちらです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;// 1ビートを最大何分割するか。16分音符に対応するなら4
+#define NOTE_VDIV 4
+
+// 1ビートのpackingを考慮した分割数。32bitのintに16bitずつ詰めているので
+// 4 / (32 / 16) = 2
+#define NOTE_DIV 2
+
+// 展開用の配列のpacking数。32bitのintに4bitずつ詰めているので
+// 32 / 4 = 8
+#define DEV_PACK 8
+
+#define MAX_BEAT_LEN 8
+int[MAX_BEAT_LEN * NOTE_VDIV] tmpIndexes;
+
+#define O(a)                                                                      \
+    (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16),     \
+        (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), \
+        (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), \
+        (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (a | 1 &amp;lt;&amp;lt; 8) | ((a | 1 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16)
+#define F(a) (a | 4 &amp;lt;&amp;lt; 8) | ((a | 4 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (a | 4 &amp;lt;&amp;lt; 8) | ((a | 4 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16)
+#define E(a, b) (a | 8 &amp;lt;&amp;lt; 8) | ((a | 8 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (b | 8 &amp;lt;&amp;lt; 8) | ((b | 8 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16)
+#define S(a, b, c, d) \
+    (a | 16 &amp;lt;&amp;lt; 8) | ((b | 16 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16), (c | 16 &amp;lt;&amp;lt; 8) | ((d | 16 &amp;lt;&amp;lt; 8) &amp;lt;&amp;lt; 16)
+#define D(a, b, c, d, e, f, g, h) \
+    (a) | (b &amp;lt;&amp;lt; 4) | (c &amp;lt;&amp;lt; 8) | (d &amp;lt;&amp;lt; 12) | (e &amp;lt;&amp;lt; 16) | (f &amp;lt;&amp;lt; 20) | (g &amp;lt;&amp;lt; 24) | (h &amp;lt;&amp;lt; 28)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;re-simulated-の意味&#34;&gt;『RE: SIMULATED』の意味&lt;/h1&gt;
+
+&lt;p&gt;タイトルの『RE: SIMULATED』には2つの意味を込めました。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;前作『WORMHOLE』の64K Introとしての「再現」&lt;/li&gt;
+&lt;li&gt;SIMULATED REALITY&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;1-前作-wormhole-の64k-introとしての-再現&#34;&gt;1. 前作『WORMHOLE』の64K Introとしての「再現」&lt;/h2&gt;
+
+&lt;p&gt;一昨年のTokyo Demo Fest 2018のCombined Demo Compoでも、さだきちさんとチームを組んで『WORMHOLE』という作品を制作しました（&lt;a href=&#34;https://gam0022.net/blog/2018/12/12/tdf2018/&#34;&gt;記事&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;前半のシーンが顕著ですが、『WORMHOLE』と表現や演出が酷似していると思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;フラクタルの形状変化&lt;/li&gt;
+&lt;li&gt;光の色の変化&lt;/li&gt;
+&lt;li&gt;シーン転換前の激しい点滅&lt;/li&gt;
+&lt;li&gt;シーン転換後のホワイトイン&lt;/li&gt;
+&lt;li&gt;パーティのロゴの登場&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;『WORMHOLE』はUnityで制作したので、60.7 MB（zip圧縮で 23.18MB）というファイルサイズでした。&lt;/p&gt;
+
+&lt;p&gt;前作では、Unityを利用したことで賛否両論があったので、ツールに頼らなくても同様のビジュアルを再現できることを証明する意図がありました。&lt;/p&gt;
+
+&lt;p&gt;また、64K Introなどの容量制限のある部門への参加が個人的にも憧れだったという理由もあります。&lt;/p&gt;
+
+&lt;p&gt;今回は自作のシステムで作品を制作することでファイルサイズは26KBになりました。&lt;/p&gt;
+
+&lt;p&gt;同じ表現を「再現」しつつも、容量を &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2334&lt;/sub&gt; まで圧縮する試みのコンセプトは達成できました。&lt;/p&gt;
+
+&lt;p&gt;まさか、コンポで優勝するという結果まで「再現」してしまうのは予想外でした（笑）&lt;/p&gt;
+
+&lt;h2 id=&#34;2-simulated-reality&#34;&gt;2. SIMULATED REALITY&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%86%E3%83%83%E3%83%89%E3%83%BB%E3%83%AA%E3%82%A2%E3%83%AA%E3%83%86%E3%82%A3&#34;&gt;Simulated Reality&lt;/a&gt;という裏設定もありました。&lt;/p&gt;
+
+&lt;p&gt;作品の最後に「RE: SIMULATED」の文字が&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;RE: SIMULATED&lt;/code&gt; → &lt;code&gt;RE&lt;/code&gt; → &lt;code&gt;REALITY&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;と変化して、REALITYに変化するタイミングで「地球」がフラッシュバックするのは、Simulated Realityの暗喩です。&lt;/p&gt;
+
+&lt;p&gt;前半のサイバーなシーンは電子的な仮想空間という設定で、シーン転換時に球体を中心に空間が歪んで圧縮するのは、宇宙誕生の爆発であるビッグバンの暗喩です。&lt;/p&gt;
+
+&lt;p&gt;この世界は上位存在によって電子的にシミュレーションされた仮想現実で、最後に自分たちが住む地球を見つけるというストーリーでした（あくまで裏設定だったので、見た人に通じなくても良い）。&lt;/p&gt;
+
+&lt;p&gt;できれば現実と見分けがつかないようなリアルなグラフィックで表現できたら良かったのですが、力量不足でした……。&lt;/p&gt;
+
+&lt;h1 id=&#34;おわりに&#34;&gt;おわりに&lt;/h1&gt;
+
+&lt;p&gt;Webフロントエンドは久しぶりで、node.jsとwebpackは初めてだったので、新しい技術を学ぶ良い機会となりました。&lt;/p&gt;
+
+&lt;p&gt;昔はjQueryが必要だったDOMのセレクターやHTTPアクセスが、標準のAPI（&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector&#34;&gt;querySelector&lt;/a&gt;や&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch&#34;&gt;Fetch&lt;/a&gt;）になっていて驚きました。&lt;/p&gt;
+
+&lt;p&gt;TypeScript（ECMascript）に苦手意識がありましたが、最近はかなり使いやすい言語になったなぁと認識を改めました。
+演算子オーバーロードがないのだけは、3Dプログラミングには必須のベクトル計算の実装の可読性が落ちて苦しい気持ちになったので、早くサポートして欲しいと感じました。&lt;/p&gt;
+
+&lt;p&gt;また、64K Introのエントリーは今回が初めてということで、どのくらいのコンテンツが詰め込めるか感覚がつかめず、容量を半分以上も余らせてしまいました。
+次の機会には64KBギリギリまで使って、もっと映像としても洗練させて、さらにCoolな作品を発表したいです。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;実は26KBしか使いきれなかったので、次回は64KBギリギリまで使えるように精進します💪 &lt;a href=&#34;https://t.co/uxF2M5DZmg&#34;&gt;pic.twitter.com/uxF2M5DZmg&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ / encoder killer (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1249677712815321088?ref_src=twsrc%5Etfw&#34;&gt;April 13, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;例年のRevisionの64K Introの作品と比較すると、かなり未熟なので、もっと精進して最高のデモを作りたいという気持ちです。&lt;/p&gt;
+
+&lt;p&gt;ともあれ、このたびは優勝作品に選んでいただき、とても光栄に思います。&lt;/p&gt;
+
+&lt;p&gt;世界中の尊敬するデモチームの方々からいただいたお祝いのコメントも嬉しかったです。わーい！&lt;/p&gt;
+
+&lt;p&gt;最後に、世界的に大変な状況の中、オンラインでの開催のためにご尽力いただいた皆様に、心より感謝申し上げます。
+とても楽しく充実した3日間を過ごせました。来年はドイツでお会いしましょう！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>カメラ行列からレイトレ用のレイを生成する</title>
+      <link>https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/</link>
+      <pubDate>Mon, 11 Dec 2017 10:12:08 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2017/12/11/get-ray-from-camera-matrix/</guid>
+      <description>&lt;p&gt;これは&lt;a href=&#34;https://qiita.com/advent-calendar/2017/klab&#34;&gt;KLab Advent Calendar 2017&lt;/a&gt;の11日目の記事です。&lt;/p&gt;
+
+&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+
+&lt;p&gt;先日、three.jsの&lt;a href=&#34;https://threejs.org/examples&#34;&gt;examples（公式サンプル集）&lt;/a&gt;で紹介されている&lt;a href=&#34;https://threejs.org/examples/#webgl_raymarching_reflect&#34;&gt;「raymarching / reflect」&lt;/a&gt;に関して、2つのPRを送ってマージされました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mrdoob/three.js/pull/12792&#34;&gt;Improve raymarching example by gam0022 · Pull Request #12792 · mrdoob/three.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mrdoob/three.js/pull/12801&#34;&gt;Improve raymarching example v2 by gam0022 · Pull Request #12801 · mrdoob/three.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;内部的なリファクタリングですので、目に見える変化はまったくありません。&lt;/p&gt;
+
+&lt;p&gt;レイトレーシングやレイマーチングでは、レイを生成する処理が必要です。
+そのレイの生成処理を改良しました。
+上記のPRでは、カメラ行列（モデル行列 + プロジェクション行列の逆行列）からレイの生成するリファクタリングを行いました。&lt;/p&gt;
+
+&lt;p&gt;レイの生成方法というのはとても奥深いテーマで、さまざまな実装方法があります。
+この記事では、今回のPRに至るまでの試行錯誤をまとめたいと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;raymarching-reflect-とは&#34;&gt;raymarching / reflect とは&lt;/h1&gt;
+
+&lt;p&gt;「raymarching / reflect」は、three.jsによるレイマーチングのGLSL（GPU）実装の技術デモです。&lt;/p&gt;
+
+&lt;p&gt;無数のオブジェクトの描画はレイマーチングが得意とする表現です。
+レイマーチングでは距離関数を利用してシーンの形状を定義します。
+距離関数にmod関数を適用すると、同じ形状を無限に繰り返す repetition を実現できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-12-11-get-ray-from-camera-matrix/reflect.png&#34; alt=&#34;three.jsによるレイマーチングのGLSL（GPU）実装の技術デモ: reflect&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;私が2年前に実装して、three.jsのexamplesに取り込んでいただきました。その時のPRはこちらです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mrdoob/three.js/pull/7860&#34;&gt;Added raymarching reflect example. by gam0022 · Pull Request #7860 · mrdoob/three.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mrdoob/three.js/pull/7863&#34;&gt;[WIP] Fix raymarching reflect by gam0022 · Pull Request #7863 · mrdoob/three.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;解説記事もあるので、もしご興味があればあわせてお読みください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/gam0022/items/03699a07e4a4b5f2d41f&#34;&gt;これがGPUの力！Three.jsによる“リアルタイム”なレイトレーシング&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;要するに、2年前に自分で作った作品を今になって改良しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;レイの生成方法の試行錯誤&#34;&gt;レイの生成方法の試行錯誤&lt;/h1&gt;
+
+&lt;p&gt;それでは、カメラ行列からレイを生成するに至った経緯を混じえながら、
+レイの生成方法の試行錯誤について、実装した順番に紹介します。&lt;/p&gt;
+
+&lt;h2 id=&#34;方法1-glslで全てのカメラ制御を行う&#34;&gt;方法1: GLSLで全てのカメラ制御を行う&lt;/h2&gt;
+
+&lt;p&gt;2年前の初PR &lt;a href=&#34;https://github.com/mrdoob/three.js/pull/7860&#34;&gt;#7860&lt;/a&gt; で実装したのは、マウス座標と経過時間から、フラグメントシェーダ（GLSL）の中でカメラのレイを生成する方法です。&lt;/p&gt;
+
+&lt;p&gt;シェーダに渡すuniformsは、マウス座標&lt;code&gt;mouse&lt;/code&gt;と、経過時間&lt;code&gt;time&lt;/code&gt;の2つです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;uniform vec2 mouse;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;uniform float time;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下のGLSLのコードを書きました。レイマーチング（デモシーン）の界隈では最もメジャーな実装かと思います。&lt;/p&gt;
+
+&lt;p&gt;コード1 &lt;a href=&#34;https://github.com/gam0022/three.js/blob/1048d6751b11fa7c0caf7e480fa2682312716516/examples/webgl_raymarching_reflect.html#L199-L208&#34;&gt;カメラ制御をすべて行うGLSLのコード&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// fragment position
+vec2 p = ( gl_FragCoord.xy * 2.0 - resolution ) / min( resolution.x, resolution.y );
+
+// camera and ray
+vec3 cPos  = vec3( mouse.x - 0.5, mouse.y * 4.0 - 0.2, time );
+vec3 cDir  = normalize( vec3( 0.0, -0.3, 1.0 ) );
+vec3 cSide = cross( cDir, vec3( 0.0, 1.0 ,0.0 ) );
+vec3 cUp   = cross( cSide, cDir );
+float targetDepth = 1.3;
+vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※オリジナルのコードではY-upの扱いが間違っていたので、記事用に修正を加えています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;cPos&lt;/code&gt;はカメラのワールド座標、&lt;code&gt;ray&lt;/code&gt;はカメラのレイの方向をそれぞれ表します。
+また、カメラのY-upに対応する &lt;code&gt;vec3( 0.0, 1.0 ,0.0 )&lt;/code&gt; とカメラのFOVに対応する &lt;code&gt;float targetDepth = 1.3;&lt;/code&gt; はコード上に埋め混んだ、いわゆるマジックナンバーとしました。&lt;/p&gt;
+
+&lt;h2 id=&#34;方法2-カメラの座標と向きを渡す&#34;&gt;方法2: カメラの座標と向きを渡す&lt;/h2&gt;
+
+&lt;p&gt;この方法は2年前の2つ目のPR &lt;a href=&#34;https://github.com/mrdoob/three.js/pull/7863&#34;&gt;#7863&lt;/a&gt; で対応しました。&lt;/p&gt;
+
+&lt;p&gt;方法1でPRを送ったところ、three.jsの作者である&lt;a href=&#34;https://twitter.com/mrdoob&#34;&gt;@mrdoob&lt;/a&gt;から&lt;a href=&#34;https://github.com/mrdoob/three.js/pull/7860#issuecomment-167371299&#34;&gt;コメント&lt;/a&gt;をいただきました。
+以下に一部を抜粋します。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;However&amp;hellip; I think it would be cool if, instead of passing mouse and time to the shader we would simply pass the camera. I guess for that we have to decompose the camera matrix into position and direction?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;要約すると、GLSL側でカメラの位置や方向を決めずに、three.js側（JavaScript側）でカメラの操作を行うのはどうかという提案でした。
+カメラ操作はthree.jsで行い、シェーダはカメラの情報を受取るようにすれば、three.jsの世界とレイマーチングの世界をより統合できます。&lt;/p&gt;
+
+&lt;p&gt;そこでシェーダに渡すuniformsを、カメラのワールド座標&lt;code&gt;cameraPos&lt;/code&gt;と、カメラの方向&lt;code&gt;cameraDir&lt;/code&gt;に改めました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;uniform vec3 cameraPos;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;uniform vec3 cameraDir;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;three.jsにはカメラの制御を行う &lt;code&gt;Control&lt;/code&gt; クラスが豊富にあります。
+この変更によって、three.jsの &lt;code&gt;Control&lt;/code&gt; クラスを利用したカメラ制御を実現できるようになります。&lt;/p&gt;
+
+&lt;p&gt;この変更のあとで、&lt;code&gt;FlyControl&lt;/code&gt; による自由カメラモードを実装しました。&lt;/p&gt;
+
+&lt;p&gt;次がレイを生成するコードです。
+1つ目のコードとほぼ同じですが、 &lt;code&gt;cPos&lt;/code&gt; と &lt;code&gt;cDir&lt;/code&gt; はthree.jsから送られたuniformの値を代入するように変更しました。&lt;/p&gt;
+
+&lt;p&gt;コード2.1 &lt;a href=&#34;https://github.com/mrdoob/three.js/blob/f68e1fb22daad1cfe87fbd57df55d978ffd425a7/examples/webgl_raymarching_reflect.html#L200-L209&#34;&gt;カメラの座標と向きをからレイを生成するGLSLのコード&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// fragment position
+vec2 p = ( gl_FragCoord.xy * 2.0 - resolution ) / min( resolution.x, resolution.y );
+
+// camera and ray
+vec3 cPos  = cameraPos;
+vec3 cDir  = cameraDir;
+vec3 cSide = cross( cDir, vec3( 0.0, 1.0 ,0.0 ) );
+vec3 cUp   = cross( cSide, cDir );
+float targetDepth = 1.3;
+vec3 ray = normalize( cSide * p.x + cUp * p.y + cDir * targetDepth );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JavaScriptからシェーダにuniformを渡すコードはこんな感じです。&lt;/p&gt;
+
+&lt;p&gt;コード2.2 &lt;a href=&#34;https://github.com/mrdoob/three.js/blob/f68e1fb22daad1cfe87fbd57df55d978ffd425a7/examples/webgl_raymarching_reflect.html#L326-L327&#34;&gt;シェーダにuniformを渡すJavaScriptのコード&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;material.uniforms.cameraPos.value = camera.getWorldPosition();
+material.uniforms.cameraDir.value = camera.getWorldDirection();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ワールド空間でのカメラの座標と方向を取得するメソッドはthree.jsに定義されています。便利ですね。&lt;/p&gt;
+
+&lt;p&gt;だだし、この方法にも問題がありました。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;カメラのFOVやY-upの情報をシェーダに送れない&lt;/li&gt;
+&lt;li&gt;毎フレーム実行する処理の中で、Vector3のインスタンスを生成していて、パフォーマンス的に懸念がある
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;camera.getWorldPosition()&lt;/code&gt; と &lt;code&gt;camera.getWorldDirection()&lt;/code&gt; は &lt;code&gt;Vector3&lt;/code&gt; を &lt;code&gt;new&lt;/code&gt; します&lt;/li&gt;
+&lt;li&gt;インスタンスを大量に生成することで、GCの頻度を高めてしまい、瞬間的にレンダリングを止めてしまう等の懸念があります&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;方法3-カメラ行列の逆行列を渡す&#34;&gt;方法3: カメラ行列の逆行列を渡す&lt;/h2&gt;
+
+&lt;p&gt;ようやく本題です。今回の2つのPR &lt;a href=&#34;https://github.com/mrdoob/three.js/pull/12792&#34;&gt;#12792&lt;/a&gt; と &lt;a href=&#34;https://github.com/mrdoob/three.js/pull/12801&#34;&gt;#12801&lt;/a&gt; で対応しました。&lt;/p&gt;
+
+&lt;p&gt;カメラ行列（モデル行列 + プロジェクション行列の逆行列）から、レイの向きを生成するようにしました。&lt;/p&gt;
+
+&lt;p&gt;シェーダに渡すuniformsは、カメラのモデル行列（ビュー行列の逆行列）&lt;code&gt;cameraWorldMatrix&lt;/code&gt;と、プロジェクション変換行列の逆行列&lt;code&gt;cameraProjectionMatrixInverse&lt;/code&gt;の2つです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;uniform mat4 cameraWorldMatrix;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;uniform mat4 cameraProjectionMatrixInverse;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;カメラ行列を渡すことで、これまでの実装では実現できなかったカメラのY-upとFOVも同期できるようになりました。
+&lt;code&gt;cameraWorldMatrix&lt;/code&gt;にY-upが、&lt;code&gt;cameraProjectionMatrixInverse&lt;/code&gt;にFOVの情報が含まれています。&lt;/p&gt;
+
+&lt;p&gt;コード3.1では、まずスクリーン座標から正規化デバイス座標系のレイの方向&lt;code&gt;ndcRay&lt;/code&gt;を求め、
+それを行列変換によってワールド座標系のレイの方向&lt;code&gt;ray&lt;/code&gt;に変換しています。&lt;/p&gt;
+
+&lt;p&gt;コード3.1 &lt;a href=&#34;https://github.com/mrdoob/three.js/blob/6d9c22a3bc346f34ad779bada397db6f5c691760/examples/webgl_raymarching_reflect.html#L204-L215&#34;&gt;カメラ行列からレイを生成するGLSLのコード&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// screen position
+vec2 screenPos = ( gl_FragCoord.xy * 2.0 - resolution ) / resolution;
+
+// ray direction in normalized device coordinate
+vec4 ndcRay = vec4( screenPos.xy, 1.0, 1.0 );
+
+// convert ray direction from normalized device coordinate to world coordinate
+vec3 ray = ( cameraWorldMatrix * cameraProjectionMatrixInverse * ndcRay ).xyz;
+ray = normalize( ray );
+
+// camera position
+vec3 cPos = cameraPosition;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここで、ワールド座標からクリッピング座標への座標変換について考えます。&lt;/p&gt;
+
+&lt;p&gt;コード3.2 ワールド座標 =&amp;gt; クリッピング座標 の変換 を行うGLSLのコード&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// ワールド座標 =&amp;gt; 視点系座標 =&amp;gt; クリッピング座標 の変換
+vec4 clipPos = cameraProjectionMatrix * cameraViewMatrix * vec4( worldPos, 1.0 );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;行列Aの逆行列を利用すると、Aの行列による行列変換の逆変換ができます。&lt;/p&gt;
+
+&lt;p&gt;$V$をビュー行列（&lt;code&gt;cameraViewMatrix&lt;/code&gt;）、$P$をプロジェクション行列（&lt;code&gt;cameraProjectionMatrix&lt;/code&gt;）とすると、
+逆行列の性質から、$PV$（ワールド座標 =&amp;gt; 視点系座標 =&amp;gt; クリッピング座標）の逆変換は、$V^{-1}P^{-1}$となります。&lt;/p&gt;
+
+&lt;p&gt;$$
+(PV)^{-1} = V^{-1}P^{-1}
+$$&lt;/p&gt;
+
+&lt;p&gt;つまり、コード3.1では、&lt;code&gt;cameraViewMatrix&lt;/code&gt; と &lt;code&gt;cameraProjectionMatrix&lt;/code&gt; の逆行列である
+$V^{-1}$（&lt;code&gt;cameraWorldMatrix&lt;/code&gt;）と$P^{-1}$（&lt;code&gt;cameraProjectionMatrixInverse&lt;/code&gt;）を乗算することで、逆変換（クリッピング座標 =&amp;gt; ワールド座標への変換）をしていたのですね。&lt;/p&gt;
+
+&lt;p&gt;補足しますと、ビュー行列(&lt;code&gt;cameraViewMatrix&lt;/code&gt;)とカメラのモデル行列(&lt;code&gt;cameraWorldMatrix&lt;/code&gt;)はお互いに逆行列の関係にあります（&lt;a href=&#34;http://marupeke296.com/DXG_No72_ViewProjInfo.html&#34;&gt;その72 ビュー・射影変換行列が持つ情報を抜き出そう&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;クリッピング座標系を同次座標のwで除算すると、正規化デバイス座標系に変換できます。
+&lt;code&gt;ndcRay.w = 1.0&lt;/code&gt; と定義すると、クリッピング座標系と正規化デバイス座標系が一致するため、
+今回は&lt;code&gt;正規化デバイス座標系 =&amp;gt; クリッピング座標系&lt;/code&gt; の変換は省略できます。&lt;/p&gt;
+
+&lt;p&gt;JavaScriptからシェーダにuniformを渡すコードはこんな感じです。
+逆行列の計算はJavaScript（CPU）側で事前に行う実装としました。&lt;/p&gt;
+
+&lt;p&gt;コード3.3 &lt;a href=&#34;https://github.com/mrdoob/three.js/blob/6d9c22a3bc346f34ad779bada397db6f5c691760/examples/webgl_raymarching_reflect.html#L302-L303&#34;&gt;シェーダにuniformを渡すJavaScriptのコード&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cameraWorldMatrix: { value: camera.matrixWorld },
+cameraProjectionMatrixInverse: { value: new THREE.Matrix4().getInverse( camera.projectionMatrix ) }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;カメラの完全な同期ができただけでなく、さらにパフォーマンス的な改善もできました。
+&lt;code&gt;cameraProjectionMatrixInverse&lt;/code&gt;を再計算するタイミングは &lt;code&gt;camera.projectionMatrix&lt;/code&gt; が更新されたときのみです。
+今回の作品ですと、&lt;code&gt;camera.projectionMatrix&lt;/code&gt; が更新されるのは画面のアスペクト比に変化があったときのみです。
+方法3では毎フレーム実行される処理の中で &lt;code&gt;Vector3&lt;/code&gt; のインスタンスを作成してしまう問題が残りましたが、これも解決できました。&lt;/p&gt;
+
+&lt;h2 id=&#34;方法4-逆行列を用いずに-カメラ行列を渡す&#34;&gt;方法4: 逆行列を用いずに、カメラ行列を渡す&lt;/h2&gt;
+
+&lt;p&gt;方法3ではプロジェクション行列の逆行列を計算していますが、シェーダ内でカメラ行列を分解すれば、この処理すら省けます。&lt;/p&gt;
+
+&lt;p&gt;次のコードはCEDECの&lt;a href=&#34;https://docs.google.com/presentation/d/1j4t4mcLw8F1PfqvKP3P8meMJ5dWfDXkfb9lc63qOFVM/edit#slide=id.g2460f5a976_1_77&#34;&gt;デモシーンへようこそ
+4KBで映像作品を作る技術、およびゲーム開発への応用
+&lt;/a&gt;で紹介されていたものです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-12-11-get-ray-from-camera-matrix/cedec.png&#34; alt=&#34;カメラ行列の分解&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Y-upとFOV（&lt;code&gt;focal_length&lt;/code&gt;）も同期できています。&lt;/p&gt;
+
+&lt;p&gt;今思うと、mrdoobは “decompose the camera matrix” という言葉を使っていたので、この方法を意図していたのかもしれません。&lt;/p&gt;
+
+&lt;p&gt;今回の例ですと、プロジェクション行列が更新が必要なのは画面のアスペクト比が変わった時だけですし、
+シェーダ内の処理はなるべく単純にしたいので、今回であれば方法3で十分かなと感じています。
+まだ実装していないので、実装したら書き味やパフォーマンスを比較したいです。&lt;/p&gt;
+
+&lt;!--
+# three.jsへのコントリビュートのすゝめ
+
+最後に「three.jsにOSSコントリビュータしたいなぁ」という人へ向けた文章を残しておきます。
+
+## examplesのマージ基準は緩い
+
+three.jsは2017-12-10時点でGitHubのスター数が37377を超える超人気プロジェクトです。
+
+小さな変更だとしても、three.jsのコントリビュータとして名前を刻めるのは嬉しいものです。
+
+three.jsのライブラリ本体に変更を加えるPRのマージ基準はそれなりに高い印象ですが、
+examplesを変更をするPRのマージ基準はかなり緩いように感じました。
+
+2年前のPRは1日、今回のPRのマージはわずか数時間でマージされてビックリしました！
+
+もしあなたが「こういうexamplesがあれば良いのになぁ」と思ったのなら、three.jsのコントリビュータになるチャンスです！
+
+ただし、examplesの数がむやみに増えすぎるのも、three.js初学者への負担を強いるだけなので、
+全く同じようなexampleを追加するのは避けるべきだと個人的には思います。
+
+## PRを作る時の注意点
+
+あまりにも雑なPRを作るのは、作者たちのレビューの負担になってしまいます。
+
+PRを作る前に [How to contribute to three.js](https://github.com/mrdoob/three.js/wiki/How-to-contribute-to-three.js) を熟読しておきましょう。
+
+特に注意すべきポイントはコードフォーマットです。
+[Mr.doob&#39;s Code Style™](https://github.com/mrdoob/three.js/wiki/Mr.doob%27s-Code-Style%E2%84%A2)は空白と改行が多い、かなり癖が強いコードフォーマットです。
+
+[mrdoobapproves](http://zz85.github.io/mrdoobapproves/)というツールを用いれば、Mr.doob&#39;s Code Styleにオートフォーマットできるので、これを利用するのもオススメです。
+
+## コントリビュートして得たもの
+
+three.jsにコントリビュートして良かったことを紹介します。
+
+### コードの添削
+
+mrdoobにコードをリファクタリングしてもらいました！
+
+- [More improvements to raymarching example.](https://github.com/mrdoob/three.js/commit/0e12847099cbc4f9597496ce7367771430183d7c#diff-fd09ca29c011c0e4ab932acf6021fdb7)
+  - 毎フレーム実行される処理で `camera.lookAt` を使うと `Vector3` のインスタンスが大量に作られるので、代わりに `camera.rotation.set` を利用
+  - 重複した処理の削除
+- [Replaced FlyControls with OrbitControls](https://github.com/mrdoob/three.js/commit/e2f9a78fe49f0e09bd108e733e54989c4e4ea40c#diff-fd09ca29c011c0e4ab932acf6021fdb7)
+  - `FlyControls` がモバイル未対応だったので、モバイルに対応した `OrbitControls` に置き換え
+
+mrdoobだけでなく、WestLangleyさんとIteeさんにもコードを修正してもらいました（[history](https://github.com/mrdoob/three.js/commits/dev/examples/webgl_raymarching_reflect.html)）。
+
+これぞOSSの醍醐味ですね😊
+
+### mrdoobを囲んだ飲み会
+
+先日、日本に旅行中のmrdoobを囲んだ、three.js界隈の人たちとの飲み会に呼ばれたので、私も参加しました。
+
+私は英語を話せないのですが、上のレイマーチングのexamplesについてmrdoobに話を振ったら、少しは英語でコミュニケーションできました！
+いつかは普通に英語を話せるようになりたい...！
+
+たぶんPRを送っていなければ、mrdoobに認識されず、そもそも飲み会にも呼ばれなかった可能性が高いので、
+2年前に勇気を出してPRを出して良かったと本当に思います！
+
+これは自慢なのですが、MacBook Airにサインしてもらって、ツーショト写真も撮ってもらえました。
+
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Photo with &lt;a href=&#34;https://twitter.com/mrdoob?ref_src=twsrc%5Etfw&#34;&gt;@mrdoob&lt;/a&gt; 🤗 &lt;a href=&#34;https://t.co/hIQC6iLbZS&#34;&gt;pic.twitter.com/hIQC6iLbZS&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ😇 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/938075608197636096?ref_src=twsrc%5Etfw&#34;&gt;2017年12月5日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I am glad to have a signature written by mrdoob on my MacBook! &lt;a href=&#34;https://t.co/phPyU7JUj6&#34;&gt;pic.twitter.com/phPyU7JUj6&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ😇 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/938077812719624192?ref_src=twsrc%5Etfw&#34;&gt;2017年12月5日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+--&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;レイを生成する方法は様々ですが、three.jsの &lt;code&gt;Control&lt;/code&gt; クラス等の資産を利用し、
+毎フレーム実行される処理を減らしてパフォーマンスを向上させたいのであれば、カメラ行列からレイを生成する方法をオススメします。&lt;/p&gt;
+
+&lt;!--
+three.jsに限らず、勇気を出してOSSにコントリビュートすると、良いきっかけが生まれるかもしれません。
+OSSにPRを出すときには、GitHubのWikiやドキュメントから開発マニュアル等を熟読しておくと、スムーズにマージしてもらえる可能性が高まります。
+--&gt;
+
+&lt;h1 id=&#34;おまけ&#34;&gt;おまけ&lt;/h1&gt;
+
+&lt;p&gt;今回のPRを送った直後に、日本に旅行中のmrdoobを囲んだthree.js界隈の人たちとの飲み会があったので、参加させていただきました。
+参加者のみなさんありがとうございました。&lt;/p&gt;
+
+&lt;p&gt;英語はとても苦手なのですが、作品やPRについてmrdoobと少しお話しすることができました。サインまでいただけて大満足です🤗
+勇気を出してPRを送って良かったなと思いました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Photo with &lt;a href=&#34;https://twitter.com/mrdoob?ref_src=twsrc%5Etfw&#34;&gt;@mrdoob&lt;/a&gt; 🤗 &lt;a href=&#34;https://t.co/hIQC6iLbZS&#34;&gt;pic.twitter.com/hIQC6iLbZS&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ😇 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/938075608197636096?ref_src=twsrc%5Etfw&#34;&gt;2017年12月5日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I am glad to have a signature written by mrdoob on my MacBook! &lt;a href=&#34;https://t.co/phPyU7JUj6&#34;&gt;pic.twitter.com/phPyU7JUj6&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ😇 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/938077812719624192?ref_src=twsrc%5Etfw&#34;&gt;2017年12月5日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;明日は &lt;a href=&#34;https://twitter.com/pandax381&#34;&gt;@pandax381&lt;/a&gt; さんの記事です。それでは！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>正解するカドの「カド」をレイマーチングでリアルタイム描画する</title>
+      <link>https://gam0022.net/blog/2017/06/30/raymarching-kado/</link>
+      <pubDate>Fri, 30 Jun 2017 04:33:31 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2017/06/30/raymarching-kado/</guid>
+      <description>&lt;p&gt;今夜はアニメ&lt;a href=&#34;http://seikaisuru-kado.com/&#34;&gt;「正解するカド」&lt;/a&gt;の最終回ですね。&lt;/p&gt;
+
+&lt;p&gt;フラクタル図形（カド）や折り紙（ワム）が重要な要素になっていて、個人的にとても刺さるアニメでした。&lt;/p&gt;
+
+&lt;p&gt;最終回は楽しみですが、今日で終わってしまうと思うと寂しくも感じます。&lt;/p&gt;
+
+&lt;p&gt;さて、&lt;a href=&#34;https://www.slideshare.net/shohosoda9/threejs-58238484&#34;&gt;レイマーチング（スフィアトレーシング）&lt;/a&gt;は「カド」のようなフラクタル図形の描画がとても得意です。&lt;/p&gt;
+
+&lt;p&gt;そこで、WebGLによるレイマーチングでカドのレンダリングに挑戦しました！！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/kado.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/kado.png&#34; alt=&#34;カド&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;レイマーチングでカド(MandelBox)を描画した結果です。&lt;/p&gt;
+
+&lt;p&gt;次のリンクからブラウザ上から動かすこともできます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gam0022.net/webgl/#raymarching_kado&#34;&gt;http://gam0022.net/webgl/#raymarching_kado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PauseをOFFにすると、カドがアニメーションします（負荷注意）。&lt;/p&gt;
+
+&lt;p&gt;描画の負荷が重たすぎる場合には、Pixel Ratioを1/2xか1/4xにしてください。&lt;/p&gt;
+
+&lt;!--
+
+Pixel Ratioを2xにすると、綺麗な結果になりますが、描画の負荷が4倍になります。
+
+2xにする場合は、PauseをONにするのがオススメです。カメラを動かさない限り再描画が行われなくなり、描画の負荷が下がります。
+
+--&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;解説&#34;&gt;解説&lt;/h1&gt;
+
+&lt;p&gt;制作における工夫点や参考資料を紹介していきます。&lt;/p&gt;
+
+&lt;h2 id=&#34;カドのレンダリング&#34;&gt;カドのレンダリング&lt;/h2&gt;
+
+&lt;p&gt;アニメの「カド」はMandelBoxと呼ばれるフラクタル図形をベースに改造したもののようです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cgworld.jp/feature/201602-kado01-cgw211.html&#34;&gt;謎に満ちたアニメCGプロジェクト『正解するカド』（総監督：村田和也）に迫る 〜 mystery 01：3Dフラクタル 〜&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今回はベーシックなMandelBoxをレイマーチングで普通に描画しました。&lt;/p&gt;
+
+&lt;p&gt;MandelBoxの距離関数は以下のサイトを参考に実装しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.hvidtfeldts.net/index.php/2011/11/distance-estimated-3d-fractals-vi-the-mandelbox/&#34;&gt;Distance Estimated 3D Fractals (VI): The Mandelbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;カドのシェーディングは&lt;a href=&#34;http://gam0022.net/blog/2017/02/24/tdf2017/&#34;&gt;TokyoDemoFest2017の作品&lt;/a&gt;の実装をほぼそのまま流用しました。&lt;/p&gt;
+
+&lt;p&gt;独特なカラフルな色は色相をレイマーチングのステップ数などによって変化させることで実現しています。&lt;/p&gt;
+
+&lt;p&gt;IBL(Image Based Lighting)やAO(Ambient Occlusion)でシェーディングの品質を高めました。IBLのためのキューブマップ画像は以下のサイトのものを利用しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.custommapmakers.org/skyboxes.php&#34;&gt;Skyboxes for download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;水面のレンダリング&#34;&gt;水面のレンダリング&lt;/h2&gt;
+
+&lt;p&gt;カドのレンダリングは特に特殊なことはしていませんが、水面には色々な工夫をこらしました。&lt;/p&gt;
+
+&lt;h3 id=&#34;cpuによるパーリンノイズの生成&#34;&gt;CPUによるパーリンノイズの生成&lt;/h3&gt;
+
+&lt;p&gt;フラクタルノイズの1種であるパーリンノイズをハイトマップとして、水面を表現しました。&lt;/p&gt;
+
+&lt;p&gt;ハイトマップとの衝突判定もレイマーチングにより行いました。
+ハイトマップの距離関数は非常にシンプルに実装できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;float sdGround(in vec3 p) {
+	return p.y - texture2D(groundHeight, p.xz * 0.1).r + GROUND_BASE;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;パーリンノイズの生成は起動時にCPU側で行っています。&lt;/p&gt;
+
+&lt;p&gt;次のサイトを参考にして、JavaScriptでパーリンノイズの計算を実装しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://postd.cc/understanding-perlin-noise/&#34;&gt;パーリンノイズを理解する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この記事を読んで、今まで「パーリンノイズ」だと思い込んでいたものが、「バリューノイズ」だと知りました。&lt;/p&gt;
+
+&lt;p&gt;勾配を使った本物のパーリンノイズの実装は今回が初めてだったので、勉強になりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;水面のアニメーション&#34;&gt;水面のアニメーション&lt;/h3&gt;
+
+&lt;p&gt;3Dのパーリンノイズを実装したので、時間方向にパーリンノイズを動かすことで、水面のアニメーションもできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Animate Water&lt;/code&gt;というチェックボックスをONにすると、水面のアニメーションができます。&lt;/p&gt;
+
+&lt;p&gt;毎フレーム毎にCPU計算で256x256のパーリンノイズを生成するため、かなり激重です。ハイエンドPCでもまともに動きませんｗ&lt;/p&gt;
+
+&lt;p&gt;起動時にまとめて生成すれば良いような気がしますが、起動時間が長くなるのが嫌なので、このような仕様となっています。&lt;/p&gt;
+
+&lt;h3 id=&#34;衝突判定の軽量化&#34;&gt;衝突判定の軽量化&lt;/h3&gt;
+
+&lt;p&gt;単純に水面のハイトマップをテクスチャとして参照する実装にしたところ、テクスチャのフェッチ回数が危険領域に突入しました。&lt;/p&gt;
+
+&lt;p&gt;そこで、カメラの近くの水面だけハイトマップからレイマーチングを行うようにして、
+カメラから離れた水面は凹凸のない平面として扱い、判定式から解析的に衝突判定を行うことで、軽量化を図りました。&lt;/p&gt;
+
+&lt;p&gt;遠くの水面は形状的には平面ですが、シェーディングの法線計算ではハイトマップを参照するようにして、見た目の品質を向上しました。
+ノーマルマップと全く同じ原理です。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、今回のシーンように水面がXZ平面になっていれば、レイとの衝突判定は非常に低コストに行うことができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;GROUND_BASE&lt;/code&gt; を水面の高さとして、次の &lt;code&gt;t&lt;/code&gt; を計算し、&lt;code&gt;t &amp;gt; 0.0&lt;/code&gt; であればレイと平面が交差しています。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;float t = -(ray.origin.y - GROUND_BASE) / ray.direction.y;
+if (t &amp;gt; 0.0) {
+  // Hit!!
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なんと、floatの引き算と割り算一回ずつだけで、平面とレイの衝突判定ができます！&lt;/p&gt;
+
+&lt;h3 id=&#34;fresnel反射&#34;&gt;Fresnel反射&lt;/h3&gt;
+
+&lt;p&gt;雑にFresnel反射も入れました。&lt;/p&gt;
+
+&lt;p&gt;俯瞰視点にすると、遠くの方の水面は鏡面のようになっていることが分かると思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/fresnel.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/fresnel.png&#34; alt=&#34;Fresnel反射&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;水面がXZ平面になっていれば、衝突判定と同様にFresnel反射率の近似値もかなり低コストに計算できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;float f0 = 0.7;// 垂直に入射した時の反射率。かなり大きめな値に設定。
+intersection.reflectance = f0 + (1.0 - f0) * pow(1.0 + ray.direction.y, 5.0);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;試作&#34;&gt;試作&lt;/h1&gt;
+
+&lt;p&gt;最終的には海の上にカドが浮かんでいるシーンとしましたが、ビルのシーンも試作しました。せっかくなので画像を残しておきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/proto.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/proto.png&#34; alt=&#34;ビルの試作段階&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;余談&#34;&gt;余談&lt;/h1&gt;
+
+&lt;p&gt;最後に余談なのですが、作品の重要な要素であるカドとワムのどちらとも知り合いが関わっていて、あまりの世間の狭さに驚きました。&lt;/p&gt;
+
+&lt;p&gt;カドのレンダリングはレイトレ合宿などで繋がりのある&lt;a href=&#34;https://twitter.com/_Pheema_/&#34;&gt;Pheemaさん&lt;/a&gt;のUnityのレイマーチングによるものでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;先程TOKYOMXで放送された『正解するカド』で、「カド」などの3Dフラクタル描画に関わりましたー。Unityでゴリゴリとレイマーチングしております！よろしくお願いいたしますー！ / &lt;a href=&#34;https://t.co/8J8e3Yrff8&#34;&gt;https://t.co/8J8e3Yrff8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Pheema (@&lt;em&gt;Pheema&lt;/em&gt;) &lt;a href=&#34;https://twitter.com/_Pheema_/status/850347680039489536&#34;&gt;2017年4月7日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;さらに、ワムは大学時代の指導教官の三谷純先生の幾何学折り紙そのものでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;東映のフル3Dアニメ 「正解するカド」&lt;a href=&#34;https://t.co/M6ae6WIZa3&#34;&gt;https://t.co/M6ae6WIZa3&lt;/a&gt;&lt;br&gt;の第5話に立体折り紙（球体）の制作シーンが登場。&lt;br&gt;スタッフロールに資料協力として名前を掲載いただきました。&lt;br&gt;&lt;br&gt;こちらの作品のイメージに近い感じでした。&lt;a href=&#34;https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash&#34;&gt;#正解するカド&lt;/a&gt; &lt;a href=&#34;https://t.co/2yjpB1643t&#34;&gt;pic.twitter.com/2yjpB1643t&lt;/a&gt;&lt;/p&gt;&amp;mdash; 三谷 純 Jun MITANI (@jmitani) &lt;a href=&#34;https://twitter.com/jmitani/status/860644756417765376&#34;&gt;2017年5月5日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;こんなことってあるんですね…！&lt;/p&gt;
+
+&lt;h1 id=&#34;アニメ版のカドの再現-2017-07-03追記&#34;&gt;アニメ版のカドの再現（2017/07/03追記）&lt;/h1&gt;
+
+&lt;p&gt;notargsさんがアニメ版のカドの再現のヒントをくださったので、自分もチャンジしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;- カドの内部に入った光は全て吸収する（レイが通り抜けた場合は出力を黒にする）&lt;br&gt;- ２つのMandelboxを重ねる&lt;br&gt;- zに掛けるScaleの値をマイナスにする&lt;br&gt;あたりがカドっぽくするコツだった&lt;/p&gt;&amp;mdash; !args(のたぐす) (@notargs) &lt;a href=&#34;https://twitter.com/notargs/status/881448613993267201&#34;&gt;2017年7月2日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらは&lt;a href=&#34;https://cgworld.jp/feature/201602-kado01-cgw211.html&#34;&gt;CGWORLDの記事&lt;/a&gt;の画像の転載です。これをリファレンスとします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/reference.jpg&#34; alt=&#34;CGWORLDの記事のリファレンス画像&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Scaleをマイナスにして、大小の違う2つのMandelBoxを重ねてみました。
+内部に入った光を吸収させる替わりにAOを強めにしました。
+すると、本当にアニメ版のカドにかなり近い結果になりました！！これは面白いですね！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/anime.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/anime.png&#34; alt=&#34;アニメ版のカドの再現&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/anime2.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-06-30-raymarching-kado/anime2.png&#34; alt=&#34;アニメ版のカドの再現2&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらからアニメ版に近いカドを動かすことができます。MandelBoxを2つ重ねたことで、負荷が約2倍になりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gam0022.net/webgl/#raymarching_kado_anime&#34;&gt;http://gam0022.net/webgl/#raymarching_kado_anime&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;カドを再現する人たち-2017-07-03追記&#34;&gt;カドを再現する人たち（2017/07/03追記）&lt;/h1&gt;
+
+&lt;p&gt;カドのレンダリングに挑戦している方が自分以外にも現れたので、観測範囲内でまとめました。&lt;/p&gt;
+
+&lt;p&gt;notargsさん&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;カドをほぼ再現できました！ &lt;a href=&#34;https://t.co/nXFYvFRN9w&#34;&gt;pic.twitter.com/nXFYvFRN9w&lt;/a&gt;&lt;/p&gt;&amp;mdash; !args(のたぐす) (@notargs) &lt;a href=&#34;https://twitter.com/notargs/status/881444119666491392&#34;&gt;2017年7月2日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;cx20さん&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WebGL] Grimoire.js で &lt;a href=&#34;https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash&#34;&gt;#正解するカド&lt;/a&gt; っぽいものを表現してみるテスト &lt;a href=&#34;https://twitter.com/hashtag/jsdoit?src=hash&#34;&gt;#jsdoit&lt;/a&gt; &lt;a href=&#34;https://t.co/OORNMSemzo&#34;&gt;https://t.co/OORNMSemzo&lt;/a&gt;&lt;/p&gt;&amp;mdash; cx20 (@cx20) &lt;a href=&#34;https://twitter.com/cx20/status/881121051186417664&#34;&gt;2017年7月1日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;自分&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/%E6%AD%A3%E8%A7%A3%E3%81%99%E3%82%8B%E3%82%AB%E3%83%89?src=hash&#34;&gt;#正解するカド&lt;/a&gt; の「カド」を &lt;a href=&#34;https://twitter.com/hashtag/WebGL?src=hash&#34;&gt;#WebGL&lt;/a&gt; のレイマーチングでリアルタイムに描画しました！いい感じに仕上がったので、徹夜した甲斐がありました！今晩の最終話が楽しみです！ &lt;a href=&#34;https://twitter.com/hashtag/threejs?src=hash&#34;&gt;#threejs&lt;/a&gt;&lt;a href=&#34;https://t.co/pMRREywdyy&#34;&gt;https://t.co/pMRREywdyy&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/880562345990275072&#34;&gt;2017年6月29日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WebGLパストレーシングを技術書典2のためにブラッシュアップ</title>
+      <link>https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/</link>
+      <pubDate>Thu, 06 Apr 2017 12:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2017/04/06/webgl-pathtracing-tbf2/</guid>
+      <description>&lt;p&gt;4/9（日）にアキバ・スクエアで開催される&lt;a href=&#34;https://techbookfest.org/event/tbf02&#34;&gt;技術書典2&lt;/a&gt;に参加します。
+技術書典は技術書のみを扱うコミケようなイベントです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gam0022.hatenablog.com/entry/2016/06/22/tbf1&#34;&gt;去年&lt;/a&gt;に引き続き、技術サークルTechBoosterのWeb本の著者のひとりとして参加します。&lt;/p&gt;
+
+&lt;p&gt;今回は『Think Web』の『第6章 まるで実写！？GPUパストレーシングのWebGL実装』を担当しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://techbooster.github.io/tbf02/#think&#34;&gt;Think Web | TechBooster in TBF02 技術書典２（2017/4/9） あ-01,02&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://techbooster.github.io/tbf02/#think&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/info_think.png&#34; alt=&#34;Think Webの表紙&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;パストレーシングとは&#34;&gt;パストレーシングとは？&lt;/h1&gt;
+
+&lt;p&gt;パストレーシングは3Dの描画手法のひとつで、現実世界に近い光の振る舞いをシミュレートすることで、大域照明を考慮した写実的なレンダリングを可能にします。
+実際にハリウッド映画などの写実的なCGの多くには、パストレーシングやパストレーシングを発展した手法が採用されています。
+写実的なレンダリングができる反面、処理時間が膨大にかかるという弱点があります。&lt;/p&gt;
+
+&lt;h1 id=&#34;本の内容&#34;&gt;本の内容&lt;/h1&gt;
+
+&lt;p&gt;私の章ではパストレーシングのGPU実装による高速化について紹介します。
+しかも単純な高速化ではなく、ブラウザ上で3DCGを扱うWebAPIであるWebGLによりGPU実装することで、
+ブラウザ上で動作するインタラクティブなパストレーシングを実現します。&lt;/p&gt;
+
+&lt;p&gt;去年12月のWebGLのアドベントカレンダーのQiita記事と同じテーマですが、内容を大幅に加筆・変更しています。
+Qiitaには書ききれなかったパストレーシングの基礎や原理の部分から説明し、実際のコードを踏まえながら実装についても丁寧に解説しました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/gam0022/items/18bb3612d7bdb6f4360a&#34;&gt;WebGL+GLSLによる超高速なパストレーシング | Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;なるべく敷居を下げるために専門用語を解説しつつ、説明が長く過ぎず短すぎず丁度いい分量になるように意識して執筆しました。
+読者ターゲットは、単純なレイトレーシングは分かっているけれども、パストレーシングは難しい…という人を想定しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;webglパストレーシングのデモ&#34;&gt;WebGLパストレーシングのデモ&lt;/h1&gt;
+
+&lt;p&gt;開発したWebGLパストレーサ（パストレーシングのプログラム）はブラウザ上で動かせるので、良ければ触っていただけると嬉しいです。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gam0022.net/webgl/#pathtracing_sandbox&#34;&gt;gam0022.net/webgl/#pathtracing_sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;シーンエディット機能を搭載しており、オブジェクトの位置やスケール、マテリアルをリアルタイムに編集・プレビューできます。
+マテリアルのBRDFとしては完全鏡面反射・完全拡散反射・GGX・屈折面に対応しています。
+マテリアルのColor / Roughness / Emissionにはテクスチャを指定することもできます。&lt;/p&gt;
+
+&lt;h1 id=&#34;技術書典2のためのブラッシュアップ&#34;&gt;技術書典2のためのブラッシュアップ&lt;/h1&gt;
+
+&lt;p&gt;執筆にあたってコードを見返したところ、様々なバグを見つけたので、原稿と平行してバグ修正に取り組んでいました。
+睡眠時間と引き換えにして、なんとかバグを取り除き、レンダリングの品質を大きく改善できました！&lt;/p&gt;
+
+&lt;p&gt;この記事では、本の宣伝もかねて「どのようなミスがあり、どのように修正をしたのか」を簡単に紹介します。&lt;/p&gt;
+
+&lt;p&gt;原稿を書くのは大変ですが、思考とコードを整理できたので、個人的に得るものが大きかったと感じます。&lt;/p&gt;
+
+&lt;h2 id=&#34;修正箇所一覧&#34;&gt;修正箇所一覧&lt;/h2&gt;
+
+&lt;p&gt;以下が修正箇所です。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;バグ修正
+
+&lt;ul&gt;
+&lt;li&gt;完全拡散反射で半球外をサンプリングさせない（法線を基準とした直交座標の基底ベクトルを決定する処理に不具合があった）&lt;/li&gt;
+&lt;li&gt;GGXによる反射方向のサンプリング時に半球外が選ばれた時の例外処理（強制的にBRDF=0する）&lt;/li&gt;
+&lt;li&gt;レンダリング方程式に基き、再帰の処理をループに書き換える方針にミスがあったので修正（GLSLは再帰ができないので、末尾再帰をループに置き換える必要があるが、置き換え方が間違っていた）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;機能追加
+
+&lt;ul&gt;
+&lt;li&gt;屈折面ではフレネルの式から反射率を計算する（去年の段階では 100%反射 OR 100%屈折 のみだった）&lt;/li&gt;
+&lt;li&gt;ガンマ補正をちゃんとする
+
+&lt;ul&gt;
+&lt;li&gt;テクスチャを参照するときは逆ガンマ変換&lt;/li&gt;
+&lt;li&gt;スクリーンに出力するためのRenderTargetに書き込むときはガンマ変換&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;簡単なアンチエイリアシング
+
+&lt;ul&gt;
+&lt;li&gt;レイを飛ばす前のスクリーン座標に-0.5〜0.5の範囲の乱数を加える&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;その他
+
+&lt;ul&gt;
+&lt;li&gt;環境マップの追加（夜のお城）&lt;/li&gt;
+&lt;li&gt;プリセットのシーンの追加（コーネルボックス）&lt;/li&gt;
+&lt;li&gt;最適化・リファクタリング&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;詳細は&lt;a href=&#34;https://github.com/gam0022/webgl-sandbox/pull/12&#34;&gt;PR&lt;/a&gt;をご覧ください。&lt;/p&gt;
+
+&lt;h2 id=&#34;結果&#34;&gt;結果&lt;/h2&gt;
+
+&lt;p&gt;ブラッシュアップしたパストレーサのレンダリング結果を紹介します。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/app-night.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/app-night.png&#34; alt=&#34;世界地図の光源&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;暗いシーンの背後に照明を置いたシーンです。
+屈折面の付近にコーティクス（集光模様）を観察できるなど、間接光も反映した大域照明を実現できました。&lt;/p&gt;
+
+&lt;p&gt;IBLよりも背後の光源の影響が強いシーンですが、ノイズが消えてコーティクスなども鮮明にレンダリングできています。
+ノイズが消えたのは、BRDF周りのバグ修正により半球外のサンプリングをするケースを取り除くことができた影響です。&lt;/p&gt;
+
+&lt;p&gt;屈折面では反射と屈折の両方をトレースするようになったので、ガラス面も薄っすらと鏡面反射するようになりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/examples.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/examples.png&#34; alt=&#34;マテリアルのテスト&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;同じ色（白）・同じ大きさで材質だけが異なる4つの球体を配置したシーンです。
+左から順に（１）完全拡散反射面、（２）完全鏡面反射面、（３）屈折面（ガラス面）、（４）微小な凹凸のある鏡面（GGX）です。
+シーンの上部の白い球体が光源です。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/cornellbox.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/cornellbox.png&#34; alt=&#34;コーネルボックス&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;コーネルボックス風のプリセットシーンを追加しました。
+残念なことに、現在の実装ではコーネルボックスのような光源が小さくIBLができないシーンのレンダリングは苦手で、ノイズが消えるまで数分間かかります。
+レンダリング方程式の cos 項に比例した重点サンプリングはしているものの、高速化の工夫をしていない純粋なパストレーシングのためです。
+小さな光源しかないシーンを高速にレンダリングするためには，まだまだ課題が残っています…
+（とはいえ、もちろん時間をかければスクリーンショットのように綺麗な結果になります！）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/table.png&#34;&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-04-06-webgl-pathtracing/table.png&#34; alt=&#34;テーブル&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;箱を積み重ねたテーブルのシーンです。前回と同じシーンですがノイズが完全に無くなりました。&lt;/p&gt;
+
+&lt;h2 id=&#34;今後やりたいこと&#34;&gt;今後やりたいこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コーネルボックスのような光源が小さいシーンの収束が遅すぎるので、&lt;a href=&#34;http://rayspace.xyz/CG/contents/path_tracing.html&#34;&gt;Next Event Estimation&lt;/a&gt;をする&lt;/li&gt;
+&lt;li&gt;準モンテカルロ法&lt;/li&gt;
+&lt;li&gt;屈折面において、屈折時の立体角の変化による放射輝度の変化を考慮できていない点の修正&lt;/li&gt;
+&lt;li&gt;箱と球体以外のプリミティブに対応させる&lt;/li&gt;
+&lt;li&gt;どんなに良いGPUを使っていても、1秒間に60サンプリングに制限されてしまう仕様なので、GPU性能に合わせて単位時間あたりのサンプリング数を増減できる仕組み&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;最後に&#34;&gt;最後に&lt;/h1&gt;
+
+&lt;p&gt;技術書典2と『Think Web』を宜しくお願いします！&lt;/p&gt;
+
+&lt;p&gt;以下のようなテーマについて、各技術のスペシャリストが全力で執筆しています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rust+WebAssembly、Flutter などマルチプラットフォーム技術&lt;/li&gt;
+&lt;li&gt;Vue.js、GopherJS、WebGL など最新フロントエンド技術の解説&lt;/li&gt;
+&lt;li&gt;Google Cloud Datastore などデータベース関連技術&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;自分の章はニッチすぎると思いますが、明らかに1000円以上の量と質のあるお得な本になっていると思います！&lt;/p&gt;
+
+&lt;p&gt;お時間がありましたら、ぜひいらしてください！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GPUをつかったリアルタイムなレイトレーシング</title>
+      <link>https://gam0022.net/blog/2016/04/09/qiita-raymarching/</link>
+      <pubDate>Sat, 09 Apr 2016 18:03:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2016/04/09/qiita-raymarching/</guid>
+      <description>&lt;p&gt;Qiitaに「GPUをつかったリアルタイムなレイトレーシング」の記事を2つ投稿しました。&lt;/p&gt;
+
+&lt;p&gt;実際に動作するものはコチラです。WebGLなのでブラウザでそのまま動作します。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gam0022.net/webgl/#raymarching_reflect&#34;&gt;reflect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gam0022.net/webgl/#raytracing_gem&#34;&gt;gem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Three.jsからGPUをつかったリアルタイムなレイトレーシング！&lt;a href=&#34;https://t.co/zu5v2NXXeq&#34;&gt;https://t.co/zu5v2NXXeq&lt;/a&gt;&lt;br&gt;WebGL Advent Calendar 15日目の記事です。 &lt;a href=&#34;https://t.co/mwFZrFjJdf&#34;&gt;pic.twitter.com/mwFZrFjJdf&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/676564561034481664&#34;&gt;2015年12月15日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;これがGPUの力！three.jsによるレイトレーシング 〜宝石編〜&lt;a href=&#34;https://t.co/dU4bQOnpPg&#34;&gt;https://t.co/dU4bQOnpPg&lt;/a&gt;&lt;br&gt;屈折のあるレイトレーシングをGLSLのフラグメントシェーダで実装した話を書きました。 &lt;a href=&#34;https://t.co/HnEMg7mUwP&#34;&gt;pic.twitter.com/HnEMg7mUwP&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/692856764081897472&#34;&gt;2016年1月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;レイトレーシングは膨大な計算が必要で、一般的にはリアルタイムに行うことは困難です。&lt;/p&gt;
+
+&lt;p&gt;WebGLのフラグメントシェーダでレイトレーシングを実装することで、GPUの力を利用してリアルタイムに処理しようというものです。&lt;/p&gt;
+
+&lt;p&gt;記事で紹介している例は、iPhone6のような携帯端末でもリアルタイムに動作するくらい軽量です。&lt;/p&gt;
+
+&lt;p&gt;さらに面白い特徴として、ラスタライザでは難しい、相互の鏡面反射、2回以上の屈折、無限の繰り返しも実現しています。&lt;/p&gt;
+
+&lt;p&gt;ラスタライザで鏡面反射するためには、&lt;a href=&#34;https://wgld.org/d/webgl/w044.html&#34;&gt;キューブ環境マッピング&lt;/a&gt;がよく用いられます。
+環境マッピングとは、周囲の景色を立方体のテクスチャに入れておいて、それを参照して反射して写り込んだ景色をフェッチします。
+しかし、環境マッピングだけでは、床も球体も鏡面反射するような、相互に鏡面反射するシーンは実現できません。&lt;/p&gt;
+
+&lt;p&gt;また屈折も環境マッピングで実現できるのですが、&lt;a href=&#34;http://www.4gamer.net/games/032/G003263/20130207052/&#34;&gt;環境マッピングで2回以上の屈折させるのは難しい課題&lt;/a&gt;になります。&lt;/p&gt;
+
+&lt;p&gt;レイトレーシングではカメラからスクリーンの全ピクセルに対して光のシュミレーションをするため、
+環境マッピングでは難しかった鏡面反射や屈折の問題を簡単に解決できるというわけです！&lt;/p&gt;
+
+&lt;p&gt;1つ目の記事ではレイトレーシングではなく、厳密にはレイマーチングを使っています。
+レイマーチングはレイトレーシングの1種です。レイマーチングでは、シーンを距離関数で定義します。
+シーンを距離関数で定義することで、&lt;code&gt;mod&lt;/code&gt; 演算を利用した物体を無限に繰り返すことができます。&lt;/p&gt;
+
+&lt;p&gt;昔はレイトレーシングで1枚の絵を描画するために一晩のような長い時間が必要でした。
+それが今やリアルタイムにWebブラウザ上で動作するなんて、すごい時代になりましたね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました</title>
+      <link>https://gam0022.net/blog/2016/02/16/glsl-tech/</link>
+      <pubDate>Tue, 16 Feb 2016 09:46:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2016/02/16/glsl-tech/</guid>
+      <description>&lt;p&gt;バレンタインデー（2016/02/14）に&lt;a href=&#34;http://connpass.com/event/25758/&#34;&gt;GPU の熱でチョコも溶けちゃう！？ GLSL シェーダテクニック勉強会&lt;/a&gt;でレイマーチングについて発表してきました。&lt;/p&gt;
+
+&lt;p&gt;シェーダというニッチな分野にも関わらず、100人以上の参加者となる熱い勉強会でした。
+無料なのに出席率が高く、参加者のモチベーションが高くて良いことだなと思いました。
+WebGLの普及により、Web系のエンジニアもシェーダを触ることで、シェーダの注目度が上がってきたのを感じました！&lt;/p&gt;
+
+&lt;p&gt;当日の様子は&lt;a href=&#34;http://togetter.com/li/938400&#34;&gt;togetterまとめ&lt;/a&gt;を参考にしてください。&lt;/p&gt;
+
+&lt;p&gt;私は「シェーダだけで世界を創る！three.jsによるレイマーチング」という発表をしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/shohosoda9/threejs-58238484&#34; title=&#34;シェーダだけで世界を創る！three.jsによるレイマーチング&#34; target=&#34;_blank&#34;&gt;シェーダだけで世界を創る！three.jsによるレイマーチング&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/shohosoda9&#34; target=&#34;_blank&#34;&gt;Sho Hosoda&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;最近取り組んている、レイマーチングというレイトレーシングの1種のWebGLのフラグメントシェーダ実装について話しました。&lt;/p&gt;
+
+&lt;p&gt;なるべく聞き手を限定したくなかったので、そもそもシェーダやレイトレーシングとは？という基礎的な知識から分かりやすく説明しました。
+そこまで知識が無くても、ある程度分かるような内容になったと思います。&lt;/p&gt;
+
+&lt;p&gt;最後に発表練習に付き合ってくださった社内のみなさんはありがとうございました。この場をかりて感謝します。&lt;/p&gt;
+
+&lt;h1 id=&#34;他の登壇者の発表&#34;&gt;他の登壇者の発表&lt;/h1&gt;
+
+&lt;p&gt;せっかくなので、他の登壇者の方のスライドもまとめました！&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;今日の資料をアップしました / Live2D&amp;amp;GLSLエフェクト表現 &lt;a href=&#34;https://t.co/EM6tAqUxH5&#34;&gt;https://t.co/EM6tAqUxH5&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/GLSLTech?src=hash&#34;&gt;#GLSLTech&lt;/a&gt;&lt;/p&gt;&amp;mdash; naotaro (@naotaro0123) &lt;a href=&#34;https://twitter.com/naotaro0123/status/698749543559475200&#34;&gt;2016, 2月 14&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;先ほどのスライドです&lt;a href=&#34;https://t.co/MS3tAPAeh4&#34;&gt;https://t.co/MS3tAPAeh4&lt;/a&gt;&lt;a href=&#34;https://twitter.com/hashtag/GLSLTech?src=hash&#34;&gt;#GLSLTech&lt;/a&gt;&lt;/p&gt;&amp;mdash; kyasbal (@kyasbal_1994) &lt;a href=&#34;https://twitter.com/kyasbal_1994/status/698786195459821568&#34;&gt;2016, 2月 14&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/hashtag/GLSLTech?src=hash&#34;&gt;#GLSLTech&lt;/a&gt; っていうか今公開しちゃうか。最後の私の最適化の話、スライドこちらです &lt;a href=&#34;https://t.co/kDI60iUeqe&#34;&gt;https://t.co/kDI60iUeqe&lt;/a&gt;&lt;/p&gt;&amp;mdash; エマ・デュランダル (@emadurandal) &lt;a href=&#34;https://twitter.com/emadurandal/status/698858495567728641&#34;&gt;2016, 2月 14&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;個人的には @emadurandal さんの「GLSL最適化、 そして…」がもっとも勉強になりました。&lt;/p&gt;
+
+&lt;p&gt;主催者の doxas さんのスライドが見つかりませんな…&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C88のTechBooster本にthree.js(WebGL)の入門記事を書きました</title>
+      <link>https://gam0022.net/blog/2015/08/18/c88-techbooster/</link>
+      <pubDate>Tue, 18 Aug 2015 09:08:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2015/08/18/c88-techbooster/</guid>
+      <description>&lt;p&gt;先日の夏コミ C88 に TechBooster というサークルとして参加しました。
+これによって、コミケ初参加がサークル参加という実績を得ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2015-08-18-c88-techbooster-javascriptoon.png&#34; alt=&#34;JavaScriptoon&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;私はJavaScriptoon という本の three.js(WebGL)の記事を書きました。
+タイトルは「three.js でお手軽 3DCG 入門」です。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://techbooster.github.io/c88/&#34;&gt;https://techbooster.github.io/c88/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;去年の卒業研究で ブラウザ上で動作する ペーパークラフト用の CAD のようなものを
+three.js を使って開発していたので、その知識を集約させました。&lt;/p&gt;
+
+&lt;p&gt;内容的にはthree.jsのサンプルコードを実際に動かしながら、
+3DCGが未経験の方でも分かるように基礎から解説するような感じになっております。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、配置は8/16(3日目) 東地区A-39aでした。
+コミケは初参加で知らなかったのですが、技術書で壁サークルというのはとても珍しいそうですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://techbooster.booth.pm/items/126683&#34;&gt;通販&lt;/a&gt;もしていますので、
+ぜひよろしくおねがいします。(予想以上の注文により現在は売り切れの模様)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>COJTの成果発表の感想</title>
+      <link>https://gam0022.net/blog/2013/08/01/cojtfalsecheng-guo-fa-biao-falsegan-xiang/</link>
+      <pubDate>Thu, 01 Aug 2013 22:44:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2013/08/01/cojtfalsecheng-guo-fa-biao-falsegan-xiang/</guid>
+      <description>&lt;p&gt;今日は自然言語処理の期末試験でしたが、
+昨日は筑波大学情報学群 組み込み技術キャンパスOJTのソフトウェアコースの成果発表会でした。&lt;/p&gt;
+
+&lt;p&gt;開発のお題は、Webブラウザで動作する3Dのカバンの商品カタログでした。&lt;/p&gt;
+
+&lt;p&gt;成果物はこれです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gam0022.net/app/shelf/&#34;&gt;Shelf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;WebGLとHTML5で作っているので、WebGLの動くWebブラウザがあれば、Nexus7などのタブレットでも動作します。
+(Androidでは、開発者用のChromeで&lt;code&gt;chrome://flags/&lt;/code&gt;からWebGLを有効にする必要があります。)&lt;/p&gt;
+
+&lt;p&gt;細かい技術的な話はここでは置いておきますが、&lt;a href=&#34;https://github.com/gam0022/shelf&#34;&gt;リポジトリ&lt;/a&gt;は公開してます。&lt;/p&gt;
+
+&lt;p&gt;投票の結果、最優秀賞は逃したものの、なんだかんだで技術賞をいただきました。
+一般参加者の評価も12人中2番目に良かったので、頑張った甲斐はあったというものです。&lt;/p&gt;
+
+&lt;p&gt;成果発表会に来てくださった方はありがとうございました。思ったよりたくさんの方に来てくださって正直驚きました。
+講師の先生方、TAの方もありがとうございました。他の受講生は本当にお疲れ様でした。&lt;/p&gt;
+
+&lt;p&gt;振り返ってみると、開発に関してはいろいろと困難がありましたが、終わってみるとけっこう楽しかったです。(小並感)&lt;/p&gt;
+
+&lt;p&gt;春学期はブラウザ上で動かすこともあり、組み込みという感じはほとんどしませんでしたが、
+秋学期は本格的に組み込みらしいので、期待してます。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
