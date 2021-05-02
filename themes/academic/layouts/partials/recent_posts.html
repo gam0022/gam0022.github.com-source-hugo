@@ -1,18 +1,20 @@
 <div class="col-md-12">
+  <div class="row">
     {{ range first 10 (where .Site.Pages "Type" "post") }}
-    <div class="article-list-item" itemscope itemprop="blogPost">
-      <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-        {{ if .Params.image }}
-        <a href="{{ .Permalink }}">
-            <img src="{{ $.Site.BaseURL }}/{{ .Params.image }}" class="article-banner" itemprop="image">
-        </a>
-        {{ else }}
-        <img src="{{ .Site.BaseURL }}{{ .Site.Params.default_image }}" class="article-banner" itemprop="image">
-        {{end}}
+    <div class="col-6 col-sm-4" itemscope itemprop="blogPost">
+      <h3 class="article-title" itemprop="name" style="font-size: 20px;"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
+      {{ if .Params.image }}
+      <a href="{{ .Permalink }}">
+        <img src="{{ $.Site.BaseURL }}/{{ .Params.image }}" class="article-banner" itemprop="image">
+      </a>
+      {{ else }}
+      <img src="{{ .Site.BaseURL }}{{ .Site.Params.default_image }}" class="article-banner" itemprop="image">
+      {{end}}
     </div>
     {{ end }}
-    
-    <div class="read-more">
-      <a href="/post" class="btn btn-primary btn-outline">Read more</a>
-    </div>
+  </div>
+
+  <div class="read-more">
+    <a href="/post" class="btn btn-primary btn-outline">Read more</a>
+  </div>
 </div>
