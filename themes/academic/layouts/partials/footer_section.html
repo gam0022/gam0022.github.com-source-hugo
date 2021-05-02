@@ -1,14 +1,21 @@
 <div class="row">
-    <div class="col-md-12">
-        <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
-        {{ partial "tag_cloud.html" . }}
-    </div>
+    <h4 class="blog-title"><img src="/img/gam0022_splash.png" class="icon"> gam0022.net's Tag Cloud</h4>
+    {{ partial "tag_cloud.html" . }}
 </div>
 
 <!--div class="row">
     {{ partial "hot_posts.html" . }}
 </div-->
 
-<div class="row">
+<!--div class="row">
     {{ partial "recent_posts.html" . }}
+</div-->
+
+<!-- Recent Posts  -->
+<div class="row">
+    <div class="col section-heading">
+        <h1>Recent Posts</h1>
+        <p>最新記事</p>
+        {{ partial "recent_posts.html" . }}
+    </div>
 </div>
