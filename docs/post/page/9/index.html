@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
-    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619959694">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?2021-05-06">
     
 
     
@@ -111,6 +111,52 @@
 <div class="container">
 
     
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2013/06/09/latex-usepackage-float/" itemprop="url">LaTexで図をその場に配置する</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2013-06-09 22:58:00 &#43;0900 JST" itemprop="datePublished">2013-06-09</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/latex">LaTex</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <p>LaTexで図をその場に配置する方法ですが、このようにすれば良いようです。</p>
+
+<ol>
+<li>プリアンプルに<code>\usepackage{float}</code>を追加。</li>
+<li>図を配置するとき、<code>\begin{figure}[H]</code>のように位置指定する。</li>
+</ol>
+
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2013/06/09/latex-usepackage-float/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
     
     <div class="article-list-item" itemscope itemprop="blogPost">
         
@@ -792,62 +838,6 @@ MathJax.rbの導入 MathJax.rbの導入には、30分のチュートリアルで
         </div>
         <p class="read-more">
             <a href="https://gam0022.net/blog/2013/02/11/fdtd/" class="btn btn-primary btn-outline">
-                Read more
-            </a>
-        </p>
-    </div>
-    <hr>
-    
-    <div class="article-list-item" itemscope itemprop="blogPost">
-        
-        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2013/02/09/ruby-variable/" itemprop="url">初心者が混乱しやすいRubyの変数</a></h3>
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2013-02-09 19:07:00 &#43;0900 JST" itemprop="datePublished">2013-02-09</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/ruby">Ruby</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-        <div class="article-style" itemprop="articleBody">
-            
-                はじめに Rubyの初心者にありがちなことだと思うが、 変数を代入した時や関数を呼び出した時に、値渡しであるか参照渡しであるか混乱すると思う。
-私もよくわからずにかつては混乱した。
-次のページを見つけてようやく頭の整理がついた。
- Rubyのメソッドの引数は値渡しで、Rubyの変数は全てオブジェクトを指し示すポインタに似た何かだと考えればよいのだ。 引数の参照渡し（変数渡し）なのか単なるオブジェクトへの参照なのか、それが問題
- なるほどわかりやすい。
- Rubyのメソッドの引数は値渡し Rubyの変数は全てオブジェクトを指し示すポインタに似た何か  Rubyの変数はラベル Cにおける変数は箱だと例えられるが、Rubyにおける変数はラベルと例えられることがある。
-Cの変数では、メモリ上の箱に値がそのまま入っている。代入をすれば、箱が複製される。
-一方、Rubyではメモリ上の箱のどこかに値が入っており、変数はラベル(箱への参照)を持っているだけにすぎない。 変数を代入すると、メモリ上のデータはそのままに、ラベルだけがコピーされるのである。
-破壊的操作で意図しない変更が起きる例 次の例のようにbにaを代入した後、aに破壊的変更をすると、bの値まで変わってしまう。
-なぜならば、aとbは同じラベルを持っているので、同じ箱を共有した状態にあるからだ。</p>
-
-<h1 id="破壊的操作でbに意図しない変更が起こる例-1-pry-main-gt-a-quot-abc-quot-gt-quot-abc-quot-2-pry-main-gt-b-a-gt-quot-abc-quot-3-pry-main-gt-a-reverse-gt-quot-cba-quot-4-pry-main-gt-b-gt-quot-cba-quot-回避方法1-bの値を変えたくなければ-破壊的操作をしなければ良い">破壊的操作でbに意図しない変更が起こる例 [1] pry(main)&gt; a = &quot;abc&quot; =&gt; &quot;abc&quot; [2] pry(main)&gt; b = a =&gt; &quot;abc&quot; [3] pry(main)&gt; a.reverse! =&gt; &quot;cba&quot; [4] pry(main)&gt; b =&gt; &quot;cba&quot;  回避方法1 bの値を変えたくなければ、破壊的操作をしなければ良い。</h1>
-
-<p>a = a.reverseとすれば、インスタンス&quot;cba&quot;が作られ、aにそのラベルが入る。</p>
-
-<h1 id="破壊的操作をしなければbは変わらない-1-pry-main-gt-a-quot-abc-quot-gt-quot-abc-quot-2-pry-main-gt-b-a-gt-quot-abc-quot-3-pry-main-gt-a-a">破壊的操作をしなければbは変わらない [1] pry(main)&gt; a = &quot;abc&quot; =&gt; &quot;abc&quot; [2] pry(main)&gt; b = a =&gt; &quot;abc&quot; [3] pry(main)&gt; a = a.</h1>
-
-            
-        </div>
-        <p class="read-more">
-            <a href="https://gam0022.net/blog/2013/02/09/ruby-variable/" class="btn btn-primary btn-outline">
                 Read more
             </a>
         </p>

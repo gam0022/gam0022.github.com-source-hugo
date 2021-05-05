@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>お名前.comからGoogleドメインに乗り換えました（2021版）</title>
+      <link>https://gam0022.net/blog/2021/05/06/onamae-com-to-google-domain/</link>
+      <pubDate>Thu, 06 May 2021 02:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2021/05/06/onamae-com-to-google-domain/</guid>
+      <description>&lt;p&gt;当サイト（&lt;a href=&#34;http://gam0022.net/&#34;&gt;gam0022.net&lt;/a&gt;）のドメイン管理の事業者を&lt;a href=&#34;https://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;から&lt;a href=&#34;https://domains.google/intl/ja_jp/&#34;&gt;Googleドメイン&lt;/a&gt;に移管しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2021-05-05-onamae-com-to-google-domain/transfer.png&#34; alt=&#34;お名前.comからGoogleドメインに移管&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ドメイン移管は思ったよりもずっと簡単で待ち時間を含めても1時間以内に完了しました。&lt;/p&gt;
+
+&lt;p&gt;この程度の手間だったら、もっと早くやっておけば良かったです。&lt;/p&gt;
+
+&lt;h1 id=&#34;移管手順&#34;&gt;移管手順&lt;/h1&gt;
+
+&lt;p&gt;せっかくなので簡単に手順をメモしておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;お名前.comでドメインのロック解除
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定 &amp;gt; その他の機能 &amp;gt; ドメイン移管ロック&lt;/li&gt;
+&lt;li&gt;移管したいドメインのステータスが「OFF」になっていたら問題ありません&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;お名前.comでAuthコードを入手
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.onamae.com/guide/p/80&#34;&gt;ドメイン詳細&lt;/a&gt;からAuthコードの[表示]ボタンを押すと表示されます&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Googleドメインでドメイン移管手続き
+
+&lt;ul&gt;
+&lt;li&gt;必要な情報を入力して進めるだけでOKです。とくに悩む要素はないと思います
+
+&lt;ul&gt;
+&lt;li&gt;移管したいドメイン&lt;/li&gt;
+&lt;li&gt;Authコード&lt;/li&gt;
+&lt;li&gt;支払い用クレジットカード&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;お名前.comでドメイン移管を承認
+
+&lt;ul&gt;
+&lt;li&gt;私の場合、Googleドメイン上の操作から &lt;strong&gt;30分くらい経過してから&lt;/strong&gt; 「【重要】トランスファー申請に関する確認のご連絡 gam0022.net」というメールが来ました&lt;/li&gt;
+&lt;li&gt;メールのURLから承認ボタンを押せば作業完了です&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;AレコードやAAAレコードの設定も自動で引き継がれていました。&lt;/p&gt;
+
+&lt;p&gt;サブドメインの設定までは引き継がれなかったので手動で再設定する必要がありました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;お名前comからGoogleドメインに乗り換えた。&lt;br&gt;Aレコードなどの設定は自動で引き継がれており、有能だなぁ。 &lt;a href=&#34;https://t.co/utmwAwougz&#34;&gt;pic.twitter.com/utmwAwougz&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1387671139170754563?ref_src=twsrc%5Etfw&#34;&gt;April 29, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;参考記事&#34;&gt;参考記事&lt;/h2&gt;
+
+&lt;p&gt;こちらの記事に画像つきで手順が書かれています。この記事が分かりにくかったら参考にすると良いと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/fnifni/items/0daca17e0750659f2866&#34;&gt;お名前comからgoogle domainsにドメイン移管する - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;移管した理由&#34;&gt;移管した理由&lt;/h1&gt;
+
+&lt;p&gt;GMO社員の方もこのブログを見ることがあるかもしれないので、GMOを退会した理由を記しておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;お名前.comからの迷惑メールが多すぎる&lt;/li&gt;
+&lt;li&gt;UIが使いづらい&lt;/li&gt;
+&lt;li&gt;経済的理由&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;1-お名前-comからの迷惑メールが多すぎる&#34;&gt;1. お名前.comからの迷惑メールが多すぎる&lt;/h2&gt;
+
+&lt;p&gt;1.は業界では有名な評判ですね。お名前.comからの迷惑メールは本当に多すぎます。
+&lt;a href=&#34;https://tk-create.com/domain/onamae-com-mail-stop/&#34;&gt;お知らせメールを受信しない設定&lt;/a&gt;でしたが、「gam0022.netの期限日を定期的にご確認ください。」というメールが来ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更新日は7年後の2028年でしたが、「お知らせメールの受信設定が無効となっている方にも配信されております。」とのことです。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;温厚な私でも流石にイラッとしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;お知らせメールの受信設定が無効となっている方にも配信されております。&lt;br&gt;&lt;br&gt;じゃあないんだよ &lt;a href=&#34;https://t.co/RgkauLvEtX&#34;&gt;pic.twitter.com/RgkauLvEtX&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1387313503879368705?ref_src=twsrc%5Etfw&#34;&gt;April 28, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-uiが使いづらい&#34;&gt;2. UIが使いづらい&lt;/h2&gt;
+
+&lt;p&gt;2.もひどいと思います。使用頻度のもっとも高いであろうDNS設定がなぜかメニューの深い階層に埋もれていて使いづらいです。
+対照的にGoogleドメインはメニューがシンプルで使いやすいと感じました。&lt;/p&gt;
+
+&lt;h2 id=&#34;3-経済的理由&#34;&gt;3. 経済的理由&lt;/h2&gt;
+
+&lt;p&gt;3.については誤差でしたが、1年間の.netのドメインの料金を比較すると、Googleドメインの方が58円だけ節約できました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;お名前.com: 1598円(税込)&lt;/li&gt;
+&lt;li&gt;Googldドメイン: 1540円（税込み）
+
+&lt;ul&gt;
+&lt;li&gt;税別で1400円の表記&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;冒頭で述べたとおり、1時間もあればドメインの移管はできました。
+お名前.comの迷惑メールに困っている方は、Googleドメインに乗り換えてみてはいかがでしょうか？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
-    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619959694">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?2021-05-06">
     
 
     
@@ -111,6 +111,124 @@
 <div class="container">
 
     
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2012/08/25/preview-ruby-cgi-using-webrick/" itemprop="url">WEBrickを使って、RubyCGIをローカル上でテストする</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2012-08-25 11:19:00 &#43;0900 JST" itemprop="datePublished">2012-08-25</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/ruby">Ruby</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/webrick">WEBrick</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/cgi">CGI</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                
+
+<p>WEBrickを使って、RubyCGIをローカル上でプレビューする方法を紹介します。前にTwinCalを作った時にこの方法を覚えました。</p>
+
+<p>ApacheはC言語で書かれていているために<a href="http://thinkit.co.jp/article/117/4?page=0,1">パフォーマンスが良い</a>ので本番環境ではApacheを採用しましたが、
+ローカルでテスト用に使うにはWEBrickでちょろっとサーバを立てるのが良いですよね、そうしましょう。</p>
+
+<p>テスト環境(ローカル)
+:WEBrick</p>
+
+<p>本番環境(サーバ)
+:Apache</p>
+
+<p>あとは、rsyncとかでファイルを同期できるようにしたら完璧。</p>
+
+<h3 id="1-rubyのパスを本番環境とテスト環境で統一する">1. Rubyのパスを本番環境とテスト環境で統一する</h3>
+
+<p>Rubyのパスを本番環境とテスト環境で統一するために、
+<code>/usr/bin/ruby</code>のシンボリックリンクをrvmなどで入れたRubyに置き換えます。</p>
+
+<pre><code class="language-bash">mv /usr/bin/ruby /usr/bin/ruby-original
+ln -s /Users/gam0022/.rvm/rubies/ruby-1.9.3-p194/bin/ruby /usr/bin/ruby
+</code></pre>
+
+<p>本番環境とテスト環境の両方で行います。</p>
+
+<p>当然ですが、RubyのCGIではこのパスを1行目に指定します。</p>
+
+<h3 id="2-webrickを使う">2. WEBrickを使う</h3>
+
+<p>WEBrickについて簡単に説明すると、RubyでWEBサーバを立てるためのライブラリです。
+これをrequireすることで、10行くらいのコードを書くだけで簡易WEBサーバが完成します。</p>
+
+<p>私の場合、次のような<code>preview.rb</code>を書きました。
+WEBrickで.rbをAddHandlerする方法がなかなかわからなくて苦労しました。</p>
+
+<pre><code class="language-ruby">require 'webrick'
+include WEBrick
+
+module WEBrick::HTTPServlet
+  FileHandler.add_handler('rb', CGIHandler)
+end
+
+s = HTTPServer.new(
+  :Port =&gt; 3000,
+  :DocumentRoot =&gt; File.join(Dir.pwd),
+  :DirectoryIndex =&gt; ['index.rb']
+)
+trap(&quot;INT&quot;) { s.shutdown }
+s.start
+</code></pre>
+
+<p>この<code>preview.rb</code>を公開したいディレクトリに設置し、
+ターミナルで<code>ruby preview.rb</code>をすれば、ブラウザで<code>localhost:3000</code>にアクセスすることで、
+簡単にローカル上でCGIをテストすることができます。</p>
+
+<h3 id="おまけ-webrickでrequesturitoolargeが発生したときの対処方法">おまけ: WEBrickでRequestURITooLargeが発生したときの対処方法</h3>
+
+<p>ApacheではURIの上限が大きいので、かなり長いURIを発行しても問題がないのですが、WEBrickでは2083byteの制限があるので、
+CGIで長いURIを発行すると、RequestURITooLargeというエラーになってしまうことがあります。</p>
+
+<p>これは、WEBrickのソースコードを書き換えることで対処できます。</p>
+
+<p>私の環境では、<code>/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httprequest.rb</code>のL293に、
+<code>MAX_URI_LENGTH</code>という定数があったので、これを書き換えることで対処できました。</p>
+
+<pre><code class="language-ruby">291     private
+292 
+293     MAX_URI_LENGTH = 20830#2083 # :nodoc:
+294 
+295     def read_request_line(socket)
+</code></pre>
+
+<p><a href="http://mukaer.com/archives/2012/03/19/rubywebrickrequ/">RubyでWebrick利用時にRequestURITooLargeエラー発生時の対処</a></p>
+
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2012/08/25/preview-ruby-cgi-using-webrick/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
     
     <div class="article-list-item" itemscope itemprop="blogPost">
         
@@ -654,64 +772,6 @@ FileZilla 有名なFTPクライアントです。Macでもちゃんと使えま�
         </div>
         <p class="read-more">
             <a href="https://gam0022.net/blog/2012/08/01/installed-applications-on-os-x/" class="btn btn-primary btn-outline">
-                Read more
-            </a>
-        </p>
-    </div>
-    <hr>
-    
-    <div class="article-list-item" itemscope itemprop="blogPost">
-        
-        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2012/07/29/switch-within-the-app-mac/" itemprop="url">Mac(Lion)でアプリケーション内でウィンドウを切り替える方法</a></h3>
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2012-07-29 23:21:00 &#43;0900 JST" itemprop="datePublished">2012-07-29</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/mac-os-x">Mac OS X</a>, 
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/lion">Lion</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-        <div class="article-style" itemprop="articleBody">
-            
-                <p>Macでは、Comand + tabなどで、アプリケーション単位の切り替えができますが、
-同一アプリケーションで複数のウィンドウを開いているときに、
-どうやってウィンドウを切り替えるのかがわかりませんでした。</p>
-
-<p>調べてみると、OSの標準機能で同一アプリケーション内のウィンドウを切り替える機能がありました。</p>
-
-<p><img src="/images/posts/2012.7.29_toggle_windows.png" alt="次のウィンドウを操作対象にする" /></p>
-
-<p><code>環境設定 &gt; キーボード &gt; キーボードとショートカット &gt; キーボードと文字入力 &gt; 次のウィンドウを操作対象にする</code></p>
-
-<p>このような機能があるので、これに任意のショートカットを割り当てれば良いです。</p>
-
-<p>私の場合、<code>option + tab</code>に割り当てることにしました。</p>
-
-<p>これで、Chromeで複数ウィンドウを開いているときなども、
-簡単にウィンドウを切り替えることができるようになりました。</p>
-
-            
-        </div>
-        <p class="read-more">
-            <a href="https://gam0022.net/blog/2012/07/29/switch-within-the-app-mac/" class="btn btn-primary btn-outline">
                 Read more
             </a>
         </p>

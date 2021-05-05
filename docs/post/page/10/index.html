@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
-    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619959694">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?2021-05-06">
     
 
     
@@ -111,6 +111,62 @@
 <div class="container">
 
     
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2013/02/09/ruby-variable/" itemprop="url">初心者が混乱しやすいRubyの変数</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2013-02-09 19:07:00 &#43;0900 JST" itemprop="datePublished">2013-02-09</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/ruby">Ruby</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                はじめに Rubyの初心者にありがちなことだと思うが、 変数を代入した時や関数を呼び出した時に、値渡しであるか参照渡しであるか混乱すると思う。
+私もよくわからずにかつては混乱した。
+次のページを見つけてようやく頭の整理がついた。
+ Rubyのメソッドの引数は値渡しで、Rubyの変数は全てオブジェクトを指し示すポインタに似た何かだと考えればよいのだ。 引数の参照渡し（変数渡し）なのか単なるオブジェクトへの参照なのか、それが問題
+ なるほどわかりやすい。
+ Rubyのメソッドの引数は値渡し Rubyの変数は全てオブジェクトを指し示すポインタに似た何か  Rubyの変数はラベル Cにおける変数は箱だと例えられるが、Rubyにおける変数はラベルと例えられることがある。
+Cの変数では、メモリ上の箱に値がそのまま入っている。代入をすれば、箱が複製される。
+一方、Rubyではメモリ上の箱のどこかに値が入っており、変数はラベル(箱への参照)を持っているだけにすぎない。 変数を代入すると、メモリ上のデータはそのままに、ラベルだけがコピーされるのである。
+破壊的操作で意図しない変更が起きる例 次の例のようにbにaを代入した後、aに破壊的変更をすると、bの値まで変わってしまう。
+なぜならば、aとbは同じラベルを持っているので、同じ箱を共有した状態にあるからだ。</p>
+
+<h1 id="破壊的操作でbに意図しない変更が起こる例-1-pry-main-gt-a-quot-abc-quot-gt-quot-abc-quot-2-pry-main-gt-b-a-gt-quot-abc-quot-3-pry-main-gt-a-reverse-gt-quot-cba-quot-4-pry-main-gt-b-gt-quot-cba-quot-回避方法1-bの値を変えたくなければ-破壊的操作をしなければ良い">破壊的操作でbに意図しない変更が起こる例 [1] pry(main)&gt; a = &quot;abc&quot; =&gt; &quot;abc&quot; [2] pry(main)&gt; b = a =&gt; &quot;abc&quot; [3] pry(main)&gt; a.reverse! =&gt; &quot;cba&quot; [4] pry(main)&gt; b =&gt; &quot;cba&quot;  回避方法1 bの値を変えたくなければ、破壊的操作をしなければ良い。</h1>
+
+<p>a = a.reverseとすれば、インスタンス&quot;cba&quot;が作られ、aにそのラベルが入る。</p>
+
+<h1 id="破壊的操作をしなければbは変わらない-1-pry-main-gt-a-quot-abc-quot-gt-quot-abc-quot-2-pry-main-gt-b-a-gt-quot-abc-quot-3-pry-main-gt-a-a">破壊的操作をしなければbは変わらない [1] pry(main)&gt; a = &quot;abc&quot; =&gt; &quot;abc&quot; [2] pry(main)&gt; b = a =&gt; &quot;abc&quot; [3] pry(main)&gt; a = a.</h1>
+
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2013/02/09/ruby-variable/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
     
     <div class="article-list-item" itemscope itemprop="blogPost">
         
@@ -675,124 +731,6 @@ octave :1&gt; plot(x) gnuplot&gt; set terminal aqua enhanced title &quot;Figure 
         </div>
         <p class="read-more">
             <a href="https://gam0022.net/blog/2012/09/06/install-octave-on-mac-os-x/" class="btn btn-primary btn-outline">
-                Read more
-            </a>
-        </p>
-    </div>
-    <hr>
-    
-    <div class="article-list-item" itemscope itemprop="blogPost">
-        
-        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2012/08/25/preview-ruby-cgi-using-webrick/" itemprop="url">WEBrickを使って、RubyCGIをローカル上でテストする</a></h3>
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2012-08-25 11:19:00 &#43;0900 JST" itemprop="datePublished">2012-08-25</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/ruby">Ruby</a>, 
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/webrick">WEBrick</a>, 
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/cgi">CGI</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-        <div class="article-style" itemprop="articleBody">
-            
-                
-
-<p>WEBrickを使って、RubyCGIをローカル上でプレビューする方法を紹介します。前にTwinCalを作った時にこの方法を覚えました。</p>
-
-<p>ApacheはC言語で書かれていているために<a href="http://thinkit.co.jp/article/117/4?page=0,1">パフォーマンスが良い</a>ので本番環境ではApacheを採用しましたが、
-ローカルでテスト用に使うにはWEBrickでちょろっとサーバを立てるのが良いですよね、そうしましょう。</p>
-
-<p>テスト環境(ローカル)
-:WEBrick</p>
-
-<p>本番環境(サーバ)
-:Apache</p>
-
-<p>あとは、rsyncとかでファイルを同期できるようにしたら完璧。</p>
-
-<h3 id="1-rubyのパスを本番環境とテスト環境で統一する">1. Rubyのパスを本番環境とテスト環境で統一する</h3>
-
-<p>Rubyのパスを本番環境とテスト環境で統一するために、
-<code>/usr/bin/ruby</code>のシンボリックリンクをrvmなどで入れたRubyに置き換えます。</p>
-
-<pre><code class="language-bash">mv /usr/bin/ruby /usr/bin/ruby-original
-ln -s /Users/gam0022/.rvm/rubies/ruby-1.9.3-p194/bin/ruby /usr/bin/ruby
-</code></pre>
-
-<p>本番環境とテスト環境の両方で行います。</p>
-
-<p>当然ですが、RubyのCGIではこのパスを1行目に指定します。</p>
-
-<h3 id="2-webrickを使う">2. WEBrickを使う</h3>
-
-<p>WEBrickについて簡単に説明すると、RubyでWEBサーバを立てるためのライブラリです。
-これをrequireすることで、10行くらいのコードを書くだけで簡易WEBサーバが完成します。</p>
-
-<p>私の場合、次のような<code>preview.rb</code>を書きました。
-WEBrickで.rbをAddHandlerする方法がなかなかわからなくて苦労しました。</p>
-
-<pre><code class="language-ruby">require 'webrick'
-include WEBrick
-
-module WEBrick::HTTPServlet
-  FileHandler.add_handler('rb', CGIHandler)
-end
-
-s = HTTPServer.new(
-  :Port =&gt; 3000,
-  :DocumentRoot =&gt; File.join(Dir.pwd),
-  :DirectoryIndex =&gt; ['index.rb']
-)
-trap(&quot;INT&quot;) { s.shutdown }
-s.start
-</code></pre>
-
-<p>この<code>preview.rb</code>を公開したいディレクトリに設置し、
-ターミナルで<code>ruby preview.rb</code>をすれば、ブラウザで<code>localhost:3000</code>にアクセスすることで、
-簡単にローカル上でCGIをテストすることができます。</p>
-
-<h3 id="おまけ-webrickでrequesturitoolargeが発生したときの対処方法">おまけ: WEBrickでRequestURITooLargeが発生したときの対処方法</h3>
-
-<p>ApacheではURIの上限が大きいので、かなり長いURIを発行しても問題がないのですが、WEBrickでは2083byteの制限があるので、
-CGIで長いURIを発行すると、RequestURITooLargeというエラーになってしまうことがあります。</p>
-
-<p>これは、WEBrickのソースコードを書き換えることで対処できます。</p>
-
-<p>私の環境では、<code>/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httprequest.rb</code>のL293に、
-<code>MAX_URI_LENGTH</code>という定数があったので、これを書き換えることで対処できました。</p>
-
-<pre><code class="language-ruby">291     private
-292 
-293     MAX_URI_LENGTH = 20830#2083 # :nodoc:
-294 
-295     def read_request_line(socket)
-</code></pre>
-
-<p><a href="http://mukaer.com/archives/2012/03/19/rubywebrickrequ/">RubyでWebrick利用時にRequestURITooLargeエラー発生時の対処</a></p>
-
-            
-        </div>
-        <p class="read-more">
-            <a href="https://gam0022.net/blog/2012/08/25/preview-ruby-cgi-using-webrick/" class="btn btn-primary btn-outline">
                 Read more
             </a>
         </p>

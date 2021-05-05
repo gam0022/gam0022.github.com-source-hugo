@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gam0022.net</title>
+    <link>https://gam0022.net/tags/%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6/index.xml</link>
+    <description>Recent content on gam0022.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>&amp;copy; 2016 gam0022</copyright>
+    <atom:link href="/tags/%E3%83%96%E3%83%AD%E3%82%B0%E9%81%8B%E5%96%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>お名前.comからGoogleドメインに乗り換えました（2021版）</title>
+      <link>https://gam0022.net/blog/2021/05/06/onamae-com-to-google-domain/</link>
+      <pubDate>Thu, 06 May 2021 02:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2021/05/06/onamae-com-to-google-domain/</guid>
+      <description>&lt;p&gt;当サイト（&lt;a href=&#34;http://gam0022.net/&#34;&gt;gam0022.net&lt;/a&gt;）のドメイン管理の事業者を&lt;a href=&#34;https://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;から&lt;a href=&#34;https://domains.google/intl/ja_jp/&#34;&gt;Googleドメイン&lt;/a&gt;に移管しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2021-05-05-onamae-com-to-google-domain/transfer.png&#34; alt=&#34;お名前.comからGoogleドメインに移管&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ドメイン移管は思ったよりもずっと簡単で待ち時間を含めても1時間以内に完了しました。&lt;/p&gt;
+
+&lt;p&gt;この程度の手間だったら、もっと早くやっておけば良かったです。&lt;/p&gt;
+
+&lt;h1 id=&#34;移管手順&#34;&gt;移管手順&lt;/h1&gt;
+
+&lt;p&gt;せっかくなので簡単に手順をメモしておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;お名前.comでドメインのロック解除
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定 &amp;gt; その他の機能 &amp;gt; ドメイン移管ロック&lt;/li&gt;
+&lt;li&gt;移管したいドメインのステータスが「OFF」になっていたら問題ありません&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;お名前.comでAuthコードを入手
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.onamae.com/guide/p/80&#34;&gt;ドメイン詳細&lt;/a&gt;からAuthコードの[表示]ボタンを押すと表示されます&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Googleドメインでドメイン移管手続き
+
+&lt;ul&gt;
+&lt;li&gt;必要な情報を入力して進めるだけでOKです。とくに悩む要素はないと思います
+
+&lt;ul&gt;
+&lt;li&gt;移管したいドメイン&lt;/li&gt;
+&lt;li&gt;Authコード&lt;/li&gt;
+&lt;li&gt;支払い用クレジットカード&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;お名前.comでドメイン移管を承認
+
+&lt;ul&gt;
+&lt;li&gt;私の場合、Googleドメイン上の操作から &lt;strong&gt;30分くらい経過してから&lt;/strong&gt; 「【重要】トランスファー申請に関する確認のご連絡 gam0022.net」というメールが来ました&lt;/li&gt;
+&lt;li&gt;メールのURLから承認ボタンを押せば作業完了です&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;AレコードやAAAレコードの設定も自動で引き継がれていました。&lt;/p&gt;
+
+&lt;p&gt;サブドメインの設定までは引き継がれなかったので手動で再設定する必要がありました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;お名前comからGoogleドメインに乗り換えた。&lt;br&gt;Aレコードなどの設定は自動で引き継がれており、有能だなぁ。 &lt;a href=&#34;https://t.co/utmwAwougz&#34;&gt;pic.twitter.com/utmwAwougz&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1387671139170754563?ref_src=twsrc%5Etfw&#34;&gt;April 29, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;参考記事&#34;&gt;参考記事&lt;/h2&gt;
+
+&lt;p&gt;こちらの記事に画像つきで手順が書かれています。この記事が分かりにくかったら参考にすると良いと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/fnifni/items/0daca17e0750659f2866&#34;&gt;お名前comからgoogle domainsにドメイン移管する - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;移管した理由&#34;&gt;移管した理由&lt;/h1&gt;
+
+&lt;p&gt;GMO社員の方もこのブログを見ることがあるかもしれないので、GMOを退会した理由を記しておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;お名前.comからの迷惑メールが多すぎる&lt;/li&gt;
+&lt;li&gt;UIが使いづらい&lt;/li&gt;
+&lt;li&gt;経済的理由&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;1-お名前-comからの迷惑メールが多すぎる&#34;&gt;1. お名前.comからの迷惑メールが多すぎる&lt;/h2&gt;
+
+&lt;p&gt;1.は業界では有名な評判ですね。お名前.comからの迷惑メールは本当に多すぎます。
+&lt;a href=&#34;https://tk-create.com/domain/onamae-com-mail-stop/&#34;&gt;お知らせメールを受信しない設定&lt;/a&gt;でしたが、「gam0022.netの期限日を定期的にご確認ください。」というメールが来ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更新日は7年後の2028年でしたが、「お知らせメールの受信設定が無効となっている方にも配信されております。」とのことです。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;温厚な私でも流石にイラッとしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;お知らせメールの受信設定が無効となっている方にも配信されております。&lt;br&gt;&lt;br&gt;じゃあないんだよ &lt;a href=&#34;https://t.co/RgkauLvEtX&#34;&gt;pic.twitter.com/RgkauLvEtX&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1387313503879368705?ref_src=twsrc%5Etfw&#34;&gt;April 28, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-uiが使いづらい&#34;&gt;2. UIが使いづらい&lt;/h2&gt;
+
+&lt;p&gt;2.もひどいと思います。使用頻度のもっとも高いであろうDNS設定がなぜかメニューの深い階層に埋もれていて使いづらいです。
+対照的にGoogleドメインはメニューがシンプルで使いやすいと感じました。&lt;/p&gt;
+
+&lt;h2 id=&#34;3-経済的理由&#34;&gt;3. 経済的理由&lt;/h2&gt;
+
+&lt;p&gt;3.については誤差でしたが、1年間の.netのドメインの料金を比較すると、Googleドメインの方が58円だけ節約できました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;お名前.com: 1598円(税込)&lt;/li&gt;
+&lt;li&gt;Googldドメイン: 1540円（税込み）
+
+&lt;ul&gt;
+&lt;li&gt;税別で1400円の表記&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;冒頭で述べたとおり、1時間もあればドメインの移管はできました。
+お名前.comの迷惑メールに困っている方は、Googleドメインに乗り換えてみてはいかがでしょうか？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s EncryptでHTTPS対応しました</title>
+      <link>https://gam0022.net/blog/2017/11/17/https-support/</link>
+      <pubDate>Fri, 17 Nov 2017 10:13:23 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2017/11/17/https-support/</guid>
+      <description>&lt;p&gt;当サイト（&lt;a href=&#34;https://gam0022.net/&#34;&gt;gam0022.net&lt;/a&gt;）を&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;でHTTPS対応しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2017-11-15-https-support.png&#34; alt=&#34;HTTP対応&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s EncryptによるHTTPSの設定はcertbotというコマンドラインツールを利用しました。
+nginxの設定変更でHTTP/2対応もできました。
+どちらも驚くほど簡単で拍子抜けしました。&lt;/p&gt;
+
+&lt;p&gt;はてなブックマークの数が0にリセットされてしまいましたが、仕方がないので諦めました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;なぜhttps対応するのか&#34;&gt;なぜHTTPS対応するのか？&lt;/h1&gt;
+
+&lt;p&gt;先月リリースのChrome 62からすべてのHTTPページに「Not secure」と表示されるようになりました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://japan.cnet.com/article/35100589/&#34;&gt;グーグル、HTTPページへの警告表示を強化へ&amp;ndash;10月リリース予定の「Chrome 62」から&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Qiitaも9月末にHTTPS対応をしていました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.qiita.com/post/165860481859/qiita-https&#34;&gt;QiitaをHTTPS化しました&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当サイトはブログという形態なので、利用者が個人情報を入力することはほとんど考えられません。&lt;/p&gt;
+
+&lt;p&gt;しかし、少なくともGoogleは常時SSLを重要視しており、主要サイトもHTTPS化を進めているみたいなので、個人的な勉強を兼ねてHTTPSの設定に挑戦しました。&lt;/p&gt;
+
+&lt;h1 id=&#34;let-s-encryptでhttps対応&#34;&gt;Let&amp;rsquo;s EncryptでHTTPS対応&lt;/h1&gt;
+
+&lt;p&gt;公式ページの説明通りの手順で簡単に設定できました。&lt;/p&gt;
+
+&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OS: Ubuntu 16.04&lt;/li&gt;
+&lt;li&gt;Webサーバ: nginx/1.10.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;certbotのインストール&#34;&gt;certbotのインストール&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://certbot.eff.org/#ubuntuxenial-nginx&#34;&gt;公式ページ&lt;/a&gt;の手順通りにapt-get経由でcertbotをインストールしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;certbotの実行&#34;&gt;certbotの実行&lt;/h2&gt;
+
+&lt;p&gt;次のコマンドを実行すると、SSLの証明書の取得とnginxの設定の反映を自動で行ってくれます。
+対話的なツールになっていて、HTTPSの設定について質問されるので、それに答えていけばOKです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo certbot --nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;事前準備&#34;&gt;事前準備&lt;/h3&gt;
+
+&lt;p&gt;自分は事前にnginxの設定ファイルにドメイン名を明示しておきました。&lt;/p&gt;
+
+&lt;p&gt;ドメイン名を明示すると、&lt;code&gt;sudo certbot --nginx&lt;/code&gt; でSSL化したいドメインを選択できるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/nginx/sites-available/default&lt;/code&gt; の &lt;code&gt;server&lt;/code&gt; ブロック内&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;server {
+    listen 80 default_server;
+    listen [::]:80;
+@@
+-   server_name _;
++   server_name gam0022.net;
+@@
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;事後確認&#34;&gt;事後確認&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo certbot --nginx&lt;/code&gt; を実行すると、SSLための設定がnginxの設定ファイルに自動で追加されます。
+基本的なSSLの設定に加えて、httpでアクセスした場合にhttpsにリダイレクトする設定が追加されます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/nginx/sites-available/default&lt;/code&gt; の &lt;code&gt;server&lt;/code&gt; ブロック内&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;server {
+    listen 80 default_server;
+    listen [::]:80;
+@@
++   listen 443 ssl; # managed by Certbot
++   ssl_certificate /etc/letsencrypt/live/gam0022.net/fullchain.pem; # managed by Certbot
++   ssl_certificate_key /etc/letsencrypt/live/gam0022.net/privkey.pem; # managed by Certbot
++   include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
++   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
++
++
++   if ($scheme != &amp;quot;https&amp;quot;) {
++       return 301 https://$host$request_uri;
++   } # managed by Certbot
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後にnginxを再起動すればOKです。&lt;/p&gt;
+
+&lt;p&gt;systemdを使っているなら &lt;code&gt;systemctl restart nginx&lt;/code&gt;で再起動できます。&lt;/p&gt;
+
+&lt;h2 id=&#34;コンテンツの修正&#34;&gt;コンテンツの修正&lt;/h2&gt;
+
+&lt;p&gt;サーバのHTTPS対応は簡単だったのですが、&lt;a href=&#34;https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content?hl=ja&#34;&gt;Mixed Content問題&lt;/a&gt;の対応はすこし面倒でした。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;最初の HTML が安全な HTTPS 接続で読み込まれ、その他のリソース（画像、動画、スタイルシート、スクリプトなど）が安全ではない HTTP 接続で読み込まれると、混合コンテンツが発生します。 これが混合コンテンツと呼ばれるのは、同じページを表示するために HTTP と HTTPS 両方のコンテンツが読み込まれているためで、最初のリクエストは HTTPS で保護されています。 最新のブラウザでは、この種のコンテンツに関する警告が表示され、このページに安全でないリソースが含まれていることがユーザーに示されます。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;基本的に&lt;code&gt;http://&lt;/code&gt;を&lt;code&gt;//&lt;/code&gt;に置換すれば対応できました（&lt;a href=&#34;https://github.com/gam0022/gam0022.net-hugo/pull/9&#34;&gt;詳細&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Let&amp;#39;s Encryptで &lt;a href=&#34;https://t.co/IrODakXG9W&#34;&gt;https://t.co/IrODakXG9W&lt;/a&gt; をhttps対応できたけど、はてなブックマークのブログパーツがhttps非対応ですべてが台無しになった &lt;a href=&#34;https://t.co/WQu7AuHvrV&#34;&gt;pic.twitter.com/WQu7AuHvrV&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ😇 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/927552176628441088?ref_src=twsrc%5Etfw&#34;&gt;2017年11月6日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;はてなブックマークのブログパーツはHTTPSとして読み込めなかったので、プラグインを削除しました。&lt;/p&gt;
+
+&lt;p&gt;2017/11/16現在もはてなブログはHTTPS非対応ですし、はてなのHTTPS対応は後手に回っている印象があります。
+&lt;a href=&#34;http://staff.hatenablog.com/entry/2017/09/25/143000&#34;&gt;こういう記事&lt;/a&gt;もありますが、何か進展はあるのでしょうか？&lt;/p&gt;
+
+&lt;h2 id=&#34;はてなブックマーク数の移行は断念&#34;&gt;はてなブックマーク数の移行は断念&lt;/h2&gt;
+
+&lt;p&gt;すべての記事のURLが変わったので、はてなブックマーク数は0にリセットされました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.qiita.com/post/165860481859/qiita-https&#34;&gt;QiitaのHTTPS対応の記事&lt;/a&gt;によると、
+&lt;strong&gt;有償で&lt;/strong&gt; 移行できるらしいのですが、そこまでコストをかける意味は無いと思ったので諦めました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;また一時的にはてなブックマーク数も 0 にリセットされていますが、はてなブックマークに関しては、はてなさんに移行して頂く予定です。移行が完了するまでの間ブックマーク数が少なく表示されてしまいますが、ご理解のほどよろしくお願いいたします。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;証明書の自動更新&#34;&gt;証明書の自動更新&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s Encryptで取得したSSL証明書の有効期限はわずか90日です。&lt;/p&gt;
+
+&lt;p&gt;crontabで毎月1日の5時にSSL証明書の自動更新するようにしました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0 5 1 * * /usr/bin/certbot renew &amp;amp;&amp;amp; /bin/systemctl reload nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;http-2対応&#34;&gt;HTTP/2対応&lt;/h1&gt;
+
+&lt;p&gt;HTTPSのついでにHTTP/2も対応しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;HTTP/2対応はあっさりできた / &lt;a href=&#34;https://t.co/IrODakXG9W&#34;&gt;https://t.co/IrODakXG9W&lt;/a&gt; supports HTTP/2. Tested by &lt;a href=&#34;https://t.co/RtMlmm7glD&#34;&gt;https://t.co/RtMlmm7glD&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/http2?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#http2&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/webperf?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#webperf&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ😇 (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/927588898850533376?ref_src=twsrc%5Etfw&#34;&gt;2017年11月6日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;nginxのバージョン確認&#34;&gt;nginxのバージョン確認&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.nginx.com/blog/nginx-1-9-5/&#34;&gt;nginx/1.9.5以降からHTTP/2をサポート&lt;/a&gt;しています。&lt;/p&gt;
+
+&lt;p&gt;何も考えずにapt-get経由でnginxをインストールしたのですが、
+バージョンは1.10.3で&lt;code&gt;--with-http_v2_module&lt;/code&gt;でビルドされていたので、何もすることはありませんでした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nginx -V
+nginx version: nginx/1.10.3 (Ubuntu)
+built with OpenSSL 1.0.2g  1 Mar 2016
+TLS SNI support enabled
+configure arguments: --with-cc-opt=&#39;-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2&#39; --with-ld-opt=&#39;-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now&#39; --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-debug --with-pcre-jit --with-ipv6 --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_addition_module --with-http_dav_module --with-http_geoip_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module --with-http_v2_module --with-http_sub_module --with-http_xslt_module --with-stream --with-stream_ssl_module --with-mail --with-mail_ssl_module --with-threads
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;nginxの設定の変更&#34;&gt;nginxの設定の変更&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;server&lt;/code&gt; ブロック内の &lt;code&gt;listen&lt;/code&gt; ディレクティブにhttp2を足すだけでOKでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/nginx/sites-available/default&lt;/code&gt; の &lt;code&gt;server&lt;/code&gt; ブロック内&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;server {
+    listen 80 default_server;
+    listen [::]:80;
+@@
+-   listen 443 ssl; # managed by Certbot
++   listen 443 ssl http2; # managed by Certbot
++   listen [::]:443 ssl http2;
+@@
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;読み込み速度について&#34;&gt;読み込み速度について&lt;/h2&gt;
+
+&lt;p&gt;Chromeの開発者ツールで確認しましたが、読み込み速度はHTTP/1.1から変化なしでした。&lt;/p&gt;
+
+&lt;p&gt;ページ構成をHTTP/2用に最適化しないと効果は薄いのかもしれません。&lt;/p&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s Encrypt(certbot)でHTTPS対応は簡単にできるので、みんやなればいいと思いました。&lt;/p&gt;
+
+&lt;p&gt;はてなのサービスのHTTPS対応が遅いので、なんとかして欲しいです。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OctopressからHugoへ移行する方法</title>
+      <link>https://gam0022.net/blog/2016/09/25/migrated-from-octopress-to-hugo/</link>
+      <pubDate>Sun, 25 Sep 2016 12:45:18 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2016/09/25/migrated-from-octopress-to-hugo/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2016-09-25-migrated-from-octopress-to-hugo/migrated-from-octopress-to-hugo.png&#34; alt=&#34;OctopressからHugoへ移行&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当サイトはOctopressを使って生成していたのですが、このたびHugoに移行することにしました。
+この記事ではHugoに移行した経緯と、Hugoへの移行手順についてまとめます。
+なおローカル環境はMac OS Xです。&lt;/p&gt;
+
+&lt;h1 id=&#34;octopressを辞めた理由&#34;&gt;Octopressを辞めた理由&lt;/h1&gt;
+
+&lt;p&gt;Octopressを辞めた理由は、記事数の増加に伴い、サイトの生成に時間がかかるようになってしまったからです。&lt;/p&gt;
+
+&lt;p&gt;HugoではOctopressに比べてサイトの生成時間が短いことから、Hugoに移行することにしました。&lt;/p&gt;
+
+&lt;p&gt;現在の記事数でのサイトの生成時間は、Octpress(&lt;code&gt;rake generate&lt;/code&gt;コマンド)で 20.39秒、Hugo(&lt;code&gt;hugo&lt;/code&gt;コマンド)では 2.66秒でした！&lt;/p&gt;
+
+&lt;p&gt;他にも、Octpressは直近のコミットが半年前のもので、活発にメンテナンスされていないと感じたことも、Hugoへ移行した理由の1つです。&lt;/p&gt;
+
+&lt;h1 id=&#34;hugoのインストール&#34;&gt;Hugoのインストール&lt;/h1&gt;
+
+&lt;p&gt;Macの場合はHomebrewからインストールするのが良いでしょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew update
+brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mac以外の方は、公式ページを参考にして、ソースコードからインストールしましょう。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/installing/&#34;&gt;Hugo - Installing Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;hugoを使ってみる&#34;&gt;Hugoを使ってみる&lt;/h1&gt;
+
+&lt;p&gt;Hugoでページを生成して、ブラウザで表示を確認するまでの最短手順は以下の通りです。&lt;/p&gt;
+
+&lt;p&gt;各手順の詳細は&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;Hugo Quickstart Guide&lt;/a&gt;で確認しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Hugoのプロジェクトをつくる
+hugo new site hugo-site
+cd hugo-site
+
+# 記事を生成
+hugo new post/good-to-great.md
+
+# テンプレートをインストール
+# テンプレートがない状態では、真っ白なページしか表示されません
+mkdir themes
+cd themes
+git clone https://github.com/dim0627/hugo_theme_robust.git
+
+# ローカルサーバでプレビュー
+# http://localhost:1313/ にブラウザでアクセスすることで、プレビューを確認できます
+cd ..
+hugo server --theme=hugo_theme_robust --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;hugo記事へ記事の移行する&#34;&gt;Hugo記事へ記事の移行する&lt;/h1&gt;
+
+&lt;p&gt;Octopress の記事を Hugo に移植する大まかな手順は次の4つです。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Markdownの記事のコピー&lt;/li&gt;
+&lt;li&gt;画像のコピー&lt;/li&gt;
+&lt;li&gt;Octopressの独自記法をPure Markdownに置換&lt;/li&gt;
+&lt;li&gt;Octopressと同一のパーマリンクにする（オプション）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;markdownの記事のコピー&#34;&gt;Markdownの記事のコピー&lt;/h2&gt;
+
+&lt;p&gt;Octopressでは、&lt;code&gt;source/_posts&lt;/code&gt;に記事を配置しましたが、Hugoでは&lt;code&gt;content/post&lt;/code&gt;に配置します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp octopress-site/source/_posts/* hugo-site/content/post/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;画像のコピー&#34;&gt;画像のコピー&lt;/h2&gt;
+
+&lt;p&gt;Octopressでは画像ファイルを、&lt;code&gt;source/images/&lt;/code&gt;に配置しましたが、Hugoでは&lt;code&gt;static/images/&lt;/code&gt;に配置します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp -r octopress-site/source/images/* hugo-site/static/images/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;octopressの独自タグをpure-markdownに置換&#34;&gt;Octopressの独自タグをPure Markdownに置換&lt;/h2&gt;
+
+&lt;p&gt;Octopressのみでしか使えない独自記法を、Hugoでも扱えるようMarkdownに書き換える必要があります。&lt;/p&gt;
+
+&lt;p&gt;将来的な移行を考えると、独自記法は極力避けて、なるべくプラットフォームに依存しない書き方をするべきだと痛感しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd content/post/
+
+# 記事のタイムスタンプの形式を変える
+# Hugoでは、&amp;quot;2016-09-25T15:09:57&amp;quot;のような形式のタイムスタンプでないとパースに失敗します
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/date: \([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\) \([0-9]\{2\}:[0-9]\{2\}\)$/date: \1T\2:00+09:00/g&#39; {} \;
+
+# コードブロック
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% codeblock lang:\([a-z]*\) %}/```\1/g&#39; {} \;
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% codeblock %}/```/g&#39; {} \;
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% endcodeblock %}/```/g&#39; {} \;
+
+# s/categories/tags/
+# OctopressのカテゴリーはHugoのタグに相当します
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/^categories:.*/tags:/g&#39; {} \;
+
+# 画像
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% img \([^ ]*\) \(.*\) %}/![\2](\1)/g&#39; {} \;
+
+# class付きの画像
+find . -type f -exec sed -i &amp;quot;&amp;quot; -e &#39;s/{% img right \([^ ]*\) \(.*\) %}/&amp;lt;img alt=&amp;quot;\2&amp;quot; src=&amp;quot;\1&amp;quot; class=&amp;quot;right&amp;quot;&amp;gt;/g&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;octopressと同一のパーマリンクにする-オプション&#34;&gt;Octopressと同一のパーマリンクにする（オプション）&lt;/h2&gt;
+
+&lt;p&gt;OctopressとHugoではURLの付与ルールが異なるので、パーマリンクを維持させるためには一手間必要です。&lt;/p&gt;
+
+&lt;p&gt;たとえば、&lt;code&gt;2016-09-25-migrated-from-octopress-to-hugo.md&lt;/code&gt;というファイル名に対して、&lt;/p&gt;
+
+&lt;p&gt;Octopressでは&lt;code&gt;/blog/2016/09/25/migrated-from-octopress-to-hugo/&lt;/code&gt;というURLになります。&lt;/p&gt;
+
+&lt;p&gt;Hugoのデフォルト設定では&lt;code&gt;/post/2016-09-25-migrated-from-octopress-to-hugo/&lt;/code&gt;というURLとなります。&lt;/p&gt;
+
+&lt;p&gt;そこで、&lt;code&gt;config.toml&lt;/code&gt;に次の設定を加えてHugoのURLの付与ルールを変更することで、OctpressとHugoのURLを一致させました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[permalinks]
+  post = &amp;quot;/blog/:year/:month/:day/:slug&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そして各記事に&lt;code&gt;slug&lt;/code&gt;属性を設定することで、Octopressと同じパーマリンクを維持しました。&lt;/p&gt;
+
+&lt;p&gt;記事数が多い場合、すべての記事にslug属性を設定するのは手間だったので、次のようなRubyのスクリプトを使用しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;dir = &#39;content/post/&#39;
+Dir::foreach(dir) do |filename|
+  if filename =~ /\.markdown$/
+    slug = filename.gsub(/\d{4}-\d{2}-\d{2}-/, &#39;&#39;).sub(&#39;.markdown&#39;, &#39;&#39;)
+    puts &amp;quot;#{filename} : #{slug}&amp;quot;
+
+    lines = []
+    File::open(dir + filename) do |f|
+      f.each do |line|
+        lines &amp;lt;&amp;lt; line
+      end
+    end
+
+    File::open(dir + filename, &#39;w&#39;) do |f|
+      lines.each_with_index do |line, i|
+        f.puts(&amp;quot;slug: #{slug}&amp;quot;) if i == 3
+        f.print(line)
+      end
+    end
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;また、&lt;code&gt;slug&lt;/code&gt;を設定せずに、ファイル名から日付のprefixを削除してHugoのルールに合わせる方法もあります。&lt;/p&gt;
+
+&lt;h1 id=&#34;deployコマンド&#34;&gt;deployコマンド&lt;/h1&gt;
+
+&lt;p&gt;Hugoではdeployコマンドが内包されていないので、自作する必要があります。&lt;/p&gt;
+
+&lt;p&gt;そこで、&lt;code&gt;rsync&lt;/code&gt;を使ってVPSにデプロイするシェルスクリプトを作成しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;deploy.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+rm -rf public
+hugo
+
+dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+echo &amp;quot;dir: $dir&amp;quot;
+
+ssh_host=&amp;quot;g22&amp;quot;
+rsync --iconv=UTF-8-MAC,UTF-8 -avzc --delete --exclude-from=rsync-exclude ${dir}/public/ ${ssh_host}:/var/www/html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;rsync-exclude&lt;/code&gt;では上書きしたくないファイルやディレクトリを指定します。
+当サイトでは &lt;a href=&#34;https://gam0022.net/webgl/&#34;&gt;&lt;code&gt;gam0022.net/webgl&lt;/code&gt;&lt;/a&gt;のようなサブディレクトリ以下のコンテンツがあるため、&lt;code&gt;rsync-exclude&lt;/code&gt;を次のように指定しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rsync-exclude&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;webgl/
+*.swp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;--iconv=UTF-8-MAC,UTF-8&lt;/code&gt;はリモート環境がMacで、かつURLに日本語を含むコンテンツがある場合(&lt;a href=&#34;https://gam0022.net/tags/レイマーチング/&#34;&gt;例としては日本語のタグ名を使用した場合&lt;/a&gt;)には必要なオプションです。
+このオプションを付けると&lt;code&gt;UTF-8-MAC&lt;/code&gt;のファイル名をリモートでは&lt;code&gt;UTF-8&lt;/code&gt;に変換してコピーします。 詳しくは次の記事を参照してください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gam0022.net/blog/2012/08/11/use-rsync-iconv-option/&#34;&gt;カテゴリー名に濁点を含んだ日本語が使えない問題を解決する(Rsyncのiconvオプションを使う)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;参考記事&#34;&gt;参考記事&lt;/h1&gt;
+
+&lt;p&gt;この記事を書くにあたって、次の記事を参考にさせていただきました。ありがとうございます。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/&#34;&gt;ブログをOctopressからHugoに移行した&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://deeeet.com/writing/2014/12/25/hugo/&#34;&gt;OctopressからHugoへ移行した | SOTA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

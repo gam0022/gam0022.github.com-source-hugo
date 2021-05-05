@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://gam0022.net/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://gam0022.net/css/academicons.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
-    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?1619959694">
+    <link rel="stylesheet" href="https://gam0022.net/css/hugo-academic.css?2021-05-06">
     
 
     
@@ -111,6 +111,71 @@
 <div class="container">
 
     
+    
+    <div class="article-list-item" itemscope itemprop="blogPost">
+        
+        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2013/10/22/immutable-list-gem/" itemprop="url">Rubyで関数型プログラミングをするための ImmutableList gem を公開</a></h3>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2013-10-22 14:17:00 &#43;0900 JST" itemprop="datePublished">2013-10-22</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/ruby">Ruby</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/rubygems">RubyGems</a>, 
+        
+        <a class="article-tag-link" href="https://gam0022.net/tags/ruby-c-extension">Ruby C-Extension</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style" itemprop="articleBody">
+            
+                <h1 id="immutablelist-gem-とは">ImmutableList gem とは</h1>
+
+<p>Immutable な LinkedList を Ruby で使うためのライブラリです。</p>
+
+<p>C-Extension なので、Rubyで実装したものに比べて動作が高速です。</p>
+
+<p>Ruby の <code>Array</code> は 配列で実装されているため、
+長いリストでの先頭への要素を追加(<code>cons</code>)や連結(<code>append</code>)が
+とても遅いという問題を解決しようと思って作りました。</p>
+
+<p>用途としては、Rubyで再帰を使って関数型言語風にプログラムを組むことを想定しています。</p>
+
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/MjwxdjZX6fPjtf" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/immutable-list-gem-klab-alm" title="Immutable List Gem (KLab ALM版)" target="_blank">Immutable List Gem (KLab ALM版)</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div></p>
+
+<h2 id="導入方法">導入方法</h2>
+
+<p><a href="http://rubygems.org/gems/immutable_list">RubyGems</a> で公開したので、次のようにターミナルで入力するだけで導入できます。</p>
+
+<pre><code class="language-bash">$ gem install immutable_list
+</code></pre>
+
+<p>
+            
+        </div>
+        <p class="read-more">
+            <a href="https://gam0022.net/blog/2013/10/22/immutable-list-gem/" class="btn btn-primary btn-outline">
+                Read more
+            </a>
+        </p>
+    </div>
+    <hr>
     
     <div class="article-list-item" itemscope itemprop="blogPost">
         
@@ -667,50 +732,6 @@ db.execute(&quot;insert into table(time, data) values (:time, :data)&quot;, h)
         </div>
         <p class="read-more">
             <a href="https://gam0022.net/blog/2013/08/26/programming-challenges-3/" class="btn btn-primary btn-outline">
-                Read more
-            </a>
-        </p>
-    </div>
-    <hr>
-    
-    <div class="article-list-item" itemscope itemprop="blogPost">
-        
-        <h3 class="article-title" itemprop="name"><a href="https://gam0022.net/blog/2013/08/26/ocaml/" itemprop="url">OCamlの匿名関数とカリー化</a></h3>
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2013-08-26 21:31:00 &#43;0900 JST" itemprop="datePublished">2013-08-26</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://gam0022.net/tags/ocaml">OCaml</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-        <div class="article-style" itemprop="articleBody">
-            
-                <p>OCamlの匿名関数とカリー化について記事を書こうと想ったのですが、
-そのままの記事が既に存在したのでリンクを貼っておきます。</p>
-
-<p><a href="http://ocaml.jp/OCaml%E5%85%A5%E9%96%80%282%29">OCaml入門(2)</a></p>
-
-            
-        </div>
-        <p class="read-more">
-            <a href="https://gam0022.net/blog/2013/08/26/ocaml/" class="btn btn-primary btn-outline">
                 Read more
             </a>
         </p>

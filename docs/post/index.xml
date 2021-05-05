@@ -7,8 +7,118 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>&amp;copy; 2016 gam0022</copyright>
-    <lastBuildDate>Mon, 08 Mar 2021 01:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 May 2021 02:00:00 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>お名前.comからGoogleドメインに乗り換えました（2021版）</title>
+      <link>https://gam0022.net/blog/2021/05/06/onamae-com-to-google-domain/</link>
+      <pubDate>Thu, 06 May 2021 02:00:00 +0900</pubDate>
+      
+      <guid>https://gam0022.net/blog/2021/05/06/onamae-com-to-google-domain/</guid>
+      <description>&lt;p&gt;当サイト（&lt;a href=&#34;http://gam0022.net/&#34;&gt;gam0022.net&lt;/a&gt;）のドメイン管理の事業者を&lt;a href=&#34;https://www.onamae.com/&#34;&gt;お名前.com&lt;/a&gt;から&lt;a href=&#34;https://domains.google/intl/ja_jp/&#34;&gt;Googleドメイン&lt;/a&gt;に移管しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gam0022.net/images/posts/2021-05-05-onamae-com-to-google-domain/transfer.png&#34; alt=&#34;お名前.comからGoogleドメインに移管&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ドメイン移管は思ったよりもずっと簡単で待ち時間を含めても1時間以内に完了しました。&lt;/p&gt;
+
+&lt;p&gt;この程度の手間だったら、もっと早くやっておけば良かったです。&lt;/p&gt;
+
+&lt;h1 id=&#34;移管手順&#34;&gt;移管手順&lt;/h1&gt;
+
+&lt;p&gt;せっかくなので簡単に手順をメモしておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;お名前.comでドメインのロック解除
+
+&lt;ul&gt;
+&lt;li&gt;ドメイン設定 &amp;gt; その他の機能 &amp;gt; ドメイン移管ロック&lt;/li&gt;
+&lt;li&gt;移管したいドメインのステータスが「OFF」になっていたら問題ありません&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;お名前.comでAuthコードを入手
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.onamae.com/guide/p/80&#34;&gt;ドメイン詳細&lt;/a&gt;からAuthコードの[表示]ボタンを押すと表示されます&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Googleドメインでドメイン移管手続き
+
+&lt;ul&gt;
+&lt;li&gt;必要な情報を入力して進めるだけでOKです。とくに悩む要素はないと思います
+
+&lt;ul&gt;
+&lt;li&gt;移管したいドメイン&lt;/li&gt;
+&lt;li&gt;Authコード&lt;/li&gt;
+&lt;li&gt;支払い用クレジットカード&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;お名前.comでドメイン移管を承認
+
+&lt;ul&gt;
+&lt;li&gt;私の場合、Googleドメイン上の操作から &lt;strong&gt;30分くらい経過してから&lt;/strong&gt; 「【重要】トランスファー申請に関する確認のご連絡 gam0022.net」というメールが来ました&lt;/li&gt;
+&lt;li&gt;メールのURLから承認ボタンを押せば作業完了です&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;AレコードやAAAレコードの設定も自動で引き継がれていました。&lt;/p&gt;
+
+&lt;p&gt;サブドメインの設定までは引き継がれなかったので手動で再設定する必要がありました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-conversation=&#34;none&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;お名前comからGoogleドメインに乗り換えた。&lt;br&gt;Aレコードなどの設定は自動で引き継がれており、有能だなぁ。 &lt;a href=&#34;https://t.co/utmwAwougz&#34;&gt;pic.twitter.com/utmwAwougz&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1387671139170754563?ref_src=twsrc%5Etfw&#34;&gt;April 29, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;参考記事&#34;&gt;参考記事&lt;/h2&gt;
+
+&lt;p&gt;こちらの記事に画像つきで手順が書かれています。この記事が分かりにくかったら参考にすると良いと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/fnifni/items/0daca17e0750659f2866&#34;&gt;お名前comからgoogle domainsにドメイン移管する - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;移管した理由&#34;&gt;移管した理由&lt;/h1&gt;
+
+&lt;p&gt;GMO社員の方もこのブログを見ることがあるかもしれないので、GMOを退会した理由を記しておきます。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;お名前.comからの迷惑メールが多すぎる&lt;/li&gt;
+&lt;li&gt;UIが使いづらい&lt;/li&gt;
+&lt;li&gt;経済的理由&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;1-お名前-comからの迷惑メールが多すぎる&#34;&gt;1. お名前.comからの迷惑メールが多すぎる&lt;/h2&gt;
+
+&lt;p&gt;1.は業界では有名な評判ですね。お名前.comからの迷惑メールは本当に多すぎます。
+&lt;a href=&#34;https://tk-create.com/domain/onamae-com-mail-stop/&#34;&gt;お知らせメールを受信しない設定&lt;/a&gt;でしたが、「gam0022.netの期限日を定期的にご確認ください。」というメールが来ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更新日は7年後の2028年でしたが、「お知らせメールの受信設定が無効となっている方にも配信されております。」とのことです。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;温厚な私でも流石にイラッとしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;お知らせメールの受信設定が無効となっている方にも配信されております。&lt;br&gt;&lt;br&gt;じゃあないんだよ &lt;a href=&#34;https://t.co/RgkauLvEtX&#34;&gt;pic.twitter.com/RgkauLvEtX&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1387313503879368705?ref_src=twsrc%5Etfw&#34;&gt;April 28, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-uiが使いづらい&#34;&gt;2. UIが使いづらい&lt;/h2&gt;
+
+&lt;p&gt;2.もひどいと思います。使用頻度のもっとも高いであろうDNS設定がなぜかメニューの深い階層に埋もれていて使いづらいです。
+対照的にGoogleドメインはメニューがシンプルで使いやすいと感じました。&lt;/p&gt;
+
+&lt;h2 id=&#34;3-経済的理由&#34;&gt;3. 経済的理由&lt;/h2&gt;
+
+&lt;p&gt;3.については誤差でしたが、1年間の.netのドメインの料金を比較すると、Googleドメインの方が58円だけ節約できました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;お名前.com: 1598円(税込)&lt;/li&gt;
+&lt;li&gt;Googldドメイン: 1540円（税込み）
+
+&lt;ul&gt;
+&lt;li&gt;税別で1400円の表記&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;冒頭で述べたとおり、1時間もあればドメインの移管はできました。
+お名前.comの迷惑メールに困っている方は、Googleドメインに乗り換えてみてはいかがでしょうか？&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Windows Terminalの背景でレイマーチング</title>
@@ -2949,100 +3059,6 @@ Meetupに参加して海外のシェーダーやWebGLのエンジニアと交流
 &lt;p&gt;来週4/3の&lt;a href=&#34;https://mercaridev.connpass.com/event/123663/&#34;&gt;Mercari GDC 2019 報告会&lt;/a&gt;に発表者として参加します。&lt;/p&gt;
 
 &lt;p&gt;面白かったセッション（レンダリングやレイトレ関連）の紹介や登壇したセッションの詳細については、この勉強会でお話しようと思っています。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>先頭にコピペするだけ！Shadertoy → GLSL Sandbox / NEORT の移植用ヘッダーコードの紹介</title>
-      <link>https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/</link>
-      <pubDate>Mon, 04 Mar 2019 09:01:07 +0900</pubDate>
-      
-      <guid>https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/&#34;&gt;Shadertoy&lt;/a&gt;のコードを&lt;a href=&#34;http://glslsandbox.com/&#34;&gt;GLSL Sandbox&lt;/a&gt;に一発で移植するコードを思いつきました。&lt;/p&gt;
-
-&lt;p&gt;以下のコードをShadertoyのコードの先頭にコピペするだけで、元のコードには一切手を加えずにGLSL Sandbox用のコードに変換できます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// BEGIN: shadertoy porting template
-// https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/
-precision highp float;
-
-uniform vec2 resolution;
-uniform float time;
-uniform vec2 mouse;
-
-#define iResolution resolution
-#define iTime time
-#define iMouse mouse
-
-void mainImage(out vec4 fragColor, in vec2 fragCoord);
-
-void main(void) {
-    vec4 col;
-    mainImage(col, gl_FragCoord.xy);
-    gl_FragColor = col;
-}
-// END: shadertoy porting template
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Shadertoyのマルチパスやテクスチャ機能をつかったShaderの移植はできませんが、普通の1パスのShaderなら移植できると思います。&lt;/p&gt;
-
-&lt;p&gt;ぜひ使ってみてください！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;shadertoy-neort-の移植事例&#34;&gt;Shadertoy → NEORT の移植事例&lt;/h2&gt;
-
-&lt;p&gt;最近、&lt;a href=&#34;https://neort.io/&#34;&gt;NEORT&lt;/a&gt;という国内産Shadertoyのようなサイトが登場しました。&lt;/p&gt;
-
-&lt;p&gt;NEORTはGLSL Sandbox互換があるので、ご紹介した方法で一発でShadertoyから移植できました。&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;NEORTはじめました⛩️&lt;a href=&#34;https://twitter.com/hashtag/GLSL?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#GLSL&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/creativecoding?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#creativecoding&lt;/a&gt; &lt;a href=&#34;https://t.co/acKyzwIU8S&#34;&gt;https://t.co/acKyzwIU8S&lt;/a&gt; &lt;a href=&#34;https://t.co/1AqphUQ5jv&#34;&gt;pic.twitter.com/1AqphUQ5jv&lt;/a&gt;&lt;/p&gt;&amp;mdash; がむ (@gam0022) &lt;a href=&#34;https://twitter.com/gam0022/status/1100564853985501184?ref_src=twsrc%5Etfw&#34;&gt;2019年2月27日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;解説&#34;&gt;解説&lt;/h2&gt;
-
-&lt;p&gt;なぜこれでうまく移植できるのか、簡単に解説します。&lt;/p&gt;
-
-&lt;h3 id=&#34;uniform名の違いの吸収&#34;&gt;uniform名の違いの吸収&lt;/h3&gt;
-
-&lt;p&gt;まず以下のコードでShadertoyとGLSL Sandboxのuniform名の違いの吸収しています。&lt;/p&gt;
-
-&lt;p&gt;単純に &lt;code&gt;#define&lt;/code&gt; のプリプロセッサで置換しているだけなので、特に不思議なことは無いと思います。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;uniform vec2 resolution;
-uniform float time;
-uniform vec2 mouse;
-
-#define iResolution resolution
-#define iTime time
-#define iMouse mouse
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;エントリーポイント名の違いの吸収&#34;&gt;エントリーポイント名の違いの吸収&lt;/h3&gt;
-
-&lt;p&gt;Shadertoyのエントリポイントは &lt;code&gt;mainImage&lt;/code&gt; で、GLSL Sandboxは &lt;code&gt;main&lt;/code&gt; です。&lt;/p&gt;
-
-&lt;p&gt;が、よく考えてみると、ShadertoyもWebGLで実装されているからにはGLSLのルールに従って &lt;code&gt;main&lt;/code&gt; が定義されているはずです。&lt;/p&gt;
-
-&lt;p&gt;Shadertoyのソースコードを眺めてみると、&lt;code&gt;mainImage&lt;/code&gt; を呼び出す &lt;code&gt;main&lt;/code&gt; 関数をヘッダーとして挿入する実装になっています。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void main(void) {
-    vec4 col;
-    mainImage(col, gl_FragCoord.xy);
-    gl_FragColor = col;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この「mainImage を呼び出す main を定義する」というアイデアは&lt;a href=&#34;https://twitter.com/kanetaaaaa&#34;&gt;kaneta&lt;/a&gt;さんのこの作品からヒントをもらいました！&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;早速2D版🤔のGLSLコード置いているので、ご自由にお使いください🤔&lt;a href=&#34;https://t.co/OJjTYlLy0c&#34;&gt;https://t.co/OJjTYlLy0c&lt;/a&gt; &lt;a href=&#34;https://t.co/NYN6zT77sM&#34;&gt;pic.twitter.com/NYN6zT77sM&lt;/a&gt;&lt;/p&gt;&amp;mdash; かねた (@kanetaaaaa) &lt;a href=&#34;https://twitter.com/kanetaaaaa/status/1099180997269106688?ref_src=twsrc%5Etfw&#34;&gt;2019年2月23日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;次はコンパイルエラーを避けるための前方宣言です。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void mainImage(out vec4 fragColor, in vec2 fragCoord);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;GLSLではC言語と同様に、別の関数から呼び出される前に関数を定義するか、前方宣言する必要があります。&lt;/p&gt;</description>
     </item>
     
   </channel>
