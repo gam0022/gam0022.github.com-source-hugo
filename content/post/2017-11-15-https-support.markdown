@@ -6,7 +6,8 @@ tags = [
 "Ubuntu",
 "nginx",
 "HTTPS",
-"HTTP2"
+"HTTP2",
+"ブログ運営"
 ]
 title = "Let's EncryptでHTTPS対応しました"
 slug = "https-support"

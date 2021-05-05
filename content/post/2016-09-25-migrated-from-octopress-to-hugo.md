@@ -5,7 +5,7 @@ toc = true
 math = false
 draft = false
 slug = "migrated-from-octopress-to-hugo"
-tags = ["Hugo", "Octopress"]
+tags = ["Hugo", "Octopress", "ブログ運営"]
 title = "OctopressからHugoへ移行する方法"
 +++
 
