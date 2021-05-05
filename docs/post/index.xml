@@ -105,14 +105,29 @@
 
 &lt;p&gt;3.については誤差でしたが、1年間の.netのドメインの料金を比較すると、Googleドメインの方が58円だけ節約できました。&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;お名前.com: 1598円(税込)&lt;/li&gt;
-&lt;li&gt;Googldドメイン: 1540円（税込み）
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;サービス名&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;1年間の費用（税込）&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;1年間の費用（税別）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
 
-&lt;ul&gt;
-&lt;li&gt;税別で1400円の表記&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;お名前.com&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1598円&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1452.7円&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Googldドメイン&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1540円&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1400円&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
 
