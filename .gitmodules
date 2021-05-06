@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:gam0022/gam0022.github.com.git
