@@ -1,27 +1,27 @@
-rem ã‚³ãƒŸãƒƒãƒˆãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+rem ƒRƒ~ƒbƒgƒƒbƒZ[ƒW
 set msg="Build %date%%time%"
 
 pushd public
 
-rem publicãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’æƒé™¤
+rem publicƒfƒBƒŒƒNƒgƒŠ‚ğ‘|œ
 git fetch -p
 git checkout -B master origin/master
 
 popd
 
-rem HTMLã‚’ç”Ÿæˆ
+rem HTML‚ğ¶¬
 hugo017.exe
 
 pushd public
 
-rem HTMLç”Ÿæˆç‰©ã‚’ã‚³ãƒŸãƒƒãƒˆ
+rem HTML¶¬•¨‚ğƒRƒ~ƒbƒg
 git add .
 git commit -m %msg%
 git push origin HEAD
 
 popd
 
-rem ã‚½ãƒ¼ã‚¹ã‚’ã‚³ãƒŸãƒƒãƒˆ
+rem ƒ\[ƒX‚ğƒRƒ~ƒbƒg
 git add .
 git commit -m %msg%
 git push origin HEAD
