@@ -15,7 +15,7 @@ Yahoo Inter Hack U 2013 という開発イベントに参加してきました�
 
 <!--more-->
 
-* [たぶん公式ページ](c2search.gam0022.net)
+* [公式ページ](https://gam0022.net/app/c2search/)
 * [Hack ID: 2 カメラで商品検索](http://yhacks.jp/hacku/inter2013/works/2)
 
 ちなみに、AppleStoreなどで公開はしていないので、使いたい人は私に直接話しかけてくださいw

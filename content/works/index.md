@@ -535,7 +535,7 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 - [ヤフー主催のアプリ開発イベント「Inter Hack U」 - 学生15団体が熱戦](http://news.mynavi.jp/articles/2013/12/06/yahoo_inter_hack_u/001.html)
 
 <div class="read-more">
-  <a href="http://c2search.gam0022.net/" class="btn btn-primary btn-outline">Read More</a>
+  <a href="https://gam0022.net/app/c2search/" class="btn btn-primary btn-outline">Read More</a>
 </div>
 
 # Web
