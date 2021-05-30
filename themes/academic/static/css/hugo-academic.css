@@ -106,6 +106,7 @@ h4 {
     /*アスペクト比 16:9の場合の縦幅*/
     height: 0;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .movie-wrap iframe {
