@@ -165,3 +165,9 @@ GitHub上でUnityプロジェクトを丸ごと公開しているので、もし
 初版部数はAmazonでの予約数をもとに決まるそうなので、ぜひ[Amazonから予約](https://amzn.to/3oe2agf)をお願いします！
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">リアルタイムレンダリング 第4版よりもページ数が多いことに気がついて驚いています。 <a href="https://t.co/zJGUYOm8XL">https://t.co/zJGUYOm8XL</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1393040315762634755?ref_src=twsrc%5Etfw">May 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+# 追記（2021-08-21）
+
+7/29の「Unityゲーム プログラミング・バイブル 2nd Generation 出版記念トーク グラフィックス編」にゲスト出演しました。
+
+[Unityゲーム プログラミング・バイブル 2nd Generation 出版記念トーク グラフィックス編](https://learning.unity3d.jp/7437/)
