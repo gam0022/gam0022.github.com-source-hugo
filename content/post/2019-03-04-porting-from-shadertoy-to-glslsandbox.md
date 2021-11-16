@@ -12,6 +12,8 @@ date = "2019-03-04T09:01:07+09:00"
 
 +++
 
+2021-11-16 backbufferとマウスの対応
+
 [Shadertoy](https://www.shadertoy.com/)のコードを[GLSL Sandbox](http://glslsandbox.com/)に一発で移植するコードを思いつきました。
 
 以下のコードをShadertoyのコードの先頭にコピペするだけで、元のコードには一切手を加えずにGLSL Sandbox用のコードに変換できます。
@@ -24,10 +26,13 @@ precision highp float;
 uniform vec2 resolution;
 uniform float time;
 uniform vec2 mouse;
+uniform sampler2D backbuffer;
 
 #define iResolution resolution
 #define iTime time
-#define iMouse mouse
+#define iMouse (vec4(mouse, 0.5, 0.5) * resolution.xyxy)
+#define iChannel0 backbuffer
+#define texture texture2D
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord);
 
