@@ -30,10 +30,11 @@ weight = 0
 - Tokyo Demo Fest 2017 GLSL Graphics Compo 3位入賞（[解説記事](/blog/2017/02/24/tdf2017/)）
 - Tokyo Demo Fest 2018 Combined Demo Compo **1位優勝**（[解説記事](/blog/2018/12/12/tdf2018/)）
 - Revision 2020 PC 64K Intro **1位優勝**（[解説記事](/blog/2020/04/30/revision2020/)）
+- Tokyo Demo Fest 2021 GLSL Graphics Compo **1位優勝**（[解説記事](blog/2021/12/20/tdf2021-glsl/)）
 
 KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計、モバイル向けに最適化したシェーダー開発、テクニカルアーティストとしてプロジェクト横断のサポート活動等を行う。
 
-- Last Update: 2021-07-12
+- Last Update: 2021-12-20
 - Read More: [Resume](/resume)
 
 ## ゲーム開発者カンファレンスの登壇
@@ -42,6 +43,7 @@ KLab（2015～）では、Unity製モバイルゲームの3Dグラフィック�
 - CEDEC 2019 [Android向けUnity製ゲーム最適化のためのCI/CDと連携した自動プロファイリングシステム](https://cedec.cesa.or.jp/2019/session/detail/s5c9cb02154338.html)（[発表資料](https://www.slideshare.net/klab-tech/androidunitycicd)、[Social Game Info](https://gamebiz.jp/?p=249260)）
 - CEDEC 2020 [高品質かつ低負荷な3Dライブを実現するシェーダー開発 ～『ラブライブ！スクールアイドルフェスティバル ALL STARS』（スクスタ）の開発事例～](https://cedec.cesa.or.jp/2020/session/detail/s5e4e64530d6ab.html)（[発表資料](https://docs.google.com/presentation/d/e/2PACX-1vSLQNQyqfGCVsqcEuOJLFqvHpASQZ5UZhjAuWnS5C3tYSGWjpmGYmI9ZOkt36hGGe3mWYXqxJgjCCAz/pub?start=false&loop=false&delayms=3000&slide=id.ga37e29a62e_3_91)）
 - CEDEC 2020 [『ラブライブ！スクールアイドルフェスティバル ALL STARS』（スクスタ）のライブ演出制作秘話～超高品質な3Dライブ演出を表現するための制作概要とオリジナルTimelineツールについて](https://cedec.cesa.or.jp/2020/session/detail/s5e830d3830b9a)（[発表資料](https://www.klab.com/jp/blog/creative/2020/cedec2020.html)、[Social Game Info](https://gamebiz.jp/?p=275988)）
+- CEDEC＋KYUSHU 2021 ONLINE [シェーダーを活用した3Dライブ演出のアップデート ～『ラブライブ！スクールアイドルフェスティバル ALL STARS』（スクスタ）の開発事例～​](http://cedec-kyushu.jp/2021/session/07.html)（[発表資料](https://www.klab.com/jp/blog/tech/2021/cedec-kyushu-2021-online-3d.html)）
 
 ## 書籍の執筆（商業誌）
 
