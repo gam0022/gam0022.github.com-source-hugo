@@ -195,7 +195,7 @@ float3 right = normalize(cross(toCamera, up));
 // forwardはupとrightの両方に直交するベクトル
 float3 forward = normalize(cross(up, right));
 
-// 各基底ベクトルを並べて回転行列を生成
+// 各基底ベクトルを並べてビルボード用の回転行列を生成
 // （厳密には平行移動も含んでいるので姿勢行列）
 float4x4 mat = {
     1, 0, 0, 0,
@@ -207,6 +207,16 @@ mat._m00_m10_m20 = right;//     X軸の基底ベクトル
 mat._m01_m11_m21 = up;//        Y軸の基底ベクトル
 mat._m02_m12_m22 = forward;//   Z軸の基底ベクトル
 mat._m03_m13_m23 = worldPos;//  平行移動のベクトル
+
+
+// ローカル座標（平行移動のためにw=1）
+float4 vertex = float4(IN.positionOS.xyz, 1);
+
+// ビルボード用の回転行列を乗算してワールド空間に変換
+vertex = mul(mat, vertex);
+
+// ビュー行列とプロジェクション行列を乗算してクリップ空間に変換
+OUT.positionHCS = mul(UNITY_MATRIX_VP, vertex);
 ```
 
 これは超重要情報ですが、 **回転後の空間の基底ベクトルを並べた行列が回転行列になります。** 
