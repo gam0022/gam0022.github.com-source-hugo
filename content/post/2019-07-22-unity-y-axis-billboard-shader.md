@@ -12,6 +12,14 @@ title = "[Unity] Y軸ビルボードシェーダーの実装と解説"
 
 +++
 
+# 改訂版の記事を書きました（2021-12-23）
+
+**この記事の方法は古いので、改訂版を参考にしてください。**
+
+- [[Unity][URP] Y軸ビルボードシェーダー | gam0022.net](/blog/2021/12/23/unity-urp-billboard-shader/)
+
+---
+
 こんな感じのY軸のビルボードをC#スクリプトを使わずに、シェーダーだけで実装しました（Unity 2018.3.12f1）。
 
 ![Y軸ビルボード](/images/posts/2019-07-22-unity-y-axis-billboard-shader/billboard_y_axis.gif)
