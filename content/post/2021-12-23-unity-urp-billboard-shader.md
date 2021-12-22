@@ -12,6 +12,12 @@ math = false
 
 +++
 
+これは[Unity Advent Calendar 2021](https://qiita.com/advent-calendar/2021/unity)の23日目の記事です。
+
+前日は[@UnagiHuman](https://twitter.com/UnagiHuman)さんの[「Unityの新MeshAPIでMeshColliderをリアルタイム変形させる」](https://qiita.com/UnagiHuman/items/7db6c75adea0d5862acf)でした。
+
+---
+
 こんな感じのY軸のビルボードをC#スクリプトを使わずに、シェーダーだけで実装しました。
 
 ![Y軸ビルボード](/images/posts/2021-12-23-unity-urp-billboard-shader/Unity-URP-Billboard-trim.gif)
