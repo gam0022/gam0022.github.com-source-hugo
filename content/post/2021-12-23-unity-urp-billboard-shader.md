@@ -6,7 +6,7 @@ tags = [
 title = "[Unity][URP] Y軸ビルボードシェーダー"
 slug = "unity-urp-billboard-shader"
 date = "2021-12-23T10:00:00+09:00"
-image = "/images/posts/2021-12-23-unity-urp-billboard-shader/20211223011338_x1.jpg"
+image = "/images/posts/2021-12-23-unity-urp-billboard-shader/20211223020601_x1.jpg"
 toc = true
 math = false
 
