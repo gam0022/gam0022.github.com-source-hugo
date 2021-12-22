@@ -174,7 +174,8 @@ Unityが生成するモデル行列を使わずに、頂点シェーダーの中
 // Y-UPベクトル
 float3 yup = float3(0.0, 1.0, 0.0);
 
-// Y軸の基底ベクトル
+// up = Y軸の基底ベクトル
+// オブジェクトのTransformの回転を考慮する
 float3 up = mul((float3x3)unity_ObjectToWorld, yup);
 
 // オブジェクトのワールド座標
@@ -183,10 +184,12 @@ float3 worldPos = unity_ObjectToWorld._m03_m13_m23;
 // オブジェクトからカメラに向かうベクトル
 float3 toCamera = _WorldSpaceCameraPos - worldPos;
 
-// X軸の基底ベクトル
+// right = X軸の基底ベクトル
+// rightはtoCameraとupの両方に直交するので、crossから計算できる
 float3 right = normalize(cross(toCamera, up));
 
-// Z軸の基底ベクトル
+// forward = Z軸の基底ベクトル
+// forwardはupとrightの両方に直交するベクトル
 float3 forward = normalize(cross(up, right));
 
 // 各基底ベクトルを並べて回転行列を生成
