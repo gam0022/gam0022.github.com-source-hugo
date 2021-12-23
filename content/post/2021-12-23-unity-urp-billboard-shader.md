@@ -232,6 +232,51 @@ OUT.positionHCS = mul(UNITY_MATRIX_VP, vertex);
 ![回転ベクトル1](/images/posts/2021-12-23-unity-urp-billboard-shader/kec2-2.png)
 ![回転ベクトル2](/images/posts/2021-12-23-unity-urp-billboard-shader/kec2-3.png)
 
+## スケール対応
+
+モデル行列 `unity_ObjectToWorld` から各軸のスケールを取得することで、スケール対応ができます。
+Y軸に関しては、upを計算するときにnormalizeしなければ自動でスケールが考慮されます。
+
+### スケール対応なし
+
+```c
+// up = Y軸の基底ベクトル
+// オブジェクトのTransformの回転を考慮
+float3 up = normalize(mul((float3x3)unity_ObjectToWorld, yup));
+
+//...
+
+// right = X軸の基底ベクトル
+// rightはtoCameraとupの両方に直交するので、crossから計算
+float3 right = normalize(cross(toCamera, up));
+
+// forward = Z軸の基底ベクトル
+// forwardはupとrightの両方に直交するので、crossから計算
+float3 forward = normalize(cross(up, right));
+```
+
+### スケール対応あり
+
+```c
+// up = Y軸の基底ベクトル
+// オブジェクトのTransformの回転を考慮
+float3 up = mul((float3x3)unity_ObjectToWorld, yup);
+
+//...
+
+// right = X軸の基底ベクトル
+// 前半の項 : rightはtoCameraとupの両方に直交するので、crossから計算
+// 後半の項 : オブジェクトのTransformのX方向のスケールを考慮
+float3 right = normalize(cross(toCamera, up)) * length(unity_ObjectToWorld._m00_m10_m20);
+
+// forward = Z軸の基底ベクトル
+// 前半の項 : forwardはupとrightの両方に直交するので、crossから計算
+// 後半の項 : オブジェクトのTransformのZ方向のスケールを考慮
+float3 forward = normalize(cross(up, right)) * length(unity_ObjectToWorld._m02_m12_m22);
+```
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">追記<br>GameObjectのスケールに対応しました。<a href="https://twitter.com/hashtag/Unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3d</a> <a href="https://twitter.com/hashtag/Shader?src=hash&amp;ref_src=twsrc%5Etfw">#Shader</a> <a href="https://twitter.com/hashtag/HLSL?src=hash&amp;ref_src=twsrc%5Etfw">#HLSL</a> <a href="https://t.co/gI4a3zpmJQ">pic.twitter.com/gI4a3zpmJQ</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1473858972558200843?ref_src=twsrc%5Etfw">December 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## SRP Batcher
 
 URP（SRP）からSRP Batcherというドローコールバッチング（厳密にはドローコールの数を減らすわけではなく、ドローコール間のGPUの設定コストを削減）の仕組みが導入されました。
