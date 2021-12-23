@@ -50,6 +50,8 @@ GitHubリポジトリ: [gam0022/unity-urp-shader](https://github.com/gam0022/uni
 
 単体で動作するので、コピペして使えます。MITライセンスです。
 
+ファイル名: [`Unlit-Billboard.shader`](https://github.com/gam0022/unity-urp-shader/blob/master/Assets/URP-Shaders/Billboard/Shaders/Unlit-Billboard.shader)
+
 ```c
 // URP-Unlit-Billboard Shader by @gam0022 (MIT Licence)
 // https://gam0022.net//blog/2021/12/23/unity-urp-billboard-shader/
