@@ -198,7 +198,7 @@ float3 right = normalize(cross(toCamera, up)) * length(unity_ObjectToWorld._m00_
 float3 forward = normalize(cross(up, right)) * length(unity_ObjectToWorld._m02_m12_m22);
 
 // 各基底ベクトルを並べてビルボード用の回転行列を生成
-// （厳密には平行移動も含んでいるので姿勢行列）
+// （厳密には平行移動とスケールも含んだ変換行列）
 float4x4 mat = {
     1, 0, 0, 0,
     0, 1, 0, 0,
