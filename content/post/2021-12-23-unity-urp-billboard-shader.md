@@ -112,8 +112,8 @@ Shader "Universal Render Pipeline/Unlit-Billboard"
 
                 float3 worldPos = unity_ObjectToWorld._m03_m13_m23;
                 float3 toCamera = _WorldSpaceCameraPos - worldPos;
-                float3 right = normalize(cross(toCamera, up));
-                float3 forward = normalize(cross(up, right));
+                float3 right = normalize(cross(toCamera, up)) * length(unity_ObjectToWorld._m00_m10_m20);
+                float3 forward = normalize(cross(up, right)) * length(unity_ObjectToWorld._m02_m12_m22);
 
                 float4x4 mat = {
                     1, 0, 0, 0,
@@ -188,12 +188,14 @@ float3 worldPos = unity_ObjectToWorld._m03_m13_m23;
 float3 toCamera = _WorldSpaceCameraPos - worldPos;
 
 // right = X軸の基底ベクトル
-// rightはtoCameraとupの両方に直交するので、crossから計算できる
-float3 right = normalize(cross(toCamera, up));
+// 前半の項 : rightはtoCameraとupの両方に直交するので、crossから計算できる
+// 後半の項 : オブジェクトのTransformのX方向のスケールを考慮
+float3 right = normalize(cross(toCamera, up)) * length(unity_ObjectToWorld._m00_m10_m20);
 
 // forward = Z軸の基底ベクトル
-// forwardはupとrightの両方に直交するベクトル
-float3 forward = normalize(cross(up, right));
+// 前半の項 : forwardはupとrightの両方に直交するので、crossから計算できる
+// 後半の項 : オブジェクトのTransformのZ方向のスケールを考慮
+float3 forward = normalize(cross(up, right)) * length(unity_ObjectToWorld._m02_m12_m22);
 
 // 各基底ベクトルを並べてビルボード用の回転行列を生成
 // （厳密には平行移動も含んでいるので姿勢行列）
