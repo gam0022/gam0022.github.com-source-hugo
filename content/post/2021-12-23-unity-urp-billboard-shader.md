@@ -48,7 +48,7 @@ GitHubリポジトリ: [gam0022/unity-urp-shader](https://github.com/gam0022/uni
 
 最終的なシェーダーのコードはこちらです。
 
-単体で動作するので、コピペして使えます。MITライセンスです。
+単体で動作するので、コピペして使えます。[MITライセンス](https://github.com/gam0022/unity-urp-shader/blob/master/LICENSE)です。
 
 ファイル名: [`Unlit-Billboard.shader`](https://github.com/gam0022/unity-urp-shader/blob/master/Assets/URP-Shaders/Billboard/Shaders/Unlit-Billboard.shader)
 
