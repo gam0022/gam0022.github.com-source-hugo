@@ -139,7 +139,9 @@ phi16さん
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">記録 TDF2021 ShaderShowdown <a href="https://t.co/mMcSoYwh5U">https://t.co/mMcSoYwh5U</a></p>&mdash; phi16 (@phi16_) <a href="https://twitter.com/phi16_/status/1470415119708753921?ref_src=twsrc%5Etfw">December 13, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-YouTubeのアーカイブ（Day2の4:27頃）
+YouTubeのアーカイブ（Day2の4:27頃）です。
+
+Finalでは私も実況者の一人として参加しています。
 
 <div class="movie-wrap">
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/bp37xTVNRrM?t=16030" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
