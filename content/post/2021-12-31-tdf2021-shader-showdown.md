@@ -77,9 +77,9 @@ YouTubeのアーカイブ（Day1の2:15頃）です。
 
 準決勝（Semi-Final）の作品です。
 
-[Niko_14](https://twitter.com/himazin917)さんの音楽がとても素晴らしかったので、音楽に合わせたVJを挑戦しました。
+[Niko_14](https://twitter.com/himazin917)さんの音楽がとても素晴らしかったので、音楽と同期したVJに挑戦しました。
 
-試合の前日に自分の試合の音楽担当はNiko_14さんと聞いたので、VJをする決意をしました。
+試合の前日に自分の試合の音楽担当はNiko_14さんと聞いたので、そのタイミングでVJをする決意をしました。
 
 VJっぽい絵を狙ったことが無かったのですが、ほぼ狙い通りのバキバキな感じにできたので良かったです。
 シェーダーの構成としてはQuarter-Finalとほぼ同じで、IFSとボリュームレンダリングの組み合わせです。
@@ -88,7 +88,7 @@ IFSのパラメーターは適当だったのですが、ちゃんと狙い通�
 色はFFT（音楽の周波数ごとのボリューム）に対応していて、低音が赤、中音が緑、高音が青に対応しています。
 キックの音が支配的だったので、キックに合わせて赤～ピンクっぽいビームが発生しています。
 
-Twitterの動画の4秒頃のように、音が切り替わるタイミングでサウンドリアクティブになっているのが分かりやすいと思います。
+Twitterの動画の4秒頃のように、音が切り替わるタイミングでサウンドリアクティブになっているのが分かりやすいと思います。ぜひ音声をONにして再生してください！
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">25分でライブコーディングしたシェーダーです。<br>かっこいい音楽は <a href="https://twitter.com/himazin917?ref_src=twsrc%5Etfw">@himazin917</a> さん制作です！<br><br>This shader was coded in 25 minutes.<br>Sound by <a href="https://twitter.com/himazin917?ref_src=twsrc%5Etfw">@himazin917</a><br><br>Shader showdown semi-final at <a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://twitter.com/hashtag/GLSL?src=hash&amp;ref_src=twsrc%5Etfw">#GLSL</a> <a href="https://twitter.com/hashtag/Bonzomatic?src=hash&amp;ref_src=twsrc%5Etfw">#Bonzomatic</a> <a href="https://twitter.com/hashtag/Shader?src=hash&amp;ref_src=twsrc%5Etfw">#Shader</a> <a href="https://twitter.com/hashtag/LiveCoding?src=hash&amp;ref_src=twsrc%5Etfw">#LiveCoding</a> <a href="https://t.co/HzUpd9le3t">pic.twitter.com/HzUpd9le3t</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1469924900257562627?ref_src=twsrc%5Etfw">December 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -101,6 +101,8 @@ YouTubeのアーカイブ（Day2の1:41頃）です。
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/bp37xTVNRrM?start=6086" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+VJっぽいバキバキとした絵の方向性やFFTを用いたサウンドリアクティブなシェーダーはこれまで挑戦したことのないジャンルだったので、新しい方向性を模索する良い経験になりました。
+
 Semi-Finalでは[Kamoshika](https://twitter.com/kamoshika_vrc)さんに負けてしまったのですが、試合後のコメントによると反射の処理には[『Unityゲーム プログラミング・バイブル 2nd Generation』の自分の章](https://gam0022.net/blog/2021/06/08/unity-bible2/)を参考にしてくださったそうで、めちゃくちゃありがてぇ🙏となりました。
 
 Jugem-Tさんも実況による盛り上げありがとうございました！
@@ -111,16 +113,19 @@ Jugem-Tさんも実況による盛り上げありがとうございました！
 
 大変でしたが、楽しかったです。
 
-こんなにレベルの高い戦いになるとは思っておらず、みんな凄すぎてちょっと心が折れそうでした。
+25分でできる範囲はかなり限られてくるので、詰め込める要素を取捨選択して、ミスをしないように実装するのは思っていたより難しく感じました。
+距離関数も普段はコピペしているので暗記も大変でした。回転行列くらいは導出できるのですが、sdBoxは導出していたら時間がまったく足りません。
 
-とくにFinal（決勝）の[Kamoshika](https://twitter.com/kamoshika_vrc) vs [phi16](https://twitter.com/phi16_) の戦いは感動しました。
+正直に言うと、まさかここまでレベルの高い戦いになるとは思っておらず、参加者のみなさんが凄すぎてちょっと心が折れそうでした。
+
+とくにFinal（決勝）の[Kamoshika](https://twitter.com/kamoshika_vrc) vs [phi16](https://twitter.com/phi16_) の戦いは印象深かったです。
 
 Kamoshikaさんは蝶、phi16さんはライブゲームと、両者とも "生命" を誕生させていました。偶然にもテーマが一致していてちょっと面白かったです。
 
 とにかく実装量がえげつなく、これをライブコーディングでやるんだ…と驚かされました。
 競技者として参加したことで、25分間でこの量をミスなく実装する困難さは痛いほど理解していたので、なおさら驚かされました。
 
-両者ともミスなく作品を仕上げており、まさに決勝戦に相応しい素晴らしい戦いを見せていただきました🙏
+両者ともミスなく作品を仕上げており、まさに決勝戦に相応しい素晴らしい戦いを見せていただきました🙏心の底から感動しました。
 
 世界レベルの実力者の方々と戦えて本当に光栄でした！ありがとうございます！
 
