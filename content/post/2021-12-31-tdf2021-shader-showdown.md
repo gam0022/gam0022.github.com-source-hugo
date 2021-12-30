@@ -1,6 +1,6 @@
 +++
 date = "2021-12-31T00:00:00+09:00"
-image = "/images/posts/2021-12-31-tdf2021-shader-showdown/Collage_Fotor_v2.jpg"
+image = "/images/posts/2021-12-31-tdf2021-shader-showdown/Collage_Fotor_v3.jpg"
 toc = true
 math = false
 draft = false
