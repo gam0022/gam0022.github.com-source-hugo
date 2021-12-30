@@ -7,7 +7,7 @@ draft = false
 tags = [
     "event", "CG", "レイマーチング", "TokyoDemoFest", "GLSL"
 ]
-title = "Tokyo Demo Fest 2021のShaderShowdownに参加しました"
+title = "Tokyo Demo Fest 2021のShader Showdownに参加しました"
 slug = "tdf2021-shader-showdown"
 
 +++
@@ -18,7 +18,7 @@ TDFは、日本国内で唯一のデモパーティです。
 リアルタイムに映像や音楽を生成するプログラムを「デモ」と言い、デモを鑑賞したり完成度を競ったりして楽しむイベントを「デモパーティ」と言います。
 「デモシーン」はデモやデモパーティを中心としたコンピューターのサブカルチャーです。
 
-TDFのShaderShowdownというイベントに競技者として参加しました。
+TDFのShader Showdownというイベントに競技者として参加しました。
 
 [![Collage_Fotor_v3](/images/posts/2021-12-31-tdf2021-shader-showdown/Collage_Fotor_v3.jpg)](/images/posts/2021-12-31-tdf2021-shader-showdown/Collage_Fotor_v3.png)
 
@@ -28,11 +28,11 @@ TDFのShaderShowdownというイベントに競技者として参加しました
 
 - [Tokyo Demo Fest 2021のGLSL Graphics Compo優勝作品の解説 | gam0022.net](http://localhost:1313/blog/2021/12/20/tdf2021-glsl/)
 
-# ShaderShowdownとは
+# Shader Showdownとは
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">TokyoDemoFestのShader Showdownは、世界的なDemoparty「Revision」と同じレギュレーションで開催します。<br>試合の放映はパーティー当日12/11-12となります。乞うご期待……！ <a href="https://t.co/IlVue5npWz">pic.twitter.com/IlVue5npWz</a></p>&mdash; Tokyo Demo Fest 2021 (2021/12/11-12) (@TokyoDemoFest) <a href="https://twitter.com/TokyoDemoFest/status/1452275618997886976?ref_src=twsrc%5Etfw">October 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-ShaderShowdownとは25分間でシェーダーを書き、どちらの作品が良いかを決める競技です。
+Shader Showdownとは25分間でシェーダーを書き、どちらの作品が良いかを決める競技です。
 
 試合中は、一切のドキュメントの参照ができません。当然ながら必要な関数はすべて試合中に実装しないいけません。
 
@@ -48,7 +48,7 @@ ShaderShowdownとは25分間でシェーダーを書き、どちらの作品が�
 
 今回のTDFでライブコーディングした作品を簡単に解説します。
 
-TDFのShaderShowdownの全作品は[livecode.demozoo.org](https://livecode.demozoo.org/party_series/174.html)にもアーカイブされています。
+TDFのShader Showdownの全作品は[livecode.demozoo.org](https://livecode.demozoo.org/party_series/174.html)にもアーカイブされています。
 
 ## Lightning Tunnel | Quarter-Final
 
