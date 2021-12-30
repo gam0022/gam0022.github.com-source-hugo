@@ -5,7 +5,7 @@ toc = true
 math = false
 draft = false
 tags = [
-    "event", "CG", "レイマーチング", "TokyoDemoFest", "GLSL"
+    "event", "CG", "レイマーチング", "TokyoDemoFest", "GLSL", "ライブコーディング", "Shader Showdown"
 ]
 title = "Tokyo Demo Fest 2021のShader Showdownに参加しました"
 slug = "tdf2021-shader-showdown"
@@ -46,7 +46,7 @@ Shader Showdownとは25分間でシェーダーを書き、どちらの作品が
 
 # ライブコーディングした作品解説
 
-今回のTDFでライブコーディングした作品を簡単に解説します。
+今回のTDFのShader Showdownでライブコーディングした作品を簡単に解説します。
 
 TDFのShader Showdownの全作品は[livecode.demozoo.org](https://livecode.demozoo.org/party_series/174.html)にもアーカイブされています。
 
