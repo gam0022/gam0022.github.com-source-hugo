@@ -149,6 +149,9 @@ Finalでは私も実況者の一人として参加しています。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">おつかれさまでした！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://t.co/h2yXCGGBYa">pic.twitter.com/h2yXCGGBYa</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1469999619409350657?ref_src=twsrc%5Etfw">December 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+さいごに、関係者のみなさんに感謝を申し上げます。
+TDFのオーガナイザーの方々、Shader Showdownで対戦してくださったgyaboさん、norargsさん、Kamoshikaさん、0b5vrさん、phi16さん、sp4ghetさん、gazさん、実況のamagiさん、doxasさん、hiraiさんmurasaqiさん、音楽を担当したNiko_14さん、寝る前さん、h0ffman1さん、アーカイブ関連でpsenoghさん、Zavieさん、応援してくださった観戦者みなさん、本当にありがとうございました！
+
 # 練習
 
 ライブコーディングの練習中の作品です。
