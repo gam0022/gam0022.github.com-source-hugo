@@ -26,7 +26,7 @@ TDFのShader Showdownというイベントに競技者として参加しまし�
 
 また、TDFのGLSL Graphics Compoにも参加したので、こちらは別記事にまとめました。
 
-- [Tokyo Demo Fest 2021のGLSL Graphics Compo優勝作品の解説 | gam0022.net](http://localhost:1313/blog/2021/12/20/tdf2021-glsl/)
+- [Tokyo Demo Fest 2021のGLSL Graphics Compo優勝作品の解説 | gam0022.net](/blog/2021/12/20/tdf2021-glsl/)
 
 # Shader Showdownとは
 
