@@ -144,7 +144,7 @@ YouTubeのアーカイブ（Day2の4:27頃）です。
 Finalでは私も実況者の一人として参加しています。
 
 <div class="movie-wrap">
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/bp37xTVNRrM?t=16030" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/bp37xTVNRrM?start=16030" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">おつかれさまでした！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://t.co/h2yXCGGBYa">pic.twitter.com/h2yXCGGBYa</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1469999619409350657?ref_src=twsrc%5Etfw">December 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
