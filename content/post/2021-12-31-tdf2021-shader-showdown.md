@@ -39,6 +39,13 @@ Shader Showdownとは25分間でシェーダーを書き、どちらの作品が
 1対1のトーナメント形式で開催され、試合の勝敗は観衆（ビジター）の投票によって決定します。今回は私を含めた8人でトーナメントを行いました。
 
 対戦はGLSLのライブコーディングで行われます。[Bonzomatic](https://github.com/TheNuSan/Bonzomatic/releases/tag/v11)というアプリを利用し、対戦者の書いているコードやカーソルの位置が共有されます。
+Bonzomaticはシェーダーのライブコーディング専用のアプリです。
+
+次の初期状態のサイケなトンネルはBonzomaticのデフォルトのシェーダーです。
+
+[![bonzomaticの初期状態](/images/posts/2021-12-31-tdf2021-shader-showdown/bonzomatic-default.jpg)](/images/posts/2021-12-31-tdf2021-shader-showdown/bonzomatic-default.png)
+
+極座標による疑似3Dのシェーダーで汎用性に乏しいため、自分を含めてほどんどの競技者はまず初期状態のコードはコメントアウトするか消します。本当に無からシェーダーを書いています。
 
 ビジターは対戦者が25分の制限時間の中でどのような戦略とアイデアをもってコードを書いていくかをすぐ隣でみているかのように体験できます。
 
