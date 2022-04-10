@@ -1,5 +1,5 @@
 :: コミットメッセージ
-set msg="Build %date%%time%"
+set msg="Build %date% %time%"
 
 pushd public
 
