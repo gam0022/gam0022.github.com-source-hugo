@@ -60,24 +60,24 @@ MIDIコントローラーの入力を受けるけるために、プロパティ�
 uniform sampler2D midi1;
 ```
 
-そして、こんな感じの関数midiを定義します。
+そして、こんな感じのmidi関数を定義します。
 
 ```c
 ivec2 midiCoord(int offset)
 {
     int x = offset % 32;
     int y = offset / 32;
-    return ivec2(x,y);
+    return ivec2(x, y);
 }
 
 float midi(int ccNumber) {
-    return texture(midi1, vec2((1./32.) * midiCoord(3 * 127 + ccNumber))).r;
+    return texture(midi1, vec2((1. / 32.) * midiCoord(3 * 127 + ccNumber))).r;
 }
 ```
 
 ### midi関数の使用例
 
-関数midiは[コントロールチェンジ番号](https://www.g200kg.com/jp/docs/dic/controlchange.html)を受け取って、対応する値を0-1の範囲で返します。
+midi関数は[コントロールチェンジ番号](https://www.g200kg.com/jp/docs/dic/controlchange.html)を受け取って、対応する値を0-1の範囲で返します。
 
 IFSのイテレーションなどにmidi関数を使えば、冒頭の動画のようにIFSの幾何学形状をMIDIコンで制御できます！
 
