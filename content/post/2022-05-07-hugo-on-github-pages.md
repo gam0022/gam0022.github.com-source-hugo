@@ -5,7 +5,7 @@ draft = false
 tags = [
     "Hugo", "Web", "ブログ運営", "Windows"
 ]
-title = "HugoをGitHub Pagesで公開する"
+title = "HugoをGitHub Pagesで公開し、2リポジトリ構成の管理を楽にする方法"
 slug = "hugo-on-github-pages"
 date = "2022-05-07T20:05:08+09:00"
 image = "/images/posts/2022-05-07-hugo-on-github-pages/thumbnail.png"
@@ -20,7 +20,7 @@ image = "/images/posts/2022-05-07-hugo-on-github-pages/thumbnail.png"
 
 <!--more-->
 
-## VPS→GitHub Pagesの移行理由
+# VPS→GitHub Pagesの移行理由
 
 お金です。費用の削減が目的です。
 
@@ -28,12 +28,14 @@ ConoHa VPSは月額1000円ほどの固定費がかかっていましたが、Git
 
 また、VPSだと急にブログにアクセスが増えた場合にスケールしづらい・費用がかかるなどの懸念もありました。
 
-## HugoをGitHub Pagesにホスティングする
+# HugoをGitHub Pagesにホスティングする
 
 GitHub Pagesは、GitHubが静的ウェブページのためのウェブホスティングサービスです。
 HTMLやCSSなどの静的ファイルをGitHubのリポジトリにコミットすることで静的サイトを公開できます。
 
-さらに特定のブランチやディレクトリをサイトのルートとして指定できます。
+## 2リポジトリ構成とは
+
+GitHub Pagesでは、特定のブランチやディレクトリをサイトのルートとして指定できます。
 
 ディレクトリ指定を考慮すると、大きく分けて2つのリポジトリ構成が考えられます。
 
@@ -54,6 +56,8 @@ HTMLやCSSなどの静的ファイルをGitHubのリポジトリにコミット�
     - 2. のリポジトリをsubmoduleとして参照
 2. https://github.com/gam0022/gam0022.github.com
     - Hugoの生成物（HTMLやCSSなどの公開用の静的コンテンツ）のリポジトリ
+
+## 2リポジトリ構成のcommitをバッチで自動化
 
 2リポジトリ構成ではコミットが面倒という問題がありました。
 
@@ -92,11 +96,11 @@ git commit -m %msg%
 git push origin HEAD
 ```
 
-## カスタムドメインとSSL化
+# カスタムドメインとSSL化
 
 現在は独自ドメインのSSL化も簡単にできます。以前はCloudFlare等のCDNが必要でしたが、現在はCDNも不要です。
 
-設定は2つだけです。
+独自ドメインのSSL化に必要な設定は2つだけです。
 
 1. GitHub側の設定
 2. ドメインの管理ページ側のAレコード・CNAMEの設定
@@ -105,7 +109,7 @@ git push origin HEAD
 
 [GitHub Pages サイトのカスタムドメインを管理する](https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 
-### GitHub側の設定
+## GitHub側の設定
 
 リポジトリの `Settings > Pages > Custom domain` からカスタムドメインを指定できます。
 
@@ -117,7 +121,7 @@ SSL化したい場合には、 `Enforce HTTPS` にチェックします。
 
 ![GitHub側の設定](/images/posts/2022-05-07-hugo-on-github-pages/github-custom-domain.png)
 
-### ドメインの管理ページ側のAレコード・CNAMEの設定
+## ドメインの管理ページ側のAレコード・CNAMEの設定
 
 CNAMEとAレコードを設定して問題なく運用できています。
 
@@ -140,11 +144,13 @@ gam0022.github.io.
 
 ![Google Domain](/images/posts/2022-05-07-hugo-on-github-pages/google-domain.png)
 
-## まとめ
+# まとめ
 
 Hugoのホスト先をVPSからGitHub Pagesに移行して固定費削減できました。
 
 VPSではrsyncで即時に反映されていたのが、GitHub Pagesにしてから反映に数分かかるなど細かい不満はありますが、無料で使えているので許容範囲かなと思っています。
+
+## 静的CMS＋ホスティングサービスを選ぶ理由
 
 はてなブログなどのブログサービスへの移行も検討したことも過去にありますが、特定のサービスに依存したくないという考えから現在の構成に落ち着いています。
 
