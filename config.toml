@@ -62,13 +62,12 @@ googleAnalytics = "UA-84469205-1"
     skills = [
       "three.js / WebGL",
       "Unity",
-      "GLSL",
-      "HLSL",
-      "C++/C",
+      "GLSL / HLSL",
+      "C++ / C",
       "C#",
       "Ruby on Rails",
-      "JavaScript",
-      "HTML/CSS",
+      "TypeScript / JavaScript",
+      "HTML / CSS",
     ]
 
     str_interests = "興味 / Interests"
