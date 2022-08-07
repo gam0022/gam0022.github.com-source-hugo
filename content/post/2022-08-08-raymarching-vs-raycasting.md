@@ -2,7 +2,7 @@
 slug = "raymarching-vs-raycasting"
 date = "2022-08-08T02:12:50+09:00"
 image = "/images/posts/2022-08-08-raymarching-vs-raycasting/raymarching_i4_s256_l300.jpg"
-toc = true
+toc = false
 math = false
 draft = false
 tags = [
@@ -36,8 +36,8 @@ title = "速度比較！レイマーチングvsレイキャスティング"
 
 | フラクタルの深度 | 1 | 2 | 3 | 4 |
 |:---|---:|---:|---:|---:|
-| レイマーチング | 8.85388 | 9.00077 | 9.14309 | 9.29724 |
-| レイキャスティング | 0.445493 | 0.466056 | 0.50258 | 0.602458 |
+| レイマーチング | 8.85388秒 ![レイマーチング 深度1](/images/posts/2022-08-08-raymarching-vs-raycasting/raymarching_i1_s256.png) | 9.00077秒 ![レイマーチング 深度2](/images/posts/2022-08-08-raymarching-vs-raycasting/raymarching_i2_s256.png) | 9.14309秒 ![レイマーチング 深度3](/images/posts/2022-08-08-raymarching-vs-raycasting/raymarching_i3_s256.png) | 9.29724秒 ![レイマーチング 深度4](/images/posts/2022-08-08-raymarching-vs-raycasting/raymarching_i4_s256.png) |
+| レイキャスティング | 0.445493秒 ![レイキャスティング 深度1](/images/posts/2022-08-08-raymarching-vs-raycasting/raycast_i1_s256.png) | 0.466056秒 ![レイキャスティング 深度2](/images/posts/2022-08-08-raymarching-vs-raycasting/raycast_i2_s256.png) | 0.50258秒 ![レイキャスティング 深度3](/images/posts/2022-08-08-raymarching-vs-raycasting/raycast_i3_s256.png) | 0.602458秒 ![レイキャスティング 深度4](/images/posts/2022-08-08-raymarching-vs-raycasting/raycast_i4_s256.png) |
 
 <!--more-->
 
@@ -72,7 +72,7 @@ title = "速度比較！レイマーチングvsレイキャスティング"
 
 ## レイマーチング
 
-レイマーチングは繰り返しの計算で数値的に距離関数で定義されたオブジェクトとの衝突判定をする手法で、Sphere Tracingとも呼ばれます。
+レイマーチングは繰り返しの計算で数値的な衝突判定の手法で、Sphere Tracingとも呼ばれます。
 
 - レイマーチングの最大ステップ回数（マーチングループのループ数）は100
 - Intersectionプログラム（CUDAの関数）としてレイマーチングを実装
@@ -89,11 +89,11 @@ title = "速度比較！レイマーチングvsレイキャスティング"
     - 詳細は[過去の記事](https://gam0022.net/blog/2018/06/08/houdini/)を参照
     - フラクタルの深度を指定可能にアップデート（ツイート参照）
 - Houdiniからobjで出力して自作のレンダラーで読み込み
-    - OptiX7ではobjのローダーが無かったので自作…
-- OptiX上では三角ポリゴンの集合として表現
+    - OptiX7.xではobjのローダーが無かったので自作…
 - OptiXのビルトインの機能で衝突判定
+    - OptiX上では三角ポリゴンの集合として表現
 - OptiXの機能でGAS（Geometry acceleration structure）を構築
-- **RTコアによるレイトレーシングのハードウェアアクセラレーションあり**
+    - **RTコアによるレイトレーシングのハードウェアアクセラレーションあり**
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">フラクタルの再帰回数を自由に増やせるようになった。<br>HoudiniのTOPs Feedback Loopの良い使用例ですね。 <a href="https://t.co/yTR60S5vgC">https://t.co/yTR60S5vgC</a> <a href="https://t.co/OifBfoTCFa">pic.twitter.com/OifBfoTCFa</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1556203400257503232?ref_src=twsrc%5Etfw">August 7, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -135,7 +135,7 @@ GASの構築は思ったより速いんですね。380万頂点でも0.01秒で�
 
 ## レンダリング結果
 
-レンダリング結果です。
+大きなサイズのレンダリング結果です。
 
 異なるアルゴリズムでモデリングしているので、ジオメトリーは完全一致ではありません。
 
