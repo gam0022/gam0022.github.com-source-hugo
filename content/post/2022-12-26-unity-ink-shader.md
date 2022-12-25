@@ -26,7 +26,10 @@ ShaderGraphの基本操作は解説しませんが、なるべく丁寧に説明
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">UnityのShaderGraphでインクシェーダーを試作<a href="https://twitter.com/hashtag/Unity3D?src=hash&amp;ref_src=twsrc%5Etfw">#Unity3D</a> <a href="https://twitter.com/hashtag/ShaderGraph?src=hash&amp;ref_src=twsrc%5Etfw">#ShaderGraph</a> <a href="https://t.co/PHxIkfnkiQ">pic.twitter.com/PHxIkfnkiQ</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1606141695724204032?ref_src=twsrc%5Etfw">December 23, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-- [GitHub](https://github.com/gam0022/ShaderPlaygroundURP/tree/main/Assets/ShaderPlaygroundURP/InkShader)
+[![インクシェーダー](/images/posts/2022-12-26-unity-ink-shader/ink-shader.gif)](/images/posts/2022-12-26-unity-ink-shader/ink-shader.gif)
+
+- Unityプロジェクト
+    - [github.com/gam0022/ShaderPlaygroundURP](https://github.com/gam0022/ShaderPlaygroundURP)
 - [WebGLデモ](https://gam0022.net/ShaderPlaygroundURP/)
     - WASDと右クリックのドラッグでカメラ操作
 
@@ -38,7 +41,8 @@ ShaderGraphの全体です。
 
 文字が小さくてすみません。
 
-※2回に分けてスクリーンショットを取ってMSペイントで結合しました。3回以上分割して撮影するのは手間がかかるので諦めました。いい感じにウィンドウのスクロール領域を含めて一発でスクリーンショットを撮る方法があれば教えてください。
+※2回に分けてスクリーンショットを撮影してMSペイントで手動結合しました。3回以上分割して撮影すればもっと高解像度にできるのですが、手間がかかるので諦めました。
+いい感じにウィンドウのスクロール領域を含めて一発でスクリーンショットを撮る方法があれば教えてください。
 
 [![ShaderGraph全体](/images/posts/2022-12-26-unity-ink-shader/shader-graph-all.png)](/images/posts/2022-12-26-unity-ink-shader/shader-graph-all.png)
 
