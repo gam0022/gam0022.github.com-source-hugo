@@ -96,7 +96,7 @@ Poly Havenのテクスチャは `Ambient Occlusion/Roughness/Metallic`（以下�
 
 非常にシンプルな処理ですが、意外にもそれなりにインクっぽく見えるのではないでしょうか？
 
-ShaderGraphのGradient Noiseはシェーダーでプロシージャル生成しているようでGPU負荷があるようでした。軽量化のためにテクスチャのサンプリングに置き換えた方がいいかもしれません。
+余談になりますが、ShaderGraphのGradient Noiseはシェーダーでプロシージャル生成しているのでGPU負荷も高いと思います。実用するなら軽量化のためにテクスチャのサンプリングに置き換えた方がいいかもしれません。
 
 [![インクの高さマップ用のノイズ生成](/images/posts/2022-12-26-unity-ink-shader/3-noise.png)](/images/posts/2022-12-26-unity-ink-shader/3-noise.png)
 
