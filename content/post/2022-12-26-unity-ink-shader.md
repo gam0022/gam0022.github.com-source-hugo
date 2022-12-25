@@ -3,7 +3,7 @@ draft = false
 tags = [
     "Unity", "Shader", "CG", "URP", "ShaderGraph", "入門", "初心者"
 ]
-title = "[Unity][ShaderGraph]インクシェーダーを作る"
+title = "UnityのShaderGraphでインクシェーダーを作る"
 slug = "unity-ink-shader"
 date = "2022-12-25T23:03:44+09:00"
 image = "/images/posts/2022-12-26-unity-ink-shader/main.png"
