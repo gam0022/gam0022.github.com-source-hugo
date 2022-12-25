@@ -28,6 +28,14 @@ ShaderGraphの基本操作は解説しませんが、なるべく丁寧に説明
 
 [![インクシェーダー](/images/posts/2022-12-26-unity-ink-shader/ink-shader.gif)](/images/posts/2022-12-26-unity-ink-shader/ink-shader.gif)
 
+色変更
+
+[![インクシェーダー 色変更](/images/posts/2022-12-26-unity-ink-shader/ink-shader-color.gif)](/images/posts/2022-12-26-unity-ink-shader/ink-shader-color.gif)
+
+しきい値の調整
+
+[![インクシェーダー しきい値の調整](/images/posts/2022-12-26-unity-ink-shader/ink-shader-threshold.gif)](/images/posts/2022-12-26-unity-ink-shader/ink-shader-threshold.gif)
+
 - Unityプロジェクト
     - [github.com/gam0022/ShaderPlaygroundURP](https://github.com/gam0022/ShaderPlaygroundURP)
 - [WebGLデモ](https://gam0022.net/ShaderPlaygroundURP/)
