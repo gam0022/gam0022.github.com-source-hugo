@@ -5,7 +5,7 @@ tags = [
 ]
 title = "UnityのShaderGraphでインクシェーダーを作る"
 slug = "unity-ink-shader"
-date = "2022-12-26T10:36:44+09:00"
+date = "2022-12-25T23:03:44+09:00"
 image = "/images/posts/2022-12-26-unity-ink-shader/main.png"
 toc = true
 math = false
