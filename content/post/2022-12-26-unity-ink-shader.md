@@ -47,12 +47,21 @@ ShaderGraphの基本操作は解説しませんが、なるべく丁寧に説明
 
 ShaderGraphの全体です。
 
+[![ShaderGraph全体](/images/posts/2022-12-26-unity-ink-shader/InkNoise.png)](/images/posts/2022-12-26-unity-ink-shader/InkNoise.png)
+
+ShaderGraphのスクロール領域を含めてキャプチャするために [Cyanilux/ShaderGraphToPNG](https://github.com/Cyanilux/ShaderGraphToPNG) というUnityのパッケージを利用しました。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">完璧なソリューションがありました。<br>Unity2021.3.15f1 + URP12.1.8 でも完璧に動作！<a href="https://t.co/3J2qsrye8s">https://t.co/3J2qsrye8s</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1607359807710978049?ref_src=twsrc%5Etfw">December 26, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!--
 文字が小さくてすみません。
 
 ※2回に分けてスクリーンショットを撮影してMSペイントで手動結合しました。3回以上分割して撮影すればもっと高解像度にできるのですが、手間がかかるので諦めました。
 いい感じにウィンドウのスクロール領域を含めて一発でスクリーンショットを撮る方法があれば教えてください。
 
 [![ShaderGraph全体](/images/posts/2022-12-26-unity-ink-shader/shader-graph-all.png)](/images/posts/2022-12-26-unity-ink-shader/shader-graph-all.png)
+-->
+
 
 ## 基本方針
 
