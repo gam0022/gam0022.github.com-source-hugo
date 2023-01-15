@@ -2,7 +2,7 @@
 title = "normalize.fmにゲスト出演しました"
 slug = "normalizefm"
 date = "2022-10-20T10:44:48+09:00"
-image = "/images/posts/2022-10-20-normalizefm/ogp-16_9.jpg"
+image = "/images/posts/2022-10-20-normalizefm/ogp-1920x1080.jpg"
 toc = true
 math = false
 draft = false
