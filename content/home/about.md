@@ -44,6 +44,7 @@ KLab（2015～）では、Unity製モバイルゲームの3Dグラフィック�
 - CEDEC 2020 [高品質かつ低負荷な3Dライブを実現するシェーダー開発 ～『ラブライブ！スクールアイドルフェスティバル ALL STARS』（スクスタ）の開発事例～](https://cedec.cesa.or.jp/2020/session/detail/s5e4e64530d6ab.html)（[発表資料](https://docs.google.com/presentation/d/e/2PACX-1vSLQNQyqfGCVsqcEuOJLFqvHpASQZ5UZhjAuWnS5C3tYSGWjpmGYmI9ZOkt36hGGe3mWYXqxJgjCCAz/pub?start=false&loop=false&delayms=3000&slide=id.ga37e29a62e_3_91)）
 - CEDEC 2020 [『ラブライブ！スクールアイドルフェスティバル ALL STARS』（スクスタ）のライブ演出制作秘話～超高品質な3Dライブ演出を表現するための制作概要とオリジナルTimelineツールについて](https://cedec.cesa.or.jp/2020/session/detail/s5e830d3830b9a)（[発表資料](https://www.klab.com/jp/blog/creative/2020/cedec2020.html)、[Social Game Info](https://gamebiz.jp/?p=275988)）
 - CEDEC＋KYUSHU 2021 ONLINE [シェーダーを活用した3Dライブ演出のアップデート ～『ラブライブ！スクールアイドルフェスティバル ALL STARS』（スクスタ）の開発事例～​](http://cedec-kyushu.jp/2021/session/07.html)（[発表資料](https://www.klab.com/jp/blog/tech/2021/cedec-kyushu-2021-online-3d.html)）
+- SYNC2022 [モバイル向け大量描画テクニック](https://events.unity3d.jp/sync/session/17/)（[発表資料 + 動画](https://learning.unity3d.jp/8860/)）
 
 ## 書籍の執筆（商業誌）
 

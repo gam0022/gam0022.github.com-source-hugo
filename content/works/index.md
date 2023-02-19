@@ -9,13 +9,40 @@ section = 100
 toc = true
 +++
 
-最終更新: 2020-05-10
+最終更新: 2023-02-19
 
 # Publications
 
 執筆した書籍を紹介します。
 
-## 2020年3月  KLab Tech Book Vol.6
+## 2021年6月 Unityゲーム プログラミング・バイブル 2nd Generation
+
+[![『Unityゲーム プログラミング・バイブル 2nd Generation』](/images/posts/2021-05-27-unity-bible2/Collage_Fotor.jpg)](/images/posts/2021-05-27-unity-bible2/Collage_Fotor.png)
+
+2021/6/29発売の[『Unityゲーム プログラミング・バイブル 2nd Generation』](https://amzn.to/3oe2agf)を執筆しました。
+
+37のトピックのうち、私は次の2つを担当しました。
+
+- レイマーチング：基礎から応用まで
+- Timelineによる映像制作
+
+関連記事
+
+- [『Unityゲーム プログラミング・バイブル 2nd Generation』のレイマーチングとTimelineの章を執筆しました | gam0022.net](/blog/2021/06/08/unity-bible2/)
+
+## 2020年9月 CGWORLD vol.266（2020年10月号）の「デモシーンを支えるプロシージャル技術」
+
+![CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました](/images/posts/2020-09-13-cgworld-vol266/Collage_Fotor.jpg)
+
+9/10（木）発売のCGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました。
+
+デモシーンの魅力や、64KB制限で映像作品を創るための3Dモデルやテクスチャのプロシージャル生成について解説しています。
+
+関連記事
+
+- [CGWORLD vol.266（2020年10月号）に「デモシーンを支えるプロシージャル技術」という記事を寄稿しました | gam0022.net](/blog/2020/09/13/cgworld-vol266/)
+
+## 2020年3月 KLab Tech Book Vol.6
 
 [<img alt="KLab Tech Book Vol.6" src="/images/works/tbf8.jpg" width="200px" class="right">](/images/works/tbf8.png)
 
