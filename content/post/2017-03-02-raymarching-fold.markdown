@@ -119,13 +119,20 @@ float dTree(vec3 p) {
 通常、フラクタル図形を表現するためには再帰関数が必要ですが、距離関数を用いればループで十分表現できるというのが興味深いポイントですね。
 たとえば、`dTree` の中には、sdBoxがたったの2回しか登場していません。再帰的に `foldX` を適用することで、Boxを無数に複製しています。
 
-# 回転のfold
+# ~~回転のfold~~ Polar Mod
 
-これまでは面に対するfoldを扱いましたが、特定の軸を中心に回転させたfoldも考えられます。
+- 2023-05-02 追記
+    - foldは境界が連続し、modは境界が分断するという違いがあるため、呼び方を区別するべきでした
+    - 詳しくgazさんの[SDF for raymarching (距離関数のスキル)](https://neort.io/product/bvcrf5s3p9f7gigeevf0)の記事を参照してください
+    - 「回転のfold」から「Polar Mod」に呼び方と関数名を訂正しました
 
-回転のfoldは[@gaziya5](https://twitter.com/gaziya5)さんの[DE used folding](https://www.shadertoy.com/view/Mlf3Wj)からお借りしました。
+foldとは別系統のテクニックになりますが、関連するテクニックとして `Polar Mod` を紹介します。
 
-dTreeの木のような形をうまく調整し、Z軸方向に6回転させるfoldを適用すると「Fusioned Bismuth」に登場した雪の結晶のような形状を得られます。
+通常のmod（ `opRep` ）ではXYZなどの移動に対するReputationとなりますが、Polar Mod（ `pmod` ）では回転に対してのReputationとなります。
+
+pmodの実装は[@gaziya5](https://twitter.com/gaziya5)さんの[DE used folding](https://www.shadertoy.com/view/Mlf3Wj)からお借りしました。
+
+dTreeの木のような形をうまく調整し、Z軸方向に360°を1/6ずつ回転させるpmodを適用すると「Fusioned Bismuth」に登場した雪の結晶のような形状を得られます。
 
 [![Fusioned Bismuth - 雪の結晶](/images/posts/2017-02-24-tdf2017/snow.png)](/images/posts/2017-02-24-tdf2017/snow.png)
 
@@ -136,7 +143,7 @@ mat2 rotate(in float a) {
 }
 
 // https://www.shadertoy.com/view/Mlf3Wj
-vec2 foldRotate(in vec2 p, in float s) {
+vec2 pmod(in vec2 p, in float s) {
     float a = PI / s - atan(p.x, p.y);
     float n = PI2 / s;
     a = floor(a / n) * n;
@@ -162,15 +169,15 @@ float dTree(vec3 p) {
 }
 
 float dSnowCrystal(inout vec3 p) {
-    p.xy = foldRotate(p.xy, 6.0);
+    p.xy = pmod(p.xy, 6.0);
     return dTree(p);
 }
 ```
 
-## 回転のfoldの別例
+## Polar Modの別例
 
-この `foldRotate` はUFO風の形状にも利用しています。
-たった4つのBoxに`mod` や `foldRotate` を適用しただけなのに、それなりに雰囲気を出すことができたと思っています。
+この `pmod` はUFO風の形状にも利用しています。
+たった4つのBoxに`mod` や `pmod` を適用しただけなのに、それなりに雰囲気を出すことができたと思っています。
 
 [![Fusioned Bismuth - UFO風の形状](/images/posts/2017-02-24-tdf2017/ufo.png)](/images/posts/2017-02-24-tdf2017/ufo.png)
 
@@ -205,7 +212,7 @@ float dUfo(inout vec3 p) {
     float t1 = floor(t);
     float t2 = t1 + easeInOutCubic(t - t1);
 
-    p.xz = foldRotate(p.xz, min(t2, 10.0));
+    p.xz = pmod(p.xz, min(t2, 10.0));
     p.z -= 0.5;
 
     float d = dWing(p);
