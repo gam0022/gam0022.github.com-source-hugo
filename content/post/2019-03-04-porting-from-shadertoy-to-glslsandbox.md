@@ -12,7 +12,10 @@ date = "2019-03-04T09:01:07+09:00"
 
 +++
 
-2021-11-16 backbufferとマウスの対応
+更新履歴
+
+- 2021-11-16 backbufferとマウスの対応
+- 2023-05-02 twigl(classic 300es)について追記
 
 [Shadertoy](https://www.shadertoy.com/)のコードを[GLSL Sandbox](http://glslsandbox.com/)に一発で移植するコードを思いつきました。
 
@@ -58,6 +61,37 @@ NEORTはGLSL Sandbox互換があるので、ご紹介した方法で一発でSha
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">NEORTはじめました⛩️<a href="https://twitter.com/hashtag/GLSL?src=hash&amp;ref_src=twsrc%5Etfw">#GLSL</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/acKyzwIU8S">https://t.co/acKyzwIU8S</a> <a href="https://t.co/1AqphUQ5jv">pic.twitter.com/1AqphUQ5jv</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1100564853985501184?ref_src=twsrc%5Etfw">2019年2月27日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Shadertoy → twigl (classic 300es)
+
+[SESSION](https://sessions.frontl1ne.net/) 2023のGLSL Graphics Compoでは[twigl](https://twigl.app/)が採用されたので、twigl対応をしました。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">&quot;Transcendental Cube&quot; <br><br>2nd place at GLSL Graphics Compo, <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> 2023 🥈<br><br>SESSIONS 2023のGLSL Graphics Compoで2位を勝ち取りました！ <a href="https://t.co/Ra2Y0Ccfpx">pic.twitter.com/Ra2Y0Ccfpx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1653096277184503808?ref_src=twsrc%5Etfw">May 1, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+```cpp
+// BEGIN: shadertoy porting template
+// https://gam0022.net/blog/2019/03/04/porting-from-shadertoy-to-glslsandbox/
+precision highp float;
+
+uniform vec2 resolution;
+uniform float time;
+uniform vec2 mouse;
+uniform sampler2D backbuffer;
+
+#define iResolution resolution
+#define iTime time
+#define iMouse (vec4(mouse, .5, .5) * resolution.xyxy)
+#define iChannel0 backbuffer
+
+void mainImage(out vec4 fragColor, vec2 fragCoord);
+out vec4 outColor;
+void main () {
+    vec4 col;
+    mainImage(col, gl_FragCoord.xy);
+    outColor = col;
+}
+// END: shadertoy porting template
+```
 
 ## 解説
 
