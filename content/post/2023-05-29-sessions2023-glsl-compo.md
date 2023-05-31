@@ -28,8 +28,9 @@ GLSL Graphics Compoのレギュレーションとして音楽は含められま�
 
 - [📺 YouTube](https://youtu.be/194E3UWj870)
 - [👁️ Shadertoy](https://www.shadertoy.com/view/dldGzj) ※高負荷のためRTX3080以上のGPU推奨
-- [🐦 Twitter](https://twitter.com/gam0022/status/1653096277184503808)
 - [📦 Pouet](https://www.pouet.net/prod.php?which=94339)
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">&quot;Transcendental Cube&quot; <br><br>2nd place at GLSL Graphics Compo, <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> 2023 🥈<br><br>SESSIONS 2023のGLSL Graphics Compoで2位を勝ち取りました！ <a href="https://t.co/Ra2Y0Ccfpx">pic.twitter.com/Ra2Y0Ccfpx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1653096277184503808?ref_src=twsrc%5Etfw">May 1, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <!--more-->
 
