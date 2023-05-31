@@ -4,7 +4,7 @@ draft = false
 tags = [
     "event", "CG", "レイマーチング", "GLSL", "SESSIONS", "TokyoDemoFest"
 ]
-title = "SESSIONS2023のGLSL Graphics Compoで準優勝しました（グラフィックス解説）"
+title = "SESSIONS 2023のGLSL Graphics Compoで準優勝しました（グラフィックス解説）"
 slug = "sessions2023-glsl-compo"
 date = "2023-05-31T06:49:24+09:00"
 image = "/images/posts/2023-05-29-sessions2023-glsl-compo/TranscendentalCube.jpg"
@@ -68,7 +68,7 @@ GLSLシェーダーを使用して、プログラミングのソースコード�
 
 ## WebGL2.0が利用可能に
 
-SESSIONS2023では、twiglの`classic (300 es)`モードが許可されたので、WebGL2.0の機能も利用できるようになりました！
+SESSIONS 2023では、twiglの`classic (300 es)`モードが許可されたので、WebGL2.0の機能も利用できるようになりました！
 
 TokyoDemoFest2021ではGLSL Snadboxがレギュレーションとなっており、WebGL1.0の機能しか使えないという制約があったのですが、今回から配列やビット演算などが利用できるようになりました。
 
@@ -400,23 +400,33 @@ NEORT++の展示室の環境では思ったような結果にはならなかっ�
 
 作品のグラフィックス解説からはテーマが外れてしまいますが、最後にSESSIONSの振り返りを記しておきます。
 
-約5年ぶりのオフライン開催ということで、大勢でデモを鑑賞したり、交流したりと、懐かしくも楽しい時間を過ごせました。
+## オフラインパーティーの魅力
+
+TokyoDemoFest2018年以来の約5年ぶりのオフライン開催のデモパーティーということで、大勢でデモを鑑賞したり、交流したりと、懐かしくも楽しい時間を過ごせました。
 
 オンラインのデモパーティーも素晴らしいものですが、会場の雰囲気や臨場感を直接感じられる点で、やはりオフラインイベントには特別な魅力があると感じています。
 
 実際に参加者と話をしたり、作品についての感想やアイデアを交換したりすることで、新たな視点やインスピレーションを得ることができました。
 
-SESSIONSは2023年から新たにスタートした日本のデモパーティです。当日の雰囲気は、アフタームービーからよく伝わってきます。
+## SESSIONSについて
 
-<div class="movie-wrap">
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/Xyf5op4-hSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+SESSIONSは2023年から新たにスタートしたデモパーティーです。
 
-SESSIONSは純粋なデモパーティーとは異なり、デモシーンの枠に囚われないさまざまなクリエイティブコーディングの作品を募集しています。
+実は、厳密にはデモパーティーではなく、デモパーティのようなイベントだそうです。
+
+純粋なデモパーティーであるTokyoDemoFestとは異なり、デモシーンの枠に囚われず、さまざまなカテゴリーのクリエイティブ作品を募集する「パーティ＆コンペティションイベント」として位置づけられています。
+
+<blockquote class="twitter-tweet"><p lang="qme" dir="ltr"><a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> <a href="https://t.co/aSwiTfSjYH">pic.twitter.com/aSwiTfSjYH</a></p>&mdash; 蘇摩清良 (@soma_arc) <a href="https://twitter.com/soma_arc/status/1661693568975794178?ref_src=twsrc%5Etfw">May 25, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+当日の雰囲気は、アフタームービーからよく伝わってきます。
 
 実際に今回のSESSIONSでも、デモシーンに詳しくない参加者も楽しんで参加している姿を目にすることができました。
 
 学生や新社会人の方の参加も多く見られ、これからのSESSIONSの展開が楽しみです！
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/Xyf5op4-hSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ## C4 LANレポート
 
