@@ -32,6 +32,8 @@ GLSL Graphics Compoのレギュレーションとして音楽は含められま�
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">&quot;Transcendental Cube&quot; <br><br>2nd place at GLSL Graphics Compo, <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> 2023 🥈<br><br>SESSIONS 2023のGLSL Graphics Compoで2位を勝ち取りました！ <a href="https://t.co/Ra2Y0Ccfpx">pic.twitter.com/Ra2Y0Ccfpx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1653096277184503808?ref_src=twsrc%5Etfw">May 1, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">GLSL Graphics Compo の2位でした！<br><br> <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> <a href="https://t.co/ihD5DfiNz2">pic.twitter.com/ihD5DfiNz2</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1652527603247616001?ref_src=twsrc%5Etfw">April 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <!--more-->
 
 5月25日に[SESSIONS 2023 AFTER PARTY＠teamLab Office](https://teamlab.connpass.com/event/282028/)が開催され、そこで本作品の技術的な解説を行いました。
