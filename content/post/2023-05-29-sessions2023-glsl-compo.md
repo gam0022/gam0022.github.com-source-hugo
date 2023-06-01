@@ -413,9 +413,10 @@ TokyoDemoFest2018年以来の約5年ぶりのオフライン開催のデモパ�
 
 SESSIONSは2023年から新たにスタートしたデモパーティーです。
 
-実は、厳密にはデモパーティーではなく、デモパーティのようなイベントだそうです。
+> デモパーティーとはコンピューターを用いたプログラミングやアートに興味のある人々が日本中・世界中から一堂に会し、デモ作品のコンペティション (Compo) やセミナーなどが行われるイベントです。 
+> パーティという名の通り、勉強会のように堅苦しい感じではなく、みんな賑やかに作品の制作過程を見せ合ったりと参加者同士でのコミュニケーションが盛んに行われます。
 
-純粋なデモパーティーであるTokyoDemoFestとは異なり、デモシーンの枠に囚われず、さまざまなカテゴリーのクリエイティブ作品を募集する「パーティ＆コンペティションイベント」として位置づけられています。
+SESSIONSの前身である[TokyoDemoFest](https://tokyodemofest.jp/)は純粋なデモパーティーに属するものでしたが、SESSIONSはそれとは異なり、デモシーンの枠に囚われず、さまざまなカテゴリーのクリエイティブ作品を募集する「パーティ＆コンペティションイベント」として位置づけられています。
 
 <blockquote class="twitter-tweet"><p lang="qme" dir="ltr"><a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> <a href="https://t.co/aSwiTfSjYH">pic.twitter.com/aSwiTfSjYH</a></p>&mdash; 蘇摩清良 (@soma_arc) <a href="https://twitter.com/soma_arc/status/1661693568975794178?ref_src=twsrc%5Etfw">May 25, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -429,13 +430,16 @@ SESSIONSは2023年から新たにスタートしたデモパーティーです�
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/Xyf5op4-hSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-## C4 LANレポート
+## C4 LANとのコラボレーション
 
-SESSIONS 2023はC4 LAN（LANパーティー）の会場内で開催されました。C4 LAN全体の雰囲気を掴む参考情報として、レポートを紹介します。
-SESSIONSについても言及されているので、補完情報になると思います。
+今回のSESSIONSは、[C4 LAN](https://c4-lan.com/)というLANパーティーの会場内で開催されました。
+
+C4 LAN全体の様子は、以下のレポートをご覧ください。
 
 - [ゲームイベントとしての認知拡大を目指し、変化を迎えた「C4 LAN 2023 SPRING」レポート | マイナビニュース](https://news.mynavi.jp/article/20230505-2672489/)
 - [【C4 LAN】大量のゲーマーがゲーム機持参で勝手に遊ぶだけ。まあまあどうかしてるのに心地いい。ぬるま湯みたいな闇鍋イベントの生存戦略 | ゲーム・エンタメ最新情報のファミ通.com](https://www.famitsu.com/news/202305/12302398.html)
+
+デモパーティーの起源は海外のLANパーティーだと言われていますので、今回C4 LAN内で開催されたことに運命的なものを感じました。SESSIONSは会場エントランスのすぐそばでしたので、デモパーティーをあまり知らないC4 LANの参加者にも時々立ち寄っていただくことがありました。
 
 ## ハイレベルだったGLSL Graphics Compo
 
