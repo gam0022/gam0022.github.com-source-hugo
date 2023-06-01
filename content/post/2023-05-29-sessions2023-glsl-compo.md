@@ -424,7 +424,7 @@ SESSIONSの前身である[TokyoDemoFest](https://tokyodemofest.jp/)は純粋な
 
 実際に今回のSESSIONSでも、デモシーンに詳しくない参加者も楽しんで参加している姿を目にすることができました。
 
-学生や新社会人の方の参加も多く見られ、これからのSESSIONSの展開が楽しみです！
+学生や新社会人の若い世代からの参加も多く見られ、これからのSESSIONSの展開が楽しみです！
 
 <div class="movie-wrap">
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/Xyf5op4-hSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
