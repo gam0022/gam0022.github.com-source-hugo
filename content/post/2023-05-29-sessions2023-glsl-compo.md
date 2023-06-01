@@ -457,7 +457,7 @@ C4 LAN全体の様子は、以下のレポートをご覧ください。
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/F-CbQTcHNrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-## 参加者レポート
+# 参加者レポート
 
 SESSIONS 2023の参加者のレポートや作品の解説などをまとめました。発見次第、随時追加します。
 

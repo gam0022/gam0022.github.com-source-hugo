@@ -44,6 +44,6 @@ WebGLの普及により、Web系のエンジニアもシェーダを触ること
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/GLSLTech?src=hash">#GLSLTech</a> っていうか今公開しちゃうか。最後の私の最適化の話、スライドこちらです <a href="https://t.co/kDI60iUeqe">https://t.co/kDI60iUeqe</a></p>&mdash; エマ・デュランダル (@emadurandal) <a href="https://twitter.com/emadurandal/status/698858495567728641">2016, 2月 14</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-個人的には @emadurandal さんの「GLSL最適化、 そして…」がもっとも勉強になりました。
+個人的には @emadurandal さんの「GLSL最適化、そして…」がもっとも勉強になりました。
 
 主催者の doxas さんのスライドが見つかりませんな…
