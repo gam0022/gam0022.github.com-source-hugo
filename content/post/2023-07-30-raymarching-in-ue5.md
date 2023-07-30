@@ -5,7 +5,7 @@ tags = [
 title = "Object Space Raymarching in Unreal Engine 5.2"
 slug = "raymarching-in-ue5"
 date = "2023-07-31T10:00:00+09:00"
-image = "/images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v4.jpg"
+image = "/images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.jpg"
 toc = true
 math = false
 draft = false
@@ -16,6 +16,8 @@ draft = false
 
 - あまりレイトレに関連しないテーマですが、レイは飛ばしているので大目に見てください
 - レイトレ合宿ではレンダラーを自作する必要があるため、ゲームエンジンは使えません
+
+[![Object Space Raymarching in Unreal Engine 5.2](/images/posts/2023-07-30-raymarching-in-ue5//images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.jpg)](/images/posts/2023-07-30-raymarching-in-ue5//images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.png)
 
 # はじめに
 
