@@ -386,7 +386,7 @@ Material全体のDetailsは以下のように設定します。
 
 次のようなノードでカメラのレイを生成しています。
 
-[![Materialノード解説：カメラのレイの生成](/images/posts/2023-07-30-raymarching-in-ue5/material_camera.png)](/images/posts/2023-07-30-raymarching-in-ue5/material_camera.png)
+[![Materialノード解説：カメラのレイの生成](/images/posts/2023-07-30-raymarching-in-ue5/material_camera_text.png)](/images/posts/2023-07-30-raymarching-in-ue5/material_camera_text.png)
 
 レイは2つの3次元ベクトルで定義されます。
 
@@ -428,6 +428,23 @@ Codeには `isInsideCube(localPos)` と指定しています。これは`Raymarc
 
 [![カメラがレイマーチングの空間の内部に潜った場合](/images/posts/2023-07-30-raymarching-in-ue5/camera_inside_v1.gif)](/images/posts/2023-07-30-raymarching-in-ue5/camera_inside_v1.gif)
 
+## Materialノード解説：Resultノードへの出力
+
+RaymarchingのCustomノードの出力を、それぞれResultノードに接続します。
+
+これによりレイマーチングの衝突判定の結果をライティング計算に反映させます。
+
+- hit
+    - レイマーチングの衝突判定の結果（0なら衝突しなかった、1なら衝突した）です
+    - Resultノードの `Opacity Mask` に接続することで、レイマーチングがヒットしなかったPixelをdiscardできます
+- normal
+    - ローカルスペースの法線です
+    - ワールドスペースに変換（TransformVector）してから、Resultノードの `Normal` に接続します
+- ao
+    - [0-1]のパラメーターなので、そのままResultノードの `Ambient Occlusion` に接続します
+
+[![Materialノード解説：Resultノードへの出力](/images/posts/2023-07-30-raymarching-in-ue5/material_raymarching_result_text.png)](/images/posts/2023-07-30-raymarching-in-ue5/material_raymarching_result_text.png)
+
 ## Materialノード解説：前後関係の解決（Pixel Depth Offsetの計算）
 
 他のオブジェクトと重なった場合でも、前後関係を正しく解決するための工夫について説明します。
@@ -440,11 +457,11 @@ Codeには `isInsideCube(localPos)` と指定しています。これは`Raymarc
 
 UEのMaterialではDepthBufferを直接書き込むことはできませんが、ワールド座標でのDepthの押し込み距離から、Pixel Depth Offsetを計算することで前後関係を解決しています。
 
-[![Materialノード解説：前後関係の解決（Pixel Depth Offsetの計算）](/images/posts/2023-07-30-raymarching-in-ue5/material_pixel_depth_offset.png)](/images/posts/2023-07-30-raymarching-in-ue5/material_pixel_depth_offset.png)
+[![Materialノード解説：前後関係の解決（Pixel Depth Offsetの計算）](/images/posts/2023-07-30-raymarching-in-ue5/material_pixel_depth_offset_text.png)](/images/posts/2023-07-30-raymarching-in-ue5/material_pixel_depth_offset_text.png)
 
 Pixel Depth Offsetは、ワールド空間でのオフセット距離を計算する必要があります。したがって、Raymarchingの衝突点（hit）をTransform Positionノードを使用してワールド座標に変換し、Absolute World Positionとの差分（Subtract）を計算し、その距離（Length）を計算しています。
 
-Pixel Depth Offsetでは、カメラの奥方向にのみオフセットすることができます。逆に手前にオフセットさせることはできません。この制約は、パフォーマンスの向上を目的としています。
+Pixel Depth Offsetでは、カメラの奥方向にのみオフセットできます。逆に手前にオフセットさせることはできません。この制約は、パフォーマンスの向上を目的としています。
 
 - [[UE4] Pixel Depth Offsetは何故画面奥にしか行かないのかまた本当に重たいのかどうか問題 - Qiita](https://qiita.com/EGJ-Nori_Shinoyama/items/42cb29e95eca601250db)
 
