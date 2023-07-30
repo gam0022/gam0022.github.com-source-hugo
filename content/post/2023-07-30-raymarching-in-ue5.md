@@ -17,7 +17,7 @@ draft = false
 - あまりレイトレに関連しないテーマですが、レイは飛ばしているので大目に見てください
 - レイトレ合宿ではレンダラーを自作する必要があるため、ゲームエンジンは使えません
 
-[![Object Space Raymarching in Unreal Engine 5.2](/images/posts/2023-07-30-raymarching-in-ue5//images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.jpg)](/images/posts/2023-07-30-raymarching-in-ue5//images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.png)
+[![Object Space Raymarching in Unreal Engine 5.2](/images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.jpg)](/images/posts/2023-07-30-raymarching-in-ue5/RaymarchingInUE5_thumbnail_v7.png)
 
 # はじめに
 
