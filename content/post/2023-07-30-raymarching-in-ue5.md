@@ -25,6 +25,10 @@ Unreal Engine 5.2上でオブジェクトスペースのレイマーチングを
 
 レイマーチングをノードだけで実装するのは大変なので、MaterialのCustomノードを用いて複雑な処理はHLSLのコードで実装しました。
 
+UE（Unreal Engine）のプロジェクトはGitHubに公開しています。
+
+- [github.com/gam0022/RaymarchingInUE5/](https://github.com/gam0022/RaymarchingInUE5/)
+
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Object Space Raymarching in Unreal Engine 5.2<a href="https://twitter.com/hashtag/UE5?src=hash&amp;ref_src=twsrc%5Etfw">#UE5</a> <a href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> <a href="https://twitter.com/hashtag/UnrealEngine5?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine5</a> <a href="https://twitter.com/hashtag/Shader?src=hash&amp;ref_src=twsrc%5Etfw">#Shader</a> <a href="https://t.co/42n2W87HnJ">pic.twitter.com/42n2W87HnJ</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1684596333209075712?ref_src=twsrc%5Etfw">July 27, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Randomization of glowing animation borders<a href="https://twitter.com/hashtag/UE5?src=hash&amp;ref_src=twsrc%5Etfw">#UE5</a> <a href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> <a href="https://twitter.com/hashtag/UnrealEngine5?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine5</a> <a href="https://twitter.com/hashtag/Shader?src=hash&amp;ref_src=twsrc%5Etfw">#Shader</a> <a href="https://t.co/FvLbVtE9Q3">pic.twitter.com/FvLbVtE9Q3</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1685583942920089600?ref_src=twsrc%5Etfw">July 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -36,7 +40,7 @@ Unreal Engine 5.2上でオブジェクトスペースのレイマーチングを
 この記事は以下の読者を対象としています。
 
 - 1週間前の自分
-- レイマーチングやシェーダーの経験はあるが、UE（Unreal Engin）は初心者
+- レイマーチングやシェーダーの実装経験はあるが、UEは初心者の方
 - UEのカスタムシェーダーやMaterial Editorに興味がある方
 - UE上でノードでは難しい複雑なシェーダーを実装してみたい人
 
