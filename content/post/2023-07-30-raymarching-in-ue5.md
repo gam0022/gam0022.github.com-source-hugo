@@ -399,7 +399,7 @@ Material全体のDetailsは以下のように設定します。
 
 カメラの位置と、描画しようとしているSurfaceの座標（Absolute World Position）の差分（Subtract）から計算できます。
 
-最後にTransform Vectorノードでワールドスペースからローカルスペースに変換しています。
+正規化（Normalize）してから、Transform Vectorノードでワールドスペースからローカルスペースに変換しています。
 
 今回はオブジェクトスペースのレイマーチングのため、レイマーチングのCustomノードに入力する位置や向きはすべてローカルスペースに変換する必要があります。
 
