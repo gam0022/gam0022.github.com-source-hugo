@@ -499,3 +499,5 @@ UE4やUnity上でのレイマーチング実装の前例を以下に紹介しま
     - 当時は Include File Paths が存在しなかったため、Customノードの関数定義に対するハックが必要であったことなどに触れています。
 - [Unity HDRPのLitシェーダーを改造してレイマーチングする（GBuffer編） - なんかやる](https://nanka.hateblo.jp/entry/2019/08/27/004905)
     - Unity HDRP上でのレイマーチング実装の取り組み
+- [Unity でレイマーチングするシェーダを簡単に作成できるツールを作ってみた](https://tips.hecomi.com/entry/2016/10/11/225541)
+    - Unity ビルドインRP・[URP](https://tips.hecomi.com/entry/2022/05/31/003815)上でのレイマーチングの実装の取り組み
