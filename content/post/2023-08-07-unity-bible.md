@@ -48,7 +48,7 @@ slug = "unity-bible"
 
 > SDユニティちゃん ©Unity Technologies Japan/UCL
 
-このセクションでは初心者向けの基本的な使い方から、Custom Functionなどの発展的なテクニックまで幅広く学ぶことができます。
+このセクションでは初心者向けの基本的な使い方から、Custom Functionなどの発展的なテーマまで幅広く扱いました。
 
 Shader Graphを使う上で覚えおきたい重要なポイントをピックアップし、30ページにわたって丁寧に解説しています。
 
