@@ -44,7 +44,7 @@ slug = "unity-bible"
 
 10のテーマのうち、「Shader Graphの基本操作から発展的なテクニックまで」というセクションを私が担当しました。
 
-[![Shader Graphの基本操作から発展的なテクニックまで](/images/posts/2023-08-07-unity-bible/Collage2.png)](/images/posts/2023-08-07-unity-bible/Collage2.png)
+[![Shader Graphの基本操作から発展的なテクニックまで](/images/posts/2023-08-07-unity-bible/Collage3.png)](/images/posts/2023-08-07-unity-bible/Collage3.png)
 
 > SDユニティちゃん ©Unity Technologies Japan/UCL
 
