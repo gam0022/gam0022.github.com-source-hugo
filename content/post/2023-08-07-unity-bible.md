@@ -72,9 +72,13 @@ Shader Graphを使う上で覚えおきたい重要なポイントをピック�
 - このセクションのまとめと次のステップ
     - シェーダーとデモシーン
 
-Shader Graphの各機能をバランスよくマスターするための、5つの小規模なサンプルを用意しました。近日中にサンプルはGitHubで公開予定です。
+Shader Graphの各機能をバランスよくマスターするための、5つの小規模なサンプルを用意しました。
 
-なるべく複雑にならないようにシンプルに保ちながらも、それなりの見栄えになるサンプルを目指しました。
+（2023-08-14追記）サンプルコードをGitHubで公開しました。
+
+- [github.com/gam0022/UnityBibleR5Summer-ShaderGraphTutorial](https://github.com/gam0022/UnityBibleR5Summer-ShaderGraphTutorial)
+
+なるべく複雑にならないようにシンプルに保ちながらも、そこそこの見栄えのするサンプルを目指しました。
 
 TIPSでは「Ridirect Node」「BackboardのCategory機能」「Group Selection」「Sub Graph」など覚えておくと作業効率を向上できる機能の使い方なども紹介しました。
 
