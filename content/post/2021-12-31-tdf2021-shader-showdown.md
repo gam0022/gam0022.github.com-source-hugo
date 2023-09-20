@@ -56,7 +56,7 @@ Bonzomaticはシェーダーのライブコーディング専用のアプリで�
 
 今回のTDFのShader Showdownでライブコーディングした作品を簡単に解説します。
 
-TDFのShader Showdownの全作品は[livecode.demozoo.org](https://livecode.demozoo.org/party_series/174.html)にもアーカイブされています。
+TDFのShader Showdownの全作品は[livecode.demozoo.org](https://livecode.demozoo.org/event/2021_12_11_shader_showdown_tokyo_demofest.html)にもアーカイブされています。
 
 ## Lightning Tunnel | Quarter-Final
 
