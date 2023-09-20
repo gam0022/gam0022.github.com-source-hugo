@@ -96,7 +96,7 @@
   $(window).load(function(){
 
     // Enable smooth scrolling with mouse wheel
-    smoothScroll(1.3, 220);
+    // smoothScroll(1.3, 220);
 
     // When accessing homepage from another page and `#top` hash is set, show top of page (no hash).
     if (window.location.hash == "#top") {
