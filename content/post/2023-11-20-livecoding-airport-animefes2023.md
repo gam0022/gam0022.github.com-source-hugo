@@ -12,6 +12,10 @@ math = false
 
 +++
 
+# 更新履歴
+
+- 2023-12-29 YouTube動画を埋め込みました
+
 # はじめに
 
 11月2日～11月6日に開催された[第10回新千歳空港国際アニメーション映画祭](https://airport-anifes.jp/)でデモシーンの上映とGLSLのシェーダーライブコーディングをしました。
@@ -28,9 +32,18 @@ math = false
 1つ目のプログラムでは、[@FL1NE](https://twitter.com/FL1NE)さんがデモシーンが生まれた歴史であったり、テクニカルクリエーションやそのイベントであるSESSIONSの説明を行いました。
 デモシーンの歴史について網羅されている資料は少なく、とても貴重な発表だと感じました。
 
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/1hOYpema_fg?si=UlFrrGRWBY1NzOod" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 2つ目のプログラムでは、前半は@FL1NEさんが司会を務めながら映画館で国内外のデモシーンの上映を行い、後半は私と[@Renardealer](https://twitter.com/Renardealer)さんの2人でGLSLのシェーダーライブコーディングを行いました。
 映画館という超大画面＋最高の音響でのライブコーディングは本当に楽しかったです！！
 音楽も[@himazin917](https://twitter.com/himazin917)さんのSonic Piによるライブコーディングの演奏でした。
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/B_Yst6SSVn0?si=Hzpq6Lqb6ulePhmy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 
 # デモシーン上映
 
@@ -48,6 +61,7 @@ PCデモから64K Introや4K Introまで幅広くセレクトしました。
 2nd Stage BOSSなど個人的に大好きなデモも映画館で見られました！
 
 ![映画館で上映された2nd Stage BOSS](/images/posts/2023-11-20-livecoding-airport-animefes2023/C20231104_0193.MP4_snapshot_46.17.407.jpg)
+
 # GLSLライブコーディング
 
 Renardと2人でBonzomaticというライブコーディング用のエディターをつかったGLSLライブコーディングを行いました。
