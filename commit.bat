@@ -1,5 +1,5 @@
 :: コミットメッセージ
-set msg="Build %date% %time%"
+set msg="Commit %date% %time%"
 
 :: ソースをコミット
 git add .
