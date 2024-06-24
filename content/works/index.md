@@ -9,11 +9,21 @@ section = 100
 toc = true
 +++
 
-最終更新: 2023-02-19
+最終更新: 2024-06-24
 
 # Publications
 
 執筆した書籍を紹介します。
+
+## 2023年8月 Unityバイブル R5夏号
+
+[![『Unityバイブル R5夏号』](/images/posts/2023-08-07-unity-bible/thumbnail.jpg)](/images/posts/2023-08-07-unity-bible/thumbnail.png)
+
+2023/8/29発売の[『Unityバイブル R5夏号』](https://amzn.to/3QzV4me)のSECTION 01「Shader Graphの基本操作から発展的なテクニックまで」を執筆しました。
+
+関連記事
+
+- [『Unityバイブル R5夏号』の「Shader Graphの基本操作から発展的なテクニックまで」を執筆しました](/blog/2023/08/07/unity-bible/)
 
 ## 2021年6月 Unityゲーム プログラミング・バイブル 2nd Generation
 
@@ -240,6 +250,9 @@ ReflectionProbeによって「レイマーチングで動的に生成したモ�
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">uRaymarchingとReflectionProbeによる反射と組み合わせる検証<br>中<br><br>毎フレームCubemapを生成するくらいならレイトレで反射を計算したほうが速いと思っていたが、この例ならCubemapの解像度は16x16でも十分だし、Cubemapの方がポリゴンとの混在が容易なので、現実的な方法だと思う。 <a href="https://t.co/sSX7WmVCEd">pic.twitter.com/sSX7WmVCEd</a></p>&mdash; がむ🌷🌴 (@gam0022) <a href="https://twitter.com/gam0022/status/1003274796895895554?ref_src=twsrc%5Etfw">2018年6月3日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
+<!--
+
 ## 2017 uRaymarchingとTimelineによる映像作品
 
 「レイマーチングで動的に生成したモデル」と「ポリゴンメッシュのモデル」を混在させた作品です。 ロボットは通常の3Dモデルですが、床や柱のモデルはレイマーチングでプロシージャルに生成しました。
@@ -251,13 +264,94 @@ ReflectionProbeによって「レイマーチングで動的に生成したモ�
 
 - [Unityでメガデモ制作に挑戦（uRaymarchingとTimelineを試す） | gam0022.net](/blog/2017/12/25/unity-demoscene/)
 
+-->
+
+# GLSL作品
+
+GLSL Graphics CompoなどGLSL作品をまとめます。
+
+## TDF 16ms #0（2023）GLSL Graphics Compo 3位
+
+2023年10月22日にオンライン（YouTube配信）で開催された[TDF 16ms #0](https://16ms.tokyodemofest.jp/)に参加し、GLSL Graphics Compo部門で3位をいただきました。
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/B4ZirkFOdZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+- [TDF 16ms #0（2023）のGLSL Graphics Compoで3位入賞しました](/blog/2023/10/30/tdf16ms0/)
+
+## SESSIONS 2023 GLSL Graphics Compo 2位
+
+2023年4月28日～30日にツインメッセ静岡で開催された[SESSIONS in C4 LAN 2023 SPRING](https://sessions.frontl1ne.net/)に参加し、GLSL Graphics Compo部門で2位をいただきました。
+
+作品のタイトルは『Transcendental Cube』で、シンプルな立方体が複雑なジオメトリーに変形していく非現実的な様子を、写実的で迫力ある映像で表現することをコンセプトにしました。
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/194E3UWj870" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+- [SESSIONS 2023のGLSL Graphics Compoで準優勝しました（グラフィックス解説）](/blog/2023/05/31/sessions2023-glsl-compo/)
+
+## Tokyo Demo Fest 2021 GLSL Graphics Compo 1位
+
+12月11日～12日にオンラインで開催された[Tokyo Demo Fest 2021](https://tokyodemofest.jp/)に参加し、GLSL Graphics Compo部門で1位をいただきました。
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/_F0Pxq7TKqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+- [Tokyo Demo Fest 2021のGLSL Graphics Compo優勝作品の解説](/blog/2021/12/20/tdf2021-glsl/)
+
+# シェーダーライブコーディング
+
+GLSLなどを用いたシェーダーライブコーディングの実績をまとめます。demozooにもアーカイブがまとめられています。
+
+- [Gam0022 ◈ livecode.demozoo.org](https://livecode.demozoo.org/performer/Gam0022.html#mc)
+
+## 2023年 第10回新千歳空港国際アニメーション映画祭
+
+2023年の11月2日～11月6日に開催された[第10回新千歳空港国際アニメーション映画祭](https://airport-anifes.jp/)でデモシーンの上映とGLSLのシェーダーライブコーディング（エキシビションマッチ）をしました。
+
+![GLSLライブコーディング@第10回新千歳空港国際アニメーション映画祭](/images/posts/2023-11-20-livecoding-airport-animefes2023/C20231104_0197.MP4_snapshot_17.56.475.jpg)
+
+- [映画館でGLSLライブコーディングをしました（第10回新千歳空港国際アニメーション映画祭）](/blog/2023/11/20/livecoding-airport-animefes2023/)
+
+## 2021年 Tokyo Demo Fest 2021 Shader Showdown
+
+12月11日～12日にオンラインで開催された[Tokyo Demo Fest 2021](https://tokyodemofest.jp/)のShader Showdownに競技者として参加しました。
+
+[![Collage_Fotor_v3](/images/posts/2021-12-31-tdf2021-shader-showdown/Collage_Fotor_v3.jpg)](/images/posts/2021-12-31-tdf2021-shader-showdown/Collage_Fotor_v3.png)
+
+- [Tokyo Demo Fest 2021のShader Showdownに参加しました](/blog/2021/12/31/tdf2021-shader-showdown/)
+
+## 2019年 近未来教育フォーラム
+
+2019/11/28にデジタルハリウッド大学で開催された[近未来教育フォーラム](https://www.dhw.co.jp/forum/program.html)の
+「The Real Time Live & Reception リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類」というイベントに登壇しました。
+
+[@FL1NE](https://twitter.com/FL1NE)さんと一緒にデモシーンについて話しました。
+私は簡単なシェーダーライブコーディングをしながらプログラミングによる形状のモデリングについて解説しました。
+
+[![シェーダーライブコーディング（完成）](/images/posts/2019-11-29-dhw/live_coding.jpg)](https://twitter.com/songofsaya_/status/1199999036964474886)
+
+- [近未来教育フォーラム2019でシェーダーライブコーディングをしました](/blog/2019/11/29/dhw/)
+
+## 2018年 TokyoDemoFest 2018 シェーダーコーディングバトル
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーライブコーディングバトルの優勝作品です！<br>ありがとうございました！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://twitter.com/hashtag/tdf2018?src=hash&amp;ref_src=twsrc%5Etfw">#tdf2018</a><a href="https://t.co/MJwbIWFOMl">https://t.co/MJwbIWFOMl</a> <a href="https://t.co/LVr2LYvUgi">pic.twitter.com/LVr2LYvUgi</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1068782247711465472?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Tokyo Demo Fest 2018のシェーダーコーディングバトルに参加しました。
+
+- [GLSL Compoに役立つ！GLSL Sandbox互換のVSCode拡張『Shader Toy』の紹介 | gam0022.net](/blog/2018/12/24/vscode-glslsandbox/#ライブコーディングバトルで優勝できた)
+
 # WebGL
 
 WebGLで作成した映像作品と活動を紹介します。
 
 一部の作品は [gam0022.net/webgl/](http://gam0022.net/webgl/) よりブラウザ上で実行できます。
 
-## 2020 RE: SIMULATED
+## 2020年 RE: SIMULATED
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> の PC 64K Intro にて『RE: SIMULATED』という作品を発表して優勝しました！<br><br>64KBのファイル容量制限のある部門です。<br>映像: <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> / 音楽: <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> の担当で制作しました。<br><br>We won the PC 64K Intro at <a href="https://twitter.com/hashtag/Revision2020?src=hash&amp;ref_src=twsrc%5Etfw">#Revision2020</a> ! <br>RE: SIMULATED by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/sadakkey?ref_src=twsrc%5Etfw">@sadakkey</a> <a href="https://t.co/wp5koGJFKf">pic.twitter.com/wp5koGJFKf</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1249658268319768576?ref_src=twsrc%5Etfw">April 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -274,23 +368,12 @@ WebGL / WebAudio による64K Introなので、ブラウザ上で動作します
 - [YouTube](https://youtu.be/tirAdWbceak)
 - [GitHub](https://github.com/gam0022/resimulated)
 
-## 2019 Dot Matrix PostProcessing
+## 2019年 Dot Matrix PostProcessing
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Posted on <a href="https://twitter.com/hashtag/Shadertoy?src=hash&amp;ref_src=twsrc%5Etfw">#Shadertoy</a>: &quot;Dot Matrix PostProcessing&quot;<br>This is a 2D only shader work.<a href="https://t.co/xCi3jyL9WG">https://t.co/xCi3jyL9WG</a><a href="https://twitter.com/hashtag/glsl?src=hash&amp;ref_src=twsrc%5Etfw">#glsl</a> <a href="https://twitter.com/hashtag/raymarching?src=hash&amp;ref_src=twsrc%5Etfw">#raymarching</a> <a href="https://t.co/PNlZ0VuSMs">pic.twitter.com/PNlZ0VuSMs</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1122521979473371137?ref_src=twsrc%5Etfw">2019年4月28日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## 2018 シェーダーコーディングバトル優勝
-
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">シェーダーライブコーディングバトルの優勝作品です！<br>ありがとうございました！<a href="https://twitter.com/hashtag/TokyoDemoFest?src=hash&amp;ref_src=twsrc%5Etfw">#TokyoDemoFest</a> <a href="https://twitter.com/hashtag/tdf2018?src=hash&amp;ref_src=twsrc%5Etfw">#tdf2018</a><a href="https://t.co/MJwbIWFOMl">https://t.co/MJwbIWFOMl</a> <a href="https://t.co/LVr2LYvUgi">pic.twitter.com/LVr2LYvUgi</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1068782247711465472?ref_src=twsrc%5Etfw">2018年12月1日</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-GLSLのシェーダーのみで上記のような作品をつくりました。
-
-関連記事
-
-- [GLSL Compoに役立つ！GLSL Sandbox互換のVSCode拡張『Shader Toy』の紹介 | gam0022.net](/blog/2018/12/24/vscode-glslsandbox/#ライブコーディングバトルで優勝できた)
-
-## 2018 メガデモ勉強会
+## 2018年 メガデモ勉強会
 
 <div style="width:400px; margin:0; padding:0;" class="right">
 <script async class="speakerdeck-embed" data-slide="1" data-id="74ea75d0686849238368f73150a7adba" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
@@ -304,7 +387,7 @@ GLSLのシェーダーのみで上記のような作品をつくりました。
 
 - [メガデモ勉強会!2018で発表しました | gam0022.net](/blog/2018/03/16/demoscene-study-session/)
 
-## 2017 正解するカド
+## 2017年 正解するカド
 
 [<img alt="正解するカド" src="/images/works/kado.jpg" width="300px" class="right">](/images/posts/2017-06-30-raymarching-kado/kado.png)
 
@@ -320,7 +403,7 @@ GLSLのシェーダーのみで上記のような作品をつくりました。
 - [正解するカドの「カド」をレイマーチングでリアルタイム描画する | gam0022.net
 ](/blog/2017/06/30/raymarching-kado/)
 
-## 2017 Fusioned Bismuth
+## 2017年 Fusioned Bismuth
 
 [<img alt="Fusioned Bismuth" src="/images/works/tdf2017.jpg" width="300px" class="right">](/images/works/tdf2017.jpg)
 
@@ -335,7 +418,7 @@ TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞した、レイマーチ
 - [#TokyoDemoFest 2017 の GLSL Graphics Compo で3位入賞！ | gam0022.net](/blog/2017/02/24/tdf2017/)
 - [距離関数のfold（折りたたみ）による形状設計 | gam0022.net](/blog/2017/03/02/raymarching-fold/)
 
-## 2017 Realtime Pathtracing
+## 2017年 Realtime Pathtracing
 
 <div style="width:400px; margin:0; padding:0;" class="right">
 <iframe width="400" height="315" src="https://www.youtube.com/embed/FUb5U3ttmZE" frameborder="0" allowfullscreen></iframe>
@@ -351,7 +434,7 @@ WebGL(three.js)でリアルタイムなパストレーシングを実装しま�
 - [WebGL+GLSLによる超高速なパストレーシング | Qiita](https://qiita.com/gam0022/items/18bb3612d7bdb6f4360a)
 - [three.js webgl - pathtracing sandbox | gam0022.net](https://gam0022.net/webgl/#pathtracing_sandbox)
 
-## 2016 Live
+## 2016年 Live
 
 [<img alt="Live" src="/images/works/live.gif" width="300px" class="right">](/images/works/live.gif)
 
@@ -389,7 +472,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 - [#TokyoDemoFest 2016 の GLSL Graphics Compo で3位入賞！ - gam0022.net](/blog/2016/02/24/tokyo-demo-fest/)
 
-## 2016 #GLSLTech 発表資料
+## 2016年 #GLSLTech 発表資料
 
 <div style="width:340px; margin:0; padding:0;" class="right">
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/rS2j757JUrqeWL" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shohosoda9/threejs-58238484" title="シェーダだけで世界を創る！three.jsによるレイマーチング" target="\_blank">シェーダだけで世界を創る！three.jsによるレイマーチング</a> </strong> from <strong><a target="\_blank" href="//www.slideshare.net/shohosoda9">Sho Hosoda</a></strong> </div>
@@ -403,7 +486,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
 
 - [GLSL シェーダテクニック勉強会 #GLSLTechで登壇しました | gam0022.net](/blog/2016/02/16/glsl-tech/)
 
-## 2016 Gem
+## 2016年 Gem
 
 [<img alt="Gem" src="/images/works/gem.png" class="right">](/images/works/gem_original.png)
 
@@ -418,7 +501,7 @@ Mandelbox というフラクタル図形を mod で無限にループさせて�
   <a href="http://gam0022.net/webgl/#raytracing_gem" class="btn btn-primary btn-outline">Gem - gam0022.net</a>
 </div>
 
-## 2015 Reflect
+## 2015年 Reflect
 
 [<img alt="Gem" src="/images/works/reflect.png" class="right">](/images/works/reflect_original.png)
 
@@ -436,7 +519,7 @@ three.js 公式サンプルにも取り込まれています。
   <a href="http://threejs.org/examples/#webgl_raymarching_reflect" class="btn btn-primary btn-outline">Reflect - threejs.org</a>
 </div>
 
-## 2015 Steal Frame
+## 2015年 Steal Frame
 
 [<img alt="Steel Frame" src="/images/works/steel_frame.png" class="right">](/images/works/steel_frame_original.png)
 
@@ -452,7 +535,31 @@ three.js 公式サンプルにも取り込まれています。
 
 レイトレ合宿用に開発した物理ベースレンダラーを紹介します。
 
-## 2019 Redflash Renderer
+レイトレ合宿はオフラインレンダリングのオフライン集会です。自作のオフラインレンダラーを作り、レンダリング画像の美しさを競います。
+
+## 2023年 Redflash Renderer 動画対応版
+
+9月1日(金)～9月3日(日)に日蓮宗大本山清澄寺で開催されたレイトレ合宿9に参加しました。
+
+4次元空間上で回転してから、それを3次元に投影することで、内外が入れ替わるような不思議なループアニメーションをテーマにしました。
+
+<video playsinline="" loop="" muted="" controls="" width="100%" src="/images/posts/2023-09-19-rtcamp9/gam_crf12.mp4" poster="/images/posts/2023-09-19-rtcamp9/218.jpg"></video>
+
+- [レイトレ合宿9で4次元立方体をテーマにしたアニメーションを作成しました](/blog/2023/09/20/rtcamp9/)
+
+## 2022年 Redflash Renderer 動画対応版
+
+9月2日(金)～9月4日(日)に沖縄本島で開催された[レイトレ合宿8](https://sites.google.com/view/raytracingcamp8/)に参加しました。
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/c7JqEpaR658" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">レイマーチングとポリゴンをハイブリッドに描画できる単方向パストレーシングのレンダラーをOptiXで開発して16人中7位でした。<br><br>レンダリング時間は10分（1フレーム2秒）だったので、<br>NEEやMISなどサンプリングの高速化も行いました。<br><br>動画は本戦で実際に出力されたファイルです。<a href="https://twitter.com/hashtag/%E3%83%AC%E3%82%A4%E3%83%88%E3%83%AC%E5%90%88%E5%AE%BF?src=hash&amp;ref_src=twsrc%5Etfw">#レイトレ合宿</a> <a href="https://t.co/LDgKL7gLsY">pic.twitter.com/LDgKL7gLsY</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1566269176314220544?ref_src=twsrc%5Etfw">September 4, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+- [レイトレ合宿8参加レポート](http://localhost:1313/blog/2022/10/17/rtcamp8/)
+
+## 2019年 Redflash Renderer
 
 <script async class="speakerdeck-embed" data-id="ba3966aad908467e8b21249e828c26d0" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -463,7 +570,7 @@ Redflash は NVIDIA® OptiX 6.0 上で実装したパストレーシングによ
 - [レイトレ合宿7でレイマーチング対応のGPUパストレーサーを実装しました！ | gam0022.net](/blog/2019/09/18/rtcamp7/)
 - [GitHub](https://github.com/gam0022/redflash)
 
-## 2018 Hanamaru Renderer v2
+## 2018年 Hanamaru Renderer v2
 
 <script async class="speakerdeck-embed" data-id="3ea604f4f30248709e316a1cb487f1cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -474,18 +581,18 @@ Hanamaru Rendererを高速化しました。
 - [レイトレ合宿6 参加報告 前編（準備編） | gam0022.net](/blog/2018/09/18/rtcamp6-part1/)
 - [GitHub](https://github.com/gam0022/hanamaru-renderer)
 
-## 2017 Hanamaru Renderer
+## 2017年 Hanamaru Renderer
 
 <script async class="speakerdeck-embed" data-id="6159e679b62d4d87a718fdf97efe5ed8" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-Rustで開発したパストレーシングによる物理ベースレンダラーです。
+Rustで開発したパストレーシングによる物理ベースレンダラーです。Vectorクラスから自作し、PNGの読み書き以外は完全自作です。
 
 関連リンク
 
 - [レイトレ合宿5‽に参加して、Rustでパストレーシングを実装しました！ | gam0022.net](/blog/2017/10/02/rtcamp5/)
 - [GitHub](https://github.com/gam0022/hanamaru-renderer)
 
-## 2016 Tsukihi
+## 2016年 Tsukihi
 
 <div style="width: 300px;" class="right">
 <script async class="speakerdeck-embed" data-slide="1" data-id="3e8b7d83dd0e4b19891d6c8321431d47" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
@@ -528,7 +635,7 @@ Rustで開発したパストレーシングによる物理ベースレンダラ�
 
 Ruby 向けのライブラリの紹介です。
 
-## 2013 ImmutableList
+## 2013年 ImmutableList
 
 <img alt="immutable_list" src="/images/works/immutable_list.png" class="right">
 
@@ -546,7 +653,7 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 
 # iOS App
 
-## 2013 カメラで商品検索 C2search
+## 2013年 カメラで商品検索 C2search
 
 [<img alt="C2search" src="/images/works/C2search_tmb.png" class="right">](/images/works/C2search.png)
 
@@ -567,7 +674,7 @@ Immutable かつ Linked なので、Rubyで関数型言語風に再帰を使っ�
 
 # Web
 
-## 2013 Twitter名刺ジェネレーター
+## 2013年 Twitter名刺ジェネレーター
 
 [<img alt="Twitter名刺ジェネレーター" src="/images/works/tmg_tmb.png" class="right">](/images/works/tmg.png)
 
@@ -589,7 +696,7 @@ TwitterIDを入力するだけで簡単に名刺が作れるサービスです�
 
 Goole Chrome の拡張機能を紹介します。
 
-## 2016 Slack 返信引用ボタン
+## 2016年 Slack 返信引用ボタン
 
 <img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
 
@@ -604,7 +711,7 @@ Slack に返信と引用ボタンをつけるChrome拡張機能です。
 </div>
 
 
-## 2013 Shelf
+## 2013年 Shelf
 
 [<img alt="Shelf" src="/images/works/shelf.png" class="right">](/images/works/shelf_original.png)
 
@@ -621,7 +728,7 @@ COJTソフトウェアコース2013の前期の準優勝/技術賞受賞作品�
 </div>
 
 
-## 2012-2013 TwinCal
+## 2012-2013年 TwinCal
 
 <img alt="twincal" src="/images/works/twincal.png" class="right">
 
@@ -633,7 +740,7 @@ TwinCalとは、Twinsの時間割をiCalendar形式に変換し、Googleカレ�
   <a href="http://gam0022.net/app/twincal/" class="btn btn-primary btn-outline">TwinCal 公式サイト</a>
 </div>
 
-## 2011-2013 @daigoroubot
+## 2011-2013年 @daigoroubot
 
 <img alt="大五郎Bot" src="/images/works/daigoroubot.png" class="right">
 
@@ -653,7 +760,7 @@ TwinCalとは、Twinsの時間割をiCalendar形式に変換し、Googleカレ�
 
 HSPプログラミングコンテスト用に作ったゲーム達です。
 
-## 2012 Soar(ソアー)
+## 2012年 Soar(ソアー)
 
 [<img alt="soar" src="/images/works/soar.png" class="right">](/images/works/soar_original.png)
 
@@ -668,7 +775,7 @@ HSPプログラミングコンテスト用に作ったゲーム達です。
   * [飛び上がれ！女の子が主役のアクションゲーム「Soar (ソアー)」](http://www.moongift.jp/2012/12/20121225/)
 
 
-## 2010 雲(sky)
+## 2010年 雲(sky)
 
 [<img alt="雲" src="/images/works/sky1.png" class="right">](/images/works/sky1_original.png)
 
@@ -686,7 +793,7 @@ HSPプログラミングコンテスト用に作ったゲーム達です。
 [<img alt="config画面" src="/images/works/sky2.png" class="right">](/images/works/sky2_original.png)
 
 
-## 2009 ボウリング(笑) (bowling(w))
+## 2009年 ボウリング(笑) (bowling(w))
 
 [<img alt="ボウリング(笑)" src="/images/works/bowling.png" class="right">](/images/works/bowling_original.png)
 
@@ -706,7 +813,7 @@ OBAQによる物理演算とランキング機能によるステージ投稿が�
   * [窓の杜 - 【週末ゲーム】第402回：「HSPTVブラウザ」で遊んでみよう！](http://www.forest.impress.co.jp/docs/serial/shumatsu/20100122_342276.html)
 
 
-## 2008 蟲(worms)
+## 2008年 蟲(worms)
 
 蟲を切断して遊ぶゲーム。ドラッグでレーザーを照射。
 
@@ -721,13 +828,14 @@ HSPTV部門で効果音を扱うために、[winmm.dll](http://gmr.blog.shinobi.
   * [アジアン・インテグレーション有限会社賞](http://hsp.tv/contest2008/cntst_fresult.html#95)
 * 作成記録
   * [GAM-22のメモ](http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-%E8%9F%B2/)
+* [動画](https://www.youtube.com/watch?v=CbDKwpX_KP4)
 
 
 # Windows Games
 
 HSPで作ったWindows向けゲーム達です。
 
-## 2007 Battle Armor
+## 2007年 Battle Armor
 
 [<img alt="Battle Armor" src="/images/works/battle_armor.png" class="right">](/images/works/battle_armor_original.png)
 
@@ -746,7 +854,7 @@ HSPで作ったWindows向けゲーム達です。
   * [GAM-22のメモ](http://gmr.blog.shinobi.jp/-%E4%BD%9C%E6%88%90%E8%A8%98%E9%8C%B2-battle%20armor/)
 
 
-## 2006 ASTEROIDS
+## 2006年 ASTEROIDS
 
 <img alt="ASTEROIDS" src="/images/works/asteroids.jpg" class="right">
 
