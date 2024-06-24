@@ -208,7 +208,7 @@ Unityの新機能（Timeline・TextMeshPro・Chinemachine・PostProcessingStack�
 - [Tokyo Demo Fest2018のDemo Compo優勝作品の解説〜サウンド編〜 : KLabGames Creative Blog](http://klabgames.creative.blog.jp.klab.com/archives/14415590.html)
 - [「Tokyo Demo Fest 2018」参加レポート : KLab広報ブログ](http://pr.blog.klab.jp/archives/51697543.html)
 
-関連記事
+関連リンク
 
 - [https://github.com/gam0022/unity-demoscene](https://github.com/gam0022/unity-demoscene)
 - [Windowsの実行ファイル](https://files.scene.org/view/parties/2018/tokyodemofest18/demo/wormhole.zip)（GTX1070以上のGPU推奨）
