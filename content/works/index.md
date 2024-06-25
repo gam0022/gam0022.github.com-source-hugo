@@ -308,6 +308,10 @@ GLSLなどを用いたシェーダーライブコーディングの実績をま�
 
 - [Gam0022 ◈ livecode.demozoo.org](https://livecode.demozoo.org/performer/Gam0022.html#mc)
 
+## 2023年 Inércia 2023の hader Royale Jam
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1時間のGLSLライブコーディングをしました！<br><br>Shader Royale Jam (with liveact by Parallel Pulse)<a href="https://twitter.com/hashtag/inerciaparty?src=hash&amp;ref_src=twsrc%5Etfw">#inerciaparty</a> <a href="https://twitter.com/hashtag/demoscene?src=hash&amp;ref_src=twsrc%5Etfw">#demoscene</a> <a href="https://twitter.com/hashtag/livecode?src=hash&amp;ref_src=twsrc%5Etfw">#livecode</a> <a href="https://t.co/luNatExx2b">pic.twitter.com/luNatExx2b</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1730739815518470243?ref_src=twsrc%5Etfw">December 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## 2023年 第10回新千歳空港国際アニメーション映画祭
 
 2023年の11月2日～11月6日に開催された[第10回新千歳空港国際アニメーション映画祭](https://airport-anifes.jp/)でデモシーンの上映とGLSLのシェーダーライブコーディング（エキシビションマッチ）をしました。
