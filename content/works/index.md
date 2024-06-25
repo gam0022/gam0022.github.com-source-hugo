@@ -696,25 +696,6 @@ TwitterIDを入力するだけで簡単に名刺が作れるサービスです�
   <a href="http://gam0022.net/app/tmg/" class="btn btn-primary btn-outline">Twitter名刺ジェネレーター</a>
 </div>
 
-# Google Chrome Extention
-
-Goole Chrome の拡張機能を紹介します。
-
-## 2016年 Slack 返信引用ボタン
-
-<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
-
-Slack に返信と引用ボタンをつけるChrome拡張機能です。
-
-- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
-- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
-- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
-
-<div class="read-more">
-  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
-</div>
-
-
 ## 2013年 Shelf
 
 [<img alt="Shelf" src="/images/works/shelf.png" class="right">](/images/works/shelf_original.png)
@@ -758,6 +739,24 @@ TwinCalとは、Twinsの時間割をiCalendar形式に変換し、Googleカレ�
 
 <div class="read-more">
   <a href="/works/daigoroubot/" class="btn btn-primary btn-outline">Read More</a>
+</div>
+
+# Google Chrome Extention
+
+Goole Chrome の拡張機能を紹介します。
+
+## 2016年 Slack 返信引用ボタン
+
+<img alt="Slack Reply Button" src="/images/works/slack-reply-button/icon.png" class="right">
+
+Slack に返信と引用ボタンをつけるChrome拡張機能です。
+
+- [Slack 返信引用ボタン - Chrome ストア](https://chrome.google.com/webstore/detail/slack-%E8%BF%94%E4%BF%A1%E5%BC%95%E7%94%A8%E3%83%9C%E3%82%BF%E3%83%B3slack-reply/cechhipifmcinmnnjnlichjigoabokbg?hl=ja)
+- [GitHubリポジトリ](https://github.com/gam0022/slack-reply-and-quote-button)
+- [Slackに返信ボタンをつけるChrome拡張をつくりました - Qiita](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
+
+<div class="read-more">
+  <a href="/works/slack-reply-and-quote-button/" class="btn btn-primary btn-outline">Slack 返信引用ボタン - gam0022.net</a>
 </div>
 
 # HSPTV Games
