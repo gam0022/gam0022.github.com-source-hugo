@@ -1,17 +1,18 @@
 +++
-title = "WebGL 総本山 + normalize.fm あわせて１３周年感謝祭でGLSLライブコーディングしました"
+title = "『WebGL 総本山 + normalize.fm あわせて１３周年感謝祭』でGLSLライブコーディングしました"
 slug = "livecoding-sn13"
-date = "2024-10-21T10:00:20+09:00"
+date = "2024-10-21T8:00:20+09:00"
 image = "/images/posts/2024-10-20-livecoding-sn13/livecoding.jpg"
 toc = true
 math = false
 draft = false
 tags = [
+    "event", "CG", "レイマーチング", "GLSL", "SESSIONS", "TokyoDemoFest", "LiveCoding"
 ]
 
 +++
 
-[WebGL 総本山 + normalize.fm あわせて１３周年感謝祭](https://sn13.peatix.com/)の夜の部のShader JamsでGLSLのシェーダーライブコーディングしました。
+[『WebGL 総本山 + normalize.fm あわせて１３周年感謝祭』](https://sn13.peatix.com/)の夜の部のShader JamsでGLSLのシェーダーライブコーディングしました。
 
 #normalizeFM のロゴの形状だけを使って4つのシーンを作りました。
 
@@ -22,9 +23,10 @@ tags = [
 - [BonzomaticのGLSLシェーダー](https://gist.github.com/gam0022/074922bbfb406be3b7bd37218068ad12)
 - [Shadertoy移植版](shadertoy.com/view/XX2yRt)
 
-
-5人の豪華メンバーで音と映像のライブコーディングをしました。
+5人のメンバーによる音と映像のライブコーディングを行い、その一人として参加しました。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">こちら、夜の部のShader Jamsのセットアップをお手伝いしております。<br><br>Renard <a href="https://twitter.com/Renard_VRC?ref_src=twsrc%5Etfw">@Renard_VRC</a><br>gam0022 <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a><br>kamoshika <a href="https://twitter.com/kamoshika_vrc?ref_src=twsrc%5Etfw">@kamoshika_vrc</a><br>Niko_14 <a href="https://twitter.com/himazin917?ref_src=twsrc%5Etfw">@himazin917</a><br><br>と、doxasユニバースに纏わる豪華なコーダーでセットアップしておりますので、ぜひご来場ください〜〜。 <a href="https://t.co/VoUodSNfCr">https://t.co/VoUodSNfCr</a></p>&mdash; 0b5vr (@0b5vr) <a href="https://twitter.com/0b5vr/status/1825887074001830213?ref_src=twsrc%5Etfw">August 20, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-とても楽しかったです！
+normalize.fmは初回から全話聞いているくらい熱烈なファンだったので、ライブコーディングのお誘いをいただき、とても光栄でした。
+
+とても楽しかったです！ありがとうございました！
