@@ -308,6 +308,10 @@ GLSLなどを用いたシェーダーライブコーディングの実績をま�
 
 - [Gam0022 ◈ livecode.demozoo.org](https://livecode.demozoo.org/performer/Gam0022.html#mc)
 
+## 2024年 WebGL 総本山 + normalize.fm あわせて１３周年感謝祭
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「WebGL 総本山 + <a href="https://twitter.com/normalizefm?ref_src=twsrc%5Etfw">@normalizefm</a> あわせて１３周年感謝祭」夜の部 Shader Jamsでライブコーディングした作品です！<a href="https://twitter.com/hashtag/normalizeFM?src=hash&amp;ref_src=twsrc%5Etfw">#normalizeFM</a> のロゴの形状だけを使って4つのシーンを作りました！<br><br>音楽も <a href="https://twitter.com/himazin917?ref_src=twsrc%5Etfw">@himazin917</a> さんによるSonic Piのライブコーディングです！<br><br>Shadertoy版: <a href="https://t.co/G2HaBci6pR">https://t.co/G2HaBci6pR</a> <a href="https://t.co/lLPuzrVNQx">pic.twitter.com/lLPuzrVNQx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1840262849983328528?ref_src=twsrc%5Etfw">September 29, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## 2023年 Inércia 2023の hader Royale Jam
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1時間のGLSLライブコーディングをしました！<br><br>Shader Royale Jam (with liveact by Parallel Pulse)<a href="https://twitter.com/hashtag/inerciaparty?src=hash&amp;ref_src=twsrc%5Etfw">#inerciaparty</a> <a href="https://twitter.com/hashtag/demoscene?src=hash&amp;ref_src=twsrc%5Etfw">#demoscene</a> <a href="https://twitter.com/hashtag/livecode?src=hash&amp;ref_src=twsrc%5Etfw">#livecode</a> <a href="https://t.co/luNatExx2b">pic.twitter.com/luNatExx2b</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1730739815518470243?ref_src=twsrc%5Etfw">December 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
