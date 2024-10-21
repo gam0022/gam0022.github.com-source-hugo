@@ -35,6 +35,8 @@ tags = [
 
 <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/NO3pktKtGD">pic.twitter.com/NO3pktKtGD</a></p>&mdash; Renard (@Renard_VRC) <a href="https://twitter.com/Renard_VRC/status/1840061611895337291?ref_src=twsrc%5Etfw">September 28, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+## さいごに
+
 normalize.fmは初回から全話聞いているくらい熱烈なファンだったので、ライブコーディングのお誘いをいただき、大変光栄でした！とても楽しかったです！
 
 イベントにご参加いただいた方々、ありがとうございました！
