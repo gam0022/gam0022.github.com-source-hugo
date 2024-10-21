@@ -7,7 +7,7 @@ toc = true
 math = false
 draft = false
 tags = [
-    "event", "CG", "レイマーチング", "GLSL", "SESSIONS", "TokyoDemoFest", "LiveCoding"
+    "event", "CG", "レイマーチング", "GLSL", "SESSIONS", "TokyoDemoFest", "LiveCoding", "normalize.fm"
 ]
 
 +++
