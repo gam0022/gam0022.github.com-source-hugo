@@ -12,7 +12,7 @@ title = "SESSIONS 2024のRealtime Graphicsコンペティションで3位入賞�
 
 +++
 
-この記事は[SESSIONS Advent Calendar 2024](https://adventar.org/calendars/10732)の2日目の記事です。
+これは[SESSIONS Advent Calendar 2024](https://adventar.org/calendars/10732)の2日目の記事です。
 
 # はじめに
 
