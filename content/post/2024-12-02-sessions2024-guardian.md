@@ -1,7 +1,7 @@
 +++
 slug = "sessions2024-guardian"
-date = "2024-12-02T20:00:00+09:00"
-image = "/images/posts/2024-12-02-sessions2024-guardian/guardian-v1.jpg"
+date = "2024-12-02T22:00:00+09:00"
+image = "/images/posts/2024-12-02-sessions2024-guardian/IMG_4279.jpg"
 toc = true
 math = false
 draft = false
@@ -18,10 +18,16 @@ title = "SESSIONS 2024のRealtime Graphicsコンペティションで3位入賞�
 
 2024年11月16日～17日に日本科学未来館で開催された[SESSIONS 2024](https://sessions-party.com/events/sessions-2024/)に参加し、Realtime Graphicsコンペティションで3位をいただきました！
 
+
+
+[![ファイルサイズ](/images/posts/2024-12-02-sessions2024-guardian/IMG_4279.jpg)](/images/posts/2024-12-02-sessions2024-guardian/IMG_4279.HEIC)
+
 SESSIONS 2024では、Realtime Graphicsコンペティションに作品を提出した他、セミナーとShader Jamの解説を行わせていただきました。
 セミナーとShader Jamについては別の記事で紹介する予定です。
 
 この記事では、Realtime Graphicsコンペティションの提出作品である『GUARDI▲N』のグラフィックス（主に距離関数によるモデリング）について解説をします。
+
+<!--more-->
 
 # GUARDI▲Nについて
 
@@ -35,12 +41,11 @@ SESSIONS 2024では、Realtime Graphicsコンペティションに作品を提�
 - [💬Pouet](https://t.co/nXZkIBYdnC)
 - [🐦️X/Twitter](https://x.com/gam0022/status/1858308509856678328)
 - [🌍️Online version](https://gam0022.net/webgl/#demoscne_guardian)
+- [🐙 GitHub](https://github.com/gam0022/chromatiq)
 
 <div class="movie-wrap">
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/T-V3mHlsgzQ?si=1-AUgqum39BhrvsZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-
-<!--more-->
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">&quot;GUARDI▲N&quot; by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/katai5plate?ref_src=twsrc%5Etfw">@katai5plate</a><br><br>3rd Place in Realtime Graphics Competition at <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> 2024<a href="https://twitter.com/SESSIONS_Party?ref_src=twsrc%5Etfw">@SESSIONS_Party</a> 2024のリアルタイムGraphicsコンポで3位に入賞しました！<br><br>映像は自作のWebGLエンジンによる24KB制限です。<br><br>「特撮」をコンセプトにしました。 <a href="https://t.co/wDVVRXWX26">pic.twitter.com/wDVVRXWX26</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1858308509856678328?ref_src=twsrc%5Etfw">November 18, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

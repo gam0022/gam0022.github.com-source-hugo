@@ -341,14 +341,14 @@ IFSのパラメーターは事前に調整され、8つのバリエーション�
 警告のパターンを取り出してNEORTに移植し、NEORT++の展示室に展示させていただきました。
 
 > デジタルアートの新しい体験について考える東京馬喰町のアートギャラリーNEORT++にて5/6, 7に開催される展示”CURATION FREE #2”の作品を募集します。
-> 
+>
 > 本展は、昨年末に行われたキュレーションを介さない展示"CURATION FREE"の第二弾です。
-> 
+>
 > 期間中、NEORTに投稿された作品が東京馬喰町にあるNEORT++の空間に展示されていきます。
-> 
+>
 > どんな展示になるか予想ができませんが、表現の多様性を尊重した新しい試みになることを期待します。
 
-<blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">Real &quot;Transcendental Cube&quot;<br><br>&quot;Transcendental Cube&quot; の壁面の演出の一部をNEORTに移植して <a href="https://twitter.com/hashtag/CURATION_FREE_2?src=hash&amp;ref_src=twsrc%5Etfw">#CURATION_FREE_2</a> のday1に展示しました。<br><br>（同じような動画を連投して申し訳ないですが、前の動画の画質が微妙だったので…）<a href="https://twitter.com/hashtag/CURATION_FREE_2?src=hash&amp;ref_src=twsrc%5Etfw">#CURATION_FREE_2</a> <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> <a href="https://t.co/Un1t8rBc2m">pic.twitter.com/Un1t8rBc2m</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1654880194287763456?ref_src=twsrc%5Etfw">May 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>      
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">Real &quot;Transcendental Cube&quot;<br><br>&quot;Transcendental Cube&quot; の壁面の演出の一部をNEORTに移植して <a href="https://twitter.com/hashtag/CURATION_FREE_2?src=hash&amp;ref_src=twsrc%5Etfw">#CURATION_FREE_2</a> のday1に展示しました。<br><br>（同じような動画を連投して申し訳ないですが、前の動画の画質が微妙だったので…）<a href="https://twitter.com/hashtag/CURATION_FREE_2?src=hash&amp;ref_src=twsrc%5Etfw">#CURATION_FREE_2</a> <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> <a href="https://t.co/Un1t8rBc2m">pic.twitter.com/Un1t8rBc2m</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1654880194287763456?ref_src=twsrc%5Etfw">May 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 NEORT++の展示室もシンプルな直方体でしたので、作品中のような見え方になるのではないかと期待していました。しかし、実際はそんなことはありませんでした。
 
@@ -415,7 +415,7 @@ TokyoDemoFest2018年以来の約5年ぶりのオフライン開催のデモパ�
 
 SESSIONSは2023年から新たにスタートしたデモパーティーです。
 
-> デモパーティーとはコンピューターを用いたプログラミングやアートに興味のある人々が日本中・世界中から一堂に会し、デモ作品のコンペティション (Compo) やセミナーなどが行われるイベントです。 
+> デモパーティーとはコンピューターを用いたプログラミングやアートに興味のある人々が日本中・世界中から一堂に会し、デモ作品のコンペティション (Compo) やセミナーなどが行われるイベントです。
 > パーティという名の通り、勉強会のように堅苦しい感じではなく、みんな賑やかに作品の制作過程を見せ合ったりと参加者同士でのコミュニケーションが盛んに行われます。
 
 SESSIONSの前身である[TokyoDemoFest](https://tokyodemofest.jp/)は純粋なデモパーティーに属するものでしたが、SESSIONSはそれとは異なり、デモシーンの枠に囚われず、さまざまなカテゴリーのクリエイティブ作品を募集する「パーティ＆コンペティションイベント」として位置づけられています。
