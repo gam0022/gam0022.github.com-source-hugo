@@ -40,6 +40,8 @@ SESSIONS 2024では、Realtime Graphicsコンペティションに作品を提�
 <iframe width="1920" height="1080" src="https://www.youtube.com/embed/T-V3mHlsgzQ?si=1-AUgqum39BhrvsZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
+<!--more-->
+
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">&quot;GUARDI▲N&quot; by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/katai5plate?ref_src=twsrc%5Etfw">@katai5plate</a><br><br>3rd Place in Realtime Graphics Competition at <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> 2024<a href="https://twitter.com/SESSIONS_Party?ref_src=twsrc%5Etfw">@SESSIONS_Party</a> 2024のリアルタイムGraphicsコンポで3位に入賞しました！<br><br>映像は自作のWebGLエンジンによる24KB制限です。<br><br>「特撮」をコンセプトにしました。 <a href="https://t.co/wDVVRXWX26">pic.twitter.com/wDVVRXWX26</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1858308509856678328?ref_src=twsrc%5Etfw">November 18, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Realtime Graphics Competitionで3位🥉をいただきました！ありがとうございます！<br><br> <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> <a href="https://t.co/jhPsIPW867">pic.twitter.com/jhPsIPW867</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1858103266183442445?ref_src=twsrc%5Etfw">November 17, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
