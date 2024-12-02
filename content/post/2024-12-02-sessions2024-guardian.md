@@ -38,6 +38,7 @@ SESSIONS 2024では、Realtime Graphicsコンペティションに作品を提�
 当初のアイデアは「天使vs悪魔」の映画的なストーリーを持つデモを作りたいというものでしたが、最終的には「特撮」の要素に振り切ることにしました。ガーディアンが天使のリングを持つのは初期設定の名残りです。
 
 - [📺️YouTube](https://www.youtube.com/watch?v=T-V3mHlsgzQ)
+- [🔦Live Footage](https://www.youtube.com/live/8bzBYGiifIQ?t=16325s)
 - [💬Pouet](https://t.co/nXZkIBYdnC)
 - [🐦️X/Twitter](https://x.com/gam0022/status/1858308509856678328)
 - [🌍️Online version](https://gam0022.net/webgl/#demoscne_guardian)
