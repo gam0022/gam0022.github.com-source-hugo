@@ -30,6 +30,19 @@ slug = "airport-anifes2024-nc30s"
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">30Seconds部門入選作品も毎日放映されてます！✨写真はちょうど良きタイミング。 <a href="https://t.co/WhSzj5wq41">https://t.co/WhSzj5wq41</a></p>&mdash; 新千歳空港国際アニメーション映画祭 (@airportanifes) <a href="https://twitter.com/airportanifes/status/1847816206050611258?ref_src=twsrc%5Etfw">October 20, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+10/31～1/7に北海道に滞在し、映画祭にも全日程参加しました。そのときに撮影した動画です。
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ja" dir="ltr">自分の書いたシェーダーが国際空港で大画面上映される人生は予想できなかった✈️<br><br>人生は面白い！<a href="https://twitter.com/hashtag/newchitose2024?src=hash&amp;ref_src=twsrc%5Etfw">#newchitose2024</a> <a href="https://t.co/IhR12znket">pic.twitter.com/IhR12znket</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1852615568999776340?ref_src=twsrc%5Etfw">November 2, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## 正方形でレンダリングした『Transcendental Cube』
+
+### Full尺
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/k5c7hZN_ZWg?si=Ddh8V4YbsgrbTwCp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### 30秒版
+
+<iframe width="560" height="560" src="https://www.youtube.com/embed/dJ9D-YMZDmA?si=NhVeLEz6bkEFs5sP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 関連記事
 

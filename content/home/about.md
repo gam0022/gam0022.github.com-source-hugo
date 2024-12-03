@@ -26,6 +26,8 @@ weight = 0
 
 [Tokyo Demo Fest](http://tokyodemofest.jp)や[Revision](https://2020.revision-party.net/start)といった国内外のデモパーティで上位入賞を果たす。
 
+- SESSIONS 2024 Realtime Graphics Compo 3位入賞（[解説記事](/blog/2024/12/02/sessions2024-guardian/)）
+- 新千歳空港国際アニメーション映画祭 NEW CHITOSE 30 Seconds部門入選（[詳細記事](/blog/2024/10/21/airport-anifes2024-nc30s/)）
 - TDF 16ms #0（2023）GLSL Graphics Compo 3位入賞（[解説記事](/blog/2023/10/30/tdf16ms0/)）
 - SESSIONS 2023 GLSL Graphics Compo 2位入賞（[解説記事](/blog/2023/05/31/sessions2023-glsl-compo/)）
 - Tokyo Demo Fest 2021 GLSL Graphics Compo **1位優勝**（[解説記事](/blog/2021/12/20/tdf2021-glsl/)）
@@ -37,7 +39,7 @@ weight = 0
 KLab（2015～）では、Unity製モバイルゲームの3Dグラフィックス開発を担当し、レンダリングパイプラインの設計と最適化、モバイル向けに最適化したシェーダー開発、グラフィックス系のテクニカルアーティストとしてプロジェクト横断のサポート活動等を行う。2023年はUnreal Engine 5の技術検証を担当。
 GDCやCEDECなどのゲーム開発者カンファレンスの登壇、書籍の執筆を通じてUnityやグラフィックスに関する情報共有を行う。
 
-- Last Update: 2024-02-18
+- Last Update: 2024-12-03
 - Read More: [Resume](/resume)
 
 ## ゲーム開発者カンファレンスの登壇
