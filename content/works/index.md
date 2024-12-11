@@ -308,11 +308,15 @@ GLSLなどを用いたシェーダーライブコーディングの実績をま�
 
 - [Gam0022 ◈ livecode.demozoo.org](https://livecode.demozoo.org/performer/Gam0022.html#mc)
 
+## 2024年 Inércia 2024のShader Royale Jam
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Inércia 2024のShaderJamに参加してました！<br>寝坊してネタも何も思いつかなかったので、GUARDI△Nのボスを出しました。<a href="https://t.co/QmDTdu0zsO">https://t.co/QmDTdu0zsO</a> <a href="https://t.co/CxqzZ0qvmB">https://t.co/CxqzZ0qvmB</a> <a href="https://t.co/XhcndRhpxV">pic.twitter.com/XhcndRhpxV</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1865165940922683785?ref_src=twsrc%5Etfw">December 6, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## 2024年 WebGL 総本山 + normalize.fm あわせて１３周年感謝祭
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「WebGL 総本山 + <a href="https://twitter.com/normalizefm?ref_src=twsrc%5Etfw">@normalizefm</a> あわせて１３周年感謝祭」夜の部 Shader Jamsでライブコーディングした作品です！<a href="https://twitter.com/hashtag/normalizeFM?src=hash&amp;ref_src=twsrc%5Etfw">#normalizeFM</a> のロゴの形状だけを使って4つのシーンを作りました！<br><br>音楽も <a href="https://twitter.com/himazin917?ref_src=twsrc%5Etfw">@himazin917</a> さんによるSonic Piのライブコーディングです！<br><br>Shadertoy版: <a href="https://t.co/G2HaBci6pR">https://t.co/G2HaBci6pR</a> <a href="https://t.co/lLPuzrVNQx">pic.twitter.com/lLPuzrVNQx</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1840262849983328528?ref_src=twsrc%5Etfw">September 29, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## 2023年 Inércia 2023の hader Royale Jam
+## 2023年 Inércia 2023のShader Royale Jam
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1時間のGLSLライブコーディングをしました！<br><br>Shader Royale Jam (with liveact by Parallel Pulse)<a href="https://twitter.com/hashtag/inerciaparty?src=hash&amp;ref_src=twsrc%5Etfw">#inerciaparty</a> <a href="https://twitter.com/hashtag/demoscene?src=hash&amp;ref_src=twsrc%5Etfw">#demoscene</a> <a href="https://twitter.com/hashtag/livecode?src=hash&amp;ref_src=twsrc%5Etfw">#livecode</a> <a href="https://t.co/luNatExx2b">pic.twitter.com/luNatExx2b</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1730739815518470243?ref_src=twsrc%5Etfw">December 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -358,6 +362,23 @@ Tokyo Demo Fest 2018のシェーダーコーディングバトルに参加しま
 WebGLで作成した映像作品と活動を紹介します。
 
 一部の作品は [gam0022.net/webgl/](http://gam0022.net/webgl/) よりブラウザ上で実行できます。
+
+## 2024年 GUARDI▲N
+
+2024年11月16日～17日に日本科学未来館で開催された[SESSIONS 2024](https://sessions-party.com/events/sessions-2024/)に参加し、Realtime Graphicsコンペティションで3位をいただきました！
+
+<div class="movie-wrap">
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/T-V3mHlsgzQ?si=1-AUgqum39BhrvsZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">&quot;GUARDI▲N&quot; by <a href="https://twitter.com/gam0022?ref_src=twsrc%5Etfw">@gam0022</a> &amp; <a href="https://twitter.com/katai5plate?ref_src=twsrc%5Etfw">@katai5plate</a><br><br>3rd Place in Realtime Graphics Competition at <a href="https://twitter.com/hashtag/SESSIONS_Party?src=hash&amp;ref_src=twsrc%5Etfw">#SESSIONS_Party</a> 2024<a href="https://twitter.com/SESSIONS_Party?ref_src=twsrc%5Etfw">@SESSIONS_Party</a> 2024のリアルタイムGraphicsコンポで3位に入賞しました！<br><br>映像は自作のWebGLエンジンによる24KB制限です。<br><br>「特撮」をコンセプトにしました。 <a href="https://t.co/wDVVRXWX26">pic.twitter.com/wDVVRXWX26</a></p>&mdash; がむ (@gam0022) <a href="https://twitter.com/gam0022/status/1858308509856678328?ref_src=twsrc%5Etfw">November 18, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+特撮をテーマにしたBrowser Demoです。映像は自作のWebGLエンジンによる24KB制限です。
+
+関連リンク
+
+- [SESSIONS 2024のRealtime Graphicsコンペティションで3位入賞しました（グラフィックス解説） | gam0022.net](https://gam0022.net/blog/2024/12/02/sessions2024-guardian/)
+- [YouTube](https://youtu.be/T-V3mHlsgzQ?si=Ca49LeQpyaT4YmdG)
 
 ## 2020年 RE: SIMULATED
 

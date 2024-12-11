@@ -24,7 +24,7 @@ SESSIONS 2024では、Realtime Graphicsコンペティションに作品を提�
 
 セミナーとShader Jamについてはこちらの記事で紹介しました。
 
-- [SESSIONS 2024参加記録（セミナー登壇・ShaderJam解説・Realtime Graphics） | gam0022.net]((https://gam0022.net/blog/2024/12/11/sessions2024-summary/)
+- [SESSIONS 2024参加記録（セミナー登壇・ShaderJam解説・Realtime Graphics） | gam0022.net](https://gam0022.net/blog/2024/12/11/sessions2024-summary/)
 
 この記事では、Realtime Graphicsコンペティションの提出作品である『GUARDI▲N』のグラフィックス（主に距離関数によるモデリング）について解説をします。
 
