@@ -18,12 +18,13 @@ title = "SESSIONS 2024のRealtime Graphicsコンペティションで3位入賞�
 
 2024年11月16日～17日に日本科学未来館で開催された[SESSIONS 2024](https://sessions-party.com/events/sessions-2024/)に参加し、Realtime Graphicsコンペティションで3位をいただきました！
 
-
-
 [![ファイルサイズ](/images/posts/2024-12-02-sessions2024-guardian/IMG_4279.jpg)](/images/posts/2024-12-02-sessions2024-guardian/IMG_4279.HEIC)
 
 SESSIONS 2024では、Realtime Graphicsコンペティションに作品を提出した他、セミナーとShader Jamの解説を行わせていただきました。
-セミナーとShader Jamについては別の記事で紹介する予定です。
+
+セミナーとShader Jamについてはこちらの記事で紹介しました。
+
+- [SESSIONS 2024参加記録（セミナー登壇・ShaderJam解説・Realtime Graphics） | gam0022.net]((https://gam0022.net/blog/2024/12/11/sessions2024-summary/)
 
 この記事では、Realtime Graphicsコンペティションの提出作品である『GUARDI▲N』のグラフィックス（主に距離関数によるモデリング）について解説をします。
 
