@@ -12,11 +12,14 @@ slug = "unity-bible"
 
 +++
 
-8/29発売の[『Unityバイブル R5夏号』](https://amzn.to/3QzV4me)のSECTION 01「Shader Graphの基本操作から発展的なテクニックまで」を執筆しました。
+8/29発売の[『Unityバイブル R5夏号』](https://amzn.to/41D00wh)のSECTION 01「Shader Graphの基本操作から発展的なテクニックまで」を執筆しました。
 
+<!--
 [![『Unityバイブル R5夏号』](/images/posts/2023-08-07-unity-bible/thumbnail.jpg)](/images/posts/2023-08-07-unity-bible/thumbnail.png)
+-->
 
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=gam00220c-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4862465684&linkId=c3575812bc16a75ff5f4ccf46ea0671e"></iframe>
+[![『Unityバイブル R5夏号』](/images/posts/2023-08-07-unity-bible/thumbnail.jpg)](https://amzn.to/41D00wh)
+
 
 <!--more-->
 
@@ -84,4 +87,4 @@ TIPSでは「Ridirect Node」「BackboardのCategory機能」「Group Selection�
 
 さいごに、この本の発行部数はAmazonの予約数によって決まるとのことなので、興味を持っていただける方はぜひ予約していただければ幸いです🙇‍♂️
 
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=gam00220c-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4862465684&linkId=c3575812bc16a75ff5f4ccf46ea0671e"></iframe>
+- [Amazonリンク](https://amzn.to/41D00wh)

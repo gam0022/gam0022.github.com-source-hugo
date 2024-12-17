@@ -12,9 +12,13 @@ title = "『Unityゲーム プログラミング・バイブル 2nd Generation�
 
 +++
 
-6/29発売の[『Unityゲーム プログラミング・バイブル 2nd Generation』](https://amzn.to/3oe2agf)を執筆しました。
+6/29発売の[『Unityゲーム プログラミング・バイブル 2nd Generation』](https://amzn.to/49EGscO)を執筆しました。
 
+<!--
 [![『Unityゲーム プログラミング・バイブル 2nd Generation』](/images/posts/2021-05-27-unity-bible2/Collage_Fotor.jpg)](/images/posts/2021-05-27-unity-bible2/Collage_Fotor.png)
+-->
+
+[![『Unityゲーム プログラミング・バイブル 2nd Generation』](/images/posts/2021-05-27-unity-bible2/Collage_Fotor.jpg)](https://amzn.to/49EGscO)
 
 『Unityゲーム プログラミング・バイブル 2nd Generation』について、公式ページから紹介文を引用します。
 
@@ -22,7 +26,7 @@ title = "『Unityゲーム プログラミング・バイブル 2nd Generation�
 > **ゲームの開発現場で即実践できるスキルが身につく!**
 >
 > 本書は、ゲーム開発で最も使われている「Unity」の入門や初級レベルを卒業した方向けの書籍です。ゲームの開発現場で、即実践できるスキルが身につくように、**「37」の最新のトピックを網羅**しました。
-> 
+>
 > 本書には、第一線の現場で活躍している23名の著者陣が参加しており、ゲーム開発のノウハウやTipsが満載されています。またほとんどのトピックでは、サンプルゲームがダウンロードでき、実際に動かしながら、実践的に学んでいくことが可能です。
 >
 > Unityでのゲーム開発のさまざまな場面で、すぐに役立つ1冊となっています。
@@ -73,7 +77,7 @@ title = "『Unityゲーム プログラミング・バイブル 2nd Generation�
 
 - レイマーチングのアルゴリズムと本質
     - レイマーチングは魔法の道具ではなく、単なる衝突判定の手法
-    - 数式（距離関数）によるプロシージャルなモデリング手法   
+    - 数式（距離関数）によるプロシージャルなモデリング手法
 - コンピュータグラフィックスの基礎
     - レイマーチングが扱う範囲はあくまで衝突判定
     - ライティングは通常のシェーダーとまったく同じように実装する必要がある
@@ -171,3 +175,7 @@ GitHub上でUnityプロジェクトを丸ごと公開しているので、もし
 7/29の「Unityゲーム プログラミング・バイブル 2nd Generation 出版記念トーク グラフィックス編」にゲスト出演しました。
 
 [Unityゲーム プログラミング・バイブル 2nd Generation 出版記念トーク グラフィックス編](https://learning.unity3d.jp/7437/)
+
+# Amazonページ
+
+ - [『Unityゲーム プログラミング・バイブル 2nd Generation』](https://amzn.to/49EGscO)
