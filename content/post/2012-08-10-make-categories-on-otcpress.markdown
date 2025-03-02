@@ -24,6 +24,8 @@ Octopressはそれなりに高機能なのにも関わらず、なぜかカテ�
 1. `source/_includes/asides/categories.html`というファイルを作る。
 2. ` _config.yml`の`default_asides:`に`asides/categories.html`を加える。[ex.](https://github.com/gam0022/gam0022.net/commit/8cdfa189385461b1c5beef6e8956e721c113514f#diff-0)
 
+<!--moore-->
+
 あとは、1,の`source/_includes/asides/categories.html`にカテゴリーの一覧を表示する機能をうまく実装しなくてはなりません。
 
 siteというグローバル変数のダンプを手がかりに、`site.categories`というハッシュが存在することがわかりました。

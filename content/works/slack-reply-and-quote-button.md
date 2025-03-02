@@ -94,3 +94,9 @@ Slackのバージョンアップによって拡張が動かなくなった場合
 
 - 2016/12/26: [Qiitaに記事を書きました](http://qiita.com/gam0022/items/9cce1d118bc42dc0e212)
 - 2017/12/24: バージョンアップ方法を追記しました
+
+# コメント（アーカイブ）
+
+※Disqusのコメントをクローズしたため、アーカイブとして画像を残しました。
+
+![Disqusのコメントのアーカイブ](/images/works/slack-reply-button/disqus_comments.png)

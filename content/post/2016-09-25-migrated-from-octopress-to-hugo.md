@@ -207,3 +207,9 @@ webgl/
 
 - [ブログをOctopressからHugoに移行した](https://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/)
 - [OctopressからHugoへ移行した | SOTA](http://deeeet.com/writing/2014/12/25/hugo/)
+
+# コメント（アーカイブ）
+
+※Disqusのコメントをクローズしたため、アーカイブとして画像を残しました。
+
+![Disqusのコメントのアーカイブ](/images/posts/2016-09-25-migrated-from-octopress-to-hugo/disqus_comments.png)
