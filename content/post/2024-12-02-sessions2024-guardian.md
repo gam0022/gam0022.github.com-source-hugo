@@ -1,7 +1,7 @@
 +++
 slug = "sessions2024-guardian"
 date = "2024-12-02T22:00:00+09:00"
-image = "/images/posts/2024-12-02-sessions2024-guardian/IMG_4279.jpg"
+image = "/images/posts/2024-12-02-sessions2024-guardian/guardian-v1.jpg"
 toc = true
 math = false
 draft = false

@@ -2,7 +2,7 @@
 title = "SESSIONS 2024参加記録（セミナー登壇・ShaderJam解説・Realtime Graphics）"
 slug = "sessions2024-summary"
 date = "2024-12-11T23:30:00+09:00"
-image = "/images/posts/2024-12-03-sessions2024-summary/seminar-photo.jpg"
+image = "/images/posts/2024-12-03-sessions2024-summary/seminar-photo2.jpg"
 toc = true
 math = false
 draft = false
